@@ -1,18 +1,18 @@
+pkg_origin=lilian
 pkg_name=libiconv
-pkg_version=1.14
-pkg_origin=core
-pkg_license=('gplv2')
+pkg_version=1.15
+pkg_license=('GPL-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://ftp.gnu.org/pub/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_filename=${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=72b24ded17d687193c3366d0ebe7cde1e6b18f0df8c55438ac95be39e8a30613
+pkg_shasum=ccf536620a45458d26ba83887a983b96827001e92a13847b45e4925cc8913178
 pkg_deps=(core/glibc)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
 do_build() {
-    patch -p1 -i $PLAN_CONTEXT/patches/libiconv-1.14_srclib_stdio.in.h-remove-gets-declarations.patch
+    # patch -p1 -i $PLAN_CONTEXT/patches/libiconv-1.14_srclib_stdio.in.h-remove-gets-declarations.patch
     ./configure --prefix=${pkg_prefix}
     make
 }

@@ -1,5 +1,5 @@
 pkg_name=doxygen
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.8.11
 pkg_license=('GPL-2.0')
 pkg_description="Generate documentation for several programming languages"
@@ -10,12 +10,12 @@ pkg_shasum=65d08b46e48bd97186aef562dc366681045b119e00f83c5b61d05d37ea154049
 pkg_build_deps=(
   core/bison
   core/cmake
-  core/diffutils
+  lilian/diffutils
   core/flex
-  core/gcc
+  lilian/gcc
   core/libxml2
-  core/m4
-  core/make
+  lilian/m4
+  lilian/make
   core/python2
 )
 pkg_deps=(

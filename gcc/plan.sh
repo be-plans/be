@@ -1,20 +1,37 @@
 pkg_name=gcc
 pkg_distname=$pkg_name
-pkg_origin=core
-pkg_version=5.2.0
+pkg_origin=lilian
+pkg_version=7.1.0
 pkg_description="The GNU Compiler Collection"
 pkg_upstream_url="https://gcc.gnu.org/"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}/${pkg_distname}-${pkg_version}.tar.bz2
-pkg_shasum=5f835b04b5f7dd4f4d2dc96190ec1621b8d89f2dc6f638f9f8bc1b1014ba8cad
-pkg_deps=(core/glibc core/zlib core/gmp core/mpfr core/libmpc core/binutils)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/gawk core/m4 core/texinfo core/perl core/inetutils core/expect core/dejagnu)
+pkg_shasum=8a8136c235f64c6fef69cac0d73a46a1a09bb250776a050aec8f9fc880bebc17
+pkg_deps=(core/glibc lilian/zlib lilian/gmp lilian/mpfr lilian/libmpc lilian/binutils)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc core/gawk lilian/m4
+  core/texinfo core/perl core/inetutils
+  lilian/expect core/dejagnu
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
+  export CFLAGS="${CFLAGS} -std=c11 ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
+  do_default_prepare
+  compiler_flags
+
   glibc="$(pkg_path_for glibc)"
   binutils="$(pkg_path_for binutils)"
   headers="$glibc/include"
@@ -288,5 +305,5 @@ wrap_binary() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/m4)
+  pkg_build_deps=(lilian/m4)
 fi

@@ -1,15 +1,27 @@
 pkg_name=m4
-pkg_origin=core
-pkg_version=1.4.17
+pkg_origin=lilian
+pkg_version=1.4.18
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=f0543c3beb51fa6b3337d8025331591e0e18d8ec2886ed391f1aade43477d508
+pkg_shasum=f2c1e86ca0a404ff281631bdc8377638992744b175afb806e25871a24a934e07
 pkg_deps=(core/glibc)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/binutils)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/binutils)
 pkg_bin_dirs=(bin)
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
+  export CFLAGS="${CFLAGS} -std=c11 ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
+  do_default_prepare
+  compiler_flags
+
   # Force gcc to use our ld wrapper from binutils when calling `ld`
   CFLAGS="$CFLAGS -B$(pkg_path_for binutils)/bin/"
   build_line "Updating CFLAGS=$CFLAGS"
@@ -40,5 +52,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/binutils)
+  pkg_build_deps=(lilian/binutils)
 fi

@@ -1,5 +1,5 @@
 pkg_name=tcl
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=8.6.4
 pkg_license=('custom')
 pkg_description="Tool Command Language -- A dynamic programming language."
@@ -8,8 +8,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://downloads.sourceforge.net/sourceforge/${pkg_name}/${pkg_name}${pkg_version}-src.tar.gz
 pkg_shasum=9e6ed94c981c1d0c5f5fefb8112d06c6bf4d050a7327e95e71d417c416519c8d
 pkg_dirname=${pkg_name}${pkg_version}
-pkg_deps=(core/glibc core/gcc-libs core/zlib)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/sed)
+pkg_deps=(core/glibc core/gcc-libs lilian/zlib)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -77,5 +77,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/coreutils core/sed core/diffutils core/make core/patch)
+  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch)
 fi

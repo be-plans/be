@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=gox
 pkg_version=master
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

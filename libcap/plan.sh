@@ -1,12 +1,12 @@
 pkg_name=libcap
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=2.24
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2')
 pkg_source=https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=cee4568f78dc851d726fc93f25f4ed91cc223b1fe8259daa4a77158d174e6c65
 pkg_deps=(core/glibc core/attr)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/linux-headers core/perl)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc core/linux-headers core/perl)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -35,5 +35,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/linux-headers)
+  pkg_build_deps=(lilian/gcc core/linux-headers)
 fi

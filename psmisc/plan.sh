@@ -1,12 +1,12 @@
 pkg_name=psmisc
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=22.21
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gpl')
 pkg_source=http://downloads.sourceforge.net/psmisc/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=97323cad619210845b696d7d722c383852b2acb5c49b5b0852c4f29c77a8145a
-pkg_deps=(core/glibc core/ncurses)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc)
+pkg_deps=(core/glibc lilian/ncurses)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 
 do_prepare() {
@@ -25,5 +25,5 @@ do_prepare() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc)
+  pkg_build_deps=(lilian/gcc)
 fi

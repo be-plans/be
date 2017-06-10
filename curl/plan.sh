@@ -1,5 +1,5 @@
 pkg_name=curl
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=7.51.0
 pkg_description="curl is an open source command line tool and library for
   transferring data with URL syntax."
@@ -11,13 +11,13 @@ pkg_shasum=65b5216a6fbfa72f547eb7706ca5902d7400db9868269017a8888aa91d87977c
 pkg_deps=(
   core/cacerts
   core/glibc
-  core/openssl
-  core/zlib
+  lilian/openssl 
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/coreutils
-  core/gcc
-  core/make
+  lilian/coreutils
+  lilian/gcc
+  lilian/make
   core/perl
 )
 pkg_bin_dirs=(bin)

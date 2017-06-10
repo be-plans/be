@@ -1,6 +1,6 @@
 pkg_name=libsodium
 pkg_distname=$pkg_name
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.0.11
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('libsodium')
@@ -8,6 +8,6 @@ pkg_source=https://download.libsodium.org/libsodium/releases/${pkg_name}-${pkg_v
 pkg_shasum=a14549db3c49f6ae2170cbbf4664bd48ace50681045e8dbea7c8d9fb96f9c765
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(core/glibc)
-pkg_build_deps=(core/autoconf core/automake core/diffutils core/patch core/make core/gcc core/sed)
+pkg_build_deps=(core/autoconf core/automake lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

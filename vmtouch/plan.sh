@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=vmtouch
 pkg_version=1.1.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -8,7 +8,7 @@ pkg_upstream_url=https://hoytech.com/vmtouch/
 pkg_source="https://github.com/hoytech/vmtouch/archive/v${pkg_version}.tar.gz"
 pkg_shasum=1ba2a12aabed977894ce3a272b2fa8ed6ddfec7a720d7686e074f9e756104796
 pkg_deps=(core/glibc)
-pkg_build_deps=(core/gcc core/make core/perl)
+pkg_build_deps=(lilian/gcc lilian/make core/perl)
 pkg_bin_dirs=(bin)
 
 do_build () {

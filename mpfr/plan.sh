@@ -1,12 +1,15 @@
 pkg_name=mpfr
-pkg_origin=core
-pkg_version=3.1.4
+pkg_origin=lilian
+pkg_version=3.1.5
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('lgpl')
 pkg_source=http://www.mpfr.org/${pkg_name}-${pkg_version}/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=761413b16d749c53e2bfd2b1dfaa3b027b0e793e404b90b5fbaeef60af6517f5
-pkg_deps=(core/glibc core/gmp)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/binutils)
+pkg_shasum=015fde82b3979fbe5f83501986d328331ba8ddf008c1ff3da3c238f49ca062bc
+pkg_deps=(core/glibc lilian/gmp)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/binutils
+)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
@@ -38,5 +41,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/binutils)
+  pkg_build_deps=(lilian/binutils)
 fi

@@ -1,14 +1,27 @@
 pkg_name=automake
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.15
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2+')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=9908c75aabd49d13661d6dcb1bc382252d22cc77bf733a2d55e87f2aa2db8636
 pkg_deps=(core/perl)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/autoconf)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc core/autoconf)
 pkg_bin_dirs=(bin)
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
+  export CFLAGS="${CFLAGS} -std=c11 ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
+do_prepare() {
+  do_default_prepare
+  compiler_flags
+}
 
 # ----------------------------------------------------------------------------
 # **NOTICE:** What follows are implementation details required for building a
@@ -18,5 +31,5 @@ pkg_bin_dirs=(bin)
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/coreutils core/diffutils core/autoconf)
+  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/diffutils core/autoconf)
 fi

@@ -1,6 +1,6 @@
 pkg_name=scaffolding-go
 pkg_description="Scaffolding for Go Applications"
-pkg_origin=core
+pkg_origin=lilian
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_version="0.1.0"
 pkg_license=('Apache-2.0')
@@ -10,7 +10,7 @@ pkg_deps=(
   ${pkg_deps[@]}
   core/go
   core/git
-  core/gcc
-  core/make
+  lilian/gcc
+  lilian/make
 )
 pkg_scaffolding=core/scaffolding-base

@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=krb5
 pkg_version=1.14.3
 pkg_description="Kerberos is a network authentication protocol. It is designed
@@ -15,9 +15,9 @@ pkg_deps=(
 pkg_build_deps=(
   core/bison
   core/busybox
-  core/gcc
-  core/m4
-  core/make
+  lilian/gcc
+  lilian/m4
+  lilian/make
   core/perl
 )
 pkg_bin_dirs=(bin sbin)

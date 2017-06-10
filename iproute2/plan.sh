@@ -1,5 +1,5 @@
 pkg_name=iproute2
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=4.8.0
 pkg_source=https://www.kernel.org/pub/linux/utils/net/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=a30959c8421bc8ef42719bed41d14e1d7cfdbad80d7d70c5c42ad31f2c2cb389
@@ -12,11 +12,11 @@ pkg_lib_dirs=(lib)
 pkg_build_deps=(
   core/bison
   core/flex
-  core/gcc
+  lilian/gcc
   core/iptables
-  core/m4
-  core/make
-  core/pkg-config
+  lilian/m4
+  lilian/make
+  lilian/pkg-config
 )
 pkg_deps=(core/glibc)
 

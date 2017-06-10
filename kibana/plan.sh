@@ -1,6 +1,6 @@
 pkg_name=kibana
 pkg_version=4.6.1
-pkg_origin=core
+pkg_origin=lilian
 pkg_license=('Apache-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Kibana is a browser based analytics and search dashboard for Elasticsearch."
@@ -11,10 +11,10 @@ pkg_filename=${pkg_name}-${pkg_version}.tar.gz
 pkg_deps=(core/node)
 pkg_build_deps=(
   core/cacerts
-  core/coreutils
-  core/gcc
+  lilian/coreutils
+  lilian/gcc
   core/git
-  core/make
+  lilian/make
   core/node
   core/python2
 )

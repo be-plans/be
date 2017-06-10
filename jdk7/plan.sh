@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_name=jdk7
 pkg_version=7u80

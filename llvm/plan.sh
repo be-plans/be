@@ -1,5 +1,5 @@
 pkg_name=llvm
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=3.6.2
 pkg_license=('NCSA')
 pkg_description="Next-gen compiler infrastructure"
@@ -10,16 +10,16 @@ pkg_source=http://llvm.org/releases/${pkg_version}/${pkg_name}-${pkg_version}.sr
 pkg_shasum=f60dc158bfda6822de167e87275848969f0558b3134892ff54fced87e4667b94
 pkg_build_deps=(
   core/cmake
-  core/coreutils
-  core/diffutils
-  core/gcc
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
   core/ninja
   core/python2
 )
 pkg_deps=(
   core/gcc-libs
   core/glibc
-  core/zlib
+  lilian/zlib
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

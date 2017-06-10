@@ -1,6 +1,6 @@
 pkg_name=git
 pkg_version=2.10.0
-pkg_origin=core
+pkg_origin=lilian
 pkg_description="Git is a free and open source distributed version control
   system designed to handle everything from small to very large projects with
   speed and efficiency."
@@ -13,15 +13,15 @@ pkg_shasum=207cfce8cc0a36497abb66236817ef449a45f6ff9141f586bbe2aafd7bc3d90b
 pkg_deps=(
   core/cacerts
   core/curl
-  core/expat
+  lilian/expat
   core/gettext
   core/gcc-libs
   core/glibc
   core/openssh
   core/perl
-  core/zlib
+  lilian/zlib
 )
-pkg_build_deps=(core/make core/gcc)
+pkg_build_deps=(lilian/make lilian/gcc)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 

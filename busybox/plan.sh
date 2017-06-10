@@ -1,6 +1,6 @@
 pkg_name=busybox
 pkg_distname=$pkg_name
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.24.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2')
@@ -11,23 +11,23 @@ pkg_deps=(core/glibc)
 pkg_build_deps=(
   core/bash
   core/bison
-  core/coreutils
-  core/diffutils
+  lilian/coreutils
+  lilian/diffutils
   core/findutils
   core/flex
   core/gawk
-  core/gcc
+  lilian/gcc
   core/gettext
   core/grep
   core/gzip
   core/libtool
-  core/make
-  core/patch
-  core/sed
+  lilian/make
+  lilian/patch
+  lilian/sed
   core/texinfo
   core/util-linux
   core/wget
-  core/xz
+  lilian/xz
 )
 
 pkg_bin_dirs=(bin)

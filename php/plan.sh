@@ -1,6 +1,6 @@
 pkg_name=php
 pkg_distname=php
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=7.1.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('PHP-3.01')
@@ -11,19 +11,19 @@ pkg_filename=${pkg_distname}-${pkg_version}.tar.bz2
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_shasum=39bf697836e2760b3a44ea322e9e5f1f5b1f07abeb0111f6495eff7538e25805
 pkg_deps=(
-  core/coreutils
+  lilian/coreutils
   core/curl
   core/glibc
   core/libxml2
   core/libjpeg-turbo
   core/libpng
-  core/openssl
-  core/zlib
+  lilian/openssl 
+  lilian/zlib
 )
 pkg_build_deps=(
   core/bison2
-  core/gcc
-  core/make
+  lilian/gcc
+  lilian/make
   core/re2c
 )
 pkg_bin_dirs=(bin sbin)

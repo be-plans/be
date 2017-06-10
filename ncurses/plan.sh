@@ -1,5 +1,5 @@
 pkg_name=ncurses
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=6.0
 pkg_description="The ncurses (new curses) library"
 pkg_upstream_url=https://www.gnu.org/software/ncurses/
@@ -8,7 +8,7 @@ pkg_license=('ncurses')
 pkg_source=http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=f551c24b30ce8bfb6e96d9f59b42fbea30fa3a6123384172f9e7284bcf647260
 pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -29,11 +29,11 @@ do_build() {
     --with-normal \
     --enable-overwrite \
     --disable-rpath-hack
-  make
+  make -j$(nproc)
 }
 
 do_install() {
-  make install
+  make -j$(nproc) install
 
   # Many packages that use Ncurses will compile just fine against the widechar
   # libraries, but won't know to look for them. Create linker scripts and
@@ -68,5 +68,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc)
+  pkg_build_deps=(lilian/gcc)
 fi

@@ -1,5 +1,5 @@
 pkg_name=vde2
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=2.3.2
 pkg_source=http://downloads.sourceforge.net/vde/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=cbea9b7e03097f87a6b5e98b07890d2275848f1fe4b9fcda77b8994148bc9542
@@ -11,8 +11,8 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_build_deps=(
-  core/make
-  core/gcc
+  lilian/make
+  lilian/gcc
   core/gcc-libs
   core/glibc
   core/python2
@@ -22,7 +22,7 @@ pkg_deps=(
   core/glibc
   core/gcc-libs
   core/libpcap
-  core/openssl
+  lilian/openssl 
 )
 
 do_build() {

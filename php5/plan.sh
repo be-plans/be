@@ -1,6 +1,6 @@
 pkg_name=php5
 pkg_distname=php
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=5.6.23
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('PHP-3.01')
@@ -11,17 +11,17 @@ pkg_filename=${pkg_distname}-${pkg_version}.tar.bz2
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_shasum=facd280896d277e6f7084b60839e693d4db68318bfc92085d3dc0251fd3558c7
 pkg_deps=(
-  core/coreutils
+  lilian/coreutils
   core/curl
   core/glibc
   core/libxml2
-  core/openssl
-  core/zlib
+  lilian/openssl 
+  lilian/zlib
 )
 pkg_build_deps=(
   core/bison2
-  core/gcc
-  core/make
+  lilian/gcc
+  lilian/make
   core/re2c
 )
 pkg_bin_dirs=(bin sbin)

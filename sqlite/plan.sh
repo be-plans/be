@@ -1,6 +1,6 @@
 pkg_name=sqlite
 pkg_version=3130000
-pkg_origin=core
+pkg_origin=lilian
 pkg_license=('Public Domain')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="A software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine."
@@ -10,7 +10,7 @@ pkg_filename=${pkg_name}-autoconf-${pkg_version}.tar.gz
 pkg_dirname=${pkg_name}-autoconf-${pkg_version}
 pkg_shasum=e2797026b3310c9d08bd472f6d430058c6dd139ff9d4e30289884ccd9744086b
 pkg_deps=(core/glibc core/readline)
-pkg_build_deps=(core/gcc core/make core/coreutils)
+pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_bin_dirs=(bin)

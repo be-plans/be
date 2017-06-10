@@ -1,5 +1,5 @@
 pkg_name=aws-cli
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.10.43
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
@@ -9,10 +9,10 @@ pkg_description="The AWS Command Line Interface (CLI) is a unified tool to \
   through scripts."
 pkg_upstream_url=https://aws.amazon.com/cli/
 pkg_source=nosuchfile.tgz
-pkg_build_deps=(core/python)
+pkg_build_deps=(lilian/python)
 pkg_deps=(
   core/groff
-  core/python
+  lilian/python
 )
 pkg_bin_dirs=(bin)
 

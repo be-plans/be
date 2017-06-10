@@ -1,5 +1,5 @@
 pkg_name=dejagnu
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.5.3
 pkg_license=('GPL-2.0')
 pkg_upstream_url="https://www.gnu.org/software/dejagnu/"
@@ -7,8 +7,8 @@ pkg_description="A framework for testing other programs."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=099b8e364ca1d6248f8e1d32168c4b12677abff4253bbbb4a8ac8cdd321e3f19
-pkg_deps=(core/expect)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/sed)
+pkg_deps=(lilian/expect)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 
@@ -39,5 +39,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/coreutils core/sed core/diffutils core/make core/patch)
+  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch)
 fi

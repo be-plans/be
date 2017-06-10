@@ -1,5 +1,5 @@
 pkg_name=galera
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=25.3.19
 pkg_source=http://github.com/codership/galera/archive/release_${pkg_version}.tar.gz
 pkg_upstream_url=https://github.com/codership/galera
@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Galera WSREP plugin"
 pkg_license=('GPL-2.0')
 pkg_lib_dirs=(lib)
-pkg_build_deps=(core/scons core/python2 core/gcc core/boost core/check core/openssl)
+pkg_build_deps=(core/scons core/python2 lilian/gcc core/boost core/check lilian/openssl )
 pkg_dirname="galera-release_${pkg_version}"
 
 do_build() {

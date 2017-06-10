@@ -1,13 +1,16 @@
+pkg_origin=lilian
 pkg_name=linux-headers
-pkg_origin=core
-pkg_version=4.3
+pkg_version=4.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gplv2')
+pkg_license=('GPL-2.0')
 pkg_source=https://www.kernel.org/pub/linux/kernel/v4.x/linux-${pkg_version}.tar.xz
-pkg_shasum=4a622cc84b8a3c38d39bc17195b0c064d2b46945dfde0dae18f77b120bc9f3ae
+pkg_shasum=401d7c8fef594999a460d10c72c5a94e9c2e1022f16795ec51746b0d165418b2
 pkg_dirname=linux-$pkg_version
 pkg_deps=()
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc
+)
 pkg_include_dirs=(include)
 
 do_build() {

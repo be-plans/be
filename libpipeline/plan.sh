@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=libpipeline
 pkg_version=1.4.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -8,8 +8,8 @@ pkg_upstream_url=http://libpipeline.nongnu.org/
 pkg_source="http://download.savannah.gnu.org/releases/libpipeline/libpipeline-${pkg_version}.tar.gz"
 pkg_shasum=da46d7b20163aadb9db2faae483f734e9096a7550c84b94029abeab62dd1b9ee
 pkg_deps=(core/glibc)
-pkg_build_deps=(core/gcc   core/coreutils
-                core/make  core/diffutils)
+pkg_build_deps=(lilian/gcc   lilian/coreutils
+                lilian/make  lilian/diffutils)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 

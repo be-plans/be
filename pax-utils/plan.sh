@@ -1,6 +1,6 @@
 pkg_name=pax-utils
 pkg_version=1.1.7
-pkg_origin=core
+pkg_origin=lilian
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL')
 pkg_description="ELF related utils for ELF 32/64 binaries that can check files
@@ -14,10 +14,10 @@ pkg_deps=(
   core/libcap
 )
 pkg_build_deps=(
-  core/diffutils
-  core/gcc
-  core/make
-  core/pkg-config
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 

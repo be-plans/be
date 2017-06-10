@@ -1,5 +1,5 @@
 pkg_name=powershell
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=6.0.0-alpha.12
 pkg_license=('MIT')
 pkg_upstream_url=https://msdn.microsoft.com/powershell
@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="https://github.com/PowerShell/PowerShell"
 pkg_deps=(
   core/dotnet-core
-  core/gcc
+  lilian/gcc
   core/glibc
   core/gcc-libs
   core/icu/52.1
@@ -16,13 +16,13 @@ pkg_deps=(
   core/krb5
   core/libunwind
   core/lttng-ust
-  core/openssl
+  lilian/openssl 
 )
 pkg_build_deps=(
   core/patchelf
   core/cmake
-  core/make
-  core/patch
+  lilian/make
+  lilian/patch
   core/git
 )
 pkg_bin_dirs=(bin)

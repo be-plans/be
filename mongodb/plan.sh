@@ -1,5 +1,5 @@
 pkg_name=mongodb
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=3.2.9
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="High-performance, schema-free, document-oriented database"
@@ -9,14 +9,14 @@ pkg_shasum=25f8817762b784ce870edbeaef14141c7561eb6d7c14cd3197370c2f9790061b
 pkg_upstream_url=https://www.mongodb.com/
 pkg_filename=${pkg_name}-src-r${pkg_version}.tar.gz
 pkg_dirname=${pkg_name}-src-r${pkg_version}
-pkg_deps=(core/gcc-libs core/glibc core/openssl)
+pkg_deps=(core/gcc-libs core/glibc lilian/openssl )
 pkg_build_deps=(
-  core/coreutils
-  core/gcc
+  lilian/coreutils
+  lilian/gcc
   core/glibc
   core/python2
   core/scons
-  core/openssl
+  lilian/openssl 
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
@@ -31,8 +31,8 @@ pkg_exposes=(port)
 
 do_prepare() {
 
-    CC="$(pkg_path_for core/gcc)/bin/gcc"
-    CXX="$(pkg_path_for core/gcc)/bin/g++"
+    CC="$(pkg_path_for lilian/gcc)/bin/gcc"
+    CXX="$(pkg_path_for lilian/gcc)/bin/g++"
     export CC
     export CXX
 

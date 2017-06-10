@@ -1,5 +1,5 @@
 pkg_name=valgrind
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=3.12.0
 pkg_description="An instrumentation framework for building dynamic analysis tools"
 pkg_upstream_url="http://www.valgrind.org/"
@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="http://www.valgrind.org/downloads/valgrind-${pkg_version}.tar.bz2"
 pkg_shasum=67ca4395b2527247780f36148b084f5743a68ab0c850cb43e4a5b4b012cf76a1
 pkg_deps=(core/glibc)
-pkg_build_deps=(core/gcc core/make core/which core/diffutils core/perl)
+pkg_build_deps=(lilian/gcc lilian/make core/which lilian/diffutils core/perl)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

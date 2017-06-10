@@ -1,7 +1,7 @@
 pkg_name=prometheus
 pkg_description="Prometheus monitoring"
 pkg_upstream_url=http://prometheus.io
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.6.1
 pkg_maintainer="Lamont Lucas <lamont@fastrobot.com>"
 pkg_license=('Apache-2.0')
@@ -14,8 +14,8 @@ prom_build_dir="${prom_pkg_dir}/src/${pkg_source}"
 pkg_build_deps=(
   core/go
   core/git
-  core/gcc
-  core/make
+  lilian/gcc
+  lilian/make
 )
 
 pkg_exports=(

@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=logback
 pkg_version=1.1.8
 pkg_description="The reliable, generic, fast and flexible logging framework for Java."

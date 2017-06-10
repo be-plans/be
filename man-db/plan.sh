@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=man-db
 pkg_version=2.7.5
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -8,22 +8,22 @@ pkg_upstream_url=http://man-db.nongnu.org/
 pkg_source="http://git.savannah.gnu.org/cgit/man-db.git/snapshot/man-db-${pkg_version}.tar.gz"
 pkg_shasum=3a1af4b7f17193e45b5abdb12d935b70a7757dfe7e1a4196f6c00b500c6fca78
 pkg_deps=(
-  core/gdbm
+  lilian/gdbm
   core/glibc
   core/groff
   core/gzip
   core/libiconv
 )
 pkg_build_deps=(
-  core/coreutils
-  core/diffutils
+  lilian/coreutils
+  lilian/diffutils
   core/flex
-  core/gcc
+  lilian/gcc
   core/gettext
   core/libpipeline
-  core/make
-  core/m4
-  core/pkg-config
+  lilian/make
+  lilian/m4
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib/man-db)

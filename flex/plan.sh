@@ -1,12 +1,12 @@
 pkg_name=flex
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=2.6.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('custom')
 pkg_source=https://downloads.sourceforge.net/project/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=d39b15a856906997ced252d76e9bfe2425d7503c6ed811669665627b248e4c73
 pkg_deps=(core/glibc)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/m4 core/bison)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/m4 core/bison)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -33,5 +33,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/m4 core/coreutils core/bison)
+  pkg_build_deps=(lilian/gcc lilian/m4 lilian/coreutils core/bison)
 fi

@@ -1,5 +1,5 @@
 pkg_name=netcat-openbsd
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.105
 pkg_description="TCP/IP swiss army knife, OpenBSD variant"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -9,10 +9,10 @@ pkg_source=http://ftp.debian.org/debian/pool/main/n/${pkg_name}/${pkg_name}_${pk
 pkg_shasum=40653fe66c1516876b61b07e093d826e2a5463c5d994f1b7e6ce328f3edb211e
 pkg_deps=(core/glibc core/libbsd)
 pkg_build_deps=(
-  core/gcc
-  core/make
-  core/patch
-  core/pkg-config
+  lilian/gcc
+  lilian/make
+  lilian/patch
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 

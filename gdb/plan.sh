@@ -1,42 +1,49 @@
 pkg_name=gdb
-pkg_origin=core
-pkg_version=7.12
+pkg_origin=lilian
+pkg_version=8.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
 pkg_description="GDB, the GNU Project debugger, allows you to see what is going on 'inside' another program while it executes -- or what another program was doing at the moment it crashed."
 pkg_upstream_url="https://www.gnu.org/software/gdb/"
 pkg_source="http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz"
-pkg_shasum=834ff3c5948b30718343ea57b11cbc3235d7995c6a4f3a5cecec8c8114164f94
+pkg_shasum=f6a24ffe4917e67014ef9273eb8b547cb96a13e5ca74895b06d683b391f3f4ee
 pkg_deps=(
   core/glibc
   core/readline
-  core/zlib
-  core/xz
-  core/ncurses
-  core/expat
+  lilian/zlib
+  lilian/xz
+  lilian/ncurses
+  lilian/expat
   core/guile
-  core/bdwgc
-  core/python
+  lilian/bdwgc
+  lilian/python
 )
 pkg_build_deps=(
-  core/coreutils
-  core/pkg-config
-  core/diffutils
-  core/expect
+  lilian/coreutils
+  lilian/pkg-config
+  lilian/diffutils
+  lilian/expect
   core/dejagnu
-  core/patch
-  core/make
-  core/gcc
+  lilian/patch
+  lilian/make
+  lilian/gcc
   core/texinfo
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 
-do_prepare() {
-  export CFLAGS="${CFLAGS} -O2 -fstack-protector-strong -Wformat -Werror=format-security "
-  export CXXFLAGS="${CXXFLAGS} -O2 -fstack-protector-strong -Wformat -Werror=format-security "
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
   export CPPFLAGS="${CPPFLAGS} -Wdate-time"
   export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
+do_prepare() {
+  do_default_prepare
+  compiler_flags
 }
 
 do_build() {

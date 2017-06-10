@@ -1,6 +1,6 @@
 pkg_name=bash
 pkg_distname=$pkg_name
-pkg_origin=core
+pkg_origin=lilian
 _base_version=4.3
 pkg_version=${_base_version}.42
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -9,8 +9,8 @@ _url_base=http://ftp.gnu.org/gnu/$pkg_distname
 pkg_source=$_url_base/${pkg_distname}-${_base_version}.tar.gz
 pkg_dirname=${pkg_distname}-$_base_version
 pkg_shasum=afc687a28e0e24dc21b988fa159ff9dbcf6b7caa92ade8645cc6d5605cd024d4
-pkg_deps=(core/glibc core/ncurses core/readline)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc)
+pkg_deps=(core/glibc lilian/ncurses core/readline)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/bash bin/sh)
 
@@ -46,8 +46,18 @@ do_verify() {
   done; unset i
 }
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
+  export CFLAGS="${CFLAGS} -std=c11 ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
   do_default_prepare
+  compiler_flags
 
   # Apply all patch files to the extracted source
   for p in "${_patch_files[@]}"; do
@@ -101,5 +111,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/coreutils)
+  pkg_build_deps=(lilian/gcc lilian/coreutils)
 fi

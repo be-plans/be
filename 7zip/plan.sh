@@ -10,9 +10,23 @@ pkg_source="https://downloads.sourceforge.net/project/p7zip/p7zip/${pkg_version}
 pkg_shasum="5eb20ac0e2944f6cb9c2d51dd6c4518941c185347d4089ea89087ffdd6e2341f"
 pkg_bin_dirs=("bin")
 pkg_lib_dirs=("lib/p7zip" "lib/p7zip/Codecs")
-pkg_build_deps=("core/coreutils" "core/make" "core/gcc")
+pkg_build_deps=("lilian/coreutils" "lilian/make" "lilian/gcc")
 pkg_deps=("core/glibc" "core/gcc-libs")
 pkg_dirname="p7zip_${pkg_version}"
+
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
+  export CFLAGS="${CFLAGS} -std=c11 ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
+do_prepare() {
+  do_default_prepare
+  compiler_flags
+}
 
 do_build() {
   JOBS=$(getconf _NPROCESSORS_ONLN)

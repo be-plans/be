@@ -1,5 +1,5 @@
 pkg_name=dotnet-core-lts
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.0.5
 pkg_license=('MIT')
 pkg_upstream_url=https://www.microsoft.com/net/core
@@ -18,9 +18,9 @@ pkg_deps=(
   core/krb5
   core/libunwind
   core/lttng-ust
-  core/openssl
+  lilian/openssl 
   core/util-linux
-  core/zlib
+  lilian/zlib
 )
 pkg_build_deps=(
   core/patchelf

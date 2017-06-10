@@ -1,7 +1,7 @@
 pkg_name=graphviz
 pkg_description="Graphviz - Graph Visualization Software"
 pkg_upstream_url=http://www.graphviz.org/
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=2.38.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=("EPL-1.0")
@@ -12,9 +12,9 @@ pkg_deps=(core/glibc)
 
 pkg_build_deps=(
     core/autoconf
-    core/coreutils
-    core/gcc
-    core/make
+    lilian/coreutils
+    lilian/gcc
+    lilian/make
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

@@ -1,5 +1,5 @@
 pkg_name=mysql
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=5.7.17
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_license=('GPL-2.0')
@@ -18,27 +18,27 @@ Set the app_username and app_password at runtime to have that user created, it w
 EOF
 )
 pkg_deps=(
-  core/coreutils
+  lilian/coreutils
   core/gawk
   core/gcc-libs
   core/glibc
   core/grep
   core/inetutils
-  core/ncurses
-  core/openssl
+  lilian/ncurses
+  lilian/openssl 
   core/pcre
   core/perl
   core/procps-ng
-  core/sed
+  lilian/sed
 )
 pkg_build_deps=(
   core/bison
   core/boost159
   core/cmake
-  core/diffutils
-  core/gcc
-  core/make
-  core/patch
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/patch
 )
 pkg_svc_user="hab"
 pkg_bin_dirs=(bin)
@@ -55,12 +55,12 @@ do_build() {
   cmake . -DLOCAL_BOOST_DIR="$(pkg_path_for core/boost159)" \
           -DBOOST_INCLUDE_DIR="$(pkg_path_for core/boost159)/include" \
           -DWITH_BOOST="$(pkg_path_for core/boost159)" \
-          -DCURSES_INCLUDE_PATH="$(pkg_path_for core/ncurses)/include" \
-          -DCURSES_LIBRARY="$(pkg_path_for core/ncurses)/lib/libcurses.so" \
+          -DCURSES_INCLUDE_PATH="$(pkg_path_for lilian/ncurses)/include" \
+          -DCURSES_LIBRARY="$(pkg_path_for lilian/ncurses)/lib/libcurses.so" \
           -DWITH_SSL=yes \
-          -DOPENSSL_INCLUDE_DIR="$(pkg_path_for core/openssl)/include" \
-          -DOPENSSL_LIBRARY="$(pkg_path_for core/openssl)/lib/libssl.so" \
-          -DCRYPTO_LIBRARY="$(pkg_path_for core/openssl)/lib/libcrypto.so" \
+          -DOPENSSL_INCLUDE_DIR="$(pkg_path_for lilian/openssl )/include" \
+          -DOPENSSL_LIBRARY="$(pkg_path_for lilian/openssl )/lib/libssl.so" \
+          -DCRYPTO_LIBRARY="$(pkg_path_for lilian/openssl )/lib/libcrypto.so" \
           -DCMAKE_INSTALL_PREFIX="$pkg_prefix" \
           -DWITH_EMBEDDED_SERVER=no \
           -DWITH_EMBEDDED_SHARED_LIBRARY=no

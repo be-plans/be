@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=relx
 pkg_version=3.19.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

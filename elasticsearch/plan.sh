@@ -1,5 +1,5 @@
 pkg_name=elasticsearch
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=2.4.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Open Source, Distributed, RESTful Search Engine"

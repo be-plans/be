@@ -1,5 +1,5 @@
 pkg_name=ruby
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=2.4.1
 pkg_description="A dynamic, open source programming language with a focus on \
   simplicity and productivity. It has an elegant syntax that is natural to \
@@ -9,8 +9,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://cache.ruby-lang.org/pub/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_upstream_url=https://www.ruby-lang.org/en/
 pkg_shasum=a330e10d5cb5e53b3a0078326c5731888bb55e32c4abfeb27d9e7f8e5d000250
-pkg_deps=(core/glibc core/ncurses core/zlib core/openssl core/libyaml core/libffi core/readline)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/sed)
+pkg_deps=(core/glibc lilian/ncurses lilian/zlib lilian/openssl  core/libyaml core/libffi core/readline)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_bin_dirs=(bin)
@@ -26,7 +26,7 @@ do_build() {
     --prefix="$pkg_prefix" \
     --enable-shared \
     --disable-install-doc \
-    --with-openssl-dir="$(pkg_path_for core/openssl)" \
+    --with-openssl-dir="$(pkg_path_for lilian/openssl )" \
     --with-libyaml-dir="$(pkg_path_for core/libyaml)"
 
   make

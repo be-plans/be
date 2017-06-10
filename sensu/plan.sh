@@ -1,5 +1,5 @@
 pkg_name=sensu
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=0.26.5
 pkg_source=http://nothing.to.download.from.com
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -10,8 +10,8 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_svc_user=root
 pkg_svc_group=${pkg_svc_user}
-pkg_build_deps=(core/make core/gcc core/gcc-libs)
-pkg_deps=(core/ruby core/bundler core/coreutils)
+pkg_build_deps=(lilian/make lilian/gcc core/gcc-libs)
+pkg_deps=(core/ruby core/bundler lilian/coreutils)
 pkg_binds=(
   [rabbitmq]="port"
   [redis]="port"
@@ -32,7 +32,7 @@ do_unpack() {
 
 do_install() {
   cp -R . "$pkg_prefix/"
-  fix_interpreter "$pkg_prefix/bin/*" core/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/*" lilian/coreutils bin/env
 }
 
 

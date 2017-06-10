@@ -1,5 +1,5 @@
 pkg_name=gradle
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=3.5
 pkg_source=https://services.gradle.org/distributions/${pkg_name}-${pkg_version}-bin.zip
 pkg_shasum=0b7450798c190ff76b9f9a3d02e18b33d94553f708ebc08ebe09bdf99111d110
@@ -9,8 +9,8 @@ pkg_upstream_url=http://gradle.org
 pkg_license=('Apache-2.0')
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
-pkg_build_deps=(core/make core/gcc core/jdk8 core/patchelf)
-pkg_deps=(core/glibc core/jre8 core/coreutils core/bash-static core/gcc-libs core/sed)
+pkg_build_deps=(lilian/make lilian/gcc core/jdk8 core/patchelf)
+pkg_deps=(core/glibc core/jre8 lilian/coreutils core/bash-static core/gcc-libs lilian/sed)
 
 do_build() {
   mkdir patching
@@ -21,7 +21,7 @@ do_build() {
   mv native-platform-linux-amd64-0.14.jar ../lib/
   popd
   rm -rf patching
-  fix_interpreter bin/gradle core/coreutils bin/env
+  fix_interpreter bin/gradle lilian/coreutils bin/env
 }
 
 do_install() {

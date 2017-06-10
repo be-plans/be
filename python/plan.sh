@@ -1,32 +1,32 @@
+pkg_origin=lilian
 pkg_name=python
 pkg_distname=Python
-pkg_version=3.6.0
-pkg_origin=core
+pkg_version=3.6.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Python-2.0')
 pkg_description="Python is a programming language that lets you work quickly \
   and integrate systems more effectively."
 pkg_upstream_url="https://www.python.org"
 pkg_dirname=${pkg_distname}-${pkg_version}
-pkg_source=https://www.python.org/ftp/python/${pkg_version}/${pkg_dirname}.tgz
-pkg_shasum=aa472515800d25a3739833f76ca3735d9f4b2fe77c3cb21f69275e0cce30cb2b
+pkg_source=https://www.python.org/ftp/python/${pkg_version}/${pkg_dirname}.tar.xz
+pkg_shasum=a01810ddfcec216bcdb357a84bfaafdfaa0ca42bbdaa4cb7ff74f5a9961e4041
 pkg_deps=(
-  core/bzip2
+  lilian/bzip2
   core/gcc-libs
-  core/gdbm
+  lilian/gdbm
   core/glibc
-  core/ncurses
-  core/openssl
+  lilian/ncurses
+  lilian/openssl 
   core/readline
   core/sqlite
-  core/zlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/coreutils
-  core/diffutils
-  core/gcc
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
   core/linux-headers
-  core/make
+  lilian/make
   core/util-linux
 )
 pkg_lib_dirs=(lib)
@@ -34,7 +34,19 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_interpreters=(bin/python bin/python3 bin/python3.5)
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
+  export CFLAGS="${CFLAGS} -std=c11 ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
+  do_default_prepare
+  compiler_flags
+
   sed -i.bak 's/#zlib/zlib/' Modules/Setup.dist
   sed -i -re "/(SSL=|_ssl|-DUSE_SSL|-lssl).*/ s|^#||" Modules/Setup.dist
 }
@@ -45,7 +57,7 @@ do_build() {
               --enable-loadable-sqlite-extensions \
               --enable-shared \
               --with-ensurepip
-  make
+  make -j$(nproc)
 }
 
 do_check() {

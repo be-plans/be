@@ -1,13 +1,13 @@
 pkg_name=wget
 pkg_distname=$pkg_name
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.18
 pkg_license=('gplv3+')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.tar.xz
 pkg_shasum=b5b55b75726c04c06fe253daec9329a6f1a3c0c1878e3ea76ebfebc139ea9cc1
-pkg_deps=(core/glibc core/libidn core/zlib core/openssl core/cacerts)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/sed core/grep core/pkg-config)
+pkg_deps=(core/glibc core/libidn lilian/zlib lilian/openssl  core/cacerts)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed core/grep lilian/pkg-config)
 pkg_bin_dirs=(bin)
 
 do_prepare() {
@@ -49,5 +49,5 @@ _wget_common_prepare() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/pkg-config core/coreutils core/sed core/grep core/diffutils core/make core/patch)
+  pkg_build_deps=(lilian/gcc lilian/pkg-config lilian/coreutils lilian/sed core/grep lilian/diffutils lilian/make lilian/patch)
 fi

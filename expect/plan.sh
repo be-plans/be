@@ -1,5 +1,5 @@
 pkg_name=expect
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=5.45
 pkg_license=('custom')
 pkg_description="A tool for automating interactive applications"
@@ -8,8 +8,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://downloads.sourceforge.net/project/$pkg_name/Expect/${pkg_version}/${pkg_name}${pkg_version}.tar.gz
 pkg_shasum=b28dca90428a3b30e650525cdc16255d76bb6ccd65d448be53e620d95d5cc040
 pkg_dirname=${pkg_name}${pkg_version}
-pkg_deps=(core/glibc core/tcl core/coreutils)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc)
+pkg_deps=(core/glibc core/tcl lilian/coreutils)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -52,5 +52,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/coreutils core/diffutils core/make core/patch)
+  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/diffutils lilian/make lilian/patch)
 fi

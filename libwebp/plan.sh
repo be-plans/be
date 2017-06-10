@@ -1,6 +1,6 @@
 pkg_name=libwebp
 pkg_version=0.5.1
-pkg_origin=core
+pkg_origin=lilian
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('WebM') # Custom BSD3-like license, see: https://www.webmproject.org/license/software/
 pkg_description="WebP codec: library to encode and decode images in WebP format."
@@ -14,13 +14,13 @@ pkg_deps=(
   core/jbigkit
   core/libpng
   core/libtiff
-  core/xz
-  core/zlib
+  lilian/xz
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/gcc
+  lilian/gcc
   core/file
-  core/make
+  lilian/make
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

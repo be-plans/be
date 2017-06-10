@@ -1,14 +1,14 @@
 pkg_name=unzip
 pkg_distname=$pkg_name
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=6.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('zlib')
 pkg_source=http://downloads.sourceforge.net/infozip/unzip60.tar.gz
 pkg_shasum=036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
 pkg_dirname=unzip60
-pkg_deps=(core/glibc core/bzip2)
-pkg_build_deps=(core/make core/gcc)
+pkg_deps=(core/glibc lilian/bzip2)
+pkg_build_deps=(lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 
 do_build() {
@@ -33,5 +33,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/pkg-config core/coreutils core/sed core/grep core/diffutils core/make core/patch)
+  pkg_build_deps=(lilian/gcc lilian/pkg-config lilian/coreutils lilian/sed core/grep lilian/diffutils lilian/make lilian/patch)
 fi

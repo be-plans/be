@@ -1,9 +1,9 @@
 pkg_name=drush
-pkg_origin=core
+pkg_origin=lilian
 pkg_version="8"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2+')
-pkg_deps=(core/bash core/coreutils core/php core/which)
+pkg_deps=(core/bash lilian/coreutils core/php core/which)
 pkg_build_deps=(core/composer)
 pkg_bin_dirs=(bin/vendor/bin)
 pkg_upstream_url="http://www.drush.org/en/master/"
@@ -27,7 +27,7 @@ do_build() {
 
 do_install() {
     cp -r "$HOME/.composer/"* "$pkg_prefix/bin/"
-    fix_interpreter "$pkg_prefix/bin/vendor/bin/drush" core/coreutils bin/env
-    fix_interpreter "$pkg_prefix/bin/vendor/bin/drush.launcher" core/coreutils bin/env
-    fix_interpreter "$pkg_prefix/bin/vendor/bin/drush.php" core/coreutils bin/env
+    fix_interpreter "$pkg_prefix/bin/vendor/bin/drush" lilian/coreutils bin/env
+    fix_interpreter "$pkg_prefix/bin/vendor/bin/drush.launcher" lilian/coreutils bin/env
+    fix_interpreter "$pkg_prefix/bin/vendor/bin/drush.php" lilian/coreutils bin/env
 }

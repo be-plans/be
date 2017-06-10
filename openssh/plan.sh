@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=openssh
 pkg_version=7.2p2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -10,8 +10,8 @@ pkg_upstream_url=https://www.openssh.com/
 pkg_bin_dirs=(bin sbin libexec)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
-pkg_deps=(core/glibc core/openssl core/zlib)
-pkg_build_deps=(core/coreutils core/gcc core/make)
+pkg_deps=(core/glibc lilian/openssl  lilian/zlib)
+pkg_build_deps=(lilian/coreutils lilian/gcc lilian/make)
 
 do_build() {
   ./configure --prefix="${pkg_prefix}" \

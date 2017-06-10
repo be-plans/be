@@ -1,5 +1,5 @@
 pkg_name=aspnet-sample
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=0.1.9
 pkg_source=https://github.com/mwrock/habitat-${pkg_name}/archive/v${pkg_version}.tar.gz
 pkg_shasum=50ffcbe1c0b49acb84365c2157445047b360345c7361e67827093f962852de4d

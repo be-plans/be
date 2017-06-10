@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_name=jruby1
 pkg_version=1.7.25
@@ -9,13 +9,13 @@ pkg_shasum=4e17872bc38cf6c0ff238a365d2046e36e3149d0d381df2198fd949902602c9c
 pkg_license=('EPL 1.0' 'GPL-2.0' 'LGPL-2.1')
 pkg_deps=(
   core/bash
-  core/coreutils
+  lilian/coreutils
   core/glibc
   core/jre8
 )
 pkg_build_deps=(
   core/jdk8
-  core/make
+  lilian/make
   core/which
 )
 pkg_bin_dirs=(bin)
@@ -31,7 +31,7 @@ do_build() {
 
 do_install() {
   cp -R ./* "$pkg_prefix/"
-  fix_interpreter "$pkg_prefix/bin/*" core/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/*" lilian/coreutils bin/env
 
   # Remove *.so for other platforms...they cause `do_strip()' to fail
   # with `Unable to recognise the format' errors

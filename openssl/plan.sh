@@ -1,16 +1,16 @@
 pkg_name=openssl
 pkg_distname=$pkg_name
-pkg_origin=core
-pkg_version=1.0.2j
+pkg_origin=lilian
+pkg_version=1.0.2l
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="OpenSSL is an open source project that provides a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. It is also a general-purpose cryptography library."
 pkg_license=('OpenSSL')
 pkg_upstream_url="https://www.openssl.org"
 pkg_source=https://www.openssl.org/source/${pkg_distname}-${pkg_version}.tar.gz
-pkg_shasum=e7aff292be21c259c6af26469c7a9b3ba26e9abaaffd325e3dccc9785256c431
+pkg_shasum=ce07195b659e75f4e1db43552860070061f156a98bb37b672b101ba6e3ddf30c
 pkg_dirname="${pkg_distname}-${pkg_version}"
-pkg_deps=(core/glibc core/zlib core/cacerts)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/sed core/grep core/perl)
+pkg_deps=(core/glibc lilian/zlib core/cacerts)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed core/grep core/perl)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -32,8 +32,18 @@ _common_prepare() {
   done
 }
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
   _common_prepare
+  compiler_flags
 
   export BUILD_CC=gcc
   build_line "Setting BUILD_CC=$BUILD_CC"
@@ -56,7 +66,7 @@ do_build() {
     $CFLAGS \
     $LDFLAGS
   env CC= make depend
-  make CC="$BUILD_CC"
+  make -j$(nproc) CC="$BUILD_CC"
 }
 
 do_check() {
@@ -91,5 +101,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/coreutils core/sed core/grep core/perl core/diffutils core/make core/patch)
+  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed core/grep core/perl lilian/diffutils lilian/make lilian/patch)
 fi

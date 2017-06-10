@@ -1,7 +1,7 @@
 pkg_name=bundler
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_version=1.14.6
-pkg_origin=core
+pkg_origin=lilian
 pkg_license=('bundler')
 pkg_description="The Ruby language dependency manager"
 pkg_upstream_url=https://bundler.io/

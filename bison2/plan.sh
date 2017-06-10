@@ -1,6 +1,6 @@
 pkg_name=bison2
 pkg_distname=bison
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=2.7.1
 pkg_description="A parser generator that converts an annotated context-free grammar into a parser"
 pkg_upstream_url=https://www.gnu.org/software/bison/
@@ -10,8 +10,8 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.t
 pkg_filename=${pkg_distname}-${pkg_version}.tar.xz
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_shasum=b409adcbf245baadb68d2f66accf6fdca5e282cafec1b865f4b5e963ba8ea7fb
-pkg_deps=(core/glibc core/m4)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/perl)
+pkg_deps=(core/glibc lilian/m4)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc core/perl)
 pkg_bin_dirs=(bin)
 
 do_check() {

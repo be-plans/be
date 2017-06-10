@@ -1,12 +1,12 @@
 pkg_name=procps-ng
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=3.3.11
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gpl' 'lgpl')
 pkg_source=https://downloads.sourceforge.net/project/${pkg_name}/Production/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=e9493169a2d2adc0bc045538707310c8e877b385e4e296143b62607d2bb044ed
-pkg_deps=(core/glibc core/ncurses)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc)
+pkg_deps=(core/glibc lilian/ncurses)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -33,5 +33,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc)
+  pkg_build_deps=(lilian/gcc)
 fi

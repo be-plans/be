@@ -1,5 +1,5 @@
 pkg_name=mongo-tools
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=3.2.10
 pkg_description="MongoDB Tools"
 pkg_upstream_url=https://github.com/mongodb/mongo-tools
@@ -10,7 +10,7 @@ pkg_shasum=98a5ff97c2744a3a20e5c88b88cfa02d5b98cf6f7701d6ce9214c178f90af4c4
 pkg_dirname=${pkg_name}-r${pkg_version}
 pkg_filename=${pkg_name}-${pkg_version}.tar.gz
 pkg_deps=(core/glibc)
-pkg_build_deps=(core/go core/coreutils core/gcc core/make)
+pkg_build_deps=(core/go lilian/coreutils lilian/gcc lilian/make)
 pkg_bin_dirs=(bin)
 
 do_build() {

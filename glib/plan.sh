@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=glib
 pkg_version='2.50.1'
 pkg_description="$(cat << EOF
@@ -19,13 +19,13 @@ pkg_deps=(
   core/pcre
 )
 pkg_build_deps=(
-  core/make
+  lilian/make
   core/glibc
-  core/pkg-config
-  core/gcc
+  lilian/pkg-config
+  lilian/gcc
   core/gettext
-  core/zlib
-  core/python
+  lilian/zlib
+  lilian/python
   core/util-linux
 )
 pkg_bin_dirs=(bin)

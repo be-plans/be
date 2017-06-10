@@ -1,5 +1,5 @@
 pkg_name=openjpeg
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=2.1.2
 pkg_description="An open source JPEG 2000 codec"
 pkg_upstream_url=http://www.openjpeg.org/
@@ -12,13 +12,13 @@ pkg_deps=(
   core/lcms2
   core/libpng
   core/libtiff
-  core/zlib
+  lilian/zlib
 )
 
 pkg_build_deps=(
   core/cmake
-  core/gcc
-  core/make
+  lilian/gcc
+  lilian/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -37,8 +37,8 @@ do_build() {
     -DPNG_LIBRARY="$(pkg_path_for core/libpng)/lib/libpng.so" \
     -DTIFF_INCLUDE_DIR="$(pkg_path_for core/libtiff)/include" \
     -DTIFF_LIBRARY="$(pkg_path_for core/libtiff)/lib/libtiff.so" \
-    -DZLIB_INCLUDE_DIR="$(pkg_path_for core/zlib)/include" \
-    -DZLIB_LIBRARY="$(pkg_path_for core/zlib)/lib/libz.so" \
+    -DZLIB_INCLUDE_DIR="$(pkg_path_for lilian/zlib)/include" \
+    -DZLIB_LIBRARY="$(pkg_path_for lilian/zlib)/lib/libz.so" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="$pkg_prefix"
   make

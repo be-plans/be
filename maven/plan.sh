@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=maven
 pkg_version=3.3.9
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -9,7 +9,7 @@ pkg_source=http://apache.cs.utah.edu/maven/maven-3/${pkg_version}/source/apache-
 pkg_shasum=9150475f509b23518e67a220a9d3a821648ab27550f4ece4d07b92b1fc5611bc
 pkg_dirname="apache-$pkg_name-$pkg_version"
 pkg_deps=(
-  core/coreutils
+  lilian/coreutils
   core/jdk8
   core/which
 )

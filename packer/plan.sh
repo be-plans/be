@@ -1,5 +1,5 @@
 pkg_name=packer
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=0.12.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MPL2')

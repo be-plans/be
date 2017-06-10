@@ -1,19 +1,32 @@
+pkg_origin=lilian
 pkg_name=zlib
 pkg_distname=$pkg_name
-pkg_origin=core
-pkg_version=1.2.8
+pkg_version=1.2.11
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('zlib')
 pkg_source=http://zlib.net/fossils/${pkg_distname}-${pkg_version}.tar.gz
-pkg_shasum=36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d
+pkg_shasum=c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(core/glibc)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc
+)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
+  export CFLAGS="${CFLAGS} -std=c11 ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
   do_default_prepare
+  compiler_flags
 
   # Add explicit linker instructions as the binutils we are using may have its
   # own dynamic linker defaults. This is necessary because this Plan is built

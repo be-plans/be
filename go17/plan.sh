@@ -1,5 +1,5 @@
 pkg_name=go17
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.7.5
 pkg_description="Go is an open source programming language that makes it easy to
   build simple, reliable, and efficient software."
@@ -10,7 +10,7 @@ pkg_source=https://storage.googleapis.com/golang/go${pkg_version}.src.tar.gz
 pkg_shasum=4e834513a2079f8cbbd357502cccaac9507fd00a1efe672375798858ff291815
 pkg_dirname=go
 pkg_deps=(core/glibc core/iana-etc core/cacerts)
-pkg_build_deps=(core/coreutils core/inetutils core/bash core/patch core/gcc core/go14 core/perl)
+pkg_build_deps=(lilian/coreutils core/inetutils core/bash lilian/patch lilian/gcc core/go14 core/perl)
 pkg_bin_dirs=(bin)
 
 do_prepare() {

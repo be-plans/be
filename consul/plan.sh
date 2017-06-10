@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=consul
 pkg_version=0.8.3
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'

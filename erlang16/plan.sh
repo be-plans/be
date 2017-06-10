@@ -1,5 +1,5 @@
 pkg_name=erlang16
-pkg_origin=core
+pkg_origin=lilian
 pkg_version="R16B03-1"
 pkg_description="A programming language for massively scalable soft real-time systems."
 pkg_upstream_url="http://www.erlang.org/"
@@ -9,8 +9,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://www.erlang.org/download/otp_src_${pkg_version}.tar.gz
 pkg_filename=otp_src_${pkg_version}.tar.gz
 pkg_shasum=17ce53459bc5ceb34fc2da412e15ac8c23835a15fbd84e62c8d1852704747ee7
-pkg_deps=(core/glibc core/zlib core/ncurses core/openssl core/sed)
-pkg_build_deps=(core/coreutils core/gcc core/make core/openssl core/perl core/m4)
+pkg_deps=(core/glibc lilian/zlib lilian/ncurses lilian/openssl  lilian/sed)
+pkg_build_deps=(lilian/coreutils lilian/gcc lilian/make lilian/openssl  core/perl lilian/m4)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

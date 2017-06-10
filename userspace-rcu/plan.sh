@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=userspace-rcu
 pkg_version=0.9.2
 pkg_description="liburcu is a LGPLv2.1 userspace RCU (read-copy-update) library.
@@ -14,8 +14,8 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  core/gcc
-  core/make
+  lilian/gcc
+  lilian/make
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

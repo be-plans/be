@@ -1,6 +1,6 @@
 pkg_name=bzip2
 pkg_distname=$pkg_name
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.0.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('bzip2')
@@ -8,7 +8,7 @@ pkg_source=http://www.bzip.org/$pkg_version/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=a2848f34fcd5d6cf47def00461fcb528a0484d8edef8208d6d2e2909dc61d9cd
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(core/glibc)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -21,7 +21,18 @@ _common_prepare() {
   sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
 }
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
+  export CFLAGS="${CFLAGS} -std=c11 ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
+  do_default_prepare
+  compiler_flags
   _common_prepare
 
   export CC=gcc
@@ -29,8 +40,8 @@ do_prepare() {
 }
 
 do_build() {
-  make -f Makefile-libbz2_so PREFIX="$pkg_prefix" CC="$CC"
-  make bzip2 bzip2recover CC="$CC" LDFLAGS="$LDFLAGS"
+  make -j$(nproc) -f Makefile-libbz2_so PREFIX="$pkg_prefix" CC="$CC"
+  make -j$(nproc) bzip2 bzip2recover CC="$CC" LDFLAGS="$LDFLAGS"
 }
 
 do_check() {
@@ -41,7 +52,7 @@ do_install() {
   local maj=$(echo $pkg_version | cut -d "." -f 1)
   local maj_min=$(echo $pkg_version | cut -d "." -f 1-2)
 
-  make install PREFIX="$pkg_prefix"
+  make -j$(nproc) install PREFIX="$pkg_prefix"
 
   # Replace some hard links with symlinks
   rm -fv $pkg_prefix/bin/{bunzip2,bzcat}
@@ -64,5 +75,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc)
+  pkg_build_deps=(lilian/gcc)
 fi

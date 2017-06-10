@@ -1,5 +1,5 @@
 pkg_name=qemu
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=2.7.0
 pkg_source=http://wiki.qemu-project.org/download/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=326e739506ba690daf69fc17bd3913a6c313d9928d743bd8eddb82f403f81e53
@@ -13,15 +13,15 @@ pkg_include_dirs=(include)
 pkg_build_deps=(
   core/autoconf
   core/automake
-  core/diffutils
-  core/gcc
+  lilian/diffutils
+  lilian/gcc
   core/libtool
-  core/make
-  core/m4
-  core/pkg-config
+  lilian/make
+  lilian/m4
+  lilian/pkg-config
 )
 pkg_deps=(
-  core/bzip2
+  lilian/bzip2
   core/curl
   core/gcc-libs
   core/glib
@@ -30,14 +30,14 @@ pkg_deps=(
   core/libaio
   core/libcap-ng
   core/lzo
-  core/ncurses
+  lilian/ncurses
   core/pcre
   core/pixman
   core/python2
   core/snappy
   core/util-linux
   core/vde2
-  core/zlib
+  lilian/zlib
 )
 
 do_build() {

@@ -1,5 +1,5 @@
 pkg_name=grub
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=2.02
 pkg_source=ftp://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -11,24 +11,24 @@ pkg_bin_dirs=(bin sbin)
 pkg_build_deps=(
   core/autoconf
   core/automake
-  core/binutils
+  lilian/binutils
   core/bison
   core/cacerts
-  core/diffutils
+  lilian/diffutils
   core/dosfstools
   core/flex
   core/freetype
-  core/gcc
+  lilian/gcc
   core/gettext
   core/git
-  core/m4
-  core/make
-  core/python
+  lilian/m4
+  lilian/make
+  lilian/python
   core/qemu
   core/rsync
   core/texinfo
 )
-pkg_deps=(core/glibc core/xz core/gettext core/pcre core/gcc-libs core/devicemapper core/elfutils core/bzip2 core/libcap)
+pkg_deps=(core/glibc lilian/xz core/gettext core/pcre core/gcc-libs core/devicemapper core/elfutils lilian/bzip2 core/libcap)
 
 do_setup() {
   if [[ ! -d /boot ]]; then

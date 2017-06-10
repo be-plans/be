@@ -1,5 +1,5 @@
 pkg_name=boost
-pkg_origin=core
+pkg_origin=lilian
 pkg_description='Boost provides free peer-reviewed portable C++ source libraries.'
 pkg_upstream_url='http://www.boost.org/'
 pkg_version=1.61.0
@@ -17,17 +17,17 @@ pkg_deps=(
 pkg_build_deps=(
   core/glibc
   core/gcc-libs
-  core/coreutils
-  core/diffutils
-  core/patch
-  core/make
-  core/gcc
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
   core/python2
   core/libxml2
   core/libxslt
-  core/openssl
+  lilian/openssl 
   core/which
-  core/zlib
+  lilian/zlib
 )
 
 pkg_lib_dirs=(lib)
@@ -40,8 +40,8 @@ do_build() {
 do_install() {
   export NO_BZIP2=1
   export ZLIB_LIBPATH
-  ZLIB_LIBPATH="$(pkg_path_for core/zlib)/lib"
+  ZLIB_LIBPATH="$(pkg_path_for lilian/zlib)/lib"
   export ZLIB_INCLUDE
-  ZLIB_INCLUDE="$(pkg_path_for core/zlib)/include"
+  ZLIB_INCLUDE="$(pkg_path_for lilian/zlib)/include"
   ./b2 install --prefix="$pkg_prefix" -q --debug-configuration
 }

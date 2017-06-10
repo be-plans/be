@@ -1,5 +1,5 @@
 pkg_name=flatbuffers
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.4.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
@@ -19,8 +19,8 @@ pkg_deps=(
 )
 
 pkg_build_deps=(
-  core/make
-  core/gcc
+  lilian/make
+  lilian/gcc
   core/cmake
 )
 

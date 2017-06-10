@@ -1,6 +1,6 @@
 pkg_name=rabbitmq
 pkg_distname=${pkg_name}-server
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=3.6.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MPL')
@@ -10,20 +10,20 @@ pkg_source=http://www.rabbitmq.com/releases/rabbitmq-server/v${pkg_version}/rabb
 pkg_shasum=395689bcf57fd48aed452fcd43ff9a992de40067d3ea5c44e14680d69db7b78e
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(
-  core/coreutils
+  lilian/coreutils
   core/glibc
   core/erlang
 )
 pkg_build_deps=(
   core/bash
-  core/diffutils
+  lilian/diffutils
   core/gawk
-  core/gcc
+  lilian/gcc
   core/git
   core/grep
   core/libxml2
   core/libxslt
-  core/make
+  lilian/make
   core/perl
   core/python2
   core/rsync

@@ -1,13 +1,13 @@
 pkg_name=jfrog-cli
 pkg_description="jfrog CLI"
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.7.1
 pkg_license=('apachev2')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://jfrog.bintray.com/jfrog-cli-go/${pkg_version}/jfrog-cli-linux-amd64/jfrog
 pkg_shasum=172afbfe482c48bea347318bd27ad4ac3d2f2d6a152aa51e1ca94629faff7e6c
 pkg_deps=(core/glibc core/busybox-static core/cacerts)
-pkg_build_deps=(core/coreutils)
+pkg_build_deps=(lilian/coreutils)
 pkg_bin_dirs=(bin)
 pkg_upstream_url="https://github.com/JFrogDev/jfrog-cli-go"
 

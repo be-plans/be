@@ -1,12 +1,12 @@
 pkg_name=perl
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=5.22.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gpl' 'perlartistic')
 pkg_source=http://www.cpan.org/src/5.0/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=e98e4075a3167fa40524abe447c30bcca10c60e02a54ee1361eff278947a1221
-pkg_deps=(core/glibc core/zlib core/bzip2 core/gdbm core/db core/coreutils core/less)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/procps-ng core/inetutils core/iana-etc)
+pkg_deps=(core/glibc lilian/zlib lilian/bzip2 lilian/gdbm core/db lilian/coreutils core/less)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc core/procps-ng core/inetutils core/iana-etc)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_interpreters=(bin/perl)
@@ -118,5 +118,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/procps-ng core/inetutils core/iana-etc)
+  pkg_build_deps=(lilian/gcc core/procps-ng core/inetutils core/iana-etc)
 fi

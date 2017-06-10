@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=pixman
 pkg_description="A low-level software library for pixel manipulation"
 pkg_upstream_url="http://pixman.org/"
@@ -7,8 +7,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=("MIT")
 pkg_source="https://www.cairographics.org/releases/pixman-${pkg_version}.tar.gz"
 pkg_shasum=21b6b249b51c6800dc9553b65106e1e37d0e25df942c90531d4c3997aa20a88e
-pkg_deps=(core/glibc core/gcc-libs core/libpng core/zlib)
-pkg_build_deps=(core/gcc core/make core/pkg-config core/diffutils core/file)
+pkg_deps=(core/glibc core/gcc-libs core/libpng lilian/zlib)
+pkg_build_deps=(lilian/gcc lilian/make lilian/pkg-config lilian/diffutils core/file)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_pconfig_dirs=(lib/pkgconfig)

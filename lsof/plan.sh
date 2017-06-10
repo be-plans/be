@@ -9,7 +9,7 @@ pkg_description="lsof - list open files"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_deps=(core/glibc)
 pkg_bin_dirs=(bin)
-pkg_build_deps=(core/coreutils core/make core/gcc core/busybox-static)
+pkg_build_deps=(lilian/coreutils lilian/make lilian/gcc core/busybox-static)
 pkg_dirname="lsof_${pkg_version}"
 
 do_unpack() {

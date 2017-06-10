@@ -1,11 +1,11 @@
 pkg_name=handlebars-cmd
-pkg_origin=core
+pkg_origin=lilian
 pkg_version="0.1.4"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')
 pkg_source=nosuchfile.tar.gz
 pkg_deps=(
-  core/coreutils
+  lilian/coreutils
   core/node
 )
 pkg_build_deps=(
@@ -39,5 +39,5 @@ do_build() {
 do_install() {
   # Use handlebars-cmd branch with a recent version of handlebars.
   npm install -g "DavidBabel/$pkg_name#bc510fc"
-  fix_interpreter "$pkg_prefix/bin/handlebars" core/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/handlebars" lilian/coreutils bin/env
 }

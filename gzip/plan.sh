@@ -1,12 +1,12 @@
 pkg_name=gzip
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3+')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=37dfed1a485d53212c43b3fa2a7c7952f09bf5cd86e37121c222341ee1b27847
 pkg_deps=(core/glibc core/less core/grep)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/sed core/xz)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed lilian/xz)
 pkg_bin_dirs=(bin)
 
 do_prepare() {
@@ -46,5 +46,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/gcc core/coreutils core/sed core/diffutils core/xz)
+  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/xz)
 fi

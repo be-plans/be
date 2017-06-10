@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=lilian
 pkg_name=vault
 pkg_version=0.7.2
 pkg_description="A tool for managing secrets."
