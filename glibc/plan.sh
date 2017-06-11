@@ -1,24 +1,28 @@
 pkg_name=glibc
-pkg_origin=core
-pkg_version=2.22
+pkg_origin=lilian
+pkg_version=2.25
+pkg_description="Portable and high performance C library"
+pkg_upstream_url="https://www.gnu.org/software/libc/"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gplv2' 'lgplv2')
-pkg_description="$(cat << EOF
-  The GNU C Library project provides the core libraries for the GNU system and GNU/Linux systems,
-  as well as many other systems that use Linux as the kernel. These libraries provide critical
-  APIs including ISO C11, POSIX.1-2008, BSD, OS-specific APIs and more. These APIs include such
-  foundational facilities as open, read, write, malloc, printf, getaddrinfo, dlopen,
-  pthread_create, crypt, login, exit and more.
-EOF
-)"
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=eb731406903befef1d8f878a46be75ef862b9056ab0cde1626d08a7a05328948
-pkg_upstream_url=https://www.gnu.org/software/libc
-pkg_deps=(core/linux-headers)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/sed core/perl)
+pkg_license=('GPL-2.0' 'LGPL-2.0')
+pkg_source=https://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
+pkg_shasum=067bd9bb3390e79aa45911537d13c3721f1d9d3769931a30c2681bfee66f23a0
+pkg_deps=(lilian/linux-headers)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/sed core/perl
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  export CFLAGS="${CFLAGS} ${optimizations} -Wno-error "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} -Wno-error "
+  export CPPFLAGS="${CPPFLAGS} ${optimizations} -Wdate-time -Wno-error "
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
 
 do_prepare() {
   # The `/bin/pwd` path is hardcoded, so we'll add a symlink if needed.
@@ -56,9 +60,7 @@ do_prepare() {
   #
   # Thanks to https://github.com/NixOS/nixpkgs/blob/54fc2db/pkgs/development/libraries/glibc/dont-use-system-ld-so-cache.patch
   # and to https://github.com/NixOS/nixpkgs/blob/dac591a/pkgs/development/libraries/glibc/dont-use-system-ld-so-preload.patch
-  # shellcheck disable=SC2002
-  cat "$PLAN_CONTEXT/dont-use-system-ld-so.patch" \
-    | sed "s,@prefix@,$pkg_prefix,g" \
+  sed "s,@prefix@,$pkg_prefix,g" "$PLAN_CONTEXT/dont-use-system-ld-so.patch" \
     | patch -p1
 
   # Fix for the scanf15 and scanf17 tests for arches that need
@@ -68,20 +70,18 @@ do_prepare() {
   # Source: https://lists.debian.org/debian-glibc/2013/11/msg00116.html
   patch -p1 < "$PLAN_CONTEXT/testsuite-fix.patch"
 
-  # Fix for CVE-2015-7547 and more
-  #
-  # Source: http://www.linuxfromscratch.org/patches/downloads/glibc/glibc-2.22-upstream_fixes-1.patch
-  patch -p1 < "$PLAN_CONTEXT/glibc-2.22-upstream_fixes-1.patch"
-
   # Adjust `scripts/test-installation.pl` to use our new dynamic linker
   sed -i "s|libs -o|libs -L${pkg_prefix}/lib -Wl,-dynamic-linker=${dynamic_linker} -o|" \
     scripts/test-installation.pl
+
+  compiler_flags
 }
 
 do_build() {
   rm -rf ../${pkg_name}-build
   mkdir ../${pkg_name}-build
-  pushd ../${pkg_name}-build > /dev/null
+  (
+    cd "../${pkg_name}-build"
     # Configure Glibc to install its libraries into `$pkg_prefix/lib`
     echo "libc_cv_slibdir=$pkg_prefix/lib" >> config.cache
     echo "libc_cv_ssp=no" >> config.cache
@@ -95,16 +95,16 @@ do_build() {
       --sysconfdir="$pkg_prefix/etc" \
       --enable-obsolete-rpc \
       --disable-profile \
-      --enable-kernel=2.6.32 \
+      --enable-kernel=4.4.0 \
       --cache-file=config.cache
 
-    make
-  popd > /dev/null
+    make -j$(nproc)
+  )
 }
 
 # Running a `make check` is considered one critical test of the correctness of
 # the resulting glibc build. Unfortunetly, the time to complete the test suite
-# rougly triples the build time of this Plan and there are at least 4 known
+# rougly triples the build time of this Plan and there are at least 2 known
 # failures which means that `make check` certainly returns a non-zero exit
 # code. Despite these downsides, it is still worth the pain when building the
 # first time in a new environment, or when a new upstream version is attempted.
@@ -125,18 +125,6 @@ do_build() {
 #
 # Source: https://sourceware.org/glibc/wiki/Testing/Testsuite#Known_testsuite_failures
 #
-# ## FAIL: elf/tst-protected1a
-#
-# "The elf/tst-protected1a and elf/tst-protected1b tests are known to fail with
-# the current stable version of binutils."
-#
-# Source: http://www.linuxfromscratch.org/lfs/view/stable/chapter06/glibc.html
-# Source: https://sourceware.org/glibc/wiki/Release/2.22
-#
-# ## FAIL: elf/tst-protected1b
-#
-# Same as above.
-#
 # ## FAIL: posix/tst-getaddrinfo4
 #
 # "This test will always fail due to not having the necessary networking
@@ -145,7 +133,8 @@ do_build() {
 # Source: http://www.linuxfromscratch.org/lfs/view/stable/chapter06/glibc.html
 #
 do_check() {
-  pushd ../${pkg_name}-build > /dev/null
+  (
+    cd "../${pkg_name}-build"
     # One of the tests uses the hardcoded `bin/cat` path, so we'll add it, if
     # it doesn't exist.
     if [[ ! -r /bin/cat ]]; then
@@ -165,7 +154,7 @@ do_check() {
     # https://sourceware.org/ml/libc-alpha/2012-04/msg01014.html regarding the
     # use of system library directories here)."
     #
-    # Source: https://sourceware.org/glibc/wiki/Release/2.22
+    # Source: https://sourceware.org/glibc/wiki/Release/2.23
     # Source: http://www0.cs.ucl.ac.uk/staff/ucacbbl/glibc/index.html#bug-atexit3
     if [[ "$STUDIO_TYPE" = "stage1" ]]; then
       ln -sv /tools/lib/libgcc_s.so.1 .
@@ -189,11 +178,13 @@ do_check() {
     if [[ -n "$_clean_cat" ]]; then
       rm -fv /bin/cat
     fi
-  popd > /dev/null
+  )
 }
 
 do_install() {
-  pushd ../${pkg_name}-build > /dev/null
+  (
+    cd "../${pkg_name}-build"
+
     # Prevent a `make install` warning of a missing `ld.so.conf`.
     mkdir -p "$pkg_prefix/etc"
     touch "$pkg_prefix/etc/ld.so.conf"
@@ -202,7 +193,7 @@ do_install() {
     # a multilib installation is assumed (i.e. 32-bit and 64-bit). We will
     # fool this check by symlinking a "32-bit" file to the real loader.
     mkdir -p "$pkg_prefix/lib"
-    ln -sv ld-2.22.so "$pkg_prefix/lib/ld-linux.so.2"
+    ln -sv ld-${pkg_version}.so "$pkg_prefix/lib/ld-linux.so.2"
 
     # Add a `lib64` -> `lib` symlink for `bin/ldd` to work correctly.
     #
@@ -222,11 +213,11 @@ do_install() {
     make install sysconfdir="$pkg_prefix/etc" sbindir="$pkg_prefix/bin"
 
     # Move all remaining binaries in `sbin/` into `bin/`, namely `ldconfig`
-    mv "$pkg_prefix/sbin"/* "$pkg_prefix/bin/"
+    mv "$pkg_prefix/sbin/"* "$pkg_prefix/bin/"
     rm -rf "$pkg_prefix/sbin"
 
     # Remove unneeded files from `include/rpcsvc`
-    rm -fv "$pkg_prefix/include/rpcsvc"/*.x
+    rm -fv "$pkg_prefix/include/rpcsvc/"*.x
 
     # Remove the `make install` check symlink
     rm -fv "$pkg_prefix/lib/ld-linux.so.2"
@@ -254,8 +245,7 @@ do_install() {
     #
     # Thanks to: https://github.com/NixOS/nixpkgs/blob/55b03266cfc25ae019af3cdd2cfcad0facdc68f2/pkgs/development/libraries/glibc/builder.sh#L25-L32
     pushd "$pkg_prefix/include" > /dev/null
-      # shellcheck disable=SC2010,SC2046
-      ln -sv $(ls -d $(pkg_path_for linux-headers)/include/* | grep -v 'scsi$') .
+      find "$(pkg_path_for linux-headers)/include/"* -maxdepth 0 -type d -not -path "*scsi*"
     popd > /dev/null
 
     mkdir -pv "$pkg_prefix/lib/locale"
@@ -265,7 +255,6 @@ do_install() {
     localedef -i en_HK -f ISO-8859-1 en_HK
     localedef -i en_PH -f ISO-8859-1 en_PH
     localedef -i en_US -f ISO-8859-1 en_US
-    localedef -i en_US -f UTF-8 en_US
     localedef -i es_MX -f ISO-8859-1 es_MX
     localedef -i fa_IR -f UTF-8 fa_IR
     localedef -i fr_FR -f ISO-8859-1 fr_FR
@@ -290,9 +279,10 @@ rpc: files
 EOF
 
     extract_src tzdata
-    pushd ./tzdata > /dev/null
-      ZONEINFO="$pkg_prefix/share/zoneinfo"
-      mkdir -p "$ZONEINFO"/{posix,right}
+    (
+      cd "./tzdata"
+      ZONEINFO="${pkg_prefix:?}/share/zoneinfo"
+      mkdir -p "${ZONEINFO:?}/{posix,right}"
       for tz in etcetera southamerica northamerica europe africa antarctica \
           asia australasia backward pacificnew systemv; do
         zic -L /dev/null -d "$ZONEINFO" -y "sh yearistype.sh" ${tz}
@@ -300,11 +290,11 @@ EOF
         zic -L leapseconds -d "$ZONEINFO/right" -y "sh yearistype.sh" ${tz}
       done
       cp -v zone.tab zone1970.tab iso3166.tab "$ZONEINFO"
-      zic -d "$ZONEINFO" -p America/New_York
+      zic -d "${ZONEINFO:?}" -p America/New_York
       unset ZONEINFO
-    popd > /dev/null
+    )
     cp -v "$pkg_prefix/share/zoneinfo/UTC" "$pkg_prefix/etc/localtime"
-  popd > /dev/null
+  )
 }
 
 do_end() {
@@ -315,24 +305,30 @@ do_end() {
 }
 
 extract_src() {
-  build_dirname=$pkg_dirname/../${pkg_name}-build
-  plan=$1
+  build_dirname="${pkg_dirname:?}/../${pkg_name:?}-build"
+  plan=${1:?}
 
-  (source "$PLAN_CONTEXT/../$plan/plan.sh"
-    # Re-override the defaults as this plan is sourced externally
-    pkg_filename="$(basename $pkg_source)"
-    pkg_dirname="${pkg_name}-${pkg_version}"
-    CACHE_PATH="$HAB_CACHE_SRC_PATH/$pkg_dirname"
+  (
+    source "${PLAN_CONTEXT:?}/../${plan:?}/plan.sh"
+    build_line "Downloading ${pkg_source:?}"
 
-    build_line "Downloading $pkg_source"
+    local pkg_filename="${pkg_name:?}-${pkg_version:?}.tar.gz"
+    local pkg_dirname="${pkg_name}-${pkg_version}"
     do_download
-    build_line "Verifying $pkg_filename"
+
+    build_line "Verifying ${pkg_filename:?}"
     do_verify
-    build_line "Clean the cache"
-    do_clean
+
+    ## "do_clean" removes glibc source code, so the entire build fails
+    # build_line "Clean the cache"
+    # do_clean
+
     build_line "Unpacking $pkg_filename"
     do_unpack
-    mv -v "$HAB_CACHE_SRC_PATH/$pkg_dirname" "$HAB_CACHE_SRC_PATH/$build_dirname/$plan"
+
+    local tzdata_destination
+    tzdata_destination="$(readlink -m ${HAB_CACHE_SRC_PATH:?}/${build_dirname:?}/${plan:?})"
+    mv -v "$HAB_CACHE_SRC_PATH/${pkg_dirname:?}" "${tzdata_destination:?}"
   )
 }
 

@@ -14,7 +14,7 @@ pkg_deps=(
   lilian/xz
   lilian/ncurses
   lilian/expat
-  core/guile
+  lilian/guile
   lilian/bdwgc
   lilian/python
 )

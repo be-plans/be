@@ -1,12 +1,12 @@
 pkg_name=tzdata
 pkg_origin=lilian
-pkg_version=2016i
+pkg_version=2017b
 pkg_description="Sources for time zone and daylight saving time data"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gpl')
-pkg_source=http://www.iana.org/time-zones/repository/releases/${pkg_name}${pkg_version}.tar.gz
-pkg_shasum=b6966ec982ef64fe48cebec437096b4f57f4287519ed32dde59c86d3a1853845
-pkg_upstream_url=http://www.iana.org/time-zones
+pkg_license=('GPL-2.0')
+pkg_source=https://www.iana.org/time-zones/repository/releases/${pkg_name}${pkg_version}.tar.gz
+pkg_shasum=f8242a522ea3496b0ce4ff4f2e75a049178da21001a08b8e666d8cbe07d18086
+pkg_upstream_url=https://www.iana.org/time-zones
 
 timezones=(
   'africa'
