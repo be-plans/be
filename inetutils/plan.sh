@@ -6,7 +6,7 @@ pkg_license=('gplv3+')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=849d96f136effdef69548a940e3e0ec0624fc0c81265296987986a0dd36ded37
 pkg_deps=(core/glibc core/libcap lilian/ncurses)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed core/grep)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed lilian/grep)
 pkg_bin_dirs=(bin)
 
 do_build() {
@@ -49,5 +49,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed core/grep)
+  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed lilian/grep)
 fi

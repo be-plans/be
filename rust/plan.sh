@@ -117,5 +117,5 @@ do_strip() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/patchelf lilian/coreutils lilian/sed core/grep lilian/diffutils core/findutils lilian/make lilian/patch)
+  pkg_build_deps=(core/patchelf lilian/coreutils lilian/sed lilian/grep lilian/diffutils core/findutils lilian/make lilian/patch)
 fi

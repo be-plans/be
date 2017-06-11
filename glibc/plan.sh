@@ -1,16 +1,16 @@
 pkg_name=glibc
 pkg_origin=lilian
-pkg_version=2.25
+pkg_version=2.24
 pkg_description="Portable and high performance C library"
 pkg_upstream_url="https://www.gnu.org/software/libc/"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0' 'LGPL-2.0')
 pkg_source=https://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=067bd9bb3390e79aa45911537d13c3721f1d9d3769931a30c2681bfee66f23a0
+pkg_shasum=99d4a3e8efd144d71488e478f62587578c0f4e1fa0b4eed47ee3d4975ebeb5d3
 pkg_deps=(lilian/linux-headers)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/sed core/perl
+  lilian/make lilian/gcc lilian/sed lilian/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

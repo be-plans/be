@@ -634,7 +634,7 @@ _detect_execjs() {
 _detect_git() {
   if [[ -d ".git" ]]; then
     build_line "Detected '.git' directory, adding git packages as build deps"
-    pkg_build_deps=(core/git ${pkg_build_deps[@]})
+    pkg_build_deps=(lilian/git ${pkg_build_deps[@]})
     debug "Updating pkg_build_deps=(${pkg_build_deps[*]}) from Scaffolding detection"
     _uses_git=true
   fi

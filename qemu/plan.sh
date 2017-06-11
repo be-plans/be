@@ -15,14 +15,14 @@ pkg_build_deps=(
   core/automake
   lilian/diffutils
   lilian/gcc
-  core/libtool
+  lilian/libtool
   lilian/make
   lilian/m4
   lilian/pkg-config
 )
 pkg_deps=(
   lilian/bzip2
-  core/curl
+  lilian/curl
   core/gcc-libs
   core/glib
   core/glibc
@@ -31,7 +31,7 @@ pkg_deps=(
   core/libcap-ng
   core/lzo
   lilian/ncurses
-  core/pcre
+  lilian/pcre
   core/pixman
   core/python2
   core/snappy

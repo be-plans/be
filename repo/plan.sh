@@ -19,7 +19,7 @@ pkg_deps=(
   core/python2
 )
 pkg_build_deps=(
-  core/git
+  lilian/git
 )
 pkg_bin_dirs=(bin)
 

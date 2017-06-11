@@ -11,8 +11,8 @@ pkg_deps=(
   core/gawk
   core/gcc-libs
   core/glibc
-  core/grep
-  core/man-db
+  lilian/grep
+  lilian/man-db
   lilian/ncurses
   core/net-tools
 )

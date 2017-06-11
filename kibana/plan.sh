@@ -13,7 +13,7 @@ pkg_build_deps=(
   core/cacerts
   lilian/coreutils
   lilian/gcc
-  core/git
+  lilian/git
   lilian/make
   core/node
   core/python2

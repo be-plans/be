@@ -15,15 +15,15 @@ pkg_upstream_url="https://developer.gnome.org/glib/stable/glib.html"
 pkg_shasum="2ef87a78f37c1eb5b95f4cc95efd5b66f69afad9c9c0899918d04659cf6df7dd"
 pkg_deps=(
   core/libffi
-  core/libiconv
-  core/pcre
+  lilian/libiconv
+  lilian/pcre
 )
 pkg_build_deps=(
   lilian/make
   core/glibc
   lilian/pkg-config
   lilian/gcc
-  core/gettext
+  lilian/gettext
   lilian/zlib
   lilian/python
   core/util-linux

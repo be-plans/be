@@ -21,7 +21,7 @@ pkg_build_deps=(
 pkg_deps=(
   core/gcc-libs
   core/glibc
-  core/libiconv
+  lilian/libiconv
 )
 pkg_bin_dirs=(bin)
 
@@ -32,7 +32,7 @@ do_build() {
   export CXXFLAGS="-liconv $CXXFLAGS"
   build_line "CXXFLAGS are now: $CXXFLAGS"
   cmake -DCMAKE_INSTALL_PREFIX:PATH="$pkg_prefix" \
-    -DICONV_INCLUDE_DIR="$(hab pkg path core/libiconv)/include" \
+    -DICONV_INCLUDE_DIR="$(hab pkg path lilian/libiconv)/include" \
     -G "Unix Makefiles" ../
   make
 }

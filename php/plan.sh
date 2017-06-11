@@ -12,7 +12,7 @@ pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_shasum=39bf697836e2760b3a44ea322e9e5f1f5b1f07abeb0111f6495eff7538e25805
 pkg_deps=(
   lilian/coreutils
-  core/curl
+  lilian/curl
   core/glibc
   core/libxml2
   core/libjpeg-turbo

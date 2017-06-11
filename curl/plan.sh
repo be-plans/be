@@ -1,13 +1,13 @@
 pkg_name=curl
 pkg_origin=lilian
-pkg_version=7.51.0
+pkg_version=7.54.0
 pkg_description="curl is an open source command line tool and library for
   transferring data with URL syntax."
 pkg_upstream_url=https://curl.haxx.se/
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('curl')
-pkg_source=https://curl.haxx.se/download/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=65b5216a6fbfa72f547eb7706ca5902d7400db9868269017a8888aa91d87977c
+pkg_source=https://curl.haxx.se/download/${pkg_name}-${pkg_version}.tar.bz2
+pkg_shasum=f50ebaf43c507fa7cc32be4b8108fa8bbd0f5022e90794388f3c7694a302ff06
 pkg_deps=(
   core/cacerts
   core/glibc
@@ -18,13 +18,25 @@ pkg_build_deps=(
   lilian/coreutils
   lilian/gcc
   lilian/make
-  core/perl
+  lilian/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
+  do_default_prepare
+  compiler_flags
+
   # Patch the zsh-generating program to use our perl at build time
   sed -i "s,/usr/bin/perl,$(pkg_path_for perl)/bin/perl,g" scripts/zsh.pl
 }
@@ -45,5 +57,5 @@ do_build() {
               --without-libidn \
               --without-gnutls \
               --without-librtmp
-  make
+  make -j $(nproc)
 }

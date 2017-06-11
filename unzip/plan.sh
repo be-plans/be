@@ -33,5 +33,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/pkg-config lilian/coreutils lilian/sed core/grep lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(lilian/gcc lilian/pkg-config lilian/coreutils lilian/sed lilian/grep lilian/diffutils lilian/make lilian/patch)
 fi

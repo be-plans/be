@@ -1,25 +1,25 @@
 pkg_origin=lilian
 pkg_name=man-db
-pkg_version=2.7.5
+pkg_version=2.7.6.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
 pkg_description="man-db is an implementation of the standard Unix documentation system accessed using the man command."
 pkg_upstream_url=http://man-db.nongnu.org/
 pkg_source="http://git.savannah.gnu.org/cgit/man-db.git/snapshot/man-db-${pkg_version}.tar.gz"
-pkg_shasum=3a1af4b7f17193e45b5abdb12d935b70a7757dfe7e1a4196f6c00b500c6fca78
+pkg_shasum=dd913662e341fc01e6721878b6cbe1001886cc3bfa6632b095937bba3238c779
 pkg_deps=(
   lilian/gdbm
   core/glibc
   core/groff
-  core/gzip
-  core/libiconv
+  lilian/gzip
+  lilian/libiconv
 )
 pkg_build_deps=(
   lilian/coreutils
   lilian/diffutils
   core/flex
   lilian/gcc
-  core/gettext
+  lilian/gettext
   core/libpipeline
   lilian/make
   lilian/m4
@@ -28,15 +28,18 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib/man-db)
 
-do_prepare() {
-  export CFLAGS="${CFLAGS} -O2 -fstack-protector-strong -Wformat -Werror=format-security "
-  build_line "Setting CFLAGS=$CFLAGS"
-  export CXXFLAGS="${CXXFLAGS} -O2 -fstack-protector-strong -Wformat -Werror=format-security "
-  build_line "Setting CXXFLAGS=$CXXFLAGS"
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
   export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  build_line "Setting CPPFLAGS=$CPPFLAGS"
   export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-  build_line "Setting LDFLAGS=$LDFLAGS"
+}
+
+do_prepare() {
+  do_default_prepare
+  compiler_flags
 }
 
 do_build() {
@@ -52,7 +55,7 @@ do_build() {
     --with-libiconv-prefix="$(pkg_path_for libiconv)" \
     --with-systemdtmpfilesdir="${pkg_svc_config_path}/tmpfiles.d"
 
-  make
+  make -j $(nproc)
 }
 
 do_prepare() {

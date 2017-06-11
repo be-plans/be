@@ -7,16 +7,16 @@ pkg_upstream_url="https://apr.apache.org/"
 pkg_license=('Apache-2.0')
 pkg_source=http://www.us.apache.org/dist/apr/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=7d03ed29c22a7152be45b8e50431063736df9e1daa1ddf93f6a547ba7a28f67a
-pkg_build_deps=(lilian/diffutils core/file lilian/gcc core/iana-etc lilian/make)
-pkg_deps=(core/gcc-libs core/glibc core/grep lilian/sed lilian/binutils)
+pkg_build_deps=(lilian/diffutils lilian/file lilian/gcc core/iana-etc lilian/make)
+pkg_deps=(core/gcc-libs core/glibc lilian/grep lilian/sed lilian/binutils)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
 compiler_flags() {
   local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
-  export CFLAGS="${CFLAGS} -std=c11 ${optimizations} ${protection} "
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
   export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
   export CPPFLAGS="${CPPFLAGS} -Wdate-time"
   export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"

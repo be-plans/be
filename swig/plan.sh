@@ -15,7 +15,7 @@ pkg_build_deps=(
 pkg_deps=(
   core/gcc-libs
   core/glibc
-  core/pcre
+  lilian/pcre
 )
 pkg_bin_dirs=(bin)
 

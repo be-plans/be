@@ -1,16 +1,31 @@
 pkg_name=vim
 pkg_origin=lilian
-pkg_version=8.0.0004
+pkg_version=8.0.0633
 pkg_license=('vim')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Vim is a greatly improved version of the good old UNIX editor Vi"
 pkg_source="http://github.com/${pkg_name}/${pkg_name}/archive/v${pkg_version}.tar.gz"
-pkg_shasum=3ba0aeaf86c9f89ea55d6144b82f36f82d3ad5b7efcd393d0689e6ec2ca970ef
-pkg_deps=(core/glibc core/acl lilian/ncurses)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed core/autoconf)
+pkg_shasum=6b95763a977e9cd33b5fe64275bf3b04b44724d8746c29296c9cdfca4f045fa0
+pkg_deps=(core/glibc lilian/acl lilian/ncurses)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/sed core/autoconf
+)
 pkg_bin_dirs=(bin)
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
+  do_default_prepare
+  compiler_flags
+
   pushd src > /dev/null
     autoconf
   popd > /dev/null
@@ -28,7 +43,7 @@ do_build() {
     --with-x=no \
     --disable-gui \
     --enable-multibyte
-  make
+  make -j $(nproc)
 }
 
 do_install() {

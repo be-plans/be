@@ -1,13 +1,13 @@
 pkg_name=cmake
 pkg_origin=lilian
-_base_version=3.6
+_base_version=3.8
 pkg_version=${_base_version}.2
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_license=('BSD-3-Clause')
 pkg_description="CMake is an open-source, cross-platform family of tools designed to build, test and package software"
 pkg_upstream_url="https://cmake.org/"
 pkg_source="https://cmake.org/files/v${_base_version}/cmake-${pkg_version}.tar.gz"
-pkg_shasum=189ae32a6ac398bb2f523ae77f70d463a6549926cde1544cd9cc7c6609f8b346
+pkg_shasum=da3072794eb4c09f2d782fcee043847b99bb4cf8d4573978d9b2024214d6e92d
 pkg_deps=(
   core/glibc
   core/gcc-libs
@@ -17,7 +17,7 @@ pkg_build_deps=(
   lilian/diffutils
   lilian/make
   lilian/gcc
-  core/curl
+  lilian/curl
   lilian/zlib
   lilian/bzip2
 )
@@ -25,6 +25,20 @@ pkg_build_deps=(
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_bin_dirs=(bin)
+
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
+do_prepare() {
+  do_default_prepare
+  compiler_flags
+}
 
 do_build() {
   ./bootstrap

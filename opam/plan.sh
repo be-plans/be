@@ -12,7 +12,7 @@ pkg_deps=(
   core/camlp4
   lilian/diffutils
   lilian/gcc
-  core/git
+  lilian/git
   core/glibc
   lilian/m4
   lilian/make

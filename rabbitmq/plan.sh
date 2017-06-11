@@ -19,12 +19,12 @@ pkg_build_deps=(
   lilian/diffutils
   core/gawk
   lilian/gcc
-  core/git
-  core/grep
+  lilian/git
+  lilian/grep
   core/libxml2
   core/libxslt
   lilian/make
-  core/perl
+  lilian/perl
   core/python2
   core/rsync
   core/unzip

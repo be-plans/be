@@ -16,7 +16,7 @@ pkg_build_deps=(
   lilian/diffutils
   lilian/gcc
   lilian/make
-  core/perl
+  lilian/perl
 )
 pkg_description="Gecode is a toolkit for developing constraint-based systems and applications"
 pkg_upstream_url="http://www.gecode.org"

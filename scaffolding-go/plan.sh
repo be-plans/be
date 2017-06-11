@@ -9,7 +9,7 @@ pkg_upstream_url="https://github.com/habitat-sh/core-plans"
 pkg_deps=(
   ${pkg_deps[@]}
   core/go
-  core/git
+  lilian/git
   lilian/gcc
   lilian/make
 )

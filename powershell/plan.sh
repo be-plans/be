@@ -23,7 +23,7 @@ pkg_build_deps=(
   core/cmake
   lilian/make
   lilian/patch
-  core/git
+  lilian/git
 )
 pkg_bin_dirs=(bin)
 

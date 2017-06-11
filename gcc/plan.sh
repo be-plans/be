@@ -8,11 +8,14 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}/${pkg_distname}-${pkg_version}.tar.bz2
 pkg_shasum=8a8136c235f64c6fef69cac0d73a46a1a09bb250776a050aec8f9fc880bebc17
-pkg_deps=(core/glibc lilian/zlib lilian/gmp lilian/mpfr lilian/libmpc lilian/binutils)
+pkg_deps=(
+  core/glibc lilian/zlib lilian/gmp
+  lilian/mpfr lilian/libmpc lilian/binutils
+)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc core/gawk lilian/m4
-  core/texinfo core/perl core/inetutils
+  core/texinfo lilian/perl core/inetutils
   lilian/expect core/dejagnu
 )
 pkg_bin_dirs=(bin)
@@ -21,8 +24,8 @@ pkg_lib_dirs=(lib)
 
 compiler_flags() {
   local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
-  export CFLAGS="${CFLAGS} -std=c11 ${optimizations} ${protection} "
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
   export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
   export CPPFLAGS="${CPPFLAGS} -Wdate-time"
   export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"

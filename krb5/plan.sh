@@ -18,7 +18,7 @@ pkg_build_deps=(
   lilian/gcc
   lilian/m4
   lilian/make
-  core/perl
+  lilian/perl
 )
 pkg_bin_dirs=(bin sbin)
 pkg_include_dirs=(include)

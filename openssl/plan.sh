@@ -10,7 +10,7 @@ pkg_source=https://www.openssl.org/source/${pkg_distname}-${pkg_version}.tar.gz
 pkg_shasum=ce07195b659e75f4e1db43552860070061f156a98bb37b672b101ba6e3ddf30c
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_deps=(core/glibc lilian/zlib core/cacerts)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed core/grep core/perl)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed lilian/grep lilian/perl)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -34,7 +34,7 @@ _common_prepare() {
 
 compiler_flags() {
   local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong -Wformat -Werror=format-security"
+  local -r protection="-fstack-protector-strong"
   export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
   export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
   export CPPFLAGS="${CPPFLAGS} -Wdate-time"
@@ -51,7 +51,7 @@ do_prepare() {
 
 do_build() {
   # Set PERL var for scripts in `do_check` that use Perl
-  PERL=$(pkg_path_for core/perl)/bin/perl
+  PERL=$(pkg_path_for lilian/perl)/bin/perl
   export PERL
   # shellcheck disable=SC2086
   ./config \
@@ -101,5 +101,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed core/grep core/perl lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed lilian/grep lilian/perl lilian/diffutils lilian/make lilian/patch)
 fi

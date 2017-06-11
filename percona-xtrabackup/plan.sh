@@ -11,8 +11,8 @@ pkg_bin_dirs=(bin)
 pkg_build_deps=(lilian/m4 lilian/make lilian/gcc core/bison core/cmake core/mysql core/libaio
   core/boost159)
 pkg_deps=(core/bash core/iproute2 core/gnupg lilian/pkg-config core/glibc core/gcc-libs lilian/ncurses
-  core/vim core/curl core/libev lilian/openssl  lilian/zlib core/libgcrypt core/libgpg-error
-  core/libtool)
+  lilian/vim lilian/curl core/libev lilian/openssl  lilian/zlib lilian/libgcrypt core/libgpg-error
+  lilian/libtool)
 pkg_dirname=percona-xtrabackup-percona-xtrabackup-${pkg_version}
 
 do_prepare() {
@@ -25,14 +25,14 @@ do_prepare() {
 
 do_build() {
   export LD_LIBRARY_PATH GCRYPT_INCLUDE_DIR GCRYPT_LIB
-  LD_LIBRARY_PATH="$(pkg_path_for core/libgcrypt)/lib"
-  GCRYPT_INCLUDE_DIR=$(pkg_path_for core/libgcrypt)/lib
-  GCRYPT_LIB=$(pkg_path_for core/libgcrypt)
+  LD_LIBRARY_PATH="$(pkg_path_for lilian/libgcrypt)/lib"
+  GCRYPT_INCLUDE_DIR=$(pkg_path_for lilian/libgcrypt)/lib
+  GCRYPT_LIB=$(pkg_path_for lilian/libgcrypt)
   cmake . -DCMAKE_PREFIX_PATH="$(pkg_path_for lilian/ncurses)" -DCMAKE_INSTALL_PREFIX="$pkg_prefix" \
     -DBUILD_CONFIG=xtrabackup_release -DWITH_MAN_PAGES=OFF -DWITH_BOOST="$(pkg_path_for core/boost159)/include" \
-    -DCURL_LIBRARY="$(pkg_path_for core/curl)/lib/libcurl.so" -DCURL_INCLUDE_DIR="$(pkg_path_for core/curl)/include" \
-    -DLIBEV_INCLUDE_DIRS="$(pkg_path_for core/libev)/include"	-DGCRYPT_LIB="$(pkg_path_for core/libgcrypt)/lib/libgcrypt.so" \
-    -DGCRYPT_INCLUDE_DIR="$(pkg_path_for core/libgcrypt)/include" -DGPG_ERROR_LIB="$(pkg_path_for core/libgpg-error)/lib/libgpg-error.so" \
+    -DCURL_LIBRARY="$(pkg_path_for lilian/curl)/lib/libcurl.so" -DCURL_INCLUDE_DIR="$(pkg_path_for lilian/curl)/include" \
+    -DLIBEV_INCLUDE_DIRS="$(pkg_path_for core/libev)/include"	-DGCRYPT_LIB="$(pkg_path_for lilian/libgcrypt)/lib/libgcrypt.so" \
+    -DGCRYPT_INCLUDE_DIR="$(pkg_path_for lilian/libgcrypt)/include" -DGPG_ERROR_LIB="$(pkg_path_for core/libgpg-error)/lib/libgpg-error.so" \
     -DLIBEV_LIB="$(pkg_path_for core/libev)/lib/libev.so"
   make
 }

@@ -19,13 +19,25 @@ pkg_deps=(
   core/gcc-libs
 )
 pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils lilian/python
-                lilian/pkg-config lilian/diffutils core/libtool
-                lilian/m4 core/automake core/autoconf core/file)
+                lilian/pkg-config lilian/diffutils lilian/libtool
+                lilian/m4 core/automake core/autoconf lilian/file)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
+  do_default_prepare
+  compiler_flags
+
   # Set freetype paths
   export FREETYPE_CFLAGS="$CFLAGS"
   build_line "Setting FREETYPE_CFLAGS=$FREETYPE_CFLAGS"
@@ -55,5 +67,5 @@ do_build() {
               --prefix="$pkg_prefix" \
               --disable-static \
               --mandir="$pkg_prefix/man"
-  make
+  make -j $(nproc)
 }

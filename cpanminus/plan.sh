@@ -9,8 +9,8 @@ pkg_source=https://github.com/miyagawa/${pkg_name}/archive/${pkg_version}.tar.gz
 pkg_filename=${pkg_name}-${pkg_version}.tar.gz
 pkg_dirname=${pkg_name}-${pkg_version}
 pkg_shasum=48a747c040689445f7db0edd169da0abd709a37cfece3ceecff0816c09beab0e
-pkg_deps=(core/glibc core/perl core/local-lib)
-pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils core/perl core/local-lib)
+pkg_deps=(core/glibc lilian/perl core/local-lib)
+pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils lilian/perl core/local-lib)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 

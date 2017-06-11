@@ -12,7 +12,7 @@ pkg_shasum=9f397c31a67d2b00ee37597da25898b03eb282ccd87b135a50a69993b6a2035f
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/diffutils
-  core/file
+  lilian/file
   lilian/gcc
   lilian/make
   core/nasm

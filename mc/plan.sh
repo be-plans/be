@@ -11,16 +11,16 @@ pkg_deps=(
   core/glib
   core/glibc
   lilian/ncurses
-  core/pcre
+  lilian/pcre
 )
 pkg_build_deps=(
   core/check
   lilian/coreutils
   lilian/diffutils
   lilian/gcc
-  core/gettext
+  lilian/gettext
   lilian/make
-  core/perl
+  lilian/perl
   lilian/pkg-config
 )
 pkg_bin_dirs=(bin)

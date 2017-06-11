@@ -5,17 +5,34 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="GNU Tar provides the ability to create tar archives, as well as various other kinds of manipulation."
 pkg_upstream_url=https://www.gnu.org/software/tar/
 pkg_license=('GPL-3.0')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=cae466e6e58c7292355e7080248f244db3a4cf755f33f4fa25ca7f9a7ed09af0
-pkg_deps=(core/glibc core/acl core/attr)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed)
+pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
+pkg_shasum=402dcfd0022fd7a1f2c5611f5c61af1cd84910a760a44a688e18ddbff4e9f024
+pkg_deps=(core/glibc lilian/acl lilian/attr)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/sed
+)
 pkg_bin_dirs=(bin)
+
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
+do_prepare() {
+  do_default_prepare
+  compiler_flags
+}
 
 do_build() {
   # * `FORCE_UNSAFE_CONFIGURE` forces the test for `mknod` to be run as root
   FORCE_UNSAFE_CONFIGURE=1 ./configure \
     --prefix="$pkg_prefix"
-  make
+  make -j $(nproc)
 }
 
 do_check() {

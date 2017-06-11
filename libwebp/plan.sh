@@ -19,7 +19,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/gcc
-  core/file
+  lilian/file
   lilian/make
 )
 pkg_lib_dirs=(lib)

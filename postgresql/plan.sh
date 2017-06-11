@@ -12,7 +12,7 @@ pkg_deps=(
   core/envdir
   core/glibc
   lilian/openssl 
-  core/perl
+  lilian/perl
   core/readline
   lilian/zlib
   core/libossp-uuid

@@ -19,8 +19,8 @@ pkg_build_deps=(
   core/flex
   core/freetype
   lilian/gcc
-  core/gettext
-  core/git
+  lilian/gettext
+  lilian/git
   lilian/m4
   lilian/make
   lilian/python
@@ -28,7 +28,7 @@ pkg_build_deps=(
   core/rsync
   core/texinfo
 )
-pkg_deps=(core/glibc lilian/xz core/gettext core/pcre core/gcc-libs core/devicemapper core/elfutils lilian/bzip2 core/libcap)
+pkg_deps=(core/glibc lilian/xz lilian/gettext lilian/pcre core/gcc-libs core/devicemapper core/elfutils lilian/bzip2 core/libcap)
 
 do_setup() {
   if [[ ! -d /boot ]]; then

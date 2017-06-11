@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="http://download.savannah.gnu.org/releases/libunwind/libunwind-${pkg_version}.tar.gz"
 pkg_shasum=9dfe0fcae2a866de9d3942c66995e4b460230446887dbdab302d41a8aee8d09a
 pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(lilian/gcc lilian/make lilian/diffutils core/file lilian/coreutils)
+pkg_build_deps=(lilian/gcc lilian/make lilian/diffutils lilian/file lilian/coreutils)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 

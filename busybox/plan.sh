@@ -17,10 +17,10 @@ pkg_build_deps=(
   core/flex
   core/gawk
   lilian/gcc
-  core/gettext
-  core/grep
-  core/gzip
-  core/libtool
+  lilian/gettext
+  lilian/grep
+  lilian/gzip
+  lilian/libtool
   lilian/make
   lilian/patch
   lilian/sed

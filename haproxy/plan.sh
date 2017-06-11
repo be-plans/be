@@ -16,11 +16,11 @@ pkg_exposes=(port status-port)
 pkg_binds=(
   [backend]="port"
 )
-pkg_deps=(lilian/zlib core/pcre lilian/openssl )
+pkg_deps=(lilian/zlib lilian/pcre lilian/openssl )
 pkg_build_deps=(
   lilian/coreutils
   lilian/gcc
-  core/pcre
+  lilian/pcre
   lilian/make
   lilian/openssl 
   lilian/zlib

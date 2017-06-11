@@ -1,18 +1,31 @@
 pkg_name=file
 pkg_origin=lilian
-pkg_version=5.24
+pkg_version=5.31
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('custom')
 pkg_source=ftp://ftp.astron.com/pub/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=802cb3de2e49e88ef97cdcb52cd507a0f25458112752e398445cea102bc750ce
+pkg_shasum=09c588dac9cff4baa054f51a36141793bcf64926edc909594111ceae60fce4ee
 pkg_deps=(core/glibc lilian/zlib)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
   do_default_prepare
+  compiler_flags
 
   # Add explicit linker instructions as the binutils we are using may have its
   # own dynamic linker defaults. This is necessary because this Plan is built
@@ -30,7 +43,7 @@ do_check() {
 }
 
 do_install() {
-  make install
+  make -j $(nproc) install
 
   # As per the copyright, we must include the copyright statement in binary
   # distributions

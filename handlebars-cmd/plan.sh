@@ -9,7 +9,7 @@ pkg_deps=(
   core/node
 )
 pkg_build_deps=(
-  core/git
+  lilian/git
 )
 pkg_description="handlebars command-line tool."
 pkg_upstream_url="https://github.com/DavidBabel/handlebars-cmd"

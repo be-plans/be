@@ -22,12 +22,12 @@ pkg_deps=(
   core/gawk
   core/gcc-libs
   core/glibc
-  core/grep
+  lilian/grep
   core/inetutils
   lilian/ncurses
   lilian/openssl 
-  core/pcre
-  core/perl
+  lilian/pcre
+  lilian/perl
   core/procps-ng
   lilian/sed
 )
@@ -74,8 +74,8 @@ do_install() {
   rm -rf "$pkg_prefix/docs" "$pkg_prefix/man" "$pkg_prefix/mysql-test" \
     "$pkg_prefix"/lib/*.a
 
-  fix_interpreter "$pkg_prefix/bin/mysqld_multi" core/perl bin/perl
-  fix_interpreter "$pkg_prefix/bin/mysqldumpslow" core/perl bin/perl
+  fix_interpreter "$pkg_prefix/bin/mysqld_multi" lilian/perl bin/perl
+  fix_interpreter "$pkg_prefix/bin/mysqldumpslow" lilian/perl bin/perl
 }
 
 do_check() {

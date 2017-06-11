@@ -12,7 +12,7 @@ pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_shasum=facd280896d277e6f7084b60839e693d4db68318bfc92085d3dc0251fd3558c7
 pkg_deps=(
   lilian/coreutils
-  core/curl
+  lilian/curl
   core/glibc
   core/libxml2
   lilian/openssl 

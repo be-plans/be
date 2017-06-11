@@ -1,18 +1,36 @@
 pkg_name=perl
 pkg_origin=lilian
-pkg_version=5.22.1
+pkg_version=5.24.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gpl' 'perlartistic')
-pkg_source=http://www.cpan.org/src/5.0/${pkg_name}-${pkg_version}.tar.bz2
-pkg_shasum=e98e4075a3167fa40524abe447c30bcca10c60e02a54ee1361eff278947a1221
-pkg_deps=(core/glibc lilian/zlib lilian/bzip2 lilian/gdbm core/db lilian/coreutils core/less)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc core/procps-ng core/inetutils core/iana-etc)
+pkg_source=http://www.cpan.org/src/5.0/${pkg_name}-${pkg_version}.tar.xz
+pkg_shasum=03a77bac4505c270f1890ece75afc7d4b555090b41aa41ea478747e23b2afb3f
+pkg_deps=(
+  core/glibc lilian/zlib lilian/bzip2
+  lilian/gdbm lilian/db lilian/coreutils
+  lilian/less
+)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc core/procps-ng core/inetutils
+  core/iana-etc
+)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_interpreters=(bin/perl)
 
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
+  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
   do_default_prepare
+  compiler_flags
 
   # Do not look under `/usr` for dependencies.
   #
@@ -20,7 +38,7 @@ do_prepare() {
   patch -p1 -i $PLAN_CONTEXT/no-sys-dirs.patch
 
   # Skip the only failing test in the suite--not bad, eh?
-  patch -p1 -i $PLAN_CONTEXT/skip-wide-character-test.patch
+  # patch -p1 -i $PLAN_CONTEXT/skip-wide-character-test.patch
 
   #  Make Cwd work with the `pwd` command from `coreutils` (we cannot rely
   #  on `/bin/pwd` exisiting in an environment)
