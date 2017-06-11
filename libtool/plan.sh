@@ -7,7 +7,7 @@ pkg_source=http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_filename=${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=e3bd4d5d3d025a36c21dd6af7ea818a2afcd4dfc1ea5a17b39d7854bcd0c06e3
 pkg_deps=(
-  core/glibc lilian/coreutils lilian/sed
+  core/glibc  lilian/coreutils lilian/sed
   lilian/grep lilian/binutils
 )
 pkg_build_deps=(
@@ -18,18 +18,10 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+source ../better_defaults.sh
 
 do_prepare() {
   do_default_prepare
-  compiler_flags
 
   # Drop the dependency on `help2man` by skipping the generation of a man page
   sed \
@@ -44,7 +36,7 @@ do_build() {
     --prefix="$pkg_prefix" \
     lt_cv_sys_lib_dlsearch_path_spec="" \
     lt_cv_sys_lib_search_path_spec=""
-  make
+  make -j $(nproc)
 }
 
 

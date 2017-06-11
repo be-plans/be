@@ -19,22 +19,22 @@ EOF
 )
 pkg_deps=(
   lilian/coreutils
-  core/gawk
+  lilian/gawk
   core/gcc-libs
   core/glibc
   lilian/grep
-  core/inetutils
+  lilian/inetutils
   lilian/ncurses
   lilian/openssl 
   lilian/pcre
   lilian/perl
-  core/procps-ng
+  lilian/procps-ng
   lilian/sed
 )
 pkg_build_deps=(
-  core/bison
+  lilian/bison
   core/boost159
-  core/cmake
+  lilian/cmake
   lilian/diffutils
   lilian/gcc
   lilian/make

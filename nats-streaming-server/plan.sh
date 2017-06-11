@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://github.com/nats-io/nats-streaming-server/archive/v${pkg_version}.tar.gz
 pkg_shasum=4a8d2f7b27704b7671454bcd8a6a30a2a47de169b620d116ff373c1a9c13b9da
 pkg_deps=(core/glibc)
-pkg_build_deps=(core/go lilian/coreutils lilian/gcc lilian/make)
+pkg_build_deps=(lilian/go lilian/coreutils lilian/gcc lilian/make)
 pkg_bin_dirs=(bin)
 pkg_svc_run="${pkg_name}"
 

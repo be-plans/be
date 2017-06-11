@@ -70,7 +70,7 @@ pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
 pkg_scaffolding=core/scaffolding-node
-pkg_deps=(core/imagemagick)
+pkg_deps=(lilian/imagemagick)
 ```
 
 ###  Specifying Build Dependencies in Your Plan
@@ -92,7 +92,7 @@ pkg_build_deps=(core/makesmall)
 
 ### Selecting a Version of Node.js
 
-By default the latest version of the [`core/node`][] package will be injected into your Plan's `pkg_deps` array. To specify a non-default version of Node.js, there are three locations you can do this:
+By default the latest version of the [`lilian/node`][] package will be injected into your Plan's `pkg_deps` array. To specify a non-default version of Node.js, there are three locations you can do this:
 
 1. Use the [`engines.node`][package_json_engines] data structure in your app's `package.json`
 2. Write an [`.nvmrc`][] in your app's root directory with the version of Node.js to use
@@ -115,9 +115,9 @@ You can use the [`engines.node`][package_json_engines] data structure in your ap
 }
 ```
 
-The value of this key will be used to determine the version of the Habitat [`core/node`][] package. For example, the `package.json` above would result in `core/node/6.10.3` being injected into your Plan's `pkg_deps` array.
+The value of this key will be used to determine the version of the Habitat [`lilian/node`][] package. For example, the `package.json` above would result in `lilian/node/6.10.3` being injected into your Plan's `pkg_deps` array.
 
-Currently only releases of the [`core/node`] package will work so if further customizing is required you may need to specify a version of Node.js in your Plan as described below. Additionally, only exact versions of Node.js are currently supported, so version constraint expressions such as `">= 0.10.3"` will not work.
+Currently only releases of the [`lilian/node`] package will work so if further customizing is required you may need to specify a version of Node.js in your Plan as described below. Additionally, only exact versions of Node.js are currently supported, so version constraint expressions such as `">= 0.10.3"` will not work.
 
 #### Specifying a Node Version in an .nvmrc File
 
@@ -128,11 +128,11 @@ You can use an [`.nvmrc`][] file in your app's root directory to specify a versi
 6.10.3
 ```
 
-The value of the contents of this file will be used to determine the version of the Habitat [`core/node`][] package. For example, the `.nvmrc` file above would result in `core/node/6.10.3` being injected into your Plan's `pkg_deps` array.
+The value of the contents of this file will be used to determine the version of the Habitat [`lilian/node`][] package. For example, the `.nvmrc` file above would result in `lilian/node/6.10.3` being injected into your Plan's `pkg_deps` array.
 
 If a version of Node.js is detected in your project's `package.json`, the value in an `.nvmrc` will not be used.
 
-Currently only releases of the [`core/node`][] package will work  so if further customizing is required you may need to specify a version of Node.js in your Plan as described below. Additionally, only exact version of Node.js are currently support, so version constraint expressions or wildcard versions will not work.
+Currently only releases of the [`lilian/node`][] package will work  so if further customizing is required you may need to specify a version of Node.js in your Plan as described below. Additionally, only exact version of Node.js are currently support, so version constraint expressions or wildcard versions will not work.
 
 #### Specifying a Node.js Version in Your Plan
 
@@ -145,7 +145,7 @@ pkg_version=0.1.0
  # ...
 pkg_scaffolding=core/scaffolding-node
 
-scaffolding_node_pkg=core/node/5.6.0
+scaffolding_node_pkg=lilian/node/5.6.0
 ```
 
 The value of this variable will be used to determine the Habitat package to satisfy the role of your app's Node.js implementation.
@@ -375,7 +375,7 @@ Other Scaffolding packages may offer framework-specific app type detection in or
 [12factor_processes]: https://12factor.net/processes
 [bindings]: https://www.habitat.sh/docs/run-packages-binding/
 [`core/busybox-static`]: https://app.habitat.sh/#/pkgs/core/busybox-static
-[`core/node`]: https://app.habitat.sh/#/pkgs/core/node
+[`lilian/node`]: https://app.habitat.sh/#/pkgs/lilian/node
 [`core/yarn`]: https://app.habitat.sh/#/pkgs/core/yarn
 [Elasticsearch]: https://www.elastic.co/products/elasticsearch
 [habitat]: https://www.habitat.sh/

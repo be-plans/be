@@ -10,10 +10,10 @@ pkg_shasum=9150475f509b23518e67a220a9d3a821648ab27550f4ece4d07b92b1fc5611bc
 pkg_dirname="apache-$pkg_name-$pkg_version"
 pkg_deps=(
   lilian/coreutils
-  core/jdk8
-  core/which
+  lilian/jdk8
+  lilian/which
 )
-pkg_build_deps=(core/ant)
+pkg_build_deps=(lilian/ant)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 

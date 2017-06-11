@@ -13,7 +13,7 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  core/bison
+  lilian/bison
   core/busybox
   lilian/gcc
   lilian/m4
@@ -23,6 +23,9 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin sbin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+
+# Not built yet
+source ../better_defaults.sh
 
 do_build() {
   cd src || exit

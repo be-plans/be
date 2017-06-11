@@ -17,7 +17,7 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/coreutils
   lilian/diffutils
-  core/flex
+  lilian/flex
   lilian/gcc
   lilian/gettext
   core/libpipeline
@@ -28,19 +28,7 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib/man-db)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
-
-do_prepare() {
-  do_default_prepare
-  compiler_flags
-}
+source ../better_defaults.sh
 
 do_build() {
   ./configure \

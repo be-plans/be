@@ -10,9 +10,9 @@ pkg_shasum=6ad66c6fcd60a023de20b6856b03da8c7d347269d76b1fd9c3287e8b5e8813df
 pkg_deps=(
   core/giflib
   core/glibc
-  core/libjpeg-turbo
+  lilian/libjpeg-turbo
   core/jbigkit
-  core/libpng
+  lilian/libpng
   core/libtiff
   lilian/xz
   lilian/zlib

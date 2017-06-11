@@ -6,8 +6,13 @@ pkg_license=('gplv3+')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=434f32d171cbc0a5e72cfc5372c6fc4cb0e681f8dce566a0de5b6fccd702b62a
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/sed
+)
 pkg_bin_dirs=(bin)
+
+source ../better_defaults.sh
 
 do_prepare() {
   do_default_prepare
@@ -24,7 +29,7 @@ do_build() {
   ./configure \
     --prefix=$pkg_prefix \
     --localstatedir=$pkg_svc_var_path/locate
-  make
+  make -j $(nproc)
 }
 
 

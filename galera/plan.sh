@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Galera WSREP plugin"
 pkg_license=('GPL-2.0')
 pkg_lib_dirs=(lib)
-pkg_build_deps=(core/scons core/python2 lilian/gcc core/boost core/check lilian/openssl )
+pkg_build_deps=(lilian/scons lilian/python2 lilian/gcc lilian/boost lilian/check lilian/openssl )
 pkg_dirname="galera-release_${pkg_version}"
 
 do_build() {

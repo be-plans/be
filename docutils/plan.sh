@@ -14,7 +14,7 @@ pkg_deps=()
 pkg_build_deps=(
   lilian/make
   lilian/gcc
-  core/python2
+  lilian/python2
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

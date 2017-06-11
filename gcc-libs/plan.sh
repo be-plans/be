@@ -6,7 +6,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 # The shared libraries only depend on core/glibc
 pkg_deps=(core/glibc)
 # Add the same version of the full gcc package as a build dep
-pkg_build_deps=(lilian/gcc/$pkg_version core/patchelf)
+pkg_build_deps=(lilian/gcc/$pkg_version lilian/patchelf)
 
 # Zero out the bin and include paths, as we're only shipping shared libs
 pkg_bin_dirs=()

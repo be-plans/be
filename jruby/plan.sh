@@ -7,15 +7,15 @@ pkg_upstream_url=https://github.com/jruby/jruby
 pkg_source=https://github.com/jruby/jruby/archive/${pkg_version}.tar.gz
 pkg_shasum=0653363e7fd87458205603d1b2c46bb87f051de0357290096fde7d6132339cbc
 pkg_license=('EPL 1.0, GPL 2 and LGPL 2.1')
-pkg_deps=(core/glibc core/jre8 core/bash)
-pkg_build_deps=(core/which lilian/make core/jdk8 lilian/coreutils)
+pkg_deps=(core/glibc lilian/jre8 lilian/bash)
+pkg_build_deps=(lilian/which lilian/make lilian/jdk8 lilian/coreutils)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
 do_build() {
   export JAVA_HOME
-  JAVA_HOME=$(pkg_path_for core/jdk8)
+  JAVA_HOME=$(pkg_path_for lilian/jdk8)
   ./mvnw
 }
 

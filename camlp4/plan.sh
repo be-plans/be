@@ -17,7 +17,7 @@ pkg_build_deps=(
   lilian/gcc
   lilian/make
   core/ocamlbuild
-  core/which
+  lilian/which
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

@@ -6,21 +6,16 @@ pkg_license=('gplv3')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=f2c1e86ca0a404ff281631bdc8377638992744b175afb806e25871a24a934e07
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/binutils)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/binutils
+)
 pkg_bin_dirs=(bin)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+source ../better_defaults.sh
 
 do_prepare() {
   do_default_prepare
-  compiler_flags
 
   # Force gcc to use our ld wrapper from binutils when calling `ld`
   CFLAGS="$CFLAGS -B$(pkg_path_for binutils)/bin/"

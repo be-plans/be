@@ -2,15 +2,20 @@ pkg_name=readline
 pkg_origin=lilian
 _base_version=6.3
 pkg_version=${_base_version}.8
-pkg_license=('gplv3+')
+pkg_license=('GPL-3.0')
 _url_base=http://ftp.gnu.org/gnu/$pkg_name
 pkg_source=$_url_base/${pkg_name}-${_base_version}.tar.gz
 pkg_dirname=${pkg_name}-$_base_version
 pkg_shasum=56ba6071b9462f980c5a72ab0023893b65ba6debb4eeb475d7a563dc65cafd43
 pkg_deps=(core/glibc lilian/ncurses)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc core/bison lilian/grep)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/bison lilian/grep
+)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+
+source ../better_defaults.sh
 
 do_begin() {
   # The maintainer of Readline only releases these patches to fix serious issues,
@@ -81,5 +86,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc core/bison lilian/grep)
+  pkg_build_deps=(lilian/gcc lilian/bison lilian/grep)
 fi

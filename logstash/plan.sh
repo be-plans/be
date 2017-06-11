@@ -7,8 +7,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=(Apache-2.0)
 pkg_source=https://artifacts.elastic.co/downloads/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=9ce438ec331d3311acc55f22553a3f5a7eaea207b8aa2863164bb2767917de1f
-pkg_deps=(core/bash core/jre8 core/jruby1)
-pkg_build_deps=(core/bash)
+pkg_deps=(lilian/bash lilian/jre8 core/jruby1)
+pkg_build_deps=(lilian/bash)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 
@@ -37,7 +37,7 @@ do_install() {
   # throw `Unable to recognise the format of the input file' errors
   find "$pkg_prefix/vendor/jruby/lib/jni/" -mindepth 1 -maxdepth 1 -type d -not -name 'x86_64-Linux' -exec rm -rf {} \;
 
-  fix_interpreter "${pkg_prefix}/bin/*" core/bash bin/sh
+  fix_interpreter "${pkg_prefix}/bin/*" lilian/bash bin/sh
   # Ensure we only print to the console
   cp "${PLAN_CONTEXT}/log4j2.properties" "$pkg_prefix/settings/"
 }

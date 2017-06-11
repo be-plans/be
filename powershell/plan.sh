@@ -12,15 +12,15 @@ pkg_deps=(
   core/glibc
   core/gcc-libs
   core/icu/52.1
-  core/util-linux
+  lilian/util-linux
   core/krb5
   core/libunwind
   core/lttng-ust
   lilian/openssl 
 )
 pkg_build_deps=(
-  core/patchelf
-  core/cmake
+  lilian/patchelf
+  lilian/cmake
   lilian/make
   lilian/patch
   lilian/git

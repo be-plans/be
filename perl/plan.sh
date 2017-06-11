@@ -12,25 +12,17 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc core/procps-ng core/inetutils
-  core/iana-etc
+  lilian/make lilian/gcc lilian/procps-ng lilian/inetutils
+  lilian/iana-etc
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_interpreters=(bin/perl)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+source ../better_defaults.sh
 
 do_prepare() {
   do_default_prepare
-  compiler_flags
 
   # Do not look under `/usr` for dependencies.
   #
@@ -96,7 +88,7 @@ do_build() {
     -Dinc_version_list=none \
     -Dlddlflags="-shared ${LDFLAGS}" \
     -Dldflags="${LDFLAGS}"
-  make -j$(nproc)
+  make -j $(nproc)
 
   # Clear temporary build time environment variables
   unset BUILD_ZLIB BUILD_BZIP2
@@ -136,5 +128,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc core/procps-ng core/inetutils core/iana-etc)
+  pkg_build_deps=(lilian/gcc lilian/procps-ng lilian/inetutils lilian/iana-etc)
 fi

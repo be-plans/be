@@ -6,7 +6,7 @@ pkg_license=('MIT')
 pkg_source=nosuchfile.tar.gz
 pkg_deps=(
   lilian/coreutils
-  core/node
+  lilian/node
 )
 pkg_build_deps=(
   lilian/git

@@ -1,15 +1,17 @@
 pkg_name=procps-ng
 pkg_origin=lilian
-pkg_version=3.3.11
+pkg_version=3.3.12
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gpl' 'lgpl')
 pkg_source=https://downloads.sourceforge.net/project/${pkg_name}/Production/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=e9493169a2d2adc0bc045538707310c8e877b385e4e296143b62607d2bb044ed
+pkg_shasum=6ed65ab86318f37904e8f9014415a098bec5bc53653e5d9ab404f95ca5e1a7d4
 pkg_deps=(core/glibc lilian/ncurses)
 pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+
+source ../better_defaults.sh
 
 do_build() {
   # The Util-linux package will provide the `kill` command
@@ -17,7 +19,7 @@ do_build() {
     --prefix=$pkg_prefix \
     --sbindir=$pkg_prefix/bin \
     --disable-kill
-  make
+  make -j $(nproc)
 }
 
 do_check() {

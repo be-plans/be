@@ -15,13 +15,13 @@ pkg_build_deps=(
   lilian/gcc
   core/gcc-libs
   core/glibc
-  core/python2
+  lilian/python2
 )
 pkg_deps=(
-  core/bash
+  lilian/bash
   core/glibc
   core/gcc-libs
-  core/libpcap
+  lilian/libpcap
   lilian/openssl 
 )
 

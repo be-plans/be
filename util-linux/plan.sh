@@ -1,17 +1,22 @@
 pkg_name=util-linux
 pkg_origin=lilian
-pkg_version=2.27.1
-pkg_license=('GPLv2')
+pkg_version=2.30
+pkg_license=('GPL-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Miscellaneous system utilities for Linux"
 pkg_upstream_url=https://www.kernel.org/pub/linux/utils/util-linux
 pkg_source=https://www.kernel.org/pub/linux/utils/${pkg_name}/v${pkg_version%.?}/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=0a818fcdede99aec43ffe6ca5b5388bff80d162f2f7bd4541dca94fecb87a290
+pkg_shasum=c208a4ff6906cb7f57940aa5bc3a6eed146e50a7cc0a092f52ef2ab65057a08d
 pkg_deps=(core/glibc lilian/zlib lilian/ncurses)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/sed
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+
+source ../better_defaults.sh
 
 do_build() {
   ./configure \
@@ -30,11 +35,11 @@ do_build() {
     --disable-setpriv \
     --disable-runuser \
     --disable-pylibmount
-  make
+  make -j $(nproc)
 }
 
 do_install() {
-  make install usrsbin_execdir="$pkg_prefix/bin"
+  make -j $(nproc) install usrsbin_execdir="$pkg_prefix/bin"
 }
 
 

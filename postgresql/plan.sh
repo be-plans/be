@@ -8,12 +8,12 @@ pkg_license=('PostgreSQL')
 pkg_source=https://ftp.postgresql.org/pub/source/v${pkg_version}/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=e5101e0a49141fc12a7018c6dad594694d3a3325f5ab71e93e0e51bd94e51fcd
 pkg_deps=(
-  core/bash
+  lilian/bash
   core/envdir
   core/glibc
   lilian/openssl 
   lilian/perl
-  core/readline
+  lilian/readline
   lilian/zlib
   core/libossp-uuid
   core/wal-e
@@ -36,6 +36,9 @@ pkg_exposes=(port)
 pkg_svc_user=root
 pkg_svc_group=$pkg_svc_user
 
+# Not built yet
+source ../better_defaults.sh
+
 do_build() {
 	# ld manpage: "If -rpath is not used when linking an ELF
 	# executable, the contents of the environment variable LD_RUN_PATH
@@ -48,9 +51,9 @@ do_build() {
               --with-libraries="$LD_LIBRARY_PATH" \
               --sysconfdir="$pkg_svc_config_path" \
               --localstatedir="$pkg_svc_var_path"
-	make world
+	make -j $(nproc) world
 }
 
 do_install() {
-  make install-world
+  make -j $(nproc) install-world
 }

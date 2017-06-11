@@ -9,22 +9,14 @@ pkg_shasum=6b95763a977e9cd33b5fe64275bf3b04b44724d8746c29296c9cdfca4f045fa0
 pkg_deps=(core/glibc lilian/acl lilian/ncurses)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/sed core/autoconf
+  lilian/make lilian/gcc lilian/sed lilian/autoconf
 )
 pkg_bin_dirs=(bin)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+source ../better_defaults.sh
 
 do_prepare() {
   do_default_prepare
-  compiler_flags
 
   pushd src > /dev/null
     autoconf
@@ -65,5 +57,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch core/autoconf)
+  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch lilian/autoconf)
 fi

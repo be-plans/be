@@ -2,7 +2,7 @@ pkg_name=gzip
 pkg_origin=lilian
 pkg_version=1.8
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gplv3+')
+pkg_license=('GPL-3.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=ff1767ec444f71e5daf8972f6f8bf68cfcca1d2f76c248eb18e8741fc91dbbd3
 pkg_deps=(core/glibc lilian/less lilian/grep)
@@ -12,18 +12,10 @@ pkg_build_deps=(
 )
 pkg_bin_dirs=(bin)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+source ../better_defaults.sh
 
 do_prepare() {
   do_default_prepare
-  compiler_flags
 
   build_line "Patching 'zless' with the full path to 'less'"
   sed -i \

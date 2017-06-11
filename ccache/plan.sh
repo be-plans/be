@@ -9,7 +9,7 @@ pkg_upstream_url=https://ccache.samba.org/
 pkg_source="https://www.samba.org/ftp/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum=87a399a2267cfac3f36411fbc12ff8959f408cffd050ad15fe423df88e977e8f
 pkg_deps=(core/glibc lilian/zlib)
-pkg_build_deps=(lilian/gcc lilian/make lilian/diffutils core/which)
+pkg_build_deps=(lilian/gcc lilian/make lilian/diffutils lilian/which)
 pkg_bin_dirs=(bin)
 
 do_check() {

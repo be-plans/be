@@ -14,15 +14,15 @@ pkg_deps=(
   lilian/coreutils
   lilian/curl
   core/glibc
-  core/libxml2
+  lilian/libxml2
   lilian/openssl 
   lilian/zlib
 )
 pkg_build_deps=(
-  core/bison2
+  lilian/bison2
   lilian/gcc
   lilian/make
-  core/re2c
+  lilian/re2c
 )
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib)

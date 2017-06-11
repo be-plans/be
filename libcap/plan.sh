@@ -1,15 +1,21 @@
 pkg_name=libcap
 pkg_origin=lilian
-pkg_version=2.24
+pkg_version=2.25
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2')
 pkg_source=https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=cee4568f78dc851d726fc93f25f4ed91cc223b1fe8259daa4a77158d174e6c65
+pkg_shasum=693c8ac51e983ee678205571ef272439d83afe62dd8e424ea14ad9790bc35162
 pkg_deps=(core/glibc lilian/attr)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc core/linux-headers lilian/perl)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc core/linux-headers
+  lilian/perl
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+
+source ../better_defaults.sh
 
 do_prepare() {
   do_default_prepare
@@ -19,11 +25,11 @@ do_prepare() {
 }
 
 do_build() {
-  make KERNEL_HEADERS="$(pkg_path_for linux-headers)/include" LDFLAGS="$LDFLAGS"
+  make -j $(nproc) KERNEL_HEADERS="$(pkg_path_for linux-headers)/include" LDFLAGS="$LDFLAGS"
 }
 
 do_install() {
-  make prefix="$pkg_prefix" lib=lib RAISE_SETFCAP=no install
+  make -j $(nproc) prefix="$pkg_prefix" lib=lib RAISE_SETFCAP=no install
 }
 
 

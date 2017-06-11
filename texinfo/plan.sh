@@ -1,18 +1,22 @@
 pkg_name=texinfo
 pkg_origin=lilian
-pkg_version=6.0
+pkg_version=6.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gplv3+')
+pkg_license=('GPL-3.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=11ba4358696e8be3b3c7cfc88b89cf69525791aeabf0ee0a59ca58ebbd3471e4
+pkg_shasum=246cf3ffa54985118ec2eea2b8d0c71b92114efe6282c2ae90d65029db4cf93a
 pkg_deps=(core/glibc lilian/ncurses lilian/perl)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/sed
+)
 pkg_bin_dirs=(bin)
+
+source ../better_defaults.sh
 
 do_check() {
   make check
 }
-
 
 # ----------------------------------------------------------------------------
 # **NOTICE:** What follows are implementation details required for building a

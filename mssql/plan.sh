@@ -21,12 +21,12 @@ pkg_deps=(
   core/glibc
   core/jemalloc
   lilian/openssl 
-  core/python2
+  lilian/python2
 )
 
 pkg_build_deps=(
-  core/dpkg
-  core/patchelf
+  lilian/dpkg
+  lilian/patchelf
 )
 
 pkg_bin_dirs=(bin)
@@ -44,7 +44,7 @@ do_install() {
   cp -a opt/mssql/bin "$pkg_prefix"
   cp -a opt/mssql/lib "$pkg_prefix"
 
-  PYTHONPATH="$(pkg_path_for core/python2)"
+  PYTHONPATH="$(pkg_path_for lilian/python2)"
   sed -i "s#/usr/bin/python#$PYTHONPATH/bin/python#" "$pkg_prefix/lib/mssql-conf/mssql-conf.py"
 
   find "$pkg_prefix/bin" -type f -name '*' \

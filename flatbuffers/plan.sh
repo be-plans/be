@@ -1,6 +1,6 @@
 pkg_name=flatbuffers
 pkg_origin=lilian
-pkg_version=1.4.0
+pkg_version=1.6.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
 pkg_description="$(cat << EOF
@@ -10,7 +10,7 @@ pkg_description="$(cat << EOF
 EOF
 )"
 pkg_source="https://github.com/google/${pkg_name}/archive/v${pkg_version}.tar.gz"
-pkg_shasum="d3355f0adcc16054afcce4a3eac90b9c26f926be9a65b2e158867f56ab689e63"
+pkg_shasum="768c50ebf5823f8cde81a9e38ffff115c8f5a5d031a37520d0024e7b9c6cd22e"
 pkg_upstream_url="http://google.github.io/flatbuffers/index.html"
 
 pkg_deps=(
@@ -21,22 +21,46 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/make
   lilian/gcc
-  core/cmake
+  lilian/cmake
 )
 
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
+compiler_flags() {
+  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} -Wno-error -Wno-error=implicit-fallthrough "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} -Wno-error -Wno-error=implicit-fallthrough "
+  export CPPFLAGS="${CPPFLAGS} -Wno-error -Wno-error=implicit-fallthrough "
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
+do_prepare() {
+  do_default_prepare
+  compiler_flags
+}
+
 do_build() {
   export LD_LIBRARY_PATH
   LD_LIBRARY_PATH="$(pkg_path_for gcc)/lib"
   build_line "Setting LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
 
-  cmake -G "Unix Makefiles" \
+  rm -rf build
+  mkdir -p build && cd build
+  cmake -G "Unix Makefiles" ../ \
         -DCMAKE_INSTALL_PREFIX="$pkg_prefix" \
+        -DCMAKE_BUILD_TYPE=Release \
         -DCMAKE_CXX_FLAGS="$CXXFLAGS"
-  make
+  make -j $(nproc)
+}
+
+do_install() {
+  (
+    cd build
+    make -j $(nproc) install
+  )
 }
 
 do_check() {

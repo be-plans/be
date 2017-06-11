@@ -9,15 +9,15 @@ pkg_upstream_url=https://www.gnu.org/software/grub/
 pkg_license=('GPL-3.0')
 pkg_bin_dirs=(bin sbin)
 pkg_build_deps=(
-  core/autoconf
-  core/automake
+  lilian/autoconf
+  lilian/automake
   lilian/binutils
-  core/bison
+  lilian/bison
   core/cacerts
   lilian/diffutils
   core/dosfstools
-  core/flex
-  core/freetype
+  lilian/flex
+  lilian/freetype
   lilian/gcc
   lilian/gettext
   lilian/git
@@ -26,9 +26,9 @@ pkg_build_deps=(
   lilian/python
   core/qemu
   core/rsync
-  core/texinfo
+  lilian/texinfo
 )
-pkg_deps=(core/glibc lilian/xz lilian/gettext lilian/pcre core/gcc-libs core/devicemapper core/elfutils lilian/bzip2 core/libcap)
+pkg_deps=(core/glibc lilian/xz lilian/gettext lilian/pcre core/gcc-libs core/devicemapper core/elfutils lilian/bzip2 lilian/libcap)
 
 do_setup() {
   if [[ ! -d /boot ]]; then

@@ -5,7 +5,7 @@ pkg_origin=lilian
 pkg_license=('bundler')
 pkg_description="The Ruby language dependency manager"
 pkg_upstream_url=https://bundler.io/
-pkg_deps=(core/ruby core/busybox-static)
+pkg_deps=(lilian/ruby core/busybox-static)
 pkg_build_deps=()
 pkg_bin_dirs=(bin)
 

@@ -9,10 +9,15 @@ _url_base=http://ftp.gnu.org/gnu/$pkg_distname
 pkg_source=$_url_base/${pkg_distname}-${_base_version}.tar.gz
 pkg_dirname=${pkg_distname}-$_base_version
 pkg_shasum=afc687a28e0e24dc21b988fa159ff9dbcf6b7caa92ade8645cc6d5605cd024d4
-pkg_deps=(core/glibc lilian/ncurses core/readline)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
+pkg_deps=(core/glibc lilian/ncurses lilian/readline)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc
+)
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/bash bin/sh)
+
+source ../better_defaults.sh
 
 do_begin() {
   # The maintainer of Bash only releases these patches to fix serious issues,
@@ -46,18 +51,8 @@ do_verify() {
   done; unset i
 }
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
-
 do_prepare() {
   do_default_prepare
-  compiler_flags
 
   # Apply all patch files to the extracted source
   for p in "${_patch_files[@]}"; do
@@ -73,7 +68,7 @@ do_build() {
     --enable-readline \
     --without-bash-malloc \
     --with-installed-readline=$(pkg_path_for readline)
-  make
+  make -j $(nproc)
 }
 
 do_check() {

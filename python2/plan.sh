@@ -17,25 +17,37 @@ pkg_deps=(
   core/glibc
   lilian/ncurses
   lilian/openssl 
-  core/readline
-  core/sqlite
+  lilian/readline
+  lilian/sqlite
   lilian/zlib
 )
 pkg_build_deps=(
   lilian/coreutils
   lilian/diffutils
   lilian/gcc
-  core/gdb
+  lilian/gdb
   core/linux-headers
   lilian/make
-  core/util-linux
+  lilian/util-linux
 )
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include Include)
 pkg_interpreters=(bin/python bin/python2 bin/python2.7)
 
+compiler_flags() {
+  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} -Wno-error "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} -Wno-error "
+  export CPPFLAGS="${CPPFLAGS} -Wno-error "
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
 do_prepare() {
+  do_default_prepare
+  compiler_flags
+
   sed -i.bak 's/#zlib/zlib/' Modules/Setup.dist
   sed -i -re "/(SSL=|_ssl|-DUSE_SSL|-lssl).*/ s|^#||" Modules/Setup.dist
 
@@ -50,7 +62,7 @@ do_build() {
                 --enable-shared \
                 --enable-unicode=ucs4 \
                 --with-ensurepip
-    make
+    make -j $(nproc)
 }
 
 do_check() {

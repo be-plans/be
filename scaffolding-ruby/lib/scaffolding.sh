@@ -417,7 +417,7 @@ _setup_funcs() {
 
 _setup_vars() {
   # The default Ruby package if one cannot be detected
-  _default_ruby_pkg="core/ruby"
+  _default_ruby_pkg="lilian/ruby"
   # The absolute path to the `gemfile-parser` program
   _gemfile_parser="$(pkg_path_for scaffolding-ruby)/bin/gemfile-parser"
   # `$scaffolding_ruby_pkg` is empty by default
@@ -626,7 +626,7 @@ _add_busybox() {
 _detect_execjs() {
   if _has_gem execjs; then
     build_line "Detected 'execjs' gem in Gemfile.lock, adding node packages"
-    pkg_deps=(core/node ${pkg_deps[@]})
+    pkg_deps=(lilian/node ${pkg_deps[@]})
     debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
   fi
 }
@@ -644,7 +644,7 @@ _detect_nokogiri() {
   if _has_gem nokogiri; then
     build_line "Detected 'nokogiri' gem in Gemfile.lock, adding libxml2 & libxslt packages"
     export BUNDLE_BUILD__NOKOGIRI="--use-system-libraries"
-    pkg_deps=(core/libxml2 core/libxslt ${pkg_deps[@]})
+    pkg_deps=(lilian/libxml2 lilian/libxslt ${pkg_deps[@]})
     debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
   fi
 }
@@ -765,7 +765,7 @@ _detect_ruby() {
       # TODO fin: Add more robust Gemfile to Habitat package matching
       case "$lockfile_version" in
         *)
-          _ruby_pkg="core/ruby/$(
+          _ruby_pkg="lilian/ruby/$(
             echo "$lockfile_version" | cut -d ' ' -f 2)"
           ;;
       esac
@@ -782,7 +782,7 @@ _detect_ruby() {
 _detect_sqlite3() {
   if _has_gem sqlite3; then
     build_line "Detected 'sqlite3' gem in Gemfile.lock, adding sqlite packages"
-    pkg_deps=(core/sqlite ${pkg_deps[@]})
+    pkg_deps=(lilian/sqlite ${pkg_deps[@]})
     debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
   fi
 }

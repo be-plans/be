@@ -8,23 +8,11 @@ pkg_shasum=9908c75aabd49d13661d6dcb1bc382252d22cc77bf733a2d55e87f2aa2db8636
 pkg_deps=(lilian/perl)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc core/autoconf
+  lilian/make lilian/gcc lilian/autoconf
 )
 pkg_bin_dirs=(bin)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
-
-do_prepare() {
-  do_default_prepare
-  compiler_flags
-}
+source ../better_defaults.sh
 
 # ----------------------------------------------------------------------------
 # **NOTICE:** What follows are implementation details required for building a
@@ -34,5 +22,5 @@ do_prepare() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/diffutils core/autoconf)
+  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/diffutils lilian/autoconf)
 fi

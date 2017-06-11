@@ -15,14 +15,14 @@ pkg_deps=(
 )
 pkg_build_deps=(
   core/apr
-  core/apr-util
+  lilian/apr-util
   lilian/coreutils
   lilian/diffutils
   lilian/gcc
   lilian/make
   lilian/pkg-config
-  core/python2
-  core/sqlite
+  lilian/python2
+  lilian/sqlite
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

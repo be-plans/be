@@ -9,20 +9,13 @@ pkg_license=('GPL-3.0')
 pkg_source="http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.tar.xz"
 pkg_shasum=8891d349ee87b9ff7870f52b6d9312a9db672d2439d289bc57084771ca21656b
 pkg_deps=(core/glibc lilian/acl lilian/attr
-          lilian/gmp core/libcap)
+          lilian/gmp lilian/libcap)
 pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make
-                lilian/gcc       lilian/m4          lilian/perl    core/inetutils)
+                lilian/gcc       lilian/m4        lilian/perl  lilian/inetutils)
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/env)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+source ../better_defaults.sh
 
 do_build() {
   # The `FORCE_` variable allows the software to compile with the root user,

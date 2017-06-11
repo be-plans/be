@@ -1,21 +1,21 @@
 pkg_name=busybox
 pkg_distname=$pkg_name
 pkg_origin=lilian
-pkg_version=1.24.2
+pkg_version=1.26.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gplv2')
+pkg_license=('GPL-2.0')
 pkg_source=http://www.busybox.net/downloads/${pkg_distname}-${pkg_version}.tar.bz2
-pkg_shasum=e71ef53ec656f31c42633918d301405d40dea1d97eca12f272217ae4a971c855
+pkg_shasum=da3e44913fc1a9c9b7c5337ea5292da518683cbff32be630777f565d6036af16
 
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  core/bash
-  core/bison
+  lilian/bash
+  lilian/bison
   lilian/coreutils
   lilian/diffutils
-  core/findutils
-  core/flex
-  core/gawk
+  lilian/findutils
+  lilian/flex
+  lilian/gawk
   lilian/gcc
   lilian/gettext
   lilian/grep
@@ -24,21 +24,24 @@ pkg_build_deps=(
   lilian/make
   lilian/patch
   lilian/sed
-  core/texinfo
-  core/util-linux
-  core/wget
+  lilian/texinfo
+  lilian/util-linux
+  lilian/wget
   lilian/xz
 )
 
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/ash bin/awk bin/env bin/sh bin/bash)
 
+source ../better_defaults.sh
+
 do_prepare() {
+  do_default_prepare
   create_config
 }
 
 do_build() {
-  make -j$(nproc)
+  make -j $(nproc)
 }
 
 do_install() {

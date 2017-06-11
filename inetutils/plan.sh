@@ -2,12 +2,17 @@ pkg_name=inetutils
 pkg_origin=lilian
 pkg_version=1.9.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gplv3+')
+pkg_license=('GPL-3.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=849d96f136effdef69548a940e3e0ec0624fc0c81265296987986a0dd36ded37
-pkg_deps=(core/glibc core/libcap lilian/ncurses)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed lilian/grep)
+pkg_deps=(core/glibc lilian/libcap lilian/ncurses)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/sed lilian/grep
+)
 pkg_bin_dirs=(bin)
+
+source ../better_defaults.sh
 
 do_build() {
   # Configure flag notes:
@@ -30,7 +35,7 @@ do_build() {
     --disable-rlogin \
     --disable-rsh \
     --disable-servers
-  make
+  make -j $(nproc)
 }
 
 do_install() {

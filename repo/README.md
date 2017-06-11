@@ -16,7 +16,7 @@ export GIT_SSL_CAINFO
 SSL_CERT_FILE="$(pkg_path_for core/cacerts)/ssl/certs/cacert.pem"
 export SSL_CERT_FILE
 
-PYTHONPATH="$(pkg_path_for core/python2)"
+PYTHONPATH="$(pkg_path_for lilian/python2)"
 export PYTHONPATH
 ```
 
@@ -31,7 +31,7 @@ do_download() {
   export SSL_CERT_FILE="$GIT_SSL_CAINFO"
   build_line "Setting SSL_CERT_FILE=$SSL_CERT_FILE"
 
-  PYTHONPATH="$(pkg_path_for core/python2)"
+  PYTHONPATH="$(pkg_path_for lilian/python2)"
   export PYTHONPATH
   build_line "Setting PYTHONPATH=$PYTHONPATH"
 

@@ -12,7 +12,7 @@ pkg_shasum=bbb0e249a7a3e8143b569706c7d2e7e5f51932c753b7fd26c58ccd2015b02c6b
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_deps=(core/glibc core/gcc-libs lilian/zlib lilian/gcc core/cacerts core/busybox-static)
-pkg_build_deps=(core/patchelf core/findutils lilian/coreutils)
+pkg_build_deps=(lilian/patchelf lilian/findutils lilian/coreutils)
 
 _target_sources=(
   $_url_base/${pkg_name}-std-${pkg_version}-x86_64-unknown-linux-musl.tar.gz
@@ -117,5 +117,5 @@ do_strip() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(core/patchelf lilian/coreutils lilian/sed lilian/grep lilian/diffutils core/findutils lilian/make lilian/patch)
+  pkg_build_deps=(lilian/patchelf lilian/coreutils lilian/sed lilian/grep lilian/diffutils lilian/findutils lilian/make lilian/patch)
 fi

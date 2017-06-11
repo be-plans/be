@@ -224,7 +224,7 @@ _setup_funcs() {
 
 _setup_vars() {
   # The default Node package if one cannot be detected
-  _default_node_pkg="core/node"
+  _default_node_pkg="lilian/node"
   # `$scaffolding_pkg_manager` is empty by default
   : "${scaffolding_pkg_manager:=}"
   # `$scaffolding_node_pkg` is empty by default
@@ -430,7 +430,7 @@ _detect_node() {
       # TODO fin: Add more robust packages.json to Habitat package matching
       case "$val" in
         *)
-          _node_pkg="core/node/$val"
+          _node_pkg="lilian/node/$val"
           ;;
       esac
       build_line "Detected Node.js version '$val' in package.json, using '$_node_pkg'"
@@ -439,7 +439,7 @@ _detect_node() {
       # TODO fin: Add more robust .nvmrc to Habitat package matching
       case "$val" in
         *)
-          _node_pkg="core/node/$val"
+          _node_pkg="lilian/node/$val"
           ;;
       esac
       build_line "Detected Node.js version '$val' in .nvmrc, using '$_node_pkg'"

@@ -10,7 +10,7 @@ pkg_source=https://archive.apache.org/dist/${pkg_distname}/${pkg_distname}-${pkg
 pkg_shasum=e0500be065dbbce490449837bb2ab624e46d64fc0b090474d9acaa87c82b2590
 pkg_deps=(
   core/apr
-  core/apr-util
+  lilian/apr-util
   core/glibc
   lilian/openssl 
   lilian/zlib
@@ -19,8 +19,8 @@ pkg_build_deps=(
   lilian/gcc
   lilian/make
   lilian/patch
-  core/python2
-  core/scons
+  lilian/python2
+  lilian/scons
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

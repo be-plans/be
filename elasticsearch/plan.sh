@@ -10,7 +10,7 @@ pkg_shasum=23a369ef42955c19aaaf9e34891eea3a055ed217d7fbe76da0998a7a54bbe167
 pkg_deps=(
   core/busybox-static
   core/glibc
-  core/jre8
+  lilian/jre8
 )
 pkg_bin_dirs=(es/bin)
 pkg_lib_dirs=(es/lib)

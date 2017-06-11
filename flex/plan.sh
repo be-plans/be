@@ -6,10 +6,27 @@ pkg_license=('custom')
 pkg_source=https://downloads.sourceforge.net/project/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=d39b15a856906997ced252d76e9bfe2425d7503c6ed811669665627b248e4c73
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/m4 core/bison)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/m4 lilian/bison
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+
+compiler_flags() {
+  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} -Wno-error "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} -Wno-error "
+  export CPPFLAGS="${CPPFLAGS} -Wno-error "
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
+do_prepare() {
+  do_default_prepare
+  compiler_flags
+}
 
 do_check() {
   # Set `LDFLAGS` for the c++ test code to find libstdc++
@@ -33,5 +50,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/m4 lilian/coreutils core/bison)
+  pkg_build_deps=(lilian/gcc lilian/m4 lilian/coreutils lilian/bison)
 fi

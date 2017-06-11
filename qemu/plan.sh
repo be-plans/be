@@ -11,8 +11,8 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_build_deps=(
-  core/autoconf
-  core/automake
+  lilian/autoconf
+  lilian/automake
   lilian/diffutils
   lilian/gcc
   lilian/libtool
@@ -24,18 +24,18 @@ pkg_deps=(
   lilian/bzip2
   lilian/curl
   core/gcc-libs
-  core/glib
+  lilian/glib
   core/glibc
   core/jemalloc
   core/libaio
-  core/libcap-ng
+  lilian/libcap-ng
   core/lzo
   lilian/ncurses
   lilian/pcre
   core/pixman
-  core/python2
-  core/snappy
-  core/util-linux
+  lilian/python2
+  lilian/snappy
+  lilian/util-linux
   core/vde2
   lilian/zlib
 )

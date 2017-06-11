@@ -12,7 +12,7 @@ pkg_exports=(
 )
 pkg_exposes=(port)
 pkg_deps=(core/dotnet-core)
-pkg_build_deps=(core/node core/patchelf)
+pkg_build_deps=(lilian/node lilian/patchelf)
 
 do_prepare() {
   rm -rf "${HAB_CACHE_SRC_PATH:?}/${pkg_dirname:?}"

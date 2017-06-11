@@ -8,9 +8,25 @@ pkg_license=('GPL-3.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=a72428c7917bdf9fa93cb8181c971b6e22834125848cf1d03ce10b1bb0716fe1
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/m4 lilian/perl)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/m4 lilian/perl
+)
 pkg_bin_dirs=(bin)
 
+compiler_flags() {
+  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} -Wno-error "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} -Wno-error "
+  export CPPFLAGS="${CPPFLAGS} -Wno-error "
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
+do_prepare() {
+  do_default_prepare
+  compiler_flags
+}
 
 # ----------------------------------------------------------------------------
 # **NOTICE:** What follows are implementation details required for building a

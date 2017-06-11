@@ -17,8 +17,8 @@ then
 fi
 
 # Copy the php-fom config into position
-cp -n {{pkgPathFor "core/php"}}/etc/php-fpm.d/www.conf.default \
-      {{pkgPathFor "core/php"}}/etc/php-fpm.d/www.conf
+cp -n {{pkgPathFor "lilian/php"}}/etc/php-fpm.d/www.conf.default \
+      {{pkgPathFor "lilian/php"}}/etc/php-fpm.d/www.conf
 
 # Set the correct permissions
 chmod +x {{pkg.svc_data_path}}

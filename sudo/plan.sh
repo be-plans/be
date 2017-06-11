@@ -22,7 +22,7 @@ pkg_bin_dirs=(bin sbin)
 pkg_include_dirs=(include)
 
 compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
   local -r protection="-fstack-protector-strong"
   export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
   export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "

@@ -10,12 +10,12 @@ pkg_shasum=2aae8e7b0b2e5e0695ec6a88a6f5ae6b3c3badae94fe49e6c9c637164e3f4df3
 pkg_dirname=mention-bot-de2a15da302aad07fb246c2f5c4be85fbf2e65dd
 pkg_deps=(
   core/elfutils
-  core/node
+  lilian/node
 )
 pkg_build_deps=(
   core/glibc
-  core/node
-  core/patchelf
+  lilian/node
+  lilian/patchelf
 )
 pkg_exports=(
   [port]=port

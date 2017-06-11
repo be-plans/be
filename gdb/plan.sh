@@ -9,7 +9,7 @@ pkg_source="http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=f6a24ffe4917e67014ef9273eb8b547cb96a13e5ca74895b06d683b391f3f4ee
 pkg_deps=(
   core/glibc
-  core/readline
+  lilian/readline
   lilian/zlib
   lilian/xz
   lilian/ncurses
@@ -23,28 +23,16 @@ pkg_build_deps=(
   lilian/pkg-config
   lilian/diffutils
   lilian/expect
-  core/dejagnu
+  lilian/dejagnu
   lilian/patch
   lilian/make
   lilian/gcc
-  core/texinfo
+  lilian/texinfo
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
-
-do_prepare() {
-  do_default_prepare
-  compiler_flags
-}
+source ../better_defaults.sh
 
 do_build() {
   ./configure \

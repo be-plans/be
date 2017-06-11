@@ -11,7 +11,7 @@ pkg_bin_dirs=(bin)
 pkg_build_deps=()
 pkg_deps=(
   lilian/coreutils
-  core/node
+  lilian/node
   lilian/sed
 )
 

@@ -1,15 +1,20 @@
 pkg_name=libidn
 pkg_origin=lilian
-pkg_version=1.32
+pkg_version=1.33
 pkg_license=('lgplv2+')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=ba5d5afee2beff703a34ee094668da5c6ea5afa38784cebba8924105e185c4f5
+pkg_shasum=44a7aab635bb721ceef6beecc4d49dfd19478325e1b47f3196f7d2acc4930e19
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+
+source ../better_defaults.sh
 
 do_check() {
   make check

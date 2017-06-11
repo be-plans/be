@@ -3,12 +3,17 @@ pkg_description="A small utility to modify the dynamic linker and RPATH of ELF e
 pkg_origin=lilian
 pkg_version=0.9
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gplv3')
+pkg_license=('GPL-3.0')
 pkg_upstream_url="https://nixos.org/patchelf.html"
 pkg_source=http://releases.nixos.org/$pkg_name/${pkg_name}-$pkg_version/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=f2aa40a6148cb3b0ca807a1bf836b081793e55ec9e5540a5356d800132be7e0a
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc
+)
 pkg_bin_dirs=(bin)
+
+source ../better_defaults.sh
 
 if [[ -n "$FIRST_PASS" ]]; then
   # Waiting on gcc-libs to link libgcc and libstdc++, but because we need

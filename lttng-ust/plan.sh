@@ -11,7 +11,7 @@ pkg_deps=(
   lilian/coreutils
   core/gcc-libs
   core/glibc
-  core/python2
+  lilian/python2
   core/userspace-rcu
 )
 pkg_build_deps=(

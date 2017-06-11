@@ -8,15 +8,15 @@ pkg_upstream_url=https://www.elastic.co/products/kibana
 pkg_source=https://github.com/elastic/${pkg_name}/archive/v${pkg_version}.tar.gz
 pkg_shasum=58dc3f82cdd62708034169db64c342a48674065673e2115d410509f83fe59c9e
 pkg_filename=${pkg_name}-${pkg_version}.tar.gz
-pkg_deps=(core/node)
+pkg_deps=(lilian/node)
 pkg_build_deps=(
   core/cacerts
   lilian/coreutils
   lilian/gcc
   lilian/git
   lilian/make
-  core/node
-  core/python2
+  lilian/node
+  lilian/python2
 )
 pkg_exports=(
   [port]=server.port

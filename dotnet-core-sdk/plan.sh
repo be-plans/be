@@ -20,11 +20,11 @@ pkg_deps=(
   core/libunwind
   core/lttng-ust
   lilian/openssl 
-  core/util-linux
+  lilian/util-linux
   lilian/zlib
 )
 pkg_build_deps=(
-  core/patchelf
+  lilian/patchelf
 )
 pkg_bin_dirs=(bin)
 

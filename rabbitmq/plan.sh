@@ -15,17 +15,17 @@ pkg_deps=(
   core/erlang
 )
 pkg_build_deps=(
-  core/bash
+  lilian/bash
   lilian/diffutils
-  core/gawk
+  lilian/gawk
   lilian/gcc
   lilian/git
   lilian/grep
-  core/libxml2
-  core/libxslt
+  lilian/libxml2
+  lilian/libxslt
   lilian/make
   lilian/perl
-  core/python2
+  lilian/python2
   core/rsync
   core/unzip
   core/zip

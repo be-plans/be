@@ -3,7 +3,7 @@ pkg_origin=lilian
 pkg_version="6.3.0"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')
-pkg_deps=(core/node)
+pkg_deps=(lilian/node)
 pkg_description="RAML to HTML documentation generator."
 pkg_upstream_url="https://github.com/raml2html/raml2html"
 pkg_bin_dirs=(bin)
@@ -14,7 +14,7 @@ do_build() {
 
 do_install() {
   local shebang
-  shebang="#!$(pkg_path_for core/node)/bin/node"
+  shebang="#!$(pkg_path_for lilian/node)/bin/node"
 
   mv "$CACHE_PATH/lib/node_modules/$pkg_name"/* "$pkg_prefix/"
 

@@ -12,27 +12,19 @@ pkg_deps=(lilian/bdwgc
   core/glibc
   lilian/gmp
   lilian/libatomic_ops
-  core/libffi
+  lilian/libffi
   lilian/libtool
-  core/libunistring
-  core/readline)
+  lilian/libunistring
+  lilian/readline)
 pkg_build_deps=(lilian/diffutils lilian/gcc lilian/make lilian/pkg-config)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+source ../better_defaults.sh
 
 do_prepare() {
   do_default_prepare
-  compiler_flags
 
   LDFLAGS="-lgcc_s ${LDFLAGS}"
   export LDFLAGS

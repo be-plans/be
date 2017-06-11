@@ -9,8 +9,15 @@ pkg_upstream_url=http://gradle.org
 pkg_license=('Apache-2.0')
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
-pkg_build_deps=(lilian/make lilian/gcc core/jdk8 core/patchelf)
-pkg_deps=(core/glibc core/jre8 lilian/coreutils core/bash-static core/gcc-libs lilian/sed)
+pkg_deps=(
+  core/glibc core/gcc-libs lilian/jre8
+  lilian/coreutils core/bash-static lilian/sed)
+pkg_build_deps=(
+  lilian/make lilian/gcc
+  lilian/jdk8 lilian/patchelf
+)
+
+source ../better_defaults.sh
 
 do_build() {
   mkdir patching

@@ -1,20 +1,20 @@
 pkg_name=mc
 pkg_origin=lilian
-pkg_version=4.8.18
+pkg_version=4.8.19
 pkg_description="Midnight Commander."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
-pkg_source=http://ftp.midnight-commander.org/mc-${pkg_version}.tar.bz2
+pkg_source=http://ftp.midnight-commander.org/mc-${pkg_version}.tar.xz
 pkg_upstream_url=https://www.midnight-commander.org
-pkg_shasum=5b591e10dcbea95233434da40cdad4663d360229adf89826576c319667c103cb
+pkg_shasum=eb9e56bbb5b2893601d100d0e0293983049b302c5ab61bfb544ad0ee2cc1f2df
 pkg_deps=(
-  core/glib
+  lilian/glib
   core/glibc
   lilian/ncurses
   lilian/pcre
 )
 pkg_build_deps=(
-  core/check
+  lilian/check
   lilian/coreutils
   lilian/diffutils
   lilian/gcc
@@ -25,6 +25,8 @@ pkg_build_deps=(
 )
 pkg_bin_dirs=(bin)
 
+source ../better_defaults.sh
+
 do_build() {
   ./configure --prefix="$pkg_prefix" \
               --with-screen=ncurses \
@@ -32,5 +34,5 @@ do_build() {
               --without-subshell \
               --without-x \
               --without-gpm-mouse
-  make
+  make -j $(nproc)
 }

@@ -17,8 +17,8 @@ pkg_deps=(
   core/glibc
   lilian/ncurses
   lilian/openssl 
-  core/readline
-  core/sqlite
+  lilian/readline
+  lilian/sqlite
   lilian/zlib
 )
 pkg_build_deps=(
@@ -27,25 +27,17 @@ pkg_build_deps=(
   lilian/gcc
   core/linux-headers
   lilian/make
-  core/util-linux
+  lilian/util-linux
 )
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_interpreters=(bin/python bin/python3 bin/python3.5)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+source ../better_defaults.sh
 
 do_prepare() {
   do_default_prepare
-  compiler_flags
 
   sed -i.bak 's/#zlib/zlib/' Modules/Setup.dist
   sed -i -re "/(SSL=|_ssl|-DUSE_SSL|-lssl).*/ s|^#||" Modules/Setup.dist
@@ -57,7 +49,7 @@ do_build() {
               --enable-loadable-sqlite-extensions \
               --enable-shared \
               --with-ensurepip
-  make -j$(nproc)
+  make -j $(nproc)
 }
 
 do_check() {

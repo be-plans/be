@@ -21,7 +21,7 @@ pkg_deps=(
   core/rsync
   core/ocaml
   core/ocamlbuild
-  core/which
+  lilian/which
 )
 
 pkg_bin_dirs=(bin)

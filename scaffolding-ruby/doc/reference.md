@@ -75,7 +75,7 @@ pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
 pkg_scaffolding=core/scaffolding-ruby
-pkg_deps=(core/imagemagick core/libsodium)
+pkg_deps=(lilian/imagemagick lilian/libsodium)
 ```
 
 ###  Specifying Build Dependencies in Your Plan
@@ -97,7 +97,7 @@ pkg_build_deps=(core/rust)
 
 ### Selecting a Version of Ruby
 
-By default the latest version of the [MRI][]-based [`core/ruby`][] package will be injected into your Plan's `pkg_deps` array. To specify a non-default version of Ruby, there are two locations you can do this:
+By default the latest version of the [MRI][]-based [`lilian/ruby`][] package will be injected into your Plan's `pkg_deps` array. To specify a non-default version of Ruby, there are two locations you can do this:
 
 1. Use the [`ruby`][gemfile_ruby] keyword in your app's `Gemfile`
 2. Set the `scaffolding_ruby_pkg` variable in your Plan with a valid Habitat package identifier corresponding to a package with a `ruby` program
@@ -116,9 +116,9 @@ ruby "2.4.1"
  # ...
 ```
 
-The value of this keyword will be used to determine the version of the Habitat [`core/ruby`][] package. For example, the `Gemfile` above would result in `core/ruby/2.4.1` being injected into your Plan's `pkg_deps` array.
+The value of this keyword will be used to determine the version of the Habitat [`lilian/ruby`][] package. For example, the `Gemfile` above would result in `lilian/ruby/2.4.1` being injected into your Plan's `pkg_deps` array.
 
-Currently only releases of the [`core/ruby`] package will work so if further customizing is required you may need to specify a version of Ruby in your Plan as described below. Additionally, only MRI versions of Ruby are supported, however future support for JRuby implementations of Ruby is possible. Consequently, this means that the `:engine` and `:engine_version` options are not used.
+Currently only releases of the [`lilian/ruby`] package will work so if further customizing is required you may need to specify a version of Ruby in your Plan as described below. Additionally, only MRI versions of Ruby are supported, however future support for JRuby implementations of Ruby is possible. Consequently, this means that the `:engine` and `:engine_version` options are not used.
 
 #### Specifying a Ruby Version in Your Plan
 
@@ -131,7 +131,7 @@ pkg_version=0.1.0
  # ...
 pkg_scaffolding=core/scaffolding-ruby
 
-scaffolding_ruby_pkg=core/ruby/2.4.1
+scaffolding_ruby_pkg=lilian/ruby/2.4.1
 ```
 
 The value of this variable will be used to determine the Habitat package to satisfy the role of your app's Ruby implementation.
@@ -497,7 +497,7 @@ If your database is not currently running in a Habitat ring under a Supervisor, 
 [bindings]: https://www.habitat.sh/docs/run-packages-binding/
 [commit_lockfile]: http://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/
 [`core/busybox-static`]: https://app.habitat.sh/#/pkgs/core/busybox-static
-[`core/ruby`]: https://app.habitat.sh/#/pkgs/core/ruby
+[`lilian/ruby`]: https://app.habitat.sh/#/pkgs/lilian/ruby
 [Elasticsearch]: https://www.elastic.co/products/elasticsearch
 [`Gemfile`]: http://bundler.io/man/gemfile.5.html
 [gemfile_ruby]: http://bundler.io/man/gemfile.5.html#RUBY

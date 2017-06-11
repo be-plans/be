@@ -10,13 +10,13 @@ pkg_shasum=4ce77b6ef538ef090d9bde1d5eeff8b3069ab56c4906f083475517c2c023dfa7
 
 pkg_deps=(
   core/lcms2
-  core/libpng
+  lilian/libpng
   core/libtiff
   lilian/zlib
 )
 
 pkg_build_deps=(
-  core/cmake
+  lilian/cmake
   lilian/gcc
   lilian/make
 )
@@ -33,8 +33,8 @@ do_build() {
   cmake .. \
     -DLCMS2_INCLUDE_DIR="$(pkg_path_for core/lcms2)/include" \
     -DLCMS2_LIBRARY="$(pkg_path_for core/lcms2)/lib/liblcms2.so" \
-    -DPNG_PNG_INCLUDE_DIR="$(pkg_path_for core/libpng)/include" \
-    -DPNG_LIBRARY="$(pkg_path_for core/libpng)/lib/libpng.so" \
+    -DPNG_PNG_INCLUDE_DIR="$(pkg_path_for lilian/libpng)/include" \
+    -DPNG_LIBRARY="$(pkg_path_for lilian/libpng)/lib/libpng.so" \
     -DTIFF_INCLUDE_DIR="$(pkg_path_for core/libtiff)/include" \
     -DTIFF_LIBRARY="$(pkg_path_for core/libtiff)/lib/libtiff.so" \
     -DZLIB_INCLUDE_DIR="$(pkg_path_for lilian/zlib)/include" \

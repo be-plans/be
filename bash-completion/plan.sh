@@ -6,11 +6,11 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://github.com/scop/bash-completion/releases/download/${pkg_version}/bash-completion-${pkg_version}.tar.xz
 pkg_shasum=b2e081af317f3da4fff3a332bfdbebeb5514ebc6c2d2a9cf781180acab15e8e9
 pkg_bin_dirs=(bin)
-pkg_build_deps=(lilian/make lilian/gcc core/autoconf core/automake)
+pkg_build_deps=(lilian/make lilian/gcc lilian/autoconf lilian/automake)
 pkg_deps=(core/glibc)
 
 compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
   local -r protection="-fstack-protector-strong"
   export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
   export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} "

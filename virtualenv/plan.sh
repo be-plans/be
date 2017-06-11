@@ -8,7 +8,7 @@ pkg_license=('MIT')
 pkg_source=https://pypi.io/packages/source/v/$pkg_name/$pkg_name-$pkg_version.tar.gz
 pkg_shasum=6d9c760d3fc5fa0894b0f99b9de82a4647e1164f0b700a7f99055034bf548b1d
 pkg_deps=(
-  core/python2
+  lilian/python2
 )
 pkg_bin_dirs=(bin)
 

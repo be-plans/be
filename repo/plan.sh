@@ -1,6 +1,6 @@
 pkg_origin=lilian
 pkg_name=repo
-pkg_version='1.12.33'
+pkg_version='1.12.37'
 pkg_description="Repo is a tool that [Google] built on top of Git. Repo helps
   [Google] manage the many Git repositories, does the uploads to [Google's]
   revision control system, and automates parts of the Android development
@@ -9,14 +9,14 @@ pkg_upstream_url="https://code.google.com/p/git-repo/"
 pkg_license=('Apache 2.0')
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_source="https://gerrit.googlesource.com/git-repo"
-pkg_shasum=d560e02daaf1bb800f806964962a95557ede6150d14e02e73ef1794c9aa98e60
+pkg_shasum=bb9a4199ed7a97d281967ee1c80d67d52a039934eab4e91029439539d4e1c01f
 pkg_filename="$pkg_name"
 pkg_deps=(
   core/cacerts
-  core/gnupg
+  lilian/gnupg
   # ref: https://gerrit.googlesource.com/git-repo/+/v1.12.33/repo#871
   # Python3 is experimental. Please use 2.6 - 2.7 instead.
-  core/python2
+  lilian/python2
 )
 pkg_build_deps=(
   lilian/git
@@ -49,6 +49,6 @@ do_install() {
   install -m 0755 "$HAB_CACHE_SRC_PATH"/"$pkg_name" "$pkg_prefix"/bin/"$pkg_name"
 
   # fix shebang in `repo`
-  PYTHONPATH="$(pkg_path_for core/python2)"
+  PYTHONPATH="$(pkg_path_for lilian/python2)"
   sed -i "s#/usr/bin/env python#$PYTHONPATH/bin/python#" "$pkg_prefix"/bin/"$pkg_name"
 }
