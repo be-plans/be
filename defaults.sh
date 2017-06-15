@@ -1,7 +1,13 @@
 _compiler_flags() {
+  local __lto_flag
+  if [ -n "${pkg_bin_dirs}" ] && [ "${use_lto}" = "${pkg_name}" ]; then
+    __lto_flag="-flto"
+  fi
+
   __generic_flags="-pipe -Wno-error -Wno-error=implicit-fallthrough "
-  __optimizations="-O2 -DNDEBUG -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -m64 -mavx -march=corei7-avx -mtune=corei7-avx"
+  __optimizations="-O2 -DNDEBUG -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -m64 -mavx -march=corei7-avx -mtune=corei7-avx ${__lto_flag}"
   __protection="-fstack-protector-strong"
+
   export CFLAGS="${CFLAGS} ${__optimizations} ${__protection} ${__generic_flags}"
   export CXXFLAGS="${CXXFLAGS} -std=gnu++1z -fuse-cxa-atexit ${__optimizations} ${__protection} ${__generic_flags}"
   export GCC_CXXFLAGS="${CXXFLAGS} -std=gnu++14 -fuse-cxa-atexit ${__optimizations} ${__protection} ${__generic_flags}"
