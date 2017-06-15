@@ -13,7 +13,7 @@ pkg_build_deps=(
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
@@ -27,6 +27,7 @@ do_build() {
     --prefix=$pkg_prefix \
     --with-gmp=$(pkg_path_for gmp) \
     --enable-thread-safe
+
   make -j $(nproc)
 }
 

@@ -20,7 +20,7 @@ pkg_build_deps=(
 )
 pkg_deps=(core/glibc)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare

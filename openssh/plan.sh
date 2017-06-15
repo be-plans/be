@@ -13,7 +13,7 @@ pkg_lib_dirs=(lib)
 pkg_deps=(core/glibc lilian/openssl lilian/zlib)
 pkg_build_deps=(lilian/coreutils lilian/gcc lilian/make)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   ./configure --prefix="${pkg_prefix}" \

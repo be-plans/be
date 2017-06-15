@@ -28,7 +28,7 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib/man-db)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   ./configure \

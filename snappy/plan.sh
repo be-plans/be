@@ -18,7 +18,7 @@ pkg_lib_dirs=(lib)
 pkg_upstream_url=https://github.com/google/snappy
 pkg_description="A fast compressor/decompressor http://google.github.io/snappy/"
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_check () {
   make check

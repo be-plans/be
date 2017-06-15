@@ -17,7 +17,7 @@ pkg_build_deps=(
   lilian/jdk8 lilian/patchelf
 )
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   mkdir patching

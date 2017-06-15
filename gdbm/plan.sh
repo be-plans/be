@@ -11,7 +11,7 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   ./configure \

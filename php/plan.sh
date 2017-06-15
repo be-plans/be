@@ -31,7 +31,7 @@ pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_interpreters=(bin/php)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   ./configure --prefix="$pkg_prefix" \

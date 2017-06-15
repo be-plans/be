@@ -17,7 +17,7 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/bash bin/sh)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_begin() {
   # The maintainer of Bash only releases these patches to fix serious issues,

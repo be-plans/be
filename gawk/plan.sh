@@ -13,7 +13,7 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/awk bin/gawk)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_check() {
   make check

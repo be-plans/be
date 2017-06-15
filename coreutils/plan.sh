@@ -15,7 +15,7 @@ pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/env)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   # The `FORCE_` variable allows the software to compile with the root user,

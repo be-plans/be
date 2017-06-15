@@ -24,7 +24,7 @@ pkg_svc_run="httpd -DFOREGROUND -f $pkg_svc_config_path/httpd.conf"
 pkg_svc_user="root"
 pkg_svc_group="root"
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
     ./configure --prefix="$pkg_prefix" \

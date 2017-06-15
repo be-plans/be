@@ -15,7 +15,7 @@ pkg_build_deps=(
   lilian/patch lilian/gcc lilian/go lilian/perl)
 pkg_bin_dirs=(bin)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare

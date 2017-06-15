@@ -13,7 +13,7 @@ pkg_deps=(core/glibc)
 pkg_build_deps=(lilian/go lilian/coreutils lilian/gcc lilian/make)
 pkg_bin_dirs=(bin)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   ./set_gopath.sh

@@ -12,4 +12,4 @@ pkg_build_deps=(lilian/coreutils lilian/make lilian/gcc)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
-source ../better_defaults.sh
+source ../defaults.sh

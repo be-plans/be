@@ -21,7 +21,7 @@ _common_prepare() {
   sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
 }
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare

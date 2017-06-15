@@ -10,12 +10,13 @@ pkg_shasum=87b565e89a9a684fe4ebeeddb8399dce2599f9c9049854ca8c0dfbdea0e21912
 pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/binutils lilian/m4
+  lilian/make      lilian/gcc       lilian/binutils
+  lilian/m4
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
@@ -27,10 +28,11 @@ do_prepare() {
 
 do_build() {
   ./configure \
-    --prefix="$pkg_prefix" \
+    --prefix="${pkg_prefix}" \
     --build=x86_64-unknown-linux-gnu \
     --enable-cxx \
     --enable-fat
+
   make -j "$(nproc)"
 }
 

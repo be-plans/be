@@ -25,7 +25,7 @@ pkg_build_deps=(lilian/make lilian/gcc)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare

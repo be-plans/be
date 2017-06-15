@@ -15,7 +15,7 @@ pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_dirname=${pkg_distname}-${pkg_version}
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare

@@ -13,7 +13,7 @@ pkg_build_deps=(
 )
 pkg_bin_dirs=(bin)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 if [[ -n "$FIRST_PASS" ]]; then
   # Waiting on gcc-libs to link libgcc and libstdc++, but because we need

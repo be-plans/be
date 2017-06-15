@@ -21,7 +21,7 @@ pkg_include_dirs=(include/ImageMagick-7)
 pkg_lib_dirs=(lib)
 pkg_dirname=ImageMagick-${pkg_version}
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
     CC="gcc -std=gnu99" ./configure --prefix=$pkg_prefix

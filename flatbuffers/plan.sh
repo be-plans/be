@@ -28,19 +28,7 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
-compiler_flags() {
-  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} -Wno-error -Wno-error=implicit-fallthrough "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} -Wno-error -Wno-error=implicit-fallthrough "
-  export CPPFLAGS="${CPPFLAGS} -Wno-error -Wno-error=implicit-fallthrough "
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
-
-do_prepare() {
-  do_default_prepare
-  compiler_flags
-}
+source ../defaults.sh
 
 do_build() {
   export LD_LIBRARY_PATH

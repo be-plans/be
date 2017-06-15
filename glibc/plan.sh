@@ -19,7 +19,7 @@ pkg_lib_dirs=(lib)
 compiler_flags() {
   local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
   export CFLAGS="${CFLAGS} ${optimizations} -Wno-error "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} -Wno-error "
+  export CXXFLAGS="${CXXFLAGS} -std=gnu++1z ${optimizations} -Wno-error "
   export CPPFLAGS="${CPPFLAGS} ${optimizations} -Wdate-time -Wno-error "
   export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
 }

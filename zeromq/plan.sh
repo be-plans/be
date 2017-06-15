@@ -9,7 +9,7 @@ pkg_build_deps=(lilian/gcc lilian/coreutils lilian/make lilian/pkg-config lilian
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_default_build() {
   ./configure --prefix="${pkg_prefix:?}"

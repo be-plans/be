@@ -25,7 +25,7 @@ pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
 # Not built yet
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   cd src || exit

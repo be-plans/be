@@ -14,7 +14,7 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   ./configure --prefix="$pkg_prefix"

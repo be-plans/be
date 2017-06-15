@@ -14,7 +14,7 @@ pkg_build_deps=("lilian/coreutils" "lilian/make" "lilian/gcc")
 pkg_deps=("core/glibc" "core/gcc-libs")
 pkg_dirname="p7zip_${pkg_version}"
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   # Build for AMD64 without native yasm.

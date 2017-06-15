@@ -15,7 +15,7 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_check() {
   # The test-suite needs to have a non-empty stdin, see:

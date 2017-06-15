@@ -15,4 +15,4 @@ pkg_build_deps=(
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
-source ../better_defaults.sh
+source ../defaults.sh

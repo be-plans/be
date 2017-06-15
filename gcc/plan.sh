@@ -22,23 +22,11 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-source ../better_defaults.sh
-
-_compiler_flags() {
-  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} -Wno-error "
-  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} -Wno-error "
-  export CPPFLAGS="${CPPFLAGS} -Wno-error "
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
-
-do_default_prepare() {
-  _compiler_flags
-}
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
+  export CXXFLAGS="${GCC_CXXFLAGS:?}"
 
   glibc="$(pkg_path_for glibc)"
   binutils="$(pkg_path_for binutils)"
@@ -114,7 +102,7 @@ do_prepare() {
 
   # Build up the build cflags that will be set for multiple environment
   # variables in the `make` command
-  build_cflags="-O2"
+  build_cflags="${__optimizations:?} ${__protection:?} ${__generic_flags:?} "
   build_cflags="$build_cflags -I${headers}"
   build_cflags="$build_cflags -B${glibc}/lib/"
   build_cflags="$build_cflags -idirafter"
@@ -176,8 +164,8 @@ do_build() {
       --disable-multiarch \
       --disable-libunwind-exceptions \
       --disable-vtable-verify \
-      --with-arch=sandybridge \
-      --with-tune=sandybridge \
+      --with-arch=corei7-avx \
+      --with-tune=corei7-avx \
       --with-glibc-version=2.22
 
     # Don't store the configure flags in the resulting executables.
@@ -192,13 +180,13 @@ do_build() {
     #
     # Thanks to: https://github.com/NixOS/nixpkgs/blob/release-15.09/pkgs/development/compilers/gcc/builder.sh
     make \
-      -j"$(nproc)" \
+      -j "$(nproc)" \
       NATIVE_SYSTEM_HEADER_DIR="$headers" \
       SYSTEM_HEADER_DIR="$headers" \
       CFLAGS_FOR_BUILD="$build_cflags" \
-      CXXFLAGS_FOR_BUILD="$build_cflags" \
+      CXXFLAGS_FOR_BUILD="-fuse-cxa-atexit $build_cflags" \
       CFLAGS_FOR_TARGET="$build_cflags" \
-      CXXFLAGS_FOR_TARGET="$build_cflags" \
+      CXXFLAGS_FOR_TARGET="-fuse-cxa-atexit $build_cflags" \
       FLAGS_FOR_TARGET="$build_cflags" \
       LDFLAGS_FOR_BUILD="$build_cflags" \
       LDFLAGS_FOR_TARGET="$target_ldflags" \
@@ -228,7 +216,7 @@ do_check() {
     # g++:
     #
     #  XPASS: g++.dg/tls/thread_local-order2.C  -std=c++11 execution test
-    #  XPASS: g++.dg/tls/thread_local-order2.C  -std=c++14 execution test
+    #  XPASS: g++.dg/tls/thread_local-order2.C  -std=gnu++14 execution test
     #  FAIL: c-c++-common/tsan/thread_leak1.c   -O0  output pattern test
     #  FAIL: c-c++-common/tsan/thread_leak1.c   -O2  output pattern test
     #

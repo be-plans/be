@@ -8,7 +8,7 @@ pkg_shasum=b9a6874fb20012836efef75452ef2acae624022d680feeb1994d73facba3f20d
 pkg_deps=()
 pkg_build_deps=(lilian/coreutils lilian/make lilian/gawk)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   make -j $(nproc)

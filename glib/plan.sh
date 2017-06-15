@@ -33,7 +33,7 @@ pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_pconfig_dirs=(lib/pkgconfig)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   ./configure \

@@ -12,7 +12,7 @@ pkg_deps=(lilian/coreutils lilian/python2)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   return 0

@@ -19,7 +19,7 @@ pkg_build_deps=(
 )
 pkg_bin_dirs=(sbin)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   ./configure --prefix="$pkg_prefix" --with-crypto

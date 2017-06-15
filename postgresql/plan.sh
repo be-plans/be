@@ -37,7 +37,7 @@ pkg_svc_user=root
 pkg_svc_group=$pkg_svc_user
 
 # Not built yet
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
 	# ld manpage: "If -rpath is not used when linking an ELF

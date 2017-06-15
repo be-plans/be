@@ -26,7 +26,7 @@ pkg_build_deps=(
 
 pkg_bin_dirs=(bin)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   mkdir -p build

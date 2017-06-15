@@ -12,6 +12,8 @@ pkg_deps=(core/glibc lilian/zlib)
 pkg_build_deps=(lilian/gcc lilian/make lilian/diffutils lilian/which)
 pkg_bin_dirs=(bin)
 
+source ../defaults.sh
+
 do_check() {
   make test
 }

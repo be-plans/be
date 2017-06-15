@@ -11,7 +11,7 @@ pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(lilian/gcc lilian/python lilian/re2c)
 pkg_bin_dirs=(bin)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   python configure.py --bootstrap

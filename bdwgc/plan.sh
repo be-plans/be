@@ -14,7 +14,7 @@ pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_dirname="gc-${pkg_version}"
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_default_build() {
   ./configure --prefix="${pkg_prefix:?}"

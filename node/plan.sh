@@ -23,7 +23,7 @@ pkg_lib_dirs=(lib)
 # pkg_dirname is node-${pkg_version} (without the v). This tweak makes build happy
 pkg_dirname=node-v$pkg_version
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare

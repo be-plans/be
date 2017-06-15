@@ -10,7 +10,7 @@ pkg_include_dirs=(include)
 pkg_deps=(core/glibc lilian/libassuan lilian/libgpg-error)
 pkg_build_deps=(lilian/gcc lilian/coreutils lilian/make)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
   ./configure \

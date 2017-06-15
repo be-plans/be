@@ -23,7 +23,7 @@ pkg_include_dirs=(include)
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/ruby)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare

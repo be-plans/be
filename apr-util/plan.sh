@@ -8,7 +8,7 @@ pkg_deps=(core/glibc lilian/apr)
 pkg_build_deps=(lilian/gcc lilian/make)
 pkg_bin_dirs=(bin)
 
-source ../better_defaults.sh
+source ../defaults.sh
 
 do_build() {
 	./configure --prefix=${pkg_prefix} --with-apr=$(pkg_path_for lilian/apr)
