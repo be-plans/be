@@ -7,7 +7,7 @@ pkg_description="GMP is a free library for arbitrary precision arithmetic, opera
 pkg_upstream_url="https://gmplib.org"
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=87b565e89a9a684fe4ebeeddb8399dce2599f9c9049854ca8c0dfbdea0e21912
-pkg_deps=(core/glibc)
+pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc lilian/binutils lilian/m4
@@ -28,8 +28,10 @@ do_prepare() {
 do_build() {
   ./configure \
     --prefix="$pkg_prefix" \
-    --build=x86_64-unknown-linux-gnu
-  make -j"$(nproc)"
+    --build=x86_64-unknown-linux-gnu \
+    --enable-cxx \
+    --enable-fat
+  make -j "$(nproc)"
 }
 
 do_check() {

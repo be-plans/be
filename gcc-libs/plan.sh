@@ -30,6 +30,8 @@ _gcc_libs=(
   libvtv
 )
 
+source ../better_default.sh
+
 do_install() {
   mkdir -pv $pkg_prefix/lib
   for lib in "${_gcc_libs[@]}"; do

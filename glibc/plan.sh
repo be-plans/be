@@ -1,22 +1,28 @@
 pkg_name=glibc
 pkg_origin=lilian
-pkg_version=2.24
+pkg_version=2.25
 pkg_description="Portable and high performance C library"
 pkg_upstream_url="https://www.gnu.org/software/libc/"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0' 'LGPL-2.0')
 pkg_source=https://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=99d4a3e8efd144d71488e478f62587578c0f4e1fa0b4eed47ee3d4975ebeb5d3
+pkg_shasum=067bd9bb3390e79aa45911537d13c3721f1d9d3769931a30c2681bfee66f23a0
 pkg_deps=(lilian/linux-headers)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/sed lilian/perl
+  lilian/make lilian/gcc lilian/sed core/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-source ../better_defaults.sh
+compiler_flags() {
+  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  export CFLAGS="${CFLAGS} ${optimizations} -Wno-error "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} -Wno-error "
+  export CPPFLAGS="${CPPFLAGS} ${optimizations} -Wdate-time -Wno-error "
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
 
 do_prepare() {
   # The `/bin/pwd` path is hardcoded, so we'll add a symlink if needed.
@@ -92,7 +98,7 @@ do_build() {
       --enable-kernel=4.4.0 \
       --cache-file=config.cache
 
-    make -j$(nproc)
+    make -j $(nproc)
   )
 }
 
@@ -299,30 +305,25 @@ do_end() {
 }
 
 extract_src() {
-  build_dirname="${pkg_dirname:?}/../${pkg_name:?}-build"
-  plan=${1:?}
+  build_dirname=$pkg_dirname/../${pkg_name}-build
+  plan=$1
 
   (
-    source "${PLAN_CONTEXT:?}/../${plan:?}/plan.sh"
-    build_line "Downloading ${pkg_source:?}"
+    source "$PLAN_CONTEXT/../$plan/plan.sh"
+    # Re-override the defaults as this plan is sourced externally
+    pkg_filename="$(basename $pkg_source)"
+    pkg_dirname="${pkg_name}-${pkg_version}"
+    CACHE_PATH="$HAB_CACHE_SRC_PATH/$pkg_dirname"
 
-    local pkg_filename="${pkg_name:?}-${pkg_version:?}.tar.gz"
-    local pkg_dirname="${pkg_name}-${pkg_version}"
+    build_line "Downloading $pkg_source"
     do_download
-
-    build_line "Verifying ${pkg_filename:?}"
+    build_line "Verifying $pkg_filename"
     do_verify
-
-    ## "do_clean" removes glibc source code, so the entire build fails
-    # build_line "Clean the cache"
-    # do_clean
-
+    build_line "Clean the cache"
+    do_clean
     build_line "Unpacking $pkg_filename"
     do_unpack
-
-    local tzdata_destination
-    tzdata_destination="$(readlink -m ${HAB_CACHE_SRC_PATH:?}/${build_dirname:?}/${plan:?})"
-    mv -v "$HAB_CACHE_SRC_PATH/${pkg_dirname:?}" "${tzdata_destination:?}"
+    mv -v "$HAB_CACHE_SRC_PATH/$pkg_dirname" "$HAB_CACHE_SRC_PATH/$build_dirname/$plan"
   )
 }
 

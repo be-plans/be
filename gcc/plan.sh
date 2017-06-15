@@ -24,6 +24,19 @@ pkg_lib_dirs=(lib)
 
 source ../better_defaults.sh
 
+_compiler_flags() {
+  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
+  local -r protection="-fstack-protector-strong"
+  export CFLAGS="${CFLAGS} ${optimizations} ${protection} -Wno-error "
+  export CXXFLAGS="${CXXFLAGS} -std=c++14 ${optimizations} ${protection} -Wno-error "
+  export CPPFLAGS="${CPPFLAGS} -Wno-error "
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
+do_default_prepare() {
+  _compiler_flags
+}
+
 do_prepare() {
   do_default_prepare
 
@@ -143,16 +156,29 @@ do_build() {
       --with-mpfr="$(pkg_path_for mpfr)" \
       --with-mpc="$(pkg_path_for libmpc)" \
       --with-native-system-header-dir="$headers" \
-      --enable-languages=c,c++,fortran \
+      --enable-languages=c,c++,fortran,go \
+      --enable-__cxa_atexit \
+      --enable-gnu-indirect-function \
+      --enable-libmpx \
+      --enable-libstdcxx-pch \
       --enable-lto \
       --enable-plugin \
       --enable-shared \
+      --enable-ld=default \
       --enable-threads=posix \
+      --enable-clocale=gnu \
       --enable-install-libiberty \
+      --with-system-zlib \
+      --with-gnu-ld \
+      --with-ppl=yes \
       --disable-werror \
       --disable-multilib \
-      --with-system-zlib \
-      --disable-libstdcxx-pch
+      --disable-multiarch \
+      --disable-libunwind-exceptions \
+      --disable-vtable-verify \
+      --with-arch=sandybridge \
+      --with-tune=sandybridge \
+      --with-glibc-version=2.22
 
     # Don't store the configure flags in the resulting executables.
     #
