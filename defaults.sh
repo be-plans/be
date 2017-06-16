@@ -1,7 +1,9 @@
 _compiler_flags() {
   local __lto_flag
-  if [ -n "${pkg_bin_dirs}" ] && [ "${use_lto}" = "${pkg_name}" ]; then
-    __lto_flag="-flto"
+  if [ -n "${pkg_bin_dirs}" ] && [ -z "${pkg_lib_dirs}" ] && [ -n "${use_lto}" ]; then
+    export LD="gcc-ld"
+    export LD_FOR_TARGET="${LD}"
+    __lto_flag="-fuse-linker-plugin -flto"
   fi
 
   __generic_flags="-pipe -Wno-error -Wno-error=implicit-fallthrough "

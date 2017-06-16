@@ -51,18 +51,7 @@ do_unpack() {
   popd > /dev/null
 }
 
-compiler_flags() {
-  local -r optimizations="-fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} -Wno-error "
-  export CXXFLAGS="${CXXFLAGS} -std=gnu++1z ${optimizations} ${protection} -Wno-error "
-  export CPPFLAGS="${CPPFLAGS} -Wno-error"
-}
-
-do_prepare() {
-  do_default_prepare
-  compiler_flags
-}
+source ../defaults.sh
 
 do_build() {
   mkdir -p build

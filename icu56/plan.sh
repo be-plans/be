@@ -20,3 +20,16 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_dirname=icu/source
+
+_compiler_flags() {
+  __optimizations="-O2 -DNDEBUG -m64 -mavx"
+
+  export CFLAGS="${CFLAGS} ${__optimizations} "
+  export CXXFLAGS="${CXXFLAGS} ${__cxxstd} -std=gnu++1z -fuse-cxa-atexit ${__optimizations} "
+  export GCC_CXXFLAGS="${CXXFLAGS} -std=gnu++14 -fuse-cxa-atexit ${__optimizations} "
+  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+}
+
+do_default_prepare() {
+  _compiler_flags
+}

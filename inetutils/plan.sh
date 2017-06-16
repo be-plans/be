@@ -35,7 +35,7 @@ do_build() {
     --disable-rlogin \
     --disable-rsh \
     --disable-servers
-  make -j $(nproc)
+  make -j "$(nproc)"
 }
 
 do_install() {

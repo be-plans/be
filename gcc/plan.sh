@@ -243,7 +243,7 @@ do_install() {
     mkdir -pv "$pkg_prefix/lib"
     ln -sv lib "$pkg_prefix/lib64"
 
-    make install
+    make -j "$(nproc)" install
 
     # Install PIC version of libiberty which lets Binutils successfully build.
     # As of some point in the near past (2015+ ?), the GCC distribution

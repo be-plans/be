@@ -12,26 +12,16 @@ pkg_build_deps=(
 )
 pkg_bin_dirs=(bin)
 
-compiler_flags() {
-  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=gnu++1z ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
-
-do_prepare() {
-  do_default_prepare
-  compiler_flags
-}
+#TODO: Check for newer version
+source ../defaults.sh
 
 do_build() {
   ./configure \
     --prefix=$pkg_prefix \
     --sysconfdir=/etc \
     --with-regex=pcre
-  make -j$(nproc)
+
+  make -j "$(nproc)"
 }
 
 

@@ -27,7 +27,7 @@ pkg_build_deps=(
   lilian/perl
   lilian/python2
   core/rsync
-  core/unzip
+  lilian/unzip
   core/zip
 )
 pkg_include_dirs=(include)

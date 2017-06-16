@@ -11,17 +11,20 @@ pkg_deps=(core/glibc lilian/bzip2)
 pkg_build_deps=(lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 
+use_lto=true
+source ../defaults.sh
+
 do_build() {
   DEFINES='-DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR -DLARGE_FILE_SUPPORT \
     -DUNICODE_SUPPORT -DUNICODE_WCHAR -DUTF8_MAYBE_NATIVE -DNO_LCHMOD \
     -DDATE_FORMAT=DF_YMD -DUSE_BZIP2 -DNOMEMCPY -DNO_WORKING_ISPRINT'
-  make -f unix/Makefile prefix=$pkg_prefix D_USE_BZ2=-DUSE_BZIP2 L_BZ2=-lbz2 \
+  make -j "$(nproc)" -f unix/Makefile prefix=$pkg_prefix D_USE_BZ2=-DUSE_BZIP2 L_BZ2=-lbz2 \
           LF2="$LDFLAGS" CF="$CFLAGS $CPPFLAGS -I. $DEFINES" \
           unzips
 }
 
 do_install() {
-  make -f unix/Makefile prefix=$pkg_prefix install
+  make -j "$(nproc)" -f unix/Makefile prefix=$pkg_prefix install
 }
 
 

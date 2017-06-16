@@ -13,6 +13,14 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+#TODO: Bring the patches
+source ../defaults.sh
+
+do_prepare() {
+  do_default_prepare
+  export CXXFLAGS="${GCC_CXXFLAGS}"
+}
+
 do_build() {
   ./configure --prefix="$pkg_prefix" \
     --with-shared \
@@ -29,11 +37,11 @@ do_build() {
     --with-normal \
     --enable-overwrite \
     --disable-rpath-hack
-  make -j$(nproc)
+  make -j $(nproc)
 }
 
 do_install() {
-  make -j$(nproc) install
+  make -j $(nproc) install
 
   # Many packages that use Ncurses will compile just fine against the widechar
   # libraries, but won't know to look for them. Create linker scripts and

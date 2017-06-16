@@ -16,11 +16,6 @@ pkg_bin_dirs=(bin)
 
 source ../defaults.sh
 
-do_prepare() {
-  do_default_prepare
-  compiler_flags
-}
-
 do_build() {
   # * `FORCE_UNSAFE_CONFIGURE` forces the test for `mknod` to be run as root
   FORCE_UNSAFE_CONFIGURE=1 ./configure \

@@ -21,18 +21,10 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
-compiler_flags() {
-  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} -Wno-error "
-  export CXXFLAGS="${CXXFLAGS} -std=gnu++1z ${optimizations} ${protection} -Wno-error "
-  export CPPFLAGS="${CPPFLAGS} -Wno-error "
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
-  compiler_flags
 
   # The configure script expects `file` binaries to be in `/usr/bin`
   if [[ ! -r /usr/bin/file ]]; then

@@ -81,16 +81,24 @@ do_build() {
   mkdir ../${pkg_name}-build
   pushd ../${pkg_name}-build > /dev/null
     ../$pkg_dirname/configure \
-      --prefix=$pkg_prefix \
+      --prefix="$pkg_prefix" \
+      --enable-libstdcxx \
+      --enable-lto \
       --enable-shared \
       --enable-deterministic-archives \
       --enable-threads \
-      --disable-werror
+      --enable-ld=default \
+      --enable-plugins \
+      --with-system-zlib \
+      --with-pic \
+      --with-gnu-ld \
+      --disable-werror \
+      --disable-gdb
 
     # Check the environment to make sure all the necessary tools are available
-    make configure-host
+    make -j "$(nproc)" configure-host
 
-    make -j$(nproc) tooldir=$pkg_prefix
+    make -j "$(nproc)" tooldir="${pkg_prefix}"
   popd > /dev/null
 }
 

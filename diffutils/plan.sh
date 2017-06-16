@@ -9,6 +9,8 @@ pkg_deps=(core/glibc)
 pkg_build_deps=(lilian/coreutils lilian/patch lilian/make lilian/gcc lilian/sed)
 pkg_bin_dirs=(bin)
 
+source ../defaults.sh
+
 do_check() {
   # Fixes a broken test with either gcc 5.2.x and/or perl 5.22.x:
   # FAIL: test-update-copyright.sh

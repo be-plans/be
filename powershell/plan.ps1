@@ -1,5 +1,5 @@
 $pkg_name="powershell"
-$pkg_origin="core"
+$pkg_origin="lilian"
 $pkg_version="6.0.0-alpha.17"
 $pkg_license=@("MIT")
 $pkg_upstream_url="https://msdn.microsoft.com/powershell"

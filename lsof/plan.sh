@@ -1,5 +1,5 @@
 pkg_name="lsof"
-pkg_origin="core"
+pkg_origin="lilian"
 pkg_version="4.89"
 pkg_license=('lsof')
 pkg_source="https://www.mirrorservice.org/sites/lsof.itap.purdue.edu/pub/tools/unix/lsof/lsof_${pkg_version}.tar.bz2"

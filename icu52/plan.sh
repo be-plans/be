@@ -19,3 +19,5 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_dirname=icu/source
+
+source ../defaults.sh

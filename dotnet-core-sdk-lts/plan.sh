@@ -15,10 +15,10 @@ pkg_deps=(
   lilian/curl
   core/gcc-libs
   core/glibc
-  core/icu52
+  lilian/icu52
   core/krb5
-  core/libunwind
-  core/lttng-ust
+  lilian/libunwind
+  lilian/lttng-ust
   lilian/openssl 
   lilian/util-linux
   lilian/zlib

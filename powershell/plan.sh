@@ -14,8 +14,8 @@ pkg_deps=(
   core/icu/52.1
   lilian/util-linux
   core/krb5
-  core/libunwind
-  core/lttng-ust
+  lilian/libunwind
+  lilian/lttng-ust
   lilian/openssl 
 )
 pkg_build_deps=(

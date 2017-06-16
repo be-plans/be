@@ -1,5 +1,5 @@
 $pkg_name="dotnet-core-sdk"
-$pkg_origin="core"
+$pkg_origin="lilian"
 $pkg_version="1.0.4"
 $pkg_license=('MIT')
 $pkg_upstream_url="https://www.microsoft.com/net/core"

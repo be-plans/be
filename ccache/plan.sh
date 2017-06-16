@@ -12,7 +12,7 @@ pkg_deps=(core/glibc lilian/zlib)
 pkg_build_deps=(lilian/gcc lilian/make lilian/diffutils lilian/which)
 pkg_bin_dirs=(bin)
 
-use_lto="${pkg_name}"
+use_lto=true
 source ../defaults.sh
 
 do_check() {

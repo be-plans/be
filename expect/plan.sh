@@ -8,11 +8,14 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://downloads.sourceforge.net/project/$pkg_name/Expect/${pkg_version}/${pkg_name}${pkg_version}.tar.gz
 pkg_shasum=b28dca90428a3b30e650525cdc16255d76bb6ccd65d448be53e620d95d5cc040
 pkg_dirname=${pkg_name}${pkg_version}
-pkg_deps=(core/glibc core/tcl lilian/coreutils)
+pkg_deps=(core/glibc lilian/tcl lilian/coreutils)
 pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+
+#TODO: Check for newer version
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
@@ -27,7 +30,7 @@ do_build() {
     --exec-prefix="$pkg_prefix" \
     --with-tcl="$(pkg_path_for tcl)/lib" \
     --with-tclinclude="$(pkg_path_for tcl)/include"
-  make
+  make -j "$(nproc)"
 }
 
 do_check() {
@@ -35,7 +38,7 @@ do_check() {
 }
 
 do_install() {
-  make install
+  make -j "$(nproc)" install
 
   # Add an absolute path to `tclsh` in each script binary
   find "$pkg_prefix/bin" \

@@ -26,9 +26,10 @@ do_build() {
   ./configure \
     --prefix=$pkg_prefix \
     --with-gmp=$(pkg_path_for gmp) \
-    --enable-thread-safe
+    --enable-thread-safe \
+    --enable-shared
 
-  make -j $(nproc)
+  make -j "$(nproc)"
 }
 
 do_check() {

@@ -14,6 +14,9 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+#TODO: Check for newer version
+source ../defaults.sh
+
 do_build() {
   pushd unix > /dev/null
     export LDFLAGS="-lgcc_s ${LDFLAGS}"
@@ -21,7 +24,7 @@ do_build() {
       --prefix="$pkg_prefix" \
       --enable-threads \
       --enable-64bit
-    make
+    make -j "$(nproc)"
 
     # The Tcl package expects that its source tree is preserved so that
     # packages depending on it for their compilation can utilize it. These sed
@@ -54,8 +57,8 @@ do_build() {
 
 do_install() {
   pushd unix > /dev/null
-    make install
-    make install-private-headers
+    make -j "$(nproc)" install
+    make -j "$(nproc)" install-private-headers
 
     # Many packages expect a file named tclsh, so create a symlink
     ln -sfv "tclsh${pkg_version%.?}" "$pkg_prefix/bin/tclsh"

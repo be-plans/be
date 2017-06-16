@@ -35,18 +35,10 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include Include)
 pkg_interpreters=(bin/python bin/python2 bin/python2.7)
 
-compiler_flags() {
-  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} -Wno-error "
-  export CXXFLAGS="${CXXFLAGS} -std=gnu++1z ${optimizations} ${protection} -Wno-error "
-  export CPPFLAGS="${CPPFLAGS} -Wno-error "
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
-  compiler_flags
 
   sed -i.bak 's/#zlib/zlib/' Modules/Setup.dist
   sed -i -re "/(SSL=|_ssl|-DUSE_SSL|-lssl).*/ s|^#||" Modules/Setup.dist

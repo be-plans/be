@@ -4,18 +4,10 @@ pkg_name=openssl-musl
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_deps=(core/musl lilian/zlib-musl core/cacerts)
 
-compiler_flags() {
-  local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  local -r protection="-fstack-protector-strong"
-  export CFLAGS="${CFLAGS} ${optimizations} ${protection} "
-  export CXXFLAGS="${CXXFLAGS} -std=gnu++1z ${optimizations} ${protection} "
-  export CPPFLAGS="${CPPFLAGS} -Wdate-time"
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
-  compiler_flags
 
   PLAN_CONTEXT=$(abspath $PLAN_CONTEXT/../openssl) _common_prepare
 

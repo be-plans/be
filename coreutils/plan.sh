@@ -24,7 +24,8 @@ do_build() {
   FORCE_UNSAFE_CONFIGURE=1 ./configure \
     --prefix="$pkg_prefix" \
     --enable-no-install-program=kill,uptime
-  make -j $(nproc)
+
+  make -j "$(nproc)"
 }
 
 do_check() {
