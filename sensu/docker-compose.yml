@@ -1,7 +1,7 @@
 version: '2'
 services:
   rabbitmq:
-    image: core/rabbitmq
+    image: lilian/rabbitmq
     environment:
       - HAB_RABBITMQ=rabbitmq={default_vhost='/sensu',default_user='sensu',default_pass='sensu',management={enabled=true}}
     ports:

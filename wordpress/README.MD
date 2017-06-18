@@ -12,12 +12,12 @@ You will need to provide 3 variables
 - bind='0.0.0.0'
 
 ```
-hab start core/mysql --group wordpress
+hab start lilian/mysql --group wordpress
 ```
 
 ### wordpress
 ```
-hab start core/wordpress --peer database --bind database:mysql.wordpress
+hab start lilian/wordpress --peer database --bind database:mysql.wordpress
 ```
 
 ### docker-compose example

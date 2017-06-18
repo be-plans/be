@@ -2,7 +2,9 @@ source ../libarchive/plan.sh
 
 pkg_name=libarchive-musl
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_deps=(core/musl lilian/openssl -musl lilian/zlib-musl lilian/bzip2-musl lilian/xz-musl)
+pkg_deps=(lilian/musl lilian/openssl-musl lilian/zlib-musl lilian/bzip2-musl lilian/xz-musl)
+
+source ../defaults.sh
 
 do_prepare() {
   export CC=musl-gcc

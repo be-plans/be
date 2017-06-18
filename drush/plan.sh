@@ -1,13 +1,15 @@
 pkg_name=drush
 pkg_origin=lilian
-pkg_version="8"
+pkg_version=8.1.12
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2+')
 pkg_deps=(lilian/bash lilian/coreutils lilian/php lilian/which)
-pkg_build_deps=(core/composer)
+pkg_build_deps=(lilian/composer)
 pkg_bin_dirs=(bin/vendor/bin)
 pkg_upstream_url="http://www.drush.org/en/master/"
 pkg_description="Drush is a command line shell and Unix scripting interface for Drupal."
+
+source ../defaults.sh
 
 do_download() {
     return 0

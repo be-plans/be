@@ -15,6 +15,8 @@ pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/env)
 
+use_lto=true
+no_pie=true
 source ../defaults.sh
 
 do_build() {

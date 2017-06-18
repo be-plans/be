@@ -1,8 +1,8 @@
 pkg_name=drupal
 pkg_origin=lilian
-pkg_version="8.3.2"
-pkg_license=('gplv2+')
-pkg_deps=(core/mysql-client core/drush core/nginx lilian/php)
+pkg_version=8.3.3
+pkg_license=('GPL-2.0')
+pkg_deps=(lilian/mysql-client lilian/drush lilian/nginx lilian/php)
 pkg_binds=(
   [database]="port username password"
 )
@@ -12,8 +12,10 @@ pkg_description="Drupal is a free and open source content-management framework w
 pkg_upstream_url="https://www.drupal.org"
 pkg_maintainers="The Habitat Maintainers <humans@habitat.sh>"
 
+source ../defaults.sh
+
 do_build() {
-  drush dl drupal-8.3.2 --destination="$CACHE_PATH" --drupal-project-rename=drupal
+  drush dl drupal-${pkg_version} --destination="$CACHE_PATH" --drupal-project-rename=drupal
 }
 
 do_install() {

@@ -1,15 +1,17 @@
 pkg_name=composer
 pkg_origin=lilian
-pkg_version=1.3.2
+pkg_version=1.4.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')
 pkg_upstream_url=https://getcomposer.org/
 pkg_description="Dependency Manager for PHP"
 pkg_source=https://getcomposer.org/download/${pkg_version}/${pkg_name}.phar
 pkg_filename=${pkg_name}.phar
-pkg_shasum=6a4f761aa34bb69fca86bc411a5e9836ca8246f0fcd29f3804b174fee9fb0569
+pkg_shasum=6b1945c3ee477f12be508a5bb41a5025d57de5510bcf94855ae6a4d59f3d86f4
 pkg_deps=(lilian/php lilian/git)
 pkg_bin_dirs=(bin)
+
+source ../defaults.sh
 
 do_unpack(){
   return 0

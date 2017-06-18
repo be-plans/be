@@ -1,12 +1,12 @@
 pkg_name=elasticsearch
 pkg_origin=lilian
-pkg_version=2.4.1
+pkg_version=5.4.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Open Source, Distributed, RESTful Search Engine"
 pkg_upstream_url="https://elastic.co"
 pkg_license=('Revised BSD')
-pkg_source=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/${pkg_version}/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=23a369ef42955c19aaaf9e34891eea3a055ed217d7fbe76da0998a7a54bbe167
+pkg_source=https://artifacts.elastic.co/downloads/elasticsearch/${pkg_name}-${pkg_version}.tar.gz
+pkg_shasum=09d6422bd33b82f065760cd49a31f2fec504f2a5255e497c81050fd3dceec485
 pkg_deps=(
   core/busybox-static
   core/glibc
@@ -19,6 +19,8 @@ pkg_exports=(
   [transport-port]=transport.port
 )
 pkg_exposes=(http-port transport-port)
+
+source ../defaults.sh
 
 do_build() {
   return 0

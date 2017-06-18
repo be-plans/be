@@ -33,8 +33,7 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/ash bin/awk bin/env bin/sh bin/bash)
 
-#TODO: This plan is not building
-use_lto=true
+be_ldflags=" "
 source ../defaults.sh
 
 do_prepare() {

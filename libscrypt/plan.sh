@@ -12,9 +12,11 @@ pkg_build_deps=(lilian/gcc lilian/make)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
+source ../defaults.sh
+
 do_build() {
-  CFLAGS="${CFLAGS} -O2 -Wall -g -D_FORTIFY_SOURCE=2 -fstack-protector -fPIC"
-  make
+  CFLAGS="${CFLAGS} -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -fPIC"
+  make -j "$(nproc)"
 }
 
 do_install() {

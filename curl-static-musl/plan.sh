@@ -12,13 +12,13 @@ pkg_license=('curl')
 pkg_source=https://curl.haxx.se/download/${pkg_distname}-${pkg_version}.tar.gz
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(
-  core/cacerts
+  lilian/cacerts
 )
 pkg_build_deps=(
   lilian/coreutils
   lilian/gcc
   lilian/make
-  core/musl
+  lilian/musl
   lilian/openssl -musl
   lilian/zlib-musl
 )
@@ -26,7 +26,11 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=()
 pkg_lib_dirs=()
 
+#TODO: Not built yet
+source ../defaults.sh
+
 do_prepare() {
+  do_default_prepare
   export CC=musl-gcc
   build_line "Setting CC=$CC"
 }

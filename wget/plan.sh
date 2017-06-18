@@ -8,7 +8,7 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.t
 pkg_shasum=0c950b9671881222a4d385b013c9604e98a8025d1988529dfca0e93617744cd2
 pkg_deps=(
   core/glibc lilian/libidn lilian/zlib
-  lilian/openssl  core/cacerts
+  lilian/openssl  lilian/cacerts
 )
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch

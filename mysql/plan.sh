@@ -1,10 +1,10 @@
 pkg_name=mysql
 pkg_origin=lilian
-pkg_version=5.7.17
+pkg_version=5.7.18
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_license=('GPL-2.0')
 pkg_source=http://dev.mysql.com/get/Downloads/MySQL-5.7/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=cebf23e858aee11e354c57d30de7a079754bdc2ef85eb684782458332a4b9651
+pkg_shasum=0b5d71ed608656cd8181d3bb0434d3e36bac192899038dbdddf5a7594aaea1a2
 pkg_upstream_url=https://www.mysql.com/
 pkg_description=$(cat << EOF
 Starts MySQL with a basic configuration. Configurable at run time:
@@ -33,7 +33,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/bison
-  core/boost159
+  lilian/boost/1.59.0
   lilian/cmake
   lilian/diffutils
   lilian/gcc
@@ -51,20 +51,30 @@ pkg_exports=(
   [username]=app_username
 )
 
+be_cxxstd="-std=gnu++14"
+no_pie=true
+source ../defaults.sh
+
 do_build() {
-  cmake . -DLOCAL_BOOST_DIR="$(pkg_path_for core/boost159)" \
-          -DBOOST_INCLUDE_DIR="$(pkg_path_for core/boost159)/include" \
-          -DWITH_BOOST="$(pkg_path_for core/boost159)" \
-          -DCURSES_INCLUDE_PATH="$(pkg_path_for lilian/ncurses)/include" \
-          -DCURSES_LIBRARY="$(pkg_path_for lilian/ncurses)/lib/libcurses.so" \
+  cmake . -DLOCAL_BOOST_DIR="$(pkg_path_for boost)" \
+          -DBOOST_INCLUDE_DIR="$(pkg_path_for boost)/include" \
+          -DWITH_BOOST="$(pkg_path_for boost)" \
+          -DCURSES_INCLUDE_PATH="$(pkg_path_for ncurses)/include" \
+          -DCURSES_LIBRARY="$(pkg_path_for ncurses)/lib/libcurses.so" \
           -DWITH_SSL=yes \
-          -DOPENSSL_INCLUDE_DIR="$(pkg_path_for lilian/openssl )/include" \
-          -DOPENSSL_LIBRARY="$(pkg_path_for lilian/openssl )/lib/libssl.so" \
-          -DCRYPTO_LIBRARY="$(pkg_path_for lilian/openssl )/lib/libcrypto.so" \
+          -DOPENSSL_INCLUDE_DIR="$(pkg_path_for openssl )/include" \
+          -DOPENSSL_LIBRARY="$(pkg_path_for openssl )/lib/libssl.so" \
+          -DCRYPTO_LIBRARY="$(pkg_path_for openssl )/lib/libcrypto.so" \
           -DCMAKE_INSTALL_PREFIX="$pkg_prefix" \
           -DWITH_EMBEDDED_SERVER=no \
-          -DWITH_EMBEDDED_SHARED_LIBRARY=no
-  make
+          -DWITH_EMBEDDED_SHARED_LIBRARY=no \
+          -DCMAKE_BUILD_TYPE=Release \
+          -DCMAKE_C_FLAGS="${CFLAGS}" \
+          -DCMAKE_CXX_FLAGS="${CXXFLAGS} -fpermissive" \
+          -DCMAKE_C_LINK_FLAGS="${LDFLAGS}" \
+          -DCMAKE_CXX_LINK_FLAGS="${LDFLAGS}"
+          
+  make -j "$(nproc)"
 }
 
 do_install() {

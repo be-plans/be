@@ -14,7 +14,7 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-#TODO: Check for newer version
+no_pie=true
 source ../defaults.sh
 
 do_build() {

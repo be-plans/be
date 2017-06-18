@@ -15,6 +15,7 @@ pkg_build_deps=(
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+no_pie=true
 source ../defaults.sh
 
 do_begin() {

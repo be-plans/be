@@ -1,15 +1,14 @@
 pkg_name=libedit
 pkg_origin=lilian
-pkg_version=3.1.20150325
-pkg_license=('bsd')
-pkg_source=http://thrysoee.dk/editline/libedit-20150325-3.1.tar.gz
-pkg_dirname=${pkg_name}-20150325-3.1
-pkg_shasum=c88a5e4af83c5f40dda8455886ac98923a9c33125699742603a88a0253fcc8c5
+pkg_version=3.1.20170329
+pkg_license=('BSD')
+pkg_source=http://thrysoee.dk/editline/libedit-20170329-3.1.tar.gz
+pkg_dirname=${pkg_name}-20170329-3.1
+pkg_shasum=91f2d90fbd2a048ff6dad7131d9a39e690fd8a8fd982a353f1333dd4017dd4be
 pkg_deps=(core/glibc lilian/ncurses)
 pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
-do_build() {
-  ./configure --enable-widec --prefix=$pkg_prefix
-}
+source ../defaults.sh
+

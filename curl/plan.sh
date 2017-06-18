@@ -1,15 +1,15 @@
 pkg_name=curl
 pkg_origin=lilian
-pkg_version=7.54.0
+pkg_version=7.54.1
 pkg_description="curl is an open source command line tool and library for
   transferring data with URL syntax."
 pkg_upstream_url=https://curl.haxx.se/
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('curl')
 pkg_source=https://curl.haxx.se/download/${pkg_name}-${pkg_version}.tar.bz2
-pkg_shasum=f50ebaf43c507fa7cc32be4b8108fa8bbd0f5022e90794388f3c7694a302ff06
+pkg_shasum=fdfc4df2d001ee0c44ec071186e770046249263c491fcae48df0e1a3ca8f25a0
 pkg_deps=(
-  core/cacerts
+  lilian/cacerts
   core/glibc
   lilian/openssl 
   lilian/zlib

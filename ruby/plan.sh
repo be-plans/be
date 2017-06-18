@@ -23,6 +23,7 @@ pkg_include_dirs=(include)
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/ruby)
 
+no_pie=true
 source ../defaults.sh
 
 do_prepare() {

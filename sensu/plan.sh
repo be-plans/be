@@ -1,21 +1,22 @@
 pkg_name=sensu
 pkg_origin=lilian
-pkg_version=0.26.5
-pkg_source=http://nothing.to.download.from.com
+pkg_version=0.29.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="A monitoring framework that aims to be simple, malleable, and scalable."
-pkg_upstream_url=https://sensuapp.org
 pkg_license=('MIT')
+pkg_upstream_url=https://sensuapp.org
+pkg_build_deps=(lilian/make lilian/gcc core/gcc-libs)
+pkg_deps=(lilian/ruby lilian/bundler lilian/coreutils)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_svc_user=root
 pkg_svc_group=${pkg_svc_user}
-pkg_build_deps=(lilian/make lilian/gcc core/gcc-libs)
-pkg_deps=(lilian/ruby core/bundler lilian/coreutils)
 pkg_binds=(
   [rabbitmq]="port"
   [redis]="port"
 )
+
+source ../defaults.sh
 
 do_download() {
   return 0

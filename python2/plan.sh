@@ -35,6 +35,7 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include Include)
 pkg_interpreters=(bin/python bin/python2 bin/python2.7)
 
+no_pie=true
 source ../defaults.sh
 
 do_prepare() {

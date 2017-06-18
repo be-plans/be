@@ -12,8 +12,11 @@ pkg_build_deps=(lilian/make lilian/gcc)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 
+source ../defaults.sh
+
 do_build() {
-  ./configure --prefix "${pkg_prefix}" -no-graph && make world.opt
+  ./configure --prefix "${pkg_prefix}" -no-graph
+  make world.opt
 }
 
 do_check() {

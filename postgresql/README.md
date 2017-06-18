@@ -6,7 +6,7 @@ This PostgreSQL plan supports standalone and clustered modes as well as continuo
 
 To run a standalone PostgreSQL instance simply run
 ```
-hab start core/postgresql
+hab start lilian/postgresql
 ```
 or
 ```
@@ -64,6 +64,6 @@ PGHOST={{pg.sys.ip}}
 
 ## Wal-e
 
-The `core/postgresql` plan packages `core/wal-e` as a dependency and supports running a side car process that will push regular backups to a cloud object store such as s3.
+The `lilian/postgresql` plan packages `lilian/wal-e` as a dependency and supports running a side car process that will push regular backups to a cloud object store such as s3.
 
 When enabling wal-e continuous archiving is also turned on by default. Particularly for running clustered PostgreSQL we highly recommend using this feature so that replicas will always be able to catch up to the master should they fall behind further than the masters `wal_keep_segments` setting.

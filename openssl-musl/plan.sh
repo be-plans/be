@@ -2,7 +2,7 @@ source ../openssl/plan.sh
 
 pkg_name=openssl-musl
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_deps=(core/musl lilian/zlib-musl core/cacerts)
+pkg_deps=(lilian/musl lilian/zlib-musl lilian/cacerts)
 
 source ../defaults.sh
 

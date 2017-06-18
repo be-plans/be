@@ -1,13 +1,13 @@
 pkg_origin=lilian
 pkg_name=memcached
-pkg_version=1.4.25
+pkg_version=1.4.37
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Distributed memory object caching system"
 pkg_upstream_url="https://memcached.org/"
 pkg_license=('BSD')
 pkg_source=http://www.memcached.org/files/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=f058437b3c224d321919a9a6bb4e3eedb2312ed718c0caf087ff2f04ab795dda
-pkg_deps=(core/glibc core/libevent)
+pkg_shasum=2f335ab9110ce39036c5271ef39a582a852e424bc9659e421844073cfdf8606b
+pkg_deps=(core/glibc lilian/libevent)
 pkg_build_deps=(lilian/git lilian/gcc lilian/make)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -17,3 +17,6 @@ pkg_exports=(
   [port]=port
 )
 pkg_exposes=(port)
+
+be_optimizations="-O2 -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -m64 -mavx -march=corei7-avx -mtune=corei7-avx"
+source ../defaults.sh

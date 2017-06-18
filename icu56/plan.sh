@@ -21,13 +21,20 @@ pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_dirname=icu/source
 
-_compiler_flags() {
-  __optimizations="-O2 -DNDEBUG -m64 -mavx"
+# be_generic_flags=" "
+# be_optimizations="-O2 -DNDEBUG -m64     "
+# be_protection=" "
+# be_ldflags=" "
+# source ../defaults.sh
 
-  export CFLAGS="${CFLAGS} ${__optimizations} "
-  export CXXFLAGS="${CXXFLAGS} ${__cxxstd} -std=gnu++1z -fuse-cxa-atexit ${__optimizations} "
-  export GCC_CXXFLAGS="${CXXFLAGS} -std=gnu++14 -fuse-cxa-atexit ${__optimizations} "
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
+_compiler_flags() {
+  be_optimizations="-O2 -DNDEBUG -m64 -mavx"
+  be_cxxstd="${be_cxxstd:--std=gnu++1z}"
+  be_ldflags="${be_ldflags:--Wl,-Bsymbolic-functions -Wl,-z,relro}"
+
+  export CFLAGS="${CFLAGS} ${be_optimizations}"
+  export CXXFLAGS="${CXXFLAGS} ${be_cxxstd} -fuse-cxa-atexit ${be_optimizations}"
+  export LDFLAGS="${LDFLAGS} ${be_ldflags}"
 }
 
 do_default_prepare() {

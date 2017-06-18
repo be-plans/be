@@ -6,7 +6,7 @@ mkdir -p "{{pkg.svc_config_path}}/env"
 
 psql_dir=$(dirname $(find /hab/pkgs -name 'psql' | head -n 1))
 if [[ "${psql_dir}" == "" ]]; then
-  echo "Postgres binaries not found! Please install core/postgresql"
+  echo "Postgres binaries not found! Please install lilian/postgresql"
   exit 1
 fi
 

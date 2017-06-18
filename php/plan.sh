@@ -6,10 +6,10 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('PHP-3.01')
 pkg_upstream_url=http://php.net/
 pkg_description="PHP is a popular general-purpose scripting language that is especially suited to web development."
-pkg_source=https://php.net/get/${pkg_distname}-${pkg_version}.tar.bz2/from/this/mirror
-pkg_filename=${pkg_distname}-${pkg_version}.tar.bz2
+pkg_source=https://php.net/get/${pkg_distname}-${pkg_version}.tar.xz/from/this/mirror
+pkg_filename=${pkg_distname}-${pkg_version}.tar.xz
 pkg_dirname=${pkg_distname}-${pkg_version}
-pkg_shasum=6e3576ca77672a18461a4b089c5790647f1b2c19f82e4f5e94c962609aabffcf
+pkg_shasum=01584dc521ab7ec84b502b61952f573652fe6aa00c18d6d844fb9209f14b245b
 pkg_deps=(
   lilian/coreutils
   lilian/curl
@@ -17,7 +17,9 @@ pkg_deps=(
   lilian/libxml2
   lilian/libjpeg-turbo
   lilian/libpng
-  lilian/openssl 
+  lilian/pcre
+  lilian/expat
+  lilian/openssl
   lilian/zlib
 )
 pkg_build_deps=(
@@ -37,14 +39,18 @@ do_build() {
   ./configure --prefix="$pkg_prefix" \
     --enable-exif \
     --enable-fpm \
-    --with-fpm-user=hab \
-    --with-fpm-group=hab \
     --enable-mbstring \
     --enable-opcache \
+    --enable-zip \
+    --with-pcre-jit \
+    --with-fpm-user=hab \
+    --with-fpm-group=hab \
     --with-mysql=mysqlnd \
     --with-mysqli=mysqlnd \
     --with-pdo-mysql=mysqlnd \
     --with-curl="$(pkg_path_for curl)" \
+    --with-pcre-dir="$(pkg_path_for pcre)" \
+    --with-libexpat-dir="$(pkg_path_for expat)" \
     --with-gd \
     --with-jpeg-dir="$(pkg_path_for libjpeg-turbo)" \
     --with-libxml-dir="$(pkg_path_for libxml2)" \
@@ -52,6 +58,7 @@ do_build() {
     --with-png-dir="$(pkg_path_for libpng)" \
     --with-xmlrpc \
     --with-zlib="$(pkg_path_for zlib)"
+
   make -j $(nproc)
 }
 

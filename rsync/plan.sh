@@ -11,6 +11,8 @@ pkg_deps=(core/glibc lilian/perl lilian/acl lilian/attr)
 pkg_build_deps=(lilian/make lilian/gcc lilian/perl lilian/diffutils)
 pkg_bin_dirs=(bin)
 
+source ../defaults.sh
+
 #
 # The tests may fail inside the studio depending on where your studio
 # is hosted as some of the tests (default-acl, hardlinks, xattrs,

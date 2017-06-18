@@ -19,7 +19,7 @@ pkg_deps=(
   core/libcxx
   core/gcc-libs
   core/glibc
-  core/jemalloc
+  lilian/jemalloc
   lilian/openssl 
   lilian/python2
 )

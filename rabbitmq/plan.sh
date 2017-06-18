@@ -1,18 +1,18 @@
 pkg_name=rabbitmq
 pkg_distname=${pkg_name}-server
 pkg_origin=lilian
-pkg_version=3.6.6
+pkg_version=3.6.10
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MPL')
 pkg_description="Open source multi-protocol messaging broker"
 pkg_upstream_url="https://www.rabbitmq.com"
 pkg_source=http://www.rabbitmq.com/releases/rabbitmq-server/v${pkg_version}/rabbitmq-server-${pkg_version}.tar.xz
-pkg_shasum=395689bcf57fd48aed452fcd43ff9a992de40067d3ea5c44e14680d69db7b78e
+pkg_shasum=0f478950a3e27b6b3b5aa57098eaf91822321d716a9b0bc30a4084a2c283394c
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(
   lilian/coreutils
   core/glibc
-  core/erlang
+  lilian/erlang
 )
 pkg_build_deps=(
   lilian/bash
@@ -26,9 +26,9 @@ pkg_build_deps=(
   lilian/make
   lilian/perl
   lilian/python2
-  core/rsync
+  lilian/rsync
   lilian/unzip
-  core/zip
+  lilian/zip
 )
 pkg_include_dirs=(include)
 pkg_bin_dirs=(sbin)
@@ -36,6 +36,8 @@ pkg_exports=(
   [port]=rabbitmq.listen_port
 )
 pkg_exposes=(port)
+
+source ../defaults.sh
 
 do_prepare() {
   export PREFIX="${pkg_prefix}"
@@ -51,7 +53,7 @@ do_prepare() {
 }
 
 do_build() {
-  make
+  make -j "$(nproc)"
 }
 
 do_check() {

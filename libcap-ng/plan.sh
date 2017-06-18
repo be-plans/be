@@ -7,13 +7,15 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="The libcap-ng library is intended to make programming with posix capabilities much easier than the traditional libcap library"
 pkg_upstream_url="https://people.redhat.com/sgrubb/libcap-ng/"
 pkg_license=('GPL-2.0' 'LGPL-2.1')
+pkg_deps=(core/glibc lilian/python)
+pkg_build_deps=(lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
-pkg_build_deps=(lilian/make lilian/gcc)
-pkg_deps=(core/glibc)
+
+source ../defaults.sh
 
 do_build() {
-  ./configure --prefix="${pkg_prefix}" --enable-static=no --with-python=no
-  make
+  ./configure --prefix="${pkg_prefix}" --enable-static=no --with-python="$(pkg_path_for python)"
+  make -j "$(nproc)"
 }

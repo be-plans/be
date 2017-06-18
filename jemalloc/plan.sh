@@ -2,14 +2,13 @@ pkg_name=jemalloc
 pkg_description="malloc implementation emphasizing fragmentation avoidance"
 pkg_upstream_url="http://jemalloc.net/"
 pkg_origin=lilian
-pkg_version=4.3.1
+pkg_version=5.0.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('BSD-2-Clause')
 pkg_source=https://github.com/jemalloc/jemalloc/releases/download/$pkg_version/${pkg_name}-${pkg_version}.tar.bz2
-pkg_shasum=f7bb183ad8056941791e0f075b802e8ff10bd6e2d904e682f87c8f6a510c278b
+pkg_shasum=9e4a9efba7dc4a7696f247c90c3fe89696de5f910f7deacf7e22ec521b1fa810
 pkg_dirname=${pkg_name}-${pkg_version}
-pkg_deps=(core/glibc)
-
+pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
   lilian/gcc
   lilian/make
@@ -17,6 +16,9 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+
+no_pie=true
+source ../defaults.sh
 
 do_check() {
   make check

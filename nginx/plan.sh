@@ -1,13 +1,17 @@
 pkg_name=nginx
 pkg_origin=lilian
-pkg_version=1.11.10
+pkg_version=1.13.1
 pkg_description="NGINX web server."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('bsd')
 pkg_source=https://nginx.org/download/nginx-${pkg_version}.tar.gz
 pkg_upstream_url=https://nginx.org/
-pkg_shasum=778b3cabb07633f754cd9dee32fc8e22582bce22bfa407be76a806abd935533d
-pkg_deps=(core/glibc core/libedit lilian/ncurses lilian/zlib lilian/bzip2 lilian/openssl  lilian/pcre)
+pkg_shasum=a5856c72a6609a4dc68c88a7f3c33b79e6693343b62952e021e043fe347b6776
+pkg_deps=(
+  core/glibc lilian/libedit lilian/ncurses
+  lilian/zlib lilian/bzip2 lilian/openssl
+  lilian/pcre
+)
 pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(sbin)
@@ -18,6 +22,8 @@ pkg_exports=(
   [port]=http.listen.port
 )
 pkg_exposes=(port)
+
+source ../defaults.sh
 
 do_build() {
   ./configure --prefix="$pkg_prefix" \
@@ -56,11 +62,11 @@ do_build() {
     --with-cc-opt="$CFLAGS" \
     --with-ld-opt="$LDFLAGS"
 
-  make
+  make -j "$(nproc)"
 }
 
 do_install() {
-  make install
+  make -j "$(nproc)" install
   mkdir -p "$pkg_prefix/sbin"
   cp "$HAB_CACHE_SRC_PATH/$pkg_dirname/objs/nginx" "$pkg_prefix/sbin"
 }

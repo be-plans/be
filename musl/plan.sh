@@ -31,6 +31,7 @@ do_build() {
   ./configure \
     --prefix=$pkg_prefix \
     --syslibdir=$pkg_prefix/lib
+
   make -j$(nproc)
 }
 

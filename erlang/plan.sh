@@ -1,6 +1,6 @@
 pkg_name=erlang
 pkg_origin=lilian
-pkg_version=19.1
+pkg_version=19.3
 pkg_description="A programming language for massively scalable soft real-time systems."
 pkg_upstream_url="http://www.erlang.org/"
 pkg_dirname=otp_src_${pkg_version}
@@ -8,12 +8,20 @@ pkg_license=('Apache-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://www.erlang.org/download/otp_src_${pkg_version}.tar.gz
 pkg_filename=otp_src_${pkg_version}.tar.gz
-pkg_shasum=fed4cbbc1ee5cc8efc2b8f14c3db97bfde1de967703f5f9a95f8ab6852737e23
-pkg_deps=(core/glibc lilian/zlib lilian/ncurses lilian/openssl  lilian/sed)
-pkg_build_deps=(lilian/coreutils lilian/gcc lilian/make lilian/openssl  lilian/perl lilian/m4)
+pkg_shasum=fe4a00651db39b8542b04530a48d24b2f2e7e0b77cbe93d728c9f05325bdfe83
+pkg_deps=(
+  core/glibc lilian/zlib lilian/ncurses
+  lilian/openssl  lilian/sed
+)
+pkg_build_deps=(
+  lilian/coreutils lilian/gcc lilian/make
+  lilian/openssl  lilian/perl lilian/m4
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+
+source ../defaults.sh
 
 do_prepare() {
   # The `/bin/pwd` path is hardcoded, so we'll add a symlink if needed.
@@ -39,7 +47,7 @@ do_build() {
               --with-ssl="$(pkg_path_for openssl)/lib" \
               --with-ssl-include="$(pkg_path_for openssl)/include" \
               --without-javac
-  make
+  make -j "$(nproc)"
 }
 
 do_end() {

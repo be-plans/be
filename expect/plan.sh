@@ -9,12 +9,15 @@ pkg_source=http://downloads.sourceforge.net/project/$pkg_name/Expect/${pkg_versi
 pkg_shasum=b28dca90428a3b30e650525cdc16255d76bb6ccd65d448be53e620d95d5cc040
 pkg_dirname=${pkg_name}${pkg_version}
 pkg_deps=(core/glibc lilian/tcl lilian/coreutils)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-#TODO: Check for newer version
+no_pie=true
 source ../defaults.sh
 
 do_prepare() {
@@ -30,6 +33,7 @@ do_build() {
     --exec-prefix="$pkg_prefix" \
     --with-tcl="$(pkg_path_for tcl)/lib" \
     --with-tclinclude="$(pkg_path_for tcl)/include"
+
   make -j "$(nproc)"
 }
 

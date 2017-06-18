@@ -5,7 +5,7 @@ pkg_license=('BSD')
 pkg_source=nosuchfile.tar.gz
 pkg_bin_dirs=(bin)
 pkg_deps=(core/glibc lilian/gcc)
-pkg_build_deps=(core/rust lilian/gcc core/cacerts core/protobuf)
+pkg_build_deps=(core/rust lilian/gcc lilian/cacerts core/protobuf)
 
 do_build() {
   env SSL_CERT_FILE=$(pkg_path_for cacerts)/ssl/cert.pem \

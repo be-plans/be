@@ -2,7 +2,9 @@ source ../xz/plan.sh
 
 pkg_name=xz-musl
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_deps=(core/musl)
+pkg_deps=(lilian/musl)
+
+source ../defaults.sh
 
 do_prepare() {
   export CC=musl-gcc

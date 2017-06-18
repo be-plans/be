@@ -21,6 +21,7 @@ _common_prepare() {
   sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
 }
 
+no_pie=true
 source ../defaults.sh
 
 do_prepare() {

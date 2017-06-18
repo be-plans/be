@@ -1,12 +1,12 @@
 pkg_origin=lilian
 pkg_name=consul
-pkg_version=0.8.3
+pkg_version=0.8.4
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_license=("MPL-2.0")
 pkg_description="Consul is a tool for service discovery, monitoring and configuration."
 pkg_upstream_url=https://www.consul.io/
 pkg_source=https://releases.hashicorp.com/${pkg_name}/${pkg_version}/${pkg_name}_${pkg_version}_linux_amd64.zip
-pkg_shasum=f894383eee730fcb2c5936748cc019d83b220321efd0e790dae9a3266f5d443a
+pkg_shasum=c8859a0a34c50115cdff147f998b2b63226f5f052e50f342209142420d1c2668
 pkg_filename=${pkg_name}-${pkg_version}_linux_amd64.zip
 pkg_deps=()
 pkg_build_deps=(lilian/unzip)
@@ -18,6 +18,8 @@ pkg_exports=(
 )
 pkg_exposes=(port-dns port-http port-rpc)
 pkg_svc_user=root
+
+source ../defaults.sh
 
 do_unpack() {
   cd "${HAB_CACHE_SRC_PATH}" || exit

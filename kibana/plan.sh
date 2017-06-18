@@ -10,7 +10,7 @@ pkg_shasum=58dc3f82cdd62708034169db64c342a48674065673e2115d410509f83fe59c9e
 pkg_filename=${pkg_name}-${pkg_version}.tar.gz
 pkg_deps=(lilian/node)
 pkg_build_deps=(
-  core/cacerts
+  lilian/cacerts
   lilian/coreutils
   lilian/gcc
   lilian/git
@@ -26,6 +26,8 @@ pkg_binds_optional=(
   [elasticsearch]="http-port"
 )
 pkg_bin_dirs=(bin)
+
+#TODO: Not built yet
 
 do_prepare() {
   # The `/usr/bin/env` path is hardcoded in some node modules, so we'll add a

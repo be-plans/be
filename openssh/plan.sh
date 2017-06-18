@@ -10,8 +10,12 @@ pkg_upstream_url=https://www.openssh.com/
 pkg_bin_dirs=(bin sbin libexec)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
-pkg_deps=(core/glibc lilian/openssl lilian/zlib)
-pkg_build_deps=(lilian/coreutils lilian/gcc lilian/make)
+pkg_deps=(
+  core/glibc lilian/openssl lilian/zlib
+)
+pkg_build_deps=(
+  lilian/coreutils lilian/gcc lilian/make
+)
 
 source ../defaults.sh
 

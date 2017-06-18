@@ -17,6 +17,7 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/bash bin/sh)
 
+#TODO: Update bash
 source ../defaults.sh
 
 do_begin() {

@@ -19,6 +19,7 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_interpreters=(bin/perl)
 
+no_pie=true
 source ../defaults.sh
 
 do_prepare() {

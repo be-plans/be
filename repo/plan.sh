@@ -12,7 +12,7 @@ pkg_source="https://gerrit.googlesource.com/git-repo"
 pkg_shasum=bb9a4199ed7a97d281967ee1c80d67d52a039934eab4e91029439539d4e1c01f
 pkg_filename="$pkg_name"
 pkg_deps=(
-  core/cacerts
+  lilian/cacerts
   lilian/gnupg
   # ref: https://gerrit.googlesource.com/git-repo/+/v1.12.33/repo#871
   # Python3 is experimental. Please use 2.6 - 2.7 instead.
@@ -23,9 +23,10 @@ pkg_build_deps=(
 )
 pkg_bin_dirs=(bin)
 
+source ../defaults.sh
 
 do_download() {
-  GIT_SSL_CAINFO="$(pkg_path_for core/cacerts)/ssl/certs/cacert.pem"
+  GIT_SSL_CAINFO="$(pkg_path_for lilian/cacerts)/ssl/certs/cacert.pem"
   export GIT_SSL_CAINFO
 
   git clone "$pkg_source"

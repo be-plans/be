@@ -11,12 +11,14 @@ pkg_deps=(core/glibc)
 pkg_build_deps=(lilian/coreutils lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 
+source ../defaults.sh
+
 do_build() {
-  make -f unix/Makefile prefix=$pkg_prefix generic_gcc
+  make -j "$(nproc)" -f unix/Makefile prefix=$pkg_prefix generic_gcc
 }
 
 do_install() {
-  make -f unix/Makefile \
+  make -j "$(nproc)" -f unix/Makefile \
     prefix=$pkg_prefix \
     MANDIR=${pkg_prefix}/share/man/man1 \
     install

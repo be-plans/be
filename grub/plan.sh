@@ -13,9 +13,9 @@ pkg_build_deps=(
   lilian/automake
   lilian/binutils
   lilian/bison
-  core/cacerts
+  lilian/cacerts
   lilian/diffutils
-  core/dosfstools
+  lilian/dosfstools
   lilian/flex
   lilian/freetype
   lilian/gcc
@@ -24,11 +24,18 @@ pkg_build_deps=(
   lilian/m4
   lilian/make
   lilian/python
-  core/qemu
-  core/rsync
+  lilian/qemu
+  lilian/rsync
   lilian/texinfo
 )
-pkg_deps=(core/glibc lilian/xz lilian/gettext lilian/pcre core/gcc-libs core/devicemapper core/elfutils lilian/bzip2 lilian/libcap)
+pkg_deps=(
+  core/glibc lilian/xz lilian/gettext
+  lilian/pcre core/gcc-libs core/devicemapper
+  core/elfutils lilian/bzip2 lilian/libcap
+)
+
+#TODO: Not built yet
+source ../defaults.sh
 
 do_setup() {
   if [[ ! -d /boot ]]; then

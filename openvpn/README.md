@@ -4,7 +4,7 @@ On the system that is to run OpenVPN:
 
 ```
 hab service key generate openvpn.default ORGNAME
-hab start core/openvpn --group default --org ORGNAME
+hab start lilian/openvpn --group default --org ORGNAME
 ```
 
 On the local system that has the OpenVPN keys/certificates (e.g., a laptop/workstation), copy the generated `openvpn.default@ORGNAME-timestamp.pub` file (e.g., in `/hab/cache/keys`) to the local system to the key cache (e.g., `~/.hab/cache/keys`). Then do the following:

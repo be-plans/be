@@ -11,19 +11,25 @@ pkg_shasum="6044f24a44053684d1260f19387e59359f59b0605cdbf7295e1de42783e48ff1"
 pkg_deps=(
   lilian/coreutils
   core/glibc
-  core/ocaml
+  lilian/ocaml
 )
 pkg_build_deps=(
   lilian/gcc
   lilian/make
-  core/ocamlbuild
+  lilian/ocamlbuild
   lilian/which
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 
+source ../defaults.sh
+
 do_build() {
-  ./configure --bindir="${pkg_prefix}/bin" --libdir="${pkg_prefix}/lib" --pkgdir="${pkg_prefix}"
+  ./configure \
+    --bindir="${pkg_prefix}/bin" \
+    --libdir="${pkg_prefix}/lib" \
+    --pkgdir="${pkg_prefix}"
+
   make all
 }
 

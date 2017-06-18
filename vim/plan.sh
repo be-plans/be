@@ -1,11 +1,11 @@
 pkg_name=vim
 pkg_origin=lilian
-pkg_version=8.0.0633
+pkg_version=8.0.0642
 pkg_license=('vim')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Vim is a greatly improved version of the good old UNIX editor Vi"
 pkg_source="http://github.com/${pkg_name}/${pkg_name}/archive/v${pkg_version}.tar.gz"
-pkg_shasum=6b95763a977e9cd33b5fe64275bf3b04b44724d8746c29296c9cdfca4f045fa0
+pkg_shasum=5027020cb9d473da3da106f0212855e32df161c39552a6f5a71850c6cfb4a2ec
 pkg_deps=(core/glibc lilian/acl lilian/ncurses)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch

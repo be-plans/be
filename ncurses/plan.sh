@@ -14,12 +14,9 @@ pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
 #TODO: Bring the patches
+be_cxxstd="-std=gnu++14"
+no_pie=true
 source ../defaults.sh
-
-do_prepare() {
-  do_default_prepare
-  export CXXFLAGS="${GCC_CXXFLAGS}"
-}
 
 do_build() {
   ./configure --prefix="$pkg_prefix" \

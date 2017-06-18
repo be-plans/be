@@ -34,6 +34,7 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_interpreters=(bin/python bin/python3 bin/python3.5)
 
+no_pie=true
 source ../defaults.sh
 
 do_prepare() {

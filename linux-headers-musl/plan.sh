@@ -7,17 +7,22 @@ pkg_source=https://github.com/sabotage-linux/kernel-headers/archive/v${pkg_versi
 pkg_shasum=ecf4db8781dc50a21cbc4cb17b039f96aede53f9da13435a3201373abb49b96b
 pkg_dirname=kernel-headers-$pkg_version
 pkg_deps=()
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc
+)
 pkg_include_dirs=(include)
 
+source ../default.sh
+
 do_build() {
-  make \
+  make -j "$(nproc)" \
     ARCH=x86_64 \
     prefix=$pkg_prefix
 }
 
 do_install() {
-  make \
+  make -j "$(nproc)" \
     ARCH=x86_64 \
     prefix=$pkg_prefix \
     install

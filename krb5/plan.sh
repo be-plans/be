@@ -14,7 +14,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/bison
-  core/busybox
+  lilian/busybox
   lilian/gcc
   lilian/m4
   lilian/make
@@ -24,7 +24,7 @@ pkg_bin_dirs=(bin sbin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-#TODO: This plan was not built
+#TODO: This was not built
 source ../defaults.sh
 
 do_build() {

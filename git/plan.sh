@@ -11,7 +11,7 @@ pkg_source=https://www.kernel.org/pub/software/scm/git/${pkg_name}-${pkg_version
 pkg_filename=${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=3bc1becd983f77ab154a46801624369dbc40c3dd04b4c4b07ad026f5684688fe
 pkg_deps=(
-  core/cacerts
+  lilian/cacerts
   lilian/curl
   lilian/expat
   lilian/gettext

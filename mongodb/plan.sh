@@ -9,10 +9,10 @@ pkg_shasum=31492b99d12d6363a6ebcbba32269ce9e97dadedda8c470cbff8c1af227e9753
 pkg_upstream_url=https://www.mongodb.com/
 pkg_filename=${pkg_name}-src-r${pkg_version}.tar.gz
 pkg_dirname=${pkg_name}-src-r${pkg_version}
-pkg_deps=(core/gcc-libs core/glibc lilian/openssl )
+pkg_deps=(core/gcc-libs core/glibc lilian/openssl)
 pkg_build_deps=(
   lilian/coreutils
-  core/gcc
+  lilian/gcc
   core/glibc
   lilian/python2
   lilian/scons
@@ -29,24 +29,14 @@ pkg_exports=(
 )
 pkg_exposes=(port)
 
-# _compiler_flags() {
-# #   local -r optimizations="-O2 -DNDEBUG -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-#   local -r protection="-fstack-protector-strong"
-#   export CFLAGS="${CFLAGS} ${optimizations} ${protection} -Wno-error "
-#   export CXXFLAGS="${CXXFLAGS} -std=gnu++1z ${optimizations} ${protection} -Wno-error "
-#   export CPPFLAGS="${CPPFLAGS} -Wno-error "
-#   export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-# }
-
-# do_default_prepare() {
-#   _compiler_flags
-# }
+#TODO: This was not built
+source ../defaults.sh
 
 do_prepare() {
-    # do_default_prepare
+    do_default_prepare
 
-    CC="$(pkg_path_for core/gcc)/bin/gcc"
-    CXX="$(pkg_path_for core/gcc)/bin/g++"
+    CC="$(pkg_path_for lilian/gcc)/bin/gcc"
+    CXX="$(pkg_path_for lilian/gcc)/bin/g++"
     export CC
     export CXX
 

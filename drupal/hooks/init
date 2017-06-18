@@ -26,6 +26,6 @@ chown -R hab:hab {{pkg.svc_data_path}}
 
 # Deplay the nginx config and then launch it
 cp -r {{pkg.svc_config_path}}/nginx.conf \
-      {{pkgPathFor "core/nginx"}}/config/nginx.conf
+      {{pkgPathFor "lilian/nginx"}}/config/nginx.conf
 
-hab svc load core/nginx --group {{svc.group}} --force
+hab svc load lilian/nginx --group {{svc.group}} --force

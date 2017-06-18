@@ -1,6 +1,6 @@
 pkg_name=bundler
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_version=1.14.6
+pkg_version=1.15.1
 pkg_origin=lilian
 pkg_license=('bundler')
 pkg_description="The Ruby language dependency manager"
@@ -9,7 +9,11 @@ pkg_deps=(lilian/ruby core/busybox-static)
 pkg_build_deps=()
 pkg_bin_dirs=(bin)
 
+source ../defaults.sh
+
 do_prepare() {
+  do_default_prepare
+
   export GEM_HOME="$pkg_prefix"
   build_line "Setting GEM_HOME='$GEM_HOME'"
   export GEM_PATH="$GEM_HOME"

@@ -1,12 +1,17 @@
 pkg_name=openvpn
 pkg_origin=lilian
-pkg_version=2.3.11
+pkg_version=2.4.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gplv2')
-pkg_source=https://swupdate.openvpn.org/community/releases/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=9117a4434fd35e61cf94f9ee7ef84b7aecbc6fa556f779ff599560f219756163
-pkg_deps=(core/glibc lilian/openssl  core/lzo)
-pkg_build_deps=(lilian/gcc lilian/coreutils lilian/make core/busybox-static)
+pkg_license=('GPL-2.0')
+pkg_source=https://swupdate.openvpn.org/community/releases/${pkg_name}-${pkg_version}.tar.xz
+pkg_shasum=df5c4f384b7df6b08a2f6fa8a84b9fd382baf59c2cef1836f82e2a7f62f1bff9
+pkg_deps=(
+  core/glibc lilian/openssl lilian/lzo
+)
+pkg_build_deps=(
+  lilian/gcc lilian/coreutils lilian/make
+  core/busybox-static
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -18,5 +23,6 @@ do_build() {
     --exec-prefix=${pkg_prefix} \
     --sbindir=${pkg_prefix}/bin \
     --enable-iproute2
-  make
+
+  make -j "$(nproc)"
 }

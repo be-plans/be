@@ -1,7 +1,7 @@
 pkg_name=phantomjs
 pkg_version=2.1.1
 pkg_origin=lilian
-pkg_license=('bsd')
+pkg_license=('BSD')
 pkg_source=https://bitbucket.org/ariya/phantomjs/downloads/${pkg_name}-${pkg_version}-linux-x86_64.tar.bz2
 pkg_filename=${pkg_name}-${pkg_version}-linux-x86_64.tar.bz2
 pkg_dirname=${pkg_name}-${pkg_version}-linux-x86_64
@@ -9,14 +9,18 @@ pkg_shasum=86dd9a4bf4aee45f1a84c9f61cf1947c1d6dce9b9e8d2a907105da7852460d2f
 
 # Ensure we depend on all the libraries that the prebuilt phantomjs
 # links against here:
-pkg_deps=(core/glibc lilian/freetype lilian/fontconfig
-          lilian/zlib lilian/libpng lilian/expat core/gcc-libs)
+pkg_deps=(
+  core/glibc core/gcc-libs
+  lilian/freetype lilian/fontconfig
+  lilian/zlib lilian/libpng lilian/expat
+)
 
 # We need curl instead of wget because wget doesn't work for
 # downloading from bitbucket URLs. Sometimes.
-pkg_build_deps=(lilian/curl core/cacerts lilian/patchelf)
-
+pkg_build_deps=(lilian/curl lilian/cacerts lilian/patchelf)
 pkg_bin_dirs=(bin)
+
+source ../defaults.sh
 
 do_download() {
   # downloading from bitbucket with wget results in a 403.

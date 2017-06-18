@@ -9,7 +9,7 @@ pkg_source="https://github.com/ocaml/ocamlbuild/archive/${pkg_version}.tar.gz"
 pkg_shasum="1717edc841c9b98072e410f1b0bc8b84444b4b35ed3b4949ce2bec17c60103ee"
 pkg_deps=(
   core/glibc
-  core/ocaml
+  lilian/ocaml
   lilian/coreutils
   lilian/ncurses
 )
@@ -19,7 +19,14 @@ pkg_build_deps=(
 )
 pkg_bin_dirs=(bin)
 
+source ../defaults.sh
+
 do_build() {
-  make configure OCAMLBUILD_PREFIX="${pkg_prefix}" OCAMLBUILD_BINDIR="${pkg_prefix}/bin" OCAMLBUILD_LIBDIR="${pkg_prefix}/lib"
-  make
+  make -j "$(nproc)" \
+    configure \
+    OCAMLBUILD_PREFIX="${pkg_prefix}" \
+    OCAMLBUILD_BINDIR="${pkg_prefix}/bin" \
+    OCAMLBUILD_LIBDIR="${pkg_prefix}/lib"
+
+  make -j "$(nproc)"
 }
