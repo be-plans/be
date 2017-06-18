@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('BSD-2 Clause' 'GPL-2.0')
 pkg_source=https://github.com/${pkg_name}/${pkg_name}/archive/v${pkg_version}.tar.gz
 pkg_shasum=0190cacd63022ccb86f44fa5041dc6c3804407ad61550ca21c382827319e7e7e
-pkg_deps=(core/glibc)
+pkg_deps=(lilian/glibc)
 pkg_build_deps=(
   lilian/gcc lilian/make lilian/diffutils
   lilian/valgrind

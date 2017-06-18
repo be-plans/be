@@ -20,7 +20,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/make
-  core/glibc
+  lilian/glibc
   lilian/pkg-config
   lilian/gcc
   lilian/gettext

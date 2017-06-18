@@ -11,7 +11,7 @@ pkg_shasum=e0500be065dbbce490449837bb2ab624e46d64fc0b090474d9acaa87c82b2590
 pkg_deps=(
   core/apr
   lilian/apr-util
-  core/glibc
+  lilian/glibc
   lilian/openssl 
   lilian/zlib
 )

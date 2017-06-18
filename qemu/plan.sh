@@ -13,9 +13,9 @@ pkg_include_dirs=(include)
 pkg_deps=(
   lilian/bzip2
   lilian/curl
-  core/gcc-libs
+  lilian/gcc-libs
   lilian/glib
-  core/glibc
+  lilian/glibc
   lilian/jemalloc
   lilian/libaio
   lilian/libcap-ng

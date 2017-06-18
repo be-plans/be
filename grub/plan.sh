@@ -29,12 +29,14 @@ pkg_build_deps=(
   lilian/texinfo
 )
 pkg_deps=(
-  core/glibc lilian/xz lilian/gettext
-  lilian/pcre core/gcc-libs core/devicemapper
-  core/elfutils lilian/bzip2 lilian/libcap
+  lilian/glibc lilian/gcc-libs lilian/xz
+  lilian/gettext lilian/pcre lilian/devicemapper
+  lilian/elfutils lilian/bzip2 lilian/libcap
 )
 
-#TODO: Not built yet
+no_pie=true
+be_optimizations="-O2 -DNDEBUG -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -mavx -march=corei7-avx -mtune=corei7-avx"
+be_protection=" "
 source ../defaults.sh
 
 do_setup() {

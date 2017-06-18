@@ -14,8 +14,8 @@ pkg_shasum="768c50ebf5823f8cde81a9e38ffff115c8f5a5d031a37520d0024e7b9c6cd22e"
 pkg_upstream_url="http://google.github.io/flatbuffers/index.html"
 
 pkg_deps=(
-  core/glibc
-  core/gcc-libs
+  lilian/glibc
+  lilian/gcc-libs
 )
 
 pkg_build_deps=(

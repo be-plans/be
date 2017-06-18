@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
 pkg_source="http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.tar.xz"
 pkg_shasum=8891d349ee87b9ff7870f52b6d9312a9db672d2439d289bc57084771ca21656b
-pkg_deps=(core/glibc lilian/acl lilian/attr
+pkg_deps=(lilian/glibc lilian/acl lilian/attr
           lilian/gmp lilian/libcap)
 pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make
                 lilian/gcc       lilian/m4        lilian/perl  lilian/inetutils)

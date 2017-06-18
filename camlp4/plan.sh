@@ -10,7 +10,7 @@ pkg_dirname="${pkg_name}-${pkg_version}-1"
 pkg_shasum="6044f24a44053684d1260f19387e59359f59b0605cdbf7295e1de42783e48ff1"
 pkg_deps=(
   lilian/coreutils
-  core/glibc
+  lilian/glibc
   lilian/ocaml
 )
 pkg_build_deps=(

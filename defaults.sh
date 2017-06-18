@@ -45,10 +45,10 @@ do_default_prepare() {
 }
 
 do_default_build() {
-    ./configure --prefix="${pkg_prefix:?}"
-    make -j "$(nproc)"
+  ./configure --prefix="${pkg_prefix:?}"
+  make -j "$(nproc)"
 }
 
 do_default_install() {
-    make -j "$(nproc)" install
+  make -j "$(nproc)" install
 }

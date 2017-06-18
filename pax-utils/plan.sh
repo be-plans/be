@@ -10,7 +10,7 @@ pkg_source=http://distfiles.gentoo.org/distfiles/${pkg_name}-${pkg_version}.tar.
 pkg_shasum=7f4a7f8db6b4743adde7582fa48992ad01776796fcde030683732f56221337d9
 pkg_deps=(
   lilian/bash
-  core/glibc
+  lilian/glibc
   lilian/libcap
   lilian/python
 )

@@ -8,7 +8,7 @@ pkg_upstream_url="https://www.gnu.org/software/gdb/"
 pkg_source="http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum=f6a24ffe4917e67014ef9273eb8b547cb96a13e5ca74895b06d683b391f3f4ee
 pkg_deps=(
-  core/glibc
+  lilian/glibc
   lilian/readline
   lilian/zlib
   lilian/xz

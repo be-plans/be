@@ -9,7 +9,7 @@ pkg_source=https://artifacts.elastic.co/downloads/elasticsearch/${pkg_name}-${pk
 pkg_shasum=09d6422bd33b82f065760cd49a31f2fec504f2a5255e497c81050fd3dceec485
 pkg_deps=(
   core/busybox-static
-  core/glibc
+  lilian/glibc
   lilian/jre8
 )
 pkg_bin_dirs=(es/bin)

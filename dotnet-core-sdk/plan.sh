@@ -13,8 +13,8 @@ pkg_filename="dotnet-dev-debian-x64.${pkg_version}.tar.gz"
 pkg_deps=(
   lilian/coreutils
   lilian/curl
-  core/gcc-libs
-  core/glibc
+  lilian/gcc-libs
+  lilian/glibc
   lilian/icu52
   core/krb5
   lilian/libunwind

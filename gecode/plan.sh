@@ -9,7 +9,7 @@ pkg_shasum=e7cc8bcc18b49195fef0544061bdd2e484a1240923e4e85fa39e8d6bb492854c
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(
   lilian/gcc
-  core/glibc
+  lilian/glibc
 )
 pkg_build_deps=(
   lilian/coreutils

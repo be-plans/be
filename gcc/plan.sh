@@ -9,7 +9,7 @@ pkg_license=('GPL-2.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}/${pkg_distname}-${pkg_version}.tar.bz2
 pkg_shasum=8a8136c235f64c6fef69cac0d73a46a1a09bb250776a050aec8f9fc880bebc17
 pkg_deps=(
-  core/glibc lilian/zlib lilian/gmp
+  lilian/glibc lilian/zlib lilian/gmp
   lilian/mpfr lilian/libmpc lilian/binutils
 )
 pkg_build_deps=(
@@ -23,6 +23,7 @@ pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
 be_cxxstd="-std=gnu++14"
+be_protection=" "
 no_pie=true
 source ../defaults.sh
 

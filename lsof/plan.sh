@@ -7,7 +7,7 @@ pkg_source="https://www.mirrorservice.org/sites/lsof.itap.purdue.edu/pub/tools/u
 pkg_shasum="81ac2fc5fdc944793baf41a14002b6deb5a29096b387744e28f8c30a360a3718"
 pkg_description="lsof - list open files"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_deps=(core/glibc)
+pkg_deps=(lilian/glibc)
 pkg_bin_dirs=(bin)
 pkg_build_deps=(
   lilian/coreutils lilian/make lilian/gcc

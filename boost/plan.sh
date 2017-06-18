@@ -11,13 +11,13 @@ pkg_shasum=7bcc5caace97baa948931d712ea5f37038dbb1c5d89b43ad4def4ed7cb683332
 pkg_dirname=${_pkg_dirname}
 
 pkg_deps=(
-  core/glibc
-  core/gcc-libs
+  lilian/glibc
+  lilian/gcc-libs
 )
 
 pkg_build_deps=(
-  core/glibc
-  core/gcc-libs
+  lilian/glibc
+  lilian/gcc-libs
   lilian/coreutils
   lilian/diffutils
   lilian/patch

@@ -1,24 +1,39 @@
 pkg_name=mg
 pkg_origin=lilian
 pkg_version=20160118
+pkg_description="mg is Micro GNU/emacs, this is a portable version of the mg maintained by the OpenBSD team"
 pkg_license=('publicdomain')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://homepage.boetes.org/software/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=26450b2564bec0b0afc465fd24a1917dc31508c5500c3a36823b9c763a2b8636
-pkg_deps=(core/glibc lilian/ncurses core/libbsd)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed lilian/pkg-config core/clens)
+pkg_deps=(lilian/glibc lilian/ncurses lilian/libbsd)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/sed
+  lilian/pkg-config lilian/clens
+)
 pkg_bin_dirs=(bin)
 
+source ../defaults.sh
+
 do_prepare() {
+  do_default_prepare
   cat $PLAN_CONTEXT/cleanup.patch \
     | sed \
       -e "s,@prefix@,$pkg_prefix,g" \
       -e "s,@clens_prefix@,$(pkg_path_for clens),g" \
       -e "s,@libbsd_prefix@,$(pkg_path_for libbsd),g" \
     | patch -p1
+
+    # For "20170401":
+    # -e "s,@ncurses_prefix@,$(pkg_path_for ncurses),g" \
+
+    # Add: "--silence-errors" to PKG_CONFIG
+    # Also, "-I@ncurses_prefix@/incldue" to CFLAGS
 }
+
 do_build() {
-  make \
+  make -j "$(nproc)" \
     prefix=$pkg_prefix \
     PKG_CONFIG=pkg-config \
     INSTALL=install \
@@ -41,5 +56,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/pkg-config lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch core/clens)
+  pkg_build_deps=(lilian/gcc lilian/pkg-config lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch lilian/clens)
 fi

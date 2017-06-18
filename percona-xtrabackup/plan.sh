@@ -10,7 +10,7 @@ pkg_license=('GPL-2.0')
 pkg_bin_dirs=(bin)
 pkg_build_deps=(lilian/m4 lilian/make lilian/gcc lilian/bison lilian/cmake lilian/mysql lilian/libaio
   lilian/boost/1.59.0)
-pkg_deps=(lilian/bash lilian/iproute2 lilian/gnupg lilian/pkg-config core/glibc core/gcc-libs lilian/ncurses
+pkg_deps=(lilian/bash lilian/iproute2 lilian/gnupg lilian/pkg-config lilian/glibc lilian/gcc-libs lilian/ncurses
   lilian/vim lilian/curl lilian/libev lilian/openssl  lilian/zlib lilian/libgcrypt lilian/libgpg-error
   lilian/libtool)
 pkg_dirname=percona-xtrabackup-percona-xtrabackup-${pkg_version}

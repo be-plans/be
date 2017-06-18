@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('bsd')
 pkg_source=http://0xcc.net/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=ef5e9bf276b65bb831f9c2554cd8784bd5b4ee65353808f82b7e2aef851587ec
-pkg_deps=(core/glibc)
+pkg_deps=(lilian/glibc)
 pkg_build_deps=(lilian/coreutils lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 

@@ -8,8 +8,8 @@ pkg_upstream_url="https://www.torproject.org/"
 pkg_source="https://www.torproject.org/dist/tor-${pkg_version}.tar.gz"
 pkg_shasum=663a3ba7b8a124c0f8a7351eaa2dda6fd518de3f3c4ee28fff869bfb03860d48
 pkg_deps=(
-  core/glibc
-  core/gcc-libs
+  lilian/glibc
+  lilian/gcc-libs
   lilian/libevent
   lilian/openssl 
   lilian/zlib

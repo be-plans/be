@@ -19,9 +19,9 @@ if [[ -n "$FIRST_PASS" ]]; then
   # Waiting on gcc-libs to link libgcc and libstdc++, but because we need
   # this package to prepare gcc-libs, we'll do the cheap version first
   # that relies on the full gcc version of these shared libraries
-  pkg_deps=(core/glibc lilian/gcc)
+  pkg_deps=(lilian/glibc lilian/gcc)
 else
-  pkg_deps=(core/glibc core/gcc-libs)
+  pkg_deps=(lilian/glibc lilian/gcc-libs)
 fi
 
 do_begin() {

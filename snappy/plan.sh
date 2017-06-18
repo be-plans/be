@@ -8,7 +8,7 @@ pkg_license=('BSD-3-Clause')
 pkg_source=https://github.com/google/${pkg_name}/archive/${pkg_version}.tar.gz
 pkg_shasum=f6cf80a93d8826129dd5e10fd0c7810f1063d80c4f5e6440b7be6f001b6e29e9
 pkg_dirname="${pkg_name}-${pkg_version}"
-pkg_deps=(core/glibc)
+pkg_deps=(lilian/glibc)
 pkg_build_deps=(
   lilian/gcc lilian/make lilian/cmake lilian/pkg-config
 )

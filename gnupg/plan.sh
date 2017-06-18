@@ -7,7 +7,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=ftp://ftp.gnupg.org/gcrypt/${pkg_distname}/${pkg_distname}-${pkg_version}.tar.bz2
 pkg_shasum=6b47a3100c857dcab3c60e6152e56a997f2c7862c1b8b2b25adf3884a1ae2276
 pkg_deps=(
-  core/glibc lilian/zlib lilian/bzip2
+  lilian/glibc lilian/zlib lilian/bzip2
   lilian/readline
 )
 pkg_build_deps=(

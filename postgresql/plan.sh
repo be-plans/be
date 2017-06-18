@@ -10,7 +10,7 @@ pkg_shasum=1645b3736901f6d854e695a937389e68ff2066ce0cde9d73919d6ab7c995b9c6
 pkg_deps=(
   lilian/bash
   lilian/envdir
-  core/glibc
+  lilian/glibc
   lilian/openssl 
   lilian/perl
   lilian/readline

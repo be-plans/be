@@ -17,8 +17,8 @@ pkg_exposes=(port)
 
 pkg_deps=(
   core/libcxx
-  core/gcc-libs
-  core/glibc
+  lilian/gcc-libs
+  lilian/glibc
   lilian/jemalloc
   lilian/openssl 
   lilian/python2

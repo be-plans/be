@@ -1,5 +1,5 @@
 pkg_name=sqitch
-pkg_version=0.9994
+pkg_version=0.9995
 pkg_origin=lilian
 pkg_license=('MIT')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -8,14 +8,24 @@ pkg_upstream_url=http://sqitch.org/
 pkg_source=https://cpan.metacpan.org/authors/id/D/DW/DWHEELER/App-Sqitch-${pkg_version}.tar.gz
 pkg_filename=App-Sqitch-${pkg_version}.tar.gz
 pkg_dirname=App-Sqitch-${pkg_version}
-pkg_shasum=24de7770884419f199d24fa2ce81f5e7a27583028f685e6973a06840be00c646
-pkg_deps=(core/glibc lilian/perl core/local-lib core/cpanminus)
-pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils lilian/perl core/local-lib core/cpanminus)
+pkg_shasum=c29b4610ce43bd43ecfa39188f4cbb00b38c390136fcdd9984142efd99eba292
+pkg_deps=(
+  lilian/glibc lilian/perl lilian/local-lib
+  lilian/cpanminus
+)
+pkg_build_deps=(
+  lilian/gcc lilian/make lilian/coreutils
+  lilian/perl lilian/local-lib lilian/cpanminus
+)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 
+#TODO: This could be built
+source ../defaults.sh
+
 do_prepare() {
-  eval "$(perl -I$(pkg_path_for core/local-lib)/lib/perl5 -Mlocal::lib=$(pkg_path_for core/local-lib))"
+  do_default_prepare
+  eval "$(perl -I$(pkg_path_for lilian/local-lib)/lib/perl5 -Mlocal::lib=$(pkg_path_for lilian/local-lib))"
   # Create a new lib dir in our pacakge for cpanm to house all of its libs
   eval $(perl -Mlocal::lib=${pkg_prefix})
 

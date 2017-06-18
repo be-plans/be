@@ -11,7 +11,7 @@ pkg_upstream_url=https://aws.amazon.com/cli/
 pkg_source=nosuchfile.tgz
 pkg_build_deps=(lilian/python)
 pkg_deps=(
-  core/groff
+  lilian/groff
   lilian/python
 )
 pkg_bin_dirs=(bin)

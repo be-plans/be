@@ -6,8 +6,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('BSD-3-Clause' 'Apache-2.0')
 pkg_source=https://github.com/client9/stringencoders/archive/e0d6a9b294c9ab619c510c1f6317bb9ec7194d77.tar.gz
 pkg_shasum=6d5bc3eeea1f2a73d35d558746bbb35916f1a159a2b52ed78e9c20a29050607e
-pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/gcc lilian/make lilian/perl lilian/patch core/gcc-libs lilian/file lilian/diffutils)
+pkg_deps=(lilian/glibc)
+pkg_build_deps=(lilian/gcc lilian/make lilian/perl lilian/patch lilian/gcc-libs lilian/file lilian/diffutils)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -23,5 +23,5 @@ do_prepare () {
 }
 
 do_check () {
-  LD_LIBRARY_PATH=$(pkg_path_for core/gcc-libs)/lib make test
+  LD_LIBRARY_PATH=$(pkg_path_for lilian/gcc-libs)/lib make test
 }

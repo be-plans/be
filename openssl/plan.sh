@@ -9,7 +9,7 @@ pkg_upstream_url="https://www.openssl.org"
 pkg_source=https://www.openssl.org/source/${pkg_distname}-${pkg_version}.tar.gz
 pkg_shasum=ce07195b659e75f4e1db43552860070061f156a98bb37b672b101ba6e3ddf30c
 pkg_dirname="${pkg_distname}-${pkg_version}"
-pkg_deps=(core/glibc lilian/zlib lilian/cacerts)
+pkg_deps=(lilian/glibc lilian/zlib lilian/cacerts)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc lilian/sed

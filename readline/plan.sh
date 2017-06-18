@@ -7,7 +7,7 @@ _url_base=http://ftp.gnu.org/gnu/$pkg_name
 pkg_source=$_url_base/${pkg_name}-${_base_version}.tar.gz
 pkg_dirname=${pkg_name}-$_base_version
 pkg_shasum=56ba6071b9462f980c5a72ab0023893b65ba6debb4eeb475d7a563dc65cafd43
-pkg_deps=(core/glibc lilian/ncurses)
+pkg_deps=(lilian/glibc lilian/ncurses)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc lilian/bison lilian/grep

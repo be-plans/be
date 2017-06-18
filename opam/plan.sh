@@ -13,7 +13,7 @@ pkg_deps=(
   lilian/diffutils
   lilian/gcc
   lilian/git
-  core/glibc
+  lilian/glibc
   lilian/m4
   lilian/make
   lilian/patch

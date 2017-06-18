@@ -10,7 +10,7 @@ pkg_source=https://curl.haxx.se/download/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=fdfc4df2d001ee0c44ec071186e770046249263c491fcae48df0e1a3ca8f25a0
 pkg_deps=(
   lilian/cacerts
-  core/glibc
+  lilian/glibc
   lilian/openssl 
   lilian/zlib
 )

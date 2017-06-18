@@ -8,7 +8,7 @@ Also commonly known as libgif."
 pkg_upstream_url=http://giflib.sourceforge.net/
 pkg_source=http://downloads.sourceforge.net/sourceforge/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=34a7377ba834397db019e8eb122e551a49c98f49df75ec3fcc92b9a794a4f6d1
-pkg_deps=(core/glibc)
+pkg_deps=(lilian/glibc)
 pkg_build_deps=(lilian/diffutils lilian/gcc lilian/make)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

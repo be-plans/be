@@ -8,7 +8,7 @@ pkg_license=('MIT')
 pkg_source=http://downloads.sourceforge.net/sourceforge/lcms/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=66d02b229d2ea9474e62c2b6cd6720fde946155cd1d0d2bffdab829790a0fb22
 pkg_deps=(
-  core/glibc
+  lilian/glibc
   core/jbigkit
   lilian/libjpeg-turbo
   core/libtiff

@@ -1,12 +1,15 @@
 pkg_name=libbsd
 pkg_origin=lilian
-pkg_version=0.8.1
+pkg_version=0.8.3
 pkg_license=('custom')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://libbsd.freedesktop.org/releases/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=adbc8781ad720bce939b689f38a9f0247732a36792147a7c28027c393c2af9b0
-pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed)
+pkg_shasum=934b634f4dfd865b6482650b8f522c70ae65c463529de8be907b53c89c3a34a8
+pkg_deps=(lilian/glibc)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/sed
+)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 

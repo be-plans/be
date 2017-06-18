@@ -3,8 +3,8 @@ source ../gcc/plan.sh
 pkg_name=gcc-libs
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 
-# The shared libraries only depend on core/glibc
-pkg_deps=(core/glibc)
+# The shared libraries only depend on lilian/glibc
+pkg_deps=(lilian/glibc)
 # Add the same version of the full gcc package as a build dep
 pkg_build_deps=(lilian/gcc/$pkg_version lilian/patchelf)
 
@@ -19,7 +19,7 @@ _gcc_libs=(
   libatomic
   libcilkrts
   libgcc_s
-  libgomp-plugin-host_nonshm
+  # libgomp-plugin-host_nonshm
   libgomp
   libitm
   liblsan
@@ -27,10 +27,10 @@ _gcc_libs=(
   libstdc++
   libtsan
   libubsan
-  libvtv
+  # libvtv
 )
 
-source ../better_default.sh
+source ../defaults.sh
 
 do_install() {
   mkdir -pv $pkg_prefix/lib

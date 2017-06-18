@@ -8,8 +8,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="https://ftp.gnu.org/pub/gnu/guile/guile-${pkg_version}.tar.xz"
 pkg_shasum=de8187736f9b260f2fa776ed39b52cb74dd389ccf7039c042f0606270196b7e9
 pkg_deps=(lilian/bdwgc
-  core/gcc-libs
-  core/glibc
+  lilian/gcc-libs
+  lilian/glibc
   lilian/gmp
   lilian/libatomic_ops
   lilian/libffi

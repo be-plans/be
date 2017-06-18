@@ -10,19 +10,16 @@ pkg_shasum=067bd9bb3390e79aa45911537d13c3721f1d9d3769931a30c2681bfee66f23a0
 pkg_deps=(lilian/linux-headers)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/sed core/perl
+  lilian/make lilian/gcc lilian/sed lilian/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-compiler_flags() {
-  local -r optimizations="-O2 -fomit-frame-pointer -mavx -march=corei7-avx -mtune=corei7-avx"
-  export CFLAGS="${CFLAGS} ${optimizations} -Wno-error "
-  export CXXFLAGS="${CXXFLAGS} -std=gnu++1z ${optimizations} -Wno-error "
-  export CPPFLAGS="${CPPFLAGS} ${optimizations} -Wdate-time -Wno-error "
-  export LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic-functions -Wl,-z,relro"
-}
+no_pie=true
+be_optimizations="-O2 -DNDEBUG -fomit-frame-pointer -ftree-vectorize -m64 -mavx -march=corei7-avx -mtune=corei7-avx"
+be_protection=" "
+source ../defaults.sh
 
 do_prepare() {
   # The `/bin/pwd` path is hardcoded, so we'll add a symlink if needed.
@@ -74,7 +71,7 @@ do_prepare() {
   sed -i "s|libs -o|libs -L${pkg_prefix}/lib -Wl,-dynamic-linker=${dynamic_linker} -o|" \
     scripts/test-installation.pl
 
-  compiler_flags
+  do_default_prepare
 }
 
 do_build() {

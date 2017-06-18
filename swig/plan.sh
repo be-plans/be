@@ -13,8 +13,8 @@ pkg_build_deps=(
   lilian/make
 )
 pkg_deps=(
-  core/gcc-libs
-  core/glibc
+  lilian/gcc-libs
+  lilian/glibc
   lilian/pcre
 )
 pkg_bin_dirs=(bin)

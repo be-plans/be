@@ -10,7 +10,7 @@ pkg_license=('LGPL-2.1')
 pkg_source="http://web.mit.edu/kerberos/dist/$pkg_name/${pkg_version%.*}/$pkg_name-$pkg_version.tar.gz"
 pkg_shasum=437c8831ddd5fde2a993fef425dedb48468109bb3d3261ef838295045a89eb45
 pkg_deps=(
-  core/glibc
+  lilian/glibc
 )
 pkg_build_deps=(
   lilian/bison

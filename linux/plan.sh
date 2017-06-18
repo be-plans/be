@@ -1,13 +1,17 @@
 pkg_name=linux
 pkg_origin=lilian
-pkg_version="4.11.1"
+pkg_version="4.11.6"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gplv2')
-pkg_source="https://cdn.kernel.org/pub/linux/kernel/v4.x/${pkg_name}-${pkg_version}.tar.gz"
-pkg_shasum="1ece864a5b0fbf448f6e01439968de7476c3bf57595c1c74cb96e9a2e3adbd0f"
-pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/make lilian/gcc lilian/perl core/elfutils core/bc lilian/diffutils)
+pkg_license=('GPL-2.0')
+pkg_source="https://cdn.kernel.org/pub/linux/kernel/v4.x/${pkg_name}-${pkg_version}.tar.xz"
+pkg_shasum="25539bfc34a01735d23ee80d5ef84054c65d1ea35dbd81be1cea339c21509631"
+pkg_deps=(lilian/glibc)
+pkg_build_deps=(
+  lilian/make lilian/gcc lilian/perl
+  lilian/elfutils lilian/bc lilian/diffutils
+)
 
+source ../defaults.sh
 
 do_build() {
   make defconfig INSTALL_PATH="$pkg_prefix"
@@ -16,7 +20,7 @@ do_build() {
 }
 
 do_install() {
-  make INSTALL_MOD_PATH="$pkg_prefix" modules_install
+  make -j "$(nproc)" INSTALL_MOD_PATH="$pkg_prefix" modules_install
   mkdir -p "${pkg_prefix}/boot"
   cp -a arch/x86/boot/bzImage "${pkg_prefix}/boot/"
 }

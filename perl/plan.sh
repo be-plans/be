@@ -6,7 +6,7 @@ pkg_license=('gpl' 'perlartistic')
 pkg_source=http://www.cpan.org/src/5.0/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=03a77bac4505c270f1890ece75afc7d4b555090b41aa41ea478747e23b2afb3f
 pkg_deps=(
-  core/glibc lilian/zlib lilian/bzip2
+  lilian/glibc lilian/zlib lilian/bzip2
   lilian/gdbm lilian/db lilian/coreutils
   lilian/less
 )

@@ -1,18 +1,19 @@
 pkg_name=curator
 pkg_origin=lilian
-pkg_version=4.1.2
+pkg_version=5.1.1
 pkg_description="Elasticsearch Curator helps you curate, or manage your indices."
 pkg_upstream_url=https://github.com/elastic/curator
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
-pkg_source=nosuchfile.tgz
 pkg_deps=(
   lilian/python2
 )
 pkg_build_deps=(
-  core/virtualenv
+  lilian/virtualenv
 )
 pkg_bin_dirs=(bin)
+
+source ../defaults.sh
 
 do_download() {
   return 0

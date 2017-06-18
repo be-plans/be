@@ -1,16 +1,18 @@
 pkg_name=virtualenv
 pkg_origin=lilian
-pkg_version=15.0.3
+pkg_version=15.1.0
 pkg_description="virtualenv is a tool to create isolated Python environments. This version is for python2. For python3 use the built-in 'pyvenv'"
 pkg_upstream_url=https://virtualenv.pypa.io/
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')
 pkg_source=https://pypi.io/packages/source/v/$pkg_name/$pkg_name-$pkg_version.tar.gz
-pkg_shasum=6d9c760d3fc5fa0894b0f99b9de82a4647e1164f0b700a7f99055034bf548b1d
+pkg_shasum=02f8102c2436bb03b3ee6dede1919d1dac8a427541652e5ec95171ec8adbc93a
 pkg_deps=(
   lilian/python2
 )
 pkg_bin_dirs=(bin)
+
+source ../defaults.sh
 
 do_build() {
   return 0

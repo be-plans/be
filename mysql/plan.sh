@@ -20,8 +20,8 @@ EOF
 pkg_deps=(
   lilian/coreutils
   lilian/gawk
-  core/gcc-libs
-  core/glibc
+  lilian/gcc-libs
+  lilian/glibc
   lilian/grep
   lilian/inetutils
   lilian/ncurses

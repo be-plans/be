@@ -9,8 +9,8 @@ pkg_upstream_url="https://cmake.org/"
 pkg_source="https://cmake.org/files/v${_base_version}/cmake-${pkg_version}.tar.gz"
 pkg_shasum=da3072794eb4c09f2d782fcee043847b99bb4cf8d4573978d9b2024214d6e92d
 pkg_deps=(
-  core/glibc
-  core/gcc-libs
+  lilian/glibc
+  lilian/gcc-libs
 )
 pkg_build_deps=(
   lilian/coreutils

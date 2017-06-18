@@ -13,7 +13,7 @@ pkg_shasum=01584dc521ab7ec84b502b61952f573652fe6aa00c18d6d844fb9209f14b245b
 pkg_deps=(
   lilian/coreutils
   lilian/curl
-  core/glibc
+  lilian/glibc
   lilian/libxml2
   lilian/libjpeg-turbo
   lilian/libpng

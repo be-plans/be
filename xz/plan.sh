@@ -7,7 +7,7 @@ pkg_license=('gpl2+' 'lgpl2+')
 pkg_source=http://tukaani.org/${pkg_distname}/${pkg_distname}-${pkg_version}.tar.xz
 pkg_shasum=7876096b053ad598c31f6df35f7de5cd9ff2ba3162e5a5554e4fc198447e0347
 pkg_dirname=${pkg_distname}-${pkg_version}
-pkg_deps=(core/glibc)
+pkg_deps=(lilian/glibc)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make      lilian/gcc       lilian/sed

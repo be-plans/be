@@ -9,8 +9,8 @@ pkg_source="http://git.savannah.gnu.org/cgit/man-db.git/snapshot/man-db-${pkg_ve
 pkg_shasum=dd913662e341fc01e6721878b6cbe1001886cc3bfa6632b095937bba3238c779
 pkg_deps=(
   lilian/gdbm
-  core/glibc
-  core/groff
+  lilian/glibc
+  lilian/groff
   lilian/gzip
   lilian/libiconv
 )
@@ -20,7 +20,7 @@ pkg_build_deps=(
   lilian/flex
   lilian/gcc
   lilian/gettext
-  core/libpipeline
+  lilian/libpipeline
   lilian/make
   lilian/m4
   lilian/pkg-config
@@ -47,6 +47,7 @@ do_build() {
 }
 
 do_prepare() {
+  do_default_prepare
   # /var/cache/man is hard-coded in a few places. We should replace this with
   # /hab/svc/man-db/var/cache/man. Since man-db isn't run as a service, this
   # directory won't actually exist unless created manually, but it will keep us out

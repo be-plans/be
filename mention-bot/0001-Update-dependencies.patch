@@ -1,0 +1,53 @@
+From dfc4341818c352d1c5ac803d8b5e6a634ed774eb Mon Sep 17 00:00:00 2001
+From: "Lilian A. Moraru" <lilian.moraru90@gmail.com>
+Date: Sun, 18 Jun 2017 08:37:25 +0000
+Subject: [PATCH] Update dependencies
+
+---
+ package.json | 30 +++++++++++++++---------------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+
+diff --git a/package.json b/package.json
+index 40e65bb..8939801 100644
+--- a/package.json
++++ b/package.json
+@@ -19,21 +19,21 @@
+   },
+   "config": {},
+   "dependencies": {
+-    "babel-core": "^6.0.0",
+-    "babel-jest": "^6.0.1",
+-    "babel-plugin-syntax-async-functions": "^6.1.4",
+-    "babel-plugin-transform-object-rest-spread": "^6.1.18",
+-    "babel-plugin-transform-regenerator": "^6.1.4",
+-    "babel-polyfill": "^6.1.4",
+-    "babel-preset-react": "^6.1.2",
+-    "bl": "^1.0.0",
+-    "download-file-sync": "^1.0.3",
+-    "express": "^4.13.3",
+-    "flow-bin": "^0.18.1",
+-    "github": "^7.3.2",
+-    "jest-cli": "^0.7.1",
++    "babel-core": "^6.25.0",
++    "babel-jest": "^20.0.3",
++    "babel-plugin-syntax-async-functions": "^6.13.0",
++    "babel-plugin-transform-object-rest-spread": "^6.23.0",
++    "babel-plugin-transform-regenerator": "^6.24.1",
++    "babel-polyfill": "^6.23.0",
++    "babel-preset-react": "^6.24.1",
++    "bl": "^1.2.1",
++    "download-file-sync": "^1.0.4",
++    "express": "^4.15.3",
++    "flow-bin": "^0.48.0",
++    "github": "^9.2.0",
++    "jest-cli": "^20.0.4",
+     "jsonlint": "^1.6.2",
+-    "minimatch": "^3.0.0",
+-    "node-schedule": "^1.0.0"
++    "minimatch": "^3.0.4",
++    "node-schedule": "^1.2.3"
+   }
+ }
+-- 
+2.13.1
+

@@ -7,7 +7,7 @@ pkg_license=('GPL-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="ftp://sourceware.org/pub/valgrind/valgrind-${pkg_version}.tar.bz2"
 pkg_shasum=d76680ef03f00cd5e970bbdcd4e57fb1f6df7d2e2c071635ef2be74790190c3b
-pkg_deps=(core/glibc)
+pkg_deps=(lilian/glibc)
 pkg_build_deps=(
   lilian/gcc lilian/make lilian/which
   lilian/diffutils lilian/perl

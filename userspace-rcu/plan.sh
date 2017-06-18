@@ -10,8 +10,8 @@ pkg_license=('LGPL-2.1')
 pkg_source=http://www.lttng.org/files/urcu/$pkg_name-$pkg_version.tar.bz2
 pkg_shasum=7cb58a7ba5151198087f025dc8d19d8918e9c6d56772f039696c111d9aad3190
 pkg_deps=(
-  core/gcc-libs
-  core/glibc
+  lilian/gcc-libs
+  lilian/glibc
 )
 pkg_build_deps=(
   lilian/gcc

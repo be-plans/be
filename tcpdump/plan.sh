@@ -10,7 +10,7 @@ pkg_shasum=eae98121cbb1c9adbedd9a777bf2eae9fa1c1c676424a54740311c8abcee5a5e
 # lilian/coreutils isn't /really/ needed at runtime, but fix_interpreter
 # only works if the dep is listed in pkg_deps
 pkg_deps=(
-  core/glibc lilian/libpcap lilian/openssl
+  lilian/glibc lilian/libpcap lilian/openssl
   lilian/coreutils
 )
 pkg_build_deps=(

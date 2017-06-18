@@ -10,7 +10,7 @@ pkg_source=https://cache.ruby-lang.org/pub/${pkg_name}/${pkg_name}-${pkg_version
 pkg_upstream_url=https://www.ruby-lang.org/en/
 pkg_shasum=4fc8a9992de3e90191de369270ea4b6c1b171b7941743614cc50822ddc1fe654
 pkg_deps=(
-  core/glibc lilian/ncurses lilian/zlib
+  lilian/glibc lilian/ncurses lilian/zlib
   lilian/openssl lilian/libyaml lilian/libffi
   lilian/readline
 )

@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('custom')
 pkg_source=ftp://ftp.astron.com/pub/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=09c588dac9cff4baa054f51a36141793bcf64926edc909594111ceae60fce4ee
-pkg_deps=(core/glibc lilian/zlib)
+pkg_deps=(lilian/glibc lilian/zlib)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc
