@@ -27,6 +27,7 @@ pkg_build_deps=(
   lilian/gcc
   lilian/make
   lilian/re2c
+  lilian/readline
 )
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib)
@@ -48,6 +49,7 @@ do_build() {
     --with-mysql=mysqlnd \
     --with-mysqli=mysqlnd \
     --with-pdo-mysql=mysqlnd \
+    --with-readline="$(pkg_path_for readline)" \
     --with-curl="$(pkg_path_for curl)" \
     --with-pcre-dir="$(pkg_path_for pcre)" \
     --with-libexpat-dir="$(pkg_path_for expat)" \
