@@ -1,10 +1,10 @@
 pkg_name=automake
 pkg_origin=lilian
-pkg_version=1.15
+pkg_version=1.15.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2+')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=9908c75aabd49d13661d6dcb1bc382252d22cc77bf733a2d55e87f2aa2db8636
+pkg_shasum=af6ba39142220687c500f79b4aa2f181d9b24e4f8d8ec497cea4ba26c64bedaf
 pkg_deps=(lilian/perl)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
