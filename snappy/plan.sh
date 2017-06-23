@@ -1,6 +1,6 @@
 pkg_origin=lilian
 pkg_name=snappy
-# CMake will soon be deprecated, let's switch currently to the master branch(snappy 1.1.4)
+# Autotools will soon be deprecated, let's switch currently to the master branch(snappy 1.1.4)
 pkg_version=master
 pkg_dirname=snappy-bde324c0169763688f35ee44630a26ad1f49eec3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

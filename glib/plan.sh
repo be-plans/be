@@ -41,6 +41,7 @@ do_build() {
     --with-libiconv \
     --with-pcre=system \
     --disable-fam \
-    --disable-gtk-doc
+    --disable-gtk-doc \
+    --enable-shared
   make -j $(nproc)
 }
