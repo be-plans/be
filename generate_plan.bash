@@ -59,14 +59,17 @@ pkg_description=\"${empty}\"
 pkg_upstream_url=${empty}
 pkg_source=${modified_pkg_source:?}
 pkg_shasum=${sha256:?}
-pkg_deps=(core/glibc)
-pkg_build_deps=()
+pkg_deps=(
+  core/glibc
+)
+pkg_build_deps=(
+
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-source ../defaults.sh
-" > plan.sh
+source ../defaults.sh" > plan.sh
 
   cd ..
   echo "Plan(template) \"${pkg_name}\" was created"
