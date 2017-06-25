@@ -8,7 +8,9 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="https://ftp.gnu.org/gnu/libunistring/libunistring-${pkg_version}.tar.xz"
 pkg_shasum=2e3764512aaf2ce598af5a38818c0ea23dedf1ff5460070d1b6cee5c3336e797
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/gcc lilian/make lilian/diffutils)
+pkg_build_deps=(
+  lilian/gcc lilian/make lilian/diffutils
+)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

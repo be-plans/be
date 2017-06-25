@@ -50,7 +50,7 @@ generate_plan() {
   popd
   rm -rf "${temp_dir}" # cleanup
 
-  echo "pkg_origin=core
+  echo "pkg_origin=lilian
 pkg_name=${pkg_name}
 pkg_version=${pkg_version}
 pkg_maintainer=\"The Habitat Maintainers <humans@habitat.sh>\"
@@ -63,11 +63,13 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-
+  lilian/gcc lilian/make
+  lilian/diffutils lilian/coreutils
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+pkg_pconfig_dirs=(lib/pkgconfig)
 
 source ../defaults.sh" > plan.sh
 
