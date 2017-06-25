@@ -15,12 +15,15 @@ pkg_build_deps=(
 )
 pkg_deps=(
   lilian/gcc
-  lilian/glibc
+  core/glibc
   lilian/util-linux
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_bin_dirs=(bin)
+
+no_pie=true
+source ../defaults.sh
 
 do_download() {
   do_default_download
@@ -69,7 +72,8 @@ do_build() {
     -DCMAKE_C_FLAGS="$CFLAGS --gcc-toolchain=$(pkg_path_for gcc)" \
     -DLIBCXXABI_LIBCXX_PATH=../libcxx \
     .
-  make
+
+  make -j "$(nproc)"
   popd
 
   cmake \
@@ -80,15 +84,16 @@ do_build() {
     -DLIBCXX_CXX_ABI_LIBRARY_PATH=libcxxabi/lib \
     -DLIBCXX_CXX_ABI_INCLUDE_PATHS=libcxxabi/include \
     libcxx
-  make
+
+  make -j "$(nproc)"
 }
 
 do_install() {
   pushd libcxxabi
-  make install-libcxxabi
+  make -j "$(nproc)" install-libcxxabi
   popd
 
-  make install-libcxx
+  make -j "$(nproc)" install-libcxx
 }
 
 do_end() {

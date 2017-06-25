@@ -6,7 +6,7 @@ pkg_license=('publicdomain')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://homepage.boetes.org/software/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=26450b2564bec0b0afc465fd24a1917dc31508c5500c3a36823b9c763a2b8636
-pkg_deps=(lilian/glibc lilian/ncurses lilian/libbsd)
+pkg_deps=(core/glibc lilian/ncurses lilian/libbsd)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc lilian/sed

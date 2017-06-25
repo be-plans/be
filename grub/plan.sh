@@ -29,7 +29,7 @@ pkg_build_deps=(
   lilian/texinfo
 )
 pkg_deps=(
-  lilian/glibc lilian/gcc-libs lilian/xz
+  core/glibc core/gcc-libs lilian/xz
   lilian/gettext lilian/pcre lilian/devicemapper
   lilian/elfutils lilian/bzip2 lilian/libcap
 )

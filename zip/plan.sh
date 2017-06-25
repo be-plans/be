@@ -7,7 +7,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://downloads.sourceforge.net/infozip/${pkg_name}${_ver}.tar.gz
 pkg_shasum=f0e8bb1f9b7eb0b01285495a2699df3a4b766784c1765a8f1aeedf63c0806369
 pkg_dirname="${pkg_name}${_ver}"
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 pkg_build_deps=(lilian/coreutils lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 

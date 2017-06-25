@@ -7,7 +7,7 @@ pkg_license=('GPL-2.0')
 pkg_source=http://www.busybox.net/downloads/${pkg_distname}-${pkg_version}.tar.bz2
 pkg_shasum=da3e44913fc1a9c9b7c5337ea5292da518683cbff32be630777f565d6036af16
 
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/bash
   lilian/bison

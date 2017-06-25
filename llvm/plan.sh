@@ -17,8 +17,8 @@ pkg_build_deps=(
   lilian/python
 )
 pkg_deps=(
-  lilian/gcc-libs
-  lilian/glibc
+  core/gcc-libs
+  core/glibc
   lilian/zlib
 )
 pkg_lib_dirs=(lib)

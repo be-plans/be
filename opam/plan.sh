@@ -9,12 +9,12 @@ pkg_source="https://github.com/ocaml/opam/releases/download/${pkg_version}/opam-
 pkg_shasum="15e617179251041f4bf3910257bbb8398db987d863dd3cfc288bdd958de58f00"
 pkg_dirname="opam-full-${pkg_version}"
 pkg_deps=(
-  core/aspcud
+  lilian/aspcud
   lilian/camlp4
   lilian/diffutils
   lilian/gcc
   lilian/git
-  lilian/glibc
+  core/glibc
   lilian/m4
   lilian/make
   lilian/patch

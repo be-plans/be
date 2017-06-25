@@ -24,7 +24,7 @@ Once Zookeeper is started we can start creating a Storm cluster by using what
 Storm calls Nimbus nodes.
 
 ```bash
-HAB_STORM="run_as=nimbus" hab start core/storm --peer=<zookeeper_ip> \
+HAB_STORM="run_as=nimbus" hab start lilian/storm --peer=<zookeeper_ip> \
 	--bind=zookeeper:zookeeper.default  --bind=storm:storm-nimbus.default
 ```
 
@@ -35,7 +35,7 @@ this when Nimbus nodes have been started. In habitat you can do this by running
 the following:
 
 ```bash
-HAB_STORM="run_as=supervisor" hab start core/storm --peer=<zookeeper_ip> \
+HAB_STORM="run_as=supervisor" hab start lilian/storm --peer=<zookeeper_ip> \
 	--bind=zookeeper:zookeeper.default --bind=storm:storm-nimbus.default
 ```
 
@@ -45,6 +45,6 @@ Another service is the possibility to get an UI for Storm, a plan also exists
 for this.
 
 ```bash
-HAB_STORM="run_as=ui" hab start core/storm --peer=<zookeeper_ip> \
+HAB_STORM="run_as=ui" hab start lilian/storm --peer=<zookeeper_ip> \
 	--bind=zookeeper:zookeeper.default --bind=storm:storm-nimbus.default
 ```

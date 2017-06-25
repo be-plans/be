@@ -8,7 +8,7 @@ pkg_license=('zsh')
 pkg_source=https://downloads.sourceforge.net/project/zsh/zsh/$pkg_version/zsh-$pkg_version.tar.gz
 pkg_shasum=3d94a590ff3c562ecf387da78ac356d6bea79b050a9ef81e3ecb9f8ee513040e
 pkg_deps=(
-  lilian/glibc lilian/pcre lilian/ncurses
+  core/glibc lilian/pcre lilian/ncurses
   lilian/readline lilian/gdbm lilian/coreutils
   lilian/perl
 )

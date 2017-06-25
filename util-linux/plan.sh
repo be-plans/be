@@ -7,7 +7,7 @@ pkg_description="Miscellaneous system utilities for Linux"
 pkg_upstream_url=https://www.kernel.org/pub/linux/utils/util-linux
 pkg_source=https://www.kernel.org/pub/linux/utils/${pkg_name}/v${pkg_version%.?}/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=c208a4ff6906cb7f57940aa5bc3a6eed146e50a7cc0a092f52ef2ab65057a08d
-pkg_deps=(lilian/glibc lilian/zlib lilian/ncurses)
+pkg_deps=(core/glibc lilian/zlib lilian/ncurses)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc lilian/sed

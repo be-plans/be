@@ -5,7 +5,7 @@ pkg_license=('custom')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://libbsd.freedesktop.org/releases/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=934b634f4dfd865b6482650b8f522c70ae65c463529de8be907b53c89c3a34a8
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc lilian/sed

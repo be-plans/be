@@ -9,7 +9,7 @@ pkg_source=http://download.savannah.gnu.org/releases/freetype/${pkg_name}-${pkg_
 pkg_filename=${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=a3c603ed84c3c2495f9c9331fe6bba3bb0ee65e06ec331e0a0fb52158291b40b
 pkg_deps=(
-  lilian/glibc lilian/libpng
+  core/glibc lilian/libpng
   lilian/zlib lilian/bzip2
 )
 pkg_build_deps=(

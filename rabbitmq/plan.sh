@@ -11,7 +11,7 @@ pkg_shasum=0f478950a3e27b6b3b5aa57098eaf91822321d716a9b0bc30a4084a2c283394c
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(
   lilian/coreutils
-  lilian/glibc
+  core/glibc
   lilian/erlang
 )
 pkg_build_deps=(

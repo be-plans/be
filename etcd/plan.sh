@@ -1,15 +1,15 @@
+pkg_origin=lilian
 pkg_name=etcd
-pkg_description="Distributed reliable key-value store for the most critical data of a distributed system"
-pkg_origin=core
 pkg_version="v3.1.5"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
+pkg_description="Distributed reliable key-value store for the most critical data of a distributed system"
 pkg_source=https://github.com/coreos/${pkg_name}/releases/download/${pkg_version}/${pkg_name}-${pkg_version}-linux-amd64.tar.gz
 pkg_upstream_url=https://github.com/coreos/etcd/releases/
 pkg_shasum=812f2a8e28330cb1e127177ff81efaa24f8e57ce22d3cd28799ef1f939f71454
 pkg_dirname=${pkg_name}-${pkg_version}-linux-amd64
 pkg_deps=()
-pkg_build_deps=(core/gnupg)
+pkg_build_deps=(lilian/gnupg)
 pkg_bin_dirs=(/usr/bin)
 
 pkg_exports=(
@@ -18,10 +18,11 @@ pkg_exports=(
 )
 
 pkg_exposes=(client-port server-port)
-
 pkg_svc_user="root"
 
 # pkg_svc_group="$pkg_svc_user"
+
+source ../defaults.sh
 
 do_download() {
   do_default_download

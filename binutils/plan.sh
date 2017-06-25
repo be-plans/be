@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=6297433ee120b11b4b0a1c8f3512d7d73501753142ab9e2daa13c5a3edd32a72
-pkg_deps=(lilian/glibc lilian/zlib)
+pkg_deps=(core/glibc lilian/zlib)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc lilian/texinfo

@@ -10,12 +10,12 @@ pkg_upstream_url=https://fedorahosted.org/elfutils/
 pkg_source=https://fedorahosted.org/releases/e/l/$pkg_name/$pkg_version/$pkg_name-$pkg_version.tar.bz2
 pkg_shasum=9412fac7b30872b738bc1ed1ebcaed54493c26ef9a67887913498c17b10f3bc2
 pkg_deps=(
-  lilian/glibc
+  core/glibc
   lilian/zlib
 )
 pkg_build_deps=(
   lilian/gcc
-  lilian/glibc
+  core/glibc
   lilian/m4
   lilian/make
   lilian/zlib

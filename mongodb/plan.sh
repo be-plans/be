@@ -9,11 +9,11 @@ pkg_shasum=31492b99d12d6363a6ebcbba32269ce9e97dadedda8c470cbff8c1af227e9753
 pkg_upstream_url=https://www.mongodb.com/
 pkg_filename=${pkg_name}-src-r${pkg_version}.tar.gz
 pkg_dirname=${pkg_name}-src-r${pkg_version}
-pkg_deps=(lilian/gcc-libs lilian/glibc lilian/openssl)
+pkg_deps=(core/gcc-libs core/glibc lilian/openssl)
 pkg_build_deps=(
   lilian/coreutils
   lilian/gcc
-  lilian/glibc
+  core/glibc
   lilian/python2
   lilian/scons
   lilian/openssl

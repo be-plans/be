@@ -15,7 +15,7 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 
 use_lto=true
-source ../default.sh
+source ../defaults.sh
 
 do_prepare() {
   CFLAGS="-I$(pkg_path_for linux-headers-musl)/include -I$(pkg_path_for musl)/include"

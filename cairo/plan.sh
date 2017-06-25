@@ -1,30 +1,30 @@
 pkg_name=cairo
-pkg_origin=core
-pkg_version="1.14.8"
+pkg_origin=lilian
+pkg_version="1.14.10"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=(
   'LGPL-2.1'
   'MPL-1.1'
 )
 pkg_source="https://www.cairographics.org/releases/${pkg_name}-${pkg_version}.tar.xz"
-pkg_shasum="d1f2d98ae9a4111564f6de4e013d639cf77155baf2556582295a0f00a9bc5e20"
+pkg_shasum=7e87878658f2c9951a14fc64114d4958c0e65ac47530b8ac3078b2ce41b66a09
 pkg_description="Cairo is a 2D graphics library with support for multiple output devices."
 pkg_upstream_url="https://www.cairographics.org"
 pkg_deps=(
-  core/expat
-  core/fontconfig
-  core/freetype
-  core/glib
-  core/libpng
-  core/pcre
-  core/pixman
-  core/zlib
+  lilian/expat
+  lilian/fontconfig
+  lilian/freetype
+  lilian/glib
+  lilian/libpng
+  lilian/pcre
+  lilian/pixman
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/diffutils
-  core/gcc
-  core/make
-  core/pkg-config
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include/cairo)
@@ -34,12 +34,15 @@ pkg_lib_dirs=(
 )
 pkg_pconfig_dirs=(lib/pkgconfig)
 
+source ../defaults.sh
+
 do_build() {
-  CFLAGS="-Os ${CFLAGS}"
+  # CFLAGS="-Os ${CFLAGS}"
 
   ./configure --prefix="${pkg_prefix}" \
               --disable-xlib
-  make
+  
+  make -j "$(nproc)"
 }
 
 do_check() {

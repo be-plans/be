@@ -6,7 +6,7 @@ pkg_license=('GPL-2.0')
 pkg_source="https://github.com/axkibe/$pkg_name/archive/release-$pkg_version.tar.gz"
 pkg_dirname="$pkg_name-release-$pkg_version"
 pkg_shasum=02c241ee71b6abb23a796ac994a414e1229f530c249b838ae72d2ef74ae0f775
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/cmake
   lilian/gcc

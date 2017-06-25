@@ -68,7 +68,7 @@ ident_to_plan = {}
 ARGF.each_line do |file|
   raw = `bash #{bash_prog.path} #{file}`.chomp
   ident, _, deps_str = raw.partition(/\n/)
-  if ident.start_with?('core/')
+  if ident.start_with?('lilian/')
     all_deps.add(ident, deps_str.split(' ')
       .map { |d| d.split('/').first(2).join('/') })
     ident_to_plan[ident] = \

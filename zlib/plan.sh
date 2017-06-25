@@ -7,7 +7,7 @@ pkg_license=('zlib')
 pkg_source=http://zlib.net/fossils/${pkg_distname}-${pkg_version}.tar.gz
 pkg_shasum=c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1
 pkg_dirname=${pkg_distname}-${pkg_version}
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc

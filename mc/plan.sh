@@ -9,7 +9,7 @@ pkg_upstream_url=https://www.midnight-commander.org
 pkg_shasum=eb9e56bbb5b2893601d100d0e0293983049b302c5ab61bfb544ad0ee2cc1f2df
 pkg_deps=(
   lilian/glib
-  lilian/glibc
+  core/glibc
   lilian/ncurses
   lilian/pcre
 )

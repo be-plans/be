@@ -11,12 +11,12 @@ pkg_filename=${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=d763c024df434146f3352448bc1f4554f390c8a48340cef7aa9cc44716a159df
 pkg_deps=(
   lilian/bzip2
-  lilian/glibc
+  core/glibc
   lilian/zlib
   lilian/freetype
   lilian/libpng
   lilian/expat
-  lilian/gcc-libs
+  core/gcc-libs
 )
 pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils lilian/python
                 lilian/pkg-config lilian/diffutils lilian/libtool

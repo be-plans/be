@@ -9,8 +9,8 @@ pkg_source="https://github.com/PowerShell/PowerShell"
 pkg_deps=(
   core/dotnet-core
   lilian/gcc
-  lilian/glibc
-  lilian/gcc-libs
+  core/glibc
+  core/gcc-libs
   core/icu/52.1
   lilian/util-linux
   core/krb5

@@ -7,7 +7,7 @@ pkg_upstream_url="https://rsync.samba.org/"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://download.samba.org/pub/${pkg_name}/src/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=ecfa62a7fa3c4c18b9eccd8c16eaddee4bd308a76ea50b5c02a5840f09c0a1c2
-pkg_deps=(lilian/glibc lilian/perl lilian/acl lilian/attr)
+pkg_deps=(core/glibc lilian/perl lilian/acl lilian/attr)
 pkg_build_deps=(lilian/make lilian/gcc lilian/perl lilian/diffutils)
 pkg_bin_dirs=(bin)
 

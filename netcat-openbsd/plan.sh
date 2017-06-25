@@ -7,7 +7,7 @@ pkg_upstream_url=https://tracker.debian.org/pkg/netcat
 pkg_license=('BSD-3-Clause')
 pkg_source=http://ftp.debian.org/debian/pool/main/n/${pkg_name}/${pkg_name}_${pkg_version}.orig.tar.gz
 pkg_shasum=918330a41ee8ea938144ab1c59fa27533654ebff983bfb5255f730a3d9b06239
-pkg_deps=(lilian/glibc lilian/libbsd)
+pkg_deps=(core/glibc lilian/libbsd)
 pkg_build_deps=(
   lilian/gcc
   lilian/make

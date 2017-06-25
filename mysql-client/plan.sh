@@ -10,8 +10,8 @@ pkg_description="MySQL Client Tools"
 pkg_deps=(
   lilian/coreutils
   lilian/gawk
-  lilian/gcc-libs
-  lilian/glibc
+  core/gcc-libs
+  core/glibc
   lilian/grep
   lilian/inetutils
   lilian/ncurses

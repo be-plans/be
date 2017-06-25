@@ -9,7 +9,7 @@ pkg_license=('IJG' 'BSD-3-Clause' 'Zlib')
 pkg_source=https://sourceforge.net/projects/${pkg_distname}/files/${pkg_version}/${pkg_distname}-${pkg_version}.tar.gz/download
 pkg_filename=${pkg_distname}-${pkg_version}.tar.gz
 pkg_shasum=41429d3d253017433f66e3d472b8c7d998491d2f41caa7306b8d9a6f2a2c666c
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/diffutils
   lilian/file

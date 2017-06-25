@@ -18,7 +18,7 @@ pkg_build_deps=(
   lilian/make
   lilian/pkg-config
 )
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 
 source ../defaults.sh
 

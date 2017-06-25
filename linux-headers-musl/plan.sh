@@ -13,7 +13,7 @@ pkg_build_deps=(
 )
 pkg_include_dirs=(include)
 
-source ../default.sh
+source ../defaults.sh
 
 do_build() {
   make -j "$(nproc)" \

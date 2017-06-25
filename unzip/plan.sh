@@ -7,7 +7,7 @@ pkg_license=('zlib')
 pkg_source=http://downloads.sourceforge.net/infozip/unzip60.tar.gz
 pkg_shasum=036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
 pkg_dirname=unzip60
-pkg_deps=(lilian/glibc lilian/bzip2)
+pkg_deps=(core/glibc lilian/bzip2)
 pkg_build_deps=(lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 

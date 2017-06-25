@@ -15,8 +15,8 @@ pkg_deps=(
   lilian/curl
   lilian/expat
   lilian/gettext
-  lilian/gcc-libs
-  lilian/glibc
+  core/gcc-libs
+  core/glibc
   lilian/openssh
   lilian/perl
   lilian/zlib

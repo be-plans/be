@@ -12,9 +12,9 @@ pkg_source=https://www.python.org/ftp/python/${pkg_version}/${pkg_dirname}.tar.x
 pkg_shasum=a01810ddfcec216bcdb357a84bfaafdfaa0ca42bbdaa4cb7ff74f5a9961e4041
 pkg_deps=(
   lilian/bzip2
-  lilian/gcc-libs
+  core/gcc-libs
   lilian/gdbm
-  lilian/glibc
+  core/glibc
   lilian/ncurses
   lilian/openssl 
   lilian/readline

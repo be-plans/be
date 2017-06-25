@@ -7,7 +7,7 @@ pkg_license=('GPL-2.0')
 pkg_source=http://downloads.sourceforge.net/net-tools/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=7ae4dd6d44d6715f18e10559ffd270511b6e55a8900ca54fbebafe0ae6cf7d7b
 pkg_dirname=${pkg_distname}-${pkg_version}
-pkg_deps=(lilian/glibc lilian/coreutils)
+pkg_deps=(core/glibc lilian/coreutils)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc

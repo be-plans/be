@@ -8,7 +8,7 @@ pkg_license=('Apache-2.0')
 pkg_source=http://www.us.apache.org/dist/apr/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=7d03ed29c22a7152be45b8e50431063736df9e1daa1ddf93f6a547ba7a28f67a
 pkg_deps=(
-  lilian/gcc-libs lilian/glibc lilian/grep
+  core/gcc-libs core/glibc lilian/grep
   lilian/sed lilian/binutils
 )
 pkg_build_deps=(

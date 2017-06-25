@@ -10,7 +10,7 @@ pkg_filename=${pkg_name}-${pkg_version}.tar.gz
 pkg_dirname=${pkg_name}-${pkg_version}
 pkg_shasum=7f52a6487a2462b658164f431ae6cc0b78685df3bccfe4139823372cb5b5fd42
 pkg_deps=(
-  lilian/glibc lilian/perl lilian/local-lib
+  core/glibc lilian/perl lilian/local-lib
 )
 pkg_build_deps=(
   lilian/gcc  lilian/make lilian/coreutils

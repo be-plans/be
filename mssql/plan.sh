@@ -17,8 +17,8 @@ pkg_exposes=(port)
 
 pkg_deps=(
   core/libcxx
-  lilian/gcc-libs
-  lilian/glibc
+  core/gcc-libs
+  core/glibc
   lilian/jemalloc
   lilian/openssl 
   lilian/python2
@@ -31,6 +31,8 @@ pkg_build_deps=(
 
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
+
+source ../defaults.sh
 
 do_unpack() {
   dpkg -x "$HAB_CACHE_SRC_PATH/$pkg_filename" "$HAB_CACHE_SRC_PATH/$pkg_dirname"

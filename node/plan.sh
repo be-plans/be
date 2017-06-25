@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://nodejs.org/dist/v${pkg_version}/node-v${pkg_version}.tar.xz
 pkg_shasum=f2ff20b69b782dee85e887ad06e830590b2250856f6df325ed15a368bb6777fc
 pkg_deps=(
-  lilian/glibc lilian/gcc-libs lilian/coreutils
+  core/glibc core/gcc-libs lilian/coreutils
 )
 pkg_build_deps=(
   lilian/python2 lilian/gcc lilian/grep

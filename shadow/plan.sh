@@ -5,9 +5,16 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('bsd')
 pkg_source=http://pkg-shadow.alioth.debian.org/releases/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=3b0893d1476766868cd88920f4f1231c4795652aa407569faff802bcda0f3d41
-pkg_deps=(lilian/glibc lilian/attr lilian/acl)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
+pkg_deps=(
+  core/glibc lilian/attr lilian/acl
+)
+pkg_build_deps=(
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc
+)
 pkg_bin_dirs=(bin)
+
+source ../defaults.sh
 
 do_prepare() {
   # Allow dots in usernames.
@@ -38,7 +45,8 @@ do_build() {
     --with-group-name-max-length=32 \
     --without-selinux \
     --without-libpam
-  make
+
+  make -j "$(nproc)"
 }
 
 do_install() {

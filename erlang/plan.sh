@@ -10,7 +10,7 @@ pkg_source=http://www.erlang.org/download/otp_src_${pkg_version}.tar.gz
 pkg_filename=otp_src_${pkg_version}.tar.gz
 pkg_shasum=fe4a00651db39b8542b04530a48d24b2f2e7e0b77cbe93d728c9f05325bdfe83
 pkg_deps=(
-  lilian/glibc lilian/zlib lilian/ncurses
+  core/glibc lilian/zlib lilian/ncurses
   lilian/openssl  lilian/sed
 )
 pkg_build_deps=(

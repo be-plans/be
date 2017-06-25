@@ -9,7 +9,7 @@ pkg_source="http://git.savannah.gnu.org/cgit/man-db.git/snapshot/man-db-${pkg_ve
 pkg_shasum=dd913662e341fc01e6721878b6cbe1001886cc3bfa6632b095937bba3238c779
 pkg_deps=(
   lilian/gdbm
-  lilian/glibc
+  core/glibc
   lilian/groff
   lilian/gzip
   lilian/libiconv

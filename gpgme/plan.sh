@@ -7,7 +7,7 @@ pkg_shasum=1b29fedb8bfad775e70eafac5b0590621683b2d9869db994568e6401f4034ceb
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
-pkg_deps=(lilian/glibc lilian/libassuan lilian/libgpg-error)
+pkg_deps=(core/glibc lilian/libassuan lilian/libgpg-error)
 pkg_build_deps=(lilian/gcc lilian/coreutils lilian/make)
 
 source ../defaults.sh

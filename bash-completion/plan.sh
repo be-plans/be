@@ -7,6 +7,6 @@ pkg_source=https://github.com/scop/bash-completion/releases/download/${pkg_versi
 pkg_shasum=b0b9540c65532825eca030f1241731383f89b2b65e80f3492c5dd2f0438c95cf
 pkg_bin_dirs=(bin)
 pkg_build_deps=(lilian/make lilian/gcc lilian/autoconf lilian/automake)
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 
 source ../defaults.sh

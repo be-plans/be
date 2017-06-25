@@ -7,7 +7,7 @@ pkg_description="Pipe Viewer - is a terminal-based tool for monitoring the progr
 pkg_upstream_url="http://www.ivarch.com/programs/pv.shtml"
 pkg_source="https://www.ivarch.com/programs/sources/pv-${pkg_version}.tar.bz2"
 pkg_shasum="0ece824e0da27b384d11d1de371f20cafac465e038041adab57fcf4b5036ef8d"
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 pkg_build_deps=(lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 

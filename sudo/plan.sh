@@ -9,7 +9,7 @@ pkg_source=ftp://ftp.sudo.ws/pub/sudo/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=bd42ae1059e935f795c69ea97b3de09fe9410a58a74b5d5e6836eb5067a445d9
 pkg_deps=(
   lilian/coreutils
-  lilian/glibc
+  core/glibc
   lilian/vim
 )
 pkg_build_deps=(

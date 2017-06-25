@@ -9,8 +9,8 @@ pkg_deps=(
   lilian/bc
   lilian/coreutils
   lilian/gawk
-  lilian/gcc-libs
-  lilian/glibc
+  core/gcc-libs
+  core/glibc
   lilian/grep
   lilian/man-db
   lilian/ncurses

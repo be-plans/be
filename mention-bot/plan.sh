@@ -13,7 +13,7 @@ pkg_deps=(
   lilian/node
 )
 pkg_build_deps=(
-  lilian/glibc
+  core/glibc
   lilian/node
   lilian/patchelf
   lilian/patch

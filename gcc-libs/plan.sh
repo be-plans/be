@@ -3,8 +3,8 @@ source ../gcc/plan.sh
 pkg_name=gcc-libs
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 
-# The shared libraries only depend on lilian/glibc
-pkg_deps=(lilian/glibc)
+# The shared libraries only depend on core/glibc
+pkg_deps=(core/glibc)
 # Add the same version of the full gcc package as a build dep
 pkg_build_deps=(lilian/gcc/$pkg_version lilian/patchelf)
 

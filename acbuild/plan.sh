@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2')
 pkg_source=https://github.com/appc/acbuild/releases/download/v${pkg_version}/${pkg_name}.tar.gz
 pkg_shasum=da9c90712642d1e540bdb60765d760a459969b603d2604ab1e90b2689a9c3c0b
-pkg_deps=(lilian/gnupg lilian/glibc)
+pkg_deps=(lilian/gnupg core/glibc)
 pkg_build_deps=(lilian/patchelf)
 pkg_bin_dirs=(bin)
 

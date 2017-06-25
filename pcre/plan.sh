@@ -7,7 +7,7 @@ pkg_upstream_url="http://www.pcre.org/"
 pkg_license=('bsd')
 pkg_source="https://ftp.pcre.org/pub/${pkg_name}/${pkg_name}-${pkg_version}.tar.bz2"
 pkg_shasum=00e27a29ead4267e3de8111fcaa59b132d0533cdfdbdddf4b0604279acbcf4f4
-pkg_deps=(lilian/glibc lilian/gcc-libs)
+pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc

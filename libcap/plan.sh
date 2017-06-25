@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2')
 pkg_source=https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=693c8ac51e983ee678205571ef272439d83afe62dd8e424ea14ad9790bc35162
-pkg_deps=(lilian/glibc lilian/attr)
+pkg_deps=(core/glibc lilian/attr)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
   lilian/make lilian/gcc core/linux-headers

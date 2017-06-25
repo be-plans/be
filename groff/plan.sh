@@ -10,12 +10,12 @@ pkg_shasum=3a48a9d6c97750bfbd535feeb5be0111db6406ddb7bb79fc680809cda6d828a5
 pkg_bin_dirs=(bin)
 pkg_build_deps=(
   lilian/gcc
-  lilian/gcc-libs
+  core/gcc-libs
   lilian/make
   lilian/perl
 )
 pkg_deps=(
-  lilian/gcc-libs
+  core/gcc-libs
 )
 
 source ../defaults.sh

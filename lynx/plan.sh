@@ -9,7 +9,7 @@ pkg_source="http://invisible-mirror.net/archives/$pkg_name/tarballs/$pkg_name${p
 pkg_shasum=234c9dc77d4c4594ad6216d7df4d49eae3019a3880e602f39721b35b97fbc408
 pkg_dirname="$pkg_name${pkg_version//./-}"
 pkg_deps=(
-  lilian/glibc
+  core/glibc
   lilian/ncurses
 )
 pkg_build_deps=(

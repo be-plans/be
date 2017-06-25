@@ -4,8 +4,10 @@ pkg_version=1.0.18
 pkg_license=('BSD')
 pkg_source=nosuchfile.tar.gz
 pkg_bin_dirs=(bin)
-pkg_deps=(lilian/glibc lilian/gcc)
-pkg_build_deps=(core/rust lilian/gcc lilian/cacerts core/protobuf)
+pkg_deps=(core/glibc lilian/gcc)
+pkg_build_deps=(core/rust lilian/gcc lilian/cacerts lilian/protobuf)
+
+source ../defaults.sh
 
 do_build() {
   env SSL_CERT_FILE=$(pkg_path_for cacerts)/ssl/cert.pem \

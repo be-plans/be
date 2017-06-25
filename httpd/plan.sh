@@ -8,9 +8,9 @@ pkg_license=('Apache-2.0')
 pkg_source="https://archive.apache.org/dist/${pkg_name}/${pkg_name}-${pkg_version}.tar.bz2"
 pkg_shasum=f87ec2df1c9fee3e6bfde3c8b855a3ddb7ca1ab20ca877bd0e2b6bf3f05c80b2
 pkg_deps=(
-  lilian/glibc lilian/expat lilian/libiconv
+  core/glibc lilian/expat lilian/libiconv
   lilian/apr lilian/apr-util lilian/pcre
-  lilian/zlib lilian/openssl  lilian/gcc-libs
+  lilian/zlib lilian/openssl  core/gcc-libs
 )
 pkg_build_deps=(lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)

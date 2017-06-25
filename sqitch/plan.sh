@@ -10,7 +10,7 @@ pkg_filename=App-Sqitch-${pkg_version}.tar.gz
 pkg_dirname=App-Sqitch-${pkg_version}
 pkg_shasum=c29b4610ce43bd43ecfa39188f4cbb00b38c390136fcdd9984142efd99eba292
 pkg_deps=(
-  lilian/glibc lilian/perl lilian/local-lib
+  core/glibc lilian/perl lilian/local-lib
   lilian/cpanminus
 )
 pkg_build_deps=(

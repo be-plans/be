@@ -7,7 +7,7 @@ pkg_license=('GPL-3.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="https://ftp.gnu.org/gnu/ed/ed-${pkg_version}.tar.lz"
 pkg_shasum=f57962ba930d70d02fc71d6be5c5f2346b16992a455ab9c43be7061dec9810db
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 pkg_build_deps=(lilian/gcc lilian/make lilian/lzip lilian/diffutils)
 pkg_bin_dirs=(bin)
 

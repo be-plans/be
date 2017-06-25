@@ -1,5 +1,5 @@
 pkg_name=storm
-pkg_origin=core
+pkg_origin=lilian
 pkg_version=1.1.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Open source distributed realtime computation system."
@@ -8,9 +8,9 @@ pkg_license=("Apache-2.0")
 pkg_source=http://apache.40b.nl/storm/apache-storm-${pkg_version}/apache-storm-${pkg_version}.tar.gz
 pkg_shasum=6f584b45ec7f8d0cfd2fa78deb5de392bece07a09158a948b0ed3016ef689142
 pkg_deps=(
-  core/jre8
-  core/python
-  core/bash
+  lilian/jre8
+  lilian/python
+  lilian/bash
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
@@ -22,6 +22,8 @@ pkg_binds=(
 
 pkg_exports=()
 pkg_exposes=()
+
+source ../defaults.sh
 
 do_build() {
   return 0

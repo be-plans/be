@@ -11,7 +11,7 @@ pkg_shasum="5eb20ac0e2944f6cb9c2d51dd6c4518941c185347d4089ea89087ffdd6e2341f"
 pkg_bin_dirs=("bin")
 pkg_lib_dirs=("lib/p7zip" "lib/p7zip/Codecs")
 pkg_build_deps=("lilian/coreutils" "lilian/make" "lilian/gcc")
-pkg_deps=("lilian/glibc" "lilian/gcc-libs")
+pkg_deps=("core/glibc" "core/gcc-libs")
 pkg_dirname="p7zip_${pkg_version}"
 
 source ../defaults.sh

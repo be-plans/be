@@ -10,7 +10,7 @@ pkg_license=('EPL 1.0' 'GPL-2.0' 'LGPL-2.1')
 pkg_deps=(
   lilian/bash
   lilian/coreutils
-  lilian/glibc
+  core/glibc
   lilian/jre8
 )
 pkg_build_deps=(

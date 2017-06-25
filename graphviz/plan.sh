@@ -8,7 +8,7 @@ pkg_license=("EPL-1.0")
 pkg_source=http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-${pkg_version}.tar.gz
 pkg_shasum=ca5218fade0204d59947126c38439f432853543b0818d9d728c589dfe7f3a421
 pkg_dirname=${pkg_name}-${pkg_version}
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 pkg_build_deps=(
     lilian/autoconf
     lilian/coreutils

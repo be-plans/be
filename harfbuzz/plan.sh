@@ -1,41 +1,44 @@
 pkg_name=harfbuzz
-pkg_origin=core
-pkg_version=1.3.1
+pkg_origin=lilian
+pkg_version=1.4.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')
 pkg_upstream_url="https://www.freedesktop.org/wiki/Software/HarfBuzz/"
 pkg_description="HarfBuzz is an OpenType text shaping engine"
 pkg_source=http://www.freedesktop.org/software/harfbuzz/release/${pkg_name}-${pkg_version}.tar.bz2
-pkg_shasum=a242206dd119d5e6cc1b2253c116abbae03f9d930cb60b515fb0d248decf89a1
+pkg_shasum=21a78b81cd20cbffdb04b59ac7edfb410e42141869f637ae1d6778e74928d293
 pkg_deps=(
-  core/cairo
-  core/expat
-  core/freetype
-  core/fontconfig
-  core/glib
+  lilian/cairo
+  lilian/expat
+  lilian/freetype
+  lilian/fontconfig
+  lilian/glib
   core/glibc
-  core/icu
-  core/libpng
-  core/pixman
-  core/pcre
-  core/zlib
+  lilian/icu
+  lilian/libpng
+  lilian/pixman
+  lilian/pcre
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/gcc
-  core/perl
-  core/pkg-config
-  core/make
+  lilian/gcc
+  lilian/perl
+  lilian/pkg-config
+  lilian/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include/harfbuzz)
 pkg_lib_dirs=(lib)
 
+source ../defaults.sh
+
 do_build() {
   ./configure --prefix="$pkg_prefix" \
-	       --with-gobject=yes
-  make
+              --with-gobject=yes
+
+  make -j "$(nproc)"
 }
 
 do_install() {
-  make install
+  make -j "$(nproc)" install
 }

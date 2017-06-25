@@ -9,7 +9,7 @@ pkg_source=http://http.debian.net/debian/pool/main/d/${pkg_name}/${pkg_name}_${p
 pkg_shasum=d853081d3e06bfd46a227056e591f094e42e78fa8a5793b0093bad30b710d7b4
 pkg_deps=(
   lilian/bzip2
-  lilian/glibc
+  core/glibc
   lilian/tar
   lilian/zlib
   lilian/xz
@@ -33,4 +33,5 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+be_cxxstd="-std=gnu++14"
 source ../defaults.sh

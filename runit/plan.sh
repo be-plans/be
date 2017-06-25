@@ -5,7 +5,7 @@ pkg_license=('BSD')
 pkg_source=http://smarden.org/runit/runit-${pkg_version}.tar.gz
 pkg_shasum=6fd0160cb0cf1207de4e66754b6d39750cff14bb0aa66ab49490992c0c47ba18
 pkg_build_deps=(lilian/coreutils lilian/gcc lilian/make)
-pkg_deps=(lilian/glibc)
+pkg_deps=(core/glibc)
 pkg_bin_dirs=(bin)
 
 do_unpack() {

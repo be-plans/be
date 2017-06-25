@@ -9,7 +9,7 @@ pkg_source=https://storage.googleapis.com/downloads.webmproject.org/releases/web
 pkg_shasum=6ad66c6fcd60a023de20b6856b03da8c7d347269d76b1fd9c3287e8b5e8813df
 pkg_deps=(
   core/giflib
-  lilian/glibc
+  core/glibc
   lilian/libjpeg-turbo
   core/jbigkit
   lilian/libpng
