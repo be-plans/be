@@ -1,6 +1,6 @@
-pkg_origin=lilian
+pkg_origin=core
 pkg_name=glib
-pkg_version='2.53.2'
+pkg_version="2.50.3"
 pkg_description="$(cat << EOF
   GLib is a general-purpose utility library, which provides many useful data
   types, macros, type conversions, string utilities, file utilities, a
@@ -8,40 +8,61 @@ pkg_description="$(cat << EOF
   well as Windows and OS X.
 EOF
 )"
-pkg_source="http://download.gnome.org/sources/glib/$(echo $pkg_version | cut -d. -f1-2)/$pkg_name-$pkg_version.tar.xz"
+pkg_source="https://download.gnome.org/sources/${pkg_name}/${pkg_version%.*}/${pkg_name}-${pkg_version}.tar.xz"
 pkg_license=('LGPL-2.0')
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
-pkg_upstream_url="https://developer.gnome.org/glib/stable/glib.html"
-pkg_shasum="ada8e2b22f52de1950dd327bdef80a7e41e6da5ddc85fb81d9a8439e9dff8e0d"
+pkg_upstream_url="https://developer.gnome.org/glib/"
+pkg_shasum="82ee94bf4c01459b6b00cb9db0545c2237921e3060c0b74cff13fbc020cfd999"
 pkg_deps=(
+  lilian/coreutils
+  lilian/elfutils
+  core/glibc
   lilian/libffi
   lilian/libiconv
   lilian/pcre
+  lilian/util-linux
+  lilian/zlib
 )
 pkg_build_deps=(
-  lilian/make
-  core/glibc
-  lilian/pkg-config
+  lilian/dbus
+  lilian/diffutils
+  lilian/file
   lilian/gcc
   lilian/gettext
-  lilian/zlib
+  lilian/libxslt
+  lilian/make
+  lilian/perl
+  lilian/pkg-config
   lilian/python
-  lilian/util-linux
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_pconfig_dirs=(lib/pkgconfig)
+pkg_interpreters=(lilian/coreutils)
 
-source ../defaults.sh
+do_prepare() {
+  if [[ ! -r /usr/bin/file ]]; then
+    ln -sv "$(pkg_path_for file)/bin/file" /usr/bin/file
+    _clean_file=true
+  fi
+}
 
 do_build() {
   ./configure \
     --prefix="$pkg_prefix" \
     --with-libiconv \
-    --with-pcre=system \
-    --disable-fam \
     --disable-gtk-doc \
-    --enable-shared
+    --disable-fam
   make -j $(nproc)
+}
+
+do_after() {
+  fix_interpreter "$pkg_prefix/bin/*" lilian/coreutils bin/env
+}
+
+do_end() {
+  if [[ -n "$_clean_file" ]]; then
+    rm -fv /usr/bin/file
+  fi
 }

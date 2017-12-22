@@ -3,48 +3,74 @@ pkg_origin=lilian
 pkg_version="1.14.10"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=(
-  'LGPL-2.1'
-  'MPL-1.1'
+  "LGPL-2.1"
+  "MPL-1.1"
 )
 pkg_source="https://www.cairographics.org/releases/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum=7e87878658f2c9951a14fc64114d4958c0e65ac47530b8ac3078b2ce41b66a09
 pkg_description="Cairo is a 2D graphics library with support for multiple output devices."
 pkg_upstream_url="https://www.cairographics.org"
 pkg_deps=(
+  lilian/bzip2
   lilian/expat
   lilian/fontconfig
   lilian/freetype
+  core/gcc-libs
   lilian/glib
+  core/glibc
+  lilian/libffi
+  lilian/libice
+  lilian/libiconv
   lilian/libpng
+  lilian/libsm
+  lilian/libxau
+  lilian/libxcb
+  lilian/libxdmcp
+  lilian/libxext
+  lilian/lzo
   lilian/pcre
   lilian/pixman
+  lilian/xlib
   lilian/zlib
 )
 pkg_build_deps=(
   lilian/diffutils
+  lilian/file
   lilian/gcc
   lilian/make
   lilian/pkg-config
+  lilian/xextproto
+  lilian/xproto
 )
 pkg_bin_dirs=(bin)
-pkg_include_dirs=(include/cairo)
+pkg_include_dirs=(include)
 pkg_lib_dirs=(
   lib
   lib/cairo
 )
 pkg_pconfig_dirs=(lib/pkgconfig)
 
-source ../defaults.sh
+do_prepare() {
+  if [[ ! -r /usr/bin/file ]]; then
+    ln -sv "$(pkg_path_for file)/bin/file" /usr/bin/file
+  fi
+}
 
 do_build() {
   # CFLAGS="-Os ${CFLAGS}"
 
   ./configure --prefix="${pkg_prefix}" \
-              --disable-xlib
+              --enable-xlib
   
   make -j "$(nproc)"
 }
 
 do_check() {
   make test
+}
+
+do_end() {
+  if [[ -n "$_clean_file" ]]; then
+    rm -fv /usr/bin/file
+  fi
 }

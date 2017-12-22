@@ -1,13 +1,13 @@
 pkg_name=go
 pkg_origin=lilian
-pkg_version=1.8.3
+pkg_version=1.9.2
 pkg_description="Go is an open source programming language that makes it easy to
   build simple, reliable, and efficient software."
 pkg_upstream_url=https://golang.org/
 pkg_license=('BSD')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://storage.googleapis.com/golang/go${pkg_version}.src.tar.gz
-pkg_shasum=5f5dea2447e7dcfdc50fa6b94c512e58bfba5673c039259fd843f68829d99fa6
+pkg_shasum=665f184bf8ac89986cfd5a4460736976f60b57df6b320ad71ad4cef53bb143dc
 pkg_dirname=go
 pkg_deps=(core/glibc lilian/iana-etc lilian/cacerts)
 pkg_build_deps=(

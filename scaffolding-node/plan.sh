@@ -1,12 +1,12 @@
 pkg_name=scaffolding-node
 pkg_origin=lilian
-pkg_version="0.6.0"
+pkg_version="0.6.11"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
 pkg_description="Habitat Plan Scaffolding for Node.js Applications"
 pkg_upstream_url="https://github.com/habitat-sh/core-plans/tree/master/scaffolding-node"
-pkg_deps=(lilian/tar core/jq-static core/rq)
-pkg_build_deps=(lilian/coreutils)
+pkg_deps=(lilian/tar lilian/rq lilian/jq-static lilian/gawk lilian/curl lilian/bc lilian/coreutils)
+pkg_build_deps=(lilian/node lilian/coreutils lilian/yarn)
 
 do_build() {
   return 0

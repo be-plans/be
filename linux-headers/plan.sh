@@ -1,10 +1,12 @@
-pkg_origin=lilian
 pkg_name=linux-headers
-pkg_version=4.4
+pkg_origin=lilian
+pkg_version=4.13.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('GPL-2.0')
+pkg_license=('gplv2')
 pkg_source=https://www.kernel.org/pub/linux/kernel/v4.x/linux-${pkg_version}.tar.xz
-pkg_shasum=401d7c8fef594999a460d10c72c5a94e9c2e1022f16795ec51746b0d165418b2
+pkg_description="The Linux kernel headers"
+pkg_upstream_url="https://kernel.org"
+pkg_shasum=decee7a2de34aea921fce3e7934f520790fe43176de29bd9718a84419ca6e1ce
 pkg_dirname=linux-$pkg_version
 pkg_deps=()
 pkg_build_deps=(

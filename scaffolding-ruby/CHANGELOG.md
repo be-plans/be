@@ -2,6 +2,17 @@
 
 [Full history](https://github.com/habitat-sh/core-plans/commits/master/scaffolding-ruby)
 
+# 0.8.9 (12-08-2017)
+
+- Improve git detection with `git rev-parse --is-in-work-tree`, makes
+  core/git a direct build dependency
+
+# 0.8.8 (11-27-2017)
+- move the bundle config swap out to do_default_prepare
+
+# 0.8.7 (10-20-2017)
+- provide a default database config for asset compilation
+
 ## 0.8.0 (05-18-2017)
 
 ## Features & Enhancements

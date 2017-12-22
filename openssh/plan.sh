@@ -17,7 +17,8 @@ pkg_build_deps=(
   lilian/coreutils lilian/gcc lilian/make
 )
 
-source ../defaults.sh
+pkg_svc_user="root"
+pkg_svc_group="root"
 
 do_build() {
   ./configure --prefix="${pkg_prefix}" \

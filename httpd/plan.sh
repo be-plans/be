@@ -15,7 +15,6 @@ pkg_deps=(
 pkg_build_deps=(lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
-pkg_lib_dirs=(lib)
 pkg_exports=(
   [port]=serverport
 )

@@ -4,6 +4,13 @@ scaffolding_load() {
   _setup_funcs
   _setup_vars
 
+# this scaffolding will not work if $pkg_source is set
+if [[ -n "${pkg_source:-}" ]]
+then
+    e="Please do not use pkg_source in your plan when using the ruby scaffolding."
+    exit_with "$e" 10
+fi
+
   pushd "$SRC_PATH" > /dev/null
   _detect_gemfile
   _detect_app_type
@@ -19,6 +26,10 @@ scaffolding_load() {
 
 do_default_prepare() {
   local gem_dir gem_path
+  # The install prefix path for the app
+  scaffolding_app_prefix="$pkg_prefix/$app_prefix"
+
+  _detect_git
 
   # Determine Ruby engine, ABI version, and Gem path by running `ruby` itself.
   eval "$(ruby -rubygems -rrbconfig - <<-'EOF'
@@ -38,6 +49,15 @@ EOF
 
   # Silence Bundler warning when run as root user
   export BUNDLE_SILENCE_ROOT_WARNING=1
+
+  # Attempt to preserve any original Bundler config by moving it to the side
+  if [[ -f .bundle/config ]]; then
+    build_line "Detecting existing bundler config. Temporarily renaming ..."
+    mv .bundle/config .bundle/config.prehab
+    dot_bundle=true
+  elif [[ -d .bundle ]]; then
+    dot_bundle=true
+  fi
 
   GEM_HOME="$gem_dir"
   build_line "Setting GEM_HOME=$GEM_HOME"
@@ -144,6 +164,7 @@ if ! $pkg_prefix/libexec/is_db_connected; then
   >&2 echo " * db.host      - The database hostname or IP address (Current: {{#if cfg.db.host}}{{cfg.db.host}}{{else}}<unset>{{/if}})"
   >&2 echo " * db.port      - The database listen port number (Current: {{#if cfg.db.port}}{{cfg.db.port}}{{else}}5432{{/if}})"
 {{~/unless}}
+  >&2 echo " * db.adapter   - The database adapter (Current: {{#if cfg.db.adapter}}{{cfg.db.adapter}}{{else}}postgresql{{/if}})"
   >&2 echo " * db.user      - The database username (Current: {{#if cfg.db.user}}{{cfg.db.user}}{{else}}<unset>{{/if}})"
   >&2 echo " * db.password  - The database password (Current: {{#if cfg.db.password}}<set>{{else}}<unset>{{/if}})"
   >&2 echo " * db.name      - The database name (Current: {{#if cfg.db.name}}{{cfg.db.name}}{{else}}<unset>{{/if}})"
@@ -174,30 +195,28 @@ EOT
 
 
 scaffolding_bundle_install() {
-  local start_sec elapsed dot_bundle
-
-  # Attempt to preserve any original Bundler config by moving it to the side
-  if [[ -f .bundle/config ]]; then
-    mv .bundle/config .bundle/config.prehab
-    dot_bundle=true
-  elif [[ -d .bundle ]]; then
-    dot_bundle=true
-  fi
+  local start_sec elapsed
 
   build_line "Installing dependencies using $(_bundle --version)"
   start_sec="$SECONDS"
-  _bundle_install \
-    "$CACHE_PATH/vendor/bundle" \
-    --retry 5
+
+  {
+    _bundle_install \
+      "$CACHE_PATH/vendor/bundle" \
+      --retry 5
+  } || {
+      _restore_bundle_config
+      e="bundler returned an error"
+      exit_with "$e" 10
+  }
+
   elapsed=$((SECONDS - start_sec))
   elapsed=$(echo $elapsed | awk '{printf "%dm%ds", $1/60, $1%60}')
   build_line "Bundle completed ($elapsed)"
 
   # If we preserved the original Bundler config, move it back into place
   if [[ -f .bundle/config.prehab ]]; then
-    rm -f .bundle/config
-    mv .bundle/config.prehab .bundle/config
-    rm -f .bundle/config.prehab
+    _restore_bundle_config
   fi
   # If not `.bundle/` directory existed before, then clear it out now
   if [[ -z "${dot_bundle:-}" ]]; then
@@ -261,7 +280,7 @@ scaffolding_setup_app_config() {
 scaffolding_setup_database_config() {
   if [[ "${_uses_pg:-}" == "true" ]]; then
     local db t
-    db="postgres://{{cfg.db.user}}:{{cfg.db.password}}"
+    db="{{#if cfg.db.adapter}}{{cfg.db.adapter}}{{else}}postgresql{{/if}}://{{cfg.db.user}}:{{cfg.db.password}}"
     db="${db}@{{#if bind.database}}{{bind.database.first.sys.ip}}{{else}}{{#if cfg.db.host}}{{cfg.db.host}}{{else}}db.host.not.set{{/if}}{{/if}}"
     db="${db}:{{#if bind.database}}{{bind.database.first.cfg.port}}{{else}}{{#if cfg.db.port}}{{cfg.db.port}}{{else}}5432{{/if}}{{/if}}"
     db="${db}/{{cfg.db.name}}"
@@ -276,6 +295,9 @@ scaffolding_setup_database_config() {
       { echo ""
         echo "[db]"
       } >> "$t"
+      if _default_toml_has_no db.adapter; then
+        echo "adapter = \"postgresql\"" >> "$t"
+      fi
       if _default_toml_has_no db.name; then
         echo "name = \"${pkg_name}_production\"" >> "$t"
       fi
@@ -373,6 +395,7 @@ scaffolding_run_assets_precompile() {
     pushd "$scaffolding_app_prefix" > /dev/null
     if _rake -P --trace | grep -q '^rake assets:precompile$'; then
       build_line "Detected and running Rake 'assets:precompile'"
+      export DATABASE_URL=${DATABASE_URL:-"postgresql://nobody@nowhere/fake_db_to_appease_rails_env"}
       _rake assets:precompile
     fi
     popd > /dev/null
@@ -430,7 +453,7 @@ _setup_vars() {
   _bundler_version="$("$(pkg_path_for bundler)/bin/bundle" --version \
     | awk '{print $NF}')"
   # The install prefix path for the app
-  scaffolding_app_prefix="$pkg_prefix/app"
+  app_prefix="app"
   #
   : "${scaffolding_app_port:=8000}"
   # If `${scaffolding_env[@]` is not yet set, setup the hash
@@ -580,7 +603,7 @@ _update_pkg_build_deps() {
   # Order here is important--entries which should be first in
   # `${pkg_build_deps[@]}` should be called last.
 
-  _detect_git
+  _add_git
 }
 
 _update_pkg_deps() {
@@ -603,13 +626,13 @@ _update_bin_dirs() {
   pkg_bin_dirs=(
     ${pkg_bin_dir[@]}
     bin
-    $(basename "$scaffolding_app_prefix")/binstubs
+    $app_prefix/binstubs
   )
 }
 
 _update_svc_run() {
   if [[ -z "$pkg_svc_run" ]]; then
-    pkg_svc_run="$pkg_prefix/bin/${pkg_name}-web"
+    pkg_svc_run="${pkg_name}-web"
     build_line "Setting pkg_svc_run='$pkg_svc_run'"
   fi
 }
@@ -623,6 +646,12 @@ _add_busybox() {
   debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
 }
 
+_add_git() {
+  build_line "Adding git to build dependencies"
+  pkg_build_deps=(core/git ${pkg_build_deps[@]})
+  debug "Updating pkg_build_deps=(${pkg_build_deps[*]}) from Scaffolding detection"
+}
+
 _detect_execjs() {
   if _has_gem execjs; then
     build_line "Detected 'execjs' gem in Gemfile.lock, adding node packages"
@@ -632,11 +661,10 @@ _detect_execjs() {
 }
 
 _detect_git() {
-  if [[ -d ".git" ]]; then
-    build_line "Detected '.git' directory, adding git packages as build deps"
-    pkg_build_deps=(lilian/git ${pkg_build_deps[@]})
-    debug "Updating pkg_build_deps=(${pkg_build_deps[*]}) from Scaffolding detection"
+  if git rev-parse --is-inside-work-tree ; then
+    build_line "Detected build is occuring inside a git work tree."
     _uses_git=true
+    debug "Setting _uses_git to true."
   fi
 }
 
@@ -978,6 +1006,7 @@ _tar_pipe_app_cp_to() {
       --exclude-vcs \
       --exclude='habitat' \
       --exclude='vendor/bundle' \
+      --exclude='results' \
       --files-from=- \
       -f - \
   | "$tar" -x \
@@ -1001,4 +1030,12 @@ unset RUBYOPT GEMRC
 exec $(pkg_path_for $_ruby_pkg)/bin/ruby ${bin}.real \$@
 EOF
   chmod -v 755 "$bin"
+}
+
+_restore_bundle_config() {
+  build_line "Restoring original bundler config"
+  if [[ -f .bundle/config.prehab ]]; then
+    rm -f .bundle/config
+    mv .bundle/config.prehab .bundle/config
+  fi
 }

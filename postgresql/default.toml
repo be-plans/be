@@ -1,4 +1,4 @@
-port = '5432'
+port = 5432
 
 max_connections = 100
 max_locks_per_transaction = 64
@@ -14,11 +14,5 @@ password = 'admin'
 name = 'replication'
 password = 'replication'
 lag_health_threshold = 1048576
-
-[wal-e]
 enable = false
-[wal-e.aws]
-prefix = ''
-access_key_id = ''
-secret_access_key = ''
-region = ''
+archive_path = "{{pkg.svc_path}}/archive"

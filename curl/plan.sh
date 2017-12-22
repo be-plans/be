@@ -13,12 +13,14 @@ pkg_deps=(
   core/glibc
   lilian/openssl 
   lilian/zlib
+  lilian/nghttp2
 )
 pkg_build_deps=(
   lilian/coreutils
   lilian/gcc
   lilian/make
   lilian/perl
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -38,6 +40,7 @@ do_build() {
               --with-ca-bundle="$(pkg_path_for cacerts)/ssl/certs/cacert.pem" \
               --with-ssl="$(pkg_path_for openssl)" \
               --with-zlib="$(pkg_path_for zlib)" \
+              --with-nghttp2="$(pkg_path_for nghttp2)" \
               --disable-manual \
               --disable-ldap \
               --disable-ldaps \

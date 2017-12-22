@@ -20,6 +20,7 @@ pkg_build_deps=(
   lilian/make
   lilian/zlib
 )
+pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 

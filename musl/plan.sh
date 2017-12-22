@@ -1,10 +1,12 @@
 pkg_name=musl
 pkg_origin=lilian
-pkg_version=1.1.16
+pkg_version=1.1.17
 pkg_license=('MIT')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://www.musl-libc.org/releases/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=937185a5e5d721050306cf106507a006c3f1f86d86cd550024ea7be909071011
+pkg_description="musl is a new standard library to power a new generation of Linux-based devices. musl is lightweight, fast, simple, free, and strives to be correct in the sense of standards-conformance and safety."
+pkg_upstream_url=https://www.musl-libc.org/
+pkg_shasum=c8aa51c747a600704bed169340bf3e03742ceee027ea0051dd4b6cc3c5f51464
 pkg_deps=()
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
@@ -29,17 +31,17 @@ do_prepare() {
 
 do_build() {
   ./configure \
-    --prefix=$pkg_prefix \
-    --syslibdir=$pkg_prefix/lib
+    --prefix="$pkg_prefix" \
+    --syslibdir="$pkg_prefix/lib"
 
-  make -j$(nproc)
+  make -j "$(nproc)"
 }
 
 do_install() {
   do_default_install
 
   # Install license
-  install -Dm0644 COPYRIGHT $pkg_prefix/share/licenses/COPYRIGHT
+  install -Dm0644 COPYRIGHT "$pkg_prefix/share/licenses/COPYRIGHT"
 }
 
 

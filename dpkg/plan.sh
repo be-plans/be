@@ -21,6 +21,7 @@ pkg_build_deps=(
   lilian/gcc
   lilian/gettext
   lilian/libtool
+  lilian/patch
   lilian/make
   lilian/ncurses
   lilian/perl
@@ -29,9 +30,19 @@ pkg_build_deps=(
   lilian/xz
   lilian/zlib
 )
-pkg_bin_dirs=(bin)
+pkg_bin_dirs=(bin sbin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
 be_cxxstd="-std=gnu++14"
 source ../defaults.sh
+
+do_build() {
+  export prefix=$pkg_prefix
+  do_default_build
+}
+
+do_install() {
+  export prefix=$pkg_prefix
+  do_default_install
+}

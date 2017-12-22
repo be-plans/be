@@ -1,12 +1,12 @@
 pkg_origin=lilian
 pkg_name=elixir
-pkg_version=1.4.4
+pkg_version=1.5.1
 pkg_description="A dynamic, functional language designed for building scalable and maintainable applications. Elixir leverages the Erlang VM, known for running low-latency, distributed and fault-tolerant systems, while also being successfully used in web development and the embedded software domain."
 pkg_upstream_url=http://elixir-lang.org
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
 pkg_source="https://github.com/elixir-lang/elixir/archive/v${pkg_version}.tar.gz"
-pkg_shasum=2d9d5faee079949f780c8f6a1ccba015d64ecf859ed87384ae4239d69be60142
+pkg_shasum=9a903dc71800c6ce8f4f4b84a1e4849e3433e68243958fd6413a144857b61f6a
 pkg_deps=(
   lilian/busybox lilian/cacerts lilian/coreutils
   lilian/openssl lilian/erlang

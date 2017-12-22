@@ -1,28 +1,21 @@
 pkg_name=expat
 pkg_origin=lilian
-pkg_version=2.2.0
+pkg_version=2.2.2
+pkg_description="Expat library: Fast XML parser in C"
+pkg_upstream_url="https://libexpat.github.io/"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('mit')
-pkg_source=http://downloads.sourceforge.net/sourceforge/expat/${pkg_name}-${pkg_version}.tar.bz2
-pkg_shasum=d9e50ff2d19b3538bd2127902a89987474e1a4db8e43a66a4d1a712ab9a504ff
+pkg_license=('MIT')
+pkg_source="https://downloads.sourceforge.net/project/${pkg_name}/${pkg_name}/${pkg_version}/${pkg_name}-${pkg_version}.tar.bz2"
+pkg_shasum=4376911fcf81a23ebd821bbabc26fd933f3ac74833f74924342c29aad2c86046
 pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc
-)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
-
 source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
-
-  # Patch for CVE-2015-1283
-  #
-  # Thanks to: https://github.com/NixOS/nixpkgs/blob/release-15.09/pkgs/development/libraries/expat/default.nix
-  # patch -p1 -i $PLAN_CONTEXT/CVE-2015-1283.patch
 }
 
 do_default_build() {

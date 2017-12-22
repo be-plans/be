@@ -17,7 +17,15 @@ scaffolding_load() {
 }
 
 do_default_prepare() {
-  export NODE_ENV=production
+  # The NODE_ENV must be development in order to
+  # install the dev dependencies that are
+  # required to run build scripts
+  export NODE_ENV=development
+
+  _detect_git
+
+  # The install prefix path for the app
+  scaffolding_app_prefix="$pkg_prefix/$app_prefix"
   build_line "Setting NODE_ENV=$NODE_ENV"
 }
 
@@ -80,9 +88,6 @@ EOT
   done
 }
 
-
-
-
 scaffolding_modules_install() {
   if [[ -n "${_uses_git:-}" ]]; then
     if ! git check-ignore node_modules && [[ -d node_modules ]]; then
@@ -95,9 +100,17 @@ scaffolding_modules_install() {
   fi
 
   build_line "Installing dependencies using $_pkg_manager $("$_pkg_manager" --version)"
+  # Many node dependencies require /usr/bin/env
+  # This directory is not created with Habitat by design
+  # Instead, we use core/coreutils for this functionality
+  # This sets up a symlink to simulate a /usr/bin/env,
+  # But still use coreutils
+  ln -svf "$(pkg_path_for coreutils)/bin/env" /usr/bin/env
+
   start_sec="$SECONDS"
   case "$_pkg_manager" in
     npm)
+
       if [[ ! -f "$CACHE_PATH/package.json" ]]; then
         cp -av package.json "$CACHE_PATH/"
       fi
@@ -107,10 +120,23 @@ scaffolding_modules_install() {
       if [[ -n "$HAB_NONINTERACTIVE" ]]; then
         export NPM_CONFIG_PROGRESS=false
       fi
+
+      # The following files are required
+      # for applications that use Angular-Seed
+      # https://github.com/mgechev/angular-seed
+      if [[ -f "gulpfile.ts" ]]; then
+        cp -av gulpfile.ts "$CACHE_PATH/"
+      fi
+      if [[ -d "tools" ]]; then
+        cp -R tools "$CACHE_PATH/"
+      fi
+      if [[ -f "tsconfig.json" ]]; then
+        cp -av tsconfig.json "$CACHE_PATH/"
+      fi
+
       pushd "$CACHE_PATH" > /dev/null
       npm install \
         --unsafe-perm \
-        --production \
         --loglevel error \
         --fetch-retries 5 \
         --userconfig "$CACHE_PATH/.npmrc"
@@ -122,12 +148,17 @@ scaffolding_modules_install() {
       if [[ -n "$HAB_NONINTERACTIVE" ]]; then
         extra_args="--no-progress"
       fi
+
       yarn install $extra_args \
         --pure-lockfile \
         --ignore-engines \
-        --production \
-        --modules-folder "$CACHE_PATH/node_modules" \
         --cache-folder "$CACHE_PATH/yarn_cache"
+
+      # We need to first install node_modules here,
+      # rather than in $CACHE_PATH/node_modules
+      # so we can run build scripts
+      # then we can copy node_modules to $CACHE_PATH
+      cp -a "./node_modules" "$CACHE_PATH/node_modules"
       ;;
     *)
       local e
@@ -230,7 +261,7 @@ _setup_vars() {
   # `$scaffolding_node_pkg` is empty by default
   : "${scaffolding_node_pkg:=}"
   # The install prefix path for the app
-  scaffolding_app_prefix="$pkg_prefix/app"
+  app_prefix="app"
   #
   : "${scaffolding_app_port:=8000}"
   # If `${scaffolding_env[@]` is not yet set, setup the hash
@@ -255,7 +286,10 @@ _detect_package_json() {
     exit_with "Failed to parse package.json as JSON." 6
   fi
 
-  # TODO fin: do we check for any lockfiles here?
+  # Check if both a package.lock and a yarn.lock file are present
+  if [[ -f package-lock.json && -f yarn.lock ]]; then
+    exit_with "Both a package-lock.json and yarn.lock are present. We only can only suppport one .lock file." 6
+  fi
 }
 
 _detect_pkg_manager() {
@@ -276,6 +310,9 @@ _detect_pkg_manager() {
         exit_with "$e" 9
         ;;
     esac
+  elif [[ -f package-lock.json ]]; then
+    _pkg_manager=npm
+    build_line "Detected package-lock.json in root directory, using '$_pkg_manager'"
   elif [[ -f yarn.lock ]]; then
     _pkg_manager=yarn
     build_line "Detected yarn.lock in root directory, using '$_pkg_manager'"
@@ -369,7 +406,7 @@ _update_pkg_build_deps() {
   # Order here is important--entries which should be first in
   # `${pkg_build_deps[@]}` should be called last.
 
-  _detect_git
+  _add_git
   _detect_yarn
 
   # TODO fin: support different version of npm?
@@ -390,7 +427,7 @@ _update_bin_dirs() {
   pkg_bin_dirs=(
     ${pkg_bin_dir[@]}
     bin
-    $(basename "$scaffolding_app_prefix")/node_modules/.bin
+    $app_prefix/node_modules/.bin
   )
 }
 
@@ -406,20 +443,28 @@ _update_svc_run() {
 
 _add_busybox() {
   build_line "Adding Busybox package to run dependencies"
-  pkg_deps=(core/busybox-static ${pkg_deps[@]})
+  # Need to specify core/busybox-static last
+  # So that it does not override the paths of core/coreutils
+  pkg_deps=(${pkg_deps[@]} core/busybox-static)
   debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
 }
 
+_add_git() {
+  build_line "Adding git to build dependencies"
+  pkg_build_deps=(lilian/git ${pkg_build_deps[@]})
+  debug "Updating pkg_build_deps=(${pkg_build_deps[*]}) from Scaffolding detection"
+}
+
 _detect_git() {
-  if [[ -d ".git" ]]; then
-    build_line "Detected '.git' directory, adding git packages as build deps"
-    pkg_build_deps=(lilian/git ${pkg_build_deps[@]})
-    debug "Updating pkg_build_deps=(${pkg_build_deps[*]}) from Scaffolding detection"
+  if git rev-parse --is-inside-work-tree ; then
+    build_line "Detected build is occuring inside a git work tree."
     _uses_git=true
+    debug "Setting _uses_git to true."
   fi
 }
 
 _detect_node() {
+
   if [[ -n "$scaffolding_node_pkg" ]]; then
     _node_pkg="$scaffolding_node_pkg"
     build_line "Detected Node.js version in Plan, using '$_node_pkg'"
@@ -427,10 +472,17 @@ _detect_node() {
     local val
     val="$(_json_val package.json .engines.node)"
     if [[ -n "$val" ]]; then
+
       # TODO fin: Add more robust packages.json to Habitat package matching
       case "$val" in
         *)
-          _node_pkg="lilian/node/$val"
+          nearest_version_string=$(_nearest_version_on_builder "$val")
+          nearest_version="${nearest_version_string//\"}"
+
+          if [[ $nearest_version =~ (.*No compatible version of node found.*) ]]; then
+              exit_with "$nearest_version" 1
+          fi
+          _node_pkg="lilian/node/$nearest_version"
           ;;
       esac
       build_line "Detected Node.js version '$val' in package.json, using '$_node_pkg'"
@@ -568,6 +620,7 @@ _tar_pipe_app_cp_to() {
       --exclude-backups \
       --exclude-vcs \
       --exclude='habitat' \
+      --exclude='results' \
       --exclude='node_modules' \
       --files-from=- \
       -f - \
@@ -575,3 +628,284 @@ _tar_pipe_app_cp_to() {
       -C "$dst_path" \
       -f -
 }
+
+_extracted_version_number() {
+	local result
+    result=$([[ $1 =~ ([0-9].*) ]] && echo "${BASH_REMATCH[1]}")
+    _full_version_digits "$result"
+}
+
+_full_version_digits() {
+    if [[ $1 =~ ([0-9]\.[0-9]\.[0-9]$) ]]; then
+        echo "$1"
+    elif [[ $1 =~ ([0-9]\.[0-9]$) ]]; then
+        echo "$1.0"
+    else
+        echo "$1.0.0"
+    fi
+}
+
+remove_single_chars() {
+	[[ $1 =~ ([0-9].*) ]] && echo "${BASH_REMATCH[1]}"
+}
+
+stable_versions_list() {
+	versions_list=$($_jq '.data[].version' < "${1}")
+	versions_str=${versions_list[0]}
+
+	versions_array=()
+
+	versions_array=($versions_str)
+	sorted_versions_array=($(for l in "${versions_array[@]}"; do echo "$l"; done | sort))
+	echo "${sorted_versions_array[@]}"
+}
+
+
+_nearest_version_on_builder() {
+  local original_version_string=$1
+  compat_regex="(^(>=|<=|=|v)?([0-9]+\.){0,2}(\*|[0-9]+)$)"
+  if ! [[ $original_version_string =~ $compat_regex ]]; then
+    echo "incompatible version string"
+    return
+  fi
+
+  local bare_version
+  bare_version=$(remove_single_chars "$1")
+
+  local full_version_number
+  full_version_number=$(_full_version_digits "$bare_version")
+
+  "$(pkg_path_for core/curl)"/bin/curl https://bldr.habitat.sh/v1/depot/channels/core/stable/pkgs/node | $_jq . > data.json
+  builder_versions_list=$(stable_versions_list data.json)
+  rm -f data.json
+
+  builder_versions_array=($builder_versions_list)
+
+  for i in "${builder_versions_array[@]}"
+  do
+    # necessary to convert this to an integer
+    # in order to compare it to the full version number
+    # with semver
+    local parsed_i
+    parsed_i=$(echo "$i" | "$(pkg_path_for core/bc)"/bin/bc)
+    comparison_result=1
+
+    if [[ $original_version_string =~ (^=?[0-9])  ]]; then
+      if semverEQ "$parsed_i" "$full_version_number"; then
+        comparison_result=0
+      fi
+    elif [[ $original_version_string =~ (^<[0-9]) ]]; then
+      if semverLT "$parsed_i" "$full_version_number"; then
+        comparison_result=0
+      fi
+    elif [[ $original_version_string =~ (^>[0-9]) ]]; then
+      if semverGT "$parsed_i" "$full_version_number"; then
+        comparison_result=0
+      fi
+    elif [[ $original_version_string =~ (^<=[0-9]) ]]; then
+      if semverLE "$parsed_i" "$full_version_number"; then
+        comparison_result=0
+      fi
+    elif [[ $original_version_string =~ (^>=[0-9]) ]]; then
+      if semverGE "$parsed_i" "$full_version_number"; then
+        comparison_result=0
+      fi
+    fi
+    if [ $comparison_result != 1 ];
+    then
+      local contender=$i
+    fi
+  done
+
+  if [ -z "${contender+x}" ];
+  then
+    echo "No compatible version of node found in the core origin on Habitat Builder"
+  else
+    echo "$contender"
+  fi
+}
+
+# Source: https://github.com/cloudflare/semver_bash
+#Copyright (c) 2013, Ray Bejjani
+#All rights reserved.
+
+#Redistribution and use in source and binary forms, with or without
+#modification, are permitted provided that the following conditions are met:
+
+#1. Redistributions of source code must retain the above copyright notice, this
+#list of conditions and the following disclaimer.
+#2. Redistributions in binary form must reproduce the above copyright notice,
+#this list of conditions and the following disclaimer in the documentation
+#and/or other materials provided with the distribution.
+
+#THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+#ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+#WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+#DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+#ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+#(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+#LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+#ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+#SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+#The views and conclusions contained in the software and documentation are those
+#of the authors and should not be interpreted as representing official policies,
+#either expressed or implied, of the FreeBSD Project.
+
+function semverParseInto() {
+	local RE='[^0-9]*\([0-9]*\)[.]\([0-9]*\)[.]\([0-9]*\)\([0-9A-Za-z-]*\)'
+	#MAJOR
+    # shellcheck disable=SC2001
+	eval "$2"="$(echo "$1" | sed -e "s#$RE#\1#")"
+	#MINOR
+    # shellcheck disable=SC2001
+	eval "$3"="$(echo "$1" | sed -e "s#$RE#\2#")"
+	#MINOR
+    # shellcheck disable=SC2001
+	eval "$4"="$(echo "$1" | sed -e "s#$RE#\3#")"
+	#SPECIAL
+    # shellcheck disable=SC2001
+	eval "$5"="$(echo "$1" | sed -e "s#$RE#\4#")"
+}
+
+function semverEQ() {
+	local MAJOR_A=0
+	local MINOR_A=0
+	local PATCH_A=0
+	local SPECIAL_A=0
+
+	local MAJOR_B=0
+	local MINOR_B=0
+	local PATCH_B=0
+	local SPECIAL_B=0
+
+	semverParseInto "$1" MAJOR_A MINOR_A PATCH_A SPECIAL_A
+	semverParseInto "$2" MAJOR_B MINOR_B PATCH_B SPECIAL_B
+
+	if [ $MAJOR_A -ne $MAJOR_B ]; then
+		return 1
+	fi
+
+	if [ $MINOR_A -ne $MINOR_B ]; then
+		return 1
+	fi
+
+	if [ $PATCH_A -ne $PATCH_B ]; then
+		return 1
+	fi
+
+	if [[ "_$SPECIAL_A" != "_$SPECIAL_B" ]]; then
+		return 1
+	fi
+
+
+	return 0
+
+}
+
+function semverLT() {
+	local MAJOR_A=0
+	local MINOR_A=0
+	local PATCH_A=0
+	local SPECIAL_A=0
+
+	local MAJOR_B=0
+	local MINOR_B=0
+	local PATCH_B=0
+	local SPECIAL_B=0
+
+	semverParseInto "$1" MAJOR_A MINOR_A PATCH_A SPECIAL_A
+	semverParseInto "$2" MAJOR_B MINOR_B PATCH_B SPECIAL_B
+
+	if [ $MAJOR_A -lt $MAJOR_B ]; then
+		return 0
+	fi
+
+	if [[ $MAJOR_A -le $MAJOR_B  && $MINOR_A -lt $MINOR_B ]]; then
+		return 0
+	fi
+
+	if [[ $MAJOR_A -le $MAJOR_B  && $MINOR_A -le $MINOR_B && $PATCH_A -lt $PATCH_B ]]; then
+		return 0
+	fi
+
+	if [[ "_$SPECIAL_A"  == "_" ]] && [[ "_$SPECIAL_B"  == "_" ]] ; then
+		return 1
+	fi
+	if [[ "_$SPECIAL_A"  == "_" ]] && [[ "_$SPECIAL_B"  != "_" ]] ; then
+		return 1
+	fi
+	if [[ "_$SPECIAL_A"  != "_" ]] && [[ "_$SPECIAL_B"  == "_" ]] ; then
+		return 0
+	fi
+
+	if [[ "_$SPECIAL_A" < "_$SPECIAL_B" ]]; then
+		return 0
+	fi
+
+	return 1
+
+}
+
+function semverGT() {
+	semverEQ "$1" "$2"
+	local EQ=$?
+
+	semverLT "$1" "$2"
+	local LT=$?
+
+	if [ $EQ -ne 0 ] && [ $LT -ne 0 ]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+#https://github.com/cloudflare/semver_bash/pull/10/files
+
+function semverGE() {
+	semverLT "$1" "$2"
+	local LT=$?
+
+	if [ $LT -ne 0 ]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+function semverLE() {
+	semverGT "$1" "$2"
+	local GT=$?
+
+	if [ $GT -ne 0 ]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+if [ "___semver.sh" == "___$(basename "$0")" ]; then
+
+	MAJOR=0
+	MINOR=0
+	PATCH=0
+	SPECIAL=""
+
+	semverParseInto "$1" MAJOR MINOR PATCH SPECIAL
+	echo "$1 -> M: $MAJOR m:$MINOR p:$PATCH s:$SPECIAL"
+
+	semverParseInto "$2" MAJOR MINOR PATCH SPECIAL
+	echo "$2 -> M: $MAJOR m:$MINOR p:$PATCH s:$SPECIAL"
+
+	semverEQ "$1" "$2"
+	echo "$1 == $2 -> $?."
+
+	semverLT "$1" "$2"
+	echo "$1 < $2 -> $?."
+
+	semverGT "$1" "$2"
+	echo "$1 > $2 -> $?."
+
+fi

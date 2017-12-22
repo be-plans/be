@@ -29,6 +29,7 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include/harfbuzz)
 pkg_lib_dirs=(lib)
+pkg_pconfig_dirs=(lib/pkgconfig)
 
 source ../defaults.sh
 

@@ -42,6 +42,7 @@ Most non-trivial apps need more than their own codebase to run correctly. Many h
 The following Habitat package dependencies will be injected into your app's Plan:
 
 * [`core/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
+* `core/git`: Used to detect if your app exists within a git repository to better support installing your app while honoring the `.gitignore` file. Will be injected into your Plan's `pkg_build_deps` array.
 
 ### Detected Dependencies
 
@@ -56,7 +57,6 @@ The following gems will checked for in the `Gemfile.lock` to conditionally injec
 Additional checks performed by this scaffolding are:
 
 * The app's version of Ruby will be determined by checking several source locations. See the Ruby Version section for more details.
-* If your app's root directory contains a `.git/` subdirectory, then Git-related Habitat packages will be injected into your Plan's `pkg_build_deps` array to better support installing your app while honoring the `.gitignore` file.
 
 ###  Specifying Run Dependencies in Your Plan
 
@@ -455,14 +455,17 @@ Your app's use of a [PostgreSQL][] database is detected by inspecting the `Gemfi
 * `rjack-jdbc-postgres`
 * `tgbyte-activerecord-jdbcpostgresql-adapter`
 
+**NOTE:** If you are using `activerecord-postgis-adapter` you will need to set the `db.adapter` config option to `postgis` in order to access the `postgis` functions in `PostgreSQL`.
+
 ### Default App Environment Variables
 
-* `DATABASE_URL`: `postgres://$user:$password@$host:$port/$name`
+* `DATABASE_URL`: `$adapter://$user:$password@$host:$port/$name`
 
-Where `$user`, `$password`, `$host`, `$port`, and `$name` will be determined at runtime.
+Where `$adapter`, `$user`, `$password`, `$host`, `$port`, and `$name` will be determined at runtime.
 
 ### Default Config Settings
 
+* `db.adapter`: The connecting database adapter for this app.  Defaults to the value of `postgresql` if no value is provided.
 * `db.name`: The database name on the database server for this app. Defaults to the value of `"${pkg_name}_production"`.
 * `db.user`: The connecting database user for this app. Defaults to the value of `"$pkg_name"`.
 * `db.password`: The connecting database password for this app. Defaults to the value of `"${pkg_name}"`. It is **strongly** recommended to use a different, randomly generated password when running your app in production.

@@ -1,7 +1,7 @@
 pkg_origin=lilian
 pkg_name=python
 pkg_distname=Python
-pkg_version=3.6.1
+pkg_version=3.6.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Python-2.0')
 pkg_description="Python is a programming language that lets you work quickly \
@@ -9,7 +9,7 @@ pkg_description="Python is a programming language that lets you work quickly \
 pkg_upstream_url="https://www.python.org"
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_source=https://www.python.org/ftp/python/${pkg_version}/${pkg_dirname}.tar.xz
-pkg_shasum=a01810ddfcec216bcdb357a84bfaafdfaa0ca42bbdaa4cb7ff74f5a9961e4041
+pkg_shasum=ab6193af1921b30f587b302fe385268510e80187ca83ca82d2bfe7ab544c6f91
 pkg_deps=(
   lilian/bzip2
   core/gcc-libs
