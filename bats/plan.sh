@@ -1,5 +1,5 @@
 pkg_name=bats
-pkg_origin=lilian
+pkg_origin=be
 pkg_version='0.4.0'
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_license=('MIT')

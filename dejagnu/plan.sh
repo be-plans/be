@@ -1,5 +1,5 @@
 pkg_name=dejagnu
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.6
 pkg_license=('GPL-2.0')
 pkg_upstream_url="https://www.gnu.org/software/dejagnu/"

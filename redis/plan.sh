@@ -1,5 +1,5 @@
 pkg_name=redis
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.2.4
 pkg_description="Persistent key-value database, with built-in net interface"
 pkg_upstream_url=http://redis.io/

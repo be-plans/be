@@ -1,5 +1,5 @@
 pkg_name=randrproto
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.5.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X11 RandR extension wire protocol"

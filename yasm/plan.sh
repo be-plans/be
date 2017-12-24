@@ -1,5 +1,5 @@
 pkg_name=yasm
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.3.0
 pkg_description="Yasm is a complete rewrite of the NASM assembler"
 pkg_upstream_url=http://yasm.tortall.net/

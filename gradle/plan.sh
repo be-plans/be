@@ -1,5 +1,5 @@
 pkg_name=gradle
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=4.3.1
 pkg_source=https://services.gradle.org/distributions/${pkg_name}-${pkg_version}-bin.zip
 pkg_shasum=15ebe098ce0392a2d06d252bff24143cc88c4e963346582c8d88814758d93ac7

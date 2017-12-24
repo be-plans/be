@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=libmpc
 pkg_distname=mpc
 pkg_version=1.0.3

@@ -1,6 +1,6 @@
 pkg_name=wget
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.19.1
 pkg_license=('GPL-3.0+')
 pkg_description="GNU Wget is a free software package for retrieving files using HTTP, HTTPS, FTP and FTPS the most widely-used Internet protocols."

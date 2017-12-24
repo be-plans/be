@@ -1,6 +1,6 @@
 pkg_name=rust-nightly
 _distname=rust
-pkg_origin=core
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Safe, concurrent, practical language"
 pkg_upstream_url="https://www.rust-lang.org/"

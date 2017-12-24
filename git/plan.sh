@@ -1,6 +1,6 @@
 pkg_name=git
 pkg_version=2.14.2
-pkg_origin=lilian
+pkg_origin=be
 pkg_description="Git is a free and open source distributed version control
   system designed to handle everything from small to very large projects with
   speed and efficiency."

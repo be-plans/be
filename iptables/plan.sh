@@ -1,5 +1,5 @@
 pkg_name=iptables
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.6.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2')

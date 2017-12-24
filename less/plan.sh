@@ -1,5 +1,5 @@
 pkg_name=less
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=487
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3+')

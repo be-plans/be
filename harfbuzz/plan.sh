@@ -1,5 +1,5 @@
 pkg_name=harfbuzz
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.4.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')

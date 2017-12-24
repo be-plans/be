@@ -1,5 +1,5 @@
 pkg_name=boost
-pkg_origin=lilian
+pkg_origin=be
 pkg_description='Boost provides free peer-reviewed portable C++ source libraries.'
 pkg_upstream_url='http://www.boost.org/'
 pkg_version=1.64.0
@@ -26,7 +26,7 @@ pkg_build_deps=(
   lilian/python2
   lilian/libxml2
   lilian/libxslt
-  lilian/openssl 
+  lilian/openssl
   lilian/which
   lilian/zlib
 )

@@ -1,6 +1,6 @@
 pkg_name=libjpeg-turbo
 pkg_distname=${pkg_name}
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.5.1
 pkg_description="A faster (using SIMD) libjpeg implementation";
 pkg_upstream_url=http://libjpeg-turbo.virtualgl.org/

@@ -1,5 +1,5 @@
 pkg_name=libunwind
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.2.1
 pkg_description="A C programming interface to determine the call-chain of a program."
 pkg_upstream_url="http://www.nongnu.org/libunwind/"

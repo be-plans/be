@@ -1,7 +1,7 @@
 source "../node/plan.sh"
 
 pkg_name=node9
-pkg_origin=core
+pkg_origin=be
 pkg_version=9.0.0
 pkg_description="Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine."
 pkg_license=('MIT')

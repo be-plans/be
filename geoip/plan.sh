@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=geoip
 pkg_version=1.6.0
 pkg_license=('LGPL-2.1')

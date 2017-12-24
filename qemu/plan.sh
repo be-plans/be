@@ -1,5 +1,5 @@
 pkg_name=qemu
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.9.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="QEMU is a generic and open source machine emulator and virtualizer."

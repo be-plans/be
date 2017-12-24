@@ -1,5 +1,5 @@
 pkg_name=damageproto
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.2.1
 pkg_description="X11 Damage C header files"
 pkg_upstream_url="https://www.x.org/"

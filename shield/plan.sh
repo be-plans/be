@@ -1,5 +1,5 @@
 pkg_name=shield
-pkg_origin=core
+pkg_origin=be
 pkg_version="0.10.8"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')

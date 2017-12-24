@@ -1,5 +1,5 @@
 pkg_name=dd-agent
-pkg_origin=core
+pkg_origin=be
 pkg_version="0.1.0"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="The Datadog Agent"

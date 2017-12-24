@@ -1,5 +1,5 @@
 pkg_name=sensu
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.29.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="A monitoring framework that aims to be simple, malleable, and scalable."

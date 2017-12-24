@@ -1,5 +1,5 @@
 pkg_name=xproto
-pkg_origin=core
+pkg_origin=be
 pkg_version=7.0.31
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X11 wire protocol and auxillary headers"

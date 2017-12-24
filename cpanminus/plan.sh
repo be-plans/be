@@ -1,6 +1,6 @@
 pkg_name=cpanminus
 pkg_version=1.7043
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('Artistic-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="cpanminus is a script to get, unpack, build and install modules from CPAN and does nothing else."

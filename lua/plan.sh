@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=lua
 pkg_version=5.3.4
 pkg_description="A powerful, efficient, lightweight, embeddable scripting language"

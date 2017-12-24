@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=htop
 pkg_version=2.0.1
 pkg_description="This is htop, an interactive process viewer for Unix systems. It is a text-mode application (for console or X terminals) and requires ncurses."

@@ -50,7 +50,7 @@ generate_plan() {
   popd
   rm -rf "${temp_dir}" # cleanup
 
-  echo "pkg_origin=lilian
+  echo "pkg_origin=be
 pkg_name=${pkg_name}
 pkg_version=${pkg_version}
 pkg_maintainer=\"The Habitat Maintainers <humans@habitat.sh>\"

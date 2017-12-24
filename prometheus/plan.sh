@@ -1,7 +1,7 @@
 pkg_name=prometheus
 pkg_description="Prometheus monitoring"
 pkg_upstream_url=http://prometheus.io
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.6.1
 pkg_maintainer="Lamont Lucas <lamont@fastrobot.com>"
 pkg_license=('Apache-2.0')

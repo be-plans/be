@@ -1,6 +1,6 @@
 pkg_name=rsync
 pkg_version=3.1.2
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('GPL-3.0')
 pkg_description="An open source utility that provides fast incremental file transfer"
 pkg_upstream_url="https://rsync.samba.org/"

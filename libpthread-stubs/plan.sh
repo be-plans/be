@@ -1,5 +1,5 @@
 pkg_name=libpthread-stubs
-pkg_origin=core
+pkg_origin=be
 pkg_version=0.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Weak aliases for pthread functions"

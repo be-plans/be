@@ -1,5 +1,5 @@
 pkg_name=flatbuffers
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.6.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')

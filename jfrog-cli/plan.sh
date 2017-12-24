@@ -1,6 +1,6 @@
 pkg_name=jfrog-cli
 pkg_description="jfrog CLI"
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.9.0
 pkg_license=('apachev2')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

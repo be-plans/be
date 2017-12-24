@@ -1,5 +1,5 @@
 pkg_name=mssql
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=14.0.1.246-6
 pkg_license=('MICROSOFT PRE-RELEASE SOFTWARE LICENSE')
 pkg_upstream_url=https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux
@@ -20,7 +20,7 @@ pkg_deps=(
   core/gcc-libs
   core/glibc
   lilian/jemalloc
-  lilian/openssl 
+  lilian/openssl
   lilian/python2
 )
 

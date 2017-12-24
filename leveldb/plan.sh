@@ -1,5 +1,5 @@
 pkg_name=leveldb
-pkg_origin=lilian
+pkg_origin=be
 pkg_description="LevelDB is a fast key-value storage library written at Google that provides an ordered mapping from string keys to string values."
 pkg_upstream_url="https://github.com/google/leveldb"
 pkg_version="1.20"

@@ -1,5 +1,5 @@
 pkg_name=sassc
-pkg_origin=lilian
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_version=3.3.6
 pkg_source=https://github.com/sass/${pkg_name}/archive/${pkg_version}.tar.gz

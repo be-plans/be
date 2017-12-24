@@ -1,5 +1,5 @@
 pkg_name=wrk
-pkg_origin=core
+pkg_origin=be
 pkg_version=4.0.2
 pkg_license=(Apache-2.0)
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

@@ -1,5 +1,5 @@
 pkg_name=cppunit
-pkg_origin=lilian
+pkg_origin=be
 pkg_version='1.14.0'
 pkg_description="CppUnit is the C++ port of the famous JUnit framework for unit testing. Test output is in XML for automatic testing and GUI based for supervised tests."
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'

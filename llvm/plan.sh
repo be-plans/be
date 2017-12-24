@@ -1,5 +1,5 @@
 pkg_name=llvm
-pkg_origin=core
+pkg_origin=be
 pkg_version=3.9.1
 pkg_license=('NCSA')
 pkg_description="Next-gen compiler infrastructure"

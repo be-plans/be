@@ -1,5 +1,5 @@
 pkg_name=gpgme
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.9.0
 pkg_license=('LGPL')
 pkg_source=https://www.gnupg.org/ftp/gcrypt/${pkg_name}/${pkg_name}-${pkg_version}.tar.bz2

@@ -1,5 +1,5 @@
 pkg_name=ncdu
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.11
 pkg_license=('MIT')
 pkg_description="Ncdu is a disk usage analyzer with an ncurses interface"

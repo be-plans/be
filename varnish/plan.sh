@@ -1,6 +1,6 @@
 
 pkg_name=varnish
-pkg_origin=lilian
+pkg_origin=be
 pkg_description="Varnish Cache"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_upstream_url="http://varnish-cache.org/"

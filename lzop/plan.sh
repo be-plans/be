@@ -1,5 +1,5 @@
 pkg_name=lzop
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('GPL-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="lzop is a file compressor which is very similar to gzip. lzop uses the LZO data compression library for compression services, and its main advantages over gzip are much higher compression and decompression speed (at the cost of some compression ratio)."

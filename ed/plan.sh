@@ -1,5 +1,5 @@
 pkg_name=ed
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.14.2
 pkg_description="The standard text editor."
 pkg_upstream_url="https://www.gnu.org/software/ed/"

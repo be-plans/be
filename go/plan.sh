@@ -1,5 +1,5 @@
 pkg_name=go
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.9.2
 pkg_description="Go is an open source programming language that makes it easy to
   build simple, reliable, and efficient software."

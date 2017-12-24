@@ -1,5 +1,5 @@
 pkg_name=erlang19
-pkg_origin=core
+pkg_origin=be
 pkg_version=19.3
 pkg_description="A programming language for massively scalable soft real-time systems."
 pkg_upstream_url="http://www.erlang.org/"

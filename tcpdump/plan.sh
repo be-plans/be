@@ -1,5 +1,5 @@
 pkg_name=tcpdump
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=4.9.2
 pkg_description="A powerful command-line packet analyzer."
 pkg_upstream_url="http://www.tcpdump.org/"

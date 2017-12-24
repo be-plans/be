@@ -1,5 +1,5 @@
 pkg_name=pango
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="1.40.13"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('LGPL')

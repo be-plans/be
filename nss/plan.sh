@@ -1,6 +1,6 @@
 #!/bin/bash
 pkg_name=nss
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.25
 pkg_license=("MPL-2.0")
 pkg_description="Network Security Services"

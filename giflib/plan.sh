@@ -1,6 +1,6 @@
 pkg_name=giflib
 pkg_version=5.1.4
-pkg_origin=lilian
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')
 pkg_description="GIFLIB is a package of portable tools and library routines for working with GIF images.

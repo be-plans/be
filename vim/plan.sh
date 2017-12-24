@@ -1,5 +1,5 @@
 pkg_name=vim
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=8.0.0642
 pkg_license=('vim')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

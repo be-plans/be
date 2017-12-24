@@ -1,6 +1,6 @@
 pkg_name=libpng
 pkg_version=1.6.29
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('libpng')
 pkg_description="An Open, Extensible Image Format with Lossless Compression"
 pkg_upstream_url=http://www.libpng.org/pub/png/

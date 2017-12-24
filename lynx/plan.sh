@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=lynx
 pkg_version=2.8.8
 pkg_description="Lynx is the text web browser."

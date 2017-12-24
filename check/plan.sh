@@ -1,5 +1,5 @@
 pkg_name=check
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.10.0
 pkg_license=('LGPL-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

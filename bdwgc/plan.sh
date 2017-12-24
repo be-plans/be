@@ -1,5 +1,5 @@
 pkg_name=bdwgc
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=7.6.0
 pkg_description="A garbage collector for C and C++"
 pkg_upstream_url="http://www.hboehm.info/gc/"

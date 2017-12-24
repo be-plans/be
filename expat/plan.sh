@@ -1,5 +1,5 @@
 pkg_name=expat
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.2.2
 pkg_description="Expat library: Fast XML parser in C"
 pkg_upstream_url="https://libexpat.github.io/"

@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=man-db
 pkg_version=2.7.6.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

@@ -1,6 +1,6 @@
 pkg_name=libyaml
 pkg_version=0.1.7
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('MIT')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_dirname=yaml-${pkg_version}

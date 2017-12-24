@@ -1,6 +1,6 @@
 pkg_name=patchelf
 pkg_description="A small utility to modify the dynamic linker and RPATH of ELF executables"
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.9
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')

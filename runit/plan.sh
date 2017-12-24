@@ -1,5 +1,5 @@
 pkg_name=runit
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.1.2
 pkg_license=('BSD')
 pkg_source=http://smarden.org/runit/runit-${pkg_version}.tar.gz

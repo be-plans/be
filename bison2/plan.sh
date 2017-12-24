@@ -1,6 +1,6 @@
 pkg_name=bison2
 pkg_distname=bison
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.7.1
 pkg_description="A parser generator that converts an annotated context-free grammar into a parser"
 pkg_upstream_url=https://www.gnu.org/software/bison/

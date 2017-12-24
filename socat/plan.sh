@@ -1,5 +1,5 @@
 pkg_name=socat
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.7.3.2
 pkg_source=http://www.dest-unreach.org/${pkg_name}/download/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=ce3efc17e3e544876ebce7cd6c85b3c279fda057b2857fcaaf67b9ab8bdaf034

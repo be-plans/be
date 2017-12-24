@@ -1,6 +1,6 @@
 pkg_name=bzip2
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.0.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('bzip2')

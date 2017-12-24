@@ -1,5 +1,5 @@
 pkg_name=swig
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.0.10
 pkg_license=('GPL-3.0')
 pkg_description="Generate scripting interfaces to C/C++ code"

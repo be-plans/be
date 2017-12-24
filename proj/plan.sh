@@ -1,5 +1,5 @@
 pkg_name=proj
-pkg_origin=core
+pkg_origin=be
 pkg_version=4.9.3
 pkg_description="Cartographic Projections Library"
 pkg_upstream_url=https://github.com/OSGeo/proj.4

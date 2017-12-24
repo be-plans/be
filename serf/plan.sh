@@ -1,6 +1,6 @@
 pkg_name=serf
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.3.8
 pkg_description="A high performance C-based HTTP client library built upon the Apache Portable Runtime (APR) library."
 pkg_upstream_url=https://serf.apache.org/
@@ -12,7 +12,7 @@ pkg_deps=(
   core/apr
   lilian/apr-util
   core/glibc
-  lilian/openssl 
+  lilian/openssl
   lilian/zlib
 )
 pkg_build_deps=(

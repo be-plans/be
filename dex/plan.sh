@@ -1,7 +1,7 @@
 gopkg="github.com/coreos/dex"
 pkg_name=dex
 pkg_description="OpenID Connect Identity (OIDC) and OAuth 2.0 Provider with Pluggable Connectors"
-pkg_origin=core
+pkg_origin=be
 pkg_version="v2.9.0"
 pkg_maintainer="Chef Software Inc. <support@chef.io>"
 pkg_license=("Apache-2.0")

@@ -1,5 +1,5 @@
 pkg_name=lsyncd
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.1.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')

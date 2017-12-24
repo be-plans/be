@@ -1,5 +1,5 @@
 pkg_name=scaffolding-ruby
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="0.8.9"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')

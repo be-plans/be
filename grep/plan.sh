@@ -1,5 +1,5 @@
 pkg_name=grep
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3+')

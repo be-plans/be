@@ -1,5 +1,5 @@
 pkg_name=curator
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=5.1.1
 pkg_description="Elasticsearch Curator helps you curate, or manage your indices."
 pkg_upstream_url=https://github.com/elastic/curator

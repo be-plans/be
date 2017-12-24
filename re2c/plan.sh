@@ -1,6 +1,6 @@
 pkg_name=re2c
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.16
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('PDDL-1.0')

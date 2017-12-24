@@ -1,5 +1,5 @@
 pkg_name=ocamlbuild
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="0.11.0"
 pkg_description="OCamlbuild is a generic build tool, that has built-in rules for building OCaml library and programs."
 pkg_upstream_url="https://github.com/ocaml/ocamlbuild"

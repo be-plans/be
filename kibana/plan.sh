@@ -1,6 +1,6 @@
 pkg_name=kibana
 pkg_version=6.0.0
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('Apache-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Kibana is a browser based analytics and search dashboard for Elasticsearch."

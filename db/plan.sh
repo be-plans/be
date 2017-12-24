@@ -1,5 +1,5 @@
 pkg_name=db
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=6.2.32
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('custom')

@@ -1,5 +1,5 @@
 pkg_name=bash-completion
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.5
 pkg_license=('GPLv2')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

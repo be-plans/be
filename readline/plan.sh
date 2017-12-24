@@ -1,5 +1,5 @@
 pkg_name=readline
-pkg_origin=lilian
+pkg_origin=be
 _base_version=6.3
 pkg_version=${_base_version}.8
 pkg_license=('GPL-3.0')

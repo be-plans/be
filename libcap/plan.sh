@@ -1,5 +1,5 @@
 pkg_name=libcap
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.25
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2')

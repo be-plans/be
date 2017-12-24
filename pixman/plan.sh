@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=pixman
 pkg_description="A low-level software library for pixel manipulation"
 pkg_upstream_url="http://pixman.org/"

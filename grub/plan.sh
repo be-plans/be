@@ -1,5 +1,5 @@
 pkg_name=grub
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.02
 pkg_source=ftp://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

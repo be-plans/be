@@ -1,6 +1,6 @@
 pkg_name=libxfixes
 pkg_distname="libXfixes"
-pkg_origin=core
+pkg_origin=be
 pkg_version=5.0.3
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

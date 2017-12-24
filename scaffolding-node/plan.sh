@@ -1,5 +1,5 @@
 pkg_name=scaffolding-node
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="0.6.11"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')

@@ -1,5 +1,5 @@
 pkg_name=netcat-openbsd
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.178
 pkg_description="TCP/IP swiss army knife, OpenBSD variant"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

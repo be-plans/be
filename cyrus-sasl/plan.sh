@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=cyrus-sasl
 pkg_version=2.1.26
 pkg_description="Cyrus Simple Authentication Service Layer (SASL) library"

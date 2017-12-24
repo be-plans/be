@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=etcd
 pkg_version="v3.2.9"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

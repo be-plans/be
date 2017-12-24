@@ -1,6 +1,6 @@
 #!/bin/bash
 pkg_name=popt
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.16
 pkg_descriptyon="Popt is a C library for parsing command line parameters"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

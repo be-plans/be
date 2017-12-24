@@ -1,6 +1,6 @@
 pkg_name=envdir
 pkg_version=0.7.0
-pkg_origin=lilian
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')
 pkg_description="Envdir runs another program with a modified environment according to files in a specified directory."

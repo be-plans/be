@@ -1,5 +1,5 @@
 pkg_name=dotnet-core-sdk
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.0.4
 pkg_license=('MIT')
 pkg_upstream_url=https://www.microsoft.com/net/core
@@ -19,7 +19,7 @@ pkg_deps=(
   core/krb5
   lilian/libunwind
   lilian/lttng-ust
-  lilian/openssl 
+  lilian/openssl
   lilian/util-linux
   lilian/zlib
 )

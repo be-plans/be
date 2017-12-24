@@ -1,6 +1,6 @@
 pkg_name=nasm
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.13
 pkg_description="The Netwide Assembler, NASM, is an 80x86 and x86-64 assembler designed for portability and modularity."
 pkg_upstream_url=http://www.nasm.us/

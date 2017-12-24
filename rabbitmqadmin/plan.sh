@@ -1,5 +1,5 @@
 pkg_name=rabbitmqadmin
-pkg_origin=core
+pkg_origin=be
 pkg_version=3.6.10
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MPL')

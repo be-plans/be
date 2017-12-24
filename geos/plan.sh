@@ -1,5 +1,5 @@
 pkg_name=geos
-pkg_origin=core
+pkg_origin=be
 pkg_version=3.6.2
 pkg_description="GEOS (Geometry Engine - Open Source) is a C++ port of the ​Java Topology Suite (JTS)."
 pkg_upstream_url=http://trac.osgeo.org/geos

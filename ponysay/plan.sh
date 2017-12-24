@@ -1,5 +1,5 @@
 pkg_name=ponysay
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="3.0.2"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')

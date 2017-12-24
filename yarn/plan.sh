@@ -1,5 +1,5 @@
 pkg_name=yarn
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.3.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Yarn is a package manager for your code. It allows you to use and share code with other developers from around the world. Yarn does this quickly, securely, and reliably so you don’t ever have to worry."

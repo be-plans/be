@@ -1,5 +1,5 @@
 pkg_name=guile
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.0.12
 pkg_description="An implementation of the Scheme programming language, used in many GNU programs as an extension language."
 pkg_upstream_url="https://www.gnu.org/software/guile/"

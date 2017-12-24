@@ -1,6 +1,6 @@
 pkg_name=libsodium
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.0.13
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('libsodium')

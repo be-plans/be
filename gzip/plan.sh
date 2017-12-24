@@ -1,5 +1,5 @@
 pkg_name=gzip
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.8
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')

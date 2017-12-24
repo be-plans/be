@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=userspace-rcu
 pkg_version=0.10.0
 pkg_description="liburcu is a LGPLv2.1 userspace RCU (read-copy-update) library.

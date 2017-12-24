@@ -1,6 +1,6 @@
 pkg_name=rkt
 pkg_description="rkt - the pod native container engine"
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.29.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2')

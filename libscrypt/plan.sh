@@ -1,6 +1,6 @@
 pkg_name=libscrypt
 pkg_version=1.21
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('BSD-2-Clause')
 pkg_description="An implementation of Colin Percival's scrypt hash"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

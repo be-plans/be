@@ -1,5 +1,5 @@
 pkg_name=openvpn
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.4.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')

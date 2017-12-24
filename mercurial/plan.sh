@@ -1,5 +1,5 @@
 pkg_name=mercurial
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.9.1
 pkg_description="A free, distributed source control management tool."
 pkg_upstream_url="https://www.mercurial-scm.org/"

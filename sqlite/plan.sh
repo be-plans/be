@@ -1,6 +1,6 @@
 pkg_name=sqlite
 pkg_version=3190300
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('Public Domain')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="A software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine."

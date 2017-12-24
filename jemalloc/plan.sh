@@ -1,7 +1,7 @@
 pkg_name=jemalloc
 pkg_description="malloc implementation emphasizing fragmentation avoidance"
 pkg_upstream_url="http://jemalloc.net/"
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=5.0.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('BSD-2-Clause')

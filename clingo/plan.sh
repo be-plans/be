@@ -1,5 +1,5 @@
 pkg_name=clingo
-pkg_origin=lilian
+pkg_origin=be
 pkg_description="A grounder and solver for logic programs."
 pkg_upstream_url="https://potassco.org/"
 pkg_version="5.2.0"

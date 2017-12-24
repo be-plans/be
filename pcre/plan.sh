@@ -1,5 +1,5 @@
 pkg_name=pcre
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=8.40
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="A library that implements Perl 5-style regular expressions"

@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=stringencoders
 pkg_version=3.10.3
 pkg_dirname=stringencoders-e0d6a9b294c9ab619c510c1f6317bb9ec7194d77

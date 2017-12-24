@@ -1,5 +1,5 @@
 pkg_name=mg
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=20160118
 pkg_description="mg is Micro GNU/emacs, this is a portable version of the mg maintained by the OpenBSD team"
 pkg_license=('publicdomain')

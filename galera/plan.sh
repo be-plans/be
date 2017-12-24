@@ -1,5 +1,5 @@
 pkg_name=galera
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=25.3.19
 pkg_source=http://github.com/codership/galera/archive/release_${pkg_version}.tar.gz
 pkg_upstream_url=https://github.com/codership/galera

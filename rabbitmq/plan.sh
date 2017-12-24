@@ -1,6 +1,6 @@
 pkg_name=rabbitmq
 pkg_distname=${pkg_name}-server
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.6.12
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MPL')

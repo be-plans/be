@@ -1,5 +1,5 @@
 pkg_name=pkg-config
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.29.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2+')

@@ -1,5 +1,5 @@
 pkg_name=libassuan
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.4.3
 pkg_license=('lgplv2+')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

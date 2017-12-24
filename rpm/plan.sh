@@ -1,5 +1,5 @@
 pkg_name=rpm
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=4.12.0.1
 pkg_license=("GPL-2.0" "LGPL-2.0")
 pkg_description="RPM Package Manager"

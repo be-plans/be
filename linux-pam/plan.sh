@@ -1,5 +1,5 @@
 pkg_name=linux-pam
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.3.0
 pkg_license=('BSD-3-Clause' 'GPL')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

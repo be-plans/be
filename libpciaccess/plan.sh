@@ -1,5 +1,5 @@
 pkg_name=libpciaccess
-pkg_origin=core
+pkg_origin=be
 pkg_version=0.14
 pkg_description="Direct Rendering Manager"
 pkg_upstream_url="https://dri.freedesktop.org/wiki/"

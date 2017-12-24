@@ -1,4 +1,4 @@
-pkg_origin=core
+pkg_origin=be
 pkg_name=glib
 pkg_version="2.50.3"
 pkg_description="$(cat << EOF

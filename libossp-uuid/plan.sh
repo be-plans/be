@@ -1,6 +1,6 @@
 pkg_name=libossp-uuid
 _pkg_distname=uuid
-pkg_origin=lilian
+pkg_origin=be
 pkg_description="OSSP uuid is a ISO-C:1999 application programming interface (API) and corresponding command line interface (CLI) for the generation of DCE 1.1"
 pkg_upstream_url="http://www.ossp.org/pkg/lib/uuid/"
 pkg_version=1.6.2

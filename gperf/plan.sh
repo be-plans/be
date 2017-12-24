@@ -1,5 +1,5 @@
 pkg_name=gperf
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="3.1"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_upstream_url="https://www.gnu.org/software/gperf/"

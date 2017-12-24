@@ -1,6 +1,6 @@
 pkg_name=xz
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=5.2.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gpl2+' 'lgpl2+')

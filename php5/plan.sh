@@ -1,6 +1,6 @@
 pkg_name=php5
 pkg_distname=php
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=5.6.30
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('PHP-3.01')

@@ -1,5 +1,5 @@
 pkg_name=cargo-nightly
-pkg_origin=lilian
+pkg_origin=be
 pkg_description="The Rust package manager"
 pkg_version=_set_from_downloaded_tar_file_
 pkg_license=('Apache-2.0' 'MIT')

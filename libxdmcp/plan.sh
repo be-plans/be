@@ -1,6 +1,6 @@
 pkg_name=libxdmcp
 pkg_distname=libXdmcp
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.1.2
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

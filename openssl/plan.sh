@@ -1,6 +1,6 @@
 pkg_name=openssl
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.0.2l
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="OpenSSL is an open source project that provides a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. It is also a general-purpose cryptography library."

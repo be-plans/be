@@ -1,5 +1,5 @@
 pkg_name=doxygen
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.8.13
 pkg_license=('GPL-2.0')
 pkg_description="Generate documentation for several programming languages"

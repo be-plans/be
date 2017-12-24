@@ -1,5 +1,5 @@
 pkg_name=nats-streaming-server
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.3.6
 pkg_description="NATS Streaming is an extremely performant, lightweight reliable streaming platform built on NATS."
 pkg_upstream_url=https://github.com/nats-io/nats-streaming-server

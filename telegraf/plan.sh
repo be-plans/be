@@ -1,5 +1,5 @@
 pkg_name=telegraf
-pkg_origin=core
+pkg_origin=be
 pkg_version="1.3.5"
 pkg_license=('MIT')
 pkg_description="telegraf - client for InfluxDB"

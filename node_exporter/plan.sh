@@ -1,7 +1,7 @@
 pkg_name=node_exporter
 pkg_description="Prometheus node exporter"
 pkg_upstream_url=http://prometheus.io
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.14.0
 pkg_maintainer="Lamont Lucas <lamont@fastrobot.com>"
 pkg_license=('Apache-2.0')

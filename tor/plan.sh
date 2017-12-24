@@ -1,6 +1,6 @@
 pkg_name=tor
 pkg_version=0.3.0.8
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('BSD-3-Clause')
 pkg_description="Free software and an open network that helps you defend against traffic analysis"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -11,7 +11,7 @@ pkg_deps=(
   core/glibc
   core/gcc-libs
   lilian/libevent
-  lilian/openssl 
+  lilian/openssl
   lilian/zlib
   lilian/libseccomp
   lilian/libscrypt

@@ -1,5 +1,5 @@
 pkg_name=c-ares
-pkg_origin=core
+pkg_origin=be
 pkg_version="1.13.0"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')

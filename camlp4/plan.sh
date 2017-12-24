@@ -1,5 +1,5 @@
 pkg_name=camlp4
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="4.04"
 pkg_description="Camlp4 is a software system for writing extensible parsers for programming languages. It provides a set of OCaml libraries that are used to define grammars as well as loadable syntax extensions of such grammars."
 pkg_upstream_url="https://github.com/ocaml/camlp4"

@@ -1,6 +1,6 @@
 pkg_name=libxtst
 pkg_distname=libXtst
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.2.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X.Org Libraries: libXtst"

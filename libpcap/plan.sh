@@ -1,5 +1,5 @@
 pkg_name=libpcap
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.8.1
 pkg_description="A portable C/C++ library for network traffic capture."
 pkg_upstream_url="http://www.tcpdump.org/"

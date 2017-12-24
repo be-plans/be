@@ -1,5 +1,5 @@
 pkg_name=netcat
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.7.1
 pkg_description="GNU rewrite of the OpenBSD netcat/nc package"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

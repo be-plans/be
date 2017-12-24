@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_name=jruby
 pkg_version=9.1.2.0

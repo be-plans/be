@@ -1,5 +1,5 @@
 pkg_name=mysql
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=5.7.18
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_license=('GPL-2.0')
@@ -25,7 +25,7 @@ pkg_deps=(
   lilian/grep
   lilian/inetutils
   lilian/ncurses
-  lilian/openssl 
+  lilian/openssl
   lilian/pcre
   lilian/perl
   lilian/procps-ng
@@ -73,7 +73,7 @@ do_build() {
           -DCMAKE_CXX_FLAGS="${CXXFLAGS} -fpermissive" \
           -DCMAKE_C_LINK_FLAGS="${LDFLAGS}" \
           -DCMAKE_CXX_LINK_FLAGS="${LDFLAGS}"
-          
+
   make -j "$(nproc)"
 }
 

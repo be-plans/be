@@ -1,5 +1,5 @@
 pkg_name=libuv
-pkg_origin=core
+pkg_origin=be
 pkg_version="1.16.1"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')

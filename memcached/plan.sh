@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=memcached
 pkg_version=1.4.37
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

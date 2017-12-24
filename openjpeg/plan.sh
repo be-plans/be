@@ -1,5 +1,5 @@
 pkg_name=openjpeg
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.1.2
 pkg_description="An open source JPEG 2000 codec"
 pkg_upstream_url=http://www.openjpeg.org/

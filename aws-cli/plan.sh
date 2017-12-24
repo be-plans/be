@@ -1,5 +1,5 @@
 pkg_name=aws-cli
-pkg_origin=lilian
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
 pkg_description="The AWS Command Line Interface (CLI) is a unified tool to \

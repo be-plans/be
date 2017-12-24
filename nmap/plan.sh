@@ -1,5 +1,5 @@
 pkg_name=nmap
-pkg_origin=core
+pkg_origin=be
 pkg_version=7.60
 pkg_description="nmap is a free security scanner for network exploration and security audits"
 pkg_upstream_url=https://nmap.org/

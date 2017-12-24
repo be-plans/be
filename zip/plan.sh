@@ -1,5 +1,5 @@
 pkg_name=zip
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.0
 _ver=${pkg_version/./}
 pkg_license=('custom')

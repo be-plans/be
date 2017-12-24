@@ -1,5 +1,5 @@
 pkg_name=libgcrypt
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.7.7
 pkg_license=('lgplv2+')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

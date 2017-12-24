@@ -1,6 +1,6 @@
 pkg_name=freetype
 pkg_version=2.8
-pkg_origin=lilian
+pkg_origin=be
 pkg_description="A software library to render fonts"
 pkg_upstream_url="https://www.freetype.org"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

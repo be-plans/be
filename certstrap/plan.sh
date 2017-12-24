@@ -1,7 +1,7 @@
 pkg_name=certstrap
 pkg_description="A simple certificate manager written in Go, to bootstrap your own certificate authority and public key infrastructure. Adapted from etcd-ca."
 pkg_upstream_url="https://github.com/square/certstrap"
-pkg_origin=core
+pkg_origin=be
 pkg_version="v1.1.1"
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_license=("Apache-2.0")

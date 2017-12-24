@@ -1,5 +1,5 @@
 pkg_name=fish
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.6.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0' 'LGPL-2.0' 'ISC' 'BSD-2-Clause-NetBSD' 'BSD-3-Clause')

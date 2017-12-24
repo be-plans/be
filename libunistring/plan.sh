@@ -1,5 +1,5 @@
 pkg_name=libunistring
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.9.7
 pkg_description="Library functions for manipulating Unicode strings"
 pkg_upstream_url="https://www.gnu.org/software/libunistring/"

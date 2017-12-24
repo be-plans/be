@@ -1,5 +1,5 @@
 pkg_name=mention-bot
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.0.2
 pkg_description="Automatically mention potential reviewers on pull requests."
 pkg_upstream_url=https://github.com/facebook/mention-bot

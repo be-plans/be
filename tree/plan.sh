@@ -1,5 +1,5 @@
 pkg_name=tree
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.7.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2+')

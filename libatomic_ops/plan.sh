@@ -1,5 +1,5 @@
 pkg_name=libatomic_ops
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=7.6.0
 pkg_description="Atomic memory update operations"
 pkg_upstream_url="https://github.com/ivmai/libatomic_ops"

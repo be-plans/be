@@ -1,6 +1,6 @@
 pkg_name=gcc
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=7.1.0
 pkg_description="The GNU Compiler Collection"
 pkg_upstream_url="https://gcc.gnu.org/"

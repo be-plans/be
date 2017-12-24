@@ -1,5 +1,5 @@
 pkg_name=npth
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.5
 pkg_license=('lgplv3+')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

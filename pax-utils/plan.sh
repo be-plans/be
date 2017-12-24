@@ -1,6 +1,6 @@
 pkg_name=pax-utils
 pkg_version=1.2.2
-pkg_origin=lilian
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL')
 pkg_description="ELF related utils for ELF 32/64 binaries that can check files

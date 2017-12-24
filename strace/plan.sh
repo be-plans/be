@@ -1,5 +1,5 @@
 pkg_name=strace
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=4.19
 pkg_license=('strace')
 pkg_description="strace is a system call tracer for Linux"

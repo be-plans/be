@@ -1,5 +1,5 @@
 pkg_name=gnatsd
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.9.6
 pkg_description="A High Performance NATS Server written in Go."
 pkg_upstream_url=https://github.com/nats-io/gnatsd

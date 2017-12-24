@@ -1,5 +1,5 @@
 pkg_name=m4
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.4.18
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3')

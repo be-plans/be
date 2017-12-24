@@ -1,5 +1,5 @@
 pkg_name=at-spi2-core
-pkg_origin=core
+pkg_origin=be
 pkg_version="2.26.2"
 pkg_description="Service Provider Interface for the Assistive Technologies available on the GNOME platform"
 pkg_upstream_url="https://wiki.linuxfoundation.org/accessibility/atk/at-spi/at-spi_on_d-bus"

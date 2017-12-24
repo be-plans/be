@@ -1,5 +1,5 @@
 pkg_name=sudo
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.8.20p2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Execute a command as another user"

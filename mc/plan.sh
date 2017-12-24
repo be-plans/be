@@ -1,5 +1,5 @@
 pkg_name=mc
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=4.8.19
 pkg_description="Midnight Commander."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

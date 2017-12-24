@@ -1,5 +1,5 @@
 pkg_name=libtool
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.4.6
 pkg_license=('GPL-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

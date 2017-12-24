@@ -1,5 +1,5 @@
 $pkg_name="dotnet-core-sdk-preview"
-$pkg_origin="core"
+$pkg_origin="be"
 $pkg_version="2.0.0-preview2-006497"
 $pkg_license=('MIT')
 $pkg_upstream_url="https://www.microsoft.com/net/core"

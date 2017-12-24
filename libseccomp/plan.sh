@@ -1,6 +1,6 @@
 pkg_name=libseccomp
 pkg_version=2.3.2
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('LGPL-2.1')
 pkg_description="An easy to use, platform independent, interface
 to the Linux Kernel's syscall filtering mechanism."

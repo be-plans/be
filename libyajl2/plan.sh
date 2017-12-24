@@ -1,5 +1,5 @@
 pkg_name=libyajl2
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="2.1.0"
 pkg_description="Yet Another JSON Library"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

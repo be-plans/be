@@ -1,5 +1,5 @@
 pkg_name=cmake
-pkg_origin=lilian
+pkg_origin=be
 _base_version=3.8
 pkg_version=${_base_version}.2
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'

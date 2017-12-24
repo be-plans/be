@@ -1,6 +1,6 @@
 pkg_name=gnupg
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.4.21
 pkg_license=('gplv3+')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

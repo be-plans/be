@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=krb5
 pkg_version=1.15.1
 pkg_description="Kerberos is a network authentication protocol. It is designed

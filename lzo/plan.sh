@@ -1,5 +1,5 @@
 pkg_name=lzo
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.10
 pkg_license=('GPL')
 pkg_source=http://www.oberhumer.com/opensource/${pkg_name}/download/${pkg_name}-${pkg_version}.tar.gz

@@ -1,6 +1,6 @@
 pkg_name=coreutils
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=8.27
 pkg_upstream_url=https://www.gnu.org/software/coreutils/
 pkg_description="Basic file, shell and text manipulation utilities of the GNU operating system."

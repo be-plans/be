@@ -1,5 +1,5 @@
 pkg_name=xcb-proto
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.12
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X11 client library"

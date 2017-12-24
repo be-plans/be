@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=lttng-ust
 pkg_version=2.9.1
 pkg_description="LTTng is an open source tracing framework for Linux."

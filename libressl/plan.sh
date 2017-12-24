@@ -1,6 +1,6 @@
 pkg_name=libressl
 pkg_distname=$pkg_name
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.5.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Version of the TLS/crypto stack forked from OpenSSL"

@@ -1,5 +1,5 @@
 pkg_name=ttyrec
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.0.8
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('bsd')

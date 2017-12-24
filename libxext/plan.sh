@@ -1,6 +1,6 @@
 pkg_name=libxext
 pkg_distname=libXext
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.3.3
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

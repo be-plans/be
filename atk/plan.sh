@@ -1,5 +1,5 @@
 pkg_name=atk
-pkg_origin=core
+pkg_origin=be
 pkg_version="2.27.1"
 pkg_description="Library for a set of interfaces providing accessibility. By supporting the ATK interfaces, an application or toolkit can be used with tools such as screen readers, magnifiers, and alternative input devices."
 pkg_upstream_url="https://developer.gnome.org/atk/"

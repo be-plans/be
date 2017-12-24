@@ -1,5 +1,5 @@
 pkg_name=mariadb
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=10.3.0
 pkg_description="An open source monitoring software for networks and applications"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

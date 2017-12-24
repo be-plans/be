@@ -1,5 +1,5 @@
 $pkg_name="innounp"
-$pkg_origin="core"
+$pkg_origin="be"
 $pkg_version="0.46"
 $pkg_license=@("GPL")
 $pkg_upstream_url="http://innounp.sourceforge.net/"

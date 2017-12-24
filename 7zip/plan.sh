@@ -1,5 +1,5 @@
 pkg_name="7zip"
-pkg_origin="lilian"
+pkg_origin="be"
 pkg_version="16.02"
 pkg_license=("LGPL-2.1" "unRAR restriction")
 pkg_upstream_url="https://sourceforge.net/projects/p7zip/"

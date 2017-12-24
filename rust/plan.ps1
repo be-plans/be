@@ -1,5 +1,5 @@
 ﻿$pkg_name="rust"
-$pkg_origin="lilian"
+$pkg_origin="be"
 $pkg_version="1.22.1"
 $pkg_description="Safe, concurrent, practical language"
 $pkg_upstream_url="https://www.rust-lang.org/"

@@ -1,5 +1,5 @@
 pkg_name=xeyes
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.1.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="xeyes"

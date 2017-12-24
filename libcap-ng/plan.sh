@@ -1,5 +1,5 @@
 pkg_name=libcap-ng
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.7.8
 pkg_source=http://people.redhat.com/sgrubb/$pkg_name/$pkg_name-$pkg_version.tar.gz
 pkg_shasum=c21af997445cd4107a55d386f955c5ea6f6e96ead693e9151277c0ab5f97d05f

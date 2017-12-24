@@ -1,5 +1,5 @@
 pkg_name=drupal
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=8.3.3
 pkg_license=('GPL-2.0')
 pkg_deps=(lilian/mysql-client lilian/drush lilian/nginx lilian/php)

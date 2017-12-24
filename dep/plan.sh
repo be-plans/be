@@ -1,5 +1,5 @@
 pkg_name=dep
-pkg_origin=core
+pkg_origin=be
 pkg_version=0.3.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Go dependency management tool"

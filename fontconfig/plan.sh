@@ -1,6 +1,6 @@
 pkg_name=fontconfig
 pkg_version=2.11.94
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('fontconfig')
 pkg_description="Fontconfig is a library for configuring and
   customizing font access."

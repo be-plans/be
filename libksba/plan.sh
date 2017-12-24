@@ -1,5 +1,5 @@
 pkg_name=libksba
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.3.3
 pkg_license=('lgplv3+')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

@@ -1,6 +1,6 @@
 pkg_name=sqitch
 pkg_version=0.9995
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('MIT')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Sqitch is a database change management application."

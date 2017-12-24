@@ -1,5 +1,5 @@
 pkg_name=shield-proxy
-pkg_origin=core
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Proxy package for the Shield backup and restore tool"
 pkg_license=('Apache-2.0')

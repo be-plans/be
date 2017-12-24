@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=libidn2
 pkg_version=2.0.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

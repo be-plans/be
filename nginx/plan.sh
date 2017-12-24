@@ -1,5 +1,5 @@
 pkg_name=nginx
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.13.1
 pkg_description="NGINX web server."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

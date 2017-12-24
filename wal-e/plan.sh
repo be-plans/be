@@ -1,6 +1,6 @@
 pkg_name=wal-e
 pkg_version=1.0.2
-pkg_origin=lilian
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('wal-e license')
 pkg_description="Continuous Archiving for Postgres"

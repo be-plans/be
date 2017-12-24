@@ -1,5 +1,5 @@
 pkg_name=protobuf-rust
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.0.18
 pkg_license=('BSD')
 pkg_source=nosuchfile.tar.gz

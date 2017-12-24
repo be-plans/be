@@ -1,6 +1,6 @@
 pkg_name=rngd
 pkg_description="Check and feed random data from hardware device to kernel"
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=5
 pkg_license=('GPL-2.0')
 pkg_upstream_url=https://sourceforge.net/projects/gkernel/

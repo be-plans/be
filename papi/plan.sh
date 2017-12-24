@@ -1,5 +1,5 @@
 pkg_name=papi
-pkg_origin=core
+pkg_origin=be
 pkg_version=5.5.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Performance API"

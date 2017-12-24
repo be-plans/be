@@ -1,5 +1,5 @@
 pkg_name=jetty
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=9.1.5
 jetty_release=v20140505
 pkg_source=http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/${pkg_version}.${jetty_release}/jetty-distribution-${pkg_version}.${jetty_release}.tar.gz

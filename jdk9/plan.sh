@@ -1,6 +1,6 @@
 source ../jdk8/plan.sh
 
-pkg_origin=core
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_name=jdk9
 pkg_version=9.0.1

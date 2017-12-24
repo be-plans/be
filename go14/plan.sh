@@ -1,5 +1,5 @@
 pkg_name=go14
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.4.3
 pkg_description="Go is an open source programming language that makes it easy to build simple, reliable, and efficient software."
 pkg_upstream_url=https://golang.org/

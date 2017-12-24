@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=graphviz
 pkg_description="Graphviz - Graph Visualization Software"
 pkg_upstream_url=http://www.graphviz.org/

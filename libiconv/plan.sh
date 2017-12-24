@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=libiconv
 pkg_version=1.15
 pkg_license=('GPL-2.0')

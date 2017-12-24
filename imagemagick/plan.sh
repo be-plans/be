@@ -1,5 +1,5 @@
 pkg_name=imagemagick
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=7.0.5-10
 pkg_description="A software suite to create, edit, compose, or convert bitmap images."
 pkg_upstream_url="http://imagemagick.org/"

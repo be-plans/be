@@ -1,5 +1,5 @@
 pkg_name=libidn
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.33
 pkg_license=('lgplv2+')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

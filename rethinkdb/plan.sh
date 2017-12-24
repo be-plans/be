@@ -1,5 +1,5 @@
 pkg_name=rethinkdb
-pkg_origin=core
+pkg_origin=be
 pkg_version=2.3.5
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="The open-source database for the realtime web."

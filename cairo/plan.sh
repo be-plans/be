@@ -1,5 +1,5 @@
 pkg_name=cairo
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="1.14.10"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=(
@@ -61,7 +61,7 @@ do_build() {
 
   ./configure --prefix="${pkg_prefix}" \
               --enable-xlib
-  
+
   make -j "$(nproc)"
 }
 

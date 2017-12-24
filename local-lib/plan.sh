@@ -1,6 +1,6 @@
 pkg_name=local-lib
 pkg_version=2.000023
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('Artistic-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="create and use a local lib/ for perl modules with PERL5LIB"

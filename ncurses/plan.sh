@@ -1,5 +1,5 @@
 pkg_name=ncurses
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=6.0
 pkg_description="The ncurses (new curses) library"
 pkg_upstream_url=https://www.gnu.org/software/ncurses/

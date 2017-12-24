@@ -1,5 +1,5 @@
 pkg_name=json-glib
-pkg_origin=core
+pkg_origin=be
 pkg_version="1.2.8"
 pkg_description="A library for reading and parsing JSON using GLib and GObject data types and API"
 pkg_upstream_url="https://developer.gnome.org/json-glib/"

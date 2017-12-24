@@ -1,5 +1,5 @@
 pkg_name=mongodb
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.2.13
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="High-performance, schema-free, document-oriented database"

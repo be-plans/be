@@ -1,6 +1,6 @@
 pkg_name=libxt
 pkg_distname=libXt
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.1.5
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

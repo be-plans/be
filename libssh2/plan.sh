@@ -1,5 +1,5 @@
 pkg_name=libssh2
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.8.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="libssh2 is a client-side C library implementing the SSH2 protocol"

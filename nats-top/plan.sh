@@ -1,5 +1,5 @@
 pkg_name=nats-top
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.3.2
 pkg_description="Top like program monitor for NATS."
 pkg_upstream_url=https://github.com/nats-io/nats-top

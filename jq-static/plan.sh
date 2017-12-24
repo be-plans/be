@@ -1,6 +1,6 @@
 pkg_name=jq-static
 pkg_distname=jq
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.5
 pkg_license=('mit')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

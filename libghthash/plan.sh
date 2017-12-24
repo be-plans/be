@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=libghthash
 pkg_version=0.6.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

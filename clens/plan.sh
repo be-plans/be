@@ -1,5 +1,5 @@
 pkg_name=clens
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.7.0
 pkg_license=('isc')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

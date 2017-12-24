@@ -1,5 +1,5 @@
 pkg_name=ocaml
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="4.04.2"
 pkg_description="The OCAML compiler"
 pkg_upstream_url="https://ocaml.org/"

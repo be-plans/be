@@ -1,6 +1,6 @@
 pkg_name=docker
 pkg_description="The Docker Engine"
-pkg_origin=core
+pkg_origin=be
 pkg_version=17.09.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2')

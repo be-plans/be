@@ -1,5 +1,5 @@
 pkg_name=libedit
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.1.20170329
 pkg_license=('BSD')
 pkg_source=http://thrysoee.dk/editline/libedit-20170329-3.1.tar.gz

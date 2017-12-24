@@ -1,5 +1,5 @@
 pkg_name=libtiff
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=4.0.6
 pkg_description="Library for reading and writting files in the Tag Image File Format (TIFF)"
 pkg_upstream_url="http://www.remotesensing.org/libtiff/"

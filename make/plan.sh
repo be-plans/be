@@ -1,5 +1,5 @@
 pkg_name=make
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=4.2.1
 pkg_description="Make is a tool which controls the generation of executables and other non-source files of a program from the program's source files."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

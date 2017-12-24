@@ -1,5 +1,5 @@
 pkg_name=groff
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.22.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')

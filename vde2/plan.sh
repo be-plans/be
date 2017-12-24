@@ -1,5 +1,5 @@
 pkg_name=vde2
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.3.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="VDE is an ethernet compliant virtual network that can be spawned over a set of physical computer over the Internet."
@@ -15,7 +15,7 @@ pkg_deps=(
   core/glibc
   core/gcc-libs
   lilian/libpcap
-  lilian/openssl 
+  lilian/openssl
 )
 pkg_build_deps=(
   lilian/make

@@ -1,5 +1,5 @@
 pkg_name=musl
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.1.17
 pkg_license=('MIT')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -25,7 +25,7 @@ do_prepare() {
   build_line "Setting default stack size to '$stack_size' from default of '81920'"
   sed -i "s/#define DEFAULT_STACK_SIZE .*/#define DEFAULT_STACK_SIZE $stack_size/" \
     src/internal/pthread_impl.h
-  
+
   return 0
 }
 

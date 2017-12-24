@@ -1,5 +1,5 @@
 pkg_name=direnv
-pkg_origin=core
+pkg_origin=be
 pkg_version="2.12.2"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')

@@ -1,5 +1,5 @@
 $pkg_name="dotnet-47-dev-pack"
-$pkg_origin="core"
+$pkg_origin="be"
 $pkg_version="4.7"
 $pkg_description=".NET 4.7 Targeting Pack and the .NET 4.7 SDK."
 $pkg_upstream_url="https://www.microsoft.com/en-us/download/details.aspx?id=55168"

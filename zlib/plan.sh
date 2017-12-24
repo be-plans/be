@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=zlib
 pkg_distname=$pkg_name
 pkg_version=1.2.11

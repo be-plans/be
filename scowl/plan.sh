@@ -248,7 +248,7 @@
 #   SUCH DAMAGE.
 
 pkg_name=scowl
-pkg_origin=core
+pkg_origin=be
 pkg_version=2017.08.24
 pkg_description="Spell Checking Oriented Word Lists (SCOWL)"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

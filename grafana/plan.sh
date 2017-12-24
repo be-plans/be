@@ -1,5 +1,5 @@
 pkg_name=grafana
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="4.2.0"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')

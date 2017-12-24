@@ -1,5 +1,5 @@
 pkg_name=terraform
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=0.10.2
 pkg_license=('MPL-2.0')
 pkg_description="Terraform is a tool for building, changing, and combining infrastructure safely and efficiently"

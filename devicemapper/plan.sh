@@ -1,5 +1,5 @@
 pkg_name=devicemapper
-pkg_origin=lilian
+pkg_origin=be
 pkg_version="2.02.171"
 pkg_dirname="LVM2.${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

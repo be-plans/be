@@ -1,7 +1,7 @@
 pkg_name=github_changelog_generator
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_version=1.14.3
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('MIT')
 pkg_description="Changelog generation has never been so easy. Fully automate changelog generation -\
   this gem generate change log file based on tags, issues and merged pull requests from Github \

@@ -1,5 +1,5 @@
 pkg_name=mongo-tools
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.5.13
 pkg_description="MongoDB Tools"
 pkg_upstream_url=https://github.com/mongodb/mongo-tools

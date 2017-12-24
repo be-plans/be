@@ -1,6 +1,6 @@
 pkg_name=postgresql
 pkg_version=9.6.3
-pkg_origin=lilian
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="PostgreSQL is a powerful, open source object-relational database system."
 pkg_upstream_url="https://www.postgresql.org/"
@@ -12,7 +12,7 @@ pkg_deps=(
   lilian/bash
   lilian/envdir
   core/glibc
-  lilian/openssl 
+  lilian/openssl
   lilian/perl
   lilian/readline
   lilian/zlib

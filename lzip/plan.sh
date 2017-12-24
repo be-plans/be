@@ -1,5 +1,5 @@
 pkg_name=lzip
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.19
 pkg_description="A lossless data compressor with a user interface similar to the one of gzip or bzip2."
 pkg_upstream_url="http://www.nongnu.org/lzip/lzip.html"

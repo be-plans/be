@@ -1,5 +1,5 @@
 pkg_name=lcms2
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.8
 pkg_description="Small-footprint color management engine, version 2"
 pkg_upstream_url=http://www.littlecms.com

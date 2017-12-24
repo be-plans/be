@@ -3,7 +3,7 @@ source ../postgresql/plan.sh
 
 pkg_name=postgresql95
 pkg_version=9.5.6
-pkg_origin=lilian
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="PostgreSQL is a powerful, open source object-relational database system."
 pkg_upstream_url="https://www.postgresql.org/"

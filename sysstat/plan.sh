@@ -1,5 +1,5 @@
 pkg_name=sysstat
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=11.5.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Sysstat and the utilities it provides: iostat, mpstat, pidstat, sar, sa1, sa2 and sadf"

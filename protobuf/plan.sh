@@ -1,5 +1,5 @@
 pkg_name=protobuf
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.3.0
 pkg_license=('BSD')
 pkg_source=https://github.com/google/${pkg_name}/releases/download/v${pkg_version}/${pkg_name}-cpp-${pkg_version}.tar.gz

@@ -1,5 +1,5 @@
 pkg_name=recordproto
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.14.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X.Org Protocol Headers: recordproto"

@@ -1,5 +1,5 @@
 pkg_name=drush
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=8.1.12
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2+')

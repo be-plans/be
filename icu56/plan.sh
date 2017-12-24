@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=icu56
 pkg_version=56.1
 pkg_description="$(cat << EOF

@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=openldap
 pkg_version=2.4.45
 pkg_description="Community developed LDAP software"

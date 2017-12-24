@@ -1,5 +1,5 @@
 pkg_name=libxdamage
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.1.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X11 C Bindings"

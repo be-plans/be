@@ -1,5 +1,5 @@
 pkg_name=msgpack
-pkg_origin=core
+pkg_origin=be
 pkg_version="2.1.5"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="MessagePack implementation for C and C++"

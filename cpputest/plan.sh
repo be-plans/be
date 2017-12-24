@@ -1,5 +1,5 @@
 pkg_name=cpputest
-pkg_origin=core
+pkg_origin=be
 pkg_version="3.8"
 pkg_description="$(cat << EOF
   CppUTest is a C/C++ based unit xUnit test framework for unit testing and for test-driving your

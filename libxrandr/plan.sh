@@ -1,6 +1,6 @@
 pkg_name=libxrandr
 pkg_distname=libXrandr
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.5.1
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

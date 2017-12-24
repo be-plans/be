@@ -1,5 +1,5 @@
 pkg_name=jbigkit
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.1
 pkg_description="An implementation of the JBIG1 data compression standard"
 pkg_upstream_url=http://www.cl.cam.ac.uk/~mgk25/jbigkit/

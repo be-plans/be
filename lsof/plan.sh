@@ -1,5 +1,5 @@
 pkg_name="lsof"
-pkg_origin="lilian"
+pkg_origin="be"
 pkg_version="4.89"
 pkg_license=('lsof')
 pkg_upstream_url="https://people.freebsd.org/~abe/"

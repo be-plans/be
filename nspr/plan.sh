@@ -1,5 +1,5 @@
 pkg_name=nspr
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=4.12
 pkg_license=("MPL-2.0")
 pkg_description="Netscape Portable Runtime"

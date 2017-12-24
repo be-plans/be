@@ -1,5 +1,5 @@
 pkg_name=fixesproto
-pkg_origin=core
+pkg_origin=be
 pkg_version=5.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X.Org Protocol Headers: fixesproto"

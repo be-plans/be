@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=zstd
 pkg_version=1.2.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

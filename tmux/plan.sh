@@ -1,5 +1,5 @@
 pkg_name=tmux
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.6
 pkg_description="A terminal multiplexer"
 pkg_upstream_url=https://tmux.github.io/

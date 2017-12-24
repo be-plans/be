@@ -1,6 +1,6 @@
 pkg_name=libffi
 pkg_version=3.2.1
-pkg_origin=lilian
+pkg_origin=be
 pkg_license=('MIT')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=ftp://sourceware.org/pub/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz

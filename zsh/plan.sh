@@ -1,5 +1,5 @@
 pkg_name=zsh
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=5.3.1
 pkg_description="Zsh is a shell designed for interactive use, although it is also a powerful scripting language."
 pkg_upstream_url="http://www.zsh.org"

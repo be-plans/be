@@ -1,5 +1,5 @@
 pkg_name=mpfr
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=3.1.5
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('LGPL-2.0')

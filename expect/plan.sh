@@ -1,5 +1,5 @@
 pkg_name=expect
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=5.45
 pkg_license=('custom')
 pkg_description="A tool for automating interactive applications"

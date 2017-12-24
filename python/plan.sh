@@ -1,4 +1,4 @@
-pkg_origin=lilian
+pkg_origin=be
 pkg_name=python
 pkg_distname=Python
 pkg_version=3.6.3
@@ -16,7 +16,7 @@ pkg_deps=(
   lilian/gdbm
   core/glibc
   lilian/ncurses
-  lilian/openssl 
+  lilian/openssl
   lilian/readline
   lilian/sqlite
   lilian/zlib

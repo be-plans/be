@@ -1,5 +1,5 @@
 pkg_name=percona-xtrabackup
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.3.5
 pkg_source=http://github.com/percona/percona-xtrabackup/archive/${pkg_name}-${pkg_version}.tar.gz
 pkg_upstream_url=https://www.percona.com/software/mysql-database/percona-xtrabackup
@@ -54,7 +54,7 @@ do_build() {
     -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_CONFIG=xtrabackup_release \
     -DWITH_MAN_PAGES=OFF
-    
+
 
   make -j "$(nproc)"
 }

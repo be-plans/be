@@ -1,6 +1,6 @@
 pkg_name=libxau
 pkg_distname=libXau
-pkg_origin=core
+pkg_origin=be
 pkg_version=1.0.8
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

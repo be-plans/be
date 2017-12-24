@@ -1,5 +1,5 @@
 pkg_name=httpd
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.4.25
 pkg_description="The Apache HTTP Server"
 pkg_upstream_url="http://httpd.apache.org/"

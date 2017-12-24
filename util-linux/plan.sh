@@ -1,5 +1,5 @@
 pkg_name=util-linux
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.30
 pkg_license=('GPL-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

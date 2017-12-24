@@ -1,5 +1,5 @@
 pkg_name=inetutils
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.9.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')

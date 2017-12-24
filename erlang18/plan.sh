@@ -1,5 +1,5 @@
 pkg_name=erlang18
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=18.3
 pkg_description="A programming language for massively scalable soft real-time systems."
 pkg_upstream_url="http://www.erlang.org/"

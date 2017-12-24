@@ -1,5 +1,5 @@
 pkg_name=glibc
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2.25
 pkg_description="Portable and high performance C library"
 pkg_upstream_url="https://www.gnu.org/software/libc/"

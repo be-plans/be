@@ -1,5 +1,5 @@
 pkg_name=libdrm
-pkg_origin=core
+pkg_origin=be
 pkg_version=2.4.88
 pkg_description="Direct Rendering Manager"
 pkg_upstream_url="https://dri.freedesktop.org/wiki/"

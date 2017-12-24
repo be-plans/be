@@ -1,5 +1,5 @@
 pkg_name=tzdata
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=2017b
 pkg_description="Sources for time zone and daylight saving time data"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

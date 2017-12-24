@@ -1,5 +1,5 @@
 pkg_name=openresty
-pkg_origin=lilian
+pkg_origin=be
 pkg_version=1.11.2.2
 pkg_description="Scalable Web Platform by Extending NGINX with Lua"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

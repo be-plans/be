@@ -1,6 +1,6 @@
 pkg_name=autogen
 pkg_version=5.18.12
-pkg_origin=lilian
+pkg_origin=be
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
 pkg_description="A tool designed to simplify the creation and maintenance of programs that contain large amounts of repetitious text"

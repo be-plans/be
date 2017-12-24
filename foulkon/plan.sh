@@ -2,7 +2,7 @@ go_pkg="github.com/Tecsisa/foulkon"
 
 pkg_name=foulkon
 pkg_description="Authorization server written in Go"
-pkg_origin=core
+pkg_origin=be
 pkg_version="v0.4.0"
 pkg_source="https://$go_pkg"
 pkg_upstream_url=$pkg_source
