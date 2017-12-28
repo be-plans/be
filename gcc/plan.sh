@@ -1,13 +1,13 @@
 pkg_name=gcc
 pkg_distname=$pkg_name
 pkg_origin=be
-pkg_version=7.1.0
+pkg_version=7.2.0
 pkg_description="The GNU Compiler Collection"
 pkg_upstream_url="https://gcc.gnu.org/"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}/${pkg_distname}-${pkg_version}.tar.bz2
-pkg_shasum=8a8136c235f64c6fef69cac0d73a46a1a09bb250776a050aec8f9fc880bebc17
+pkg_source=http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}/${pkg_distname}-${pkg_version}.tar.xz
+pkg_shasum=1cf7adf8ff4b5aa49041c8734bbcf1ad18cc4c94d0029aae0f4e48841088479a
 pkg_deps=(
   core/glibc lilian/zlib lilian/gmp
   lilian/mpfr lilian/libmpc lilian/binutils
