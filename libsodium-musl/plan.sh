@@ -20,5 +20,5 @@ do_prepare() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make)
+  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make)
 fi

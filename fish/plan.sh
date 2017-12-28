@@ -17,7 +17,7 @@ pkg_deps=(
   lilian/net-tools
 )
 pkg_build_deps=(
-  lilian/gcc
+  be/gcc
   lilian/make
 )
 pkg_bin_dirs=(bin)

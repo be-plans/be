@@ -14,7 +14,7 @@ pkg_deps=(
   lilian/unbound
 )
 pkg_build_deps=(
-  lilian/gcc lilian/make lilian/pkg-config
+  be/gcc lilian/make lilian/pkg-config
   lilian/diffutils lilian/coreutils lilian/p11-kit
 )
 pkg_bin_dirs=(bin)

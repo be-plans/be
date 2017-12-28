@@ -8,7 +8,7 @@ pkg_license=('MIT')
 pkg_description='libsass command line driver'
 pkg_upstream_url=https://github.com/sass/sassc
 pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(lilian/make lilian/gcc lilian/coreutils)
+pkg_build_deps=(lilian/make be/gcc lilian/coreutils)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 

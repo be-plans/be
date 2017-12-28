@@ -17,7 +17,7 @@ pkg_build_deps=(
   lilian/cmake
   lilian/diffutils
   lilian/flex
-  lilian/gcc
+  be/gcc
   lilian/libxml2
   lilian/m4
   lilian/make

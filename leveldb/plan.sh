@@ -11,7 +11,7 @@ pkg_deps=(
   core/glibc lilian/snappy
 )
 pkg_build_deps=(
-  lilian/make lilian/gcc
+  lilian/make be/gcc
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

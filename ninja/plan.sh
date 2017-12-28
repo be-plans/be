@@ -14,14 +14,13 @@ pkg_deps=(
   core/gcc-libs
 )
 pkg_build_deps=(
-  lilian/gcc
+  be/gcc
   lilian/python
   lilian/coreutils
   lilian/re2c
 )
 pkg_bin_dirs=(bin)
 
-use_lto=true
 source ../defaults.sh
 
 do_build() {

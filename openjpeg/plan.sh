@@ -17,7 +17,7 @@ pkg_deps=(
 
 pkg_build_deps=(
   lilian/cmake
-  lilian/gcc
+  be/gcc
   lilian/make
 )
 pkg_bin_dirs=(bin)

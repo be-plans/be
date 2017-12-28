@@ -10,7 +10,7 @@ pkg_shasum=a72428c7917bdf9fa93cb8181c971b6e22834125848cf1d03ce10b1bb0716fe1
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/m4 lilian/perl
+  lilian/make be/gcc lilian/m4 lilian/perl
 )
 pkg_bin_dirs=(bin)
 
@@ -24,5 +24,5 @@ source ../defaults.sh
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/m4 lilian/coreutils)
+  pkg_build_deps=(be/gcc lilian/m4 lilian/coreutils)
 fi

@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="https://github.com/PowerShell/PowerShell"
 pkg_deps=(
   core/dotnet-core
-  lilian/gcc
+  be/gcc
   core/glibc
   core/gcc-libs
   core/icu/52.1

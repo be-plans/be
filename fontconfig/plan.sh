@@ -18,7 +18,7 @@ pkg_deps=(
   lilian/expat
   core/gcc-libs
 )
-pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils lilian/python
+pkg_build_deps=(be/gcc lilian/make lilian/coreutils lilian/python
                 lilian/pkg-config lilian/diffutils lilian/libtool
                 lilian/m4 lilian/automake lilian/autoconf lilian/file)
 pkg_include_dirs=(include)

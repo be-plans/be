@@ -17,7 +17,7 @@ pkg_build_deps=(
   lilian/cmake
   lilian/coreutils
   lilian/diffutils
-  lilian/gcc
+  be/gcc
   lilian/ninja
   lilian/python2
 )

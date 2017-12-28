@@ -11,7 +11,7 @@ pkg_deps=(
   core/glibc lilian/gmp
 )
 pkg_build_deps=(
-  lilian/gcc lilian/make lilian/m4
+  be/gcc lilian/make lilian/m4
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include include/nettle)

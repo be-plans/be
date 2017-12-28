@@ -12,7 +12,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc
+  lilian/make be/gcc
 )
 pkg_bin_dirs=(bin)
 
@@ -77,5 +77,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc)
+  pkg_build_deps=(be/gcc)
 fi

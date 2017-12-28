@@ -12,7 +12,7 @@ pkg_deps=(lilian/node)
 pkg_build_deps=(
   lilian/cacerts
   lilian/coreutils
-  lilian/gcc
+  be/gcc
   lilian/git
   lilian/make
   lilian/node

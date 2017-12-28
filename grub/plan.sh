@@ -18,7 +18,7 @@ pkg_build_deps=(
   lilian/dosfstools
   lilian/flex
   lilian/freetype
-  lilian/gcc
+  be/gcc
   lilian/gettext
   lilian/git
   lilian/m4
@@ -35,7 +35,7 @@ pkg_deps=(
 )
 
 no_pie=true
-be_optimizations="-O2 -DNDEBUG -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -mavx -march=corei7-avx -mtune=corei7-avx"
+be_optimizations="-O2 -DNDEBUG -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -mavx -march=x86-64 -mtune=corei7-avx"
 be_protection=" "
 source ../defaults.sh
 

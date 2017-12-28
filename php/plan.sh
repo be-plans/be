@@ -24,7 +24,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/bison2
-  lilian/gcc
+  be/gcc
   lilian/make
   lilian/re2c
   lilian/readline

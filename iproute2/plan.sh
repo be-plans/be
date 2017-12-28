@@ -12,7 +12,7 @@ pkg_lib_dirs=(lib)
 pkg_build_deps=(
   lilian/bison
   lilian/flex
-  lilian/gcc
+  be/gcc
   lilian/iptables
   lilian/m4
   lilian/make

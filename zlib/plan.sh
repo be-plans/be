@@ -10,7 +10,7 @@ pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc
+  lilian/make be/gcc
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

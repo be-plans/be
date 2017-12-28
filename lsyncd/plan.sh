@@ -9,7 +9,7 @@ pkg_shasum=02c241ee71b6abb23a796ac994a414e1229f530c249b838ae72d2ef74ae0f775
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/cmake
-  lilian/gcc
+  be/gcc
   core/lua/5.1.5
   lilian/make
 )

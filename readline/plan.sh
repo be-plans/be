@@ -10,7 +10,7 @@ pkg_shasum=56ba6071b9462f980c5a72ab0023893b65ba6debb4eeb475d7a563dc65cafd43
 pkg_deps=(core/glibc lilian/ncurses)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/bison lilian/grep
+  lilian/make be/gcc lilian/bison lilian/grep
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -87,5 +87,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/bison lilian/grep)
+  pkg_build_deps=(be/gcc lilian/bison lilian/grep)
 fi

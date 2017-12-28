@@ -9,7 +9,7 @@ pkg_source="http://download.savannah.gnu.org/releases/libpipeline/libpipeline-${
 pkg_shasum=da46d7b20163aadb9db2faae483f734e9096a7550c84b94029abeab62dd1b9ee
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  lilian/gcc   lilian/coreutils
+  be/gcc   lilian/coreutils
   lilian/make  lilian/diffutils
 )
 pkg_lib_dirs=(lib)

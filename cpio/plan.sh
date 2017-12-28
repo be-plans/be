@@ -8,6 +8,6 @@ pkg_shasum=08a35e92deb3c85d269a0059a27d4140a9667a6369459299d08c17f713a92e73
 pkg_deps=()
 pkg_build_deps=(
   lilian/make
-  lilian/gcc
+  be/gcc
 )
 pkg_bin_dirs=(bin)

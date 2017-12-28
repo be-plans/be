@@ -11,11 +11,10 @@ pkg_shasum=8891d349ee87b9ff7870f52b6d9312a9db672d2439d289bc57084771ca21656b
 pkg_deps=(core/glibc lilian/acl lilian/attr
           lilian/gmp lilian/libcap)
 pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make
-                lilian/gcc       lilian/m4        lilian/perl  lilian/inetutils)
+                be/gcc       lilian/m4        lilian/perl  lilian/inetutils)
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/env)
 
-use_lto=true
 no_pie=true
 source ../defaults.sh
 
@@ -44,5 +43,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/m4)
+  pkg_build_deps=(be/gcc lilian/m4)
 fi

@@ -17,7 +17,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/autoconf
-  lilian/gcc
+  be/gcc
   lilian/glib
   lilian/make
   lilian/openssl

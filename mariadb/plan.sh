@@ -10,7 +10,7 @@ pkg_deps=(
   core/gcc-libs lilian/ncurses lilian/zlib
 )
 pkg_build_deps=(
-  lilian/gcc lilian/make lilian/coreutils
+  be/gcc lilian/make lilian/coreutils
   lilian/cmake lilian/gnupg
 )
 pkg_bin_dirs=(bin)

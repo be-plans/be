@@ -8,7 +8,7 @@ pkg_license=('MIT')
 pkg_source="https://downloads.sourceforge.net/project/${pkg_name}/${pkg_name}/${pkg_version}/${pkg_name}-${pkg_version}.tar.bz2"
 pkg_shasum=4376911fcf81a23ebd821bbabc26fd933f3ac74833f74924342c29aad2c86046
 pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make be/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -44,5 +44,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils)
+  pkg_build_deps=(be/gcc lilian/coreutils)
 fi

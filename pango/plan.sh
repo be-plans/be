@@ -31,7 +31,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/file
-  lilian/gcc
+  be/gcc
   lilian/make
   lilian/perl
   lilian/pkg-config

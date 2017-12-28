@@ -12,7 +12,7 @@ pkg_deps=(
   lilian/zlib lilian/bzip2 lilian/openssl
   lilian/pcre
 )
-pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils)
+pkg_build_deps=(be/gcc lilian/make lilian/coreutils)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(sbin)
 pkg_include_dirs=(include)

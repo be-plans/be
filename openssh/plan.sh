@@ -14,7 +14,7 @@ pkg_deps=(
   core/glibc lilian/openssl lilian/zlib
 )
 pkg_build_deps=(
-  lilian/coreutils lilian/gcc lilian/make
+  lilian/coreutils be/gcc lilian/make
 )
 
 pkg_svc_user="root"

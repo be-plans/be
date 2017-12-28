@@ -12,7 +12,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/doxygen lilian/cmake lilian/make
-  lilian/gcc
+  be/gcc
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

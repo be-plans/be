@@ -10,7 +10,7 @@ pkg_deps=(
   ${pkg_deps[@]}
   core/go17
   lilian/git
-  lilian/gcc
+  be/gcc
   lilian/make
 )
 pkg_scaffolding=core/scaffolding-base

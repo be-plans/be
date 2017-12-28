@@ -13,7 +13,7 @@ pkg_build_deps=(
   lilian/diffutils
   lilian/elfutils
   lilian/findutils
-  lilian/gcc
+  be/gcc
   lilian/inetutils
   lilian/make
   lilian/perl

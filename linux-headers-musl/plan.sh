@@ -9,7 +9,7 @@ pkg_dirname=kernel-headers-$pkg_version
 pkg_deps=()
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc
+  lilian/make be/gcc
 )
 pkg_include_dirs=(include)
 
@@ -37,5 +37,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(be/gcc lilian/coreutils lilian/diffutils lilian/make lilian/patch)
 fi

@@ -14,7 +14,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/gawk lilian/m4
+  lilian/make be/gcc lilian/gawk lilian/m4
   lilian/texinfo lilian/perl lilian/inetutils
   lilian/expect lilian/dejagnu
 )
@@ -158,6 +158,7 @@ do_build() {
       --enable-threads=posix \
       --enable-clocale=gnu \
       --enable-install-libiberty \
+      --enable-linker-build-id \
       --with-system-zlib \
       --with-gnu-ld \
       --with-ppl=yes \
@@ -166,7 +167,7 @@ do_build() {
       --disable-multiarch \
       --disable-libunwind-exceptions \
       --disable-vtable-verify \
-      --with-arch=corei7-avx \
+      --with-arch=x86-64 \
       --with-tune=corei7-avx \
       --with-glibc-version=2.22
 

@@ -13,7 +13,7 @@ pkg_shasum=b409adcbf245baadb68d2f66accf6fdca5e282cafec1b865f4b5e963ba8ea7fb
 pkg_deps=(core/glibc lilian/m4)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/perl
+  lilian/make be/gcc lilian/perl
 )
 pkg_bin_dirs=(bin)
 

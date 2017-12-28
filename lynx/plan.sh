@@ -13,7 +13,7 @@ pkg_deps=(
   lilian/ncurses
 )
 pkg_build_deps=(
-  lilian/gcc
+  be/gcc
   lilian/make
 )
 pkg_bin_dirs=(bin)

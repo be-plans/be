@@ -9,7 +9,7 @@ pkg_deps=(
   core/glibc lilian/openssl lilian/lzo
 )
 pkg_build_deps=(
-  lilian/gcc lilian/coreutils lilian/make
+  be/gcc lilian/coreutils lilian/make
   core/busybox-static
 )
 pkg_bin_dirs=(bin)

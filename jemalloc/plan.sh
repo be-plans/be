@@ -10,7 +10,7 @@ pkg_shasum=9e4a9efba7dc4a7696f247c90c3fe89696de5f910f7deacf7e22ec521b1fa810
 pkg_dirname=${pkg_name}-${pkg_version}
 pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
-  lilian/gcc
+  be/gcc
   lilian/make
 )
 pkg_bin_dirs=(bin)

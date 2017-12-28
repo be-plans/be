@@ -12,7 +12,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/procps-ng lilian/inetutils
+  lilian/make be/gcc lilian/procps-ng lilian/inetutils
   lilian/iana-etc
 )
 pkg_bin_dirs=(bin)
@@ -129,5 +129,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/procps-ng lilian/inetutils lilian/iana-etc)
+  pkg_build_deps=(be/gcc lilian/procps-ng lilian/inetutils lilian/iana-etc)
 fi

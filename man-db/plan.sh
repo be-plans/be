@@ -18,7 +18,7 @@ pkg_build_deps=(
   lilian/coreutils
   lilian/diffutils
   lilian/flex
-  lilian/gcc
+  be/gcc
   lilian/gettext
   lilian/libpipeline
   lilian/make

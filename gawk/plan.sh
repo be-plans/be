@@ -8,7 +8,7 @@ pkg_shasum=53e184e2d0f90def9207860531802456322be091c7b48f23fdc79cda65adc266
 pkg_deps=(core/glibc lilian/mpfr)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/sed
+  lilian/make be/gcc lilian/sed
 )
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/awk bin/gawk)
@@ -28,5 +28,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed)
+  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed)
 fi

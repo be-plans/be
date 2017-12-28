@@ -33,14 +33,14 @@ pkg_build_deps=(
   lilian/autoconf
   lilian/automake
   lilian/diffutils
-  lilian/gcc
+  be/gcc
   lilian/libtool
   lilian/make
   lilian/m4
   lilian/pkg-config
 )
 
-be_optimizations="-O2 -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -m64 -mavx -march=corei7-avx -mtune=corei7-avx"
+be_optimizations="-O2 -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -m64 -mavx -march=x86-64 -mtune=corei7-avx"
 source ../defaults.sh
 
 do_build() {

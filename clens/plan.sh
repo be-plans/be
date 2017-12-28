@@ -8,7 +8,7 @@ pkg_shasum=064ac9954d38633e2cff6b696fd049dedc3e90b79acffbee1a87754bcf604267
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/libbsd
+  lilian/make be/gcc lilian/libbsd
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -33,5 +33,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/diffutils lilian/make lilian/patch lilian/libbsd)
+  pkg_build_deps=(be/gcc lilian/coreutils lilian/diffutils lilian/make lilian/patch lilian/libbsd)
 fi

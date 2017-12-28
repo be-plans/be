@@ -10,7 +10,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_deps=(core/glibc)
 pkg_bin_dirs=(bin)
 pkg_build_deps=(
-  lilian/coreutils lilian/make lilian/gcc
+  lilian/coreutils lilian/make be/gcc
   core/busybox-static
 )
 pkg_dirname="lsof_${pkg_version}"

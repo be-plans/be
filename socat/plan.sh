@@ -8,5 +8,5 @@ pkg_description="Multipurpose relay for bidirectional data transfer between two 
 pkg_upstream_url=http://www.dest-unreach.org/socat/
 pkg_license=('GPL-2.0')
 pkg_bin_dirs=(bin)
-pkg_build_deps=(lilian/make lilian/gcc)
+pkg_build_deps=(lilian/make be/gcc)
 pkg_deps=(core/glibc lilian/readline lilian/openssl)

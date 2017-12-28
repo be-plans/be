@@ -6,7 +6,7 @@ pkg_license=('gplv2+')
 pkg_source=http://pkgconfig.freedesktop.org/releases/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make be/gcc)
 pkg_bin_dirs=(bin)
 
 do_build() {
@@ -30,5 +30,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc)
+  pkg_build_deps=(be/gcc)
 fi

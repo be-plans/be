@@ -14,7 +14,7 @@ pkg_build_deps=(
   lilian/busybox-static
   lilian/cmake
   lilian/doxygen
-  lilian/gcc
+  be/gcc
   lilian/make
 )
 pkg_bin_dirs=(bin)

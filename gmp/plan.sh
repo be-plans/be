@@ -10,7 +10,7 @@ pkg_shasum=87b565e89a9a684fe4ebeeddb8399dce2599f9c9049854ca8c0dfbdea0e21912
 pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make      lilian/gcc       lilian/binutils
+  lilian/make      be/gcc       lilian/binutils
   lilian/m4
 )
 pkg_include_dirs=(include)

@@ -16,7 +16,7 @@ pkg_deps=(lilian/bdwgc
   lilian/libtool
   lilian/libunistring
   lilian/readline)
-pkg_build_deps=(lilian/diffutils lilian/gcc lilian/make lilian/pkg-config)
+pkg_build_deps=(lilian/diffutils be/gcc lilian/make lilian/pkg-config)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

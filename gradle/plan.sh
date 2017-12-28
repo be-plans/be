@@ -13,7 +13,7 @@ pkg_deps=(
   core/glibc core/gcc-libs lilian/jre8
   lilian/coreutils core/bash-static lilian/sed)
 pkg_build_deps=(
-  lilian/make lilian/gcc
+  lilian/make be/gcc
   lilian/jdk8 lilian/patchelf
 )
 

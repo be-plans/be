@@ -12,7 +12,7 @@ pkg_dirname=${pkg_name}-src-r${pkg_version}
 pkg_deps=(core/gcc-libs core/glibc lilian/openssl)
 pkg_build_deps=(
   lilian/coreutils
-  lilian/gcc
+  be/gcc
   core/glibc
   lilian/python2
   lilian/scons
@@ -35,8 +35,8 @@ source ../defaults.sh
 do_prepare() {
     do_default_prepare
 
-    CC="$(pkg_path_for lilian/gcc)/bin/gcc"
-    CXX="$(pkg_path_for lilian/gcc)/bin/g++"
+    CC="$(pkg_path_for be/gcc)/bin/gcc"
+    CXX="$(pkg_path_for be/gcc)/bin/g++"
     export CC
     export CXX
 

@@ -7,7 +7,7 @@ pkg_source=https://github.com/${pkg_name}/${pkg_name}/archive/v${pkg_version}.ta
 pkg_shasum=2ca482ea7a9bb103603108b5a7510b7592b90158c151ff50a28f1ca8389fccf6
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  lilian/gcc lilian/make lilian/diffutils
+  be/gcc lilian/make lilian/diffutils
   lilian/valgrind
 )
 pkg_bin_dirs=(bin)

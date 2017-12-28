@@ -13,7 +13,7 @@ pkg_shasum=c7db717810ab6965f66c8cf0398a98c9d8df982da39b4cd7f162911eb89596fa
 pkg_deps=()
 pkg_build_deps=(
   lilian/make
-  lilian/gcc
+  be/gcc
   lilian/python2
 )
 pkg_bin_dirs=(bin)

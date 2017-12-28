@@ -22,7 +22,7 @@ pkg_build_deps=(
   lilian/diffutils
   lilian/patch
   lilian/make
-  lilian/gcc
+  be/gcc
   lilian/python2
   lilian/libxml2
   lilian/libxslt

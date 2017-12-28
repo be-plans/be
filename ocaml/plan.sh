@@ -8,7 +8,7 @@ pkg_license=('LGPL-2.0')
 pkg_source="https://github.com/ocaml/ocaml/archive/${pkg_version}.tar.gz"
 pkg_shasum="6277a477956fc7b76f28af9941dce2984d0df809a0361093eb2e28234bf9c8ed"
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/make lilian/gcc)
+pkg_build_deps=(lilian/make be/gcc)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 

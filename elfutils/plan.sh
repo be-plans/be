@@ -14,7 +14,7 @@ pkg_deps=(
   lilian/zlib
 )
 pkg_build_deps=(
-  lilian/gcc
+  be/gcc
   core/glibc
   lilian/m4
   lilian/make

@@ -11,7 +11,7 @@ pkg_dirname=${pkg_name}-${pkg_version}-x86_64-unknown-linux-gnu
 pkg_shasum=8cf4e840041fb05721673836997c5aac5673f733660927dfb64b8d653a3a94fa
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
-pkg_deps=(core/glibc core/gcc-libs lilian/zlib lilian/gcc lilian/cacerts core/busybox-static)
+pkg_deps=(core/glibc core/gcc-libs lilian/zlib be/gcc lilian/cacerts core/busybox-static)
 pkg_build_deps=(lilian/patchelf lilian/findutils lilian/coreutils)
 
 _target_sources=(

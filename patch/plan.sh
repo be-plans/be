@@ -8,7 +8,7 @@ pkg_shasum=fd95153655d6b95567e623843a0e77b81612d502ecf78a489a4aed7867caa299
 pkg_deps=(core/glibc lilian/attr)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/make
-  lilian/gcc lilian/sed
+  be/gcc lilian/sed
 )
 pkg_bin_dirs=(bin)
 
@@ -27,5 +27,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make)
+  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make)
 fi

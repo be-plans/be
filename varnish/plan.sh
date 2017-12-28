@@ -10,7 +10,7 @@ pkg_source="https://varnish-cache.org/_downloads/${pkg_name}-${pkg_version}.tgz"
 pkg_shasum=39d858137e26948a7c85f07363f13f0778da61d234126e03a160a0cb9ba4fce3
 pkg_deps=(
   core/glibc lilian/ncurses lilian/docutils
-  lilian/pcre lilian/gcc lilian/bash
+  lilian/pcre be/gcc lilian/bash
 )
 pkg_build_deps=(
   lilian/make     lilian/python2  lilian/pkg-config

@@ -13,7 +13,7 @@ pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/diffutils
   lilian/file
-  lilian/gcc
+  be/gcc
   lilian/make
   lilian/nasm
 )

@@ -12,7 +12,7 @@ pkg_deps=(
   lilian/expat
 )
 pkg_build_deps=(
-  lilian/gcc lilian/make
+  be/gcc lilian/make
   lilian/diffutils lilian/coreutils
 )
 pkg_bin_dirs=(bin)

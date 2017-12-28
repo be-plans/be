@@ -16,7 +16,7 @@ pkg_deps=(
   lilian/libgcrypt lilian/libgpg-error lilian/libtool
 )
 pkg_build_deps=(
-  lilian/m4 lilian/make lilian/gcc
+  lilian/m4 lilian/make be/gcc
   lilian/bison lilian/cmake lilian/mysql
   lilian/libaio lilian/boost/1.59.0
 )

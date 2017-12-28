@@ -12,7 +12,7 @@ pkg_build_deps=(
   lilian/autoconf
   lilian/automake
   lilian/make
-  lilian/gcc
+  be/gcc
   lilian/expat
 )
 pkg_lib_dirs=(lib)

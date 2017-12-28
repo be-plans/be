@@ -15,7 +15,7 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/bison
   lilian/busybox
-  lilian/gcc
+  be/gcc
   lilian/m4
   lilian/make
   lilian/perl

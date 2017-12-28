@@ -10,11 +10,10 @@ pkg_shasum=63ed4766c2e0fcb5391a14033930329369f437d7060a11d82874e57e278bda5f
 pkg_deps=()
 pkg_build_deps=(
   lilian/linux-headers-musl lilian/musl lilian/make
-  lilian/gcc lilian/diffutils
+  be/gcc lilian/diffutils
 )
 pkg_bin_dirs=(bin)
 
-use_lto=true
 source ../defaults.sh
 
 do_prepare() {

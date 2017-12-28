@@ -12,7 +12,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/sed lilian/findutils
+  lilian/make be/gcc lilian/sed lilian/findutils
 )
 pkg_bin_dirs=(bin)
 
@@ -42,5 +42,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/findutils lilian/make lilian/patch)
+  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/findutils lilian/make lilian/patch)
 fi

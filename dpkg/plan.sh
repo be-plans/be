@@ -18,7 +18,7 @@ pkg_build_deps=(
   lilian/autoconf
   lilian/automake
   lilian/bzip2
-  lilian/gcc
+  be/gcc
   lilian/gettext
   lilian/libtool
   lilian/patch

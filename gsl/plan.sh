@@ -10,7 +10,7 @@ pkg_shasum=562500b789cd599b3a4f88547a7a3280538ab2ff4939504c8b4ac4ca25feadfb
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/make
-  lilian/gcc
+  be/gcc
   lilian/diffutils
 )
 pkg_include_dirs=(include)

@@ -14,7 +14,7 @@ pkg_deps=(
   lilian/openssl  lilian/sed
 )
 pkg_build_deps=(
-  lilian/coreutils lilian/gcc lilian/make
+  lilian/coreutils be/gcc lilian/make
   lilian/openssl  lilian/perl lilian/m4
 )
 pkg_bin_dirs=(bin)

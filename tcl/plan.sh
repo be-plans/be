@@ -9,7 +9,7 @@ pkg_source=http://downloads.sourceforge.net/sourceforge/${pkg_name}/${pkg_name}$
 pkg_shasum=9e6ed94c981c1d0c5f5fefb8112d06c6bf4d050a7327e95e71d417c416519c8d
 pkg_dirname=${pkg_name}${pkg_version}
 pkg_deps=(core/glibc core/gcc-libs lilian/zlib)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make be/gcc lilian/sed)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -80,5 +80,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch)
 fi

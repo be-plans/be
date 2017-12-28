@@ -14,7 +14,7 @@ pkg_deps=(
   lilian/ocaml
 )
 pkg_build_deps=(
-  lilian/gcc
+  be/gcc
   lilian/make
   lilian/ocamlbuild
   lilian/which

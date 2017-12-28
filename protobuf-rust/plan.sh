@@ -4,8 +4,8 @@ pkg_version=1.0.18
 pkg_license=('BSD')
 pkg_source=nosuchfile.tar.gz
 pkg_bin_dirs=(bin)
-pkg_deps=(core/glibc lilian/gcc)
-pkg_build_deps=(core/rust lilian/gcc lilian/cacerts lilian/protobuf)
+pkg_deps=(core/glibc be/gcc)
+pkg_build_deps=(core/rust be/gcc lilian/cacerts lilian/protobuf)
 
 source ../defaults.sh
 

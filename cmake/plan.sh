@@ -16,7 +16,7 @@ pkg_build_deps=(
   lilian/coreutils
   lilian/diffutils
   lilian/make
-  lilian/gcc
+  be/gcc
   lilian/curl
   lilian/zlib
   lilian/bzip2

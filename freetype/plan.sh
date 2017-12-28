@@ -13,7 +13,7 @@ pkg_deps=(
   lilian/zlib lilian/bzip2
 )
 pkg_build_deps=(
-  lilian/gcc lilian/make lilian/coreutils
+  be/gcc lilian/make lilian/coreutils
   lilian/pkg-config lilian/diffutils
 )
 pkg_bin_dirs=(bin)

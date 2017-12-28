@@ -27,7 +27,7 @@ pkg_deps=(
 
 pkg_build_deps=(
   lilian/coreutils
-  lilian/gcc
+  be/gcc
   lilian/make
 
   # for postgis

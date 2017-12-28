@@ -36,7 +36,7 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/diffutils
   lilian/file
-  lilian/gcc
+  be/gcc
   lilian/make
   lilian/pkg-config
   lilian/xextproto

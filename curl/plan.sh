@@ -17,7 +17,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/coreutils
-  lilian/gcc
+  be/gcc
   lilian/make
   lilian/perl
   lilian/pkg-config

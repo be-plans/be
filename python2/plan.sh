@@ -24,7 +24,7 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/coreutils
   lilian/diffutils
-  lilian/gcc
+  be/gcc
   lilian/gdb
   core/linux-headers
   lilian/make

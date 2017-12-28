@@ -15,7 +15,7 @@ pkg_deps=(
   lilian/userspace-rcu
 )
 pkg_build_deps=(
-  lilian/gcc
+  be/gcc
   lilian/make
 )
 pkg_bin_dirs=(bin)

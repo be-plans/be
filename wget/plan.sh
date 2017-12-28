@@ -14,7 +14,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/sed
+  lilian/make be/gcc lilian/sed
   lilian/grep lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
@@ -61,5 +61,5 @@ _wget_common_prepare() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/pkg-config lilian/coreutils lilian/sed lilian/grep lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(be/gcc lilian/pkg-config lilian/coreutils lilian/sed lilian/grep lilian/diffutils lilian/make lilian/patch)
 fi

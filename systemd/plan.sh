@@ -26,7 +26,7 @@ pkg_build_deps=(
   lilian/cpanminus
   lilian/dbus
   lilian/expat
-  lilian/gcc
+  be/gcc
   core/gcc-libs
   lilian/gettext
   core/glibc

@@ -8,7 +8,7 @@ pkg_shasum=6297433ee120b11b4b0a1c8f3512d7d73501753142ab9e2daa13c5a3edd32a72
 pkg_deps=(core/glibc lilian/zlib)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/texinfo
+  lilian/make be/gcc lilian/texinfo
   lilian/expect lilian/dejagnu
 )
 pkg_bin_dirs=(bin)

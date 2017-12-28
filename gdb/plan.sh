@@ -26,7 +26,7 @@ pkg_build_deps=(
   lilian/dejagnu
   lilian/patch
   lilian/make
-  lilian/gcc
+  be/gcc
   lilian/texinfo
 )
 pkg_bin_dirs=(bin)

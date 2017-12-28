@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://dev.yorhel.nl/download/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=d0aea772e47463c281007f279a9041252155a2b2349b18adb9055075e141bb7b
 pkg_deps=(core/glibc lilian/ncurses)
-pkg_build_deps=(lilian/coreutils lilian/gcc lilian/make)
+pkg_build_deps=(lilian/coreutils be/gcc lilian/make)
 pkg_bin_dirs=(bin)
 
 source ../defaults.sh

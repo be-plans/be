@@ -8,7 +8,7 @@ pkg_shasum=693c8ac51e983ee678205571ef272439d83afe62dd8e424ea14ad9790bc35162
 pkg_deps=(core/glibc lilian/attr)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc core/linux-headers
+  lilian/make be/gcc core/linux-headers
   lilian/perl
 )
 pkg_bin_dirs=(bin)
@@ -42,5 +42,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc core/linux-headers)
+  pkg_build_deps=(be/gcc core/linux-headers)
 fi

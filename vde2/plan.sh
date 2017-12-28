@@ -19,7 +19,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/make
-  lilian/gcc
+  be/gcc
   core/gcc-libs
   core/glibc
   lilian/python2

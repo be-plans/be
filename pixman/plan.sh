@@ -12,7 +12,7 @@ pkg_deps=(
   lilian/zlib
 )
 pkg_build_deps=(
-  lilian/gcc lilian/make lilian/pkg-config
+  be/gcc lilian/make lilian/pkg-config
   lilian/diffutils lilian/file
 )
 pkg_lib_dirs=(lib)

@@ -17,7 +17,7 @@ pkg_build_deps=(
   lilian/check
   lilian/coreutils
   lilian/diffutils
-  lilian/gcc
+  be/gcc
   lilian/gettext
   lilian/make
   lilian/perl

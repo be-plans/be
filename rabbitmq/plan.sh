@@ -18,7 +18,7 @@ pkg_build_deps=(
   lilian/bash
   lilian/diffutils
   lilian/gawk
-  lilian/gcc
+  be/gcc
   lilian/git
   lilian/grep
   lilian/libxml2

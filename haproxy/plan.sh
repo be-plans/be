@@ -19,7 +19,7 @@ pkg_binds=(
 pkg_deps=(lilian/zlib lilian/pcre lilian/openssl)
 pkg_build_deps=(
   lilian/coreutils
-  lilian/gcc
+  be/gcc
   lilian/pcre
   lilian/make
   lilian/openssl

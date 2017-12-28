@@ -11,7 +11,7 @@ pkg_filename=${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=48c12564297641cceb5ff05aead57f28118db6277f31e2262437feba89069e84
 pkg_deps=(core/gcc-libs)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/gcc
+  lilian/coreutils lilian/diffutils be/gcc
   lilian/make
 )
 pkg_bin_dirs=(bin)

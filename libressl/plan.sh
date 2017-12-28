@@ -14,7 +14,7 @@ pkg_build_deps=(
   lilian/diffutils
   lilian/file
   lilian/make
-  lilian/gcc
+  be/gcc
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

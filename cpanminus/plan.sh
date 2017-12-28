@@ -13,7 +13,7 @@ pkg_deps=(
   core/glibc lilian/perl lilian/local-lib
 )
 pkg_build_deps=(
-  lilian/gcc  lilian/make lilian/coreutils
+  be/gcc  lilian/make lilian/coreutils
   lilian/perl lilian/local-lib
 )
 pkg_lib_dirs=(lib)

@@ -14,7 +14,7 @@ pkg_build_deps=(
   lilian/make
 )
 pkg_deps=(
-  lilian/gcc
+  be/gcc
   core/glibc
   lilian/util-linux
 )

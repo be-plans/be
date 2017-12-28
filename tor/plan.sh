@@ -17,7 +17,7 @@ pkg_deps=(
   lilian/libscrypt
 )
 pkg_build_deps=(
-  lilian/gcc lilian/make lilian/pkg-config
+  be/gcc lilian/make lilian/pkg-config
   lilian/python
 )
 pkg_lib_dirs=(lib)
@@ -29,7 +29,7 @@ pkg_exports=(
 )
 pkg_exposes=(port)
 
-be_optimizations="-O2 -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -m64 -mavx -march=corei7-avx -mtune=corei7-avx"
+be_optimizations="-O2 -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -m64 -mavx -march=x86-64 -mtune=corei7-avx"
 source ../defaults.sh
 
 do_build() {

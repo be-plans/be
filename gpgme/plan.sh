@@ -8,7 +8,7 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_deps=(core/glibc lilian/libassuan lilian/libgpg-error)
-pkg_build_deps=(lilian/gcc lilian/coreutils lilian/make)
+pkg_build_deps=(be/gcc lilian/coreutils lilian/make)
 
 source ../defaults.sh
 

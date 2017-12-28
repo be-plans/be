@@ -9,7 +9,7 @@ pkg_source=http://prdownloads.sourceforge.net/${pkg_name}/${pkg_name}-${pkg_vers
 pkg_shasum=2939aae39dec06095462f1b95ce1c958ac80d07b926e48871046d17c0094f44c
 pkg_build_deps=(
   lilian/diffutils
-  lilian/gcc
+  be/gcc
   lilian/make
 )
 pkg_deps=(

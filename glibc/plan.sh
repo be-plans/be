@@ -10,14 +10,14 @@ pkg_shasum=067bd9bb3390e79aa45911537d13c3721f1d9d3769931a30c2681bfee66f23a0
 pkg_deps=(lilian/linux-headers)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc lilian/sed lilian/perl
+  lilian/make be/gcc lilian/sed lilian/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
 no_pie=true
-be_optimizations="-O2 -DNDEBUG -fomit-frame-pointer -ftree-vectorize -m64 -mavx -march=corei7-avx -mtune=corei7-avx"
+be_optimizations="-O2 -DNDEBUG -fomit-frame-pointer -ftree-vectorize -m64 -mavx -march=x86-64 -mtune=corei7-avx"
 be_protection=" "
 source ../defaults.sh
 

@@ -18,7 +18,7 @@ pkg_build_deps=(
   lilian/apr-util
   lilian/coreutils
   lilian/diffutils
-  lilian/gcc
+  be/gcc
   lilian/make
   lilian/pkg-config
   lilian/python2

@@ -27,7 +27,7 @@ pkg_build_deps=(
   lilian/dbus
   lilian/diffutils
   lilian/file
-  lilian/gcc
+  be/gcc
   lilian/gettext
   lilian/libxslt
   lilian/make

@@ -36,7 +36,7 @@ pkg_build_deps=(
   lilian/boost/1.59.0
   lilian/cmake
   lilian/diffutils
-  lilian/gcc
+  be/gcc
   lilian/make
   lilian/patch
 )

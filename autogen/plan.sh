@@ -12,7 +12,7 @@ pkg_deps=(
   lilian/libxml2 lilian/zlib
 )
 pkg_build_deps=(
-  lilian/gcc lilian/make lilian/pkg-config
+  be/gcc lilian/make lilian/pkg-config
   lilian/diffutils lilian/which lilian/perl
 )
 pkg_bin_dirs=(bin)

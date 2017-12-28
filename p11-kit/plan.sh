@@ -11,7 +11,7 @@ pkg_deps=(
   core/glibc lilian/libtasn1 lilian/libffi
 )
 pkg_build_deps=(
-  lilian/gcc lilian/make lilian/file
+  be/gcc lilian/make lilian/file
   lilian/diffutils lilian/coreutils lilian/pkg-config
 )
 pkg_bin_dirs=(bin lib/p11-kit)

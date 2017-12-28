@@ -12,7 +12,7 @@ pkg_deps=(core/glibc)
 pkg_build_deps=(
     lilian/autoconf
     lilian/coreutils
-    lilian/gcc
+    be/gcc
     lilian/make
 )
 pkg_lib_dirs=(lib)

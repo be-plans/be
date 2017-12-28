@@ -12,7 +12,7 @@ pkg_deps=(
   lilian/readline lilian/gdbm lilian/coreutils
   lilian/perl
 )
-pkg_build_deps=(lilian/make lilian/gcc)
+pkg_build_deps=(lilian/make be/gcc)
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/zsh)
 

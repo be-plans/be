@@ -14,7 +14,7 @@ pkg_deps=(
   lilian/coreutils
 )
 pkg_build_deps=(
-  lilian/gcc lilian/make lilian/perl
+  be/gcc lilian/make lilian/perl
   lilian/diffutils
 )
 pkg_bin_dirs=(sbin)

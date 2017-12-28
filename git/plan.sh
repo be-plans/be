@@ -21,7 +21,7 @@ pkg_deps=(
   lilian/perl
   lilian/zlib
 )
-pkg_build_deps=(lilian/make lilian/gcc)
+pkg_build_deps=(lilian/make be/gcc)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 

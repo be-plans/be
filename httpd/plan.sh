@@ -12,7 +12,7 @@ pkg_deps=(
   lilian/apr lilian/apr-util lilian/pcre
   lilian/zlib lilian/openssl  core/gcc-libs
 )
-pkg_build_deps=(lilian/patch lilian/make lilian/gcc)
+pkg_build_deps=(lilian/patch lilian/make be/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_exports=(

@@ -8,10 +8,9 @@ pkg_source=http://downloads.sourceforge.net/infozip/unzip60.tar.gz
 pkg_shasum=036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
 pkg_dirname=unzip60
 pkg_deps=(core/glibc lilian/bzip2)
-pkg_build_deps=(lilian/make lilian/gcc)
+pkg_build_deps=(lilian/make be/gcc)
 pkg_bin_dirs=(bin)
 
-use_lto=true
 source ../defaults.sh
 
 do_build() {
@@ -36,5 +35,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/gcc lilian/pkg-config lilian/coreutils lilian/sed lilian/grep lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(be/gcc lilian/pkg-config lilian/coreutils lilian/sed lilian/grep lilian/diffutils lilian/make lilian/patch)
 fi

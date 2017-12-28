@@ -11,7 +11,7 @@ pkg_dirname=linux-$pkg_version
 pkg_deps=()
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make lilian/gcc
+  lilian/make be/gcc
 )
 pkg_include_dirs=(include)
 
