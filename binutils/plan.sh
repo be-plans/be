@@ -1,10 +1,10 @@
 pkg_name=binutils
 pkg_origin=be
-pkg_version=2.28
+pkg_version=2.29.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.bz2
-pkg_shasum=6297433ee120b11b4b0a1c8f3512d7d73501753142ab9e2daa13c5a3edd32a72
+pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
+pkg_shasum=e7010a46969f9d3e53b650a518663f98a5dde3c3ae21b7d71e5e6803bc36b577
 pkg_deps=(core/glibc lilian/zlib)
 pkg_build_deps=(
   lilian/coreutils lilian/diffutils lilian/patch
@@ -15,6 +15,7 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_prepare() {
@@ -45,25 +46,29 @@ do_prepare() {
   #
   # Thanks to: https://github.com/NixOS/nixpkgs/blob/2524504/pkgs/development/tools/misc/binutils/new-dtags.patch
   # Thanks to: https://build.opensuse.org/package/view_file?file=ld-dtags.diff&package=binutils&project=devel%3Agcc&srcmd5=011dbdef56800d1cd2fa8c585b3dd7db
-  patch -p1 < $PLAN_CONTEXT/new-dtags.patch
+  # build_line "Applying \"new-dtags\""
+  # patch -p1 < $PLAN_CONTEXT/new-dtags.patch
 
   # Since binutils 2.22, DT_NEEDED flags aren't copied for dynamic outputs.
   # That requires upstream changes for things to work. So we can patch it to
   # get the old behaviour fo now.
   #
   # Thanks to: https://github.com/NixOS/nixpkgs/blob/d9f4b0a/pkgs/development/tools/misc/binutils/dtneeded.patch
+  build_line "Applying \"dt-needed-true\""
   patch -p1 < $PLAN_CONTEXT/dt-needed-true.patch
 
   # # Make binutils output deterministic by default.
   #
   # Thanks to: https://github.com/NixOS/nixpkgs/blob/0889bbe/pkgs/development/tools/misc/binutils/deterministic.patch
+  build_line "Applying \"more-deterministic-output\""
   patch -p1 < $PLAN_CONTEXT/more-deterministic-output.patch
 
-  cat $PLAN_CONTEXT/custom-libs.patch \
-    | sed -e "s,@dynamic_linker@,$dynamic_linker,g" \
-      -e "s,@glibc_lib@,$(pkg_path_for glibc)/lib,g" \
-      -e "s,@zlib_lib@,$(pkg_path_for zlib)/lib,g" \
-    | patch -p1
+  # build_line "Applying \"custom-libs\""
+  # cat $PLAN_CONTEXT/custom-libs.patch \
+  #   | sed -e "s,@dynamic_linker@,$dynamic_linker,g" \
+  #     -e "s,@glibc_lib@,$(pkg_path_for glibc)/lib,g" \
+  #     -e "s,@zlib_lib@,$(pkg_path_for zlib)/lib,g" \
+  #   | patch -p1
 
   # We don't want to search for libraries in system directories such as `/lib`,
   # `/usr/local/lib`, etc.
@@ -87,7 +92,8 @@ do_build() {
       --enable-shared \
       --enable-deterministic-archives \
       --enable-threads \
-      --enable-ld=default \
+      --enable-gold=default \
+      --enable-ld=yes \
       --enable-plugins \
       --with-system-zlib \
       --with-pic \
