@@ -1,5 +1,5 @@
 pkg_name=jo
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
@@ -9,8 +9,8 @@ pkg_source="https://github.com/jpmens/${pkg_name}/releases/download/v${pkg_versi
 pkg_shasum=63ed4766c2e0fcb5391a14033930329369f437d7060a11d82874e57e278bda5f
 pkg_deps=()
 pkg_build_deps=(
-  lilian/linux-headers-musl lilian/musl lilian/make
-  be/gcc lilian/diffutils
+  lilian/linux-headers-musl lilian/musl be/make
+  be/gcc be/diffutils
 )
 pkg_bin_dirs=(bin)
 

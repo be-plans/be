@@ -1,6 +1,6 @@
 pkg_name=xlib
 pkg_distname=libX11
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.6.5
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X11 protocol client library"

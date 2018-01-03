@@ -1,5 +1,5 @@
 $pkg_name="7zip"
-$pkg_origin="be"
+$pkg_origin="core"
 $pkg_version="16.04"
 $pkg_license=@("LGPL")
 $pkg_upstream_url="http://www.7-zip.org/"

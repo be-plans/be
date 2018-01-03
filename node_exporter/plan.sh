@@ -1,7 +1,7 @@
 pkg_name=node_exporter
 pkg_description="Prometheus node exporter"
 pkg_upstream_url=http://prometheus.io
-pkg_origin=be
+pkg_origin=core
 pkg_version=0.14.0
 pkg_maintainer="Lamont Lucas <lamont@fastrobot.com>"
 pkg_license=('Apache-2.0')
@@ -11,7 +11,7 @@ pkg_shasum=312d7e1c07d6a7548f2f116b983da87f7b3a7630f9332eb41c306fd71b2e6ec1
 pkg_build_deps=(
   lilian/go
   lilian/git
-  lilian/make
+  be/make
 )
 
 pkg_exports=(

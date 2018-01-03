@@ -1,5 +1,5 @@
 pkg_name=acl
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.2.52
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('lgpl')
@@ -7,8 +7,8 @@ pkg_source=http://download.savannah.gnu.org/releases/$pkg_name/$pkg_name-${pkg_v
 pkg_shasum=179074bb0580c06c4b4137be4c5a92a701583277967acdb5546043c7874e0d23
 pkg_deps=(core/glibc lilian/attr)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/gettext
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/gettext
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

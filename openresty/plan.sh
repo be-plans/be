@@ -1,5 +1,5 @@
 pkg_name=openresty
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.11.2.2
 pkg_description="Scalable Web Platform by Extending NGINX with Lua"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -7,8 +7,8 @@ pkg_license=('BSD-2-Clause')
 pkg_source=https://openresty.org/download/${pkg_name}-${pkg_version}.tar.gz
 pkg_upstream_url=http://openresty.org/
 pkg_shasum=7f9ca62cfa1e4aedf29df9169aed0395fd1b90de254139996e554367db4d5a01
-pkg_deps=(core/glibc core/gcc-libs lilian/libxml2 lilian/libxslt lilian/zlib lilian/bzip2 lilian/openssl  lilian/pcre lilian/coreutils lilian/perl lilian/which)
-pkg_build_deps=(be/gcc lilian/make)
+pkg_deps=(core/glibc core/gcc-libs lilian/libxml2 lilian/libxslt lilian/zlib lilian/bzip2 be/openssl  lilian/pcre be/coreutils lilian/perl lilian/which)
+pkg_build_deps=(be/gcc be/make)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin nginx/sbin luajit/bin)
 pkg_include_dirs=(include)
@@ -68,7 +68,7 @@ do_build() {
 
 do_install() {
   make install
-  fix_interpreter "$pkg_prefix/bin/*" lilian/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/*" be/coreutils bin/env
 }
 
 do_end() {

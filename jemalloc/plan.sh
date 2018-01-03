@@ -1,7 +1,7 @@
 pkg_name=jemalloc
 pkg_description="malloc implementation emphasizing fragmentation avoidance"
 pkg_upstream_url="http://jemalloc.net/"
-pkg_origin=be
+pkg_origin=core
 pkg_version=5.0.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('BSD-2-Clause')
@@ -11,7 +11,7 @@ pkg_dirname=${pkg_name}-${pkg_version}
 pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
   be/gcc
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

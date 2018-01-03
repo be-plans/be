@@ -1,5 +1,5 @@
 pkg_name=mc
-pkg_origin=be
+pkg_origin=core
 pkg_version=4.8.19
 pkg_description="Midnight Commander."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -15,11 +15,11 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/check
-  lilian/coreutils
-  lilian/diffutils
+  be/coreutils
+  be/diffutils
   be/gcc
   lilian/gettext
-  lilian/make
+  be/make
   lilian/perl
   lilian/pkg-config
 )

@@ -1,7 +1,7 @@
 pkg_name=traefik
 pkg_description="a modern reverse proxy"
 pkg_upstream_url="https://traefik.io"
-pkg_origin=be
+pkg_origin=core
 # note: to have the version match the codename, please update both values when
 #       updating this for a new release
 pkg_version="v1.4.5"

@@ -1,5 +1,5 @@
 $pkg_name="nuget"
-$pkg_origin="be"
+$pkg_origin="core"
 $pkg_version="4.1.0"
 $pkg_license=('Apache-2.0')
 $pkg_upstream_url="https://dist.nuget.org/index.html"

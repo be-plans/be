@@ -1,5 +1,5 @@
 pkg_name=unibilium
-pkg_origin=be
+pkg_origin=core
 pkg_version="1.2.0"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('LGPL-3.0')

@@ -1,6 +1,6 @@
 
 pkg_name=varnish
-pkg_origin=be
+pkg_origin=core
 pkg_description="Varnish Cache"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_upstream_url="http://varnish-cache.org/"
@@ -13,7 +13,7 @@ pkg_deps=(
   lilian/pcre be/gcc lilian/bash
 )
 pkg_build_deps=(
-  lilian/make     lilian/python2  lilian/pkg-config
+  be/make     lilian/python2  lilian/pkg-config
   lilian/readline lilian/graphviz lilian/libtool
   lilian/libedit  lilian/automake lilian/m4
   lilian/autoconf

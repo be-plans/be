@@ -1,5 +1,5 @@
 pkg_name=grep
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3+')
@@ -7,8 +7,8 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=e2c81db5056e3e8c5995f0bb5d0d0e1cad1f6f45c3b2fc77b6e81435aed48ab5
 pkg_deps=(core/glibc lilian/pcre)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/perl
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/perl
 )
 pkg_bin_dirs=(bin)
 
@@ -27,5 +27,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils)
+  pkg_build_deps=(be/gcc be/coreutils)
 fi

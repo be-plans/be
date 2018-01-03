@@ -1,5 +1,5 @@
 pkg_name=clingo
-pkg_origin=be
+pkg_origin=core
 pkg_description="A grounder and solver for logic programs."
 pkg_upstream_url="https://potassco.org/"
 pkg_version="5.2.0"
@@ -11,7 +11,7 @@ pkg_deps=(
   core/gcc-libs core/glibc
 )
 pkg_build_deps=(
-  lilian/doxygen lilian/cmake lilian/make
+  lilian/doxygen lilian/cmake be/make
   be/gcc
 )
 pkg_lib_dirs=(lib)

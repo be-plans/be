@@ -1,10 +1,10 @@
 pkg_name=runit
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.1.2
 pkg_license=('BSD')
 pkg_source=http://smarden.org/runit/runit-${pkg_version}.tar.gz
 pkg_shasum=6fd0160cb0cf1207de4e66754b6d39750cff14bb0aa66ab49490992c0c47ba18
-pkg_build_deps=(lilian/coreutils be/gcc lilian/make)
+pkg_build_deps=(be/coreutils be/gcc be/make)
 pkg_deps=(core/glibc)
 pkg_bin_dirs=(bin)
 

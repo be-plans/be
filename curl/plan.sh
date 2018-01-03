@@ -1,5 +1,5 @@
 pkg_name=curl
-pkg_origin=be
+pkg_origin=core
 pkg_version=7.54.1
 pkg_description="curl is an open source command line tool and library for
   transferring data with URL syntax."
@@ -9,16 +9,16 @@ pkg_license=('curl')
 pkg_source=https://curl.haxx.se/download/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=fdfc4df2d001ee0c44ec071186e770046249263c491fcae48df0e1a3ca8f25a0
 pkg_deps=(
-  lilian/cacerts
+  be/cacerts
   core/glibc
-  lilian/openssl
+  be/openssl
   lilian/zlib
   lilian/nghttp2
 )
 pkg_build_deps=(
-  lilian/coreutils
+  be/coreutils
   be/gcc
-  lilian/make
+  be/make
   lilian/perl
   lilian/pkg-config
 )

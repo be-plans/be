@@ -1,5 +1,5 @@
 pkg_name=kbproto
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.0.7
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X11 XKB extension wire protocol"

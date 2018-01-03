@@ -1,5 +1,5 @@
 pkg_name=gtk2
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.24.31
 pkg_description="GTK+, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces."
 pkg_upstream_url="https://www.gtk.org"

@@ -1,5 +1,5 @@
 $pkg_name="visual-cpp-build-tools-2015"
-$pkg_origin="be"
+$pkg_origin="core"
 $pkg_version="14.0.25420"
 $pkg_description="Standalone compiler, libraries and scripts"
 $pkg_upstream_url="http://landinghub.visualstudio.com/visual-cpp-build-tools"

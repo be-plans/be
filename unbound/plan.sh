@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=unbound
 pkg_version=1.6.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -12,8 +12,8 @@ pkg_deps=(
   lilian/expat
 )
 pkg_build_deps=(
-  be/gcc lilian/make
-  lilian/diffutils lilian/coreutils
+  be/gcc be/make
+  be/diffutils be/coreutils
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

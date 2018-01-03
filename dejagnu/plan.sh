@@ -1,5 +1,5 @@
 pkg_name=dejagnu
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.6
 pkg_license=('GPL-2.0')
 pkg_upstream_url="https://www.gnu.org/software/dejagnu/"
@@ -9,8 +9,8 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=00b64a618e2b6b581b16eb9131ee80f721baa2669fa0cdee93c500d1a652d763
 pkg_deps=(lilian/expect)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/sed
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc be/sed
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -44,5 +44,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils be/make be/patch)
 fi

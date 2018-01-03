@@ -1,12 +1,12 @@
 pkg_name=db
-pkg_origin=be
+pkg_origin=core
 pkg_version=6.2.32
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('custom')
 pkg_source=http://download.oracle.com/berkeley-db/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=a9c5e2b004a5777aa03510cfe5cd766a4a3b777713406b02809c17c8e0e7a8fb
 pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make be/gcc)
+pkg_build_deps=(be/coreutils be/diffutils be/patch be/make be/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -43,5 +43,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils)
+  pkg_build_deps=(be/gcc be/coreutils)
 fi

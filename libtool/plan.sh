@@ -1,5 +1,5 @@
 pkg_name=libtool
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.4.6
 pkg_license=('GPL-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -7,12 +7,12 @@ pkg_source=http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_filename=${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=e3bd4d5d3d025a36c21dd6af7ea818a2afcd4dfc1ea5a17b39d7854bcd0c06e3
 pkg_deps=(
-  core/glibc  lilian/coreutils lilian/sed
+  core/glibc  be/coreutils be/sed
   lilian/grep lilian/binutils
 )
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/m4
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/m4
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

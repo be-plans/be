@@ -1,5 +1,5 @@
 pkg_name=opam
-pkg_origin=be
+pkg_origin=core
 pkg_description="opam is a source-based package manager. It supports multiple simultaneous compiler installations, flexible package constraints, and a Git-friendly development workflow."
 pkg_upstream_url="https://opam.ocaml.org/"
 pkg_version="1.2.2"
@@ -11,13 +11,13 @@ pkg_dirname="opam-full-${pkg_version}"
 pkg_deps=(
   lilian/aspcud
   lilian/camlp4
-  lilian/diffutils
+  be/diffutils
   be/gcc
   lilian/git
   core/glibc
   lilian/m4
-  lilian/make
-  lilian/patch
+  be/make
+  be/patch
   lilian/pkg-config
   lilian/rsync
   lilian/ocaml

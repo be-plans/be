@@ -1,5 +1,5 @@
 pkg_name=go17
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.7.5
 pkg_description="Go is an open source programming language that makes it easy to
   build simple, reliable, and efficient software."
@@ -9,8 +9,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://storage.googleapis.com/golang/go${pkg_version}.src.tar.gz
 pkg_shasum=4e834513a2079f8cbbd357502cccaac9507fd00a1efe672375798858ff291815
 pkg_dirname=go
-pkg_deps=(core/glibc lilian/iana-etc lilian/cacerts)
-pkg_build_deps=(lilian/coreutils lilian/inetutils lilian/bash lilian/patch be/gcc core/go14 lilian/perl)
+pkg_deps=(core/glibc lilian/iana-etc be/cacerts)
+pkg_build_deps=(be/coreutils lilian/inetutils lilian/bash be/patch be/gcc core/go14 lilian/perl)
 pkg_bin_dirs=(bin)
 
 do_prepare() {

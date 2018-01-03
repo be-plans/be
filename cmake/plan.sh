@@ -1,5 +1,5 @@
 pkg_name=cmake
-pkg_origin=be
+pkg_origin=core
 _base_version=3.8
 pkg_version=${_base_version}.2
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
@@ -13,9 +13,9 @@ pkg_deps=(
   core/gcc-libs
 )
 pkg_build_deps=(
-  lilian/coreutils
-  lilian/diffutils
-  lilian/make
+  be/coreutils
+  be/diffutils
+  be/make
   be/gcc
   lilian/curl
   lilian/zlib

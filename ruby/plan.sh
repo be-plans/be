@@ -1,5 +1,5 @@
 pkg_name=ruby
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.4.2
 pkg_description="A dynamic, open source programming language with a focus on \
   simplicity and productivity. It has an elegant syntax that is natural to \
@@ -11,12 +11,12 @@ pkg_upstream_url=https://www.ruby-lang.org/en/
 pkg_shasum=93b9e75e00b262bc4def6b26b7ae8717efc252c47154abb7392e54357e6c8c9c
 pkg_deps=(
   core/glibc lilian/ncurses lilian/zlib
-  lilian/openssl lilian/libyaml lilian/libffi
+  be/openssl lilian/libyaml lilian/libffi
   lilian/readline
 )
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/sed
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc be/sed
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
@@ -37,7 +37,7 @@ do_build() {
     --prefix="$pkg_prefix" \
     --enable-shared \
     --disable-install-doc \
-    --with-openssl-dir="$(pkg_path_for lilian/openssl )" \
+    --with-openssl-dir="$(pkg_path_for be/openssl )" \
     --with-libyaml-dir="$(pkg_path_for lilian/libyaml)"
 
   make -j $(nproc)

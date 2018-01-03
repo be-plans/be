@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=libev
 pkg_version=4.24
 pkg_description="A full-featured and high-performance (see benchmark) event loop that is loosely modelled after libevent."
@@ -8,7 +8,7 @@ pkg_license=('BSD-2-Clause')
 pkg_source=http://dist.schmorp.de/libev/Attic/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=973593d3479abdf657674a55afe5f78624b0e440614e2b8cb3a07f16d4d7f821
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/cacerts be/gcc lilian/make)
+pkg_build_deps=(be/cacerts be/gcc be/make)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

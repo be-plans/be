@@ -1,5 +1,5 @@
 pkg_name=boost
-pkg_origin=be
+pkg_origin=core
 pkg_description='Boost provides free peer-reviewed portable C++ source libraries.'
 pkg_upstream_url='http://www.boost.org/'
 pkg_version=1.64.0
@@ -18,15 +18,15 @@ pkg_deps=(
 pkg_build_deps=(
   core/glibc
   core/gcc-libs
-  lilian/coreutils
-  lilian/diffutils
-  lilian/patch
-  lilian/make
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
   be/gcc
   lilian/python2
   lilian/libxml2
   lilian/libxslt
-  lilian/openssl
+  be/openssl
   lilian/which
   lilian/zlib
 )

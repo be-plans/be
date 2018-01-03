@@ -4,7 +4,7 @@ exec 2>&1
 
 export GEM_HOME="{{pkg.path}}/vendor/bundle/ruby/2.3.0"
 export GEM_PATH="{{pkgPathFor "lilian/ruby"}}/lib/ruby/gems/2.3.0:{{pkgPathFor "lilian/bundler"}}:$GEM_HOME"
-export LD_LIBRARY_PATH="{{pkgPathFor "core/gcc-libs"}}/lib:{{pkgPathFor "lilian/libffi"}}/lib:{{pkgPathFor "lilian/openssl"}}/lib"
+export LD_LIBRARY_PATH="{{pkgPathFor "core/gcc-libs"}}/lib:{{pkgPathFor "lilian/libffi"}}/lib:{{pkgPathFor "be/openssl"}}/lib"
 export CONFIG_DIR="{{pkg.svc_config_path}}"
 
 if [ "{{cfg.mode}}" == "client" ]

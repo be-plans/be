@@ -1,5 +1,5 @@
 pkg_name=glibc
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.25
 pkg_description="Portable and high performance C library"
 pkg_upstream_url="https://www.gnu.org/software/libc/"
@@ -9,8 +9,8 @@ pkg_source=https://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=067bd9bb3390e79aa45911537d13c3721f1d9d3769931a30c2681bfee66f23a0
 pkg_deps=(lilian/linux-headers)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/sed lilian/perl
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc be/sed lilian/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

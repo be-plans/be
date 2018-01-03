@@ -1,5 +1,5 @@
 $pkg_name="node"
-$pkg_origin="be"
+$pkg_origin="core"
 $pkg_version="8.9.0"
 $pkg_description="Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine."
 $pkg_upstream_url="https://nodejs.org/"

@@ -1,5 +1,5 @@
 pkg_name=mysql-client
-pkg_origin=be
+pkg_origin=core
 pkg_version=5.7.18
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_license=('GPL-2.0')
@@ -8,26 +8,26 @@ pkg_shasum=0b5d71ed608656cd8181d3bb0434d3e36bac192899038dbdddf5a7594aaea1a2
 pkg_upstream_url=https://www.mysql.com/
 pkg_description="MySQL Client Tools"
 pkg_deps=(
-  lilian/coreutils
+  be/coreutils
   lilian/gawk
   core/gcc-libs
   core/glibc
   lilian/grep
   lilian/inetutils
   lilian/ncurses
-  lilian/openssl
+  be/openssl
   lilian/pcre
   lilian/perl
   lilian/procps-ng
-  lilian/sed
+  be/sed
 )
 pkg_build_deps=(
   lilian/boost/1.59.0
   lilian/cmake
-  lilian/diffutils
+  be/diffutils
   be/gcc
-  lilian/make
-  lilian/patch
+  be/make
+  be/patch
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

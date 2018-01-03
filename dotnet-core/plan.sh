@@ -1,5 +1,5 @@
 pkg_name=dotnet-core
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.1.2
 pkg_license=('MIT')
 pkg_upstream_url=https://www.microsoft.com/net/core
@@ -18,12 +18,12 @@ pkg_deps=(
   core/krb5
   lilian/libunwind
   lilian/lttng-ust
-  lilian/openssl
+  be/openssl
   lilian/util-linux
   lilian/zlib
 )
 pkg_build_deps=(
-  lilian/patchelf
+  be/patchelf
 )
 pkg_bin_dirs=(bin)
 

@@ -1,5 +1,5 @@
 $pkg_name="lessmsi"
-$pkg_origin="be"
+$pkg_origin="core"
 $pkg_version="1.5.1"
 $pkg_license=('MIT')
 $pkg_upstream_url="http://lessmsi.activescott.com/"

@@ -1,5 +1,5 @@
 pkg_name=readline
-pkg_origin=be
+pkg_origin=core
 _base_version=6.3
 pkg_version=${_base_version}.8
 pkg_license=('GPL-3.0')
@@ -9,8 +9,8 @@ pkg_dirname=${pkg_name}-$_base_version
 pkg_shasum=56ba6071b9462f980c5a72ab0023893b65ba6debb4eeb475d7a563dc65cafd43
 pkg_deps=(core/glibc lilian/ncurses)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/bison lilian/grep
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/bison lilian/grep
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

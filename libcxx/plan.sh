@@ -1,5 +1,5 @@
 pkg_name=libcxx
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.9.0
 pkg_license=('NCSA')
 pkg_description="A new implementation of the C++ standard library, targeting C++11"
@@ -11,7 +11,7 @@ pkg_shasum=d0b38d51365c6322f5666a2a8105785f2e114430858de4c25a86b49f227f5b06
 pkg_build_deps=(
   lilian/cmake
   core/llvm
-  lilian/make
+  be/make
 )
 pkg_deps=(
   be/gcc

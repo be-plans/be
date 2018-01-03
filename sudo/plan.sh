@@ -1,5 +1,5 @@
 pkg_name=sudo
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.8.20p2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Execute a command as another user"
@@ -8,15 +8,15 @@ pkg_license=('ISC')
 pkg_source=ftp://ftp.sudo.ws/pub/sudo/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=bd42ae1059e935f795c69ea97b3de09fe9410a58a74b5d5e6836eb5067a445d9
 pkg_deps=(
-  lilian/coreutils
+  be/coreutils
   core/glibc
   lilian/vim
 )
 pkg_build_deps=(
-  lilian/diffutils
+  be/diffutils
   lilian/file
   be/gcc
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin sbin)
 pkg_include_dirs=(include)

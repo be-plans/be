@@ -1,5 +1,5 @@
 pkg_name=expat
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.2.2
 pkg_description="Expat library: Fast XML parser in C"
 pkg_upstream_url="https://libexpat.github.io/"
@@ -8,7 +8,7 @@ pkg_license=('MIT')
 pkg_source="https://downloads.sourceforge.net/project/${pkg_name}/${pkg_name}/${pkg_version}/${pkg_name}-${pkg_version}.tar.bz2"
 pkg_shasum=4376911fcf81a23ebd821bbabc26fd933f3ac74833f74924342c29aad2c86046
 pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make be/gcc)
+pkg_build_deps=(be/coreutils be/diffutils be/patch be/make be/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -44,5 +44,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils)
+  pkg_build_deps=(be/gcc be/coreutils)
 fi

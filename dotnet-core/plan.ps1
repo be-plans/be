@@ -1,5 +1,5 @@
 $pkg_name="dotnet-core"
-$pkg_origin="be"
+$pkg_origin="core"
 $pkg_version="1.1.2"
 $pkg_license=('MIT')
 $pkg_upstream_url="https://www.microsoft.com/net/core"

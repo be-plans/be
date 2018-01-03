@@ -1,6 +1,6 @@
 pkg_name=phantomjs
 pkg_version=2.1.1
-pkg_origin=be
+pkg_origin=core
 pkg_license=('BSD')
 pkg_source=https://bitbucket.org/ariya/phantomjs/downloads/${pkg_name}-${pkg_version}-linux-x86_64.tar.bz2
 pkg_filename=${pkg_name}-${pkg_version}-linux-x86_64.tar.bz2
@@ -17,7 +17,7 @@ pkg_deps=(
 
 # We need curl instead of wget because wget doesn't work for
 # downloading from bitbucket URLs. Sometimes.
-pkg_build_deps=(lilian/curl lilian/cacerts lilian/patchelf)
+pkg_build_deps=(lilian/curl be/cacerts be/patchelf)
 pkg_bin_dirs=(bin)
 
 source ../defaults.sh

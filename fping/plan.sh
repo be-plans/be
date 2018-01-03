@@ -1,5 +1,5 @@
 pkg_name=fping
-pkg_origin=be
+pkg_origin=core
 pkg_version="4.0"
 pkg_description="$(cat << EOF
   fping is a program to send ICMP echo probes to network hosts, similar to

@@ -1,5 +1,5 @@
 pkg_name=ffmpeg
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.3.2
 pkg_description="A complete, cross-platform solution to record, convert and \
 stream audio and video."

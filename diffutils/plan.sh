@@ -1,14 +1,21 @@
 pkg_name=diffutils
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=d621e8bdd4b573918c8145f7ae61817d1be9deb4c8d2328a65cea8e11d783bd6
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/coreutils lilian/patch lilian/make be/gcc lilian/sed)
+pkg_build_deps=(
+  be/coreutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
+)
 pkg_bin_dirs=(bin)
 
+pkg_disabled_features=(lto)
 source ../defaults.sh
 
 do_check() {
@@ -32,5 +39,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed)
+  pkg_build_deps=(be/gcc be/coreutils be/sed)
 fi

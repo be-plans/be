@@ -1,6 +1,6 @@
 pkg_name=bash
 pkg_distname=$pkg_name
-pkg_origin=be
+pkg_origin=core
 _base_version=4.3
 pkg_version=${_base_version}.42
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -11,8 +11,8 @@ pkg_dirname=${pkg_distname}-$_base_version
 pkg_shasum=afc687a28e0e24dc21b988fa159ff9dbcf6b7caa92ade8645cc6d5605cd024d4
 pkg_deps=(core/glibc lilian/ncurses lilian/readline)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc
 )
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/bash bin/sh)
@@ -107,5 +107,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils)
+  pkg_build_deps=(be/gcc be/coreutils)
 fi

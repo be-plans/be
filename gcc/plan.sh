@@ -1,6 +1,6 @@
 pkg_name=gcc
 pkg_distname=$pkg_name
-pkg_origin=be
+pkg_origin=core
 pkg_version=7.2.0
 pkg_description="The GNU Compiler Collection"
 pkg_upstream_url="https://gcc.gnu.org/"
@@ -13,8 +13,8 @@ pkg_deps=(
   lilian/mpfr lilian/libmpc lilian/binutils
 )
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/gawk lilian/m4
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/gawk lilian/m4
   lilian/texinfo lilian/perl lilian/inetutils
   lilian/expect lilian/dejagnu
 )

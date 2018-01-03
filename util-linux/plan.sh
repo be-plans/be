@@ -1,5 +1,5 @@
 pkg_name=util-linux
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.30
 pkg_license=('GPL-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -9,8 +9,8 @@ pkg_source=https://www.kernel.org/pub/linux/utils/${pkg_name}/v${pkg_version%.?}
 pkg_shasum=c208a4ff6906cb7f57940aa5bc3a6eed146e50a7cc0a092f52ef2ab65057a08d
 pkg_deps=(core/glibc lilian/zlib lilian/ncurses)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/sed
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc be/sed
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -51,5 +51,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils be/make be/patch)
 fi

@@ -1,7 +1,7 @@
 source "../node/plan.sh"
 
 pkg_name=node6
-pkg_origin=be
+pkg_origin=core
 pkg_version=6.11.5
 pkg_description="Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine."
 pkg_upstream_url=https://nodejs.org/

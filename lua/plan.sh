@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=lua
 pkg_version=5.3.4
 pkg_description="A powerful, efficient, lightweight, embeddable scripting language"
@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="https://www.lua.org/ftp/lua-${pkg_version}.tar.gz"
 pkg_shasum=f681aa518233bc407e23acf0f5887c884f17436f000d453b2491a9f11a52400c
 pkg_deps=(core/glibc lilian/readline)
-pkg_build_deps=(be/gcc lilian/make)
+pkg_build_deps=(be/gcc be/make)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

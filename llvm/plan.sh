@@ -1,5 +1,5 @@
 pkg_name=llvm
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.9.1
 pkg_license=('NCSA')
 pkg_description="Next-gen compiler infrastructure"
@@ -15,8 +15,8 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/cmake
-  lilian/coreutils
-  lilian/diffutils
+  be/coreutils
+  be/diffutils
   be/gcc
   lilian/ninja
   lilian/python2

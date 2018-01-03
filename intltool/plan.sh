@@ -1,5 +1,5 @@
 pkg_name=intltool
-pkg_origin=be
+pkg_origin=core
 pkg_version="0.51.0"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPLv2')
@@ -9,7 +9,7 @@ pkg_source="https://launchpad.net/intltool/trunk/0.51.0/+download/${pkg_name}-${
 pkg_shasum="67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  lilian/make be/gcc lilian/perl
+  be/make be/gcc lilian/perl
   lilian/local-lib lilian/cpanminus lilian/expat
 )
 pkg_lib_dirs=(lib)

@@ -1,5 +1,5 @@
 pkg_name=check
-pkg_origin=be
+pkg_origin=core
 pkg_version=0.10.0
 pkg_license=('LGPL-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -7,8 +7,8 @@ pkg_source=http://downloads.sourceforge.net/sourceforge/$pkg_name/${pkg_name}-${
 pkg_shasum=f5f50766aa6f8fe5a2df752666ca01a950add45079aa06416b83765b1cf71052
 pkg_deps=(core/glibc lilian/gawk)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/sed
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc be/sed
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -32,5 +32,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils be/make be/patch)
 fi

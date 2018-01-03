@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=haproxy
 pkg_description="The Reliable, High Performance TCP/HTTP Load Balancer"
 pkg_version=1.7.6
@@ -16,13 +16,13 @@ pkg_exposes=(port status-port)
 pkg_binds=(
   [backend]="port"
 )
-pkg_deps=(lilian/zlib lilian/pcre lilian/openssl)
+pkg_deps=(lilian/zlib lilian/pcre be/openssl)
 pkg_build_deps=(
-  lilian/coreutils
+  be/coreutils
   be/gcc
   lilian/pcre
-  lilian/make
-  lilian/openssl
+  be/make
+  be/openssl
   lilian/zlib
 )
 pkg_bin_dirs=(bin)

@@ -1,5 +1,5 @@
 pkg_name=sassc
-pkg_origin=be
+pkg_origin=core
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_version=3.3.6
 pkg_source=https://github.com/sass/${pkg_name}/archive/${pkg_version}.tar.gz
@@ -8,7 +8,7 @@ pkg_license=('MIT')
 pkg_description='libsass command line driver'
 pkg_upstream_url=https://github.com/sass/sassc
 pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(lilian/make be/gcc lilian/coreutils)
+pkg_build_deps=(be/make be/gcc be/coreutils)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 

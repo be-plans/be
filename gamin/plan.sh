@@ -1,5 +1,5 @@
 pkg_name=gamin
-pkg_origin=be
+pkg_origin=core
 pkg_version="0.1.10"
 pkg_description="File Alteration Monitor"
 pkg_upstream_url="https://people.gnome.org/~veillard/gamin/"

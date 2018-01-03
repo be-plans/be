@@ -1,6 +1,6 @@
 pkg_name=git
 pkg_version=2.14.2
-pkg_origin=be
+pkg_origin=core
 pkg_description="Git is a free and open source distributed version control
   system designed to handle everything from small to very large projects with
   speed and efficiency."
@@ -11,7 +11,7 @@ pkg_source=https://www.kernel.org/pub/software/scm/git/${pkg_name}-${pkg_version
 pkg_filename=${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=a03a12331d4f9b0f71733db9f47e1232d4ddce00e7f2a6e20f6ec9a19ce5ff61
 pkg_deps=(
-  lilian/cacerts
+  be/cacerts
   lilian/curl
   lilian/expat
   lilian/gettext
@@ -21,7 +21,7 @@ pkg_deps=(
   lilian/perl
   lilian/zlib
 )
-pkg_build_deps=(lilian/make be/gcc)
+pkg_build_deps=(be/make be/gcc)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 

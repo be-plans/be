@@ -1,5 +1,5 @@
 pkg_name=yarn
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.3.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Yarn is a package manager for your code. It allows you to use and share code with other developers from around the world. Yarn does this quickly, securely, and reliably so you don’t ever have to worry."
@@ -10,9 +10,9 @@ pkg_shasum=6cfe82e530ef0837212f13e45c1565ba53f5199eec2527b85ecbcd88bf26821d
 pkg_bin_dirs=(bin)
 pkg_build_deps=()
 pkg_deps=(
-  lilian/coreutils
+  be/coreutils
   lilian/node
-  lilian/sed
+  be/sed
 )
 
 # Yarn unpacks into dist, so fix that

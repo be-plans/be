@@ -1,5 +1,5 @@
 pkg_name=percona-xtrabackup
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.3.5
 pkg_source=http://github.com/percona/percona-xtrabackup/archive/${pkg_name}-${pkg_version}.tar.gz
 pkg_upstream_url=https://www.percona.com/software/mysql-database/percona-xtrabackup
@@ -12,11 +12,11 @@ pkg_deps=(
   core/glibc core/gcc-libs lilian/bash
   lilian/iproute2 lilian/gnupg lilian/pkg-config
   lilian/ncurses lilian/vim lilian/curl
-  lilian/libev lilian/openssl lilian/zlib
+  lilian/libev be/openssl lilian/zlib
   lilian/libgcrypt lilian/libgpg-error lilian/libtool
 )
 pkg_build_deps=(
-  lilian/m4 lilian/make be/gcc
+  lilian/m4 be/make be/gcc
   lilian/bison lilian/cmake lilian/mysql
   lilian/libaio lilian/boost/1.59.0
 )

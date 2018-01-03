@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=nettle
 pkg_version=3.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -11,7 +11,7 @@ pkg_deps=(
   core/glibc lilian/gmp
 )
 pkg_build_deps=(
-  be/gcc lilian/make lilian/m4
+  be/gcc be/make lilian/m4
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include include/nettle)

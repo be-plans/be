@@ -1,12 +1,12 @@
 pkg_name=scaffolding-ruby
-pkg_origin=be
+pkg_origin=core
 pkg_version="0.8.9"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
 pkg_description="Habitat Plan Scaffolding for Ruby Applications"
 pkg_upstream_url="https://github.com/habitat-sh/core-plans/tree/master/scaffolding-ruby"
-pkg_deps=(lilian/bundler lilian/ruby lilian/tar core/busybox-static core/rq be/gcc lilian/make lilian/pkg-config)
-pkg_build_deps=(lilian/coreutils lilian/sed)
+pkg_deps=(lilian/bundler lilian/ruby lilian/tar core/busybox-static core/rq be/gcc be/make lilian/pkg-config)
+pkg_build_deps=(be/coreutils be/sed)
 pkg_bin_dirs=(bin)
 
 do_prepare() {

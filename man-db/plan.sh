@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=man-db
 pkg_version=2.7.6.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -15,13 +15,13 @@ pkg_deps=(
   lilian/libiconv
 )
 pkg_build_deps=(
-  lilian/coreutils
-  lilian/diffutils
+  be/coreutils
+  be/diffutils
   lilian/flex
   be/gcc
   lilian/gettext
   lilian/libpipeline
-  lilian/make
+  be/make
   lilian/m4
   lilian/pkg-config
 )

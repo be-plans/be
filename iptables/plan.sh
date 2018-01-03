@@ -1,5 +1,5 @@
 pkg_name=iptables
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.6.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2')
@@ -7,7 +7,7 @@ pkg_source="http://netfilter.org/projects/iptables/files/${pkg_name}-${pkg_versi
 pkg_shasum=0fc2d7bd5d7be11311726466789d4c65fb4c8e096c9182b56ce97440864f0cf5
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  lilian/make be/gcc lilian/bison
+  be/make be/gcc lilian/bison
   lilian/flex
 )
 pkg_bin_dirs=(bin sbin)

@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=pixman
 pkg_description="A low-level software library for pixel manipulation"
 pkg_upstream_url="http://pixman.org/"
@@ -12,8 +12,8 @@ pkg_deps=(
   lilian/zlib
 )
 pkg_build_deps=(
-  be/gcc lilian/make lilian/pkg-config
-  lilian/diffutils lilian/file
+  be/gcc be/make lilian/pkg-config
+  be/diffutils lilian/file
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

@@ -1,5 +1,5 @@
 pkg_name=systemd
-pkg_origin=be
+pkg_origin=core
 pkg_version="233"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="systemd is an init system used in Linux distributions to \
@@ -37,7 +37,7 @@ pkg_build_deps=(
   lilian/local-lib
   lilian/lz4
   lilian/m4
-  lilian/make
+  be/make
   lilian/perl
   lilian/pkg-config
   lilian/util-linux

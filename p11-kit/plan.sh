@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=p11-kit
 pkg_version=0.23.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -11,8 +11,8 @@ pkg_deps=(
   core/glibc lilian/libtasn1 lilian/libffi
 )
 pkg_build_deps=(
-  be/gcc lilian/make lilian/file
-  lilian/diffutils lilian/coreutils lilian/pkg-config
+  be/gcc be/make lilian/file
+  be/diffutils be/coreutils lilian/pkg-config
 )
 pkg_bin_dirs=(bin lib/p11-kit)
 pkg_include_dirs=(

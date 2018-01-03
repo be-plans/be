@@ -1,18 +1,18 @@
 pkg_name=re2c
-pkg_distname=$pkg_name
-pkg_origin=be
-pkg_version=0.16
+pkg_origin=core
+pkg_version=1.0.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('PDDL-1.0')
 pkg_upstream_url=http://re2c.org/
 pkg_description="re2c is a lexer generator for C/C++."
-pkg_source=https://github.com/skvadrik/${pkg_distname}/releases/download/${pkg_version}/${pkg_distname}-${pkg_version}.tar.gz
-pkg_filename=${pkg_name}-${pkg_version}.tar.bz2
-pkg_shasum=48c12564297641cceb5ff05aead57f28118db6277f31e2262437feba89069e84
+pkg_source=https://github.com/skvadrik/${pkg_name}/releases/download/${pkg_version}/${pkg_name}-${pkg_version}.tar.gz
+pkg_shasum=cf56e0de3f335f6a22d3e8c06b8b450d858a4e7875ea1b01c9233e084b90cb52
 pkg_deps=(core/gcc-libs)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils be/gcc
-  lilian/make
+  be/coreutils
+  be/diffutils
+  be/gcc
+  be/make
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

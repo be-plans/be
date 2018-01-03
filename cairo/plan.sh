@@ -1,5 +1,5 @@
 pkg_name=cairo
-pkg_origin=be
+pkg_origin=core
 pkg_version="1.14.10"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=(
@@ -34,10 +34,10 @@ pkg_deps=(
   lilian/zlib
 )
 pkg_build_deps=(
-  lilian/diffutils
+  be/diffutils
   lilian/file
   be/gcc
-  lilian/make
+  be/make
   lilian/pkg-config
   lilian/xextproto
   lilian/xproto

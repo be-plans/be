@@ -1,5 +1,5 @@
 pkg_name=gdk-pixbuf
-pkg_origin=be
+pkg_origin=core
 pkg_version="2.36.11"
 pkg_description="An image loading library."
 pkg_upstream_url="https://developer.gnome.org/gdk-pixbuf/"

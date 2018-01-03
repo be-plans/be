@@ -1,5 +1,5 @@
 pkg_name=ripgrep
-pkg_origin=be
+pkg_origin=core
 pkg_version="0.5.2"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT' 'Unlicense')

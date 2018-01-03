@@ -1,5 +1,5 @@
 pkg_name=pango
-pkg_origin=be
+pkg_origin=core
 pkg_version="1.40.13"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('LGPL')
@@ -10,7 +10,7 @@ pkg_description="Pango is a library for laying out and rendering of text, with a
 pkg_deps=(
   lilian/bzip2
   lilian/cairo
-  lilian/coreutils
+  be/coreutils
   lilian/expat
   lilian/fontconfig
   lilian/freetype
@@ -32,7 +32,7 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/file
   be/gcc
-  lilian/make
+  be/make
   lilian/perl
   lilian/pkg-config
 )

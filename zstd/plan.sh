@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=zstd
 pkg_version=1.2.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -9,7 +9,7 @@ pkg_upstream_url=http://facebook.github.io/zstd/
 pkg_source="https://github.com/facebook/zstd/archive/v${pkg_version}.tar.gz"
 pkg_shasum=4a7e4593a3638276ca7f2a09dc4f38e674d8317bbea51626393ca73fc047cbfb
 pkg_deps=(core/glibc)
-pkg_build_deps=(be/gcc lilian/make lilian/diffutils)
+pkg_build_deps=(be/gcc be/make be/diffutils)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

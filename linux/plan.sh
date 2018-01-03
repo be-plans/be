@@ -1,5 +1,5 @@
 pkg_name=linux
-pkg_origin=be
+pkg_origin=core
 pkg_version="4.13.1"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
@@ -10,19 +10,19 @@ pkg_shasum="decee7a2de34aea921fce3e7934f520790fe43176de29bd9718a84419ca6e1ce"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/bc
-  lilian/diffutils
+  be/diffutils
   lilian/elfutils
   lilian/findutils
   be/gcc
   lilian/inetutils
-  lilian/make
+  be/make
   lilian/perl
-  lilian/openssl
+  be/openssl
 )
 
 do_begin() {
   if [[ ! -e /bin/pwd ]]; then
-    hab pkg binlink lilian/coreutils pwd -d /bin
+    hab pkg binlink be/coreutils pwd -d /bin
     _pwd_binlink=true
   fi
 }

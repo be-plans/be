@@ -1,5 +1,5 @@
 pkg_name=monit
-pkg_origin=be
+pkg_origin=core
 pkg_version="5.24.0"
 pkg_upstream_url="https://mmonit.com/monit"
 pkg_description="Monit. Barking at daemons"

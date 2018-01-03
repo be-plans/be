@@ -1,5 +1,5 @@
 pkg_name=shared-mime-info
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.9
 pkg_description="The shared-mime-info package contains the core database of common types and the update-mime-database command used to extend it"
 pkg_upstream_url="https://www.freedesktop.org/wiki/Software/shared-mime-info/"

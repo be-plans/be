@@ -1,6 +1,6 @@
 pkg_name=libice
 pkg_distname=libICE
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.0.9
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=lynx
 pkg_version=2.8.8
 pkg_description="Lynx is the text web browser."
@@ -14,7 +14,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/gcc
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin)
 

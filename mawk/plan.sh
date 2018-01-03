@@ -1,5 +1,5 @@
 pkg_name=mawk
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.3.4-20161120
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="An interpreter for the AWK Programming Language"

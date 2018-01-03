@@ -1,5 +1,5 @@
 pkg_name=binutils
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.28
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
@@ -7,8 +7,8 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=6297433ee120b11b4b0a1c8f3512d7d73501753142ab9e2daa13c5a3edd32a72
 pkg_deps=(core/glibc lilian/zlib)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/texinfo
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/texinfo
   lilian/expect lilian/dejagnu
 )
 pkg_bin_dirs=(bin)

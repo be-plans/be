@@ -1,5 +1,5 @@
 pkg_name=attr
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.4.47
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
@@ -7,8 +7,8 @@ pkg_source=http://download.savannah.gnu.org/releases/$pkg_name/$pkg_name-${pkg_v
 pkg_shasum=25772f653ac5b2e3ceeb89df50e4688891e21f723c460636548971652af0a859
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/gettext
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/gettext
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

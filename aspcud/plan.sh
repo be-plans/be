@@ -1,5 +1,5 @@
 pkg_name=aspcud
-pkg_origin=be
+pkg_origin=core
 pkg_version="1.9.4"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
@@ -15,9 +15,9 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/boost
   lilian/cmake
-  lilian/make
+  be/make
   be/gcc
-  lilian/re2c
+  be/re2c
 )
 pkg_bin_dirs=(bin)
 

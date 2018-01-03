@@ -1,6 +1,6 @@
 pkg_name=fontconfig
 pkg_version=2.11.94
-pkg_origin=be
+pkg_origin=core
 pkg_license=('fontconfig')
 pkg_description="Fontconfig is a library for configuring and
   customizing font access."
@@ -18,8 +18,8 @@ pkg_deps=(
   lilian/expat
   core/gcc-libs
 )
-pkg_build_deps=(be/gcc lilian/make lilian/coreutils lilian/python
-                lilian/pkg-config lilian/diffutils lilian/libtool
+pkg_build_deps=(be/gcc be/make be/coreutils be/python
+                lilian/pkg-config be/diffutils lilian/libtool
                 lilian/m4 lilian/automake lilian/autoconf lilian/file)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

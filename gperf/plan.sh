@@ -1,5 +1,5 @@
 pkg_name=gperf
-pkg_origin=be
+pkg_origin=core
 pkg_version="3.1"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_upstream_url="https://www.gnu.org/software/gperf/"
@@ -11,7 +11,7 @@ pkg_deps=(
   core/glibc core/gcc-libs be/gcc
 )
 pkg_build_deps=(
-pkg_build_deps=(lilian/make)
+pkg_build_deps=(be/make)
 )
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

@@ -1,12 +1,12 @@
 pkg_name=envdir
 pkg_version=0.7.0
-pkg_origin=be
+pkg_origin=core
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')
 pkg_description="Envdir runs another program with a modified environment according to files in a specified directory."
 pkg_upstream_url="https://github.com/jezdez/envdir"
 pkg_source=https://github.com/jezdez/envdir/archive/${pkg_version}.tar.gz
-pkg_deps=(lilian/python)
+pkg_deps=(be/python)
 pkg_bin_dirs=(bin)
 
 source ../defaults.sh

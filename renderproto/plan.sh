@@ -1,6 +1,6 @@
 pkg_name=renderproto
 pkg_distname=renderproto
-pkg_origin=be
+pkg_origin=core
 pkg_version=0.11.1
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

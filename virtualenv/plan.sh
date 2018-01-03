@@ -1,5 +1,5 @@
 pkg_name=virtualenv
-pkg_origin=be
+pkg_origin=core
 pkg_version=15.1.0
 pkg_description="virtualenv is a tool to create isolated Python environments. This version is for python2. For python3 use the built-in 'pyvenv'"
 pkg_upstream_url=https://virtualenv.pypa.io/

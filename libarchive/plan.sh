@@ -1,6 +1,6 @@
 pkg_name=libarchive
 pkg_distname=$pkg_name
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.3.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Multi-format archive and compression library"
@@ -9,8 +9,8 @@ pkg_license=('BSD')
 pkg_source=http://www.libarchive.org/downloads/${pkg_distname}-${pkg_version}.tar.gz
 pkg_shasum=ed2dbd6954792b2c054ccf8ec4b330a54b85904a80cef477a1c74643ddafa0ce
 pkg_dirname=${pkg_distname}-${pkg_version}
-pkg_deps=(core/glibc lilian/openssl  lilian/zlib lilian/bzip2 lilian/xz)
-pkg_build_deps=(be/gcc lilian/coreutils lilian/make)
+pkg_deps=(core/glibc be/openssl  lilian/zlib lilian/bzip2 lilian/xz)
+pkg_build_deps=(be/gcc be/coreutils be/make)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 

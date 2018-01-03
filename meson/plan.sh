@@ -1,5 +1,5 @@
 pkg_name=meson
-pkg_origin=be
+pkg_origin=core
 pkg_version=0.43.0
 pkg_description="The Meson Build System"
 pkg_upstream_url="http://mesonbuild.com/"

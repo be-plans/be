@@ -1,5 +1,5 @@
 pkg_name=libunwind
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.2.1
 pkg_description="A C programming interface to determine the call-chain of a program."
 pkg_upstream_url="http://www.nongnu.org/libunwind/"
@@ -9,8 +9,8 @@ pkg_source="http://download.savannah.gnu.org/releases/libunwind/libunwind-${pkg_
 pkg_shasum=3f3ecb90e28cbe53fba7a4a27ccce7aad188d3210bb1964a923a731a27a75acb
 pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
-  be/gcc  lilian/make lilian/diffutils
-  lilian/file lilian/coreutils
+  be/gcc  be/make be/diffutils
+  lilian/file be/coreutils
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

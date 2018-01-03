@@ -1,5 +1,5 @@
 pkg_name=mosquitto
-pkg_origin=be
+pkg_origin=core
 pkg_version="1.4.14"
 pkg_upstream_url="https://mosquitto.org"
 pkg_description="An Open Source MQTT v3.1/v3.1.1 Broker"

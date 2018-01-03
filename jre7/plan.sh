@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_name=jre7
 pkg_version=7u80
@@ -9,7 +9,7 @@ pkg_license=('Oracle Binary Code License Agreement for the Java SE Platform Prod
 pkg_description=('Oracle Java Runtime Environment. This package is made available to you to allow you to run your applications as provided in and subject to the terms of the Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX, found at http://www.oracle.com/technetwork/java/javase/terms/license/index.html')
 pkg_upstream_url=http://www.oracle.com/technetwork/java/javase/overview/index.html
 pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(lilian/patchelf)
+pkg_build_deps=(be/patchelf)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

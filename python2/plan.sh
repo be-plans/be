@@ -1,7 +1,7 @@
 pkg_name=python2
 pkg_distname=Python
 pkg_version=2.7.13
-pkg_origin=be
+pkg_origin=core
 pkg_license=('Python-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Python is a programming language that lets you work quickly
@@ -16,18 +16,18 @@ pkg_deps=(
   lilian/gdbm
   core/glibc
   lilian/ncurses
-  lilian/openssl
+  be/openssl
   lilian/readline
   lilian/sqlite
   lilian/zlib
 )
 pkg_build_deps=(
-  lilian/coreutils
-  lilian/diffutils
+  be/coreutils
+  be/diffutils
   be/gcc
   lilian/gdb
   core/linux-headers
-  lilian/make
+  be/make
   lilian/util-linux
 )
 pkg_lib_dirs=(lib)

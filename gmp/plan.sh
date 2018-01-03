@@ -1,5 +1,5 @@
 pkg_name=gmp
-pkg_origin=be
+pkg_origin=core
 pkg_version=6.1.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3')
@@ -9,8 +9,8 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=87b565e89a9a684fe4ebeeddb8399dce2599f9c9049854ca8c0dfbdea0e21912
 pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make      be/gcc       lilian/binutils
+  be/coreutils be/diffutils be/patch
+  be/make      be/gcc       lilian/binutils
   lilian/m4
 )
 pkg_include_dirs=(include)

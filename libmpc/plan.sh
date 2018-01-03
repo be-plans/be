@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=libmpc
 pkg_distname=mpc
 pkg_version=1.0.3
@@ -8,8 +8,8 @@ pkg_source=http://www.multiprecision.org/mpc/download/${pkg_distname}-${pkg_vers
 pkg_shasum=617decc6ea09889fb08ede330917a00b16809b8db88c29c31bfbb49cbf88ecc3
 pkg_deps=(core/glibc lilian/gmp lilian/mpfr)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/binutils
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/binutils
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

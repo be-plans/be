@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=rlwrap
 pkg_version=0.43
 pkg_description="A readline wrapper"
@@ -13,7 +13,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/gcc
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin)
 

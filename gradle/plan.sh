@@ -1,5 +1,5 @@
 pkg_name=gradle
-pkg_origin=be
+pkg_origin=core
 pkg_version=4.3.1
 pkg_source=https://services.gradle.org/distributions/${pkg_name}-${pkg_version}-bin.zip
 pkg_shasum=15ebe098ce0392a2d06d252bff24143cc88c4e963346582c8d88814758d93ac7
@@ -11,10 +11,10 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_deps=(
   core/glibc core/gcc-libs lilian/jre8
-  lilian/coreutils core/bash-static lilian/sed)
+  be/coreutils core/bash-static be/sed)
 pkg_build_deps=(
-  lilian/make be/gcc
-  lilian/jdk8 lilian/patchelf
+  be/make be/gcc
+  lilian/jdk8 be/patchelf
 )
 
 source ../defaults.sh
@@ -28,7 +28,7 @@ do_build() {
   mv native-platform-linux-amd64-0.14.jar ../lib/
   popd
   rm -rf patching
-  fix_interpreter bin/gradle lilian/coreutils bin/env
+  fix_interpreter bin/gradle be/coreutils bin/env
 }
 
 do_install() {

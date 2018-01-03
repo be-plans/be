@@ -1,6 +1,6 @@
 pkg_name=freetype
 pkg_version=2.8
-pkg_origin=be
+pkg_origin=core
 pkg_description="A software library to render fonts"
 pkg_upstream_url="https://www.freetype.org"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -13,8 +13,8 @@ pkg_deps=(
   lilian/zlib lilian/bzip2
 )
 pkg_build_deps=(
-  be/gcc lilian/make lilian/coreutils
-  lilian/pkg-config lilian/diffutils
+  be/gcc be/make be/coreutils
+  lilian/pkg-config be/diffutils
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

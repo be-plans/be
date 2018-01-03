@@ -1,7 +1,7 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=python
 pkg_distname=Python
-pkg_version=3.6.3
+pkg_version=3.6.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Python-2.0')
 pkg_description="Python is a programming language that lets you work quickly \
@@ -9,24 +9,24 @@ pkg_description="Python is a programming language that lets you work quickly \
 pkg_upstream_url="https://www.python.org"
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_source=https://www.python.org/ftp/python/${pkg_version}/${pkg_dirname}.tar.xz
-pkg_shasum=ab6193af1921b30f587b302fe385268510e80187ca83ca82d2bfe7ab544c6f91
+pkg_shasum=159b932bf56aeaa76fd66e7420522d8c8853d486b8567c459b84fe2ed13bcaba
 pkg_deps=(
   lilian/bzip2
   core/gcc-libs
   lilian/gdbm
   core/glibc
   lilian/ncurses
-  lilian/openssl
+  be/openssl
   lilian/readline
   lilian/sqlite
   lilian/zlib
 )
 pkg_build_deps=(
-  lilian/coreutils
-  lilian/diffutils
+  be/coreutils
+  be/diffutils
   be/gcc
   core/linux-headers
-  lilian/make
+  be/make
   lilian/util-linux
 )
 pkg_lib_dirs=(lib)
@@ -34,7 +34,6 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_interpreters=(bin/python bin/python3 bin/python3.5)
 
-no_pie=true
 source ../defaults.sh
 
 do_prepare() {

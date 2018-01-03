@@ -1,6 +1,6 @@
 pkg_name=libxrender
 pkg_distname=libXrender
-pkg_origin=be
+pkg_origin=core
 pkg_version=0.9.10
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

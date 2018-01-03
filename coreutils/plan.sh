@@ -1,21 +1,34 @@
 pkg_name=coreutils
 pkg_distname=$pkg_name
-pkg_origin=be
-pkg_version=8.27
+pkg_origin=core
+pkg_version=8.29
 pkg_upstream_url=https://www.gnu.org/software/coreutils/
 pkg_description="Basic file, shell and text manipulation utilities of the GNU operating system."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
 pkg_source="http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.tar.xz"
-pkg_shasum=8891d349ee87b9ff7870f52b6d9312a9db672d2439d289bc57084771ca21656b
-pkg_deps=(core/glibc lilian/acl lilian/attr
-          lilian/gmp lilian/libcap)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make
-                be/gcc       lilian/m4        lilian/perl  lilian/inetutils)
+pkg_shasum=92d0fa1c311cacefa89853bdb53c62f4110cdfda3820346b59cbd098f40f955e
+pkg_deps=(
+  core/glibc
+  lilian/acl
+  lilian/attr
+  lilian/gmp
+  lilian/libcap
+)
+pkg_build_deps=(
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  lilian/m4
+  lilian/perl
+  lilian/inetutils
+)
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/env)
 
-no_pie=true
+pkg_disabled_features=(lto pie)
 source ../defaults.sh
 
 do_build() {

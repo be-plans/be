@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=gnutls
 pkg_version=3.5.13
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -14,8 +14,8 @@ pkg_deps=(
   lilian/unbound
 )
 pkg_build_deps=(
-  be/gcc lilian/make lilian/pkg-config
-  lilian/diffutils lilian/coreutils lilian/p11-kit
+  be/gcc be/make lilian/pkg-config
+  be/diffutils be/coreutils lilian/p11-kit
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include include/gnutls)

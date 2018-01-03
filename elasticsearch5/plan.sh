@@ -1,5 +1,5 @@
 pkg_name=elasticsearch5
-pkg_origin=be
+pkg_origin=core
 pkg_version=5.6.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Open Source, Distributed, RESTful Search Engine"

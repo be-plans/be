@@ -1,5 +1,5 @@
 pkg_name=groff
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.22.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
@@ -11,7 +11,7 @@ pkg_bin_dirs=(bin)
 pkg_build_deps=(
   be/gcc
   core/gcc-libs
-  lilian/make
+  be/make
   lilian/perl
 )
 pkg_deps=(

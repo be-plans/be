@@ -2,7 +2,7 @@ source ../curl/plan.sh
 
 pkg_name=curl-static-musl
 pkg_distname=curl
-pkg_origin=be
+pkg_origin=core
 pkg_version=7.51.0
 pkg_description="curl is an open source command line tool and library for
   transferring data with URL syntax."
@@ -12,14 +12,14 @@ pkg_license=('curl')
 pkg_source=https://curl.haxx.se/download/${pkg_distname}-${pkg_version}.tar.gz
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(
-  lilian/cacerts
+  be/cacerts
 )
 pkg_build_deps=(
-  lilian/coreutils
+  be/coreutils
   be/gcc
-  lilian/make
+  be/make
   lilian/musl
-  lilian/openssl -musl
+  be/openssl -musl
   lilian/zlib-musl
 )
 pkg_bin_dirs=(bin)

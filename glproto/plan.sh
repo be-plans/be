@@ -1,5 +1,5 @@
 pkg_name=glproto
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.4.17
 pkg_description="GL proto"
 pkg_upstream_url="https://www.x.org/"

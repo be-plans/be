@@ -1,5 +1,5 @@
 pkg_name=iproute2
-pkg_origin=be
+pkg_origin=core
 pkg_version=4.11.0
 pkg_source=https://www.kernel.org/pub/linux/utils/net/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=72671028bda696d0cb8f48ec8e702581c3a501caeed33eec3a81d7041cbc8026
@@ -15,7 +15,7 @@ pkg_build_deps=(
   be/gcc
   lilian/iptables
   lilian/m4
-  lilian/make
+  be/make
   lilian/pkg-config
 )
 pkg_deps=(core/glibc)

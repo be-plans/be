@@ -1,5 +1,5 @@
 pkg_name=automake
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.15.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2+')
@@ -7,8 +7,8 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=af6ba39142220687c500f79b4aa2f181d9b24e4f8d8ec497cea4ba26c64bedaf
 pkg_deps=(lilian/perl)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/autoconf
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/autoconf
 )
 pkg_bin_dirs=(bin)
 
@@ -22,5 +22,5 @@ source ../defaults.sh
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils lilian/diffutils lilian/autoconf)
+  pkg_build_deps=(be/gcc be/coreutils be/diffutils lilian/autoconf)
 fi

@@ -1,5 +1,5 @@
 pkg_name="lsof"
-pkg_origin="be"
+pkg_origin="core"
 pkg_version="4.89"
 pkg_license=('lsof')
 pkg_upstream_url="https://people.freebsd.org/~abe/"
@@ -10,7 +10,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_deps=(core/glibc)
 pkg_bin_dirs=(bin)
 pkg_build_deps=(
-  lilian/coreutils lilian/make be/gcc
+  be/coreutils be/make be/gcc
   core/busybox-static
 )
 pkg_dirname="lsof_${pkg_version}"

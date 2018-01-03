@@ -1,5 +1,5 @@
 pkg_name=grub
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.02
 pkg_source=ftp://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -13,8 +13,8 @@ pkg_build_deps=(
   lilian/automake
   lilian/binutils
   lilian/bison
-  lilian/cacerts
-  lilian/diffutils
+  be/cacerts
+  be/diffutils
   lilian/dosfstools
   lilian/flex
   lilian/freetype
@@ -22,8 +22,8 @@ pkg_build_deps=(
   lilian/gettext
   lilian/git
   lilian/m4
-  lilian/make
-  lilian/python
+  be/make
+  be/python
   lilian/qemu
   lilian/rsync
   lilian/texinfo

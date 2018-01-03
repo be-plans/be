@@ -1,5 +1,5 @@
 pkg_name=zsh
-pkg_origin=be
+pkg_origin=core
 pkg_version=5.3.1
 pkg_description="Zsh is a shell designed for interactive use, although it is also a powerful scripting language."
 pkg_upstream_url="http://www.zsh.org"
@@ -9,10 +9,10 @@ pkg_source=https://downloads.sourceforge.net/project/zsh/zsh/$pkg_version/zsh-$p
 pkg_shasum=3d94a590ff3c562ecf387da78ac356d6bea79b050a9ef81e3ecb9f8ee513040e
 pkg_deps=(
   core/glibc lilian/pcre lilian/ncurses
-  lilian/readline lilian/gdbm lilian/coreutils
+  lilian/readline lilian/gdbm be/coreutils
   lilian/perl
 )
-pkg_build_deps=(lilian/make be/gcc)
+pkg_build_deps=(be/make be/gcc)
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/zsh)
 

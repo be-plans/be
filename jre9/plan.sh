@@ -1,6 +1,6 @@
 source ../jre8/plan.sh
 
-pkg_origin=be
+pkg_origin=core
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_name=jre9
 pkg_version=9.0.1

@@ -1,5 +1,5 @@
 pkg_name=omniORB
-pkg_origin=be
+pkg_origin=core
 pkg_version='4.2.2'
 pkg_description="A CORBA object request broker for C++ and Python."
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
@@ -13,14 +13,14 @@ pkg_shasum=ddd909ce31014be2beebf67a5e9fabbf03b5bb0c26b8c53ab64d470d77348ece
 pkg_deps=(
   core/glibc
   core/gcc-libs
-  lilian/coreutils
+  be/coreutils
 )
 pkg_build_deps=(
   lilian/autoconf
   be/gcc
   lilian/glib
-  lilian/make
-  lilian/openssl
+  be/make
+  be/openssl
   lilian/pkg-config
   lilian/python2
 )
@@ -36,5 +36,5 @@ do_install() {
   do_default_install
 
   build_line "Fixing interpreters"
-  fix_interpreter "$pkg_prefix/bin/omniidlrun.py" lilian/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/omniidlrun.py" be/coreutils bin/env
 }

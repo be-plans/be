@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=inotify-tools
 pkg_version=3.14
 pkg_description="inotify-tools is a C library and a set of command-line programs for Linux providing a simple interface to inotify. These programs can be used to monitor and act upon filesystem events."

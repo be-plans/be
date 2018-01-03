@@ -1,5 +1,5 @@
 pkg_name=gawk
-pkg_origin=be
+pkg_origin=core
 pkg_version=4.1.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3+')
@@ -7,8 +7,8 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=53e184e2d0f90def9207860531802456322be091c7b48f23fdc79cda65adc266
 pkg_deps=(core/glibc lilian/mpfr)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/sed
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc be/sed
 )
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/awk bin/gawk)
@@ -28,5 +28,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed)
+  pkg_build_deps=(be/gcc be/coreutils be/sed)
 fi

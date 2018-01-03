@@ -1,12 +1,12 @@
 pkg_name=psmisc
-pkg_origin=be
+pkg_origin=core
 pkg_version=22.21
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gpl')
 pkg_source=http://downloads.sourceforge.net/psmisc/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=97323cad619210845b696d7d722c383852b2acb5c49b5b0852c4f29c77a8145a
 pkg_deps=(core/glibc lilian/ncurses)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make be/gcc)
+pkg_build_deps=(be/coreutils be/diffutils be/patch be/make be/gcc)
 pkg_bin_dirs=(bin)
 
 do_prepare() {

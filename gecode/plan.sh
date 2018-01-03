@@ -1,6 +1,6 @@
 pkg_name=gecode
 pkg_distname=$pkg_name
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.7.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')
@@ -12,10 +12,10 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  lilian/coreutils
-  lilian/diffutils
+  be/coreutils
+  be/diffutils
   be/gcc
-  lilian/make
+  be/make
   lilian/perl
 )
 pkg_description="Gecode is a toolkit for developing constraint-based systems and applications"

@@ -1,5 +1,5 @@
 pkg_name=harfbuzz
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.4.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')
@@ -24,7 +24,7 @@ pkg_build_deps=(
   be/gcc
   lilian/perl
   lilian/pkg-config
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include/harfbuzz)

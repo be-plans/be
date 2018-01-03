@@ -1,5 +1,5 @@
 pkg_name=ninja
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.8.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_upstream_url=https://ninja-build.org/
@@ -15,25 +15,24 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/gcc
-  lilian/python
-  lilian/coreutils
-  lilian/re2c
+  be/python
+  be/coreutils
+  be/re2c
 )
 pkg_bin_dirs=(bin)
 
+pkg_disabled_features=(lto)
 source ../defaults.sh
 
 do_build() {
-  export CFLAGS="${CFLAGS} -D_GNU_SOURCE"
-  export CXXFLAGS="${CXXFLAGS} -D_GNU_SOURCE"
-
-  local -r _env_path="$(pkg_path_for lilian/coreutils)/bin/env"
-  sed "1s|/usr/bin/env|${_env_path}|" -i configure.py
-
-  ./configure.py --bootstrap
+  local -r python="$(pkg_path_for python)/bin/python"
+  "${python}" configure.py --bootstrap --verbose
 }
 
 do_install() {
-  mkdir -p "$pkg_prefix/bin/"
-  install -s ninja "$pkg_prefix/bin/"
+  mkdir -p "${pkg_prefix}/bin/"
+  install -s ninja "${pkg_prefix}/bin/"
+  install -D -p -m 0644 misc/zsh-completion  "${pkg_svc_data_path}/zsh/site-functions/_ninja"
+  install -D -p -m 0644 misc/bash-completion "${pkg_svc_config_path}/bash_completion.d/ninja"
+  install -D -p -m 0644 misc/ninja.vim       "${pkg_svc_data_path}/vim/site/syntax/ninja.vim"
 }

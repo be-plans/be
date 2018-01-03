@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_name=jruby1
 pkg_version=1.7.27
@@ -9,13 +9,13 @@ pkg_shasum=25628ef9b5ba3018563ae625c1534de3472b3a95b184aef6d8ef6731378909b7
 pkg_license=('EPL 1.0' 'GPL-2.0' 'LGPL-2.1')
 pkg_deps=(
   lilian/bash
-  lilian/coreutils
+  be/coreutils
   core/glibc
   lilian/jre8
 )
 pkg_build_deps=(
   lilian/jdk8
-  lilian/make
+  be/make
   lilian/which
 )
 pkg_bin_dirs=(bin)

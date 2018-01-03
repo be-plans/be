@@ -1,5 +1,5 @@
 pkg_name=eudev
-pkg_origin=be
+pkg_origin=core
 pkg_version="3.2.1"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')

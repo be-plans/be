@@ -1,6 +1,6 @@
 pkg_name=bzip2
 pkg_distname=$pkg_name
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.0.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('bzip2')
@@ -8,7 +8,7 @@ pkg_source=http://www.bzip.org/$pkg_version/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=a2848f34fcd5d6cf47def00461fcb528a0484d8edef8208d6d2e2909dc61d9cd
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make be/gcc)
+pkg_build_deps=(be/coreutils be/diffutils be/patch be/make be/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

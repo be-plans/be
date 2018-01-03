@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=libidn2
 pkg_version=2.0.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -12,8 +12,8 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

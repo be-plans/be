@@ -1,11 +1,11 @@
 pkg_name=protobuf-rust
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.0.18
 pkg_license=('BSD')
 pkg_source=nosuchfile.tar.gz
 pkg_bin_dirs=(bin)
 pkg_deps=(core/glibc be/gcc)
-pkg_build_deps=(core/rust be/gcc lilian/cacerts lilian/protobuf)
+pkg_build_deps=(core/rust be/gcc be/cacerts lilian/protobuf)
 
 source ../defaults.sh
 

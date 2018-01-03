@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=vault
 pkg_version=0.7.3
 pkg_description="A tool for managing secrets."

@@ -1,5 +1,5 @@
 pkg_name=mariadb
-pkg_origin=be
+pkg_origin=core
 pkg_version=10.3.0
 pkg_description="An open source monitoring software for networks and applications"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -10,7 +10,7 @@ pkg_deps=(
   core/gcc-libs lilian/ncurses lilian/zlib
 )
 pkg_build_deps=(
-  be/gcc lilian/make lilian/coreutils
+  be/gcc be/make be/coreutils
   lilian/cmake lilian/gnupg
 )
 pkg_bin_dirs=(bin)

@@ -1,5 +1,5 @@
 pkg_name=bats
-pkg_origin=be
+pkg_origin=core
 pkg_version='0.4.0'
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_license=('MIT')
@@ -10,13 +10,13 @@ pkg_source="https://github.com/sstephenson/bats/archive/$pkg_filename"
 pkg_shasum='480d8d64f1681eee78d1002527f3f06e1ac01e173b761bc73d0cf33f4dc1d8d7'
 pkg_deps=(
   lilian/bash
-  lilian/coreutils
+  be/coreutils
 )
 pkg_bin_dirs=(bin)
 
 do_build() {
-  fix_interpreter 'install.sh' lilian/coreutils bin/env
-  fix_interpreter 'libexec/*' lilian/coreutils bin/env
+  fix_interpreter 'install.sh' be/coreutils bin/env
+  fix_interpreter 'libexec/*' be/coreutils bin/env
 }
 
 do_install() {

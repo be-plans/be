@@ -1,5 +1,5 @@
 pkg_name=mysql
-pkg_origin=be
+pkg_origin=core
 pkg_version=5.7.18
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_license=('GPL-2.0')
@@ -18,27 +18,27 @@ Set the app_username and app_password at runtime to have that user created, it w
 EOF
 )
 pkg_deps=(
-  lilian/coreutils
+  be/coreutils
   lilian/gawk
   core/gcc-libs
   core/glibc
   lilian/grep
   lilian/inetutils
   lilian/ncurses
-  lilian/openssl
+  be/openssl
   lilian/pcre
   lilian/perl
   lilian/procps-ng
-  lilian/sed
+  be/sed
 )
 pkg_build_deps=(
   lilian/bison
   lilian/boost/1.59.0
   lilian/cmake
-  lilian/diffutils
+  be/diffutils
   be/gcc
-  lilian/make
-  lilian/patch
+  be/make
+  be/patch
 )
 pkg_svc_user="hab"
 pkg_bin_dirs=(bin)

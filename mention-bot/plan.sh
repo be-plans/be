@@ -1,5 +1,5 @@
 pkg_name=mention-bot
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.0.2
 pkg_description="Automatically mention potential reviewers on pull requests."
 pkg_upstream_url=https://github.com/facebook/mention-bot
@@ -15,8 +15,8 @@ pkg_deps=(
 pkg_build_deps=(
   core/glibc
   lilian/node
-  lilian/patchelf
-  lilian/patch
+  be/patchelf
+  be/patch
 )
 pkg_exports=(
   [port]=port

@@ -1,5 +1,5 @@
 pkg_name=shadow
-pkg_origin=be
+pkg_origin=core
 pkg_version=4.5
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('bsd')
@@ -11,8 +11,8 @@ pkg_deps=(
   core/glibc lilian/attr lilian/acl
 )
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc
 )
 pkg_bin_dirs=(bin)
 

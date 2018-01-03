@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=docutils
 pkg_version='0.12'
 pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
@@ -12,7 +12,7 @@ pkg_source=https://downloads.sourceforge.net/project/${pkg_name}/${pkg_name}/${p
 pkg_shasum=c7db717810ab6965f66c8cf0398a98c9d8df982da39b4cd7f162911eb89596fa
 pkg_deps=()
 pkg_build_deps=(
-  lilian/make
+  be/make
   be/gcc
   lilian/python2
 )

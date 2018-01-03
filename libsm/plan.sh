@@ -1,6 +1,6 @@
 pkg_name=libsm
 pkg_distname=libSM
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.2.2
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

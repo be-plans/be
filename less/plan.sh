@@ -1,5 +1,5 @@
 pkg_name=less
-pkg_origin=be
+pkg_origin=core
 pkg_version=487
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3+')
@@ -7,8 +7,8 @@ pkg_source=http://www.greenwoodsoftware.com/$pkg_name/${pkg_name}-${pkg_version}
 pkg_shasum=f3dc8455cb0b2b66e0c6b816c00197a71bf6d1787078adeee0bcf2aea4b12706
 pkg_deps=(core/glibc lilian/ncurses lilian/pcre)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc
 )
 pkg_bin_dirs=(bin)
 
@@ -33,5 +33,5 @@ do_build() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils)
+  pkg_build_deps=(be/gcc be/coreutils)
 fi

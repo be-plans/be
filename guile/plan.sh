@@ -1,5 +1,5 @@
 pkg_name=guile
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.0.12
 pkg_description="An implementation of the Scheme programming language, used in many GNU programs as an extension language."
 pkg_upstream_url="https://www.gnu.org/software/guile/"
@@ -16,7 +16,7 @@ pkg_deps=(lilian/bdwgc
   lilian/libtool
   lilian/libunistring
   lilian/readline)
-pkg_build_deps=(lilian/diffutils be/gcc lilian/make lilian/pkg-config)
+pkg_build_deps=(be/diffutils be/gcc be/make lilian/pkg-config)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

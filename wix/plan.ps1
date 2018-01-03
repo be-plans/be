@@ -1,5 +1,5 @@
 $pkg_name="wix"
-$pkg_origin="be"
+$pkg_origin="core"
 $pkg_version="3.10.3"
 $pkg_license=('MS-RL')
 $pkg_upstream_url="http://wixtoolset.org/"

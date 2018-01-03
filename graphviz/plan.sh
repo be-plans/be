@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=graphviz
 pkg_description="Graphviz - Graph Visualization Software"
 pkg_upstream_url=http://www.graphviz.org/
@@ -11,9 +11,9 @@ pkg_dirname=${pkg_name}-${pkg_version}
 pkg_deps=(core/glibc)
 pkg_build_deps=(
     lilian/autoconf
-    lilian/coreutils
+    be/coreutils
     be/gcc
-    lilian/make
+    be/make
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

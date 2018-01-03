@@ -1,5 +1,5 @@
 pkg_name=mpfr
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.1.5
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('LGPL-2.0')
@@ -7,8 +7,8 @@ pkg_source=http://www.mpfr.org/${pkg_name}-${pkg_version}/${pkg_name}-${pkg_vers
 pkg_shasum=015fde82b3979fbe5f83501986d328331ba8ddf008c1ff3da3c238f49ca062bc
 pkg_deps=(core/glibc lilian/gmp)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/binutils
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/binutils
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

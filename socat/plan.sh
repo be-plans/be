@@ -1,5 +1,5 @@
 pkg_name=socat
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.7.3.2
 pkg_source=http://www.dest-unreach.org/${pkg_name}/download/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=ce3efc17e3e544876ebce7cd6c85b3c279fda057b2857fcaaf67b9ab8bdaf034
@@ -8,5 +8,5 @@ pkg_description="Multipurpose relay for bidirectional data transfer between two 
 pkg_upstream_url=http://www.dest-unreach.org/socat/
 pkg_license=('GPL-2.0')
 pkg_bin_dirs=(bin)
-pkg_build_deps=(lilian/make be/gcc)
-pkg_deps=(core/glibc lilian/readline lilian/openssl)
+pkg_build_deps=(be/make be/gcc)
+pkg_deps=(core/glibc lilian/readline be/openssl)

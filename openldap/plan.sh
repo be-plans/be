@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=openldap
 pkg_version=2.4.45
 pkg_description="Community developed LDAP software"
@@ -7,8 +7,8 @@ pkg_license=("OLDAP-2.8")
 pkg_upstream_url=http://www.openldap.org/
 pkg_source=https://www.openldap.org/software/download/OpenLDAP/${pkg_name}-release/${pkg_name}-${pkg_version}.tgz
 pkg_shasum=cdd6cffdebcd95161a73305ec13fc7a78e9707b46ca9f84fb897cd5626df3824
-pkg_deps=(core/glibc lilian/libtool core/db lilian/openssl  core/cyrus-sasl)
-pkg_build_deps=(be/gcc lilian/make lilian/groff)
+pkg_deps=(core/glibc lilian/libtool core/db be/openssl  core/cyrus-sasl)
+pkg_build_deps=(be/gcc be/make lilian/groff)
 pkg_bin_dirs=(bin sbin libexec)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

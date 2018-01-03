@@ -1,6 +1,6 @@
 pkg_name=wget
 pkg_distname=$pkg_name
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.19.1
 pkg_license=('GPL-3.0+')
 pkg_description="GNU Wget is a free software package for retrieving files using HTTP, HTTPS, FTP and FTPS the most widely-used Internet protocols."
@@ -10,11 +10,11 @@ pkg_source=https://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.
 pkg_shasum=0c950b9671881222a4d385b013c9604e98a8025d1988529dfca0e93617744cd2
 pkg_deps=(
   core/glibc lilian/libidn lilian/zlib
-  lilian/openssl  lilian/cacerts
+  be/openssl  be/cacerts
 )
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/sed
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc be/sed
   lilian/grep lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
@@ -61,5 +61,5 @@ _wget_common_prepare() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/pkg-config lilian/coreutils lilian/sed lilian/grep lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(be/gcc lilian/pkg-config be/coreutils be/sed lilian/grep be/diffutils be/make be/patch)
 fi

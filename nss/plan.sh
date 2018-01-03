@@ -1,6 +1,6 @@
 #!/bin/bash
 pkg_name=nss
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.25
 pkg_license=("MPL-2.0")
 pkg_description="Network Security Services"
@@ -9,7 +9,7 @@ pkg_upstream_url=https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 pkg_source=https://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${pkg_version//./_}_RTM/src/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=5d1ad475da19d0c033a716350dc5f8a747999d3eba5ac07ee0368c5bad6e2359
 pkg_deps=(core/glibc core/nspr lilian/zlib lilian/sqlite)
-pkg_build_deps=(be/gcc lilian/make lilian/patch lilian/perl)
+pkg_build_deps=(be/gcc be/make be/patch lilian/perl)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include/nss)
 pkg_lib_dirs=(lib)

@@ -1,5 +1,5 @@
 pkg_name=dri2proto
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.8
 pkg_description="DRI2 proto"
 pkg_upstream_url="https://www.x.org/"

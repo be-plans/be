@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=rebar3
 pkg_version=3.4.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -6,7 +6,7 @@ pkg_license=(Apache-2.0)
 pkg_source=https://github.com/erlang/${pkg_name}/archive/${pkg_version}.tar.gz
 pkg_shasum=f4d38d01671af6a7eb4777654d1543b42c873dad32046e444434c64d929fc789
 pkg_deps=(lilian/erlang core/busybox-static)
-pkg_build_deps=(lilian/coreutils)
+pkg_build_deps=(be/coreutils)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 

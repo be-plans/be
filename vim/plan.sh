@@ -1,5 +1,5 @@
 pkg_name=vim
-pkg_origin=be
+pkg_origin=core
 pkg_version=8.0.0642
 pkg_license=('vim')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -8,8 +8,8 @@ pkg_source="http://github.com/${pkg_name}/${pkg_name}/archive/v${pkg_version}.ta
 pkg_shasum=5027020cb9d473da3da106f0212855e32df161c39552a6f5a71850c6cfb4a2ec
 pkg_deps=(core/glibc lilian/acl lilian/ncurses)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/sed lilian/autoconf
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc be/sed lilian/autoconf
 )
 pkg_bin_dirs=(bin)
 
@@ -57,5 +57,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/make lilian/patch lilian/autoconf)
+  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils be/make be/patch lilian/autoconf)
 fi

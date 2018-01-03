@@ -1,5 +1,5 @@
 pkg_name=ocamlbuild
-pkg_origin=be
+pkg_origin=core
 pkg_version="0.11.0"
 pkg_description="OCamlbuild is a generic build tool, that has built-in rules for building OCaml library and programs."
 pkg_upstream_url="https://github.com/ocaml/ocamlbuild"
@@ -10,12 +10,12 @@ pkg_shasum="1717edc841c9b98072e410f1b0bc8b84444b4b35ed3b4949ce2bec17c60103ee"
 pkg_deps=(
   core/glibc
   lilian/ocaml
-  lilian/coreutils
+  be/coreutils
   lilian/ncurses
 )
 pkg_build_deps=(
   be/gcc
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin)
 

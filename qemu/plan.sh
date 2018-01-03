@@ -1,5 +1,5 @@
 pkg_name=qemu
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.9.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="QEMU is a generic and open source machine emulator and virtualizer."
@@ -24,7 +24,7 @@ pkg_deps=(
   lilian/pcre
   lilian/pixman
   lilian/python2
-  lilian/snappy
+  be/snappy
   lilian/util-linux
   lilian/vde2
   lilian/zlib
@@ -32,10 +32,10 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/autoconf
   lilian/automake
-  lilian/diffutils
+  be/diffutils
   be/gcc
   lilian/libtool
-  lilian/make
+  be/make
   lilian/m4
   lilian/pkg-config
 )

@@ -1,5 +1,5 @@
 pkg_name=libcap
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.25
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2')
@@ -7,8 +7,8 @@ pkg_source=https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/${
 pkg_shasum=693c8ac51e983ee678205571ef272439d83afe62dd8e424ea14ad9790bc35162
 pkg_deps=(core/glibc lilian/attr)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc core/linux-headers
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc core/linux-headers
   lilian/perl
 )
 pkg_bin_dirs=(bin)

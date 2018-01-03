@@ -1,5 +1,5 @@
 pkg_name=rq
-pkg_origin=be
+pkg_origin=core
 pkg_version=0.9.2
 pkg_source=https://github.com/dflemstr/rq/releases/download/v${pkg_version}/${pkg_name}-x86_64-unknown-linux-musl
 pkg_shasum=01718bd4e52e5139d050dabbea308566a20c54d62a46fd28ab900819acc31c8b

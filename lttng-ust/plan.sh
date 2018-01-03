@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=lttng-ust
 pkg_version=2.9.1
 pkg_description="LTTng is an open source tracing framework for Linux."
@@ -8,7 +8,7 @@ pkg_license=('GPL-2.0' 'MIT')
 pkg_source=$pkg_upstream_url/files/$pkg_name/$pkg_name-$pkg_version.tar.bz2
 pkg_shasum=b891d267cdbbbd11cf34751f66c21c4a7fdc0eec3c1b53be2c40dca073b7daa4
 pkg_deps=(
-  lilian/coreutils
+  be/coreutils
   core/gcc-libs
   core/glibc
   lilian/python2
@@ -16,7 +16,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/gcc
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -27,5 +27,5 @@ source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
-  fix_interpreter "$HAB_CACHE_SRC_PATH/$pkg_dirname/tools/lttng-gen-tp" lilian/coreutils bin/env
+  fix_interpreter "$HAB_CACHE_SRC_PATH/$pkg_dirname/tools/lttng-gen-tp" be/coreutils bin/env
 }

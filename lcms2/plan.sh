@@ -1,5 +1,5 @@
 pkg_name=lcms2
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.8
 pkg_description="Small-footprint color management engine, version 2"
 pkg_upstream_url=http://www.littlecms.com
@@ -15,7 +15,7 @@ pkg_deps=(
   lilian/xz
   lilian/zlib
 )
-pkg_build_deps=(be/gcc lilian/make)
+pkg_build_deps=(be/gcc be/make)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

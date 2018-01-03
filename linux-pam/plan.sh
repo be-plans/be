@@ -1,5 +1,5 @@
 pkg_name=linux-pam
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.3.0
 pkg_license=('BSD-3-Clause' 'GPL')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -10,7 +10,7 @@ pkg_filename=${pkg_name}-${pkg_version}.tar.bz2
 pkg_dirname=Linux-PAM-${pkg_version}
 pkg_shasum=241aed1ef522f66ed672719ecf2205ec513fd0075ed80cda8e086a5b1a01d1bb
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/coreutils be/gcc lilian/make)
+pkg_build_deps=(be/coreutils be/gcc be/make)
 pkg_bin_dirs=(sbin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

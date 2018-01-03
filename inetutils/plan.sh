@@ -1,5 +1,5 @@
 pkg_name=inetutils
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.9.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
@@ -7,8 +7,8 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=849d96f136effdef69548a940e3e0ec0624fc0c81265296987986a0dd36ded37
 pkg_deps=(core/glibc lilian/libcap lilian/ncurses)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/sed lilian/grep
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc be/sed lilian/grep
 )
 pkg_bin_dirs=(bin)
 
@@ -54,5 +54,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed lilian/grep)
+  pkg_build_deps=(be/gcc be/coreutils be/sed lilian/grep)
 fi

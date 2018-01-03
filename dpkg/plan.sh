@@ -1,5 +1,5 @@
 pkg_name=dpkg
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.18.24
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
@@ -21,12 +21,12 @@ pkg_build_deps=(
   be/gcc
   lilian/gettext
   lilian/libtool
-  lilian/patch
-  lilian/make
+  be/patch
+  be/make
   lilian/ncurses
   lilian/perl
   lilian/pkg-config
-  lilian/patch
+  be/patch
   lilian/xz
   lilian/zlib
 )

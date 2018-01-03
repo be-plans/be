@@ -1,5 +1,5 @@
 pkg_name=libxcb
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.12
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X11 C Bindings"

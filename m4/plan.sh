@@ -1,5 +1,5 @@
 pkg_name=m4
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.4.18
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3')
@@ -7,8 +7,8 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=f2c1e86ca0a404ff281631bdc8377638992744b175afb806e25871a24a934e07
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/binutils
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/binutils
 )
 pkg_bin_dirs=(bin)
 

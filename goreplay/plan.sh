@@ -1,5 +1,5 @@
 pkg_name=goreplay
-pkg_origin=be
+pkg_origin=core
 pkg_version="0.16.1"
 pkg_license=('LGPL-3.0')
 pkg_description="GoReplay is an open-source tool for capturing and replaying live HTTP traffic into a test environment in order to continuously test your system with real data."

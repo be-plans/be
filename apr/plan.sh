@@ -1,5 +1,5 @@
 pkg_name=apr
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.6.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Apache Portable Runtime"
@@ -12,12 +12,12 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  lilian/diffutils
+  be/diffutils
   lilian/file
   be/gcc
   lilian/iana-etc
   lilian/libossp-uuid
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

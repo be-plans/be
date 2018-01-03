@@ -1,5 +1,5 @@
 pkg_name=gdb
-pkg_origin=be
+pkg_origin=core
 pkg_version=8.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
@@ -16,16 +16,16 @@ pkg_deps=(
   lilian/expat
   lilian/guile
   lilian/bdwgc
-  lilian/python
+  be/python
 )
 pkg_build_deps=(
-  lilian/coreutils
+  be/coreutils
   lilian/pkg-config
-  lilian/diffutils
+  be/diffutils
   lilian/expect
   lilian/dejagnu
-  lilian/patch
-  lilian/make
+  be/patch
+  be/make
   be/gcc
   lilian/texinfo
 )

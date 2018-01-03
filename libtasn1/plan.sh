@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=libtasn1
 pkg_version=4.12
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -11,7 +11,7 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/gcc lilian/make
+  be/gcc be/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

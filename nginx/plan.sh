@@ -1,5 +1,5 @@
 pkg_name=nginx
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.13.1
 pkg_description="NGINX web server."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -9,10 +9,10 @@ pkg_upstream_url=https://nginx.org/
 pkg_shasum=a5856c72a6609a4dc68c88a7f3c33b79e6693343b62952e021e043fe347b6776
 pkg_deps=(
   core/glibc lilian/libedit lilian/ncurses
-  lilian/zlib lilian/bzip2 lilian/openssl
+  lilian/zlib lilian/bzip2 be/openssl
   lilian/pcre
 )
-pkg_build_deps=(be/gcc lilian/make lilian/coreutils)
+pkg_build_deps=(be/gcc be/make be/coreutils)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(sbin)
 pkg_include_dirs=(include)

@@ -1,5 +1,5 @@
 pkg_name=jffi
-pkg_origin=be
+pkg_origin=core
 pkg_version="1.2.16"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')

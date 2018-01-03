@@ -1,5 +1,5 @@
 pkg_name=openjpeg
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.1.2
 pkg_description="An open source JPEG 2000 codec"
 pkg_upstream_url=http://www.openjpeg.org/
@@ -18,7 +18,7 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/cmake
   be/gcc
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

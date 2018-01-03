@@ -1,13 +1,13 @@
 pkg_name=github_changelog_generator
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_version=1.14.3
-pkg_origin=be
+pkg_origin=core
 pkg_license=('MIT')
 pkg_description="Changelog generation has never been so easy. Fully automate changelog generation -\
   this gem generate change log file based on tags, issues and merged pull requests from Github \
   issue tracker."
 pkg_upstream_url="https://github.com/skywinder/github-changelog-generator/blob/master/github_changelog_generator.gemspec"
-pkg_deps=(lilian/ruby lilian/git lilian/cacerts core/busybox-static)
+pkg_deps=(lilian/ruby lilian/git be/cacerts core/busybox-static)
 pkg_build_deps=()
 pkg_bin_dirs=(bin)
 
@@ -38,7 +38,7 @@ write_shim() {
   cat <<EOF > "$bin"
 #!$(pkg_path_for busybox-static)/bin/sh
 set -e
-export SSL_CERT_FILE="$(pkg_path_for lilian/cacerts)/ssl/cert.pem"
+export SSL_CERT_FILE="$(pkg_path_for be/cacerts)/ssl/cert.pem"
 export GEM_HOME="$GEM_HOME"
 export GEM_PATH="$GEM_PATH"
 

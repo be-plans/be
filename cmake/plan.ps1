@@ -1,5 +1,5 @@
 $pkg_name="cmake"
-$pkg_origin="be"
+$pkg_origin="core"
 $base_version="3.6"
 $pkg_version="$base_version.0"
 $pkg_description="CMake is an open-source, cross-platform family of tools designed to build, test and package software"

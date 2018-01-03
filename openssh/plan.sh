@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=openssh
 pkg_version=7.5p1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -11,10 +11,10 @@ pkg_bin_dirs=(bin sbin libexec)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_deps=(
-  core/glibc lilian/openssl lilian/zlib
+  core/glibc be/openssl lilian/zlib
 )
 pkg_build_deps=(
-  lilian/coreutils be/gcc lilian/make
+  be/coreutils be/gcc be/make
 )
 
 pkg_svc_user="root"

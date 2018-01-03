@@ -1,5 +1,5 @@
 pkg_name=gzip
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.8
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
@@ -7,8 +7,8 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=ff1767ec444f71e5daf8972f6f8bf68cfcca1d2f76c248eb18e8741fc91dbbd3
 pkg_deps=(core/glibc lilian/less lilian/grep)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/sed lilian/xz
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc be/sed lilian/xz
 )
 pkg_bin_dirs=(bin)
 
@@ -51,5 +51,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed lilian/diffutils lilian/xz)
+  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils lilian/xz)
 fi

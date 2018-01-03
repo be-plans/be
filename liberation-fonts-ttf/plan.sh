@@ -1,5 +1,5 @@
 pkg_name=liberation-fonts-ttf
-pkg_origin=be
+pkg_origin=core
 pkg_version="2.00.1"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('OFL-1.1')

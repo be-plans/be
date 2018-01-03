@@ -1,5 +1,5 @@
 pkg_name=fish
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.6.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0' 'LGPL-2.0' 'ISC' 'BSD-2-Clause-NetBSD' 'BSD-3-Clause')
@@ -7,7 +7,7 @@ pkg_source="https://fishshell.com/files/$pkg_version/$pkg_name-$pkg_version.tar.
 pkg_shasum=7ee5bbd671c73e5323778982109241685d58a836e52013e18ee5d9f2e638fdfb
 pkg_deps=(
   lilian/bc
-  lilian/coreutils
+  be/coreutils
   lilian/gawk
   core/gcc-libs
   core/glibc
@@ -18,7 +18,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/gcc
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin)
 pkg_pconfig_dirs=(share/pkgconfig)

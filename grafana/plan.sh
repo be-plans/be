@@ -1,5 +1,5 @@
 pkg_name=grafana
-pkg_origin=be
+pkg_origin=core
 pkg_version="4.2.0"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
@@ -7,8 +7,8 @@ pkg_upstream_url=https://grafana.com/
 pkg_source="https://s3-us-west-2.amazonaws.com/${pkg_name}-releases/release/${pkg_name}-${pkg_version}.linux-x64.tar.gz"
 pkg_filename="${pkg_name}-${pkg_version}.linux-x64.tar.gz"
 pkg_shasum="e9927baaaf6cbcab64892dedd11ccf509e4edea54670db4250b9e7568466ec61"
-pkg_deps=(core/glibc lilian/bash lilian/wget lilian/curl lilian/cacerts)
-pkg_build_deps=(lilian/patchelf)
+pkg_deps=(core/glibc lilian/bash lilian/wget lilian/curl be/cacerts)
+pkg_build_deps=(be/patchelf)
 pkg_bin_dirs=(bin)
 pkg_description="Grafana graphing app, dynamically finds prometheus data sources"
 pkg_svc_user="root"

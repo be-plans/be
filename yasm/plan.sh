@@ -1,5 +1,5 @@
 pkg_name=yasm
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.3.0
 pkg_description="Yasm is a complete rewrite of the NASM assembler"
 pkg_upstream_url=http://yasm.tortall.net/
@@ -15,7 +15,7 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  lilian/diffutils be/gcc lilian/make
+  be/diffutils be/gcc be/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

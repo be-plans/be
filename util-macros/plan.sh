@@ -1,5 +1,5 @@
 pkg_name=util-macros
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.19.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X.Org X11 Autotools macros"

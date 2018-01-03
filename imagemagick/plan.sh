@@ -1,5 +1,5 @@
 pkg_name=imagemagick
-pkg_origin=be
+pkg_origin=core
 pkg_version=7.0.5-10
 pkg_description="A software suite to create, edit, compose, or convert bitmap images."
 pkg_upstream_url="http://imagemagick.org/"
@@ -12,9 +12,9 @@ pkg_deps=(
     lilian/zlib lilian/libpng lilian/xz
 )
 pkg_build_deps=(
-  lilian/zlib lilian/coreutils lilian/diffutils
-  lilian/patch lilian/make be/gcc
-  lilian/sed core/glibc lilian/pkg-config
+  lilian/zlib be/coreutils be/diffutils
+  be/patch be/make be/gcc
+  be/sed core/glibc lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include/ImageMagick-7)

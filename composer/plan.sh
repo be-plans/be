@@ -1,5 +1,5 @@
 pkg_name=composer
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.4.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('MIT')

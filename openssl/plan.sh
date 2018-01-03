@@ -1,18 +1,18 @@
 pkg_name=openssl
 pkg_distname=$pkg_name
-pkg_origin=be
-pkg_version=1.0.2l
+pkg_origin=core
+pkg_version=1.0.2n
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="OpenSSL is an open source project that provides a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. It is also a general-purpose cryptography library."
 pkg_license=('OpenSSL')
 pkg_upstream_url="https://www.openssl.org"
 pkg_source=https://www.openssl.org/source/${pkg_distname}-${pkg_version}.tar.gz
-pkg_shasum=ce07195b659e75f4e1db43552860070061f156a98bb37b672b101ba6e3ddf30c
+pkg_shasum=370babb75f278c39e0c50e8c4e7493bc0f18db6867478341a832a982fd15a8fe
 pkg_dirname="${pkg_distname}-${pkg_version}"
-pkg_deps=(core/glibc lilian/zlib lilian/cacerts)
+pkg_deps=(core/glibc lilian/zlib be/cacerts)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/sed
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc be/sed
   lilian/grep lilian/perl
 )
 pkg_bin_dirs=(bin)
@@ -97,5 +97,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils lilian/sed lilian/grep lilian/perl lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(be/gcc be/coreutils be/sed lilian/grep lilian/perl be/diffutils be/make be/patch)
 fi

@@ -1,5 +1,5 @@
 pkg_name=nghttp2
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.24.0
 pkg_description="nghttp2 is an open source HTTP/2 C Library."
 pkg_upstream_url=https://nghttp2.org/

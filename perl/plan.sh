@@ -1,5 +1,5 @@
 pkg_name=perl
-pkg_origin=be
+pkg_origin=core
 pkg_version=5.24.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gpl' 'perlartistic')
@@ -7,12 +7,12 @@ pkg_source=http://www.cpan.org/src/5.0/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=03a77bac4505c270f1890ece75afc7d4b555090b41aa41ea478747e23b2afb3f
 pkg_deps=(
   core/glibc lilian/zlib lilian/bzip2
-  lilian/gdbm lilian/db lilian/coreutils
+  lilian/gdbm lilian/db be/coreutils
   lilian/less
 )
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/procps-ng lilian/inetutils
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/procps-ng lilian/inetutils
   lilian/iana-etc
 )
 pkg_bin_dirs=(bin)

@@ -1,5 +1,5 @@
 pkg_name=make
-pkg_origin=be
+pkg_origin=core
 pkg_version=4.2.1
 pkg_description="Make is a tool which controls the generation of executables and other non-source files of a program from the program's source files."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -9,8 +9,8 @@ pkg_source=https://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=d6e262bf3601b42d2b1e4ef8310029e1dcf20083c5446b4b7aa67081fdffc589
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc lilian/bash lilian/gettext
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc lilian/bash lilian/gettext
   lilian/gzip lilian/perl lilian/binutils
 )
 pkg_bin_dirs=(bin)
@@ -50,5 +50,5 @@ EOF
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/binutils be/gcc lilian/coreutils lilian/sed lilian/bash lilian/perl lilian/diffutils lilian/gettext lilian/gzip)
+  pkg_build_deps=(lilian/binutils be/gcc be/coreutils be/sed lilian/bash lilian/perl be/diffutils lilian/gettext lilian/gzip)
 fi

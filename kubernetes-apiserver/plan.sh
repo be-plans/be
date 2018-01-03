@@ -1,5 +1,5 @@
 pkg_name=kubernetes-apiserver
-pkg_origin=be
+pkg_origin=core
 pkg_description="Production-Grade Container Scheduling and Management"
 pkg_upstream_url=https://github.com/kubernetes/kubernetes
 pkg_license=('Apache-2.0')

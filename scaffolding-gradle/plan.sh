@@ -1,5 +1,5 @@
 pkg_name=scaffolding-gradle
-pkg_origin=be
+pkg_origin=core
 pkg_version="0.6.0"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')

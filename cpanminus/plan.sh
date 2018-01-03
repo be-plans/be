@@ -1,6 +1,6 @@
 pkg_name=cpanminus
 pkg_version=1.7043
-pkg_origin=be
+pkg_origin=core
 pkg_license=('Artistic-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="cpanminus is a script to get, unpack, build and install modules from CPAN and does nothing else."
@@ -13,7 +13,7 @@ pkg_deps=(
   core/glibc lilian/perl lilian/local-lib
 )
 pkg_build_deps=(
-  be/gcc  lilian/make lilian/coreutils
+  be/gcc  be/make be/coreutils
   lilian/perl lilian/local-lib
 )
 pkg_lib_dirs=(lib)

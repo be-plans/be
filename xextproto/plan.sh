@@ -1,5 +1,5 @@
 pkg_name=xextproto
-pkg_origin=be
+pkg_origin=core
 pkg_version=7.3.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X11 wire protocol extensions"

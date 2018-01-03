@@ -1,5 +1,5 @@
 pkg_name=libyajl2
-pkg_origin=be
+pkg_origin=core
 pkg_version="2.1.0"
 pkg_description="Yet Another JSON Library"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -15,7 +15,7 @@ pkg_build_deps=(
   lilian/cmake
   lilian/doxygen
   be/gcc
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

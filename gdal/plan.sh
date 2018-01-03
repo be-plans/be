@@ -1,5 +1,5 @@
 pkg_name=gdal
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.2.1
 pkg_description="GDAL is a translator library for raster and vector geospatial data formats"
 pkg_upstream_url=http://www.gdal.org/

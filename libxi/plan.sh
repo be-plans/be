@@ -1,6 +1,6 @@
 pkg_name=libxi
 pkg_distname=libXi
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.7.9
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

@@ -1,5 +1,5 @@
 pkg_name=doxygen
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.8.13
 pkg_license=('GPL-2.0')
 pkg_description="Generate documentation for several programming languages"
@@ -15,13 +15,13 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/bison
   lilian/cmake
-  lilian/diffutils
+  be/diffutils
   lilian/flex
   be/gcc
   lilian/libxml2
   lilian/m4
-  lilian/make
-  lilian/python
+  be/make
+  be/python
 )
 
 pkg_bin_dirs=(bin)

@@ -1,5 +1,5 @@
 pkg_name=linux-headers-musl
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.12.6-5
 pkg_license=('mit')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -8,8 +8,8 @@ pkg_shasum=ecf4db8781dc50a21cbc4cb17b039f96aede53f9da13435a3201373abb49b96b
 pkg_dirname=kernel-headers-$pkg_version
 pkg_deps=()
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc
 )
 pkg_include_dirs=(include)
 
@@ -37,5 +37,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils lilian/diffutils lilian/make lilian/patch)
+  pkg_build_deps=(be/gcc be/coreutils be/diffutils be/make be/patch)
 fi

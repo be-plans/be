@@ -1,5 +1,5 @@
 pkg_name=valgrind
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.13.0
 pkg_description="An instrumentation framework for building dynamic analysis tools"
 pkg_upstream_url="http://www.valgrind.org/"
@@ -9,8 +9,8 @@ pkg_source="ftp://sourceware.org/pub/valgrind/valgrind-${pkg_version}.tar.bz2"
 pkg_shasum=d76680ef03f00cd5e970bbdcd4e57fb1f6df7d2e2c071635ef2be74790190c3b
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/gcc lilian/make lilian/which
-  lilian/diffutils lilian/perl
+  be/gcc be/make lilian/which
+  be/diffutils lilian/perl
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

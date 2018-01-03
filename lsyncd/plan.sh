@@ -1,5 +1,5 @@
 pkg_name=lsyncd
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.1.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
@@ -11,7 +11,7 @@ pkg_build_deps=(
   lilian/cmake
   be/gcc
   core/lua/5.1.5
-  lilian/make
+  be/make
 )
 pkg_bin_dirs=(bin)
 pkg_description="Lsyncd watches a local directory trees event monitor interface (inotify or fsevents)"

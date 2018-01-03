@@ -1,5 +1,5 @@
 pkg_name=linux-headers
-pkg_origin=be
+pkg_origin=core
 pkg_version=4.13.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2')
@@ -10,8 +10,8 @@ pkg_shasum=decee7a2de34aea921fce3e7934f520790fe43176de29bd9718a84419ca6e1ce
 pkg_dirname=linux-$pkg_version
 pkg_deps=()
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc
 )
 pkg_include_dirs=(include)
 

@@ -1,5 +1,5 @@
 pkg_name=gpgme
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.9.0
 pkg_license=('LGPL')
 pkg_source=https://www.gnupg.org/ftp/gcrypt/${pkg_name}/${pkg_name}-${pkg_version}.tar.bz2
@@ -8,7 +8,7 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_deps=(core/glibc lilian/libassuan lilian/libgpg-error)
-pkg_build_deps=(be/gcc lilian/coreutils lilian/make)
+pkg_build_deps=(be/gcc be/coreutils be/make)
 
 source ../defaults.sh
 

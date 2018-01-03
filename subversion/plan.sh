@@ -1,6 +1,6 @@
 pkg_name=subversion
 pkg_distname=$pkg_name
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.9.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
@@ -16,10 +16,10 @@ pkg_deps=(
 pkg_build_deps=(
   core/apr
   lilian/apr-util
-  lilian/coreutils
-  lilian/diffutils
+  be/coreutils
+  be/diffutils
   be/gcc
-  lilian/make
+  be/make
   lilian/pkg-config
   lilian/python2
   lilian/sqlite

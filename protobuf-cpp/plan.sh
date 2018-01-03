@@ -1,6 +1,6 @@
 pkg_name=protobuf-cpp
 pkg_distname=protobuf
-pkg_origin=be
+pkg_origin=core
 pkg_version=3.5.0
 pkg_license=('BSD')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"

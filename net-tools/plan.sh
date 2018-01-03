@@ -1,16 +1,16 @@
 pkg_name=net-tools
 pkg_distname=$pkg_name
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.60
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
 pkg_source=http://downloads.sourceforge.net/net-tools/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=7ae4dd6d44d6715f18e10559ffd270511b6e55a8900ca54fbebafe0ae6cf7d7b
 pkg_dirname=${pkg_distname}-${pkg_version}
-pkg_deps=(core/glibc lilian/coreutils)
+pkg_deps=(core/glibc be/coreutils)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

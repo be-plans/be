@@ -1,5 +1,5 @@
 pkg_name=pcre
-pkg_origin=be
+pkg_origin=core
 pkg_version=8.40
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="A library that implements Perl 5-style regular expressions"
@@ -9,8 +9,8 @@ pkg_source="https://ftp.pcre.org/pub/${pkg_name}/${pkg_name}-${pkg_version}.tar.
 pkg_shasum=00e27a29ead4267e3de8111fcaa59b132d0533cdfdbdddf4b0604279acbcf4f4
 pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -50,5 +50,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/coreutils)
+  pkg_build_deps=(be/gcc be/coreutils)
 fi

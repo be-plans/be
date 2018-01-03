@@ -1,5 +1,5 @@
 pkg_name=kubectl
-pkg_origin=be
+pkg_origin=core
 pkg_description="kubectl CLI tool"
 pkg_upstream_url=https://github.com/kubernetes/kubernetes
 pkg_license=('Apache-2.0')

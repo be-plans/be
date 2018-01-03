@@ -1,5 +1,5 @@
 pkg_name=elfutils
-pkg_origin=be
+pkg_origin=core
 pkg_version=0.169
 pkg_license=('GPL-3.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
@@ -17,7 +17,7 @@ pkg_build_deps=(
   be/gcc
   core/glibc
   lilian/m4
-  lilian/make
+  be/make
   lilian/zlib
 )
 pkg_bin_dirs=(bin)

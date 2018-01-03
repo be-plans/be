@@ -1,5 +1,5 @@
 pkg_name=inputproto
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.3.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="X11 input extension wire protocol"

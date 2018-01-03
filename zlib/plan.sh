@@ -1,4 +1,4 @@
-pkg_origin=be
+pkg_origin=core
 pkg_name=zlib
 pkg_distname=$pkg_name
 pkg_version=1.2.11
@@ -9,8 +9,8 @@ pkg_shasum=c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  lilian/coreutils lilian/diffutils lilian/patch
-  lilian/make be/gcc
+  be/coreutils be/diffutils be/patch
+  be/make be/gcc
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

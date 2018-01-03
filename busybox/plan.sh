@@ -1,6 +1,6 @@
 pkg_name=busybox
 pkg_distname=$pkg_name
-pkg_origin=be
+pkg_origin=core
 pkg_version=1.26.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0')
@@ -11,8 +11,8 @@ pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/bash
   lilian/bison
-  lilian/coreutils
-  lilian/diffutils
+  be/coreutils
+  be/diffutils
   lilian/findutils
   lilian/flex
   lilian/gawk
@@ -21,9 +21,9 @@ pkg_build_deps=(
   lilian/grep
   lilian/gzip
   lilian/libtool
-  lilian/make
-  lilian/patch
-  lilian/sed
+  be/make
+  be/patch
+  be/sed
   lilian/texinfo
   lilian/util-linux
   lilian/wget

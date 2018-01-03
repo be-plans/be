@@ -1,5 +1,5 @@
 pkg_name=sumologic
-pkg_origin=be
+pkg_origin=core
 pkg_version="19.209-5"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')

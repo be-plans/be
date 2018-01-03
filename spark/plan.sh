@@ -1,5 +1,5 @@
 pkg_name=spark
-pkg_origin=be
+pkg_origin=core
 pkg_version=2.1.1
 pkg_source=https://www.apache.org/dist/${pkg_name}/${pkg_name}-${pkg_version}/${pkg_name}-${pkg_version}-bin-hadoop2.7.tgz
 pkg_shasum=372ac4f73221c07696793101007a4f19e31566d1f0d9bd0e5205b6fb5b45bfc2
