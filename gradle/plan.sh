@@ -11,7 +11,7 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_deps=(
   core/glibc core/gcc-libs lilian/jre8
-  be/coreutils core/bash-static be/sed)
+  be/coreutils lilian/bash-static be/sed)
 pkg_build_deps=(
   be/make be/gcc
   lilian/jdk8 be/patchelf

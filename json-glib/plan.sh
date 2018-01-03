@@ -10,18 +10,18 @@ pkg_shasum=fd55a9037d39e7a10f0db64309f5f0265fa32ec962bf85066087b83a2807f40a
 pkg_deps=(
   core/glib
   core/glibc
-  core/libffi
+  lilian/libffi
   core/libxslt
   core/libiconv
-  core/pcre
+  lilian/pcre
   core/util-linux
-  core/zlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/diffutils
-  core/gcc
+  be/diffutils
+  be/gcc
   core/gettext
-  core/make
+  be/make
   core/perl
   core/pkg-config
 )

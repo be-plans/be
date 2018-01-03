@@ -10,15 +10,15 @@ pkg_shasum="39f34e2f6835f4b992cafe8625073a88e5a28ba78f83e8099610a7b3af4676d4"
 pkg_deps=(
   core/glibc
   core/openssl
-  core/zlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/diffutils
+  be/diffutils
   core/file
-  core/gcc
+  be/gcc
   core/inetutils
   core/linux-headers
-  core/make
+  be/make
   core/openssh
   core/pkg-config
 )

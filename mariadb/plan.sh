@@ -11,7 +11,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/gcc be/make be/coreutils
-  lilian/cmake lilian/gnupg
+  be/cmake lilian/gnupg
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

@@ -10,42 +10,42 @@ pkg_source="https://download.gnome.org/sources/${upstream_name}/${pkg_version%.*
 pkg_shasum=68c1922732c7efc08df4656a5366dcc3afdc8791513400dac276009b40954658
 pkg_dirname="${upstream_name}-${pkg_version}"
 pkg_deps=(
-  core/atk
-  core/bzip2
-  core/cairo
-  core/expat
-  core/fontconfig
-  core/freetype
+  lilian/atk
+  lilian/bzip2
+  lilian/cairo
+  lilian/expat
+  lilian/fontconfig
+  lilian/freetype
   core/gcc-libs
-  core/gdk-pixbuf
-  core/glib
+  lilian/gdk-pixbuf
+  lilian/glib
   core/glibc
-  core/harfbuzz
-  core/libffi
-  core/libiconv
-  core/libpng
-  core/libxau
-  core/libxcb
-  core/libxdmcp
-  core/libxext
-  core/libxrender
-  core/pango
-  core/pcre
-  core/pixman
-  core/util-linux
-  core/xlib
-  core/zlib
+  lilian/harfbuzz
+  lilian/libffi
+  lilian/libiconv
+  lilian/libpng
+  lilian/libxau
+  lilian/libxcb
+  lilian/libxdmcp
+  lilian/libxext
+  lilian/libxrender
+  lilian/pango
+  lilian/pcre
+  lilian/pixman
+  lilian/util-linux
+  lilian/xlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/gcc
-  core/kbproto
-  core/make
-  core/perl
-  core/pkg-config
-  core/renderproto
-  core/shared-mime-info
-  core/xextproto
-  core/xproto
+  be/gcc
+  lilian/kbproto
+  be/make
+  lilian/perl
+  lilian/pkg-config
+  lilian/renderproto
+  lilian/shared-mime-info
+  lilian/xextproto
+  lilian/xproto
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -54,7 +54,7 @@ pkg_lib_dirs=(lib)
 do_prepare() {
   do_default_prepare
 
-  XDG_DATA_DIRS="$XDG_DATA_DIRS:$(pkg_path_for core/shared-mime-info)/share"
+  XDG_DATA_DIRS="$XDG_DATA_DIRS:$(pkg_path_for lilian/shared-mime-info)/share"
   export XDG_DATA_DIRS
 }
 

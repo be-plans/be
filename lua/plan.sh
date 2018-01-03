@@ -13,6 +13,8 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+source ../defaults.sh
+
 do_build() {
     make linux MYCFLAGS="$CFLAGS -fPIC" MYLDFLAGS="$LDFLAGS" INSTALL_TOP="$pkg_prefix"
 }

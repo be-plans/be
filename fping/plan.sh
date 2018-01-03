@@ -18,8 +18,8 @@ pkg_build_deps=(
   core/autoconf
   core/autogen
   core/automake
-  core/gcc
-  core/make
+  be/gcc
+  be/make
 )
 pkg_bin_dirs=(sbin)
 

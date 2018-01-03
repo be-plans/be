@@ -8,11 +8,11 @@ pkg_license=('Apache-2.0')
 pkg_source="https://download.${pkg_name}.com/dist/${pkg_name}-${pkg_version}.tgz"
 pkg_shasum=dd8aeee169b177179bfe080725f0560443e0f26dae875b32ae25d90cf2f8ee10
 pkg_build_deps=(
-  core/gcc
-  core/make
+  be/gcc
+  be/make
   core/python2
   core/boost
-  core/coreutils
+  be/coreutils
   core/node/4.2.6
   core/jemalloc
   core/m4
@@ -21,7 +21,7 @@ pkg_deps=(
   core/openssl
   core/gcc-libs
   core/protobuf
-  core/zlib
+  lilian/zlib
   core/curl
   core/ncurses
 )

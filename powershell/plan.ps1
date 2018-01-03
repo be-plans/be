@@ -8,7 +8,7 @@ $pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 $pkg_source="https://github.com/PowerShell/PowerShell/archive/v$pkg_version.zip"
 $pkg_shasum="cdfa8da4f05310b78e09dedaa455770508c30ec9e5992b838046b1869085fb75"
 $pkg_filename="powershell-$pkg_version-win7-win2k8r2-x64.zip"
-$pkg_build_deps=@("core/visual-cpp-build-tools-2015", "core/dotnet-core-sdk-preview", "core/cmake")
+$pkg_build_deps=@("core/visual-cpp-build-tools-2015", "core/dotnet-core-sdk-preview", "be/cmake")
 $pkg_bin_dirs=@("bin")
 
 function Invoke-Unpack {

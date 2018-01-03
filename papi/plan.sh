@@ -11,9 +11,9 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  core/gcc
+  be/gcc
   core/linux-headers
-  core/make
+  be/make
   core/pkg-config
 )
 pkg_include_dirs=(include)

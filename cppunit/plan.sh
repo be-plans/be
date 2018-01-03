@@ -32,7 +32,7 @@ source ../defaults.sh
 
 do_prepare() {
   build_line "Fixing 'bin/env' interpreter for autogen.sh"
-  fix_interpreter "$HAB_CACHE_SRC_PATH/$pkg_dirname/autogen.sh" core/bash bin/sh
+  fix_interpreter "$HAB_CACHE_SRC_PATH/$pkg_dirname/autogen.sh" lilian/bash bin/sh
 }
 
 do_build() {

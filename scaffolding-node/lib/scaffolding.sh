@@ -102,7 +102,7 @@ scaffolding_modules_install() {
   build_line "Installing dependencies using $_pkg_manager $("$_pkg_manager" --version)"
   # Many node dependencies require /usr/bin/env
   # This directory is not created with Habitat by design
-  # Instead, we use core/coreutils for this functionality
+  # Instead, we use be/coreutils for this functionality
   # This sets up a symlink to simulate a /usr/bin/env,
   # But still use coreutils
   ln -svf "$(pkg_path_for coreutils)/bin/env" /usr/bin/env
@@ -444,7 +444,7 @@ _update_svc_run() {
 _add_busybox() {
   build_line "Adding Busybox package to run dependencies"
   # Need to specify core/busybox-static last
-  # So that it does not override the paths of core/coreutils
+  # So that it does not override the paths of be/coreutils
   pkg_deps=(${pkg_deps[@]} core/busybox-static)
   debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
 }

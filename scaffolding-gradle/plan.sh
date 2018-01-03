@@ -6,7 +6,7 @@ pkg_license=('Apache-2.0')
 pkg_description="Habitat Plan Scaffolding for Node.js Applications"
 pkg_upstream_url="https://github.com/habitat-sh/core-plans/tree/master/scaffolding-node"
 pkg_deps=(core/tar core/rq)
-pkg_build_deps=(core/coreutils)
+pkg_build_deps=(be/coreutils)
 
 do_build() {
   return 0

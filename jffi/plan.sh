@@ -7,15 +7,15 @@ pkg_source="https://github.com/jnr/jffi/archive/${pkg_name}-${pkg_version}.tar.g
 pkg_dirname="${pkg_name}-${pkg_name}-${pkg_version}"
 pkg_shasum="a116c53f26d13d738aaf6e21fe52231be5f0df6e1007673846fd18a4be875121"
 pkg_upstream_url="https://github.com/jnr/jffi"
-pkg_deps=(core/glibc core/libffi core/gcc-libs core/jre8)
+pkg_deps=(core/glibc lilian/libffi core/gcc-libs core/jre8)
 pkg_build_deps=(
   core/jdk8
   core/ant
   core/pkg-config
-  core/make
-  core/gcc
+  be/make
+  be/gcc
   core/file
-  core/diffutils
+  be/diffutils
   core/maven
 )
 

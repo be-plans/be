@@ -21,7 +21,7 @@ pkg_deps=(
 pkg_build_deps=(
   be/make
   be/gcc
-  lilian/cmake
+  be/cmake
 )
 
 pkg_bin_dirs=(bin)

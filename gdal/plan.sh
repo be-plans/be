@@ -8,8 +8,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://download.osgeo.org/gdal/${pkg_version}/gdal-${pkg_version}.tar.gz
 pkg_shasum=61837706abfa3e493f3550236efc2c14bd6b24650232f9107db50a944abf8b2f
 pkg_build_deps=(
-  core/gcc
-  core/make
+  be/gcc
+  be/make
   core/pkg-config
   core/patchelf
 )

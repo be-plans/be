@@ -18,7 +18,7 @@ pkg_deps=(core/glibc
           core/libxext
 	  core/libxrender
           core/libxmu)
-pkg_build_deps=(core/gcc core/make core/pkg-config core/xproto core/kbproto core/libpthread-stubs core/xextproto core/renderproto)
+pkg_build_deps=(be/gcc be/make core/pkg-config core/xproto core/kbproto core/libpthread-stubs core/xextproto core/renderproto)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

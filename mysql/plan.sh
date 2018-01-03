@@ -34,7 +34,7 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/bison
   lilian/boost/1.59.0
-  lilian/cmake
+  be/cmake
   be/diffutils
   be/gcc
   be/make

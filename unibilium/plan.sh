@@ -7,9 +7,9 @@ pkg_source="https://github.com/mauke/$pkg_name/archive/v$pkg_version.tar.gz"
 pkg_shasum="623af1099515e673abfd3cae5f2fa808a09ca55dda1c65a7b5c9424eb304ead8"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  core/gcc
+  be/gcc
   core/libtool
-  core/make
+  be/make
   core/perl
 )
 pkg_lib_dirs=(lib)

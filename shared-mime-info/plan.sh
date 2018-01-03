@@ -11,16 +11,16 @@ pkg_deps=(
   core/glib
   core/glibc
   core/libxml2
-  core/pcre
-  core/zlib
+  lilian/pcre
+  lilian/zlib
 )
 pkg_build_deps=(
   core/cpanminus
   core/expat
-  core/gcc
+  be/gcc
   core/gettext
   core/intltool
-  core/make
+  be/make
   core/perl
   core/pkg-config
 )

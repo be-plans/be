@@ -10,7 +10,7 @@ pkg_license=('Apache-2.0')
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_build_deps=()
-pkg_deps=(lilian/jre8 be/coreutils core/bash-static)
+pkg_deps=(lilian/jre8 be/coreutils lilian/bash-static)
 pkg_exports=(
   [port]=zookeeper.clientPort
 )

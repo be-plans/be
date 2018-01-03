@@ -17,7 +17,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/m4 be/make be/gcc
-  lilian/bison lilian/cmake lilian/mysql
+  lilian/bison be/cmake lilian/mysql
   lilian/libaio lilian/boost/1.59.0
 )
 pkg_dirname=percona-xtrabackup-percona-xtrabackup-${pkg_version}

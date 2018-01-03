@@ -13,14 +13,14 @@ pkg_deps=(
   core/dbus
   core/glib
   core/glibc
-  core/libffi
+  lilian/libffi
   core/libiconv
-  core/pcre
+  lilian/pcre
 )
 pkg_build_deps=(
-  core/diffutils
-  core/gcc
-  core/make
+  be/diffutils
+  be/gcc
+  be/make
   core/pkg-config
 )
 pkg_lib_dirs=(lib)

@@ -10,21 +10,21 @@ pkg_shasum="1d9f5c80f86d6e1d8e0971959068154dd7f5299f307e06b38c33f63f81ee413a"
 pkg_dirname="shield-${pkg_version}"
 
 pkg_deps=(
-  core/bash
+  lilian/bash
   core/bzip2
   core/cacerts
-  core/coreutils
+  be/coreutils
   core/curl
   core/glibc
   core/jq-static
   core/libarchive
 )
 pkg_build_deps=(
-  core/gcc
+  be/gcc
   core/git
   core/go
   core/gox
-  core/make
+  be/make
 )
 
 pkg_bin_dirs=(bin)
@@ -77,5 +77,5 @@ do_install() {
   cp agent/shield-agent   "${pkg_prefix}/bin"
   cp -R plugins            "${pkg_prefix}/plugins"
   cp daemon/shield-pipe   "${pkg_prefix}/bin"
-  fix_interpreter "${pkg_prefix}/bin/shield-pipe" core/bash bin/bash
+  fix_interpreter "${pkg_prefix}/bin/shield-pipe" lilian/bash bin/bash
 }

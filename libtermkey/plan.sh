@@ -10,9 +10,9 @@ pkg_deps=(
   core/ncurses
 )
 pkg_build_deps=(
-  core/gcc
+  be/gcc
   core/libtool
-  core/make
+  be/make
   core/pkg-config
 )
 pkg_lib_dirs=(lib)

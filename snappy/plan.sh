@@ -11,7 +11,7 @@ pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/gcc
   be/ninja
-  lilian/cmake
+  be/cmake
   lilian/pkg-config
 )
 pkg_include_dirs=(include)

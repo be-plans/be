@@ -8,8 +8,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://download.osgeo.org/geos/geos-${pkg_version}.tar.bz2
 pkg_shasum=045a13df84d605a866602f6020fc6cbf8bf4c42fb50de237a08926e1d7d7652a
 pkg_build_deps=(
-  core/gcc
-  core/make
+  be/gcc
+  be/make
   core/patchelf
 )
 pkg_deps=(

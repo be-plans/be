@@ -9,8 +9,8 @@ pkg_source=https://github.com/${pkg_name}/${pkg_name}/releases/download/v${pkg_v
 pkg_shasum=5058da99c94764ff39f4a7046b9c8f0b6bafa10ec2fc096945a5d9d693654840
 pkg_dirname=${pkg_name}-${pkg_version}
 pkg_build_deps=(
-  core/make
-  core/gcc
+  be/make
+  be/gcc
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

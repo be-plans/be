@@ -8,24 +8,24 @@ pkg_license=('GPL-2.0')
 pkg_source="https://download.gnome.org/sources/${pkg_name}/${pkg_version%.*}/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum=ae62ab87250413156ed72ef756347b10208c00e76b222d82d9ed361ed9dde2f3
 pkg_deps=(
-  core/coreutils
+  be/coreutils
   core/glib
   core/glibc
   core/jbigkit
-  core/libffi
+  lilian/libffi
   core/libiconv
   core/libjpeg-turbo
   core/libpng
   core/libtiff
-  core/pcre
+  lilian/pcre
   core/shared-mime-info
   core/util-linux
   core/xz
-  core/zlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/gcc
-  core/make
+  be/gcc
+  be/make
   core/perl
   core/pkg-config
 )

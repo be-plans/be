@@ -11,10 +11,10 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  core/diffutils
+  be/diffutils
   core/file
-  core/gcc
-  core/make
+  be/gcc
+  be/make
   core/pkg-config
   core/util-macros
 )

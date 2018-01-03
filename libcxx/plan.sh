@@ -9,7 +9,7 @@ pkg_filename=${pkg_name}-${pkg_version}.src.tar.xz
 pkg_source=http://llvm.org/releases/${pkg_version}/${pkg_name}-${pkg_version}.src.tar.xz
 pkg_shasum=d0b38d51365c6322f5666a2a8105785f2e114430858de4c25a86b49f227f5b06
 pkg_build_deps=(
-  lilian/cmake
+  be/cmake
   core/llvm
   be/make
 )

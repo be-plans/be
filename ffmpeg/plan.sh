@@ -12,9 +12,9 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_build_deps=(
-  core/diffutils
-  core/gcc
-  core/make
+  be/diffutils
+  be/gcc
+  be/make
   core/pkg-config
   core/yasm
 )
@@ -25,7 +25,7 @@ pkg_deps=(
   core/libwebp
   core/openjpeg
   core/xz
-  core/zlib
+  lilian/zlib
 )
 
 do_build() {

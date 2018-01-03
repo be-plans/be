@@ -11,11 +11,11 @@ pkg_deps=(
   core/glib
 )
 pkg_build_deps=(
-  core/diffutils
-  core/gcc
-  core/make
-  core/patch
-  core/pcre
+  be/diffutils
+  be/gcc
+  be/make
+  be/patch
+  lilian/pcre
   core/pkg-config
   core/python2
 )

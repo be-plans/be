@@ -14,7 +14,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/boost
-  lilian/cmake
+  be/cmake
   be/make
   be/gcc
   be/re2c

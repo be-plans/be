@@ -18,13 +18,13 @@ pkg_deps=(
 )
 pkg_build_deps=(
   core/damageproto
-  core/diffutils
+  be/diffutils
   core/file
   core/fixesproto
-  core/gcc
+  be/gcc
   core/kbproto
   core/libpthread-stubs
-  core/make
+  be/make
   core/pkg-config
   core/util-macros
   core/xextproto

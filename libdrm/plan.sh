@@ -14,10 +14,10 @@ pkg_deps=(
 # Configure script will not find CAIRO. This is a choice we made, see:
 # https://github.com/habitat-sh/core-plans/pull/994#discussion_r154243539
 pkg_build_deps=(
-  core/diffutils
-  core/gcc
+  be/diffutils
+  be/gcc
   core/libxslt
-  core/make
+  be/make
   core/pkg-config
 )
 pkg_include_dirs=(include)

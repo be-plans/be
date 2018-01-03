@@ -8,13 +8,13 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="A distributed streaming platform"
 pkg_license=('Apache-2.0')
 pkg_bin_dirs=(bin)
-pkg_deps=(lilian/jre8 be/coreutils core/bash-static)
+pkg_deps=(lilian/jre8 be/coreutils lilian/bash-static)
 pkg_binds=(
   [zookeeper]="port"
 )
 
 do_build() {
-  fix_interpreter "./bin/*" core/bash-static bin/bash
+  fix_interpreter "./bin/*" lilian/bash-static bin/bash
 }
 
 do_install() {

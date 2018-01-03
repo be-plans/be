@@ -7,9 +7,9 @@ pkg_source="http://www.leonerd.org.uk/code/$pkg_name/$pkg_name-${pkg_version}.ta
 pkg_shasum="abea46d1b0b831dec2af5d582319635cece63d260f8298d9ccce7c1c2e62a6e8"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  core/gcc
+  be/gcc
   core/libtool
-  core/make
+  be/make
   core/perl
 )
 pkg_lib_dirs=(lib)

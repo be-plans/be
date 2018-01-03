@@ -10,12 +10,12 @@ pkg_deps=(core/glibc)
 pkg_build_deps=(
   core/autoconf
   core/automake
-  core/diffutils
+  be/diffutils
   core/file
-  core/gcc
+  be/gcc
   core/libtool
   core/m4
-  core/make
+  be/make
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

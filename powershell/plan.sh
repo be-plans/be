@@ -20,7 +20,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/patchelf
-  lilian/cmake
+  be/cmake
   be/make
   be/patch
   lilian/git

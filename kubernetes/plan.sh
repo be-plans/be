@@ -12,10 +12,10 @@ pkg_bin_dirs=(bin)
 
 pkg_build_deps=(
   core/git
-  core/make
-  core/gcc
+  be/make
+  be/gcc
   core/go
-  core/diffutils
+  be/diffutils
   core/which
   core/rsync
 )

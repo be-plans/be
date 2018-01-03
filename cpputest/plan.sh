@@ -18,10 +18,10 @@ pkg_deps=(
   core/libtool
 )
 pkg_build_deps=(
-  core/cmake
-  core/gcc
+  be/cmake
+  be/gcc
   core/m4
-  core/make
+  be/make
   core/pkg-config
   core/valgrind
 )

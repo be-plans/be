@@ -16,7 +16,7 @@ pkg_deps=(
 )
 
 pkg_build_deps=(
-  lilian/cmake
+  be/cmake
   be/gcc
   be/make
 )

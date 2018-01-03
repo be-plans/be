@@ -14,7 +14,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   lilian/bison
-  lilian/cmake
+  be/cmake
   be/diffutils
   lilian/flex
   be/gcc
