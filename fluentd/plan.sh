@@ -1,14 +1,14 @@
 pkg_name=fluentd
 pkg_origin=core
-pkg_version=0.14.23
+pkg_version=1.0.2
 pkg_deps=(
-  core/ruby
-  core/coreutils
-  core/bundler
+  lilian/ruby
+  be/coreutils
+  lilian/bundler
 )
 pkg_build_deps=(
-  core/make
-  core/gcc
+  be/make
+  be/gcc
   core/gcc-libs
 )
 pkg_upstream_url=https://www.fluentd.org/
@@ -24,6 +24,8 @@ pkg_exports=(
   [http-port]=input.http.port
 )
 pkg_exposes=(forward-port http-port)
+
+source ../defaults.sh
 
 do_download() {
   return 0
@@ -54,5 +56,5 @@ GEMFILE
 
 do_install() {
   cp -R . "$pkg_prefix/"
-  fix_interpreter "$pkg_prefix/bin/*" core/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/*" be/coreutils bin/env
 }

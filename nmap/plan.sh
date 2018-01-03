@@ -10,28 +10,32 @@ pkg_shasum=a8796ecc4fa6c38aad6139d9515dc8113023a82e9d787e5a5fb5fa1b05516f21
 pkg_deps=(
   core/glibc
   core/gcc-libs
-  core/openssl
-  core/pcre
-  core/zlib
+  be/openssl
+  lilian/pcre
+  lilian/zlib
+  lilian/libpcap
 )
 pkg_build_deps=(
-  core/bzip2
-  core/coreutils
-  core/diffutils
-  core/file
-  core/gcc
-  core/inetutils
-  core/lua
-  core/make
-  core/openssh
-  core/pkg-config
-  core/readline
-  core/which
+  lilian/bzip2
+  be/coreutils
+  be/diffutils
+  lilian/file
+  be/gcc
+  lilian/inetutils
+  be/lua
+  be/make
+  lilian/openssh
+  lilian/pkg-config
+  lilian/readline
+  lilian/which
 )
+pkg_bin_dirs=(bin)
+
+source ../defaults.sh
 
 do_prepare() {
-  export CFLAGS="${CFLAGS} -O2 -Wcpp"
-  export CXXFLAGS="${CXXFLAGS} -O2 -Wcpp"
+  export CFLAGS="${CFLAGS} -Wcpp"
+  export CXXFLAGS="${CXXFLAGS} -Wcpp"
 
   if [[ ! -r /usr/bin/file ]]; then
     ln -sv "$(pkg_path_for file)/bin/file" /usr/bin/file
@@ -44,12 +48,11 @@ do_build() {
     --without-zenmap \
     --with-libdnet=included \
     --with-liblinear=included \
-    --with-liblua="$(pkg_path_for "core/lua")" \
-    --with-libpcap=included \
-    --with-libpcre="$(pkg_path_for "core/pcre")" \
+    --with-liblua="$(pkg_path_for "be/lua")" \
+    --with-libpcre="$(pkg_path_for "lilian/pcre")" \
     --with-libssh2=included \
-    --with-libz="$(pkg_path_for "core/zlib")"
-  make
+    --with-libz="$(pkg_path_for "lilian/zlib")"
+  make -j "$(nproc)"
 }
 
 do_check() {
