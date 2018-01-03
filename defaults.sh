@@ -1,14 +1,19 @@
+export BE_ORIGIN="${BE_ORIGIN:-be}"
+pkg_origin="${BE_ORIGIN}"
+
 # Parsing something like this:
 # pkg_disabled_features=(
 #   lto
 #   pie
 #   relro
+#   glibc
 # )
 #
 _parse_disabled_features() {
   _be_no_lto=
   _be_no_pic=
   _be_no_relro=
+  _be_no_glibc=
 
   test -z "${pkg_disabled_features}" && return 0;
   for disabled_feature in "${pkg_disabled_features[@]}"; do
@@ -16,11 +21,17 @@ _parse_disabled_features() {
       lto)   _be_no_lto=true ;;
       pie)   _be_no_pic=true ;;
       relro) _be_no_relro=true ;;
+      glibc) _be_no_glibc=true ;;
     esac
   done
 }
 
 _compiler_flags() {
+  export BE_ARCH="${BE_ARCH:-x86-64}"
+  export BE_TUNE="${BE_TUNE:-corei7-avx}"
+  export BE_TUNE_EXTRA="${BE_TUNE_EXTRA:--m64 -mavx}"
+  export BE_CXXSTD="${BE_CXXSTD:--std=gnu++1z}"
+
   if [ -z "${_be_no_pic}" ]; then
     # if exports only libs
     if [ -z "${pkg_bin_dirs}" ] && [ -n "${pkg_lib_dirs}" ]; then
@@ -44,10 +55,11 @@ _compiler_flags() {
     be_lto_flag="${be_lto_flag:--fuse-linker-plugin -flto}"
   fi
 
+  test -z "${_be_no_glibc}" && be_gnu_source="-D_GNU_SOURCE"
   be_generic_flags="${be_generic_flags:--pipe -Wno-error -Wno-error=implicit-fallthrough}"
-  be_optimizations="${be_optimizations:--O3 -DNDEBUG -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -m64 -mavx -march=x86-64 -mtune=corei7-avx ${be_lto_flag}}"
+  be_optimizations="${be_optimizations:--O3 -DNDEBUG ${be_gnu_source} -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize ${BE_TUNE_EXTRA} -march=${BE_ARCH:?} -mtune=${BE_TUNE:?} ${be_lto_flag}}"
   be_protection="${be_protection:--fstack-protector-strong}"
-  be_cxxstd="${be_cxxstd:--std=gnu++1z}"
+  be_cxxstd="${be_cxxstd:-${BE_CXXSTD}}"
   test -z "${_be_no_relro}" && be_ldflags="${be_ldflags:--Wl,-Bsymbolic-functions -Wl,-z,relro}"
 
   export CFLAGS="${CFLAGS} ${be_optimizations} ${be_protection} ${be_generic_flags} ${be_pic_flag} "
