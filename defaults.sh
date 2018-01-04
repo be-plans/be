@@ -4,7 +4,7 @@ pkg_origin="${BE_ORIGIN}"
 # Parsing something like this:
 # pkg_disabled_features=(
 #   lto
-#   pie
+#   pic
 #   relro
 #   glibc
 # )
@@ -19,7 +19,7 @@ _parse_disabled_features() {
   for disabled_feature in "${pkg_disabled_features[@]}"; do
     case "${disabled_feature}" in
       lto)   _be_no_lto=true ;;
-      pie)   _be_no_pic=true ;;
+      pic)   _be_no_pic=true ;;
       relro) _be_no_relro=true ;;
       glibc) _be_no_glibc=true ;;
     esac
@@ -32,6 +32,10 @@ _compiler_flags() {
   export BE_TUNE_EXTRA="${BE_TUNE_EXTRA:--m64 -mavx}"
   export BE_CXXSTD="${BE_CXXSTD:--std=gnu++1z}"
 
+  # Disable temporarily PIC/PIE and LTO - unreliable
+  _be_no_lto=true
+  _be_no_pic=true
+
   if [ -z "${_be_no_pic}" ]; then
     # if exports only libs
     if [ -z "${pkg_bin_dirs}" ] && [ -n "${pkg_lib_dirs}" ]; then
@@ -42,7 +46,7 @@ _compiler_flags() {
     # if exports only executables
     if [ -n "${pkg_bin_dirs}" ] && [ -z "${pkg_lib_dirs}" ]; then
       be_pic_flag="${be_pic_flag:--fpie}"
-      be_pic_ld="${be_pic_ld:--pie}"
+      be_pic_ld="${be_pic_ld:--pic}"
     fi
 
     # We do not use PIC/PIE if have libs and executables(would be risky and flaky)
