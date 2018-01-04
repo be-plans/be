@@ -11,8 +11,8 @@ pkg_bin_dirs=(bin sbin)
 pkg_build_deps=(
   lilian/autoconf
   lilian/automake
-  lilian/binutils
-  lilian/bison
+  be/binutils
+  be/bison
   be/cacerts
   be/diffutils
   lilian/dosfstools
@@ -21,7 +21,7 @@ pkg_build_deps=(
   be/gcc
   lilian/gettext
   lilian/git
-  lilian/m4
+  be/m4
   be/make
   be/python
   lilian/qemu
@@ -29,12 +29,12 @@ pkg_build_deps=(
   lilian/texinfo
 )
 pkg_deps=(
-  core/glibc core/gcc-libs lilian/xz
-  lilian/gettext lilian/pcre lilian/devicemapper
-  lilian/elfutils lilian/bzip2 lilian/libcap
+  core/glibc core/gcc-libs be/xz
+  lilian/gettext be/pcre lilian/devicemapper
+  lilian/elfutils be/bzip2 lilian/libcap
 )
 
-no_pie=true
+pkg_disabled_features=(pic)
 be_optimizations="-O2 -DNDEBUG -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -mavx -march=x86-64 -mtune=corei7-avx"
 be_protection=" "
 source ../defaults.sh

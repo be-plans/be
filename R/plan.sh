@@ -13,18 +13,18 @@ pkg_build_deps=(
   lilian/file
   be/gcc
   be/make
-  lilian/perl
-  lilian/pkg-config
+  be/perl
+  be/pkg-config
   lilian/texinfo
 )
 pkg_deps=(
-  lilian/bzip2
+  be/bzip2
   lilian/cairo
   lilian/curl
   be/gcc
   lilian/harfbuzz
   lilian/icu
-  lilian/expat
+  be/expat
   lilian/fontconfig
   lilian/freetype
   lilian/glib
@@ -33,11 +33,11 @@ pkg_deps=(
   lilian/libpng
   lilian/libtiff
   lilian/pango
-  lilian/pcre
+  be/pcre
   lilian/pixman
-  lilian/readline
-  lilian/xz
-  lilian/zlib
+  be/readline
+  be/xz
+  be/zlib
 )
 pkg_bin_dirs=(lib64/R/bin)
 pkg_include_dirs=(lib64/R/include)

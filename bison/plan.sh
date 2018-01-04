@@ -10,10 +10,11 @@ pkg_shasum=a72428c7917bdf9fa93cb8181c971b6e22834125848cf1d03ce10b1bb0716fe1
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/m4 lilian/perl
+  be/make be/gcc be/m4 be/perl
 )
 pkg_bin_dirs=(bin)
 
+pkg_disabled_features=(lto pic)
 source ../defaults.sh
 
 # ----------------------------------------------------------------------------
@@ -24,5 +25,5 @@ source ../defaults.sh
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/m4 be/coreutils)
+  pkg_build_deps=(be/gcc be/m4 be/coreutils)
 fi

@@ -12,12 +12,12 @@ pkg_deps=(
   core/gcc-libs
   lilian/libevent
   be/openssl
-  lilian/zlib
+  be/zlib
   lilian/libseccomp
   lilian/libscrypt
 )
 pkg_build_deps=(
-  be/gcc be/make lilian/pkg-config
+  be/gcc be/make be/pkg-config
   be/python
 )
 pkg_lib_dirs=(lib)

@@ -13,12 +13,12 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  lilian/bison
+  be/bison
   lilian/busybox
   be/gcc
-  lilian/m4
+  be/m4
   be/make
-  lilian/perl
+  be/perl
 )
 pkg_bin_dirs=(bin sbin)
 pkg_include_dirs=(include)

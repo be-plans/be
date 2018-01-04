@@ -7,15 +7,24 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('ncurses')
 pkg_source=http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=f551c24b30ce8bfb6e96d9f59b42fbea30fa3a6123384172f9e7284bcf647260
-pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(be/coreutils be/diffutils be/patch be/make be/gcc)
+pkg_deps=(
+  core/glibc
+  core/gcc-libs
+)
+pkg_build_deps=(
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
 #TODO: Bring the patches
 be_cxxstd="-std=gnu++14"
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_build() {

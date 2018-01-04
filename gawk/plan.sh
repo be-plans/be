@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3+')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=53e184e2d0f90def9207860531802456322be091c7b48f23fdc79cda65adc266
-pkg_deps=(core/glibc lilian/mpfr)
+pkg_deps=(core/glibc be/mpfr)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
   be/make be/gcc be/sed

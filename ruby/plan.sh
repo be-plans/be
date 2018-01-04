@@ -10,9 +10,9 @@ pkg_source=https://cache.ruby-lang.org/pub/${pkg_name}/${pkg_name}-${pkg_version
 pkg_upstream_url=https://www.ruby-lang.org/en/
 pkg_shasum=93b9e75e00b262bc4def6b26b7ae8717efc252c47154abb7392e54357e6c8c9c
 pkg_deps=(
-  core/glibc lilian/ncurses lilian/zlib
+  core/glibc be/ncurses be/zlib
   be/openssl lilian/libyaml lilian/libffi
-  lilian/readline
+  be/readline
 )
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
@@ -23,7 +23,7 @@ pkg_include_dirs=(include)
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/ruby)
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_prepare() {

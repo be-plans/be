@@ -7,13 +7,13 @@ pkg_source="http://www.leonerd.org.uk/code/$pkg_name/$pkg_name-${pkg_version}.ta
 pkg_shasum="6c0d87c94ab9915e76ecd313baec08dedf3bd56de83743d9aa923a081935d2f5"
 pkg_deps=(
   core/glibc
-  core/ncurses
+  be/ncurses
 )
 pkg_build_deps=(
   be/gcc
   core/libtool
   be/make
-  core/pkg-config
+  be/pkg-config
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

@@ -12,12 +12,12 @@ pkg_deps=(
   lilian/gawk
   core/gcc-libs
   core/glibc
-  lilian/grep
+  be/grep
   lilian/inetutils
-  lilian/ncurses
+  be/ncurses
   be/openssl
-  lilian/pcre
-  lilian/perl
+  be/pcre
+  be/perl
   lilian/procps-ng
   be/sed
 )
@@ -62,7 +62,7 @@ do_install() {
   # Remove things we don't need
   rm "$pkg_prefix/lib/"*.a "$pkg_prefix/bin/mysqld_"*
 
-  fix_interpreter "$pkg_prefix/bin/mysqldumpslow" lilian/perl bin/perl
+  fix_interpreter "$pkg_prefix/bin/mysqldumpslow" be/perl bin/perl
 }
 
 do_check() {

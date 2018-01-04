@@ -11,9 +11,9 @@ pkg_shasum=68c1922732c7efc08df4656a5366dcc3afdc8791513400dac276009b40954658
 pkg_dirname="${upstream_name}-${pkg_version}"
 pkg_deps=(
   lilian/atk
-  lilian/bzip2
+  be/bzip2
   lilian/cairo
-  lilian/expat
+  be/expat
   lilian/fontconfig
   lilian/freetype
   core/gcc-libs
@@ -30,18 +30,18 @@ pkg_deps=(
   lilian/libxext
   lilian/libxrender
   lilian/pango
-  lilian/pcre
+  be/pcre
   lilian/pixman
   lilian/util-linux
   lilian/xlib
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   be/gcc
   lilian/kbproto
   be/make
-  lilian/perl
-  lilian/pkg-config
+  be/perl
+  be/pkg-config
   lilian/renderproto
   lilian/shared-mime-info
   lilian/xextproto

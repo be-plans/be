@@ -11,7 +11,7 @@ pkg_deps=(
   core/glibc
   lilian/ocaml
   be/coreutils
-  lilian/ncurses
+  be/ncurses
 )
 pkg_build_deps=(
   be/gcc

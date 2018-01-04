@@ -1,21 +1,29 @@
 pkg_name=gnupg
 pkg_distname=$pkg_name
 pkg_origin=core
-pkg_version=1.4.21
+pkg_version=1.4.22
 pkg_license=('gplv3+')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=ftp://ftp.gnupg.org/gcrypt/${pkg_distname}/${pkg_distname}-${pkg_version}.tar.bz2
-pkg_shasum=6b47a3100c857dcab3c60e6152e56a997f2c7862c1b8b2b25adf3884a1ae2276
+pkg_shasum=9594a24bec63a21568424242e3f198b9d9828dea5ff0c335e47b06f835f930b4
 pkg_deps=(
-  core/glibc lilian/zlib lilian/bzip2
-  lilian/readline
+  core/glibc
+  be/zlib
+  be/bzip2
+  be/readline
 )
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed lilian/findutils
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
+  lilian/findutils
 )
 pkg_bin_dirs=(bin)
 
+pkg_disabled_features=(lto pic)
 source ../defaults.sh
 
 do_build() {

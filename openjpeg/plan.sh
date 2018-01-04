@@ -12,7 +12,7 @@ pkg_deps=(
   core/lcms2
   lilian/libpng
   core/libtiff
-  lilian/zlib
+  be/zlib
 )
 
 pkg_build_deps=(
@@ -37,8 +37,8 @@ do_build() {
     -DPNG_LIBRARY="$(pkg_path_for lilian/libpng)/lib/libpng.so" \
     -DTIFF_INCLUDE_DIR="$(pkg_path_for core/libtiff)/include" \
     -DTIFF_LIBRARY="$(pkg_path_for core/libtiff)/lib/libtiff.so" \
-    -DZLIB_INCLUDE_DIR="$(pkg_path_for lilian/zlib)/include" \
-    -DZLIB_LIBRARY="$(pkg_path_for lilian/zlib)/lib/libz.so" \
+    -DZLIB_INCLUDE_DIR="$(pkg_path_for be/zlib)/include" \
+    -DZLIB_LIBRARY="$(pkg_path_for be/zlib)/lib/libz.so" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="$pkg_prefix"
   make

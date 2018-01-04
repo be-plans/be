@@ -8,10 +8,10 @@ pkg_shasum="f84e98db1078772ff4935b40a1629ff82ef0dfdd08d2cbcc0130c8c437857196"
 pkg_upstream_url="http://www.pango.org"
 pkg_description="Pango is a library for laying out and rendering of text, with an emphasis on internationalization."
 pkg_deps=(
-  lilian/bzip2
+  be/bzip2
   lilian/cairo
   be/coreutils
-  lilian/expat
+  be/expat
   lilian/fontconfig
   lilian/freetype
   lilian/glib
@@ -24,17 +24,17 @@ pkg_deps=(
   lilian/libxcb
   lilian/libxdmcp
   lilian/libxext
-  lilian/pcre
+  be/pcre
   lilian/pixman
   lilian/xlib
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   lilian/file
   be/gcc
   be/make
-  lilian/perl
-  lilian/pkg-config
+  be/perl
+  be/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include/pango-1.0/pango)

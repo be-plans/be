@@ -8,9 +8,9 @@ pkg_license=('Apache-2.0')
 pkg_source="https://archive.apache.org/dist/${pkg_name}/${pkg_name}-${pkg_version}.tar.bz2"
 pkg_shasum=f87ec2df1c9fee3e6bfde3c8b855a3ddb7ca1ab20ca877bd0e2b6bf3f05c80b2
 pkg_deps=(
-  core/glibc lilian/expat lilian/libiconv
-  lilian/apr lilian/apr-util lilian/pcre
-  lilian/zlib be/openssl  core/gcc-libs
+  core/glibc be/expat lilian/libiconv
+  lilian/apr lilian/apr-util be/pcre
+  be/zlib be/openssl  core/gcc-libs
 )
 pkg_build_deps=(be/patch be/make be/gcc)
 pkg_bin_dirs=(bin)
@@ -27,12 +27,12 @@ source ../defaults.sh
 
 do_build() {
     ./configure --prefix="$pkg_prefix" \
-                --with-expat="$(pkg_path_for lilian/expat)" \
+                --with-expat="$(pkg_path_for be/expat)" \
                 --with-iconv="$(pkg_path_for lilian/libiconv)" \
-                --with-pcre="$(pkg_path_for lilian/pcre)" \
+                --with-pcre="$(pkg_path_for be/pcre)" \
                 --with-apr="$(pkg_path_for lilian/apr)" \
                 --with-apr-util="$(pkg_path_for lilian/apr-util)" \
-                --with-z="$(pkg_path_for lilian/zlib)" \
+                --with-z="$(pkg_path_for be/zlib)" \
                 --with-ssl="$(pkg_path_for be/openssl )" \
                 --enable-modules="none" \
                 --enable-mods-static="none" \

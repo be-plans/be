@@ -13,7 +13,7 @@ pkg_shasum=bb9a4199ed7a97d281967ee1c80d67d52a039934eab4e91029439539d4e1c01f
 pkg_filename="$pkg_name"
 pkg_deps=(
   be/cacerts
-  lilian/gnupg
+  be/gnupg
   # ref: https://gerrit.googlesource.com/git-repo/+/v1.12.33/repo#871
   # Python3 is experimental. Please use 2.6 - 2.7 instead.
   lilian/python2

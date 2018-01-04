@@ -12,7 +12,7 @@ pkg_dirname=go
 pkg_deps=(core/glibc lilian/iana-etc be/cacerts)
 pkg_build_deps=(
   be/coreutils lilian/inetutils lilian/bash
-  be/patch be/gcc lilian/go lilian/perl)
+  be/patch be/gcc lilian/go be/perl)
 pkg_bin_dirs=(bin)
 
 source ../defaults.sh

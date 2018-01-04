@@ -1,21 +1,29 @@
 pkg_name=wget
 pkg_distname=$pkg_name
 pkg_origin=core
-pkg_version=1.19.1
+pkg_version=1.19.2
 pkg_license=('GPL-3.0+')
 pkg_description="GNU Wget is a free software package for retrieving files using HTTP, HTTPS, FTP and FTPS the most widely-used Internet protocols."
 pkg_upstream_url=https://www.gnu.org/software/wget/
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_source=https://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.tar.xz
-pkg_shasum=0c950b9671881222a4d385b013c9604e98a8025d1988529dfca0e93617744cd2
+pkg_source=https://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.tar.gz
+pkg_shasum=4f4a673b6d466efa50fbfba796bd84a46ae24e370fa562ede5b21ab53c11a920
 pkg_deps=(
-  core/glibc lilian/libidn lilian/zlib
-  be/openssl  be/cacerts
+  core/glibc
+  lilian/libidn
+  be/zlib
+  be/openssl
+  be/cacerts
 )
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed
-  lilian/grep lilian/pkg-config
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
+  be/grep
+  be/pkg-config
 )
 pkg_bin_dirs=(bin)
 
@@ -61,5 +69,5 @@ _wget_common_prepare() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/pkg-config be/coreutils be/sed lilian/grep be/diffutils be/make be/patch)
+  pkg_build_deps=(be/gcc be/pkg-config be/coreutils be/sed be/grep be/diffutils be/make be/patch)
 fi

@@ -9,22 +9,34 @@ pkg_license=('GPL-2.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}/${pkg_distname}-${pkg_version}.tar.xz
 pkg_shasum=1cf7adf8ff4b5aa49041c8734bbcf1ad18cc4c94d0029aae0f4e48841088479a
 pkg_deps=(
-  core/glibc lilian/zlib lilian/gmp
-  lilian/mpfr lilian/libmpc lilian/binutils
+  core/glibc
+  be/zlib
+  be/gmp
+  lilian/mpfr
+  be/libmpc
+  be/binutils
 )
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/gawk lilian/m4
-  lilian/texinfo lilian/perl lilian/inetutils
-  lilian/expect lilian/dejagnu
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  lilian/gawk
+  be/m4
+  lilian/texinfo
+  be/perl
+  lilian/inetutils
+  lilian/expect
+  lilian/dejagnu
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-be_cxxstd="-std=gnu++14"
+# be_cxxstd="-std=gnu++14"
 be_protection=" "
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_prepare() {
@@ -167,8 +179,8 @@ do_build() {
       --disable-multiarch \
       --disable-libunwind-exceptions \
       --disable-vtable-verify \
-      --with-arch=x86-64 \
-      --with-tune=corei7-avx \
+      --with-arch=${BE_ARCH} \
+      --with-tune=${BE_TUNE} \
       --with-glibc-version=2.22
 
     # Don't store the configure flags in the resulting executables.
@@ -317,5 +329,5 @@ wrap_binary() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/m4)
+  pkg_build_deps=(be/m4)
 fi

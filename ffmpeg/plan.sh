@@ -15,17 +15,17 @@ pkg_build_deps=(
   be/diffutils
   be/gcc
   be/make
-  core/pkg-config
+  be/pkg-config
   core/yasm
 )
 pkg_deps=(
-  core/bzip2
+  be/bzip2
   core/glibc
-  core/gmp
+  be/gmp
   core/libwebp
   core/openjpeg
-  core/xz
-  lilian/zlib
+  be/xz
+  be/zlib
 )
 
 do_build() {

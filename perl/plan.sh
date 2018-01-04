@@ -1,25 +1,34 @@
 pkg_name=perl
 pkg_origin=core
-pkg_version=5.24.1
+pkg_version=5.24.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gpl' 'perlartistic')
 pkg_source=http://www.cpan.org/src/5.0/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=03a77bac4505c270f1890ece75afc7d4b555090b41aa41ea478747e23b2afb3f
+pkg_shasum=03fe3e4ea39d2a4982703572599a80f3d5f368a1359ed89746ea1d8bec6cfbba
 pkg_deps=(
-  core/glibc lilian/zlib lilian/bzip2
-  lilian/gdbm lilian/db be/coreutils
-  lilian/less
+  core/glibc
+  be/zlib
+  be/bzip2
+  be/gdbm
+  be/db
+  be/coreutils
+  be/less
 )
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/procps-ng lilian/inetutils
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  lilian/procps-ng
+  lilian/inetutils
   lilian/iana-etc
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_interpreters=(bin/perl)
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_prepare() {

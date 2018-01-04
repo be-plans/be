@@ -28,7 +28,7 @@ pkg_build_deps=(
   lilian/libxslt
   be/openssl
   lilian/which
-  lilian/zlib
+  be/zlib
 )
 
 pkg_lib_dirs=(lib)
@@ -43,8 +43,8 @@ do_build() {
 do_install() {
   export NO_BZIP2=1
   export ZLIB_LIBPATH
-  ZLIB_LIBPATH="$(pkg_path_for lilian/zlib)/lib"
+  ZLIB_LIBPATH="$(pkg_path_for be/zlib)/lib"
   export ZLIB_INCLUDE
-  ZLIB_INCLUDE="$(pkg_path_for lilian/zlib)/include"
+  ZLIB_INCLUDE="$(pkg_path_for be/zlib)/include"
   ./b2 install --prefix="$pkg_prefix" -q --debug-configuration
 }

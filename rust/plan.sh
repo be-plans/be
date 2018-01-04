@@ -11,7 +11,7 @@ pkg_dirname=${pkg_name}-${pkg_version}-x86_64-unknown-linux-gnu
 pkg_shasum=8cf4e840041fb05721673836997c5aac5673f733660927dfb64b8d653a3a94fa
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
-pkg_deps=(core/glibc core/gcc-libs lilian/zlib be/gcc be/cacerts core/busybox-static)
+pkg_deps=(core/glibc core/gcc-libs be/zlib be/gcc be/cacerts core/busybox-static)
 pkg_build_deps=(be/patchelf lilian/findutils be/coreutils)
 
 _target_sources=(
@@ -117,5 +117,5 @@ do_strip() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/patchelf be/coreutils be/sed lilian/grep be/diffutils lilian/findutils be/make be/patch)
+  pkg_build_deps=(be/patchelf be/coreutils be/sed be/grep be/diffutils lilian/findutils be/make be/patch)
 fi

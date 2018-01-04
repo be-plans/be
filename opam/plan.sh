@@ -15,10 +15,10 @@ pkg_deps=(
   be/gcc
   lilian/git
   core/glibc
-  lilian/m4
+  be/m4
   be/make
   be/patch
-  lilian/pkg-config
+  be/pkg-config
   lilian/rsync
   lilian/ocaml
   lilian/ocamlbuild
@@ -27,7 +27,7 @@ pkg_deps=(
 
 pkg_bin_dirs=(bin)
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_build() {

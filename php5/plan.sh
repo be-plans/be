@@ -18,14 +18,14 @@ pkg_deps=(
   lilian/libjpeg-turbo
   lilian/libpng
   be/openssl
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   lilian/bison2
   be/gcc
   be/make
   be/re2c
-  lilian/readline
+  be/readline
 )
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib)

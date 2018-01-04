@@ -16,7 +16,7 @@ pkg_deps=(core/glibc
           core/libxau
           core/libxdmcp
           core/libxcb)
-pkg_build_deps=(be/gcc be/make core/pkg-config be/diffutils core/libpthread-stubs core/inputproto core/kbproto)
+pkg_build_deps=(be/gcc be/make be/pkg-config be/diffutils core/libpthread-stubs core/inputproto core/kbproto)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_pconfig_dirs=(lib/pkgconfig)

@@ -5,8 +5,17 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('custom')
 pkg_source=http://download.oracle.com/berkeley-db/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=a9c5e2b004a5777aa03510cfe5cd766a4a3b777713406b02809c17c8e0e7a8fb
-pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(be/coreutils be/diffutils be/patch be/make be/gcc)
+pkg_deps=(
+  core/glibc
+  core/gcc-libs
+)
+pkg_build_deps=(
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

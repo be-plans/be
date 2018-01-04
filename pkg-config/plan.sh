@@ -5,16 +5,27 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2+')
 pkg_source=http://pkgconfig.freedesktop.org/releases/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
-pkg_deps=(core/glibc)
-pkg_build_deps=(be/coreutils be/diffutils be/patch be/make be/gcc)
+pkg_deps=(
+  core/glibc
+)
+pkg_build_deps=(
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+)
 pkg_bin_dirs=(bin)
+
+pkg_disabled_features=(lto pic)
+source ../defaults.sh
 
 do_build() {
   ./configure \
     --prefix=$pkg_prefix \
     --with-internal-glib \
     --disable-host-tool
-  make
+  make -j "$(nproc)"
 }
 
 do_check() {

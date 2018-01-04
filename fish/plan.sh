@@ -11,9 +11,9 @@ pkg_deps=(
   lilian/gawk
   core/gcc-libs
   core/glibc
-  lilian/grep
+  be/grep
   lilian/man-db
-  lilian/ncurses
+  be/ncurses
   lilian/net-tools
 )
 pkg_build_deps=(

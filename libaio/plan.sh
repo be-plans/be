@@ -10,7 +10,7 @@ pkg_build_deps=(be/coreutils be/gcc be/make)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_build() {

@@ -10,7 +10,7 @@ pkg_build_deps=(
   be/gcc
   core/libtool
   be/make
-  core/perl
+  be/perl
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

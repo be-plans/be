@@ -12,8 +12,8 @@ pkg_deps=(
   core/jbigkit
   lilian/libjpeg-turbo
   core/libtiff
-  lilian/xz
-  lilian/zlib
+  be/xz
+  be/zlib
 )
 pkg_build_deps=(be/gcc be/make)
 pkg_include_dirs=(include)

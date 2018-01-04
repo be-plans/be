@@ -11,7 +11,7 @@ pkg_dirname="shield-${pkg_version}"
 
 pkg_deps=(
   lilian/bash
-  core/bzip2
+  be/bzip2
   core/cacerts
   be/coreutils
   core/curl

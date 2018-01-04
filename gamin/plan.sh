@@ -15,8 +15,8 @@ pkg_build_deps=(
   be/gcc
   be/make
   be/patch
-  lilian/pcre
-  core/pkg-config
+  be/pcre
+  be/pkg-config
   core/python2
 )
 pkg_include_dirs=(include)

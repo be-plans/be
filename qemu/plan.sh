@@ -11,7 +11,7 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_deps=(
-  lilian/bzip2
+  be/bzip2
   lilian/curl
   core/gcc-libs
   lilian/glib
@@ -20,14 +20,14 @@ pkg_deps=(
   lilian/libaio
   lilian/libcap-ng
   lilian/lzo
-  lilian/ncurses
-  lilian/pcre
+  be/ncurses
+  be/pcre
   lilian/pixman
   lilian/python2
   be/snappy
   lilian/util-linux
   lilian/vde2
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   lilian/autoconf
@@ -36,8 +36,8 @@ pkg_build_deps=(
   be/gcc
   lilian/libtool
   be/make
-  lilian/m4
-  lilian/pkg-config
+  be/m4
+  be/pkg-config
 )
 
 be_optimizations="-O2 -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -m64 -mavx -march=x86-64 -mtune=corei7-avx"

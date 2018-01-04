@@ -14,7 +14,7 @@ pkg_build_deps=(
   core/file
   be/gcc
   core/libtool
-  core/m4
+  be/m4
   be/make
 )
 pkg_lib_dirs=(lib)

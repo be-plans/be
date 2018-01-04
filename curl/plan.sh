@@ -12,15 +12,15 @@ pkg_deps=(
   be/cacerts
   core/glibc
   be/openssl
-  lilian/zlib
+  be/zlib
   lilian/nghttp2
 )
 pkg_build_deps=(
   be/coreutils
   be/gcc
   be/make
-  lilian/perl
-  lilian/pkg-config
+  be/perl
+  be/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

@@ -17,17 +17,17 @@ pkg_deps=(
   core/libjpeg-turbo
   core/libpng
   core/libtiff
-  lilian/pcre
+  be/pcre
   core/shared-mime-info
   core/util-linux
-  core/xz
-  lilian/zlib
+  be/xz
+  be/zlib
 )
 pkg_build_deps=(
   be/gcc
   be/make
-  core/perl
-  core/pkg-config
+  be/perl
+  be/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

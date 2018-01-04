@@ -20,7 +20,7 @@ pkg_build_deps=(
   be/make
   lilian/musl
   be/openssl -musl
-  lilian/zlib-musl
+  be/zlib-musl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=()

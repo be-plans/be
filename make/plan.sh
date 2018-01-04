@@ -11,7 +11,7 @@ pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
   be/make be/gcc lilian/bash lilian/gettext
-  lilian/gzip lilian/perl lilian/binutils
+  lilian/gzip be/perl be/binutils
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -50,5 +50,5 @@ EOF
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/binutils be/gcc be/coreutils be/sed lilian/bash lilian/perl be/diffutils lilian/gettext lilian/gzip)
+  pkg_build_deps=(be/binutils be/gcc be/coreutils be/sed lilian/bash be/perl be/diffutils lilian/gettext lilian/gzip)
 fi

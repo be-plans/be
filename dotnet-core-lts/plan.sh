@@ -20,7 +20,7 @@ pkg_deps=(
   lilian/lttng-ust
   be/openssl
   lilian/util-linux
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   be/patchelf

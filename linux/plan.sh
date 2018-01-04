@@ -16,7 +16,7 @@ pkg_build_deps=(
   be/gcc
   lilian/inetutils
   be/make
-  lilian/perl
+  be/perl
   be/openssl
 )
 

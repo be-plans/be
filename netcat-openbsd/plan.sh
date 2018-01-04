@@ -12,7 +12,7 @@ pkg_build_deps=(
   be/gcc
   be/make
   be/patch
-  lilian/pkg-config
+  be/pkg-config
 )
 pkg_bin_dirs=(bin)
 

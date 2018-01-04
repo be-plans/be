@@ -10,11 +10,11 @@ pkg_filename=${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=a3c603ed84c3c2495f9c9331fe6bba3bb0ee65e06ec331e0a0fb52158291b40b
 pkg_deps=(
   core/glibc lilian/libpng
-  lilian/zlib lilian/bzip2
+  be/zlib be/bzip2
 )
 pkg_build_deps=(
   be/gcc be/make be/coreutils
-  lilian/pkg-config be/diffutils
+  be/pkg-config be/diffutils
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

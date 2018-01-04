@@ -8,9 +8,9 @@ pkg_license=('zsh')
 pkg_source=https://downloads.sourceforge.net/project/zsh/zsh/$pkg_version/zsh-$pkg_version.tar.gz
 pkg_shasum=3d94a590ff3c562ecf387da78ac356d6bea79b050a9ef81e3ecb9f8ee513040e
 pkg_deps=(
-  core/glibc lilian/pcre lilian/ncurses
-  lilian/readline lilian/gdbm be/coreutils
-  lilian/perl
+  core/glibc be/pcre be/ncurses
+  be/readline be/gdbm be/coreutils
+  be/perl
 )
 pkg_build_deps=(be/make be/gcc)
 pkg_bin_dirs=(bin)

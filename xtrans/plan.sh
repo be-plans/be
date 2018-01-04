@@ -8,7 +8,7 @@ pkg_license=('MIT')
 pkg_source="https://www.x.org/releases/individual/lib/${pkg_name}-${pkg_version}.tar.bz2"
 pkg_shasum="adbd3b36932ce4c062cd10f57d78a156ba98d618bdb6f50664da327502bc8301"
 pkg_deps=(core/glibc)
-pkg_build_deps=(be/gcc be/make core/pkg-config core/util-macros)
+pkg_build_deps=(be/gcc be/make be/pkg-config core/util-macros)
 pkg_include_dirs=(include)
 pkg_pconfig_dirs=(share/pkgconfig)
 

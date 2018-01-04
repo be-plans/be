@@ -9,13 +9,13 @@ pkg_version="5.1.2"
 pkg_source="https://varnish-cache.org/_downloads/${pkg_name}-${pkg_version}.tgz"
 pkg_shasum=39d858137e26948a7c85f07363f13f0778da61d234126e03a160a0cb9ba4fce3
 pkg_deps=(
-  core/glibc lilian/ncurses lilian/docutils
-  lilian/pcre be/gcc lilian/bash
+  core/glibc be/ncurses lilian/docutils
+  be/pcre be/gcc lilian/bash
 )
 pkg_build_deps=(
-  be/make     lilian/python2  lilian/pkg-config
-  lilian/readline lilian/graphviz lilian/libtool
-  lilian/libedit  lilian/automake lilian/m4
+  be/make     lilian/python2  be/pkg-config
+  be/readline lilian/graphviz lilian/libtool
+  lilian/libedit  lilian/automake be/m4
   lilian/autoconf
 )
 
@@ -42,7 +42,7 @@ do_prepare() {
 
 do_build() {
   # TODO: if we don't copy this aclocal will fail. need to figure out how to fix this
-  cp "$(pkg_path_for lilian/pkg-config)/share/aclocal/pkg.m4" "$(pkg_path_for lilian/automake)/share/aclocal/"
+  cp "$(pkg_path_for be/pkg-config)/share/aclocal/pkg.m4" "$(pkg_path_for lilian/automake)/share/aclocal/"
   sh autogen.sh
   sh configure --prefix="$pkg_prefix"
 

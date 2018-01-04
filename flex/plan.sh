@@ -8,7 +8,7 @@ pkg_shasum=d39b15a856906997ced252d76e9bfe2425d7503c6ed811669665627b248e4c73
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/m4 lilian/bison
+  be/make be/gcc be/m4 be/bison
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -38,5 +38,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/m4 be/coreutils lilian/bison)
+  pkg_build_deps=(be/gcc be/m4 be/coreutils be/bison)
 fi

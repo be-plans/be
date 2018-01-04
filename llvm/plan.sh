@@ -11,7 +11,7 @@ pkg_shasum="1fd90354b9cf19232e8f168faf2220e79be555df3aa743242700879e8fd329ee"
 pkg_deps=(
   core/gcc-libs
   core/glibc
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   be/cmake

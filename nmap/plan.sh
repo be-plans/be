@@ -11,12 +11,12 @@ pkg_deps=(
   core/glibc
   core/gcc-libs
   be/openssl
-  lilian/pcre
-  lilian/zlib
+  be/pcre
+  be/zlib
   lilian/libpcap
 )
 pkg_build_deps=(
-  lilian/bzip2
+  be/bzip2
   be/coreutils
   be/diffutils
   lilian/file
@@ -25,8 +25,8 @@ pkg_build_deps=(
   be/lua
   be/make
   lilian/openssh
-  lilian/pkg-config
-  lilian/readline
+  be/pkg-config
+  be/readline
   lilian/which
 )
 pkg_bin_dirs=(bin)
@@ -49,9 +49,9 @@ do_build() {
     --with-libdnet=included \
     --with-liblinear=included \
     --with-liblua="$(pkg_path_for "be/lua")" \
-    --with-libpcre="$(pkg_path_for "lilian/pcre")" \
+    --with-libpcre="$(pkg_path_for "be/pcre")" \
     --with-libssh2=included \
-    --with-libz="$(pkg_path_for "lilian/zlib")"
+    --with-libz="$(pkg_path_for "be/zlib")"
   make -j "$(nproc)"
 }
 

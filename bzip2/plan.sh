@@ -7,8 +7,16 @@ pkg_license=('bzip2')
 pkg_source=http://www.bzip.org/$pkg_version/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=a2848f34fcd5d6cf47def00461fcb528a0484d8edef8208d6d2e2909dc61d9cd
 pkg_dirname=${pkg_distname}-${pkg_version}
-pkg_deps=(core/glibc)
-pkg_build_deps=(be/coreutils be/diffutils be/patch be/make be/gcc)
+pkg_deps=(
+  core/glibc
+)
+pkg_build_deps=(
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -21,7 +29,7 @@ _common_prepare() {
   sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
 }
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_prepare() {

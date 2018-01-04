@@ -22,17 +22,17 @@ pkg_deps=(
   lilian/gawk
   core/gcc-libs
   core/glibc
-  lilian/grep
+  be/grep
   lilian/inetutils
-  lilian/ncurses
+  be/ncurses
   be/openssl
-  lilian/pcre
-  lilian/perl
+  be/pcre
+  be/perl
   lilian/procps-ng
   be/sed
 )
 pkg_build_deps=(
-  lilian/bison
+  be/bison
   lilian/boost/1.59.0
   be/cmake
   be/diffutils
@@ -52,7 +52,7 @@ pkg_exports=(
 )
 
 be_cxxstd="-std=gnu++14"
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_build() {
@@ -84,8 +84,8 @@ do_install() {
   rm -rf "$pkg_prefix/docs" "$pkg_prefix/man" "$pkg_prefix/mysql-test" \
     "$pkg_prefix"/lib/*.a
 
-  fix_interpreter "$pkg_prefix/bin/mysqld_multi" lilian/perl bin/perl
-  fix_interpreter "$pkg_prefix/bin/mysqldumpslow" lilian/perl bin/perl
+  fix_interpreter "$pkg_prefix/bin/mysqld_multi" be/perl bin/perl
+  fix_interpreter "$pkg_prefix/bin/mysqldumpslow" be/perl bin/perl
 }
 
 do_check() {

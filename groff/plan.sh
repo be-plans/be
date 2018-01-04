@@ -12,7 +12,7 @@ pkg_build_deps=(
   be/gcc
   core/gcc-libs
   be/make
-  lilian/perl
+  be/perl
 )
 pkg_deps=(
   core/gcc-libs

@@ -11,7 +11,7 @@ pkg_shasum=11a615225baa5f8bb686824423f50e4427acd3f70d394765bdff32801f0fd5b0
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/coreutils be/make be/gcc
-  lilian/binutils
+  be/binutils
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

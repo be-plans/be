@@ -11,7 +11,7 @@ pkg_deps=(core/glibc lilian/libffi core/gcc-libs core/jre8)
 pkg_build_deps=(
   core/jdk8
   core/ant
-  core/pkg-config
+  be/pkg-config
   be/make
   be/gcc
   core/file

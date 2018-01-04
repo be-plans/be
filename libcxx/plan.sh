@@ -22,7 +22,7 @@ pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_bin_dirs=(bin)
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_download() {

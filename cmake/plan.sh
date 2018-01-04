@@ -18,8 +18,8 @@ pkg_build_deps=(
   be/make
   be/gcc
   lilian/curl
-  lilian/zlib
-  lilian/bzip2
+  be/zlib
+  be/bzip2
 )
 
 pkg_lib_dirs=(lib)

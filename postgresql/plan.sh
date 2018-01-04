@@ -13,9 +13,9 @@ pkg_deps=(
   lilian/envdir
   core/glibc
   be/openssl
-  lilian/perl
-  lilian/readline
-  lilian/zlib
+  be/perl
+  be/readline
+  be/zlib
   lilian/libossp-uuid
 
   # for postgis
@@ -31,7 +31,7 @@ pkg_build_deps=(
   be/make
 
   # for postgis
-  lilian/perl
+  be/perl
   be/diffutils
 )
 
@@ -48,7 +48,7 @@ pkg_exposes=(port)
 pkg_svc_user=root
 pkg_svc_group=$pkg_svc_user
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 ext_postgis_version=2.3.2

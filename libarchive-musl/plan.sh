@@ -2,7 +2,7 @@ source ../libarchive/plan.sh
 
 pkg_name=libarchive-musl
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_deps=(lilian/musl be/openssl-musl lilian/zlib-musl lilian/bzip2-musl lilian/xz-musl)
+pkg_deps=(lilian/musl be/openssl-musl be/zlib-musl be/bzip2-musl be/xz-musl)
 
 source ../defaults.sh
 
@@ -23,5 +23,5 @@ do_prepare() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed lilian/grep be/diffutils be/make)
+  pkg_build_deps=(be/gcc be/coreutils be/sed be/grep be/diffutils be/make)
 fi

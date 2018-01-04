@@ -20,11 +20,11 @@ pkg_build_deps=(
   lilian/gawk
   be/gcc
   lilian/git
-  lilian/grep
+  be/grep
   lilian/libxml2
   lilian/libxslt
   be/make
-  lilian/perl
+  be/perl
   lilian/python2
   lilian/rsync
   lilian/unzip

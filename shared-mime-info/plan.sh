@@ -11,23 +11,23 @@ pkg_deps=(
   core/glib
   core/glibc
   core/libxml2
-  lilian/pcre
-  lilian/zlib
+  be/pcre
+  be/zlib
 )
 pkg_build_deps=(
   core/cpanminus
-  core/expat
+  be/expat
   be/gcc
   core/gettext
   core/intltool
   be/make
-  core/perl
-  core/pkg-config
+  be/perl
+  be/pkg-config
 )
 pkg_bin_dirs=(bin)
 
 do_prepare() {
   do_default_prepare
 
-  cpanm XML::Parser --configure-args="EXPATLIBPATH=$(pkg_path_for core/expat)/lib export EXPATINCPATH=$(pkg_path_for core/expat)/include"
+  cpanm XML::Parser --configure-args="EXPATLIBPATH=$(pkg_path_for be/expat)/lib export EXPATINCPATH=$(pkg_path_for be/expat)/include"
 }

@@ -10,13 +10,13 @@ pkg_shasum=d76680ef03f00cd5e970bbdcd4e57fb1f6df7d2e2c071635ef2be74790190c3b
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/gcc be/make lilian/which
-  be/diffutils lilian/perl
+  be/diffutils be/perl
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 
-no_pie=true
+pkg_disabled_features=(pic)
 be_protection=" "
 source ../defaults.sh
 

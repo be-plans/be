@@ -12,7 +12,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/gcc be/make lilian/file
-  be/diffutils be/coreutils lilian/pkg-config
+  be/diffutils be/coreutils be/pkg-config
 )
 pkg_bin_dirs=(bin lib/p11-kit)
 pkg_include_dirs=(

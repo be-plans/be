@@ -19,9 +19,9 @@ pkg_deps=(
   core/glibc
   lilian/libffi
   lilian/libiconv
-  lilian/pcre
+  be/pcre
   lilian/util-linux
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   lilian/dbus
@@ -31,8 +31,8 @@ pkg_build_deps=(
   lilian/gettext
   lilian/libxslt
   be/make
-  lilian/perl
-  lilian/pkg-config
+  be/perl
+  be/pkg-config
   be/python
 )
 pkg_bin_dirs=(bin)

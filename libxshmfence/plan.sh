@@ -14,7 +14,7 @@ pkg_build_deps=(
   be/diffutils
   be/gcc
   be/make
-  core/pkg-config
+  be/pkg-config
   core/xproto
   core/util-macros
 )

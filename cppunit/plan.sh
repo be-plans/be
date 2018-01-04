@@ -19,7 +19,7 @@ pkg_build_deps=(
   lilian/glib
   lilian/libtool
   be/make
-  lilian/pkg-config
+  be/pkg-config
   lilian/which
 )
 

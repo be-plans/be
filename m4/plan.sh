@@ -8,10 +8,11 @@ pkg_shasum=f2c1e86ca0a404ff281631bdc8377638992744b175afb806e25871a24a934e07
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/binutils
+  be/make be/gcc be/binutils
 )
 pkg_bin_dirs=(bin)
 
+pkg_disabled_features=(lto pic)
 source ../defaults.sh
 
 do_prepare() {
@@ -47,5 +48,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/binutils)
+  pkg_build_deps=(be/binutils)
 fi

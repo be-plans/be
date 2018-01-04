@@ -13,17 +13,17 @@ pkg_deps=(
   lilian/libffi
   core/libxslt
   core/libiconv
-  lilian/pcre
+  be/pcre
   core/util-linux
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   be/diffutils
   be/gcc
   core/gettext
   be/make
-  core/perl
-  core/pkg-config
+  be/perl
+  be/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

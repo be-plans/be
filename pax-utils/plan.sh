@@ -18,7 +18,7 @@ pkg_build_deps=(
   be/diffutils
   be/gcc
   be/make
-  lilian/pkg-config
+  be/pkg-config
 )
 pkg_bin_dirs=(bin)
 

@@ -11,14 +11,14 @@ pkg_source=https://fedorahosted.org/releases/e/l/$pkg_name/$pkg_version/$pkg_nam
 pkg_shasum=9412fac7b30872b738bc1ed1ebcaed54493c26ef9a67887913498c17b10f3bc2
 pkg_deps=(
   core/glibc
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   be/gcc
   core/glibc
-  lilian/m4
+  be/m4
   be/make
-  lilian/zlib
+  be/zlib
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

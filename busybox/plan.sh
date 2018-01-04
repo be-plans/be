@@ -10,7 +10,7 @@ pkg_shasum=da3e44913fc1a9c9b7c5337ea5292da518683cbff32be630777f565d6036af16
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   lilian/bash
-  lilian/bison
+  be/bison
   be/coreutils
   be/diffutils
   lilian/findutils
@@ -18,7 +18,7 @@ pkg_build_deps=(
   lilian/gawk
   be/gcc
   lilian/gettext
-  lilian/grep
+  be/grep
   lilian/gzip
   lilian/libtool
   be/make
@@ -26,8 +26,8 @@ pkg_build_deps=(
   be/sed
   lilian/texinfo
   lilian/util-linux
-  lilian/wget
-  lilian/xz
+  be/wget
+  be/xz
 )
 
 pkg_bin_dirs=(bin)

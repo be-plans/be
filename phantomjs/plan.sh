@@ -12,7 +12,7 @@ pkg_shasum=86dd9a4bf4aee45f1a84c9f61cf1947c1d6dce9b9e8d2a907105da7852460d2f
 pkg_deps=(
   core/glibc core/gcc-libs
   lilian/freetype lilian/fontconfig
-  lilian/zlib lilian/libpng lilian/expat
+  be/zlib lilian/libpng be/expat
 )
 
 # We need curl instead of wget because wget doesn't work for

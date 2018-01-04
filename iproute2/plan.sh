@@ -10,13 +10,13 @@ pkg_license=('GPL-2.0')
 pkg_bin_dirs=(sbin)
 pkg_lib_dirs=(lib)
 pkg_build_deps=(
-  lilian/bison
+  be/bison
   lilian/flex
   be/gcc
   lilian/iptables
-  lilian/m4
+  be/m4
   be/make
-  lilian/pkg-config
+  be/pkg-config
 )
 pkg_deps=(core/glibc)
 

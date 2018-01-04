@@ -10,12 +10,13 @@ pkg_shasum=87b565e89a9a684fe4ebeeddb8399dce2599f9c9049854ca8c0dfbdea0e21912
 pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
-  be/make      be/gcc       lilian/binutils
-  lilian/m4
+  be/make      be/gcc       be/binutils
+  be/m4
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_prepare() {
@@ -49,5 +50,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/binutils lilian/m4)
+  pkg_build_deps=(be/binutils be/m4)
 fi

@@ -17,17 +17,17 @@ pkg_deps=(
   lilian/libxml2
   lilian/libjpeg-turbo
   lilian/libpng
-  lilian/pcre
-  lilian/expat
+  be/pcre
+  be/expat
   be/openssl
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   lilian/bison2
   be/gcc
   be/make
   be/re2c
-  lilian/readline
+  be/readline
 )
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib)

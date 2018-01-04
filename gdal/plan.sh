@@ -10,7 +10,7 @@ pkg_shasum=61837706abfa3e493f3550236efc2c14bd6b24650232f9107db50a944abf8b2f
 pkg_build_deps=(
   be/gcc
   be/make
-  core/pkg-config
+  be/pkg-config
   core/patchelf
 )
 pkg_deps=(

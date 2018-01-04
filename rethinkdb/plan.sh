@@ -15,15 +15,15 @@ pkg_build_deps=(
   be/coreutils
   core/node/4.2.6
   core/jemalloc
-  core/m4
+  be/m4
 )
 pkg_deps=(
   core/openssl
   core/gcc-libs
   core/protobuf
-  lilian/zlib
+  be/zlib
   core/curl
-  core/ncurses
+  be/ncurses
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

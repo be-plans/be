@@ -12,7 +12,7 @@ pkg_deps=(
 pkg_build_deps=(
   be/make
   be/gcc
-  core/pkg-config
+  be/pkg-config
   core/util-macros
 )
 pkg_include_dirs=(include)

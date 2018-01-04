@@ -1,26 +1,26 @@
 pkg_name=gdb
 pkg_origin=core
-pkg_version=8.0
+pkg_version=8.0.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-3.0')
 pkg_description="GDB, the GNU Project debugger, allows you to see what is going on 'inside' another program while it executes -- or what another program was doing at the moment it crashed."
 pkg_upstream_url="https://www.gnu.org/software/gdb/"
 pkg_source="http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz"
-pkg_shasum=f6a24ffe4917e67014ef9273eb8b547cb96a13e5ca74895b06d683b391f3f4ee
+pkg_shasum=3dbd5f93e36ba2815ad0efab030dcd0c7b211d7b353a40a53f4c02d7d56295e3
 pkg_deps=(
   core/glibc
-  lilian/readline
-  lilian/zlib
-  lilian/xz
-  lilian/ncurses
-  lilian/expat
-  lilian/guile
-  lilian/bdwgc
+  be/readline
+  be/zlib
+  be/xz
+  be/ncurses
+  be/expat
+  be/guile
+  be/bdwgc
   be/python
 )
 pkg_build_deps=(
   be/coreutils
-  lilian/pkg-config
+  be/pkg-config
   be/diffutils
   lilian/expect
   lilian/dejagnu
@@ -32,7 +32,7 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_build() {

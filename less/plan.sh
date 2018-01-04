@@ -1,18 +1,26 @@
 pkg_name=less
 pkg_origin=core
-pkg_version=487
+pkg_version=529
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3+')
 pkg_source=http://www.greenwoodsoftware.com/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=f3dc8455cb0b2b66e0c6b816c00197a71bf6d1787078adeee0bcf2aea4b12706
-pkg_deps=(core/glibc lilian/ncurses lilian/pcre)
+pkg_shasum=dba42cd4c38174b7bd0d426d8a39df2be6bcc1ec18946a4642713290f6bf9a0b
+pkg_deps=(
+  core/glibc
+  be/ncurses
+  be/pcre
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
 )
 pkg_bin_dirs=(bin)
 
 #TODO: Check for newer version
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_build() {

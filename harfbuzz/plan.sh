@@ -9,7 +9,7 @@ pkg_source=http://www.freedesktop.org/software/harfbuzz/release/${pkg_name}-${pk
 pkg_shasum=21a78b81cd20cbffdb04b59ac7edfb410e42141869f637ae1d6778e74928d293
 pkg_deps=(
   lilian/cairo
-  lilian/expat
+  be/expat
   lilian/freetype
   lilian/fontconfig
   lilian/glib
@@ -17,13 +17,13 @@ pkg_deps=(
   lilian/icu
   lilian/libpng
   lilian/pixman
-  lilian/pcre
-  lilian/zlib
+  be/pcre
+  be/zlib
 )
 pkg_build_deps=(
   be/gcc
-  lilian/perl
-  lilian/pkg-config
+  be/perl
+  be/pkg-config
   be/make
 )
 pkg_bin_dirs=(bin)

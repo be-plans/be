@@ -25,7 +25,7 @@ pkg_build_deps=(
   core/kbproto
   core/libpthread-stubs
   be/make
-  core/pkg-config
+  be/pkg-config
   core/util-macros
   core/xextproto
   core/xproto

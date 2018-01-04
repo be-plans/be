@@ -10,13 +10,13 @@ pkg_shasum=673dbc69fdc3f5a86fb5759ab19899039a8e5e6c631749e48dcd9c6f0c83541e
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/gcc be/make lilian/flex
-  lilian/bison lilian/m4
+  be/bison be/m4
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_build() {

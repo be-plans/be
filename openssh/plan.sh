@@ -11,7 +11,7 @@ pkg_bin_dirs=(bin sbin libexec)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_deps=(
-  core/glibc be/openssl lilian/zlib
+  core/glibc be/openssl be/zlib
 )
 pkg_build_deps=(
   be/coreutils be/gcc be/make

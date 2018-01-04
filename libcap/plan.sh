@@ -9,13 +9,13 @@ pkg_deps=(core/glibc lilian/attr)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
   be/make be/gcc core/linux-headers
-  lilian/perl
+  be/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_prepare() {

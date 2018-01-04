@@ -9,4 +9,4 @@ pkg_upstream_url=http://www.dest-unreach.org/socat/
 pkg_license=('GPL-2.0')
 pkg_bin_dirs=(bin)
 pkg_build_deps=(be/make be/gcc)
-pkg_deps=(core/glibc lilian/readline be/openssl)
+pkg_deps=(core/glibc be/readline be/openssl)

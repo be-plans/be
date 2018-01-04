@@ -11,7 +11,7 @@ pkg_shasum=1267f9e2ab983f260623bee841e6c9cc458bf4bf776238ed5f100983f79e9299
 pkg_deps=(
   core/gcc-libs
   core/serf
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   core/apr
@@ -20,7 +20,7 @@ pkg_build_deps=(
   be/diffutils
   be/gcc
   be/make
-  lilian/pkg-config
+  be/pkg-config
   lilian/python2
   lilian/sqlite
 )

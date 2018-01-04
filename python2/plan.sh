@@ -11,15 +11,15 @@ pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_source=https://www.python.org/ftp/python/${pkg_version}/${pkg_dirname}.tgz
 pkg_shasum=a4f05a0720ce0fd92626f0278b6b433eee9a6173ddf2bced7957dfb599a5ece1
 pkg_deps=(
-  lilian/bzip2
+  be/bzip2
   core/gcc-libs
-  lilian/gdbm
+  be/gdbm
   core/glibc
-  lilian/ncurses
+  be/ncurses
   be/openssl
-  lilian/readline
+  be/readline
   lilian/sqlite
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   be/coreutils
@@ -35,7 +35,7 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include Include)
 pkg_interpreters=(bin/python bin/python2 bin/python2.7)
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_prepare() {

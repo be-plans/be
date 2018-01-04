@@ -7,14 +7,14 @@ pkg_source="http://netfilter.org/projects/iptables/files/${pkg_name}-${pkg_versi
 pkg_shasum=0fc2d7bd5d7be11311726466789d4c65fb4c8e096c9182b56ce97440864f0cf5
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/make be/gcc lilian/bison
+  be/make be/gcc be/bison
   lilian/flex
 )
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_build() {

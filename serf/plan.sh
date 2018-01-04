@@ -13,7 +13,7 @@ pkg_deps=(
   lilian/apr-util
   core/glibc
   be/openssl
-  lilian/zlib
+  be/zlib
 )
 pkg_build_deps=(
   be/gcc

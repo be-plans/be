@@ -18,7 +18,7 @@ pkg_build_deps=(
   be/gcc
   core/libxslt
   be/make
-  core/pkg-config
+  be/pkg-config
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

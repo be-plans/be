@@ -12,14 +12,14 @@ pkg_build_deps=(
   be/gcc
   be/ninja
   be/cmake
-  lilian/pkg-config
+  be/pkg-config
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib lib64)
 pkg_upstream_url=https://github.com/google/snappy
 pkg_description="A fast compressor/decompressor http://google.github.io/snappy/"
 
-pkg_disabled_features=(pie) # CMake takes care of this
+pkg_disabled_features=(pic) # CMake takes care of this
 source ../defaults.sh
 
 do_build() {

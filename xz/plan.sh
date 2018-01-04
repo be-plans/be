@@ -9,8 +9,12 @@ pkg_shasum=7876096b053ad598c31f6df35f7de5cd9ff2ba3162e5a5554e4fc198447e0347
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make      be/gcc       be/sed
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

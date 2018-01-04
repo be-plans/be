@@ -10,14 +10,14 @@ pkg_license=('GPL-2.0')
 pkg_bin_dirs=(bin)
 pkg_deps=(
   core/glibc core/gcc-libs lilian/bash
-  lilian/iproute2 lilian/gnupg lilian/pkg-config
-  lilian/ncurses lilian/vim lilian/curl
-  lilian/libev be/openssl lilian/zlib
-  lilian/libgcrypt lilian/libgpg-error lilian/libtool
+  lilian/iproute2 be/gnupg be/pkg-config
+  be/ncurses lilian/vim lilian/curl
+  lilian/libev be/openssl be/zlib
+  be/libgcrypt lilian/libgpg-error lilian/libtool
 )
 pkg_build_deps=(
-  lilian/m4 be/make be/gcc
-  lilian/bison be/cmake lilian/mysql
+  be/m4 be/make be/gcc
+  be/bison be/cmake lilian/mysql
   lilian/libaio lilian/boost/1.59.0
 )
 pkg_dirname=percona-xtrabackup-percona-xtrabackup-${pkg_version}
@@ -35,18 +35,18 @@ do_prepare() {
 
 do_build() {
   export LD_LIBRARY_PATH GCRYPT_INCLUDE_DIR GCRYPT_LIB
-  LD_LIBRARY_PATH="$(pkg_path_for lilian/libgcrypt)/lib"
-  GCRYPT_INCLUDE_DIR=$(pkg_path_for lilian/libgcrypt)/lib
-  GCRYPT_LIB=$(pkg_path_for lilian/libgcrypt)
+  LD_LIBRARY_PATH="$(pkg_path_for be/libgcrypt)/lib"
+  GCRYPT_INCLUDE_DIR=$(pkg_path_for be/libgcrypt)/lib
+  GCRYPT_LIB=$(pkg_path_for be/libgcrypt)
   cmake . \
     -DCMAKE_INSTALL_PREFIX="$pkg_prefix" \
-    -DCMAKE_PREFIX_PATH="$(pkg_path_for lilian/ncurses)" \
+    -DCMAKE_PREFIX_PATH="$(pkg_path_for be/ncurses)" \
     -DWITH_BOOST="$(pkg_path_for lilian/boost/1.59.0)/include" \
     -DCURL_LIBRARY="$(pkg_path_for lilian/curl)/lib/libcurl.so" \
     -DCURL_INCLUDE_DIR="$(pkg_path_for lilian/curl)/include" \
     -DLIBEV_INCLUDE_DIRS="$(pkg_path_for lilian/libev)/include"	\
-    -DGCRYPT_LIB="$(pkg_path_for lilian/libgcrypt)/lib/libgcrypt.so" \
-    -DGCRYPT_INCLUDE_DIR="$(pkg_path_for lilian/libgcrypt)/include" \
+    -DGCRYPT_LIB="$(pkg_path_for be/libgcrypt)/lib/libgcrypt.so" \
+    -DGCRYPT_INCLUDE_DIR="$(pkg_path_for be/libgcrypt)/include" \
     -DGPG_ERROR_LIB="$(pkg_path_for lilian/libgpg-error)/lib/libgpg-error.so" \
     -DLIBEV_LIB="$(pkg_path_for lilian/libev)/lib/libev.so" \
     -DCMAKE_CXX_FLAGS="$CXXFLAGS -fpermissive" \

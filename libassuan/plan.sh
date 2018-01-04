@@ -8,9 +8,9 @@ pkg_shasum=22843a3bdb256f59be49842abf24da76700354293a066d82ade8134bb5aa2b71
 pkg_deps=(core/glibc lilian/libgpg-error)
 pkg_build_deps=(
   be/gcc be/coreutils be/sed
-  lilian/bison lilian/flex lilian/grep
+  be/bison lilian/flex be/grep
   lilian/bash lilian/gawk lilian/libtool
-  be/diffutils lilian/findutils lilian/xz
+  be/diffutils lilian/findutils be/xz
   lilian/gettext lilian/gzip be/make
   be/patch lilian/texinfo lilian/util-linux
 )

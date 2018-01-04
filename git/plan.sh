@@ -13,13 +13,13 @@ pkg_shasum=a03a12331d4f9b0f71733db9f47e1232d4ddce00e7f2a6e20f6ec9a19ce5ff61
 pkg_deps=(
   be/cacerts
   lilian/curl
-  lilian/expat
+  be/expat
   lilian/gettext
   core/gcc-libs
   core/glibc
   lilian/openssh
-  lilian/perl
-  lilian/zlib
+  be/perl
+  be/zlib
 )
 pkg_build_deps=(be/make be/gcc)
 pkg_lib_dirs=(lib)

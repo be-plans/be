@@ -14,8 +14,8 @@ pkg_deps=(
   core/jbigkit
   lilian/libpng
   core/libtiff
-  lilian/xz
-  lilian/zlib
+  be/xz
+  be/zlib
 )
 pkg_build_deps=(
   be/gcc

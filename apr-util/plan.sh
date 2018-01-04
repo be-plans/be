@@ -7,7 +7,7 @@ pkg_description="Apache Portable Runtime util"
 pkg_upstream_url="https://apr.apache.org/"
 pkg_source=https://archive.apache.org/dist/apr/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=d3e12f7b6ad12687572a3a39475545a072608f4ba03a6ce8a3778f607dd0035b
-pkg_deps=(core/gcc-libs core/glibc lilian/apr lilian/expat)
+pkg_deps=(core/gcc-libs core/glibc lilian/apr be/expat)
 pkg_build_deps=(be/gcc be/make)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -19,6 +19,6 @@ source ../defaults.sh
 do_build() {
   ./configure --prefix="${pkg_prefix}" \
               --with-apr="$(pkg_path_for lilian/apr)" \
-              --with-expat="$(pkg_path_for lilian/expat)"
+              --with-expat="$(pkg_path_for be/expat)"
 	make -j $(nproc)
 }

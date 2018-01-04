@@ -1,12 +1,20 @@
 pkg_name=gdbm
 pkg_origin=core
-pkg_version=1.13
+pkg_version=1.14.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3+')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=9d252cbd7d793f7b12bcceaddda98d257c14f4d1890d851c386c37207000a253
-pkg_deps=(core/glibc)
-pkg_build_deps=(be/coreutils be/diffutils be/patch be/make be/gcc)
+pkg_shasum=cdceff00ffe014495bed3aed71c7910aa88bf29379f795abc0f46d4ee5f8bc5f
+pkg_deps=(
+  core/glibc
+)
+pkg_build_deps=(
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

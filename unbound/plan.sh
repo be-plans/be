@@ -9,7 +9,7 @@ pkg_source=https://www.${pkg_name}.net/downloads/${pkg_name}-${pkg_version}.tar.
 pkg_shasum=4c7e655c1d0d2d133fdeb81bc1ab3aa5c155700f66c9f5fb53fa6a5c3ea9845f
 pkg_deps=(
   core/glibc lilian/libressl lilian/libsodium
-  lilian/expat
+  be/expat
 )
 pkg_build_deps=(
   be/gcc be/make

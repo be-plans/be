@@ -13,13 +13,13 @@ pkg_deps=(
   lilian/libiconv
 )
 pkg_build_deps=(
-  lilian/bison
+  be/bison
   be/cmake
   be/diffutils
   lilian/flex
   be/gcc
   lilian/libxml2
-  lilian/m4
+  be/m4
   be/make
   be/python
 )

@@ -15,13 +15,13 @@ pkg_deps=(
   core/glibc
   lilian/libffi
   core/libiconv
-  lilian/pcre
+  be/pcre
 )
 pkg_build_deps=(
   be/diffutils
   be/gcc
   be/make
-  core/pkg-config
+  be/pkg-config
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

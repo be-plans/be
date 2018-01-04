@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2+')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=64ebcec9f8ac5b2487125a86a7760d2591ac9e1d3dbd59489633f9de62a57684
-pkg_deps=(lilian/m4 lilian/perl)
+pkg_deps=(be/m4 be/perl)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
   be/make be/gcc be/sed lilian/gawk

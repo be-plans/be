@@ -19,7 +19,7 @@ do_build() {
     --with-curses \
     --enable-readline \
     --without-bash-malloc \
-    --with-installed-readline=$(pkg_path_for lilian/readline) \
+    --with-installed-readline=$(pkg_path_for be/readline) \
     LDFLAGS="-static $LDFLAGS"
 
   # Link `-ltinfow` rather than `-lcurses` as some symbols appear to have moved

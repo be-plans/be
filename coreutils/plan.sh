@@ -12,7 +12,7 @@ pkg_deps=(
   core/glibc
   lilian/acl
   lilian/attr
-  lilian/gmp
+  be/gmp
   lilian/libcap
 )
 pkg_build_deps=(
@@ -21,14 +21,14 @@ pkg_build_deps=(
   be/patch
   be/make
   be/gcc
-  lilian/m4
-  lilian/perl
+  be/m4
+  be/perl
   lilian/inetutils
 )
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/env)
 
-pkg_disabled_features=(lto pie)
+pkg_disabled_features=(lto pic)
 source ../defaults.sh
 
 do_build() {
@@ -56,5 +56,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/m4)
+  pkg_build_deps=(be/gcc be/m4)
 fi

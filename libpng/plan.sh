@@ -7,7 +7,7 @@ pkg_upstream_url=http://www.libpng.org/pub/png/
 pkg_source=http://download.sourceforge.net/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz
 pkg_filename=${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=4245b684e8fe829ebb76186327bb37ce5a639938b219882b53d64bd3cfc5f239
-pkg_deps=(core/glibc lilian/zlib)
+pkg_deps=(core/glibc be/zlib)
 pkg_build_deps=(
   be/gcc be/make be/coreutils
   be/diffutils lilian/autoconf lilian/automake)

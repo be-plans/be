@@ -7,15 +7,20 @@ _url_base=http://ftp.gnu.org/gnu/$pkg_name
 pkg_source=$_url_base/${pkg_name}-${_base_version}.tar.gz
 pkg_dirname=${pkg_name}-$_base_version
 pkg_shasum=56ba6071b9462f980c5a72ab0023893b65ba6debb4eeb475d7a563dc65cafd43
-pkg_deps=(core/glibc lilian/ncurses)
+pkg_deps=(core/glibc be/ncurses)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/bison lilian/grep
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/bison
+  be/grep
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-no_pie=true
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_begin() {
@@ -87,5 +92,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/bison lilian/grep)
+  pkg_build_deps=(be/gcc be/bison be/grep)
 fi

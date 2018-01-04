@@ -25,7 +25,7 @@ pkg_build_deps=(
   lilian/automake
   lilian/cpanminus
   lilian/dbus
-  lilian/expat
+  be/expat
   be/gcc
   core/gcc-libs
   lilian/gettext
@@ -36,12 +36,12 @@ pkg_build_deps=(
   lilian/libxslt
   lilian/local-lib
   lilian/lz4
-  lilian/m4
+  be/m4
   be/make
-  lilian/perl
-  lilian/pkg-config
+  be/perl
+  be/pkg-config
   lilian/util-linux
-  lilian/xz
+  be/xz
 )
 
 do_prepare() {
@@ -53,7 +53,7 @@ source ../defaults.sh
 
 do_build() {
   export ACLOCAL_FLAGS
-  ACLOCAL_FLAGS="-I $(pkg_path_for core/pkg-config)/share/aclocal \
+  ACLOCAL_FLAGS="-I $(pkg_path_for be/pkg-config)/share/aclocal \
     -I$(pkg_path_for core/libtool)/share/aclocal \
     -I$(pkg_path_for lilian/intltool)/share/aclocal \
     -I$(pkg_path_for core/gettext)/share/aclocal"

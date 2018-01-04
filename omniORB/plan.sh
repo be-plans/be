@@ -21,7 +21,7 @@ pkg_build_deps=(
   lilian/glib
   be/make
   be/openssl
-  lilian/pkg-config
+  be/pkg-config
   lilian/python2
 )
 

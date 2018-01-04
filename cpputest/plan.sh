@@ -20,9 +20,9 @@ pkg_deps=(
 pkg_build_deps=(
   be/cmake
   be/gcc
-  core/m4
+  be/m4
   be/make
-  core/pkg-config
+  be/pkg-config
   core/valgrind
 )
 pkg_bin_dirs=(sbin)

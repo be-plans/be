@@ -10,7 +10,7 @@ pkg_shasum=9d8130fec2b98bd032db7730fa092dd9dec39f3de34f4bb03ceb43b9903dbc96
 pkg_build_deps=(
   be/make
   be/gcc
-  core/pkg-config
+  be/pkg-config
   core/util-macros
 )
 pkg_include_dirs=(include)

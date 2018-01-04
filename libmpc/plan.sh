@@ -6,15 +6,24 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('LGPL-2.0')
 pkg_source=http://www.multiprecision.org/mpc/download/${pkg_distname}-${pkg_version}.tar.gz
 pkg_shasum=617decc6ea09889fb08ede330917a00b16809b8db88c29c31bfbb49cbf88ecc3
-pkg_deps=(core/glibc lilian/gmp lilian/mpfr)
+pkg_deps=(
+  core/glibc
+  be/gmp
+  lilian/mpfr
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/binutils
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/binutils
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_dirname=${pkg_distname}-${pkg_version}
 
+pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_prepare() {
@@ -37,5 +46,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(lilian/binutils)
+  pkg_build_deps=(be/binutils)
 fi
