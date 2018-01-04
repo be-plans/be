@@ -22,7 +22,7 @@ pkg_build_deps=(
   be/patch
   be/make
   be/gcc
-  lilian/gawk
+  be/gawk
   be/m4
   lilian/texinfo
   be/perl

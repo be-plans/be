@@ -25,7 +25,7 @@ pkg_build_deps=(
   be/coreutils
   be/diffutils
   be/gcc
-  core/linux-headers
+  be/linux-headers
   be/make
   lilian/util-linux
 )

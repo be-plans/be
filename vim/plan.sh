@@ -9,7 +9,7 @@ pkg_shasum=5027020cb9d473da3da106f0212855e32df161c39552a6f5a71850c6cfb4a2ec
 pkg_deps=(core/glibc lilian/acl be/ncurses)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed lilian/autoconf
+  be/make be/gcc be/sed be/autoconf
 )
 pkg_bin_dirs=(bin)
 
@@ -57,5 +57,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils be/make be/patch lilian/autoconf)
+  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils be/make be/patch be/autoconf)
 fi

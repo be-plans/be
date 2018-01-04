@@ -15,8 +15,8 @@ pkg_deps=(
   be/xz
 )
 pkg_build_deps=(
-  lilian/autoconf
-  lilian/automake
+  be/autoconf
+  be/automake
   be/bzip2
   be/gcc
   lilian/gettext

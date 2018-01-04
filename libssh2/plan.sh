@@ -17,7 +17,7 @@ pkg_build_deps=(
   core/file
   be/gcc
   core/inetutils
-  core/linux-headers
+  be/linux-headers
   be/make
   core/openssh
   be/pkg-config

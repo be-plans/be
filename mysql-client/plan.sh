@@ -9,7 +9,7 @@ pkg_upstream_url=https://www.mysql.com/
 pkg_description="MySQL Client Tools"
 pkg_deps=(
   be/coreutils
-  lilian/gawk
+  be/gawk
   core/gcc-libs
   core/glibc
   be/grep

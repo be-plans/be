@@ -17,7 +17,7 @@ pkg_deps=(
 pkg_build_deps=(
   lilian/bash
   be/diffutils
-  lilian/gawk
+  be/gawk
   be/gcc
   lilian/git
   be/grep

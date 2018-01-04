@@ -15,7 +15,7 @@ pkg_build_deps=(
   be/diffutils
   lilian/findutils
   lilian/flex
-  lilian/gawk
+  be/gawk
   be/gcc
   lilian/gettext
   be/grep

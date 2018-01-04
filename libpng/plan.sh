@@ -10,7 +10,7 @@ pkg_shasum=4245b684e8fe829ebb76186327bb37ce5a639938b219882b53d64bd3cfc5f239
 pkg_deps=(core/glibc be/zlib)
 pkg_build_deps=(
   be/gcc be/make be/coreutils
-  be/diffutils lilian/autoconf lilian/automake)
+  be/diffutils be/autoconf be/automake)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

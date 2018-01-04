@@ -12,7 +12,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/gcc
-  core/linux-headers
+  be/linux-headers
   be/make
   be/pkg-config
 )

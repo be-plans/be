@@ -10,13 +10,19 @@ pkg_shasum=decee7a2de34aea921fce3e7934f520790fe43176de29bd9718a84419ca6e1ce
 pkg_dirname=linux-$pkg_version
 pkg_deps=()
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
 )
 pkg_include_dirs=(include)
 
+source ../defaults.sh
+
 do_build() {
-  make headers_install ARCH=x86 INSTALL_HDR_PATH="$pkg_prefix"
+  make -j "$(nproc)" \
+    headers_install ARCH=x86 INSTALL_HDR_PATH="$pkg_prefix"
 }
 
 do_install() {

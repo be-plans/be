@@ -34,6 +34,7 @@ pkg_bin_dirs=(bin)
 source ../defaults.sh
 
 do_prepare() {
+  do_default_prepare
   export CFLAGS="${CFLAGS} -Wcpp"
   export CXXFLAGS="${CXXFLAGS} -Wcpp"
 

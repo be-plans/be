@@ -9,8 +9,8 @@ pkg_upstream_url=https://www.gnu.org/software/grub/
 pkg_license=('GPL-3.0')
 pkg_bin_dirs=(bin sbin)
 pkg_build_deps=(
-  lilian/autoconf
-  lilian/automake
+  be/autoconf
+  be/automake
   be/binutils
   be/bison
   be/cacerts

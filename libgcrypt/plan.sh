@@ -17,7 +17,7 @@ pkg_build_deps=(
   lilian/flex
   be/grep
   lilian/bash
-  lilian/gawk
+  be/gawk
   lilian/libtool
   be/diffutils
   lilian/findutils

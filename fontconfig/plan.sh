@@ -20,7 +20,7 @@ pkg_deps=(
 )
 pkg_build_deps=(be/gcc be/make be/coreutils be/python
                 be/pkg-config be/diffutils lilian/libtool
-                be/m4 lilian/automake lilian/autoconf lilian/file)
+                be/m4 be/automake be/autoconf lilian/file)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

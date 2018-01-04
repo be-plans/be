@@ -11,7 +11,7 @@ pkg_build_deps=(
   be/gcc
   be/make
   be/pkg-config
-  core/patchelf
+  be/patchelf
 )
 pkg_deps=(
   core/glibc

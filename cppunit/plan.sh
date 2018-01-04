@@ -13,8 +13,8 @@ pkg_deps=(
 )
 
 pkg_build_deps=(
-  lilian/autoconf
-  lilian/automake
+  be/autoconf
+  be/automake
   be/gcc
   lilian/glib
   lilian/libtool

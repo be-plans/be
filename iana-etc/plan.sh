@@ -6,7 +6,7 @@ pkg_license=('GPL-3.0')
 pkg_source=http://sethwklein.net/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=b9a6874fb20012836efef75452ef2acae624022d680feeb1994d73facba3f20d
 pkg_deps=()
-pkg_build_deps=(be/coreutils be/make lilian/gawk)
+pkg_build_deps=(be/coreutils be/make be/gawk)
 
 source ../defaults.sh
 
@@ -27,5 +27,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/coreutils lilian/gawk)
+  pkg_build_deps=(be/coreutils be/gawk)
 fi

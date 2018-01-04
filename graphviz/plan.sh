@@ -10,7 +10,7 @@ pkg_shasum=ca5218fade0204d59947126c38439f432853543b0818d9d728c589dfe7f3a421
 pkg_dirname=${pkg_name}-${pkg_version}
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-    lilian/autoconf
+    be/autoconf
     be/coreutils
     be/gcc
     be/make

@@ -9,7 +9,7 @@ pkg_deps=(core/glibc lilian/libgpg-error)
 pkg_build_deps=(
   be/gcc be/coreutils be/sed
   be/bison lilian/flex be/grep
-  lilian/bash lilian/gawk lilian/libtool
+  lilian/bash be/gawk lilian/libtool
   be/diffutils lilian/findutils be/xz
   lilian/gettext lilian/gzip be/make
   be/patch lilian/texinfo lilian/util-linux

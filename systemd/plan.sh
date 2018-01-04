@@ -21,8 +21,8 @@ pkg_deps=(
 pkg_svc_user=root
 pkg_svc_group=root
 pkg_build_deps=(
-  lilian/autoconf
-  lilian/automake
+  be/autoconf
+  be/automake
   lilian/cpanminus
   lilian/dbus
   be/expat

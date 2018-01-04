@@ -8,7 +8,7 @@ pkg_shasum=7ee5bbd671c73e5323778982109241685d58a836e52013e18ee5d9f2e638fdfb
 pkg_deps=(
   lilian/bc
   be/coreutils
-  lilian/gawk
+  be/gawk
   core/gcc-libs
   core/glibc
   be/grep

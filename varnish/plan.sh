@@ -15,8 +15,8 @@ pkg_deps=(
 pkg_build_deps=(
   be/make     lilian/python2  be/pkg-config
   be/readline lilian/graphviz lilian/libtool
-  lilian/libedit  lilian/automake be/m4
-  lilian/autoconf
+  lilian/libedit  be/automake be/m4
+  be/autoconf
 )
 
 pkg_bin_dirs=(sbin)
@@ -42,7 +42,7 @@ do_prepare() {
 
 do_build() {
   # TODO: if we don't copy this aclocal will fail. need to figure out how to fix this
-  cp "$(pkg_path_for be/pkg-config)/share/aclocal/pkg.m4" "$(pkg_path_for lilian/automake)/share/aclocal/"
+  cp "$(pkg_path_for be/pkg-config)/share/aclocal/pkg.m4" "$(pkg_path_for be/automake)/share/aclocal/"
   sh autogen.sh
   sh configure --prefix="$pkg_prefix"
 

@@ -19,7 +19,7 @@ EOF
 )
 pkg_deps=(
   be/coreutils
-  lilian/gawk
+  be/gawk
   core/gcc-libs
   core/glibc
   be/grep

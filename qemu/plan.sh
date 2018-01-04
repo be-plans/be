@@ -30,8 +30,8 @@ pkg_deps=(
   be/zlib
 )
 pkg_build_deps=(
-  lilian/autoconf
-  lilian/automake
+  be/autoconf
+  be/automake
   be/diffutils
   be/gcc
   lilian/libtool

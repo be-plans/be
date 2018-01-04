@@ -16,7 +16,7 @@ pkg_deps=(
   be/coreutils
 )
 pkg_build_deps=(
-  lilian/autoconf
+  be/autoconf
   be/gcc
   lilian/glib
   be/make
