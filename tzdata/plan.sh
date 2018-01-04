@@ -8,7 +8,7 @@ pkg_source=http://download.openpkg.org/components/cache/data-timezone/${pkg_name
 pkg_shasum=d6543f92a929826318e2f44ff3a7611ce5f565a43e10250b42599d0ba4cbd90b
 pkg_upstream_url=https://www.iana.org/time-zones
 
-pkg_build_deps=(lilian/glibc)
+pkg_build_deps=(be/glibc)
 
 timezones=(
   'africa'

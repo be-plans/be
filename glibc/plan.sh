@@ -1,27 +1,38 @@
 pkg_name=glibc
 pkg_origin=core
-pkg_version=2.25
+pkg_version=2.26
 pkg_description="Portable and high performance C library"
 pkg_upstream_url="https://www.gnu.org/software/libc/"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0' 'LGPL-2.0')
 pkg_source=https://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=067bd9bb3390e79aa45911537d13c3721f1d9d3769931a30c2681bfee66f23a0
-pkg_deps=(lilian/linux-headers)
+pkg_shasum=e54e0a934cd2bc94429be79da5e9385898d2306b9eaf3c92d5a77af96190f6bd
+pkg_deps=(
+  be/linux-headers
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed be/perl
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
+  be/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-pkg_disabled_features=(pic)
-be_optimizations="-O2 -DNDEBUG -fomit-frame-pointer -ftree-vectorize -m64 -mavx -march=x86-64 -mtune=corei7-avx"
+export BE_ARCH="${BE_ARCH:-x86-64}"
+export BE_TUNE="${BE_TUNE:-corei7-avx}"
+export BE_TUNE_EXTRA="${BE_TUNE_EXTRA:--m64 -mavx}"
+be_optimizations="-O3 -DNDEBUG -fomit-frame-pointer -ftree-vectorize ${BE_TUNE_EXTRA} -march=${BE_ARCH} -mtune=${BE_TUNE}"
 be_protection=" "
 source ../defaults.sh
 
 do_prepare() {
+  do_default_prepare
+
   # The `/bin/pwd` path is hardcoded, so we'll add a symlink if needed.
   if [[ ! -r /bin/pwd ]]; then
     ln -sv "$(pkg_path_for coreutils)/bin/pwd" /bin/pwd
@@ -66,6 +77,9 @@ do_prepare() {
   #
   # Source: https://lists.debian.org/debian-glibc/2013/11/msg00116.html
   patch -p1 < "$PLAN_CONTEXT/testsuite-fix.patch"
+
+  # Source: https://github.com/NixOS/nixpkgs/blob/8fcc92fc692b4ec7511530068cf0ab1e5d757082/pkgs/development/libraries/glibc/fix-x64-abi.patch
+  patch -p1 < "$PLAN_CONTEXT/fix-x64-abi.patch"
 
   # Adjust `scripts/test-installation.pl` to use our new dynamic linker
   sed -i "s|libs -o|libs -L${pkg_prefix}/lib -Wl,-dynamic-linker=${dynamic_linker} -o|" \
@@ -207,7 +221,9 @@ do_install() {
       fi
     fi
 
-    make install sysconfdir="$pkg_prefix/etc" sbindir="$pkg_prefix/bin"
+    make -j "$(nproc)" install \
+      sysconfdir="$pkg_prefix/etc" \
+      sbindir="$pkg_prefix/bin"
 
     # Move all remaining binaries in `sbin/` into `bin/`, namely `ldconfig`
     mv "$pkg_prefix/sbin/"* "$pkg_prefix/bin/"
