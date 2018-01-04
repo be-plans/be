@@ -4,7 +4,7 @@ pkg_version="0.6.11"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
 pkg_description="Habitat Plan Scaffolding for Node.js Applications"
-pkg_upstream_url="https://github.com/habitat-sh/core-plans/tree/master/scaffolding-node"
+pkg_upstream_url="https://github.com/be-plans/be/tree/master/scaffolding-node"
 pkg_deps=(lilian/tar lilian/rq lilian/jq-static be/gawk lilian/curl lilian/bc be/coreutils)
 pkg_build_deps=(lilian/node be/coreutils lilian/yarn)
 

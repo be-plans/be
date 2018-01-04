@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script to run when testing core-plans on Travis CI
+# Script to run when testing be on Travis CI
 
 pre-commit install
 

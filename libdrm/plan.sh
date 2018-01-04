@@ -12,7 +12,7 @@ pkg_deps=(
   core/glibc
 )
 # Configure script will not find CAIRO. This is a choice we made, see:
-# https://github.com/habitat-sh/core-plans/pull/994#discussion_r154243539
+# https://github.com/be-plans/be/pull/994#discussion_r154243539
 pkg_build_deps=(
   be/diffutils
   be/gcc
