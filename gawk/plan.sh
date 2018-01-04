@@ -1,14 +1,21 @@
 pkg_name=gawk
 pkg_origin=core
-pkg_version=4.1.4
+pkg_version=4.2.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv3+')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=53e184e2d0f90def9207860531802456322be091c7b48f23fdc79cda65adc266
-pkg_deps=(core/glibc be/mpfr)
+pkg_shasum=d4f3cd31c001fd0ed52832d4fbfbdfeaa38ad541c182f80ff8fdf87324a6a9f2
+pkg_deps=(
+  core/glibc
+  be/mpfr
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
 )
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/awk bin/gawk)
