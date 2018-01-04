@@ -45,21 +45,21 @@ do_prepare() {
   #
   # Thanks to: https://github.com/NixOS/nixpkgs/blob/2524504/pkgs/development/tools/misc/binutils/new-dtags.patch
   # Thanks to: https://build.opensuse.org/package/view_file?file=ld-dtags.diff&package=binutils&project=devel%3Agcc&srcmd5=011dbdef56800d1cd2fa8c585b3dd7db
-  patch -p1 < $PLAN_CONTEXT/new-dtags.patch
+  patch -p1 < $PLAN_CONTEXT/patches/2.28/new-dtags.patch
 
   # Since binutils 2.22, DT_NEEDED flags aren't copied for dynamic outputs.
   # That requires upstream changes for things to work. So we can patch it to
   # get the old behaviour fo now.
   #
   # Thanks to: https://github.com/NixOS/nixpkgs/blob/d9f4b0a/pkgs/development/tools/misc/binutils/dtneeded.patch
-  patch -p1 < $PLAN_CONTEXT/dt-needed-true.patch
+  patch -p1 < $PLAN_CONTEXT/patches/2.28/dt-needed-true.patch
 
   # # Make binutils output deterministic by default.
   #
   # Thanks to: https://github.com/NixOS/nixpkgs/blob/0889bbe/pkgs/development/tools/misc/binutils/deterministic.patch
-  patch -p1 < $PLAN_CONTEXT/more-deterministic-output.patch
+  patch -p1 < $PLAN_CONTEXT/patches/2.28/more-deterministic-output.patch
 
-  cat $PLAN_CONTEXT/custom-libs.patch \
+  cat $PLAN_CONTEXT/patches/2.28/custom-libs.patch \
     | sed -e "s,@dynamic_linker@,$dynamic_linker,g" \
       -e "s,@glibc_lib@,$(pkg_path_for glibc)/lib,g" \
       -e "s,@zlib_lib@,$(pkg_path_for zlib)/lib,g" \

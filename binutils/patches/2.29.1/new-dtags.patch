@@ -1,0 +1,25 @@
+diff --git a/ld/ld.texinfo b/ld/ld.texinfo
+index 950c794708..9d8bf11dc8 100644
+--- a/ld/ld.texinfo
++++ b/ld/ld.texinfo
+@@ -2391,7 +2391,7 @@ systems may not understand them. If you specify
+ @option{--enable-new-dtags}, the new dynamic tags will be created as needed
+ and older dynamic tags will be omitted.
+ If you specify @option{--disable-new-dtags}, no new dynamic tags will be
+-created. By default, the new dynamic tags are not created. Note that
++created. By default, the new dynamic tags are created. Note that
+ those options are only available for ELF systems.
+ 
+ @kindex --hash-size=@var{number}
+diff --git a/ld/ldmain.c b/ld/ldmain.c
+index ee5ab1166a..bd5fa07b22 100644
+--- a/ld/ldmain.c
++++ b/ld/ldmain.c
+@@ -280,6 +280,7 @@ main (int argc, char **argv)
+ 
+   link_info.allow_undefined_version = TRUE;
+   link_info.keep_memory = TRUE;
++  link_info.new_dtags = TRUE;
+   link_info.combreloc = TRUE;
+   link_info.strip_discarded = TRUE;
+   link_info.emit_hash = TRUE;
