@@ -4,6 +4,7 @@ pkg_name=libarchive-musl
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_deps=(lilian/musl be/openssl-musl be/zlib-musl be/bzip2-musl be/xz-musl)
 
+pkg_disabled_features=(glibc)
 source ../defaults.sh
 
 do_prepare() {

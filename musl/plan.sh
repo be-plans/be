@@ -16,6 +16,7 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+pkg_disabled_features=(glibc)
 source ../defaults.sh
 
 do_prepare() {

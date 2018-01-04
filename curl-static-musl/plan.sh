@@ -27,6 +27,7 @@ pkg_include_dirs=()
 pkg_lib_dirs=()
 
 #TODO: Not built yet
+pkg_disabled_features=(glibc)
 source ../defaults.sh
 
 do_prepare() {

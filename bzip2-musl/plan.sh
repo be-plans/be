@@ -4,6 +4,7 @@ pkg_name=bzip2-musl
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_deps=(lilian/musl)
 
+pkg_disabled_features=(glibc)
 source ../defaults.sh
 
 do_prepare() {

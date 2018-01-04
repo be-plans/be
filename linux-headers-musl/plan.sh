@@ -13,6 +13,7 @@ pkg_build_deps=(
 )
 pkg_include_dirs=(include)
 
+pkg_disabled_features=(glibc)
 source ../defaults.sh
 
 do_build() {
