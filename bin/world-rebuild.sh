@@ -10,8 +10,8 @@ main() {
 
   hab studio rm
   hab studio new
-  hab studio run 'hab pkg install lilian/bash'
-  hab studio run 'hab pkg binlink --dest /bin lilian/bash'
+  hab studio run 'hab pkg install be/bash'
+  hab studio run 'hab pkg binlink --dest /bin be/bash'
   hab studio run 'ln -s /src /be'
   hab studio run 'cd / && /be/bin/build-base-plans.sh'
 }

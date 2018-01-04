@@ -17,7 +17,7 @@ pkg_deps=(
 pkg_build_deps=(
   be/diffutils
   be/gcc
-  core/gettext
+  be/gettext
   be/make
   be/perl
   be/pkg-config

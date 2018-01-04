@@ -16,22 +16,22 @@ pkg_build_deps=(
   be/cacerts
   be/diffutils
   lilian/dosfstools
-  lilian/flex
+  be/flex
   lilian/freetype
   be/gcc
-  lilian/gettext
+  be/gettext
   lilian/git
   be/m4
   be/make
   be/python
   lilian/qemu
   lilian/rsync
-  lilian/texinfo
+  be/texinfo
 )
 pkg_deps=(
   core/glibc core/gcc-libs be/xz
-  lilian/gettext be/pcre lilian/devicemapper
-  lilian/elfutils be/bzip2 lilian/libcap
+  be/gettext be/pcre lilian/devicemapper
+  lilian/elfutils be/bzip2 be/libcap
 )
 
 pkg_disabled_features=(pic)

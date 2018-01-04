@@ -11,7 +11,7 @@ pkg_bin_dirs=(sbin)
 pkg_lib_dirs=(lib)
 pkg_build_deps=(
   be/bison
-  lilian/flex
+  be/flex
   be/gcc
   lilian/iptables
   be/m4

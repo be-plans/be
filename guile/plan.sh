@@ -14,7 +14,7 @@ pkg_deps=(
   be/gmp
   be/libatomic_ops
   lilian/libffi
-  lilian/libtool
+  be/libtool
   lilian/libunistring
   be/readline
 )

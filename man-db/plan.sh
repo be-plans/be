@@ -11,15 +11,15 @@ pkg_deps=(
   be/gdbm
   core/glibc
   lilian/groff
-  lilian/gzip
+  be/gzip
   lilian/libiconv
 )
 pkg_build_deps=(
   be/coreutils
   be/diffutils
-  lilian/flex
+  be/flex
   be/gcc
-  lilian/gettext
+  be/gettext
   lilian/libpipeline
   be/make
   be/m4

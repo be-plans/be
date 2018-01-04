@@ -9,7 +9,7 @@ pkg_source=nosuchfile.tar.xz
 pkg_svc_user=root
 pkg_svc_group=$pkg_svc_user
 
-pkg_deps=(core/nginx core/openssl lilian/bash)
+pkg_deps=(core/nginx be/openssl be/bash)
 
 do_build() {
   return 0

@@ -7,7 +7,7 @@ pkg_upstream_url=https://www.gnu.org/software/tar/
 pkg_license=('GPL-3.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=402dcfd0022fd7a1f2c5611f5c61af1cd84910a760a44a688e18ddbff4e9f024
-pkg_deps=(core/glibc lilian/acl lilian/attr)
+pkg_deps=(core/glibc be/acl be/attr)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
   be/make be/gcc be/sed

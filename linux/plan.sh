@@ -9,12 +9,12 @@ pkg_upstream_url="https://www.kernel.org/"
 pkg_shasum="decee7a2de34aea921fce3e7934f520790fe43176de29bd9718a84419ca6e1ce"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  lilian/bc
+  be/bc
   be/diffutils
   lilian/elfutils
-  lilian/findutils
+  be/findutils
   be/gcc
-  lilian/inetutils
+  be/inetutils
   be/make
   be/perl
   be/openssl

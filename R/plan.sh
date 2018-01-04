@@ -10,12 +10,12 @@ pkg_description="R is a free software environment for statistical computing and 
 pkg_build_deps=(
   be/coreutils
   be/diffutils
-  lilian/file
+  be/file
   be/gcc
   be/make
   be/perl
   be/pkg-config
-  lilian/texinfo
+  be/texinfo
 )
 pkg_deps=(
   be/bzip2

@@ -16,7 +16,7 @@ pkg_build_deps=(
   be/bison
   be/cmake
   be/diffutils
-  lilian/flex
+  be/flex
   be/gcc
   lilian/libxml2
   be/m4

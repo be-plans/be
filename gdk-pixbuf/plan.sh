@@ -19,7 +19,7 @@ pkg_deps=(
   core/libtiff
   be/pcre
   core/shared-mime-info
-  core/util-linux
+  be/util-linux
   be/xz
   be/zlib
 )

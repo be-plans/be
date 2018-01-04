@@ -6,7 +6,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Vim is a greatly improved version of the good old UNIX editor Vi"
 pkg_source="http://github.com/${pkg_name}/${pkg_name}/archive/v${pkg_version}.tar.gz"
 pkg_shasum=5027020cb9d473da3da106f0212855e32df161c39552a6f5a71850c6cfb4a2ec
-pkg_deps=(core/glibc lilian/acl be/ncurses)
+pkg_deps=(core/glibc be/acl be/ncurses)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
   be/make be/gcc be/sed be/autoconf

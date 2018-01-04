@@ -14,14 +14,14 @@ pkg_build_deps=(
   be/pkg-config
   be/make
   be/gcc
-  core/file
+  be/file
   be/diffutils
   core/maven
 )
 
 do_prepare() {
-  build_line "replacing /usr/bin/file with $(pkg_path_for core/file)/bin/file"
-  sed -i "s,/usr/bin/file,$(pkg_path_for core/file)/bin/file,g" "jni/libffi/configure"
+  build_line "replacing /usr/bin/file with $(pkg_path_for be/file)/bin/file"
+  sed -i "s,/usr/bin/file,$(pkg_path_for be/file)/bin/file,g" "jni/libffi/configure"
 
   export USE_SYSTEM_LIBFFI=1
   export JAVA_HOME

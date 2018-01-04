@@ -11,9 +11,9 @@ pkg_build_deps=(
   be/autoconf
   be/automake
   be/diffutils
-  core/file
+  be/file
   be/gcc
-  core/libtool
+  be/libtool
   be/m4
   be/make
 )

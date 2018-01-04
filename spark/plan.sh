@@ -12,9 +12,9 @@ pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(jars)
 pkg_build_deps=()
 pkg_deps=(
-  lilian/bash
+  be/bash
   core/jre8
-  core/procps-ng
+  be/procps-ng
 )
 pkg_exports=(
   [port]=port

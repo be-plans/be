@@ -19,8 +19,8 @@ pkg_deps=(
   core/gcc-libs
 )
 pkg_build_deps=(be/gcc be/make be/coreutils be/python
-                be/pkg-config be/diffutils lilian/libtool
-                be/m4 be/automake be/autoconf lilian/file)
+                be/pkg-config be/diffutils be/libtool
+                be/m4 be/automake be/autoconf be/file)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

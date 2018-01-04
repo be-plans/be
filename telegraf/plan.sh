@@ -8,7 +8,7 @@ pkg_source="https://dl.influxdata.com/${pkg_name}/releases/${pkg_name}-${pkg_ver
 pkg_shasum="3c44bf10fc689e723c6f62f28babd8317331af507d1178100cdb16ee15b5a490"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_svc_run="telegraf --config $pkg_svc_config_path/telegraf.conf"
-pkg_build_deps=(be/wget core/tar)
+pkg_build_deps=(be/wget be/tar)
 pkg_deps=()
 pkg_bin_dirs=(bin)
 

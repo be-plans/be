@@ -7,7 +7,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('AGPL-3.0')
 pkg_source="https://mmonit.com/monit/dist/monit-${pkg_version}.tar.gz"
 pkg_shasum="754d1f0e165e5a26d4639a6a83f44ccf839e381f2622e0946d5302fa1f2d2414"
-pkg_deps=(core/glibc be/zlib core/openssl lilian/bash)
+pkg_deps=(core/glibc be/zlib be/openssl be/bash)
 pkg_build_deps=(be/make be/gcc)
 pkg_bin_dirs=(bin)
 pkg_svc_user=root
@@ -16,6 +16,6 @@ pkg_svc_group=root
 do_build() {
     ./configure --prefix="$pkg_prefix" \
                 --without-pam \
-                --with-ssl-incl-dir="$(pkg_path_for core/openssl)/include"
+                --with-ssl-incl-dir="$(pkg_path_for be/openssl)/include"
     make
 }

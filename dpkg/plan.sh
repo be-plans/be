@@ -10,7 +10,7 @@ pkg_shasum=d853081d3e06bfd46a227056e591f094e42e78fa8a5793b0093bad30b710d7b4
 pkg_deps=(
   be/bzip2
   core/glibc
-  lilian/tar
+  be/tar
   be/zlib
   be/xz
 )
@@ -19,8 +19,8 @@ pkg_build_deps=(
   be/automake
   be/bzip2
   be/gcc
-  lilian/gettext
-  lilian/libtool
+  be/gettext
+  be/libtool
   be/patch
   be/make
   be/ncurses

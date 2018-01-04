@@ -14,9 +14,9 @@ pkg_include_dirs=(include)
 pkg_lib_dirs=(lib var/lib usr/lib)
 pkg_deps=(
   core/glibc
-  lilian/libcap
+  be/libcap
   lilian/lz4
-  lilian/util-linux
+  be/util-linux
 )
 pkg_svc_user=root
 pkg_svc_group=root
@@ -28,11 +28,11 @@ pkg_build_deps=(
   be/expat
   be/gcc
   core/gcc-libs
-  lilian/gettext
+  be/gettext
   core/glibc
   lilian/gperf
   lilian/intltool
-  lilian/libtool
+  be/libtool
   lilian/libxslt
   lilian/local-lib
   lilian/lz4
@@ -40,7 +40,7 @@ pkg_build_deps=(
   be/make
   be/perl
   be/pkg-config
-  lilian/util-linux
+  be/util-linux
   be/xz
 )
 
@@ -54,9 +54,9 @@ source ../defaults.sh
 do_build() {
   export ACLOCAL_FLAGS
   ACLOCAL_FLAGS="-I $(pkg_path_for be/pkg-config)/share/aclocal \
-    -I$(pkg_path_for core/libtool)/share/aclocal \
+    -I$(pkg_path_for be/libtool)/share/aclocal \
     -I$(pkg_path_for lilian/intltool)/share/aclocal \
-    -I$(pkg_path_for core/gettext)/share/aclocal"
+    -I$(pkg_path_for be/gettext)/share/aclocal"
   ./autogen.sh
   ./configure \
     --prefix="${pkg_prefix}" \

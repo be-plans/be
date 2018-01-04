@@ -1,2 +1,2 @@
-hab install lilian/bash
-hab pkg binlink --dest /bin lilian/bash
+hab install be/bash
+hab pkg binlink --dest /bin be/bash

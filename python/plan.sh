@@ -27,7 +27,7 @@ pkg_build_deps=(
   be/gcc
   be/linux-headers
   be/make
-  lilian/util-linux
+  be/util-linux
 )
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

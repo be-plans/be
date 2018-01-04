@@ -19,7 +19,7 @@ pkg_deps=(
 pkg_build_deps=(
   core/damageproto
   be/diffutils
-  core/file
+  be/file
   core/fixesproto
   be/gcc
   core/kbproto

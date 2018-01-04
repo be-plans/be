@@ -30,7 +30,7 @@ pkg_deps=(
   be/zlib
 )
 pkg_build_deps=(
-  lilian/file
+  be/file
   be/gcc
   be/make
   be/perl
@@ -47,7 +47,7 @@ do_prepare() {
   do_default_prepare
   if [ ! -e /usr/bin/file ]
   then
-    ln -sv "$(pkg_path_for lilian/file)/bin/file" /usr/bin/file
+    ln -sv "$(pkg_path_for be/file)/bin/file" /usr/bin/file
   fi
 }
 

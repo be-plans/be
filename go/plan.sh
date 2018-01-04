@@ -9,9 +9,9 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://storage.googleapis.com/golang/go${pkg_version}.src.tar.gz
 pkg_shasum=665f184bf8ac89986cfd5a4460736976f60b57df6b320ad71ad4cef53bb143dc
 pkg_dirname=go
-pkg_deps=(core/glibc lilian/iana-etc be/cacerts)
+pkg_deps=(core/glibc be/iana-etc be/cacerts)
 pkg_build_deps=(
-  be/coreutils lilian/inetutils lilian/bash
+  be/coreutils be/inetutils be/bash
   be/patch be/gcc lilian/go be/perl)
 pkg_bin_dirs=(bin)
 

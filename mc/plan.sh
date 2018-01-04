@@ -14,11 +14,11 @@ pkg_deps=(
   be/pcre
 )
 pkg_build_deps=(
-  lilian/check
+  be/check
   be/coreutils
   be/diffutils
   be/gcc
-  lilian/gettext
+  be/gettext
   be/make
   be/perl
   be/pkg-config

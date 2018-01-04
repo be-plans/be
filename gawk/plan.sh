@@ -7,7 +7,7 @@ pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=d4f3cd31c001fd0ed52832d4fbfbdfeaa38ad541c182f80ff8fdf87324a6a9f2
 pkg_deps=(
   core/glibc
-  be/mpfr
+  lilian/mpfr
 )
 pkg_build_deps=(
   be/coreutils

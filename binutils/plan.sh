@@ -8,8 +8,8 @@ pkg_shasum=6297433ee120b11b4b0a1c8f3512d7d73501753142ab9e2daa13c5a3edd32a72
 pkg_deps=(core/glibc be/zlib)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/texinfo
-  lilian/expect lilian/dejagnu
+  be/make be/gcc be/texinfo
+  be/expect be/dejagnu
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

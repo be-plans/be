@@ -12,7 +12,7 @@ pkg_deps=(
   core/glibc
   core/gcc-libs
   core/icu/52.1
-  lilian/util-linux
+  be/util-linux
   core/krb5
   lilian/libunwind
   lilian/lttng-ust

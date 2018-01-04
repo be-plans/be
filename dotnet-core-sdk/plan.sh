@@ -20,7 +20,7 @@ pkg_deps=(
   lilian/libunwind
   lilian/lttng-ust
   be/openssl
-  lilian/util-linux
+  be/util-linux
   be/zlib
 )
 pkg_build_deps=(

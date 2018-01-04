@@ -14,7 +14,7 @@ pkg_deps=(
   be/cacerts
   lilian/curl
   be/expat
-  lilian/gettext
+  be/gettext
   core/gcc-libs
   core/glibc
   lilian/openssh

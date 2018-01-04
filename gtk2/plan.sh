@@ -32,7 +32,7 @@ pkg_deps=(
   lilian/pango
   be/pcre
   lilian/pixman
-  lilian/util-linux
+  be/util-linux
   lilian/xlib
   be/zlib
 )

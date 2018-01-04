@@ -11,7 +11,7 @@ pkg_license=("MIT")
 pkg_source="http://github.com/containous/traefik"
 pkg_build_deps=(
   core/node6
-  core/sed
+  be/sed
   core/yarn
 )
 pkg_deps=()

@@ -687,7 +687,7 @@ _nearest_version_on_builder() {
     # in order to compare it to the full version number
     # with semver
     local parsed_i
-    parsed_i=$(echo "$i" | "$(pkg_path_for core/bc)"/bin/bc)
+    parsed_i=$(echo "$i" | "$(pkg_path_for be/bc)"/bin/bc)
     comparison_result=1
 
     if [[ $original_version_string =~ (^=?[0-9])  ]]; then

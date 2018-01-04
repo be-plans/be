@@ -11,7 +11,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/gcc
-  core/libtool
+  be/libtool
   be/make
   be/pkg-config
 )

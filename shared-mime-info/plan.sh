@@ -18,7 +18,7 @@ pkg_build_deps=(
   core/cpanminus
   be/expat
   be/gcc
-  core/gettext
+  be/gettext
   core/intltool
   be/make
   be/perl

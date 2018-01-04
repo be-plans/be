@@ -13,7 +13,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/gcc be/make be/pkg-config
-  be/diffutils lilian/file
+  be/diffutils be/file
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

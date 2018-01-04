@@ -9,23 +9,23 @@ pkg_shasum=da3e44913fc1a9c9b7c5337ea5292da518683cbff32be630777f565d6036af16
 
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  lilian/bash
+  be/bash
   be/bison
   be/coreutils
   be/diffutils
-  lilian/findutils
-  lilian/flex
+  be/findutils
+  be/flex
   be/gawk
   be/gcc
-  lilian/gettext
+  be/gettext
   be/grep
-  lilian/gzip
-  lilian/libtool
+  be/gzip
+  be/libtool
   be/make
   be/patch
   be/sed
-  lilian/texinfo
-  lilian/util-linux
+  be/texinfo
+  be/util-linux
   be/wget
   be/xz
 )

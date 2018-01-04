@@ -10,7 +10,7 @@ pkg_source=https://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.
 pkg_shasum=4f4a673b6d466efa50fbfba796bd84a46ae24e370fa562ede5b21ab53c11a920
 pkg_deps=(
   core/glibc
-  lilian/libidn
+  be/libidn
   be/zlib
   be/openssl
   be/cacerts

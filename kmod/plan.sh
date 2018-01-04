@@ -6,7 +6,7 @@ pkg_license=('LGPL-2.1')
 pkg_source="https://www.kernel.org/pub/linux/utils/kernel/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum="610b8d1df172acc39a4fdf1eaa47a57b04873c82f32152e7a62e29b6ff9cb397"
 pkg_deps=(core/glibc be/xz be/zlib)
-pkg_build_deps=(be/make be/gcc be/pkg-config core/file core/sed be/diffutils)
+pkg_build_deps=(be/make be/gcc be/pkg-config be/file be/sed be/diffutils)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_bin_dirs=(bin)
@@ -16,7 +16,7 @@ pkg_upstream_url="https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git"
 
 do_before() {
   if [[ ! -f /usr/bin/file ]]; then
-    hab pkg binlink core/file file -d /usr/bin
+    hab pkg binlink be/file file -d /usr/bin
     _clean_file=true
   fi
 }

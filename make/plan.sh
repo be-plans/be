@@ -10,8 +10,8 @@ pkg_shasum=d6e262bf3601b42d2b1e4ef8310029e1dcf20083c5446b4b7aa67081fdffc589
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/bash lilian/gettext
-  lilian/gzip be/perl be/binutils
+  be/make be/gcc be/bash be/gettext
+  be/gzip be/perl be/binutils
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -50,5 +50,5 @@ EOF
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/binutils be/gcc be/coreutils be/sed lilian/bash be/perl be/diffutils lilian/gettext lilian/gzip)
+  pkg_build_deps=(be/binutils be/gcc be/coreutils be/sed be/bash be/perl be/diffutils be/gettext be/gzip)
 fi

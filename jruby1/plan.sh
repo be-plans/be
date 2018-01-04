@@ -8,7 +8,7 @@ pkg_source=https://github.com/jruby/jruby/archive/${pkg_version}.tar.gz
 pkg_shasum=25628ef9b5ba3018563ae625c1534de3472b3a95b184aef6d8ef6731378909b7
 pkg_license=('EPL 1.0' 'GPL-2.0' 'LGPL-2.1')
 pkg_deps=(
-  lilian/bash
+  be/bash
   be/coreutils
   core/glibc
   lilian/jre8
@@ -31,7 +31,7 @@ do_build() {
 
 do_install() {
   cp -R ./* "$pkg_prefix/"
-  fix_interpreter "$pkg_prefix/bin/*" lilian/bash bash
+  fix_interpreter "$pkg_prefix/bin/*" be/bash bash
 
   # Remove *.so for other platforms...they cause `do_strip()' to fail
   # with `Unable to recognise the format' errors

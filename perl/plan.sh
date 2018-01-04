@@ -20,9 +20,9 @@ pkg_build_deps=(
   be/patch
   be/make
   be/gcc
-  lilian/procps-ng
-  lilian/inetutils
-  lilian/iana-etc
+  be/procps-ng
+  be/inetutils
+  be/iana-etc
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
@@ -138,5 +138,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc lilian/procps-ng lilian/inetutils lilian/iana-etc)
+  pkg_build_deps=(be/gcc be/procps-ng be/inetutils be/iana-etc)
 fi

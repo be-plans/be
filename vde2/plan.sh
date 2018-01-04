@@ -11,7 +11,7 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_deps=(
-  lilian/bash
+  be/bash
   core/glibc
   core/gcc-libs
   lilian/libpcap

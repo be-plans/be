@@ -11,7 +11,7 @@ pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/coreutils
   be/diffutils
-  core/file
+  be/file
   be/gcc
   be/make
 )

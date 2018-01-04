@@ -19,7 +19,7 @@ pkg_build_deps=(
   be/make
   be/gcc
   be/sed
-  lilian/findutils
+  be/findutils
 )
 pkg_bin_dirs=(bin)
 
@@ -50,5 +50,5 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils lilian/findutils be/make be/patch)
+  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils be/findutils be/make be/patch)
 fi

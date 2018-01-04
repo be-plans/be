@@ -10,7 +10,7 @@ pkg_shasum=3f3ecb90e28cbe53fba7a4a27ccce7aad188d3210bb1964a923a731a27a75acb
 pkg_deps=(core/glibc core/gcc-libs)
 pkg_build_deps=(
   be/gcc  be/make be/diffutils
-  lilian/file be/coreutils
+  be/file be/coreutils
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

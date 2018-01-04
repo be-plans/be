@@ -8,7 +8,7 @@ pkg_shasum=7ee4abbcfac03d8a6e1a8a3440558a3d239d6b858585063e745c760957725ecc
 pkg_deps=(core/glibc be/readline)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/texinfo
+  be/make be/gcc be/texinfo
 )
 pkg_bin_dirs=(bin)
 

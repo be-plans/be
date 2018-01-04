@@ -20,15 +20,15 @@ pkg_deps=(
   lilian/libffi
   lilian/libiconv
   be/pcre
-  lilian/util-linux
+  be/util-linux
   be/zlib
 )
 pkg_build_deps=(
   lilian/dbus
   be/diffutils
-  lilian/file
+  be/file
   be/gcc
-  lilian/gettext
+  be/gettext
   lilian/libxslt
   be/make
   be/perl

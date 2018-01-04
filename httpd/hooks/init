@@ -1,4 +1,4 @@
-#!{{pkgPathFor "lilian/bash"}}/bin/bash
+#!{{pkgPathFor "be/bash"}}/bin/bash
 
 mkdir -p {{pkg.svc_data_path}}/htdocs
 mkdir -p {{pkg.svc_data_path}}/cgi-bin

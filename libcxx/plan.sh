@@ -16,7 +16,7 @@ pkg_build_deps=(
 pkg_deps=(
   be/gcc
   core/glibc
-  lilian/util-linux
+  be/util-linux
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

@@ -23,12 +23,12 @@ pkg_deps=(
   core/gcc-libs
   core/glibc
   be/grep
-  lilian/inetutils
+  be/inetutils
   be/ncurses
   be/openssl
   be/pcre
   be/perl
-  lilian/procps-ng
+  be/procps-ng
   be/sed
 )
 pkg_build_deps=(

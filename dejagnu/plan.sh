@@ -7,7 +7,7 @@ pkg_description="A framework for testing other programs."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=00b64a618e2b6b581b16eb9131ee80f721baa2669fa0cdee93c500d1a652d763
-pkg_deps=(lilian/expect)
+pkg_deps=(be/expect)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
   be/make be/gcc be/sed

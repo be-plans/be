@@ -1,4 +1,4 @@
-#!{{pkgPathFor "lilian/bash"}}/bin/bash
+#!{{pkgPathFor "be/bash"}}/bin/bash
 
 {{#if svc.me.follower}}
 source {{pkg.svc_config_path}}/functions.sh

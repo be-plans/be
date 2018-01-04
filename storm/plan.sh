@@ -10,7 +10,7 @@ pkg_shasum=6f584b45ec7f8d0cfd2fa78deb5de392bece07a09158a948b0ed3016ef689142
 pkg_deps=(
   lilian/jre8
   be/python
-  lilian/bash
+  be/bash
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

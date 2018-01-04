@@ -8,7 +8,7 @@ pkg_shasum=fc8c858381ad577a5c25ff5beb6ee60a34f8719c73e4e7c61e74188b4e54b741
 pkg_description="Password and account management tool suite"
 pkg_upstream_url="https://github.com/shadow-maint/shadow"
 pkg_deps=(
-  core/glibc lilian/attr lilian/acl
+  core/glibc be/attr be/acl
 )
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch

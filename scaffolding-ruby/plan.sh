@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
 pkg_description="Habitat Plan Scaffolding for Ruby Applications"
 pkg_upstream_url="https://github.com/be-plans/be/tree/master/scaffolding-ruby"
-pkg_deps=(lilian/bundler lilian/ruby lilian/tar core/busybox-static core/rq be/gcc be/make be/pkg-config)
+pkg_deps=(lilian/bundler lilian/ruby be/tar core/busybox-static be/rq be/gcc be/make be/pkg-config)
 pkg_build_deps=(be/coreutils be/sed)
 pkg_bin_dirs=(bin)
 

@@ -19,9 +19,9 @@ pkg_build_deps=(
   be/bzip2
   be/coreutils
   be/diffutils
-  lilian/file
+  be/file
   be/gcc
-  lilian/inetutils
+  be/inetutils
   be/lua
   be/make
   lilian/openssh

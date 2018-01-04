@@ -18,7 +18,7 @@ pkg_build_deps=(
   be/m4
 )
 pkg_deps=(
-  core/openssl
+  be/openssl
   core/gcc-libs
   core/protobuf
   be/zlib

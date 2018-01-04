@@ -18,14 +18,14 @@ pkg_deps=(
   core/glibc
   lilian/jemalloc
   lilian/libaio
-  lilian/libcap-ng
+  be/libcap-ng
   lilian/lzo
   be/ncurses
   be/pcre
   lilian/pixman
   lilian/python2
   be/snappy
-  lilian/util-linux
+  be/util-linux
   lilian/vde2
   be/zlib
 )
@@ -34,7 +34,7 @@ pkg_build_deps=(
   be/automake
   be/diffutils
   be/gcc
-  lilian/libtool
+  be/libtool
   be/make
   be/m4
   be/pkg-config

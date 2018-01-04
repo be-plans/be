@@ -13,9 +13,9 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/diffutils
-  lilian/file
+  be/file
   be/gcc
-  lilian/iana-etc
+  be/iana-etc
   lilian/libossp-uuid
   be/make
 )

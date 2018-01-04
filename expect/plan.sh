@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://downloads.sourceforge.net/project/$pkg_name/Expect/${pkg_version}/${pkg_name}${pkg_version}.tar.gz
 pkg_shasum=b28dca90428a3b30e650525cdc16255d76bb6ccd65d448be53e620d95d5cc040
 pkg_dirname=${pkg_name}${pkg_version}
-pkg_deps=(core/glibc lilian/tcl be/coreutils)
+pkg_deps=(core/glibc be/tcl be/coreutils)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
   be/make be/gcc

@@ -15,7 +15,7 @@ pkg_upstream_url="http://cpputest.github.io"
 pkg_deps=(
   core/gcc-libs
   core/glibc
-  core/libtool
+  be/libtool
 )
 pkg_build_deps=(
   be/cmake

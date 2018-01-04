@@ -14,20 +14,20 @@ pkg_build_deps=(
   be/coreutils
   be/sed
   be/bison
-  lilian/flex
+  be/flex
   be/grep
-  lilian/bash
+  be/bash
   be/gawk
-  lilian/libtool
+  be/libtool
   be/diffutils
-  lilian/findutils
+  be/findutils
   be/xz
-  lilian/gettext
-  lilian/gzip
+  be/gettext
+  be/gzip
   be/make
   be/patch
-  lilian/texinfo
-  lilian/util-linux
+  be/texinfo
+  be/util-linux
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

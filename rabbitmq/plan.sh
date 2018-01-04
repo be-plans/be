@@ -15,7 +15,7 @@ pkg_deps=(
   lilian/erlang
 )
 pkg_build_deps=(
-  lilian/bash
+  be/bash
   be/diffutils
   be/gawk
   be/gcc
@@ -27,7 +27,7 @@ pkg_build_deps=(
   be/perl
   lilian/python2
   lilian/rsync
-  lilian/unzip
+  be/unzip
   lilian/zip
 )
 pkg_include_dirs=(include)

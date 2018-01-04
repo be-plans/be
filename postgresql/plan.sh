@@ -9,7 +9,7 @@ pkg_source=https://ftp.postgresql.org/pub/source/v${pkg_version}/${pkg_name}-${p
 pkg_shasum=1645b3736901f6d854e695a937389e68ff2066ce0cde9d73919d6ab7c995b9c6
 
 pkg_deps=(
-  lilian/bash
+  be/bash
   lilian/envdir
   core/glibc
   be/openssl

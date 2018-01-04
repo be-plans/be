@@ -8,7 +8,7 @@ pkg_shasum=25772f653ac5b2e3ceeb89df50e4688891e21f723c460636548971652af0a859
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/gettext
+  be/make be/gcc be/gettext
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

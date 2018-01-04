@@ -24,11 +24,11 @@ pkg_build_deps=(
   be/gcc
   be/gawk
   be/m4
-  lilian/texinfo
+  be/texinfo
   be/perl
-  lilian/inetutils
-  lilian/expect
-  lilian/dejagnu
+  be/inetutils
+  be/expect
+  be/dejagnu
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

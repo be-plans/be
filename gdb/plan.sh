@@ -22,12 +22,12 @@ pkg_build_deps=(
   be/coreutils
   be/pkg-config
   be/diffutils
-  lilian/expect
-  lilian/dejagnu
+  be/expect
+  be/dejagnu
   be/patch
   be/make
   be/gcc
-  lilian/texinfo
+  be/texinfo
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
