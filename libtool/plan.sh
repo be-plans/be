@@ -20,6 +20,10 @@ pkg_lib_dirs=(lib)
 
 source ../defaults.sh
 
+do_setup_environment() {
+  set_runtime_env -f ACLOCAL_PATH "${pkg_prefix}/share/aclocal"
+}
+
 do_prepare() {
   do_default_prepare
 
