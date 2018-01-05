@@ -21,8 +21,11 @@ pkg_bin_dirs=(bin)
 
 source ../defaults.sh
 
+do_setup_environment() {
+  do_perl_setup_environment "${pkg_prefix}/lib/perl5"
+}
+
 do_prepare() {
-  eval "$(perl -Mlocal::lib="${pkg_prefix}/lib")"
   cpanm XML::Parser --configure-args="EXPATLIBPATH=$(pkg_path_for be/expat)/lib export EXPATINCPATH=$(pkg_path_for be/expat)/include"
 }
 do_install() {

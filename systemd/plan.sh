@@ -24,7 +24,7 @@ pkg_build_deps=(
   be/autoconf
   be/automake
   be/cpanminus
-  lilian/dbus
+  be/dbus
   be/expat
   be/gcc
   core/gcc-libs
@@ -43,10 +43,6 @@ pkg_build_deps=(
   be/util-linux
   be/xz
 )
-
-do_prepare() {
-  eval "$(perl -I"$(pkg_path_for be/intltool)/lib/lib/perl5" -Mlocal::lib="$(pkg_path_for be/intltool)/lib")"
-}
 
 source ../defaults.sh
 

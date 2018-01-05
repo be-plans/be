@@ -89,3 +89,24 @@ do_default_build() {
 do_default_install() {
   make -j "$(nproc)" install
 }
+
+do_perl_setup_environment() {
+  test -z "${1}" && echo "Please pass the Module's Perl INC path" && exit 1
+
+  local -r inc_path="${1}"
+  eval "$(perl -I${inc_path} -Mlocal::lib=${pkg_prefix})"
+
+  # Avoid inserting an empty ":" at the beginning of the path
+  if [ -z "${PERL5LIB}" ]; then
+    set_runtime_env -f PERL5LIB "${inc_path}"
+  else
+    # Avoiding: PERL5LIB=some_path:${inc_path}/invalid_path:some_other_path
+    local -r regex="^([ tab]*${inc_path}[ tab]*)$|^([ tab]*${inc_path}:{1})|:{1}${inc_path}:{1}|(:{1}${inc_path}[ tab]*)$"
+
+    # If the path is already exported, then skip
+    if   [ -z "$(echo "${PERLLIB}"  | grep -E "${regex}")" ] \
+      && [ -z "$(echo "${PERL5LIB}" | grep -E "${regex}")" ]; then
+      set_runtime_env -f PERL5LIB "${PERL5LIB}:${inc_path}"
+    fi
+  fi
+}
