@@ -22,7 +22,7 @@ pkg_deps=(
   core/gcc-libs
   core/protobuf
   be/zlib
-  core/curl
+  be/curl
   be/ncurses
 )
 pkg_bin_dirs=(bin)

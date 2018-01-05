@@ -11,7 +11,7 @@ pkg_bin_dirs=(bin)
 pkg_deps=(
   core/glibc core/gcc-libs be/bash
   lilian/iproute2 be/gnupg be/pkg-config
-  be/ncurses lilian/vim lilian/curl
+  be/ncurses lilian/vim be/curl
   lilian/libev be/openssl be/zlib
   be/libgcrypt lilian/libgpg-error be/libtool
 )
@@ -42,8 +42,8 @@ do_build() {
     -DCMAKE_INSTALL_PREFIX="$pkg_prefix" \
     -DCMAKE_PREFIX_PATH="$(pkg_path_for be/ncurses)" \
     -DWITH_BOOST="$(pkg_path_for lilian/boost/1.59.0)/include" \
-    -DCURL_LIBRARY="$(pkg_path_for lilian/curl)/lib/libcurl.so" \
-    -DCURL_INCLUDE_DIR="$(pkg_path_for lilian/curl)/include" \
+    -DCURL_LIBRARY="$(pkg_path_for be/curl)/lib/libcurl.so" \
+    -DCURL_INCLUDE_DIR="$(pkg_path_for be/curl)/include" \
     -DLIBEV_INCLUDE_DIRS="$(pkg_path_for lilian/libev)/include"	\
     -DGCRYPT_LIB="$(pkg_path_for be/libgcrypt)/lib/libgcrypt.so" \
     -DGCRYPT_INCLUDE_DIR="$(pkg_path_for be/libgcrypt)/include" \

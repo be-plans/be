@@ -14,7 +14,7 @@ pkg_deps=(
   be/bzip2
   be/cacerts
   be/coreutils
-  core/curl
+  be/curl
   core/glibc
   core/jq-static
   core/libarchive

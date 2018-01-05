@@ -12,7 +12,7 @@ pkg_deps=(
   core/glibc
   be/zlib
   be/gmp
-  lilian/mpfr
+  be/mpfr
   be/libmpc
   be/binutils
 )

@@ -12,7 +12,7 @@ pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_deps=(
   be/bzip2
-  lilian/curl
+  be/curl
   core/gcc-libs
   lilian/glib
   core/glibc

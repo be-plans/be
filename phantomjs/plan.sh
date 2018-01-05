@@ -17,7 +17,7 @@ pkg_deps=(
 
 # We need curl instead of wget because wget doesn't work for
 # downloading from bitbucket URLs. Sometimes.
-pkg_build_deps=(lilian/curl be/cacerts be/patchelf)
+pkg_build_deps=(be/curl be/cacerts be/patchelf)
 pkg_bin_dirs=(bin)
 
 source ../defaults.sh

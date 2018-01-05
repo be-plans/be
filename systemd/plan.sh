@@ -23,7 +23,7 @@ pkg_svc_group=root
 pkg_build_deps=(
   be/autoconf
   be/automake
-  lilian/cpanminus
+  be/cpanminus
   lilian/dbus
   be/expat
   be/gcc
@@ -31,10 +31,10 @@ pkg_build_deps=(
   be/gettext
   core/glibc
   lilian/gperf
-  lilian/intltool
+  be/intltool
   be/libtool
   lilian/libxslt
-  lilian/local-lib
+  be/local-lib
   lilian/lz4
   be/m4
   be/make
@@ -45,8 +45,8 @@ pkg_build_deps=(
 )
 
 do_prepare() {
-  eval "$(perl -I"$(pkg_path_for core/local-lib)/lib/perl5" -Mlocal::lib="$(pkg_path_for core/local-lib)")"
-  eval "$(perl -I"$(pkg_path_for lilian/intltool)/lib/lib/perl5" -Mlocal::lib="$(pkg_path_for lilian/intltool)/lib")"
+  eval "$(perl -I"$(pkg_path_for be/local-lib)/lib/perl5" -Mlocal::lib="$(pkg_path_for be/local-lib)")"
+  eval "$(perl -I"$(pkg_path_for be/intltool)/lib/lib/perl5" -Mlocal::lib="$(pkg_path_for be/intltool)/lib")"
 }
 
 source ../defaults.sh
@@ -55,7 +55,7 @@ do_build() {
   export ACLOCAL_FLAGS
   ACLOCAL_FLAGS="-I $(pkg_path_for be/pkg-config)/share/aclocal \
     -I$(pkg_path_for be/libtool)/share/aclocal \
-    -I$(pkg_path_for lilian/intltool)/share/aclocal \
+    -I$(pkg_path_for be/intltool)/share/aclocal \
     -I$(pkg_path_for be/gettext)/share/aclocal"
   ./autogen.sh
   ./configure \

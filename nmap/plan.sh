@@ -24,7 +24,7 @@ pkg_build_deps=(
   be/inetutils
   be/lua
   be/make
-  lilian/openssh
+  be/openssh
   be/pkg-config
   be/readline
   lilian/which

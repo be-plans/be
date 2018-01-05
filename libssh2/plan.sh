@@ -19,14 +19,18 @@ pkg_build_deps=(
   be/inetutils
   be/linux-headers
   be/make
-  core/openssh
+  be/openssh
   be/pkg-config
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_pconfig_dirs=(lib/pkgconfig)
 
+source ../defaults.sh
+
 do_prepare() {
+  do_default_prepare
+
   if [[ ! -r /usr/bin/file ]]; then
     ln -sv "$(pkg_path_for file)/bin/file" /usr/bin/file
     _clean_file=true

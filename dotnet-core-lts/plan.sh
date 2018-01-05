@@ -11,7 +11,7 @@ pkg_source="https://dotnetcli.blob.core.windows.net/dotnet/Runtime/${pkg_version
 pkg_shasum=55481b0254a72d8c342ba6ccca3908ffb5c99d7eeb54f83dec6cc93c6b4cc3ae
 pkg_filename="dotnet-debian-x64.${pkg_version}.tar.gz"
 pkg_deps=(
-  lilian/curl
+  be/curl
   core/gcc-libs
   core/glibc
   lilian/icu52

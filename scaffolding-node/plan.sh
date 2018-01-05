@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
 pkg_description="Habitat Plan Scaffolding for Node.js Applications"
 pkg_upstream_url="https://github.com/be-plans/be/tree/master/scaffolding-node"
-pkg_deps=(be/tar be/rq lilian/jq-static be/gawk lilian/curl be/bc be/coreutils)
+pkg_deps=(be/tar be/rq lilian/jq-static be/gawk be/curl be/bc be/coreutils)
 pkg_build_deps=(lilian/node be/coreutils lilian/yarn)
 
 do_build() {

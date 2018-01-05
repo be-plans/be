@@ -15,11 +15,11 @@ pkg_deps=(
   be/zlib
 )
 pkg_build_deps=(
-  core/cpanminus
+  be/cpanminus
   be/expat
   be/gcc
   be/gettext
-  core/intltool
+  be/intltool
   be/make
   be/perl
   be/pkg-config

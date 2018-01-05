@@ -20,7 +20,7 @@ pkg_build_deps=(
 pkg_deps=(
   be/bzip2
   lilian/cairo
-  lilian/curl
+  be/curl
   be/gcc
   lilian/harfbuzz
   lilian/icu

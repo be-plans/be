@@ -675,7 +675,7 @@ _nearest_version_on_builder() {
   local full_version_number
   full_version_number=$(_full_version_digits "$bare_version")
 
-  "$(pkg_path_for core/curl)"/bin/curl https://bldr.habitat.sh/v1/depot/channels/core/stable/pkgs/node | $_jq . > data.json
+  "$(pkg_path_for be/curl)"/bin/curl https://bldr.habitat.sh/v1/depot/channels/core/stable/pkgs/node | $_jq . > data.json
   builder_versions_list=$(stable_versions_list data.json)
   rm -f data.json
 

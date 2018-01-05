@@ -10,12 +10,12 @@ pkg_filename=App-Sqitch-${pkg_version}.tar.gz
 pkg_dirname=App-Sqitch-${pkg_version}
 pkg_shasum=c29b4610ce43bd43ecfa39188f4cbb00b38c390136fcdd9984142efd99eba292
 pkg_deps=(
-  core/glibc be/perl lilian/local-lib
-  lilian/cpanminus
+  core/glibc be/perl be/local-lib
+  be/cpanminus
 )
 pkg_build_deps=(
   be/gcc be/make be/coreutils
-  be/perl lilian/local-lib lilian/cpanminus
+  be/perl be/local-lib be/cpanminus
 )
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
@@ -25,7 +25,7 @@ source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
-  eval "$(perl -I$(pkg_path_for lilian/local-lib)/lib/perl5 -Mlocal::lib=$(pkg_path_for lilian/local-lib))"
+  eval "$(perl -I$(pkg_path_for be/local-lib)/lib/perl5 -Mlocal::lib=$(pkg_path_for be/local-lib))"
   # Create a new lib dir in our pacakge for cpanm to house all of its libs
   eval $(perl -Mlocal::lib=${pkg_prefix})
 

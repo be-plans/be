@@ -17,7 +17,7 @@ pkg_build_deps=(
   be/diffutils
   be/make
   be/gcc
-  lilian/curl
+  be/curl
   be/zlib
   be/bzip2
 )

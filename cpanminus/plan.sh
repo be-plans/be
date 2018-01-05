@@ -10,11 +10,16 @@ pkg_filename=${pkg_name}-${pkg_version}.tar.gz
 pkg_dirname=${pkg_name}-${pkg_version}
 pkg_shasum=7f52a6487a2462b658164f431ae6cc0b78685df3bccfe4139823372cb5b5fd42
 pkg_deps=(
-  core/glibc be/perl lilian/local-lib
+  core/glibc
+  be/perl
+  be/local-lib
 )
 pkg_build_deps=(
-  be/gcc  be/make be/coreutils
-  be/perl lilian/local-lib
+  be/gcc
+  be/make
+  be/coreutils
+  be/perl
+  be/local-lib
 )
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
@@ -27,7 +32,7 @@ do_build() {
 
 do_install() {
   # Load local::lib into our current perl include chain
-  eval "$(perl -I$(pkg_path_for lilian/local-lib)/lib/perl5 -Mlocal::lib=$(pkg_path_for lilian/local-lib))"
+  eval "$(perl -I$(pkg_path_for be/local-lib)/lib/perl5 -Mlocal::lib=$(pkg_path_for be/local-lib))"
   # Create a new lib dir in our pacakge for cpanm to house all of its libs
   eval $(perl -Mlocal::lib=${pkg_prefix})
 
