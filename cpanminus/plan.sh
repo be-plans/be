@@ -31,8 +31,6 @@ do_build() {
 }
 
 do_install() {
-  # Load local::lib into our current perl include chain
-  eval "$(perl -I$(pkg_path_for be/local-lib)/lib/perl5 -Mlocal::lib=$(pkg_path_for be/local-lib))"
   # Create a new lib dir in our pacakge for cpanm to house all of its libs
   eval $(perl -Mlocal::lib=${pkg_prefix})
 

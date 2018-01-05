@@ -22,7 +22,6 @@ pkg_bin_dirs=(bin)
 source ../defaults.sh
 
 do_prepare() {
-  eval "$(perl -I"$(pkg_path_for be/local-lib)/lib/perl5" -Mlocal::lib="$(pkg_path_for be/local-lib)")"
   eval "$(perl -Mlocal::lib="${pkg_prefix}/lib")"
   cpanm XML::Parser --configure-args="EXPATLIBPATH=$(pkg_path_for be/expat)/lib export EXPATINCPATH=$(pkg_path_for be/expat)/include"
 }

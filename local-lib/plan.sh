@@ -24,6 +24,25 @@ pkg_bin_dirs=(bin)
 
 source ../defaults.sh
 
+do_setup_environment() {
+  local -r inc_path="${pkg_prefix}/lib/perl5"
+  eval "$(perl -I${inc_path} -Mlocal::lib=${pkg_prefix})"
+
+  # Avoid inserting an empty ":" at the beginning of the path
+  if [ -z "${PERL5LIB}" ]; then
+    set_runtime_env -f PERL5LIB "${inc_path}"
+  else
+    # Avoiding: PERL5LIB=some_path:${inc_path}/invalid_path:some_other_path
+    local -r regex="^([ tab]*${inc_path}[ tab]*)$|^([ tab]*${inc_path}:{1})|:{1}${inc_path}:{1}|(:{1}${inc_path}[ tab]*)$"
+
+    # If the path is already exported, then skip
+    if   [ -z "$(echo "${PERLLIB}"  | grep -E "${regex}")" ] \
+      && [ -z "$(echo "${PERL5LIB}" | grep -E "${regex}")" ]; then
+      set_runtime_env -f PERL5LIB "${PERL5LIB}:${inc_path}"
+    fi
+  fi
+}
+
 do_build() {
   perl Makefile.PL --bootstrap=${pkg_prefix} --no-manpages
 }

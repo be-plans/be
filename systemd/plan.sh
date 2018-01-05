@@ -45,7 +45,6 @@ pkg_build_deps=(
 )
 
 do_prepare() {
-  eval "$(perl -I"$(pkg_path_for be/local-lib)/lib/perl5" -Mlocal::lib="$(pkg_path_for be/local-lib)")"
   eval "$(perl -I"$(pkg_path_for be/intltool)/lib/lib/perl5" -Mlocal::lib="$(pkg_path_for be/intltool)/lib")"
 }
 
