@@ -61,10 +61,11 @@ _compiler_flags() {
 
   test -z "${_be_no_glibc}" && be_gnu_source="-D_GNU_SOURCE"
   be_generic_flags="${be_generic_flags:--pipe -Wno-error -Wno-error=implicit-fallthrough}"
-  be_optimizations="${be_optimizations:--O3 -DNDEBUG ${be_gnu_source} -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize ${BE_TUNE_EXTRA} -march=${BE_ARCH:?} -mtune=${BE_TUNE:?} ${be_lto_flag}}"
+  be_optimizations="${be_optimizations:--fPIC -O3 -DNDEBUG ${be_gnu_source} -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -floop-strip-mine -floop-block -fgraphite-identity ${BE_TUNE_EXTRA} -march=${BE_ARCH:?} -mtune=${BE_TUNE:?} ${be_lto_flag}}"
   be_protection="${be_protection:--fstack-protector-strong}"
   be_cxxstd="${be_cxxstd:-${BE_CXXSTD}}"
   test -z "${_be_no_relro}" && be_ldflags="${be_ldflags:--Wl,-Bsymbolic-functions -Wl,-z,relro}"
+  be_ldflags="${be_ldflags} -Wl,--as-needed"
 
   export CFLAGS="${CFLAGS} ${be_optimizations} ${be_protection} ${be_generic_flags} ${be_pic_flag} "
   export CXXFLAGS="${CXXFLAGS} ${be_cxxstd} -fuse-cxa-atexit ${be_optimizations} ${be_protection} ${be_generic_flags} ${be_pic_flag} "
@@ -109,4 +110,20 @@ do_perl_setup_environment() {
       set_runtime_env -f PERL5LIB "${PERL5LIB}:${inc_path}"
     fi
   fi
+}
+
+be_remove_compiler_flag() {
+  test -z "${1}" && echo "Please pass a compiler flag" && exit 1
+  local -r compiler_flag="${1}"
+
+  export CFLAGS="$(echo "${CFLAGS}" | sed "s/[ tab]*${compiler_flag}[ tab]*/ /g")"
+  export CXXFLAGS="$(echo "${CXXFLAGS}" | sed "s/[ tab]*${compiler_flag}[ tab]*/ /g")"
+  export CPPFLAGS="$(echo "${CPPFLAGS}" | sed "s/[ tab]*${compiler_flag}[ tab]*/ /g")"
+}
+
+be_remove_linker_flag() {
+  test -z "${1}" && echo "Please pass a linker flag" && exit 1
+  local -r linker_flag="${1}"
+
+  export LDFLAGS="$(echo "${LDFLAGS}" | sed "s/[ tab]*${linker_flag}[ tab]*/ /g")"
 }
