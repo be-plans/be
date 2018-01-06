@@ -198,6 +198,7 @@ cat <<_PLANS_ | while read plan; do _build $plan; done
   be/binutils
   be/m4
   be/gmp
+  be/isl
   be/mpfr
   be/libmpc
   be/gcc
