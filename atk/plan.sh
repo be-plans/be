@@ -11,7 +11,7 @@ pkg_deps=(
   core/glib
   core/glibc
   lilian/libffi
-  core/libiconv
+  be/libiconv
   be/pcre
 )
 pkg_build_deps=(

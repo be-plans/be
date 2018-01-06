@@ -30,7 +30,7 @@ pkg_build_deps=(
   core/gcc-libs
   be/gettext
   core/glibc
-  lilian/gperf
+  be/gperf
   be/intltool
   be/libtool
   lilian/libxslt

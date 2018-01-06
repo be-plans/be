@@ -18,7 +18,7 @@ pkg_deps=(
   core/glibc
   lilian/harfbuzz
   lilian/libffi
-  lilian/libiconv
+  be/libiconv
   lilian/libpng
   lilian/libxau
   lilian/libxcb

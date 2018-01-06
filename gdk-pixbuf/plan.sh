@@ -13,7 +13,7 @@ pkg_deps=(
   core/glibc
   core/jbigkit
   lilian/libffi
-  core/libiconv
+  be/libiconv
   core/libjpeg-turbo
   core/libpng
   core/libtiff

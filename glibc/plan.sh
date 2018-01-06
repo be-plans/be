@@ -23,15 +23,10 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-export BE_ARCH="${BE_ARCH:-x86-64}"
-export BE_TUNE="${BE_TUNE:-corei7-avx}"
-export BE_TUNE_EXTRA="${BE_TUNE_EXTRA:--m64 -mavx}"
-be_optimizations="-O3 -DNDEBUG -fomit-frame-pointer -ftree-vectorize ${BE_TUNE_EXTRA} -march=${BE_ARCH} -mtune=${BE_TUNE}"
-be_protection=" "
 source ../defaults.sh
 
 do_prepare() {
-  do_default_prepare
+  # Note: do_default_prepare is at the bottom of this function
 
   # The `/bin/pwd` path is hardcoded, so we'll add a symlink if needed.
   if [[ ! -r /bin/pwd ]]; then
@@ -86,6 +81,10 @@ do_prepare() {
     scripts/test-installation.pl
 
   do_default_prepare
+
+  be_remove_compiler_flag "-D_GNU_SOURCE"
+  be_remove_compiler_flag "-fstack-protector-strong"
+  be_remove_compiler_flag "-fno-asynchronous-unwind-tables"
 }
 
 do_build() {
@@ -108,6 +107,8 @@ do_build() {
       --disable-profile \
       --enable-kernel=4.4.0 \
       --cache-file=config.cache
+
+      #--enable-stack-protector=strong \
 
     make -j $(nproc)
   )

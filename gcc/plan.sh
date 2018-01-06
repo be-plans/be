@@ -35,13 +35,13 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
-# be_cxxstd="-std=gnu++14"
-be_protection=" "
 pkg_disabled_features=(pic)
 source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
+
+  be_remove_compiler_flag "-fstack-protector-strong"
 
   glibc="$(pkg_path_for glibc)"
   binutils="$(pkg_path_for binutils)"
@@ -117,7 +117,7 @@ do_prepare() {
 
   # Build up the build cflags that will be set for multiple environment
   # variables in the `make` command
-  build_cflags="${be_optimizations:?} ${be_protection:?} ${be_generic_flags:?} "
+  build_cflags="${be_optimizations:?} ${be_generic_flags:?} "
   build_cflags="$build_cflags -I${headers}"
   build_cflags="$build_cflags -B${glibc}/lib/"
   build_cflags="$build_cflags -idirafter"

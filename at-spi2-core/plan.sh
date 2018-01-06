@@ -8,11 +8,11 @@ pkg_license=('LGPL-2.0')
 pkg_source="https://download.gnome.org/sources/${pkg_name}/${pkg_version%.*}/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum=c80e0cdf5e3d713400315b63c7deffa561032a6c37289211d8afcfaa267c2615
 pkg_deps=(
-  core/dbus
+  be/dbus
   core/glib
   core/glibc
   lilian/libffi
-  core/libiconv
+  be/libiconv
   be/pcre
 )
 pkg_build_deps=(

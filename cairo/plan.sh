@@ -20,7 +20,7 @@ pkg_deps=(
   core/glibc
   lilian/libffi
   lilian/libice
-  lilian/libiconv
+  be/libiconv
   lilian/libpng
   lilian/libsm
   lilian/libxau

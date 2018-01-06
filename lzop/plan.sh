@@ -12,6 +12,10 @@ pkg_build_deps=(be/make be/gcc)
 pkg_bin_dirs=(bin)
 
 #TODO: Doesn't build with GCC 7.1...
-be_generic_flags="-pipe -Wno-error"
-be_cxxstd="-std=gnu++11"
+# be_cxxstd="-std=gnu++11"
 source ../defaults.sh
+
+do_prepare() {
+  do_default_prepare
+  export CXXFLAGS="${CXXFLAGS} -std=gnu++11"
+}

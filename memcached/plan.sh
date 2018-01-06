@@ -18,5 +18,4 @@ pkg_exports=(
 )
 pkg_exposes=(port)
 
-be_optimizations="-O2 -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -m64 -mavx -march=x86-64 -mtune=corei7-avx"
 source ../defaults.sh

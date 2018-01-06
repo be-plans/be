@@ -12,7 +12,7 @@ pkg_deps=(
   core/glibc
   lilian/groff
   be/gzip
-  lilian/libiconv
+  be/libiconv
 )
 pkg_build_deps=(
   be/coreutils

@@ -18,13 +18,13 @@ pkg_deps=(
   lilian/elfutils
   core/glibc
   lilian/libffi
-  lilian/libiconv
+  be/libiconv
   be/pcre
   be/util-linux
   be/zlib
 )
 pkg_build_deps=(
-  lilian/dbus
+  be/dbus
   be/diffutils
   be/file
   be/gcc

@@ -35,9 +35,13 @@ pkg_deps=(
 )
 
 pkg_disabled_features=(pic)
-be_optimizations="-O2 -DNDEBUG -fomit-frame-pointer -fno-asynchronous-unwind-tables -ftree-vectorize -mavx -march=x86-64 -mtune=corei7-avx"
-be_protection=" "
 source ../defaults.sh
+
+do_prepare() {
+  do_default_prepare
+
+  be_remove_compiler_flag "-fstack-protector-strong"
+}
 
 do_setup() {
   if [[ ! -d /boot ]]; then

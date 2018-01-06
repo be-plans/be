@@ -10,11 +10,11 @@ pkg_shasum=b4f0c27b61dbffba7a5b5ba2ff88c8cee10ff8dac774fa5b79ce906853623b75
 pkg_deps=(
   core/at-spi2-core
   core/atk
-  core/dbus
+  be/dbus
   core/glib
   core/glibc
   lilian/libffi
-  core/libiconv
+  be/libiconv
   be/pcre
 )
 pkg_build_deps=(

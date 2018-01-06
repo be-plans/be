@@ -12,7 +12,7 @@ pkg_deps=(
   core/glibc
   lilian/libffi
   core/libxslt
-  core/libiconv
+  be/libiconv
   be/pcre
   be/util-linux
   be/zlib

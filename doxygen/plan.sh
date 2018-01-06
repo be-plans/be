@@ -10,7 +10,7 @@ pkg_shasum=af667887bd7a87dc0dbf9ac8d86c96b552dfb8ca9c790ed1cbffaa6131573f6b
 pkg_deps=(
   core/gcc-libs
   core/glibc
-  lilian/libiconv
+  be/libiconv
 )
 pkg_build_deps=(
   be/bison
@@ -35,7 +35,7 @@ do_build() {
   export CXXFLAGS="-liconv $CXXFLAGS"
   build_line "CXXFLAGS are now: $CXXFLAGS"
   cmake -DCMAKE_INSTALL_PREFIX:PATH="$pkg_prefix" \
-    -DICONV_INCLUDE_DIR="$(hab pkg path lilian/libiconv)/include" \
+    -DICONV_INCLUDE_DIR="$(hab pkg path be/libiconv)/include" \
     -DCMAKE_BUILD_TYPE=Release \
     -G "Unix Makefiles" ../
   make -j $(nproc)
