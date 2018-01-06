@@ -14,6 +14,7 @@ pkg_deps=(
   be/gmp
   be/mpfr
   be/libmpc
+  be/isl
   be/binutils
 )
 pkg_build_deps=(
@@ -157,6 +158,7 @@ do_build() {
       --with-gmp="$(pkg_path_for gmp)" \
       --with-mpfr="$(pkg_path_for mpfr)" \
       --with-mpc="$(pkg_path_for libmpc)" \
+      --with-isl="$(pkg_path_for isl)" \
       --with-native-system-header-dir="$headers" \
       --enable-languages=c,c++,fortran,go \
       --enable-__cxa_atexit \
