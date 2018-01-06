@@ -13,6 +13,11 @@ pkg_lib_dirs=(lib)
 
 source ../defaults.sh
 
+do_prepare() {
+  do_default_prepare
+  be_remove_linker_flag "-Wl,--as-needed"
+}
+
 do_build() {
   # The Util-linux package will provide the `kill` command
   ./configure \
