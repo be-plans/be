@@ -264,14 +264,10 @@ cat <<_PLANS_ | while read plan; do _build $plan; done
   be/openssl-musl
   be/libarchive-musl
   be/rust
-  habitat/components/hab:hab
-  habitat/components/plan-build:hab-plan-build
   be/vim
   be/libbsd
   be/clens
   be/mg
-  habitat/components/backline:hab-backline
-  habitat/components/studio:hab-studio
 _PLANS_
 
 _on_exit 0
