@@ -11,7 +11,8 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/gcc be/make
+  be/gcc
+  be/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

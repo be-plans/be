@@ -17,7 +17,7 @@ pkg_deps=(
   be/coreutils
   lilian/elfutils
   core/glibc
-  lilian/libffi
+  be/libffi
   be/libiconv
   be/pcre
   be/util-linux

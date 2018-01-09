@@ -12,10 +12,10 @@ pkg_deps=(
   core/glibc
   be/nettle
   be/gmp
-  lilian/libtasn1
-  lilian/libunistring
-  lilian/libidn2
-  lilian/unbound
+  be/libtasn1
+  be/libunistring
+  be/libidn2
+  be/unbound
 )
 pkg_build_deps=(
   be/gcc
@@ -23,7 +23,7 @@ pkg_build_deps=(
   be/pkg-config
   be/diffutils
   be/coreutils
-  lilian/p11-kit
+  be/p11-kit
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include include/gnutls)

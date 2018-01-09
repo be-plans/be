@@ -11,7 +11,7 @@ pkg_upstream_url=https://www.ruby-lang.org/en/
 pkg_shasum=93b9e75e00b262bc4def6b26b7ae8717efc252c47154abb7392e54357e6c8c9c
 pkg_deps=(
   core/glibc be/ncurses be/zlib
-  be/openssl lilian/libyaml lilian/libffi
+  be/openssl lilian/libyaml be/libffi
   be/readline
 )
 pkg_build_deps=(

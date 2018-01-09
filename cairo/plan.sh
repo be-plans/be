@@ -18,7 +18,7 @@ pkg_deps=(
   be/gcc-libs
   lilian/glib
   core/glibc
-  lilian/libffi
+  be/libffi
   lilian/libice
   be/libiconv
   lilian/libpng

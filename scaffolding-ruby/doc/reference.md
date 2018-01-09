@@ -75,7 +75,7 @@ pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
 pkg_scaffolding=core/scaffolding-ruby
-pkg_deps=(lilian/imagemagick lilian/libsodium)
+pkg_deps=(lilian/imagemagick be/libsodium)
 ```
 
 ###  Specifying Build Dependencies in Your Plan

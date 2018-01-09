@@ -10,7 +10,7 @@ pkg_shasum=fd55a9037d39e7a10f0db64309f5f0265fa32ec962bf85066087b83a2807f40a
 pkg_deps=(
   core/glib
   core/glibc
-  lilian/libffi
+  be/libffi
   core/libxslt
   be/libiconv
   be/pcre

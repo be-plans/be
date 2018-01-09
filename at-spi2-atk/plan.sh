@@ -13,7 +13,7 @@ pkg_deps=(
   be/dbus
   core/glib
   core/glibc
-  lilian/libffi
+  be/libffi
   be/libiconv
   be/pcre
 )
