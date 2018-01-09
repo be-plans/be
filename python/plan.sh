@@ -18,7 +18,7 @@ pkg_deps=(
   be/ncurses
   be/openssl
   be/readline
-  lilian/sqlite
+  be/sqlite
   be/zlib
 )
 pkg_build_deps=(

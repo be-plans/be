@@ -22,7 +22,7 @@ pkg_build_deps=(
   be/make
   be/pkg-config
   lilian/python2
-  lilian/sqlite
+  be/sqlite
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

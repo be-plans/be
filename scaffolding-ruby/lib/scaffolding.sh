@@ -810,7 +810,7 @@ _detect_ruby() {
 _detect_sqlite3() {
   if _has_gem sqlite3; then
     build_line "Detected 'sqlite3' gem in Gemfile.lock, adding sqlite packages"
-    pkg_deps=(lilian/sqlite ${pkg_deps[@]})
+    pkg_deps=(be/sqlite ${pkg_deps[@]})
     debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
   fi
 }
