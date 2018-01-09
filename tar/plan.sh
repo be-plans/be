@@ -1,16 +1,24 @@
 pkg_name=tar
 pkg_origin=core
-pkg_version=1.29
+pkg_version=1.30
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="GNU Tar provides the ability to create tar archives, as well as various other kinds of manipulation."
 pkg_upstream_url=https://www.gnu.org/software/tar/
 pkg_license=('GPL-3.0')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=402dcfd0022fd7a1f2c5611f5c61af1cd84910a760a44a688e18ddbff4e9f024
-pkg_deps=(core/glibc be/acl be/attr)
+pkg_shasum=f1bf92dbb1e1ab27911a861ea8dde8208ee774866c46c0bb6ead41f4d1f4d2d3
+pkg_deps=(
+  core/glibc
+  be/acl
+  be/attr
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
 )
 pkg_bin_dirs=(bin)
 
