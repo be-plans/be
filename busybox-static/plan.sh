@@ -5,10 +5,12 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_dirname=${pkg_distname}-${pkg_version}
 
 pkg_deps=()
-pkg_build_deps=(be/linux-headers-musl lilian/musl "${pkg_build_deps[@]}")
+pkg_build_deps=(be/linux-headers-musl be/musl "${pkg_build_deps[@]}")
 
 do_prepare() {
-  CFLAGS="-I$(pkg_path_for linux-headers-musl)/include -I$(pkg_path_for musl)/include"
+  do_default_prepare
+  unset LDFLAGS
+  CFLAGS="${CFLAGS} -I$(pkg_path_for linux-headers-musl)/include -I$(pkg_path_for musl)/include"
   build_line "Overriding CFLAGS=$CFLAGS"
 
   PLAN_CONTEXT=$PLAN_CONTEXT/../busybox create_config

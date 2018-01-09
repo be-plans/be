@@ -37,7 +37,6 @@ source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
-  be_remove_compiler_flag "-D_GNU_SOURCE"
   create_config
 }
 
