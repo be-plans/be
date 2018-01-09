@@ -9,7 +9,7 @@ pkg_source=http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=f551c24b30ce8bfb6e96d9f59b42fbea30fa3a6123384172f9e7284bcf647260
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
 )
 pkg_build_deps=(
   be/coreutils

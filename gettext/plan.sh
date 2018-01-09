@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('GPL-2.0' 'lgpl2+')
 pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=105556dbc5c3fbbc2aa0edb46d22d055748b6f5c7cd7a8d99f8e7eb84e938be4
-pkg_deps=(core/glibc core/gcc-libs be/acl be/xz)
+pkg_deps=(core/glibc be/gcc-libs be/acl be/xz)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
   be/make be/gcc be/sed be/findutils

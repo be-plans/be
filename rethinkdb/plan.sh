@@ -19,7 +19,7 @@ pkg_build_deps=(
 )
 pkg_deps=(
   be/openssl
-  core/gcc-libs
+  be/gcc-libs
   core/protobuf
   be/zlib
   be/curl

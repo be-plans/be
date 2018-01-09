@@ -9,7 +9,7 @@ pkg_filename="${pkg_name}-${pkg_version}.src.tar.xz"
 pkg_source="http://llvm.org/releases/${pkg_version}/${pkg_name}-${pkg_version}.src.tar.xz"
 pkg_shasum="1fd90354b9cf19232e8f168faf2220e79be555df3aa743242700879e8fd329ee"
 pkg_deps=(
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   be/zlib
 )

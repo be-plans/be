@@ -10,7 +10,7 @@ pkg_shasum=bd42ae1059e935f795c69ea97b3de09fe9410a58a74b5d5e6836eb5067a445d9
 pkg_deps=(
   be/coreutils
   core/glibc
-  lilian/vim
+  be/vim
 )
 pkg_build_deps=(
   be/diffutils

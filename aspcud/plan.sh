@@ -9,7 +9,7 @@ pkg_source="https://github.com/potassco/${pkg_name}/archive/v${pkg_version}.tar.
 pkg_shasum="3645f08b079e1cc80e24cd2d7ae5172a52476d84e3ec5e6a6c0034492a6ea885"
 pkg_deps=(
   lilian/clingo
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
 )
 pkg_build_deps=(

@@ -7,7 +7,7 @@ pkg_license=('GPL-2.0')
 pkg_source=http://ftp.hosteurope.de/mirror/archive.mariadb.org//${pkg_name}-${pkg_version}/source/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=e533ee825582d9876ab3984664e0b343a8ae4f66eab58b8a9d64a4dfa4271031
 pkg_deps=(
-  core/gcc-libs be/ncurses be/zlib
+  be/gcc-libs be/ncurses be/zlib
 )
 pkg_build_deps=(
   be/gcc be/make be/coreutils

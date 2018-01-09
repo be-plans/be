@@ -29,7 +29,7 @@ pkg_build_deps=(
   be/texinfo
 )
 pkg_deps=(
-  core/glibc core/gcc-libs be/xz
+  core/glibc be/gcc-libs be/xz
   be/gettext be/pcre lilian/devicemapper
   lilian/elfutils be/bzip2 be/libcap
 )

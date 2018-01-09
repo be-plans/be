@@ -15,7 +15,7 @@ pkg_upstream_url="http://google.github.io/flatbuffers/index.html"
 
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
 )
 
 pkg_build_deps=(

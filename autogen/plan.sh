@@ -8,7 +8,7 @@ pkg_upstream_url=https://www.gnu.org/software/autogen/
 pkg_source="http://ftp.gnu.org/gnu/autogen/rel${pkg_version}/autogen-${pkg_version}.tar.xz"
 pkg_shasum=be3ba62e883185b6ee8475edae97d7197d701d6b9ad9c3d2df53697110c1bfd8
 pkg_deps=(
-  core/glibc core/gcc-libs be/guile
+  core/glibc be/gcc-libs be/guile
   lilian/libxml2 be/zlib
 )
 pkg_build_deps=(

@@ -297,7 +297,7 @@ _update_svc_run() {
 
 _add_busybox() {
   build_line "Adding Busybox package to run dependencies"
-  pkg_deps=(core/busybox-static ${pkg_deps[@]})
+  pkg_deps=(be/busybox-static ${pkg_deps[@]})
   debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
 }
 

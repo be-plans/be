@@ -11,7 +11,7 @@ pkg_deps=(core/glibc)
 pkg_bin_dirs=(bin)
 pkg_build_deps=(
   be/coreutils be/make be/gcc
-  core/busybox-static
+  be/busybox-static
 )
 pkg_dirname="lsof_${pkg_version}"
 

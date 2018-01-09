@@ -8,7 +8,7 @@ pkg_license=('BSD-2-Clause')
 pkg_source=https://github.com/jemalloc/jemalloc/releases/download/$pkg_version/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=9e4a9efba7dc4a7696f247c90c3fe89696de5f910f7deacf7e22ec521b1fa810
 pkg_dirname=${pkg_name}-${pkg_version}
-pkg_deps=(core/glibc core/gcc-libs)
+pkg_deps=(core/glibc be/gcc-libs)
 pkg_build_deps=(
   be/gcc
   be/make

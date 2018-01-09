@@ -9,9 +9,9 @@ pkg_description="Percona xtrabackup utilities"
 pkg_license=('GPL-2.0')
 pkg_bin_dirs=(bin)
 pkg_deps=(
-  core/glibc core/gcc-libs be/bash
+  core/glibc be/gcc-libs be/bash
   lilian/iproute2 be/gnupg be/pkg-config
-  be/ncurses lilian/vim be/curl
+  be/ncurses be/vim be/curl
   lilian/libev be/openssl be/zlib
   be/libgcrypt lilian/libgpg-error be/libtool
 )

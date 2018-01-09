@@ -13,14 +13,14 @@ pkg_include_dirs=(include)
 pkg_deps=(
   be/bash
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
   lilian/libpcap
   be/openssl
 )
 pkg_build_deps=(
   be/make
   be/gcc
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   lilian/python2
 )

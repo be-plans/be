@@ -9,7 +9,7 @@ pkg_source="https://ftp.gnu.org/pub/gnu/guile/guile-${pkg_version}.tar.xz"
 pkg_shasum=e8442566256e1be14e51fc18839cd799b966bc5b16c6a1d7a7c35155a8619d82
 pkg_deps=(
   be/bdwgc
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   be/gmp
   be/libatomic_ops

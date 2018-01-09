@@ -2,12 +2,14 @@ source ../xz/plan.sh
 
 pkg_name=xz-musl
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_deps=(lilian/musl)
+pkg_deps=(be/musl)
 
 pkg_disabled_features=(glibc)
 source ../defaults.sh
 
 do_prepare() {
+  do_default_prepare
+
   export CC=musl-gcc
   build_line "Setting CC=$CC"
 

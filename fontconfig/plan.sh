@@ -16,7 +16,7 @@ pkg_deps=(
   lilian/freetype
   lilian/libpng
   be/expat
-  core/gcc-libs
+  be/gcc-libs
 )
 pkg_build_deps=(be/gcc be/make be/coreutils be/python
                 be/pkg-config be/diffutils be/libtool

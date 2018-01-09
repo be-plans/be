@@ -8,7 +8,7 @@ pkg_license=('MIT')
 pkg_source="https://github.com/potassco/clingo/archive/v${pkg_version}.tar.gz"
 pkg_shasum="57d8979b0972a091e1921309ca9ba9c18dd0cf83afcfb1586a8c0bff54ed8b9b"
 pkg_deps=(
-  core/gcc-libs core/glibc
+  be/gcc-libs core/glibc
 )
 pkg_build_deps=(
   lilian/doxygen be/cmake be/make

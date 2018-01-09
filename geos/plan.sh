@@ -14,7 +14,7 @@ pkg_build_deps=(
 )
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

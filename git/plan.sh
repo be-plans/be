@@ -15,7 +15,7 @@ pkg_deps=(
   be/curl
   be/expat
   be/gettext
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   be/openssh
   be/perl

@@ -41,7 +41,7 @@ Most non-trivial apps need more than their own codebase to run correctly. Many h
 
 The following Habitat package dependencies will be injected into your app's Plan:
 
-* [`core/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
+* [`be/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
 * `core/git`: Used to detect if your app exists within a git repository to better support installing your app while honoring the `.gitignore` file. Will be injected into your Plan's `pkg_build_deps` array.
 
 ### Detected Dependencies
@@ -90,7 +90,7 @@ pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
 pkg_scaffolding=core/scaffolding-ruby
-pkg_build_deps=(core/rust)
+pkg_build_deps=(be/rust)
 ```
 
 ## Ruby Version
@@ -499,7 +499,7 @@ If your database is not currently running in a Habitat ring under a Supervisor, 
 [12factor_processes]: https://12factor.net/processes
 [bindings]: https://www.habitat.sh/docs/run-packages-binding/
 [commit_lockfile]: http://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/
-[`core/busybox-static`]: https://app.habitat.sh/#/pkgs/core/busybox-static
+[`be/busybox-static`]: https://app.habitat.sh/#/pkgs/be/busybox-static
 [`lilian/ruby`]: https://app.habitat.sh/#/pkgs/lilian/ruby
 [Elasticsearch]: https://www.elastic.co/products/elasticsearch
 [`Gemfile`]: http://bundler.io/man/gemfile.5.html

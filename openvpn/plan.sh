@@ -10,7 +10,7 @@ pkg_deps=(
 )
 pkg_build_deps=(
   be/gcc be/coreutils be/make
-  core/busybox-static
+  be/busybox-static
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

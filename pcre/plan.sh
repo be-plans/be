@@ -9,7 +9,7 @@ pkg_source="https://ftp.pcre.org/pub/${pkg_name}/${pkg_name}-${pkg_version}.tar.
 pkg_shasum=e62c7eac5ae7c0e7286db61ff82912e1c0b7a0c13706616e94a7dd729321b530
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
 )
 pkg_build_deps=(
   be/coreutils

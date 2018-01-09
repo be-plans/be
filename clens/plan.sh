@@ -8,7 +8,7 @@ pkg_shasum=064ac9954d38633e2cff6b696fd049dedc3e90b79acffbee1a87754bcf604267
 pkg_deps=(core/glibc)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
-  be/make be/gcc lilian/libbsd
+  be/make be/gcc be/libbsd
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -17,11 +17,11 @@ source ../defaults.sh
 
 do_build() {
   mkdir -pv obj
-  make LOCALBASE=$pkg_prefix
+  make -j"$(nproc)" LOCALBASE=$pkg_prefix
 }
 
 do_install() {
-  make LOCALBASE=$pkg_prefix install
+  make -j"$(nproc)" LOCALBASE=$pkg_prefix install
 }
 
 
@@ -33,5 +33,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/diffutils be/make be/patch lilian/libbsd)
+  pkg_build_deps=(be/gcc be/coreutils be/diffutils be/make be/patch be/libbsd)
 fi

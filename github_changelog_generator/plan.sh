@@ -7,7 +7,7 @@ pkg_description="Changelog generation has never been so easy. Fully automate cha
   this gem generate change log file based on tags, issues and merged pull requests from Github \
   issue tracker."
 pkg_upstream_url="https://github.com/skywinder/github-changelog-generator/blob/master/github_changelog_generator.gemspec"
-pkg_deps=(lilian/ruby lilian/git be/cacerts core/busybox-static)
+pkg_deps=(lilian/ruby lilian/git be/cacerts be/busybox-static)
 pkg_build_deps=()
 pkg_bin_dirs=(bin)
 

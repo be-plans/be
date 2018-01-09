@@ -9,7 +9,7 @@ pkg_deps=(
   be/bc
   be/coreutils
   be/gawk
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   be/grep
   lilian/man-db

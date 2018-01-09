@@ -10,12 +10,12 @@ pkg_shasum=3a48a9d6c97750bfbd535feeb5be0111db6406ddb7bb79fc680809cda6d828a5
 pkg_bin_dirs=(bin)
 pkg_build_deps=(
   be/gcc
-  core/gcc-libs
+  be/gcc-libs
   be/make
   be/perl
 )
 pkg_deps=(
-  core/gcc-libs
+  be/gcc-libs
 )
 
 source ../defaults.sh

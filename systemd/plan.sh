@@ -27,7 +27,7 @@ pkg_build_deps=(
   be/dbus
   be/expat
   be/gcc
-  core/gcc-libs
+  be/gcc-libs
   be/gettext
   core/glibc
   be/gperf

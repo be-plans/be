@@ -9,7 +9,7 @@ pkg_source=$pkg_upstream_url/files/$pkg_name/$pkg_name-$pkg_version.tar.bz2
 pkg_shasum=b891d267cdbbbd11cf34751f66c21c4a7fdc0eec3c1b53be2c40dca073b7daa4
 pkg_deps=(
   be/coreutils
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   lilian/python2
   lilian/userspace-rcu

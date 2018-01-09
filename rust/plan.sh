@@ -11,8 +11,10 @@ pkg_dirname=${pkg_name}-${pkg_version}-x86_64-unknown-linux-gnu
 pkg_shasum=8cf4e840041fb05721673836997c5aac5673f733660927dfb64b8d653a3a94fa
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
-pkg_deps=(core/glibc core/gcc-libs be/zlib be/gcc be/cacerts core/busybox-static)
+pkg_deps=(core/glibc be/gcc-libs be/zlib be/gcc be/cacerts be/busybox-static)
 pkg_build_deps=(be/patchelf be/findutils be/coreutils)
+
+source ../defaults.sh
 
 _target_sources=(
   $_url_base/${pkg_name}-std-${pkg_version}-x86_64-unknown-linux-musl.tar.gz

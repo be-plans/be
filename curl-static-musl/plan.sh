@@ -18,7 +18,7 @@ pkg_build_deps=(
   be/coreutils
   be/gcc
   be/make
-  lilian/musl
+  be/musl
   be/openssl -musl
   be/zlib-musl
 )

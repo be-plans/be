@@ -12,7 +12,7 @@ pkg_source=https://www.python.org/ftp/python/${pkg_version}/${pkg_dirname}.tar.x
 pkg_shasum=159b932bf56aeaa76fd66e7420522d8c8853d486b8567c459b84fe2ed13bcaba
 pkg_deps=(
   be/bzip2
-  core/gcc-libs
+  be/gcc-libs
   be/gdbm
   core/glibc
   be/ncurses

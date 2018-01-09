@@ -9,7 +9,7 @@ pkg_source="http://mirrors.peers.community/mirrors/gnu/${pkg_name}/${pkg_name}-$
 pkg_shasum=588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
   be/gcc
 )
 pkg_build_deps=(be/make)

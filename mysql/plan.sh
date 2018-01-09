@@ -20,7 +20,7 @@ EOF
 pkg_deps=(
   be/coreutils
   be/gawk
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   be/grep
   be/inetutils

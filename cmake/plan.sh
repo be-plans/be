@@ -10,7 +10,7 @@ pkg_source="https://cmake.org/files/v${_base_version}/cmake-${pkg_version}.tar.g
 pkg_shasum=7be36ee24b0f5928251b644d29f5ff268330a916944ef4a75e23ba01e7573284
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
 )
 pkg_build_deps=(
   be/coreutils

@@ -7,7 +7,7 @@ pkg_source=http://download.oracle.com/berkeley-db/${pkg_name}-${pkg_version}.tar
 pkg_shasum=a9c5e2b004a5777aa03510cfe5cd766a4a3b777713406b02809c17c8e0e7a8fb
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
 )
 pkg_build_deps=(
   be/coreutils

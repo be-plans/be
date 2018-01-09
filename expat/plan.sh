@@ -9,7 +9,7 @@ pkg_source="https://downloads.sourceforge.net/project/${pkg_name}/${pkg_name}/${
 pkg_shasum=d9dc32efba7e74f788fcc4f212a43216fc37cf5f23f4c2339664d473353aedf6
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
 )
 pkg_build_deps=(
   be/coreutils

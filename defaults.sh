@@ -67,6 +67,7 @@ _compiler_flags() {
   test -z "${_be_no_relro}" && be_ldflags="${be_ldflags:--Wl,-Bsymbolic-functions -Wl,-z,relro}"
   be_ldflags="${be_ldflags} -Wl,--as-needed"
 
+  export RUSTFLAGS="${RUSTFLAGS} -C target-cpu=x86-64 -C target-feature=+ssse3,+avx"
   export CFLAGS="${CFLAGS} ${be_optimizations} ${be_protection} ${be_generic_flags} ${be_pic_flag} "
   export CXXFLAGS="${CXXFLAGS} ${be_cxxstd} -fuse-cxa-atexit ${be_optimizations} ${be_protection} ${be_generic_flags} ${be_pic_flag} "
   export CPPFLAGS="${CPPFLAGS} ${be_generic_flags} "

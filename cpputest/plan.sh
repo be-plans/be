@@ -13,7 +13,7 @@ pkg_source="https://github.com/cpputest/${pkg_name}/archive/v${pkg_version}.tar.
 pkg_shasum="2b95bb4a568f680cdcca678345a2c41c028275471c2ed7bf0b6f6f1f689c3b76"
 pkg_upstream_url="http://cpputest.github.io"
 pkg_deps=(
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   be/libtool
 )

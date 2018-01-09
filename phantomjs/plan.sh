@@ -10,7 +10,7 @@ pkg_shasum=86dd9a4bf4aee45f1a84c9f61cf1947c1d6dce9b9e8d2a907105da7852460d2f
 # Ensure we depend on all the libraries that the prebuilt phantomjs
 # links against here:
 pkg_deps=(
-  core/glibc core/gcc-libs
+  core/glibc be/gcc-libs
   lilian/freetype lilian/fontconfig
   be/zlib lilian/libpng be/expat
 )

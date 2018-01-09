@@ -11,7 +11,7 @@ pkg_shasum=e406cc940835c79a4ddd8a1d3e1522035c332314176a309978041fde71f79687
 pkg_dirname="${pkg_name}-${_pkg_git_tree}"
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
 )
 pkg_build_deps=(
   be/gcc

@@ -15,7 +15,7 @@ pkg_deps=(
   be/expat
   lilian/fontconfig
   lilian/freetype
-  core/gcc-libs
+  be/gcc-libs
   lilian/glib
   core/glibc
   lilian/libffi

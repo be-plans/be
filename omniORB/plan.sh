@@ -12,7 +12,7 @@ pkg_source="https://downloads.sourceforge.net/omniorb/${pkg_name}-${pkg_version}
 pkg_shasum=ddd909ce31014be2beebf67a5e9fabbf03b5bb0c26b8c53ab64d470d77348ece
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
   be/coreutils
 )
 pkg_build_deps=(

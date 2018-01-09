@@ -5,7 +5,7 @@ pkg_license=('BSD')
 pkg_source=nosuchfile.tar.gz
 pkg_bin_dirs=(bin)
 pkg_deps=(core/glibc be/gcc)
-pkg_build_deps=(core/rust be/gcc be/cacerts lilian/protobuf)
+pkg_build_deps=(be/rust be/gcc be/cacerts lilian/protobuf)
 
 source ../defaults.sh
 

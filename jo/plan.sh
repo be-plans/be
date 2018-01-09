@@ -9,7 +9,7 @@ pkg_source="https://github.com/jpmens/${pkg_name}/releases/download/v${pkg_versi
 pkg_shasum=63ed4766c2e0fcb5391a14033930329369f437d7060a11d82874e57e278bda5f
 pkg_deps=()
 pkg_build_deps=(
-  be/linux-headers-musl lilian/musl be/make
+  be/linux-headers-musl be/musl be/make
   be/gcc be/diffutils
 )
 pkg_bin_dirs=(bin)

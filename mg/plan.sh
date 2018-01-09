@@ -6,11 +6,11 @@ pkg_license=('publicdomain')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://homepage.boetes.org/software/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=26450b2564bec0b0afc465fd24a1917dc31508c5500c3a36823b9c763a2b8636
-pkg_deps=(core/glibc be/ncurses lilian/libbsd)
+pkg_deps=(core/glibc be/ncurses be/libbsd)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
   be/make be/gcc be/sed
-  be/pkg-config lilian/clens
+  be/pkg-config be/clens
 )
 pkg_bin_dirs=(bin)
 
@@ -18,6 +18,9 @@ source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
+
+  be_remove_linker_flag "-Wl,--as-needed"
+
   cat $PLAN_CONTEXT/cleanup.patch \
     | sed \
       -e "s,@prefix@,$pkg_prefix,g" \
@@ -56,5 +59,5 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/pkg-config be/coreutils be/sed be/diffutils be/make be/patch lilian/clens)
+  pkg_build_deps=(be/gcc be/pkg-config be/coreutils be/sed be/diffutils be/make be/patch be/clens)
 fi

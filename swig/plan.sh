@@ -13,7 +13,7 @@ pkg_build_deps=(
   be/make
 )
 pkg_deps=(
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   be/pcre
 )

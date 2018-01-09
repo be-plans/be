@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://www.imagemagick.org/download/releases/ImageMagick-${pkg_version}.tar.xz
 pkg_shasum=0058fcde533986334458a5c99600b1b9633182dd9562cbad4ba618c5ccf2a28f
 pkg_deps=(
-    core/glibc core/gcc-libs
+    core/glibc be/gcc-libs
     be/zlib lilian/libpng be/xz
 )
 pkg_build_deps=(

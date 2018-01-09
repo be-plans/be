@@ -52,7 +52,7 @@ pkg_deps=(
 pkg_build_deps=(
   be/make
   be/gcc
-  core/gcc-libs
+  be/gcc-libs
 )
 pkg_upstream_url=https://www.fluentd.org/
 pkg_description="Fluentd is an open source data collector, which lets \

@@ -8,7 +8,7 @@ pkg_license=('Revised BSD')
 pkg_source=https://artifacts.elastic.co/downloads/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=0420e877a8b986485244f603770737e9e4e47186fdfa1093768a11e391e3d9f4
 pkg_deps=(
-  core/busybox-static
+  be/busybox-static
   core/glibc
   lilian/jre8
 )

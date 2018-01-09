@@ -13,7 +13,7 @@ pkg_include_dirs=(include)
 pkg_deps=(
   be/bzip2
   be/curl
-  core/gcc-libs
+  be/gcc-libs
   lilian/glib
   core/glibc
   lilian/jemalloc

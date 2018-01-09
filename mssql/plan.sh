@@ -17,7 +17,7 @@ pkg_exposes=(port)
 
 pkg_deps=(
   core/libcxx
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   lilian/jemalloc
   be/openssl

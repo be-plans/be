@@ -9,7 +9,7 @@ pkg_source=https://nmap.org/dist/${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=a8796ecc4fa6c38aad6139d9515dc8113023a82e9d787e5a5fb5fa1b05516f21
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
   be/openssl
   be/pcre
   be/zlib

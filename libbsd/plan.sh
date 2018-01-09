@@ -13,6 +13,8 @@ pkg_build_deps=(
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 
+source ../defaults.sh
+
 do_install() {
   do_default_install
 

@@ -12,7 +12,7 @@ pkg_shasum=26f6a2e247dd0b9ac4003d12cf1bd8647985255fdd7659b60e36a7a26fce15de
 pkg_filename="dotnet-debian-x64.${pkg_version}.tar.gz"
 pkg_deps=(
   be/curl
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   lilian/icu52
   core/krb5

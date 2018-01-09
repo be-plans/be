@@ -9,7 +9,7 @@ pkg_source="http://dev-www.libreoffice.org/src/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum="3d569869d27b48860210c758c4f313082103a5e58219a7669b52bfd29d674780"
 pkg_deps=(
   be/bash
-  core/gcc-libs
+  be/gcc-libs
 )
 
 pkg_build_deps=(

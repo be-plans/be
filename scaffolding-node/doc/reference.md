@@ -41,7 +41,7 @@ Most non-trivial apps need more than their own codebase to run correctly. Many h
 
 The following Habitat package dependencies will be injected into your app's Plan:
 
-* [`core/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
+* [`be/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
 * `core/git`: Used to detect if your app exists within a git repository to better support installing your app while honoring the `.gitignore` file. Will be injected into your Plan's `pkg_build_deps` array.
 
 ### Detected Dependencies
@@ -379,7 +379,7 @@ Other Scaffolding packages may offer framework-specific app type detection in or
 [12factor_port]: https://12factor.net/port-binding
 [12factor_processes]: https://12factor.net/processes
 [bindings]: https://www.habitat.sh/docs/run-packages-binding/
-[`core/busybox-static`]: https://app.habitat.sh/#/pkgs/core/busybox-static
+[`be/busybox-static`]: https://app.habitat.sh/#/pkgs/be/busybox-static
 [`lilian/node`]: https://app.habitat.sh/#/pkgs/lilian/node
 [`core/yarn`]: https://app.habitat.sh/#/pkgs/core/yarn
 [Elasticsearch]: https://www.elastic.co/products/elasticsearch

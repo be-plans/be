@@ -10,7 +10,7 @@ pkg_source=$_url_base/${_distname}-nightly-x86_64-unknown-linux-gnu.tar.gz
 pkg_dirname=${_distname}-nightly-x86_64-unknown-linux-gnu
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
-pkg_deps=(core/glibc core/gcc-libs be/zlib be/gcc be/cacerts core/busybox-static)
+pkg_deps=(core/glibc be/gcc-libs be/zlib be/gcc be/cacerts be/busybox-static)
 pkg_build_deps=(be/patchelf be/findutils be/coreutils be/sed)
 
 _target_sources=(

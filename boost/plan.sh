@@ -12,12 +12,12 @@ pkg_dirname=${_pkg_dirname}
 
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
 )
 
 pkg_build_deps=(
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
   be/coreutils
   be/diffutils
   be/patch

@@ -10,7 +10,7 @@ pkg_deps=(
   core/dotnet-core
   be/gcc
   core/glibc
-  core/gcc-libs
+  be/gcc-libs
   core/icu/52.1
   be/util-linux
   core/krb5

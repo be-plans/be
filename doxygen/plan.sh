@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="https://ftp.stack.nl/pub/users/dimitri/${pkg_name}-${pkg_version}.src.tar.gz"
 pkg_shasum=af667887bd7a87dc0dbf9ac8d86c96b552dfb8ca9c790ed1cbffaa6131573f6b
 pkg_deps=(
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   be/libiconv
 )

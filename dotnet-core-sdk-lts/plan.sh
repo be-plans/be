@@ -13,7 +13,7 @@ pkg_filename="dotnet-dev-debian-x64.${pkg_version}.tar.gz"
 pkg_deps=(
   be/coreutils
   be/curl
-  core/gcc-libs
+  be/gcc-libs
   core/glibc
   lilian/icu52
   core/krb5

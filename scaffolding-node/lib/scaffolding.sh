@@ -443,9 +443,9 @@ _update_svc_run() {
 
 _add_busybox() {
   build_line "Adding Busybox package to run dependencies"
-  # Need to specify core/busybox-static last
+  # Need to specify be/busybox-static last
   # So that it does not override the paths of be/coreutils
-  pkg_deps=(${pkg_deps[@]} core/busybox-static)
+  pkg_deps=(${pkg_deps[@]} be/busybox-static)
   debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
 }
 

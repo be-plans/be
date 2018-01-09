@@ -32,7 +32,7 @@ if [[ -n "$FIRST_PASS" ]]; then
   # that relies on the full gcc version of these shared libraries
   pkg_deps=(core/glibc be/gcc)
 else
-  pkg_deps=(core/glibc core/gcc-libs)
+  pkg_deps=(core/glibc be/gcc-libs)
 fi
 
 do_begin() {

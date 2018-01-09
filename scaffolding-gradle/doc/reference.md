@@ -43,7 +43,7 @@ Most non-trivial apps need more than their own codebase to run correctly. Many h
 
 The following Habitat package dependencies will be injected into your app's Plan:
 
-* [`core/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
+* [`be/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
 
 ### Detected Dependencies
 
@@ -368,7 +368,7 @@ This app type will be built using a variant of `gradle installDist -x test`.
 [12factor_processes]: https://12factor.net/processes
 [bindings]: https://www.habitat.sh/docs/run-packages-binding/
 [`build.gradle`]: https://docs.gradle.org/current/userguide/writing_build_scripts.html
-[`core/busybox-static`]: https://app.habitat.sh/#/pkgs/core/busybox-static
+[`be/busybox-static`]: https://app.habitat.sh/#/pkgs/be/busybox-static
 [`core/node`]: https://app.habitat.sh/#/pkgs/core/node
 [`core/yarn`]: https://app.habitat.sh/#/pkgs/core/yarn
 [Elasticsearch]: https://www.elastic.co/products/elasticsearch
