@@ -1,10 +1,10 @@
 pkg_name=file
 pkg_origin=core
-pkg_version=5.31
+pkg_version=5.32
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('custom')
-pkg_source=ftp://ftp.astron.com/pub/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=09c588dac9cff4baa054f51a36141793bcf64926edc909594111ceae60fce4ee
+pkg_source=http://download.openpkg.org/components/cache/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
+pkg_shasum=8639dc4d1b21e232285cd483604afc4a6ee810710e00e579dbe9591681722b50
 pkg_deps=(core/glibc be/zlib)
 pkg_build_deps=(
   be/coreutils be/diffutils be/patch
