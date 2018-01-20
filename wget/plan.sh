@@ -1,13 +1,13 @@
 pkg_name=wget
 pkg_distname=$pkg_name
 pkg_origin=core
-pkg_version=1.19.2
+pkg_version=1.19.4
 pkg_license=('GPL-3.0+')
 pkg_description="GNU Wget is a free software package for retrieving files using HTTP, HTTPS, FTP and FTPS the most widely-used Internet protocols."
 pkg_upstream_url=https://www.gnu.org/software/wget/
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.tar.gz
-pkg_shasum=4f4a673b6d466efa50fbfba796bd84a46ae24e370fa562ede5b21ab53c11a920
+pkg_shasum=93fb96b0f48a20ff5be0d9d9d3c4a986b469cb853131f9d5fe4cc9cecbc8b5b5
 pkg_deps=(
   core/glibc
   be/libidn
