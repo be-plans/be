@@ -1,0 +1,16 @@
+diff --git a/ld/configure.host b/ld/configure.host
+index 1e128852d2..f010219013 100644
+--- a/ld/configure.host
++++ b/ld/configure.host
+@@ -28,4 +28,11 @@ HDEFINES=
+ case "${host}" in
+      m88*-*-dgux*)
+ 	HDEFINES=-D__using_DGUX ;;
++
++    *-*-linux*)
++        HOSTING_CRT0='-dynamic-linker @dynamic_linker@ @glibc_lib@/crt1.o @glibc_lib@/crti.o `if [ -f ../gcc/crtbegin.o ]; then echo ../gcc/crtbegin.o; else ${CC} --print-file-name=crtbegin.o; fi`'
++        HOSTING_SCRT0='-dynamic-linker @dynamic_linker@ @glibc_lib@/Scrt1.o @glibc_lib@/crti.o `if [ -f ../gcc/crtbeginS.o ]; then echo ../gcc/crtbeginS.o; else ${CC} --print-file-name=crtbeginS.o; fi`'
++        HOSTING_SLIBS='-L@glibc_lib@ -L@zlib_lib@ '"$HOSTING_LIBS"' `if [ -f ../gcc/crtendS.o ]; then echo ../gcc/crtendS.o; else ${CC} --print-file-name=crtendS.o; fi` @glibc_lib@/crtn.o'
++        HOSTING_LIBS='-L@glibc_lib@ -L@zlib_lib@ '"$HOSTING_LIBS"' `if [ -f ../gcc/crtend.o ]; then echo ../gcc/crtend.o; else ${CC} --print-file-name=crtend.o; fi` @glibc_lib@/crtn.o'
++        ;;
+ esac
