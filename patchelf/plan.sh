@@ -1,15 +1,15 @@
 pkg_name=patchelf
-pkg_description="A small utility to modify the dynamic linker and RPATH of ELF executables"
 pkg_origin=core
 pkg_version=0.9
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('GPL-3.0')
+pkg_description="\
+A small utility to modify the dynamic linker and RPATH of ELF executables.\
+"
 pkg_upstream_url="https://nixos.org/patchelf.html"
-pkg_source=https://github.com/NixOS/${pkg_name}/archive/${pkg_version}.tar.gz
-pkg_shasum=cf0693e794229e19edcf2299427b5a352e0f4d4f06f9d3856e30ddb0344d5ce8
+pkg_license=('gplv3')
+pkg_source="http://releases.nixos.org/$pkg_name/${pkg_name}-$pkg_version/${pkg_name}-${pkg_version}.tar.gz"
+pkg_shasum="f2aa40a6148cb3b0ca807a1bf836b081793e55ec9e5540a5356d800132be7e0a"
 pkg_build_deps=(
-  be/autoconf
-  be/automake
   be/coreutils
   be/diffutils
   be/patch
@@ -30,9 +30,15 @@ if [[ -n "$FIRST_PASS" ]]; then
   # Waiting on gcc-libs to link libgcc and libstdc++, but because we need
   # this package to prepare gcc-libs, we'll do the cheap version first
   # that relies on the full gcc version of these shared libraries
-  pkg_deps=(core/glibc be/gcc)
+  pkg_deps=(
+    core/glibc
+    be/gcc
+  )
 else
-  pkg_deps=(core/glibc be/gcc-libs)
+  pkg_deps=(
+    core/glibc
+    be/gcc-libs
+  )
 fi
 
 do_begin() {
@@ -50,5 +56,7 @@ do_begin() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc)
+  pkg_build_deps=(
+    be/gcc
+  )
 fi

@@ -1,10 +1,15 @@
 pkg_name=automake
 pkg_origin=core
-pkg_version=1.15.1
+pkg_version=1.16
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gplv2+')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=af6ba39142220687c500f79b4aa2f181d9b24e4f8d8ec497cea4ba26c64bedaf
+pkg_description="\
+Automake is a tool for automatically generating Makefile.in files compliant \
+with the GNU Coding Standards.\
+"
+pkg_upstream_url="https://www.gnu.org/software/automake/"
+pkg_license=("GPL-2.0")
+pkg_source="http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz"
+pkg_shasum="f98f2d97b11851cbe7c2d4b4eaef498ae9d17a3c2ef1401609b7b4ca66655b8a"
 pkg_deps=(
   be/perl
 )
@@ -19,7 +24,6 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 
 source ../defaults.sh
-
 # ----------------------------------------------------------------------------
 # **NOTICE:** What follows are implementation details required for building a
 # first-pass, "stage1" toolchain and environment. It is only used when running

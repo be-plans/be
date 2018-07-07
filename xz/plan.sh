@@ -1,13 +1,21 @@
 pkg_name=xz
-pkg_distname=$pkg_name
+_distname="$pkg_name"
 pkg_origin=core
 pkg_version=5.2.3
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_description="\
+XZ Utils is free general-purpose data compression software with a high \
+compression ratio. XZ Utils were written for POSIX-like systems, but also work \
+on some not-so-POSIX systems. XZ Utils are the successor to LZMA Utils.\
+"
+pkg_upstream_url="http://tukaani.org/xz/"
 pkg_license=('gpl2+' 'lgpl2+')
-pkg_source=http://tukaani.org/${pkg_distname}/${pkg_distname}-${pkg_version}.tar.xz
-pkg_shasum=7876096b053ad598c31f6df35f7de5cd9ff2ba3162e5a5554e4fc198447e0347
-pkg_dirname=${pkg_distname}-${pkg_version}
-pkg_deps=(core/glibc)
+pkg_source="http://tukaani.org/${_distname}/${_distname}-${pkg_version}.tar.gz"
+pkg_shasum="71928b357d0a09a12a4b4c5fafca8c31c19b0e7d3b8ebb19622e96f26dbf28cb"
+pkg_dirname="${_distname}-${pkg_version}"
+pkg_deps=(
+  core/glibc
+)
 pkg_build_deps=(
   be/coreutils
   be/diffutils
@@ -19,6 +27,7 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+pkg_pconfig_dirs=(lib/pkgconfig)
 
 source ../defaults.sh
 
@@ -35,5 +44,10 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils)
+  pkg_build_deps=(
+    be/gcc
+    be/coreutils
+    be/sed
+    be/diffutils
+  )
 fi

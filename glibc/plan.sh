@@ -1,17 +1,25 @@
 pkg_name=glibc
 pkg_origin=core
-pkg_version=2.26
-pkg_description="Portable and high performance C library"
-pkg_upstream_url="https://www.gnu.org/software/libc/"
+pkg_version=2.27
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_description="\
+The GNU C Library project provides the core libraries for the GNU system and \
+GNU/Linux systems, as well as many other systems that use Linux as the \
+kernel. These libraries provide critical APIs including ISO C11, \
+POSIX.1-2008, BSD, OS-specific APIs and more. These APIs include such \
+foundational facilities as open, read, write, malloc, printf, getaddrinfo, \
+dlopen, pthread_create, crypt, login, exit and more.\
+"
+pkg_upstream_url="https://www.gnu.org/software/libc"
 pkg_license=('GPL-2.0' 'LGPL-2.0')
-pkg_source=https://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=e54e0a934cd2bc94429be79da5e9385898d2306b9eaf3c92d5a77af96190f6bd
+pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz"
+pkg_shasum="5172de54318ec0b7f2735e5a91d908afe1c9ca291fec16b5374d9faadfc1fc72"
 pkg_deps=(
   be/linux-headers
 )
 pkg_build_deps=(
   be/coreutils
+  be/bison
   be/diffutils
   be/patch
   be/make
@@ -30,7 +38,16 @@ do_prepare() {
 
   # The `/bin/pwd` path is hardcoded, so we'll add a symlink if needed.
   if [[ ! -r /bin/pwd ]]; then
-    ln -sv "$(pkg_path_for coreutils)/bin/pwd" /bin/pwd
+    # We can't use the `command -v pwd` trick here, as `pwd` is a shell
+    # builtin, and therefore returns the string of "pwd" (i.e. not the full
+    # path to the executable on `$PATH`). In a stage1 Studio, the coreutils
+    # package isn't built yet so we can't rely on using the `pkg_path_for`
+    # helper either.  Sweet twist, no?
+    if [[ "$STUDIO_TYPE" = "stage1" ]]; then
+      ln -sv /tools/bin/pwd /bin/pwd
+    else
+      ln -sv "$(pkg_path_for coreutils)/bin/pwd" /bin/pwd
+    fi
     _clean_pwd=true
   fi
 
@@ -72,9 +89,6 @@ do_prepare() {
   #
   # Source: https://lists.debian.org/debian-glibc/2013/11/msg00116.html
   patch -p1 < "$PLAN_CONTEXT/testsuite-fix.patch"
-
-  # Source: https://github.com/NixOS/nixpkgs/blob/8fcc92fc692b4ec7511530068cf0ab1e5d757082/pkgs/development/libraries/glibc/fix-x64-abi.patch
-  patch -p1 < "$PLAN_CONTEXT/fix-x64-abi.patch"
 
   # Adjust `scripts/test-installation.pl` to use our new dynamic linker
   sed -i "s|libs -o|libs -L${pkg_prefix}/lib -Wl,-dynamic-linker=${dynamic_linker} -o|" \
@@ -135,7 +149,8 @@ do_build() {
 # corresponds to your prefix, i.e. `(length of prefix path + 1)` to ensure that
 # you haven't really broken abi with your change."
 #
-# Source: https://sourceware.org/glibc/wiki/Testing/Testsuite#Known_testsuite_failures
+# Source:
+# https://sourceware.org/glibc/wiki/Testing/Testsuite#Known_testsuite_failures
 #
 # ## FAIL: posix/tst-getaddrinfo4
 #
@@ -149,14 +164,25 @@ do_check() {
     cd "../${pkg_name}-build"
     # One of the tests uses the hardcoded `bin/cat` path, so we'll add it, if
     # it doesn't exist.
+    # Checking for the binary on `$PATH` will work in both stage1 and default
+    # Studios.
     if [[ ! -r /bin/cat ]]; then
-      ln -sv "$(pkg_path_for coreutils)/bin/cat" /bin/cat
+      ln -sv "$(command -v cat)" /bin/cat
       _clean_cat=true
     fi
     # One of the tests uses the hardcoded `bin/echo` path, so we'll add it, if
     # it doesn't exist.
     if [[ ! -r /bin/echo ]]; then
-      ln -sv "$(pkg_path_for coreutils)/bin/echo" /bin/echo
+      # We can't use the `command -v echo` trick here, as `echo` is a shell
+      # builtin, and therefore returns the string of "echo" (i.e. not the full
+      # path to the executable on `$PATH`). In a stage1 Studio, the coreutils
+      # package isn't built yet so we can't rely on using the `pkg_path_for`
+      # helper either. Sweet twist, no?
+      if [[ "$STUDIO_TYPE" = "stage1" ]]; then
+        ln -sv /tools/bin/echo /bin/echo
+      else
+        ln -sv "$(pkg_path_for coreutils)/bin/echo" /bin/echo
+      fi
       _clean_echo=true
     fi
 
@@ -337,7 +363,8 @@ extract_src() {
     do_clean
     build_line "Unpacking $pkg_filename"
     do_unpack
-    mv -v "$HAB_CACHE_SRC_PATH/$pkg_dirname" "$HAB_CACHE_SRC_PATH/$build_dirname/$plan"
+    mv -v "$HAB_CACHE_SRC_PATH/$pkg_dirname" \
+      "$HAB_CACHE_SRC_PATH/$build_dirname/$plan"
   )
 }
 

@@ -1,24 +1,42 @@
 pkg_name=gettext
 pkg_origin=core
-pkg_version=0.19.8.1
+pkg_version=0.19.8
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('GPL-2.0' 'lgpl2+')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=105556dbc5c3fbbc2aa0edb46d22d055748b6f5c7cd7a8d99f8e7eb84e938be4
-pkg_deps=(core/glibc be/gcc-libs be/acl be/xz)
+pkg_description="GNU internationalization library."
+pkg_upstream_url="http://www.gnu.org/software/gettext/"
+pkg_license=('gplv2+' 'lgpl2+')
+pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.gz"
+pkg_shasum="3da4f6bd79685648ecf46dab51d66fcdddc156f41ed07e580a696a38ac61d48f"
+pkg_deps=(
+  core/glibc
+  be/gcc-libs
+  be/acl
+  be/xz
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed be/findutils
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
+  be/findutils
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
 source ../defaults.sh
+do_prepare() {
+  do_default_prepare
+
+  patch -p1 -i "$PLAN_CONTEXT/disable-test.patch"
+}
 
 do_build() {
-  ./configure --prefix="$pkg_prefix"
-  make -j $(nproc)
+  ./configure \
+    --prefix="$pkg_prefix"
+  make -j"$(nproc)"
 }
 
 do_check() {
@@ -34,5 +52,11 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils be/findutils)
+  pkg_build_deps=(
+    be/gcc
+    be/coreutils
+    be/sed
+    be/diffutils
+    be/findutils
+  )
 fi

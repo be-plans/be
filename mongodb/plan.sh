@@ -1,11 +1,11 @@
 pkg_name=mongodb
 pkg_origin=core
-pkg_version=3.2.13
+pkg_version=3.6.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="High-performance, schema-free, document-oriented database"
 pkg_license=('AGPL-3.0')
-pkg_source=http://downloads.mongodb.org/src/${pkg_name}-src-r${pkg_version}.tar.gz
-pkg_shasum=31492b99d12d6363a6ebcbba32269ce9e97dadedda8c470cbff8c1af227e9753
+pkg_source=https://fastdl.mongodb.org/src/mongodb-src-r3.6.4.tar.gz
+pkg_shasum=1a9697c3ad2f5545b5160d5e32d5f3c0f6f0a3371ceb9fa85961aec513acd7ac
 pkg_upstream_url=https://www.mongodb.com/
 pkg_filename=${pkg_name}-src-r${pkg_version}.tar.gz
 pkg_dirname=${pkg_name}-src-r${pkg_version}
@@ -13,9 +13,9 @@ pkg_deps=(be/gcc-libs core/glibc be/openssl)
 pkg_build_deps=(
   be/coreutils
   be/gcc
-  core/glibc
-  lilian/python2
-  lilian/scons
+  be/glibc
+  be/python2
+  core/scons/2.5.1
   be/openssl
 )
 pkg_bin_dirs=(bin)
@@ -54,13 +54,17 @@ do_prepare() {
 
     # because scons dislikes saving our variables, we will save our
     # variables within the construct ourselves
-    sed -i "840s@**envDict@ENV = os.environ, CPPPATH = ['$INCPATH'], LIBPATH = ['$LIBPATH'], CFLAGS = os.environ['CFLAGS'], CXXFLAGS = os.environ['CXXFLAGS'], LINKFLAGS = os.environ['LDFLAGS'], CC = os.environ['CC'], CXX = os.environ['CXX'], PATH = os.environ['PATH'], **envDict@g" SConstruct
+    sed -i "891s@**envDict@ENV = os.environ, CPPPATH = ['$INCPATH'], LIBPATH = ['$LIBPATH'], CFLAGS = os.environ['CFLAGS'], CXXFLAGS = os.environ['CXXFLAGS'], LINKFLAGS = os.environ['LDFLAGS'], CC = os.environ['CC'], CXX = os.environ['CXX'], PATH = os.environ['PATH'], **envDict@g" SConstruct
 }
 
 do_build() {
-    scons core --prefix="$pkg_prefix" --ssl -j"$(nproc)"
+    # This is currently necessary because MongoDB still uses Python 2.x
+    # When it supports Python 3.x, this line will be unnecessary
+    pip install typing pyyaml cheetah3
+
+    scons core --disable-warnings-as-errors --prefix="$pkg_prefix" --ssl -j"$(nproc)"
 }
 
 do_install() {
-    scons install --prefix="$pkg_prefix" --ssl
+    scons install --disable-warnings-as-errors --prefix="$pkg_prefix" --ssl
 }

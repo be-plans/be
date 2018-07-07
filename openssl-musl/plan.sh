@@ -1,16 +1,28 @@
 source ../openssl/plan.sh
 
 pkg_name=openssl-musl
+pkg_origin=core
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_deps=(be/musl be/zlib-musl be/cacerts)
+pkg_description="\
+OpenSSL is an open source project that provides a robust, commercial-grade, \
+and full-featured toolkit for the Transport Layer Security (TLS) and Secure \
+Sockets Layer (SSL) protocols. It is also a general-purpose cryptography \
+library.\
+"
+pkg_upstream_url="https://www.openssl.org"
+pkg_license=('OpenSSL')
+pkg_deps=(
+  be/musl
+  be/zlib-musl
+  be/cacerts
+)
 
 pkg_disabled_features=(glibc)
 source ../defaults.sh
 
 do_prepare() {
   do_default_prepare
-
-  PLAN_CONTEXT=$(abspath $PLAN_CONTEXT/../openssl) _common_prepare
+  PLAN_CONTEXT="$(abspath "$PLAN_CONTEXT/../openssl")" _common_prepare
 
   dynamic_linker="$(pkg_path_for musl)/lib/ld-musl-x86_64.so.1"
   LDFLAGS="$LDFLAGS -Wl,--dynamic-linker=$dynamic_linker"

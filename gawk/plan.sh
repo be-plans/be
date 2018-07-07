@@ -2,9 +2,15 @@ pkg_name=gawk
 pkg_origin=core
 pkg_version=4.2.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_description="\
+The awk utility interprets a special-purpose programming language that makes \
+it possible to handle simple data-reformatting jobs with just a few lines of \
+code.\
+"
+pkg_upstream_url="http://www.gnu.org/software/gawk/"
 pkg_license=('gplv3+')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=d4f3cd31c001fd0ed52832d4fbfbdfeaa38ad541c182f80ff8fdf87324a6a9f2
+pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.gz"
+pkg_shasum="c88046c6e8396ee548bcb941e16def809b7b55b60a1044b5dd254094f347c7d9"
 pkg_deps=(
   core/glibc
   be/mpfr
@@ -35,5 +41,9 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed)
+  pkg_build_deps=(
+    be/gcc
+    be/coreutils
+    be/sed
+  )
 fi

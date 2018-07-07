@@ -2,13 +2,28 @@ pkg_name=inetutils
 pkg_origin=core
 pkg_version=1.9.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('GPL-3.0')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=849d96f136effdef69548a940e3e0ec0624fc0c81265296987986a0dd36ded37
-pkg_deps=(core/glibc be/libcap be/ncurses)
+pkg_description="\
+Inetutils is a collection of common network programs. It includes: an ftp \
+client and server, a telnet client and server, an rsh client and server, an \
+rlogin client and server, a tftp client and server, and much more...\
+"
+pkg_upstream_url="http://www.gnu.org/software/inetutils/"
+pkg_license=('gplv3+')
+pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz"
+pkg_shasum="849d96f136effdef69548a940e3e0ec0624fc0c81265296987986a0dd36ded37"
+pkg_deps=(
+  core/glibc
+  be/libcap
+  be/ncurses
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed be/grep
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
+  be/grep
 )
 pkg_bin_dirs=(bin)
 
@@ -27,7 +42,7 @@ do_build() {
   #   this codebase, such as `telnetd`, `ftpd`, etc.--a dedicated Plan for
   #   any of these service components is much preferred
   ./configure \
-    --prefix=$pkg_prefix \
+    --prefix="$pkg_prefix" \
     --disable-logger \
     --disable-whois \
     --disable-rcp \
@@ -42,7 +57,7 @@ do_install() {
   do_default_install
 
   # `libexec/` directory is not used
-  rm -rfv $pkg_prefix/libexec
+  rm -rfv "$pkg_prefix/libexec"
 }
 
 
@@ -54,5 +69,10 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed be/grep)
+  pkg_build_deps=(
+    be/gcc
+    be/coreutils
+    be/sed
+    be/grep
+  )
 fi

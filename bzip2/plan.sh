@@ -1,12 +1,18 @@
 pkg_name=bzip2
-pkg_distname=$pkg_name
+_distname=$pkg_name
 pkg_origin=core
 pkg_version=1.0.6
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_description="\
+bzip2 is a free and open-source file compression program that uses the \
+Burrows–Wheeler algorithm. It only compresses single files and is not a file \
+archiver.\
+"
+pkg_upstream_url="http://www.bzip.org/"
 pkg_license=('bzip2')
-pkg_source=http://www.bzip.org/$pkg_version/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=a2848f34fcd5d6cf47def00461fcb528a0484d8edef8208d6d2e2909dc61d9cd
-pkg_dirname=${pkg_distname}-${pkg_version}
+pkg_source="http://www.bzip.org/$pkg_version/${pkg_name}-${pkg_version}.tar.gz"
+pkg_shasum="a2848f34fcd5d6cf47def00461fcb528a0484d8edef8208d6d2e2909dc61d9cd"
+pkg_dirname="${_distname}-${pkg_version}"
 pkg_deps=(
   core/glibc
 )
@@ -23,6 +29,7 @@ pkg_lib_dirs=(lib)
 
 _common_prepare() {
   # Makes the symbolic links in installation relative vs. absolute
+  # shellcheck disable=SC2016
   sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
 
   # Ensure that the man pages are installed under share/man
@@ -50,21 +57,23 @@ do_check() {
 }
 
 do_install() {
-  local maj=$(echo $pkg_version | cut -d "." -f 1)
-  local maj_min=$(echo $pkg_version | cut -d "." -f 1-2)
+  local maj maj_min
+  maj=$(echo $pkg_version | cut -d "." -f 1)
+  maj_min=$(echo $pkg_version | cut -d "." -f 1-2)
 
   make -j$(nproc) install PREFIX="$pkg_prefix"
 
   # Replace some hard links with symlinks
-  rm -fv $pkg_prefix/bin/{bunzip2,bzcat}
-  ln -sv bzip2 $pkg_prefix/bin/bunzip2
-  ln -sv bzip2 $pkg_prefix/bin/bzcat
+  rm -fv "$pkg_prefix/bin"/{bunzip2,bzcat}
+  ln -sv bzip2 "$pkg_prefix/bin/bunzip2"
+  ln -sv bzip2 "$pkg_prefix/bin/bzcat"
 
   # Install the shared library and its symlinks
-  cp -v $HAB_CACHE_SRC_PATH/$pkg_dirname/libbz2.so.$pkg_version $pkg_prefix/lib
-  ln -sv libbz2.so.$pkg_version $pkg_prefix/lib/libbz2.so
-  ln -sv libbz2.so.$pkg_version $pkg_prefix/lib/libbz2.so.$maj
-  ln -sv libbz2.so.$pkg_version $pkg_prefix/lib/libbz2.so.$maj_min
+  cp -v "$HAB_CACHE_SRC_PATH/$pkg_dirname/libbz2.so.$pkg_version" \
+    "$pkg_prefix/lib"
+  ln -sv "libbz2.so.$pkg_version" "$pkg_prefix/lib/libbz2.so"
+  ln -sv "libbz2.so.$pkg_version" "$pkg_prefix/lib/libbz2.so.$maj"
+  ln -sv "libbz2.so.$pkg_version" "$pkg_prefix/lib/libbz2.so.$maj_min"
 }
 
 

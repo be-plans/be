@@ -12,16 +12,16 @@ You can browse all available packages that you can leverage and use, including p
 
 ## Contributing
 
-  - [CONTRIBUTING.md](CONTRIBUTING.md)  
-    _Contains most of the information about contributing to this portion of the Habitat project._ 
-  - [MAINTAINERS.md](MAINTAINERS.md)  
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+    _Contains most of the information about contributing to this portion of the Habitat project._
+- [MAINTAINERS.md](MAINTAINERS.md)
     _Contains the current list of Core-Plans maintainers_
-  - [CODEOWNERS](CODEOWNERS)  
+- [CODEOWNERS](CODEOWNERS)
     _Contains Owner to Package mapping used in GitHub for AuthZ_
-  - [MEMBERSHIP.md](MEMBERSHIP.md)  
+- [MEMBERSHIP.md](MEMBERSHIP.md)
     _Contains details of contributor roles in the Habitat community_
 
-**Keep in mind that a core plan must by definition be abstracted to serve a wide array of users in service of their applications.** 
+**Keep in mind that a core plan must by definition be abstracted to serve a wide array of users in service of their applications.**
 
 If you are building a plan that is tailor-made for your own unique application or specific use case, it is better suited to your own origin. If you think it would still be useful for a subset of other people, you can make it public in your own origin too. Community and external project owned origins are an awesome way to make, share, and use functionality that lives outside of and extends core plans.
 
@@ -33,11 +33,17 @@ See [MAINTAINERS.md](MAINTAINERS.md) for a list of core plans maintainers.
 
 Get started with the [Habitat tutorials](https://www.habitat.sh/tutorials/) or plunge into the [complete documentation](https://www.habitat.sh/docs/).
 
+## RFCs
+
+Occasionally you might need to open an RFC. RFCs live in their [own
+repository](https://github.com/habitat-sh/core-plans-rfcs). To open one, write
+up a markdown file that follows the template and open a pull request.
+
 ## Community and support
 
-* [Habitat Slack](https://slack.habitat.sh)
-* [Forums]()
-* Community triage is every Tuesday at 10am Pacific. The link to participate is shared in the [Habitat Slack channel](https://slack.habitat.sh), and videos are posted on the [Habitat YouTube channel](https://youtube.com/channel/UC0wJZeP2dfPZaDUPgvpVpSg).
+- [Habitat Slack](https://slack.habitat.sh)
+- [Forums](https://forums.habitat.sh/)
+- Community triage is every Tuesday at 10am Pacific. The link to participate is shared in the [Habitat Slack channel](https://slack.habitat.sh), and videos are posted on the [Habitat YouTube channel](https://youtube.com/channel/UC0wJZeP2dfPZaDUPgvpVpSg).
 
 ## License
 

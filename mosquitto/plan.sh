@@ -1,17 +1,27 @@
 pkg_name=mosquitto
 pkg_origin=core
-pkg_version="1.4.14"
+pkg_version="1.4.15"
 pkg_upstream_url="https://mosquitto.org"
 pkg_description="An Open Source MQTT v3.1/v3.1.1 Broker"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('EPL-1.0' 'Eclipse Distribution License - v 1.0')
 pkg_source="http://mosquitto.org/files/source/mosquitto-${pkg_version}.tar.gz"
-pkg_shasum="156b1fa731d12baad4b8b22f7b6a8af50ba881fc711b81e9919ec103cf2942d1"
-pkg_deps=(core/glibc be/gcc-libs be/openssl core/c-ares be/util-linux be/bash)
-pkg_build_deps=(be/make be/gcc)
+pkg_shasum="7d3b3e245a3b4ec94b05678c8199c806359737949f4cfe0bf936184f6ca89a83"
+pkg_deps=(
+  be/bash
+  core/c-ares
+  be/gcc-libs
+  core/glibc
+  be/openssl
+  be/util-linux
+)
+pkg_build_deps=(
+  be/gcc
+  be/make
+)
 pkg_bin_dirs=(bin sbin)
-pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
+pkg_lib_dirs=(lib)
 pkg_svc_run="mosquitto -c $pkg_svc_config_path/mosquitto.conf"
 
 do_prepare() {

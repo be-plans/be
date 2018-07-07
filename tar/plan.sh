@@ -2,11 +2,14 @@ pkg_name=tar
 pkg_origin=core
 pkg_version=1.30
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_description="GNU Tar provides the ability to create tar archives, as well as various other kinds of manipulation."
-pkg_upstream_url=https://www.gnu.org/software/tar/
+pkg_description="\
+GNU Tar provides the ability to create tar archives, as well as various other \
+kinds of manipulation.\
+"
+pkg_upstream_url="https://www.gnu.org/software/tar/"
 pkg_license=('GPL-3.0')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=f1bf92dbb1e1ab27911a861ea8dde8208ee774866c46c0bb6ead41f4d1f4d2d3
+pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.gz"
+pkg_shasum="4725cc2c2f5a274b12b39d1f78b3545ec9ebb06a6e48e8845e1995ac8513b088"
 pkg_deps=(
   core/glibc
   be/acl
@@ -45,5 +48,9 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed)
+  pkg_build_deps=(
+    be/gcc
+    be/coreutils
+    be/sed
+  )
 fi

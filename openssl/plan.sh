@@ -1,23 +1,38 @@
 pkg_name=openssl
-pkg_distname=$pkg_name
+_distname="$pkg_name"
 pkg_origin=core
 pkg_version=1.0.2n
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_description="OpenSSL is an open source project that provides a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. It is also a general-purpose cryptography library."
-pkg_license=('OpenSSL')
+pkg_description="\
+OpenSSL is an open source project that provides a robust, commercial-grade, \
+and full-featured toolkit for the Transport Layer Security (TLS) and Secure \
+Sockets Layer (SSL) protocols. It is also a general-purpose cryptography \
+library.\
+"
 pkg_upstream_url="https://www.openssl.org"
-pkg_source=https://www.openssl.org/source/${pkg_distname}-${pkg_version}.tar.gz
-pkg_shasum=370babb75f278c39e0c50e8c4e7493bc0f18db6867478341a832a982fd15a8fe
-pkg_dirname="${pkg_distname}-${pkg_version}"
-pkg_deps=(core/glibc be/zlib be/cacerts)
+pkg_license=('OpenSSL')
+pkg_source="https://www.openssl.org/source/${_distname}-${pkg_version}.tar.gz"
+pkg_shasum="370babb75f278c39e0c50e8c4e7493bc0f18db6867478341a832a982fd15a8fe"
+pkg_dirname="${_distname}-${pkg_version}"
+pkg_deps=(
+  core/glibc
+  be/zlib
+  be/cacerts
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed
-  be/grep be/perl
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
+  be/grep
+  be/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+pkg_pconfig_dirs=(lib/pkgconfig)
 
 _common_prepare() {
   do_default_prepare
@@ -97,5 +112,14 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed be/grep be/perl be/diffutils be/make be/patch)
+  pkg_build_deps=(
+    be/gcc
+    be/coreutils
+    be/sed
+    be/grep
+    be/perl
+    be/diffutils
+    be/make
+    be/patch
+  )
 fi

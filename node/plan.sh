@@ -1,14 +1,14 @@
 pkg_name=node
 pkg_origin=core
-pkg_version=8.9.1
+pkg_version=8.11.2
 pkg_description="Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine."
 pkg_upstream_url=https://nodejs.org/
 pkg_license=('MIT')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://nodejs.org/dist/v${pkg_version}/node-v${pkg_version}.tar.gz
-pkg_shasum=32491b7fcc4696b2cdead45c47e52ad16bbed8f78885d32e873952fee0f971e1
-pkg_deps=(core/glibc be/gcc-libs)
-pkg_build_deps=(lilian/python2 be/gcc be/grep be/make)
+pkg_shasum=0ac2c4de270caa08b5adcdb3c6bcb8aae3651a37d035d385bc819fbacaf350e6
+pkg_deps=(core/glibc be/gcc-libs be/python2 be/bash)
+pkg_build_deps=(be/gcc be/grep be/make)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_interpreters=(bin/node)
@@ -41,5 +41,11 @@ do_install() {
   # fix that everywhere to point directly at the env binary in be/coreutils.
   grep -nrlI '^\#\!/usr/bin/env' "$pkg_prefix" | while read -r target; do
     sed -e "s#\#\!/usr/bin/env node#\#\!${pkg_prefix}/bin/node#" -i "$target"
+    sed -e "s#\#\!/usr/bin/env sh#\#\!$(pkg_path_for bash)/bin/sh#" -i "$target"
+    sed -e "s#\#\!/usr/bin/env bash#\#\!$(pkg_path_for bash)/bin/bash#" -i "$target"
+    sed -e "s#\#\!/usr/bin/env python#\#\!$(pkg_path_for python2)/bin/python2#" -i "$target"
   done
+
+  # This script has a hardcoded bare `node` command
+  sed -e "s#^\([[:space:]]\)\+node\([[:space:]]\)#\1${pkg_prefix}/bin/node\2#" -i "${pkg_prefix}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp"
 }

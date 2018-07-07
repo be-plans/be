@@ -4,8 +4,12 @@ plan_path = "7zip"
 plan_path = "acbuild"
 [acl]
 plan_path = "acl"
+[alsa-lib]
+plan_path = "alsa-lib"
 [ant]
 plan_path = "ant"
+[ansible]
+plan_path = "ansible"
 [apr]
 plan_path = "apr"
 [apr-util]
@@ -41,10 +45,16 @@ paths = [
 ]
 [bats]
 plan_path = "bats"
+[bazel]
+plan_path = "bazel"
 [bc]
 plan_path = "bc"
 [bdwgc]
 plan_path = "bdwgc"
+[benchmark]
+plan_path = "benchmark"
+[bind]
+plan_path = "bind"
 [binutils]
 plan_path = "binutils"
 [bison]
@@ -53,6 +63,10 @@ plan_path = "bison"
 plan_path = "bison2"
 [boost]
 plan_path = "boost"
+[boost159]
+plan_path = "boost159"
+[boringssl]
+plan_path = "boringssl"
 [bundler]
 plan_path = "bundler"
 [busybox]
@@ -83,20 +97,32 @@ plan_path = "camlp4"
 plan_path = "cargo-nightly"
 [ccache]
 plan_path = "ccache"
+[cerebro]
+plan_path = "cerebro"
 [certstrap]
 plan_path = "certstrap"
 [check]
 plan_path = "check"
+[clang]
+plan_path = "clang"
+[clang-tools-extra]
+plan_path = "clang-tools-extra"
 [clens]
 plan_path = "clens"
 [clingo]
 plan_path = "clingo"
 [cmake]
 plan_path = "cmake"
+[cockroach]
+plan_path = "cockroach"
 [composer]
 plan_path = "composer"
+[compositeproto]
+plan_path = "compositeproto"
 [concourse]
 plan_path = "concourse"
+[concourse-fly]
+plan_path = "concourse-fly"
 [consul]
 plan_path = "consul"
 [coreutils]
@@ -116,6 +142,8 @@ plan_path = "cppunit"
 plan_path = "cpputest"
 [curator]
 plan_path = "curator"
+[curator4]
+plan_path = "curator4"
 [curl]
 plan_path = "curl"
 [curl-static-musl]
@@ -135,18 +163,28 @@ plan_path = "dbus"
 plan_path = "dd-agent"
 [dejagnu]
 plan_path = "dejagnu"
+[delmo]
+plan_path = "delmo"
 [dep]
 plan_path = "dep"
 [devicemapper]
 plan_path = "devicemapper"
 [dex]
 plan_path = "dex"
+[dgraph]
+plan_path = "dgraph"
+[dgraph-ratel]
+plan_path = "dgraph-ratel"
 [diffutils]
 plan_path = "diffutils"
 [direnv]
 plan_path = "direnv"
 [docker]
 plan_path = "docker"
+[docker17]
+plan_path = "docker17"
+[docker-compose]
+plan_path = "docker-compose"
 [docutils]
 plan_path = "docutils"
 [dosfstools]
@@ -159,6 +197,8 @@ plan_path = "dotnet-core-lts"
 plan_path = "dotnet-core-sdk"
 [dotnet-core-sdk-lts]
 plan_path = "dotnet-core-sdk-lts"
+[dovecot]
+plan_path = "dovecot"
 [doxygen]
 plan_path = "doxygen"
 [dpkg]
@@ -181,8 +221,12 @@ plan_path = "elasticsearch5"
 plan_path = "elfutils"
 [elixir]
 plan_path = "elixir"
+[envconsul]
+plan_path = "envconsul"
 [envdir]
 plan_path = "envdir"
+[envoy]
+plan_path = "envoy"
 [erlang]
 plan_path = "erlang"
 [erlang16]
@@ -205,6 +249,8 @@ plan_path = "expect"
 plan_path = "ffmpeg"
 [file]
 plan_path = "file"
+[filebeat]
+plan_path = "filebeat"
 [findutils]
 plan_path = "findutils"
 [fish]
@@ -242,6 +288,8 @@ paths = [
 plan_path = "gdal"
 [gdb]
 plan_path = "gdb"
+[gdb7]
+plan_path = "gdb7"
 [gdbm]
 plan_path = "gdbm"
 [gdk-pixbuf]
@@ -282,18 +330,30 @@ plan_path = "gnupg-static"
 paths = [
   "gnupg/*",
 ]
+[gnuplot]
+plan_path = "gnuplot"
+[gnutls]
+plan_path = "gnutls"
 [go]
 plan_path = "go"
 [go14]
 plan_path = "go14"
 [go17]
 plan_path = "go17"
+[googlemock]
+plan_path = "googlemock"
+[googletest]
+plan_path = "googletest"
 [goreplay]
 plan_path = "gorplay"
+[govc]
+plan_path = "govc"
 [gox]
 plan_path = "gox"
 [gperf]
 plan_path = "gperf"
+[gperftools]
+plan_path = "gperftools"
 [gpgme]
 plan_path = "gpgme"
 [gradle]
@@ -306,10 +366,14 @@ plan_path = "graphviz"
 plan_path = "grep"
 [groff]
 plan_path = "groff"
+[grpcurl]
+plan_path = "grpcurl"
 [grub]
 plan_path = "grub"
 [gsl]
 plan_path = "gsl"
+[gtk]
+plan_path = "gtk"
 [gtk2]
 plan_path = "gtk2"
 [guile]
@@ -322,10 +386,16 @@ plan_path = "handlebars-cmd"
 plan_path = "haproxy"
 [harfbuzz]
 plan_path = "harfbuzz"
+[helm]
+plan_path = "helm"
 [htop]
 plan_path = "htop"
 [httpd]
 plan_path = "httpd"
+[hugo]
+plan_path = "hugo"
+[hwloc]
+plan_path = "hwloc"
 [iana-etc]
 plan_path = "iana-etc"
 [icu]
@@ -336,6 +406,8 @@ plan_path = "icu52"
 plan_path = "icu56"
 [imagemagick]
 plan_path = "imagemagick"
+[img]
+plan_path = "img"
 [inetutils]
 plan_path = "inetutils"
 [inotify-tools]
@@ -423,6 +495,8 @@ paths = [
 ]
 [lcms2]
 plan_path = "lcms2"
+[leiningen]
+plan_path = "leiningen"
 [leptonica]
 plan_path = "leptonica"
 [less]
@@ -448,12 +522,18 @@ plan_path = "libbsd"
 plan_path = "libcap"
 [libcap-ng]
 plan_path = "libcap-ng"
+[libcerf]
+plan_path = "libcerf"
 [libcxx]
 plan_path = "libcxx"
+[libcxxabi]
+plan_path = "libcxxabi"
 [libdrm]
 plan_path = "libdrm"
 [libedit]
 plan_path = "libedit"
+[libepoxy]
+plan_path = "libepoxy"
 [liberation-fonts-ttf]
 plan_path = "liberation-fonts-ttf"
 [libev]
@@ -464,6 +544,8 @@ plan_path = "libevent"
 plan_path = "libffi"
 [libgcrypt]
 plan_path = "libgcrypt"
+[libgd]
+plan_path = "libgd"
 [libghthash]
 plan_path = "libghthash"
 [libgpg-error]
@@ -474,12 +556,18 @@ plan_path = "libice"
 plan_path = "libiconv"
 [libidn]
 plan_path = "libidn"
+[libidn2]
+plan_path = "libidn2"
+[libimagequant]
+plan_path = "libimagequant"
 [libjpeg-turbo]
 plan_path = "libjpeg-turbo"
 [libksba]
 plan_path = "libksba"
 [libmpc]
 plan_path = "libmpc"
+[libnsl]
+plan_path = "libnsl"
 [libossp-uuid]
 plan_path = "libossp-uuid"
 [libpcap]
@@ -490,6 +578,8 @@ plan_path = "libpciaccss"
 plan_path = "libpipeline"
 [libpng]
 plan_path = "libpng"
+[libpq]
+plan_path = "libpq"
 [libpthread-stubs]
 plan_path = "libpthread-stubs"
 [libressl]
@@ -514,10 +604,16 @@ paths = [
 ]
 [libssh2]
 plan_path = "libssh2"
+[libtalloc]
+plan_path = "libtalloc"
+[libtasn1]
+plan_path = "libtasn1"
 [libtermkey]
 plan_path = "libtermkey"
 [libtiff]
 plan_path = "libtiff"
+[libtirpc]
+plan_path = "libtirpc"
 [libtool]
 plan_path = "libtool"
 [libunistring]
@@ -534,6 +630,10 @@ plan_path = "libwebp"
 plan_path = "libxau"
 [libxcb]
 plan_path = "libxcb"
+[libxcomposite]
+plan_path = "libxcomposite"
+[libxcursor]
+plan_path = "libxcursor"
 [libxdamage]
 plan_path = "libxdamage"
 [libxdmcp]
@@ -552,6 +652,8 @@ plan_path = "libxmu"
 plan_path = "libxrandr"
 [libxrender]
 plan_path = "libxrender"
+[libxscrnsaver]
+plan_path = "libxscrnsaver"
 [libxshmfence]
 plan_path = "libxshmfence"
 [libxslt]
@@ -590,6 +692,8 @@ plan_path = "lsyncd"
 plan_path = "lttng-ust"
 [lua]
 plan_path = "lua"
+[luajit]
+plan_path = "luajit"
 [lynx]
 plan_path = "lynx"
 [lz4]
@@ -622,10 +726,16 @@ plan_path = "memcached"
 plan_path = "mention-bot"
 [mercurial]
 plan_path = "mercurial"
+[mesa]
+plan_path = "mesa"
 [meson]
 plan_path = "meson"
 [mg]
 plan_path = "mg"
+[minio]
+plan_path = "minio"
+[mksh]
+plan_path = "mksh"
 [monit]
 plan_path = "monit"
 paths = [
@@ -635,6 +745,10 @@ paths = [
 plan_path = "mongo-tools"
 [mongodb]
 plan_path = "mongodb"
+[mono4]
+plan_path = "mono4"
+[mono5]
+plan_path = "mono5"
 [mosquitto]
 plan_path = "mosquitto"
 [mpfr]
@@ -665,6 +779,8 @@ plan_path = "net-tools"
 plan_path = "netcat"
 [netcat-openbsd]
 plan_path = "netcat-openbsd"
+[nettle]
+plan_path = "nettle"
 [nghttp2]
 plan_path = "nghttp2"
 [nginx]
@@ -720,6 +836,10 @@ paths = [
 ]
 [openvpn]
 plan_path = "openvpn"
+[optipng]
+plan_path = "optipng"
+[p11-kit]
+plan_path = "p11-kit"
 [packer]
 plan_path = "packer"
 [pango]
@@ -754,22 +874,44 @@ plan_path = "polipo"
 plan_path = "ponysay"
 [popt]
 plan_path = "popt"
+[postfix]
+plan_path = "postfix"
 [postgresql]
+plan_path = "postgresql"
+[postgresql-client]
 plan_path = "postgresql"
 [postgresql93]
 plan_path = "postgresql93"
 paths = [
   "postgresql/*",
 ]
+[postgresql93-client]
+plan_path = "postgresql93-client"
+paths = [
+  "postgresql93/*",
+  "postgresql93-client/*",
+]
 [postgresql94]
 plan_path = "postgresql94"
 paths = [
   "postgresql/*",
 ]
+[postgresql94-client]
+plan_path = "postgresql94-client"
+paths = [
+  "postgresql94/*",
+  "postgresql94-client/*"
+]
 [postgresql95]
 plan_path = "postgresql95"
 paths = [
   "postgresql/*",
+]
+[postgresql95-client]
+plan_path = "postgresql95-client"
+paths = [
+  "postgresql95/*",
+  "postgresql95-client/*"
 ]
 [powershell]
 plan_path = "powershell"
@@ -779,6 +921,8 @@ plan_path = "procps-ng"
 plan_path = "proj"
 [prometheus]
 plan_path = "prometheus"
+[prometheus-cpp]
+plan_path = "prometheus-cpp"
 [protobuf]
 plan_path = "protobuf"
 [protobuf-c]
@@ -811,6 +955,11 @@ randrproto = "randrproto"
 plan_path = "re2c"
 [readline]
 plan_path = "readline"
+[readline6]
+plan_path = "readline6"
+paths = [
+  "readline/*",
+]
 [rebar]
 plan_path = "rebar"
 [rebar3]
@@ -837,12 +986,39 @@ plan_path = "rlwrap"
 plan_path = "rngd"
 [rpm]
 plan_path = "rpm"
+[rpm2cpio]
+plan_path = "rpm2cpio"
+paths = [
+  "rpm2cpio/*"
+]
 [rq]
 plan_path = "rq"
 [rsync]
 plan_path = "rsync"
 [ruby]
 plan_path = "ruby"
+[ruby22]
+plan_path = "ruby22"
+paths = [
+  "ruby/*"
+]
+[ruby23]
+plan_path = "ruby23"
+paths = [
+  "ruby/*"
+]
+[ruby24]
+plan_path = "ruby24"
+paths = [
+  "ruby/*"
+]
+[ruby25]
+plan_path = "ruby25"
+paths = [
+  "ruby/*"
+]
+[runc]
+plan_path = "runc"
 [runit]
 plan_path = "runit"
 [rust]
@@ -853,6 +1029,8 @@ plan_path = "rust-nightly"
 plan_path = "sassc"
 [scaffolding-base]
 plan_path = "scaffolding-base"
+[scaffolding-chef]
+plan_path = "scaffolding-chef"
 [scaffolding-go]
 plan_path = "scaffolding-go"
 [scaffolding-go17]
@@ -863,10 +1041,14 @@ plan_path = "scaffolding-gradle"
 plan_path = "scaffolding-node"
 [scaffolding-ruby]
 plan_path = "scaffolding-ruby"
+[sccache]
+plan_path = "sccache"
 [scons]
 plan_path = "scons"
 [scowl]
 plan_path = "scowl"
+[scrnsaverproto]
+plan_path = "scrnsaverproto"
 [sed]
 plan_path = "sed"
 [sensu]
@@ -891,8 +1073,12 @@ plan_path = "socat"
 plan_path = "spark"
 [sqitch]
 plan_path = "sqitch"
+[sqitch_pg]
+plan_path = "sqitch_pg"
 [sqlite]
 plan_path = "sqlite"
+[sshpass]
+plan_path = "sshpass"
 [storm]
 plan_path = "storm"
 [strace]
@@ -1003,6 +1189,8 @@ plan_path = "xz-musl"
 paths = [
   "xz/*",
 ]
+[yaml-cpp]
+plan_path = "yaml-cpp"
 [yarn]
 plan_path = "yarn"
 [yasm]

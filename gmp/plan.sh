@@ -2,15 +2,24 @@ pkg_name=gmp
 pkg_origin=core
 pkg_version=6.1.2
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('gplv3')
-pkg_description="GMP is a free library for arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating-point numbers."
+pkg_description="\
+GMP is a free library for arbitrary precision arithmetic, operating on signed \
+integers, rational numbers, and floating-point numbers.\
+"
 pkg_upstream_url="https://gmplib.org"
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=87b565e89a9a684fe4ebeeddb8399dce2599f9c9049854ca8c0dfbdea0e21912
-pkg_deps=(core/glibc be/gcc-libs)
+pkg_license=('gplv3')
+pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz"
+pkg_shasum="87b565e89a9a684fe4ebeeddb8399dce2599f9c9049854ca8c0dfbdea0e21912"
+pkg_deps=(
+  core/glibc
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make      be/gcc       be/binutils
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/binutils
   be/m4
 )
 pkg_include_dirs=(include)
@@ -50,5 +59,8 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/binutils be/m4)
+  pkg_build_deps=(
+    be/binutils
+    be/m4
+  )
 fi

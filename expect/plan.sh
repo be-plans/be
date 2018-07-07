@@ -1,17 +1,29 @@
 pkg_name=expect
 pkg_origin=core
-pkg_version=5.45
-pkg_license=('custom')
-pkg_description="A tool for automating interactive applications"
-pkg_upstream_url="http://expect.sourceforge.net/"
+pkg_version=5.45.4
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_source=http://downloads.sourceforge.net/project/$pkg_name/Expect/${pkg_version}/${pkg_name}${pkg_version}.tar.gz
-pkg_shasum=b28dca90428a3b30e650525cdc16255d76bb6ccd65d448be53e620d95d5cc040
+pkg_description="\
+Expect is a tool for automating interactive applications such as telnet, ftp, \
+passwd, fsck, rlogin, tip, etc. Expect really makes this stuff trivial. Expect \
+is also useful for testing these same applications.\
+"
+pkg_upstream_url="https://www.nist.gov/services-resources/software/expect"
+pkg_license=('custom')
+pkg_source="http://downloads.sourceforge.net/project/$pkg_name/Expect/${pkg_version}/${pkg_name}${pkg_version}.tar.gz"
+pkg_shasum="49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34"
 pkg_dirname=${pkg_name}${pkg_version}
-pkg_deps=(core/glibc be/tcl be/coreutils)
+pkg_deps=(
+  be/gcc-libs
+  core/glibc
+  be/tcl
+  be/zlib
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc
+  be/coreutils
+  be/diffutils
+  be/gcc
+  be/make
+  be/patch
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -59,5 +71,11 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/diffutils be/make be/patch)
+  pkg_build_deps=(
+    be/gcc
+    be/coreutils
+    be/diffutils
+    be/make
+    be/patch
+  )
 fi

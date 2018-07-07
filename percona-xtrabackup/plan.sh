@@ -1,27 +1,35 @@
 pkg_name=percona-xtrabackup
 pkg_origin=core
 pkg_version=2.3.5
-pkg_source=http://github.com/percona/percona-xtrabackup/archive/${pkg_name}-${pkg_version}.tar.gz
-pkg_upstream_url=https://www.percona.com/software/mysql-database/percona-xtrabackup
-pkg_shasum=1787623cb9ea331fb242992c4fcf3f88ee61045dcd42be027884bc7d373dcdae
-pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Percona xtrabackup utilities"
+pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_upstream_url="https://www.percona.com/software/mysql-database/percona-xtrabackup"
 pkg_license=('GPL-2.0')
-pkg_bin_dirs=(bin)
-pkg_deps=(
-  core/glibc be/gcc-libs be/bash
-  lilian/iproute2 be/gnupg be/pkg-config
-  be/ncurses be/vim be/curl
-  lilian/libev be/openssl be/zlib
-  be/libgcrypt lilian/libgpg-error be/libtool
-)
+pkg_source="http://github.com/percona/percona-xtrabackup/archive/${pkg_name}-${pkg_version}.tar.gz"
+pkg_shasum="1787623cb9ea331fb242992c4fcf3f88ee61045dcd42be027884bc7d373dcdae"
+pkg_dirname="percona-xtrabackup-percona-xtrabackup-${pkg_version}"
 pkg_build_deps=(
-  be/m4 be/make be/gcc
-  be/bison be/cmake lilian/mysql
-  lilian/libaio lilian/boost/1.59.0
+  be/bison
+  lilian/boost/1.59.0
+  be/cmake
+  be/gcc
+  be/make
+  be/ncurses
+  be/vim
 )
-pkg_dirname=percona-xtrabackup-percona-xtrabackup-${pkg_version}
-
+pkg_deps=(
+  be/curl
+  be/gcc-libs
+  core/glibc
+  lilian/libaio
+  be/libev
+  be/libgcrypt
+  lilian/libgpg-error
+  be/nghttp2
+  be/openssl
+  be/zlib
+)
+pkg_bin_dirs=(bin)
 source ../defaults.sh
 
 do_prepare() {
@@ -30,7 +38,9 @@ do_prepare() {
     rm CMakeCache.txt
   fi
   sed -i 's/^.*abi_check.*$/#/' CMakeLists.txt
-  export CXXFLAGS="$CFLAGS"
+
+  export CXXFLAGS="$CFLAGS -Wno-error=implicit-fallthrough -fpermissive"
+  export CPPFLAGS="$CPPFLAGS -Wno-error=implicit-fallthrough"
 }
 
 do_build() {
@@ -61,4 +71,5 @@ do_build() {
 
 do_install() {
   make -j "$(nproc)" install
+  rm -rf "${pkg_prefix}/xtrabackup-test"
 }

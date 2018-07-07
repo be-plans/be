@@ -15,8 +15,15 @@ pkg_deps=(
 pkg_build_deps=(
   be/gcc
   be/make
+  be/patch
 )
 pkg_bin_dirs=(bin)
+
+do_prepare() {
+  do_default_prepare
+  # http://lists.gnu.org/archive/html/bug-ncurses/2017-03/msg00009.html
+  patch -p1 < "${PLAN_CONTEXT}/ncurses.patch"
+}
 
 do_check() {
   make test

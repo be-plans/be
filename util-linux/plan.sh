@@ -1,20 +1,29 @@
 pkg_name=util-linux
 pkg_origin=core
-pkg_version=2.30
-pkg_license=('GPL-2.0')
+pkg_version=2.31.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Miscellaneous system utilities for Linux"
-pkg_upstream_url=https://www.kernel.org/pub/linux/utils/util-linux
-pkg_source=https://www.kernel.org/pub/linux/utils/${pkg_name}/v${pkg_version%.?}/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=c208a4ff6906cb7f57940aa5bc3a6eed146e50a7cc0a092f52ef2ab65057a08d
-pkg_deps=(core/glibc be/zlib be/ncurses)
+pkg_upstream_url="https://www.kernel.org/pub/linux/utils/util-linux"
+pkg_license=('GPLv2')
+pkg_source="https://www.kernel.org/pub/linux/utils/${pkg_name}/v${pkg_version%.?}/${pkg_name}-${pkg_version}.tar.xz"
+pkg_shasum="1a51b16fa9cd51d26ef9ab52d2f1de12403b810fc8252bf7d478df91b3cddf11"
+pkg_deps=(
+  core/glibc
+  be/zlib
+  be/ncurses
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+pkg_pconfig_dirs=(lib/pkgconfig)
 
 source ../defaults.sh
 
@@ -51,5 +60,12 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils be/make be/patch)
+  pkg_build_deps=(
+    be/gcc
+    be/coreutils
+    be/sed
+    be/diffutils
+    be/make
+    be/patch
+  )
 fi

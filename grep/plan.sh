@@ -2,9 +2,14 @@ pkg_name=grep
 pkg_origin=core
 pkg_version=3.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_description="\
+Grep searches one or more input files for lines containing a match to a \
+specified pattern. By default, Grep outputs the matching lines.\
+"
+pkg_upstream_url="https://www.gnu.org/software/grep/"
 pkg_license=('gplv3+')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=db625c7ab3bb3ee757b3926a5cfa8d9e1c3991ad24707a83dde8a5ef2bf7a07e
+pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz"
+pkg_shasum="db625c7ab3bb3ee757b3926a5cfa8d9e1c3991ad24707a83dde8a5ef2bf7a07e"
 pkg_deps=(
   core/glibc
   be/pcre
@@ -22,6 +27,19 @@ pkg_bin_dirs=(bin)
 pkg_disabled_features=(lto pic)
 source ../defaults.sh
 
+do_prepare() {
+  do_default_prepare
+  # Fix failing test `test-getopt-posix` which appears to have problems when
+  # working against Glibc 2.26.
+  #
+  # TODO fn: when glibc package is upgraded, see if this patch is still
+  # required (it may be fixed in the near future)
+  #
+  # Thanks to:
+  # https://www.redhat.com/archives/libvir-list/2017-September/msg01054.html
+  patch -p1 < "$PLAN_CONTEXT/fix-test-getopt-posix-with-glibc-2.26.patch"
+
+}
 do_check() {
   make check
 }
@@ -35,5 +53,8 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils)
+  pkg_build_deps=(
+    be/gcc
+    be/coreutils
+  )
 fi

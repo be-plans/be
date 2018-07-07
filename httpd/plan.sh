@@ -5,13 +5,9 @@ pkg_description="The Apache HTTP Server"
 pkg_upstream_url="http://httpd.apache.org/"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
-pkg_source="https://archive.apache.org/dist/${pkg_name}/${pkg_name}-${pkg_version}.tar.bz2"
-pkg_shasum=f87ec2df1c9fee3e6bfde3c8b855a3ddb7ca1ab20ca877bd0e2b6bf3f05c80b2
-pkg_deps=(
-  core/glibc be/expat be/libiconv
-  lilian/apr lilian/apr-util be/pcre
-  be/zlib be/openssl  be/gcc-libs
-)
+pkg_source="https://archive.apache.org/dist/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz"
+pkg_shasum=346dd3d016ae5d7101016e68805150bdce9040a8d246c289aa70e68a7cd86b66
+pkg_deps=(lilian/apr lilian/apr-util be/bash be/expat be/gcc-libs core/glibc be/libiconv be/openssl be/pcre be/perl be/zlib)
 pkg_build_deps=(be/patch be/make be/gcc)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

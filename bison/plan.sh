@@ -1,17 +1,27 @@
-pkg_name=bison
+0pkg_name=bison
 pkg_origin=core
 pkg_version=3.0.4
-pkg_description="A parser generator that converts an annotated context-free grammar into a parser"
-pkg_upstream_url=https://www.gnu.org/software/bison/
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_description="\
+Bison is a general-purpose parser generator that converts an annotated \
+context-free grammar into a deterministic LR or generalized LR (GLR) parser \
+employing LALR(1) parser tables.\
+"
+pkg_upstream_url="https://www.gnu.org/software/bison/"
 pkg_license=('GPL-3.0')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=a72428c7917bdf9fa93cb8181c971b6e22834125848cf1d03ce10b1bb0716fe1
+pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz"
+pkg_shasum="a72428c7917bdf9fa93cb8181c971b6e22834125848cf1d03ce10b1bb0716fe1"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/m4 be/perl
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/m4
+  be/perl
 )
+
 pkg_bin_dirs=(bin)
 
 pkg_disabled_features=(lto pic)
@@ -25,5 +35,9 @@ source ../defaults.sh
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/m4 be/coreutils)
+  pkg_build_deps=(
+    be/gcc
+	be/m4
+	be/coreutils
+  )
 fi

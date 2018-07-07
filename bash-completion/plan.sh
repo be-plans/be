@@ -1,12 +1,14 @@
 pkg_name=bash-completion
 pkg_origin=core
-pkg_version=2.5
-pkg_license=('GPLv2')
+pkg_version=2.7
+pkg_license=('GPL-2.0')
+pkg_upstream_url="https://github.com/scop/bash-completion"
+pkg_description="Programmable completion functions for bash"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_source=https://github.com/scop/bash-completion/releases/download/${pkg_version}/bash-completion-${pkg_version}.tar.xz
-pkg_shasum=b0b9540c65532825eca030f1241731383f89b2b65e80f3492c5dd2f0438c95cf
-pkg_bin_dirs=(bin)
+pkg_source="https://github.com/scop/bash-completion/releases/download/${pkg_version}/bash-completion-${pkg_version}.tar.xz"
+pkg_shasum="41ba892d3f427d4a686de32673f35401bc947a7801f684127120cdb13641441e"
+pkg_deps=(
+  be/bash
+)
 pkg_build_deps=(be/make be/gcc be/autoconf be/automake)
-pkg_deps=(core/glibc)
 
-source ../defaults.sh

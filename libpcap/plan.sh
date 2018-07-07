@@ -15,6 +15,7 @@ pkg_build_deps=(
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
+pkg_pconfig_dirs=(lib/pkgconfig)
 
 pkg_disabled_features=(pic)
 source ../defaults.sh

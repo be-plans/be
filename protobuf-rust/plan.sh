@@ -1,18 +1,24 @@
 pkg_name=protobuf-rust
 pkg_origin=core
-pkg_version=1.0.18
+pkg_version=1.4.4
 pkg_license=('BSD')
 pkg_source=nosuchfile.tar.gz
 pkg_bin_dirs=(bin)
-pkg_deps=(core/glibc be/gcc)
-pkg_build_deps=(be/rust be/gcc be/cacerts lilian/protobuf)
+pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_upstream_url="https://github.com/stepancheg/rust-protobuf"
+pkg_description="Rust implementation of Google protocol buffers"
+pkg_deps=(
+  core/glibc
+  be/gcc-libs
+)
+pkg_build_deps=(
+  be/rust
+)
 
 source ../defaults.sh
 
 do_build() {
-  env SSL_CERT_FILE=$(pkg_path_for cacerts)/ssl/cert.pem \
-      PROTOBUF_PREFIX=$(pkg_path_for protobuf) \
-      cargo install protobuf --root $pkg_prefix --vers $pkg_version -j$(nproc) --verbose
+  cargo install protobuf --root "${pkg_prefix}" --vers "${pkg_version}" -j"$(nproc)" --verbose
 }
 
 do_install() {

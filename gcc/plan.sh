@@ -1,26 +1,31 @@
 pkg_name=gcc
-pkg_distname=$pkg_name
+_distname=$pkg_name
 pkg_origin=core
-pkg_version=7.2.0
-pkg_description="The GNU Compiler Collection"
-pkg_upstream_url="https://gcc.gnu.org/"
+pkg_version=7.3.0
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_description="\
+The GNU Compiler Collection (GCC) is a compiler system produced by the GNU \
+Project supporting various programming languages. GCC is a key component of \
+the GNU toolchain and the standard compiler for most Unix-like operating \
+systems.\
+"
+pkg_upstream_url="https://gcc.gnu.org/"
 pkg_license=('GPL-2.0')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}/${pkg_distname}-${pkg_version}.tar.xz
-pkg_shasum=1cf7adf8ff4b5aa49041c8734bbcf1ad18cc4c94d0029aae0f4e48841088479a
+pkg_source="http://ftp.gnu.org/gnu/$_distname/${_distname}-${pkg_version}/${_distname}-${pkg_version}.tar.xz"
+pkg_shasum="832ca6ae04636adbb430e865a1451adf6979ab44ca1c8374f61fba65645ce15c"
 pkg_deps=(
   core/glibc
   be/zlib
   be/gmp
   be/mpfr
   be/libmpc
-  be/isl
   be/binutils
 )
 pkg_build_deps=(
   be/coreutils
   be/diffutils
   be/patch
+  be/file
   be/make
   be/gcc
   be/gawk
@@ -67,8 +72,12 @@ do_prepare() {
   build_line "Updating CFLAGS=$CFLAGS"
 
   # Set `CXXFLAGS` for the c++ code
-  export CXXFLAGS="$CXXFLAGS $CFLAGS"
+  export CXXFLAGS="$CFLAGS"
   build_line "Setting CXXFLAGS=$CXXFLAGS"
+
+  # Set `CPPFLAGS` which is set by the build system
+  export CPPFLAGS="$CFLAGS"
+  build_line "Setting CPPFLAGS=$CPPFLAGS"
 
   # Ensure gcc can find the headers for zlib
   CPATH="$(pkg_path_for zlib)/include"
@@ -114,6 +123,12 @@ do_prepare() {
   #
   # Thanks to: https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gcc
   sed -i '/m64=/s/lib64/lib/' gcc/config/i386/t-linux64
+
+  # Update all references to the `/usr/bin/file` absolute path with `file`
+  # which will be on `$PATH` due to file being a build dependency.
+  grep -lr /usr/bin/file ./* | while read -r f; do
+    sed -i -e "s,/usr/bin/file,file,g" "$f"
+  done
 
   # Build up the build cflags that will be set for multiple environment
   # variables in the `make` command
@@ -172,6 +187,7 @@ do_build() {
       --enable-threads=posix \
       --enable-clocale=gnu \
       --enable-install-libiberty \
+      --enable-vtable-verify \
       --enable-linker-build-id \
       --with-system-zlib \
       --with-gnu-ld \
@@ -232,19 +248,28 @@ do_check() {
     #
     # g++:
     #
-    #  XPASS: g++.dg/tls/thread_local-order2.C  -std=c++11 execution test
-    #  XPASS: g++.dg/tls/thread_local-order2.C  -std=gnu++14 execution test
     #  FAIL: c-c++-common/tsan/thread_leak1.c   -O0  output pattern test
     #  FAIL: c-c++-common/tsan/thread_leak1.c   -O2  output pattern test
     #
     # libstdc++:
     #
-    #  FAIL: 22_locale/messages/13631.cc execution test
-    #  FAIL: 22_locale/messages/members/char/1.cc execution test
-    #  FAIL: 22_locale/messages/members/char/2.cc execution test
-    #  FAIL: 22_locale/messages/members/char/wrapped_env.cc execution test
-    #  FAIL: 22_locale/messages/members/char/wrapped_locale.cc execution test
-    #  FAIL: 22_locale/messages_byname/named_equivalence.cc execution test
+    #  FAIL: libstdc++-abi/abi_check
+    #  FAIL: 22_locale/codecvt/encoding/wchar_t/2.cc execution test
+    #  FAIL: 22_locale/codecvt/encoding/wchar_t/3.cc execution test
+    #  FAIL: 22_locale/codecvt/in/wchar_t/2.cc execution test
+    #  FAIL: 22_locale/codecvt/length/wchar_t/2.cc execution test
+    #  FAIL: 22_locale/codecvt/length/wchar_t/3.cc execution test
+    #  FAIL: 22_locale/codecvt/max_length/wchar_t/2.cc execution test
+    #  FAIL: 22_locale/codecvt/max_length/wchar_t/3.cc execution test
+    #  FAIL: 22_locale/codecvt/out/wchar_t/2.cc execution test
+    #  FAIL: 22_locale/codecvt/out/wchar_t/7.cc execution test
+    #  FAIL: 22_locale/ctype/widen/wchar_t/2.cc execution test
+    #  FAIL: experimental/filesystem/iterators/directory_iterator.cc execution test
+    #  FAIL: experimental/filesystem/iterators/recursive_directory_iterator.cc execution test
+    #  FAIL: experimental/filesystem/operations/exists.cc execution test
+    #  FAIL: experimental/filesystem/operations/is_empty.cc execution test
+    #  FAIL: experimental/filesystem/operations/remove.cc execution test
+    #  FAIL: experimental/filesystem/operations/temp_directory_path.cc execution test
 
     make -k check || true
     unset LIBRARY_PATH
@@ -331,5 +356,8 @@ wrap_binary() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/m4)
+  pkg_build_deps=(
+    be/m4
+    be/file
+  )
 fi

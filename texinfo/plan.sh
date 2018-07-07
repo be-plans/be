@@ -1,14 +1,29 @@
 pkg_name=texinfo
 pkg_origin=core
-pkg_version=6.3
+pkg_version=6.5
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_license=('GPL-3.0')
-pkg_source=http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
-pkg_shasum=246cf3ffa54985118ec2eea2b8d0c71b92114efe6282c2ae90d65029db4cf93a
-pkg_deps=(core/glibc be/ncurses be/perl)
+pkg_description="\
+Texinfo is the official documentation format of the GNU project. It was \
+invented by Richard Stallman and Bob Chassell many years ago, loosely based on \
+Brian Reid's Scribe and other formatting languages of the time. It is used by \
+many non-GNU projects as well.\
+"
+pkg_upstream_url="http://www.gnu.org/software/texinfo/"
+pkg_license=('gplv3+')
+pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz"
+pkg_shasum="77774b3f4a06c20705cc2ef1c804864422e3cf95235e965b1f00a46df7da5f62"
+pkg_deps=(
+  core/glibc
+  be/ncurses
+  be/perl
+)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
 )
 pkg_bin_dirs=(bin)
 
@@ -26,5 +41,12 @@ do_check() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils be/make be/patch)
+  pkg_build_deps=(
+    be/gcc
+    be/coreutils
+    be/sed
+    be/diffutils
+    be/make
+    be/patch
+  )
 fi

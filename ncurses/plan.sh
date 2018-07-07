@@ -1,12 +1,16 @@
 pkg_name=ncurses
 pkg_origin=core
-pkg_version=6.0
-pkg_description="The ncurses (new curses) library"
-pkg_upstream_url=https://www.gnu.org/software/ncurses/
+pkg_version=6.1
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_description="\
+ncurses (new curses) is a programming library providing an application \
+programming interface (API) that allows the programmer to write text-based \
+user interfaces in a terminal-independent manner.\
+"
+pkg_upstream_url="https://www.gnu.org/software/ncurses/"
 pkg_license=('ncurses')
-pkg_source=http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
-pkg_shasum=f551c24b30ce8bfb6e96d9f59b42fbea30fa3a6123384172f9e7284bcf647260
+pkg_source="http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz"
+pkg_shasum="aa057eeeb4a14d470101eff4597d5833dcef5965331be3528c08d99cebaa0d17"
 pkg_deps=(
   core/glibc
   be/gcc-libs
@@ -17,6 +21,7 @@ pkg_build_deps=(
   be/patch
   be/make
   be/gcc
+  be/bzip2
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -36,6 +41,7 @@ do_build() {
     --without-ada \
     --enable-sigwinch \
     --enable-pc-files \
+    --with-pkg-config-libdir="$pkg_prefix/lib/pkgconfig" \
     --enable-symlinks \
     --enable-widec \
     --enable-ext-colors \
@@ -59,9 +65,10 @@ do_install() {
   maj=$(echo ${pkg_version} | cut -d "." -f 1)
   maj_min=$(echo ${pkg_version} | cut -d "." -f 1-2)
   for x in curses ncurses form panel menu tinfo; do
-    echo "INPUT(-l${x}w)" > "$pkg_prefix/lib/lib${x}.so"
+    ln -sv lib${x}w.so "$pkg_prefix/lib/lib${x}.so"
     ln -sv lib${x}w.so "$pkg_prefix/lib/lib${x}.so.$maj"
     ln -sv lib${x}w.so "$pkg_prefix/lib/lib${x}.so.$maj_min"
+    ln -sv ${x}w.pc "$pkg_prefix/lib/pkgconfig/${x}.pc"
   done
   ln -sfv libncursesw.so "$pkg_prefix/lib/libcursesw.so"
   ln -sfv libncursesw.a "$pkg_prefix/lib/libcursesw.a"
@@ -82,5 +89,7 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc)
+  pkg_build_deps=(
+    be/gcc
+  )
 fi

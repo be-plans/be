@@ -1,13 +1,17 @@
 pkg_name=coreutils
-pkg_distname=$pkg_name
+_distname=$pkg_name
 pkg_origin=core
 pkg_version=8.29
-pkg_upstream_url=https://www.gnu.org/software/coreutils/
-pkg_description="Basic file, shell and text manipulation utilities of the GNU operating system."
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
+pkg_description="\
+The GNU Core Utilities are the basic file, shell and text manipulation \
+utilities of the GNU operating system. These are the core utilities which are \
+expected to exist on every operating system.\
+"
+pkg_upstream_url="https://www.gnu.org/software/coreutils/"
 pkg_license=('GPL-3.0')
-pkg_source="http://ftp.gnu.org/gnu/$pkg_distname/${pkg_distname}-${pkg_version}.tar.xz"
-pkg_shasum=92d0fa1c311cacefa89853bdb53c62f4110cdfda3820346b59cbd098f40f955e
+pkg_source="http://ftp.gnu.org/gnu/$_distname/${_distname}-${pkg_version}.tar.xz"
+pkg_shasum="92d0fa1c311cacefa89853bdb53c62f4110cdfda3820346b59cbd098f40f955e"
 pkg_deps=(
   core/glibc
   be/acl
@@ -28,6 +32,11 @@ pkg_build_deps=(
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/env)
 
+do_prepare() {
+  do_default_prepare
+  _patch_files
+}
+
 pkg_disabled_features=(lto pic)
 source ../defaults.sh
 
@@ -45,6 +54,10 @@ do_build() {
 do_check() {
   make NON_ROOT_USERNAME=nobody check-root
   make RUN_EXPENSIVE_TESTS=yes check
+}
+
+_patch_files() {
+  patch -p1 < "$PLAN_CONTEXT/skip-tests.patch"
 }
 
 

@@ -40,7 +40,7 @@ do_build() {
     --enable-libwebp \
     --enable-shared \
     --enable-version3
-  make
+  make -j"$(nproc)"
 }
 
 do_check() {

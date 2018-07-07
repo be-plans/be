@@ -11,18 +11,23 @@ pkg_shasum=8ab7e41126dfc3bc1a23ff76efc20e5131320530dc1277e5c2ed8c9618041b95
 pkg_bin_dirs=(bin)
 
 pkg_build_deps=(
-  core/git
+  be/git
   be/make
   be/gcc
-  core/go
+  be/go
   be/diffutils
-  core/which
-  core/rsync
+  be/patch
+  be/which
+  be/rsync
 )
 
 pkg_deps=(
   core/glibc
 )
+
+do_prepare() {
+  patch hack/lib/golang.sh "${PLAN_CONTEXT}/golang_detection.patch"
+}
 
 do_build() {
   make

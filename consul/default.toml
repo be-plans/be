@@ -9,8 +9,11 @@ expect = "3"
 [server]
 bind = "127.0.0.1"
 data-dir = "/hab/svc/consul/data/consul"
-datacenter = "east-aws"
+datacenter = "dc1"
 loglevel = "INFO"
+# Consul WebUI has been redesigned, switch this to true to use the new Beta UI
+# https://www.consul.io/intro/getting-started/ui.html#how-to-use-the-new-ui
+beta_ui = false
 # switch this to false you want to start in DEVMODE
 # https://www.consul.io/docs/guides/bootstrapping.html
 mode = true
@@ -22,8 +25,6 @@ dns = 8600
 http = 8500
 # The HTTPS API, -1 to disable
 https = -1
-# The CLI RPC endpoint
-rpc = 8400
 # The Serf LAN port
 serf_lan = 8301
 # The Serf WAN port

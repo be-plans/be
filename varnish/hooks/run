@@ -17,4 +17,3 @@ args=(
 )
 
 exec varnishd "${args[@]}" 2>&1
-

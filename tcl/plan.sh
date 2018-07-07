@@ -1,18 +1,30 @@
 pkg_name=tcl
 pkg_origin=core
-pkg_version=8.6.4
-pkg_license=('custom')
-pkg_description="Tool Command Language -- A dynamic programming language."
-pkg_upstream_url="http://www.tcl.tk/"
+pkg_version=8.6.8
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
-pkg_source=http://downloads.sourceforge.net/sourceforge/${pkg_name}/${pkg_name}${pkg_version}-src.tar.gz
-pkg_shasum=9e6ed94c981c1d0c5f5fefb8112d06c6bf4d050a7327e95e71d417c416519c8d
-pkg_dirname=${pkg_name}${pkg_version}
-pkg_deps=(core/glibc be/gcc-libs be/zlib)
-pkg_build_deps=(be/coreutils be/diffutils be/patch be/make be/gcc be/sed)
+pkg_description="Tool Command Language -- A dynamic programming language."
+pkg_upstream_url="http://tcl.sourceforge.net/"
+pkg_license=('custom')
+pkg_source="http://downloads.sourceforge.net/sourceforge/${pkg_name}/${pkg_name}${pkg_version}-src.tar.gz"
+pkg_shasum="c43cb0c1518ce42b00e7c8f6eaddd5195c53a98f94adc717234a65cbcfd3f96a"
+pkg_dirname="${pkg_name}${pkg_version}"
+pkg_deps=(
+  core/glibc
+  be/gcc-libs
+  be/zlib
+)
+pkg_build_deps=(
+  be/coreutils
+  be/diffutils
+  be/patch
+  be/make
+  be/gcc
+  be/sed
+)
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
+pkg_pconfig_dirs=(lib/pkgconfig)
 
 pkg_disabled_features=(pic)
 source ../defaults.sh
@@ -35,8 +47,8 @@ do_build() {
     # Thanks to: https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/tcl
     local srcdir
     srcdir=$(abspath ..)
-    local tdbcver=tdbc1.0.3
-    local itclver=itcl4.0.3
+    local tdbcver=tdbc1.0.6
+    local itclver=itcl4.1.1
     sed \
       -e "s#$srcdir/unix#$pkg_prefix/lib#" \
       -e "s#$srcdir#$pkg_prefix/include#" \
@@ -51,7 +63,7 @@ do_build() {
       -e "s#$srcdir/unix/pkgs/$itclver#$pkg_prefix/lib/$itclver#" \
       -e "s#$srcdir/pkgs/$itclver/generic#$pkg_prefix/include#" \
       -e "s#$srcdir/pkgs/$itclver#$pkg_prefix/include#" \
-      -i pkgs/itcl4.0.3/itclConfig.sh
+      -i pkgs/$itclver/itclConfig.sh
   popd > /dev/null
 }
 
@@ -80,5 +92,12 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed be/diffutils be/make be/patch)
+  pkg_build_deps=(
+    be/gcc
+    be/coreutils
+    be/sed
+    be/diffutils
+    be/make
+    be/patch
+  )
 fi
