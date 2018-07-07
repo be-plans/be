@@ -23,10 +23,16 @@ pkg_bin_dirs=(bin)
 #TODO: This could be built
 source ../defaults.sh
 
+do_setup_environment() {
+  push_runtime_env PERL5LIB "${pkg_prefix}/lib/perl5:${pkg_prefix}/lib/perl5/x86_64-linux-thread-multi"
+}
+
 do_prepare() {
   do_default_prepare
+
+  eval "$(perl -I"$(pkg_path_for be/local-lib)"/lib/perl5 -Mlocal::lib="$(pkg_path_for be/local-lib)")"
   # Create a new lib dir in our pacakge for cpanm to house all of its libs
-  eval $(perl -Mlocal::lib=${pkg_prefix})
+  eval "$(perl -Mlocal::lib="${pkg_prefix}")"
 
   cpanm Module::Build
 }
@@ -41,8 +47,8 @@ do_install() {
   ./Build
   ./Build install
 
-  for file in ${pkg_prefix}/bin/*; do
-    sed -i "1 s,.*,& -I${pkg_prefix}/lib/perl5," $file
+  for file in "${pkg_prefix}"/bin/*; do
+    sed -i "1 s,.*,& -I${pkg_prefix}/lib/perl5," "$file"
   done
 }
 

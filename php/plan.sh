@@ -20,6 +20,7 @@ pkg_deps=(
   be/pcre
   be/expat
   be/openssl
+  be/readline
   be/zlib
 )
 pkg_build_deps=(
@@ -27,7 +28,6 @@ pkg_build_deps=(
   be/gcc
   be/make
   be/re2c
-  be/readline
 )
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib)

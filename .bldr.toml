@@ -540,6 +540,8 @@ plan_path = "liberation-fonts-ttf"
 plan_path = "libev"
 [libevent]
 plan_path = "libevent"
+[libfcgi]
+plan_path = "libfcgi"
 [libffi]
 plan_path = "libffi"
 [libgcrypt]
@@ -763,6 +765,8 @@ plan_path = "musl"
 plan_path = "mysql"
 [mysql-client]
 plan_path = "mysql-client"
+[nano]
+plan_path = "nano"
 [nasm]
 plan_path = "nasm"
 [nats-streaming-server]
@@ -793,6 +797,11 @@ plan_path = "nmap"
 plan_path = "node"
 [node6]
 plan_path = "node6"
+paths = [
+  "node/*",
+]
+[node8]
+plan_path = "node8"
 paths = [
   "node/*",
 ]
@@ -868,6 +877,8 @@ plan_path = "php5"
 plan_path = "pixman"
 [pkg-config]
 plan_path = "pkg-config"
+[pngquant]
+plan_path = "pngquant"
 [polipo]
 plan_path = "polipo"
 [ponysay]

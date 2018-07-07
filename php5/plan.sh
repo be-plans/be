@@ -1,15 +1,15 @@
 pkg_name=php5
 pkg_distname=php
 pkg_origin=core
-pkg_version=5.6.30
+pkg_version=5.6.35
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('PHP-3.01')
 pkg_upstream_url=http://php.net/
 pkg_description="PHP is a popular general-purpose scripting language that is especially suited to web development."
-pkg_source=https://php.net/get/${pkg_distname}-${pkg_version}.tar.xz/from/this/mirror
-pkg_filename=${pkg_distname}-${pkg_version}.tar.xz
+pkg_source=https://php.net/get/${pkg_distname}-${pkg_version}.tar.bz2/from/this/mirror
+pkg_filename=${pkg_distname}-${pkg_version}.tar.bz2
 pkg_dirname=${pkg_distname}-${pkg_version}
-pkg_shasum=a363185c786432f75e3c7ff956b49c3369c3f6906a6b10459f8d1ddc22f70805
+pkg_shasum=ee78a7e9ca21d8ea394d037c55effff477a49dbae31c7753c547036f5bd73b92
 pkg_deps=(
   be/coreutils
   be/curl
@@ -18,6 +18,7 @@ pkg_deps=(
   lilian/libjpeg-turbo
   lilian/libpng
   be/openssl
+  be/readline
   be/zlib
 )
 pkg_build_deps=(
@@ -25,7 +26,6 @@ pkg_build_deps=(
   be/gcc
   be/make
   be/re2c
-  be/readline
 )
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib)

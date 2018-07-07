@@ -40,6 +40,8 @@ do_build() {
     --with-openssl-dir="$(pkg_path_for be/openssl )" \
     --with-libyaml-dir="$(pkg_path_for lilian/libyaml)"
 
+  patch -p0 < "${PLAN_CONTEXT}/mkmf-ignore-linker-warnings.patch"
+
   make -j $(nproc)
 }
 
