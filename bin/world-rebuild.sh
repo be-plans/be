@@ -2,22 +2,31 @@
 
 # Run this script outside a studio environment, from "be"(project) root directory
 
+__build_base_plans() {
+  sudo hab studio rm
+  sudo hab studio new
+  sudo hab studio run 'hab pkg install lilian/bash/4.3.42/20170624233914'
+  sudo hab studio run 'hab pkg install lilian/coreutils/8.27/20170624233515'
+  sudo hab studio run 'hab pkg install lilian/file/5.31/20170625112308'
+  sudo hab studio run 'hab pkg binlink --dest /bin lilian/bash/4.3.42/20170624233914'
+  sudo hab studio run 'hab pkg binlink --dest /usr/bin lilian/coreutils/8.27/20170624233515'
+  sudo hab studio run 'hab pkg binlink --dest /usr/bin lilian/file/5.31/20170625112308'
+  sudo hab studio run 'ln -s /src /be'
+  sudo hab studio run 'cd / && /be/bin/build-plans.sh be/base-plans.txt'
+}
+
 main() {
-  if [ ! -e "bin/build-base-plans.sh" ]; then
+  if [ ! -e "bin/build-plans.sh" ]; then
     echo "Please execute the script from the project root directory"
     exit 1
   fi
 
-  hab studio rm
-  hab studio new
-  hab studio run 'hab pkg install be/bash'
-  hab studio run 'hab pkg install be/coreutils'
-  hab studio run 'hab pkg install be/file'
-  hab studio run 'hab pkg binlink --dest /bin be/bash'
-  hab studio run 'hab pkg binlink --dest /usr/bin be/coreutils'
-  hab studio run 'hab pkg binlink --dest /usr/bin be/file'
-  hab studio run 'ln -s /src /be'
-  hab studio run 'cd / && /be/bin/build-base-plans.sh'
+  export STUDIO_TYPE=stage1
+  export NO_INSTALL_DEPS=true
+  __build_base_plans
+
+  unset STUDIO_TYPE
+  __build_base_plans
 }
 
 main "$@"
