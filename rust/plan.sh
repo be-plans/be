@@ -138,13 +138,13 @@ do_strip() {
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
   pkg_build_deps=(
-    be/patchelf
-    be/coreutils
-    be/sed
-    be/grep
-    be/diffutils
-    be/findutils
-    be/make
-    be/patch
+    lilian/patchelf/0.9/20170624235321
+    lilian/coreutils/8.27/20170624233515
+    lilian/sed/4.4/20170624233625
+    lilian/grep/3.0/20170624233820
+    lilian/diffutils/3.6/20170624234540
+    lilian/findutils/4.4.2/20170624234608
+    lilian/make/4.2.1/20170624234911
+    lilian/patch/2.7.5/20170624234926
   )
 fi

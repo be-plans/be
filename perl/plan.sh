@@ -159,9 +159,9 @@ do_check() {
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
   pkg_build_deps=(
-    be/gcc
-    be/procps-ng
-    be/inetutils
-    be/iana-etc
+    lilian/gcc/7.1.0/20170624225400
+    lilian/procps-ng/3.3.12/20170624234015
+    lilian/inetutils/1.9.4/20170624234030
+    lilian/iana-etc/2.30/20170624234131
   )
 fi

@@ -50,9 +50,9 @@ do_install() {
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
   pkg_build_deps=(
-    be/gcc
-    be/m4
-    be/coreutils
-    be/bison
+    lilian/gcc/7.1.0/20170624225400
+    lilian/m4/1.4.18/20170624225210
+    lilian/coreutils/8.27/20170624233515
+    lilian/bison/3.0.4/20170624233724
   )
 fi

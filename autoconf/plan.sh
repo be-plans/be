@@ -35,5 +35,11 @@ source ../defaults.sh
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/sed be/gawk be/diffutils)
+  pkg_build_deps=(
+    lilian/gcc/7.1.0/20170624225400
+    lilian/coreutils/8.27/20170624233515
+    lilian/sed/4.4/20170624233625
+    lilian/gawk/4.1.4/20170624234109
+    lilian/diffutils/3.6/20170624234540
+  )
 fi

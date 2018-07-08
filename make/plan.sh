@@ -74,14 +74,14 @@ EOF
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
   pkg_build_deps=(
-    be/binutils
-    be/gcc
-    be/coreutils
-    be/sed
-    be/bash
-    be/perl
-    be/diffutils
-    be/gettext
-    be/gzip
+    lilian/binutils/2.28/20170624225044
+    lilian/gcc/7.1.0/20170624225400
+    lilian/coreutils/8.27/20170624233515
+    lilian/sed/4.4/20170624233625
+    lilian/bash/4.3.42/20170624233914
+    lilian/perl/5.24.1/20170624234348
+    lilian/diffutils/3.6/20170624234540
+    lilian/gettext/0.19.8.1/20170624234650
+    lilian/gzip/1.8/20170624234853
   )
 fi

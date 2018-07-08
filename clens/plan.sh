@@ -46,5 +46,12 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/coreutils be/diffutils be/make be/patch be/libbsd)
+  pkg_build_deps=(
+    lilian/gcc/7.1.0/20170624225400
+    lilian/coreutils/8.27/20170624233515
+    lilian/diffutils/3.6/20170624234540
+    lilian/make/4.2.1/20170624234911
+    lilian/patch/2.7.5/20170624234926
+    lilian/libbsd/0.8.3/20170626203458
+  )
 fi

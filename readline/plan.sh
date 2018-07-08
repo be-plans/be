@@ -103,8 +103,8 @@ do_install() {
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
   pkg_build_deps=(
-    be/gcc
-    be/bison
-    be/grep
+    lilian/gcc/7.1.0/20170624225400
+    lilian/bison/3.0.4/20170624233724
+    lilian/grep/3.0/20170624233820
   )
 fi

@@ -47,7 +47,7 @@ do_build() {
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
   pkg_build_deps=(
-    be/gcc
-    be/coreutils
+    lilian/gcc/7.1.0/20170624225400
+    lilian/coreutils/8.27/20170624233515
   )
 fi

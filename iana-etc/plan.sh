@@ -35,7 +35,7 @@ do_install() {
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
   pkg_build_deps=(
-    be/coreutils
-    be/gawk
+    lilian/gcc/7.1.0/20170624225400
+    lilian/gawk/4.1.4/20170624234109
   )
 fi

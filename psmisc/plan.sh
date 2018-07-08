@@ -33,6 +33,6 @@ pkg_bin_dirs=(bin)
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
   pkg_build_deps=(
-    be/gcc
+    lilian/gcc/7.1.0/20170624225400
   )
 fi

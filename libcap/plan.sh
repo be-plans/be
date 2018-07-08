@@ -52,7 +52,7 @@ do_install() {
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
   pkg_build_deps=(
-    be/gcc
-    be/linux-headers
+    lilian/gcc/7.1.0/20170624225400
+    lilian/linux-headers/4.4/20170625062328
   )
 fi

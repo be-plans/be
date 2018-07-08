@@ -33,5 +33,7 @@ do_install() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc)
+  pkg_build_deps=(
+    lilian/gcc/7.1.0/20170624225400
+  )
 fi

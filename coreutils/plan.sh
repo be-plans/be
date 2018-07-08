@@ -69,5 +69,8 @@ _patch_files() {
 # significantly altered. Thank you!
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
-  pkg_build_deps=(be/gcc be/m4)
+  pkg_build_deps=(
+    lilian/gcc/7.1.0/20170624225400
+    lilian/m4/1.4.18/20170624225210
+  )
 fi

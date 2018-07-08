@@ -113,13 +113,13 @@ do_install() {
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
   pkg_build_deps=(
-    be/gcc
-    be/coreutils
-    be/sed
-    be/grep
-    be/perl
-    be/diffutils
-    be/make
-    be/patch
+    lilian/gcc/7.1.0/20170624225400
+    lilian/coreutils/8.27/20170624233515
+    lilian/sed/4.4/20170624233625
+    lilian/grep/3.0/20170624233820
+    lilian/perl/5.24.1/20170624234348
+    lilian/diffutils/3.6/20170624234540
+    lilian/make/4.2.1/20170624234911
+    lilian/patch/2.7.5/20170624234926
   )
 fi

@@ -70,6 +70,6 @@ do_check() {
 # ----------------------------------------------------------------------------
 if [[ "$STUDIO_TYPE" = "stage1" ]]; then
   pkg_build_deps=(
-    be/binutils
+    lilian/binutils/2.28/20170624225044
   )
 fi
