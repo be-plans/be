@@ -19,6 +19,6 @@ Binary package
 ## Usage
 
 ```
-hab pkg install core/hugo
-hab pkg exec core/hugo hugo
+hab pkg install lilian/hugo
+hab pkg exec lilian/hugo hugo
 ```

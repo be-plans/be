@@ -11,34 +11,34 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_build_deps=(
-  be/autoconf
-  be/automake
-  be/diffutils
-  be/gcc
-  be/libtool
-  be/make
-  be/m4
-  be/pkg-config
+  lilian/autoconf
+  lilian/automake
+  lilian/diffutils
+  lilian/gcc
+  lilian/libtool
+  lilian/make
+  lilian/m4
+  lilian/pkg-config
 )
 pkg_deps=(
-  be/bzip2
-  be/curl
-  be/gcc-libs
-  be/glib
+  lilian/bzip2
+  lilian/curl
+  lilian/gcc-libs
+  lilian/glib
   core/glibc
   lilian/jemalloc
   lilian/libaio
-  be/libcap-ng
+  lilian/libcap-ng
   lilian/lzo
-  be/ncurses
-  be/patch
-  be/pcre
+  lilian/ncurses
+  lilian/patch
+  lilian/pcre
   lilian/pixman
-  be/python2
-  be/snappy
-  be/util-linux
+  lilian/python2
+  lilian/snappy
+  lilian/util-linux
   lilian/vde2
-  be/zlib
+  lilian/zlib
 )
 
 do_prepare() {

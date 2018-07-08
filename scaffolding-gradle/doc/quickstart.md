@@ -11,7 +11,7 @@ This should leave you with a `hab` program on your system with a generated origi
 Now, navigate to the directory at the root of your app and generate a Plan with::
 
 ```sh
-hab plan init --scaffolding core/scaffolding-gradle
+hab plan init --scaffolding lilian/scaffolding-gradle
 ```
 
 Now, why not commit the Plan into your project's codebase? If using Git:

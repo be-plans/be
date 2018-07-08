@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://releases.hashicorp.com/${pkg_name}/${pkg_version}/${pkg_name}_${pkg_version}_linux_amd64.zip
 pkg_filename=${pkg_name}_${pkg_version}_linux_amd64.zip
 pkg_shasum=6b8ce67647a59b2a3f70199c304abca0ddec0e49fd060944c26f666298e23418
-pkg_build_deps=(be/unzip)
+pkg_build_deps=(lilian/unzip)
 pkg_deps=()
 pkg_bin_dirs=(bin)
 

@@ -11,16 +11,16 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_deps=(
-  be/bash
+  lilian/bash
   core/glibc
-  be/gcc-libs
+  lilian/gcc-libs
   lilian/libpcap
-  be/openssl
+  lilian/openssl
 )
 pkg_build_deps=(
-  be/make
-  be/gcc
-  be/gcc-libs
+  lilian/make
+  lilian/gcc
+  lilian/gcc-libs
   core/glibc
   lilian/python2
 )

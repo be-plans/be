@@ -10,9 +10,9 @@ pkg_shasum=6cfe82e530ef0837212f13e45c1565ba53f5199eec2527b85ecbcd88bf26821d
 pkg_bin_dirs=(bin)
 pkg_build_deps=()
 pkg_deps=(
-  be/coreutils
+  lilian/coreutils
   lilian/node
-  be/sed
+  lilian/sed
 )
 
 # Yarn unpacks into dist, so fix that

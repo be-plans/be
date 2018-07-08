@@ -9,8 +9,8 @@ pkg_shasum="09651201a34771774fc4feaf5b409717e4bc052b82a89f3fc17c0cf578f8e608"
 pkg_description="Simple Perl-based rpm2cpio utility"
 pkg_upstream_url="https://svnweb.freebsd.org/ports/head/archivers/rpm2cpio/"
 
-pkg_deps=(core/perl core/gzip core/xz core/bzip2)
-pkg_build_deps=(core/patch core/sed)
+pkg_deps=(lilian/perl lilian/gzip lilian/xz lilian/bzip2)
+pkg_build_deps=(lilian/patch lilian/sed)
 pkg_bin_dirs=(bin)
 
 do_unpack() {
@@ -25,7 +25,7 @@ do_prepare() {
     -e "s,%%lzma%%,$(pkg_path_for xz)/bin/lzma,g" \
     "$PLAN_CONTEXT/hab-path.patch" \
     | patch -p0
-  fix_interpreter rpm2cpio core/perl bin/perl
+  fix_interpreter rpm2cpio lilian/perl bin/perl
 }
 
 do_build() {

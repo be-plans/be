@@ -6,7 +6,7 @@ pkg_license=('MIT')
 pkg_description="Envdir runs another program with a modified environment according to files in a specified directory."
 pkg_upstream_url="https://github.com/jezdez/envdir"
 pkg_source=https://github.com/jezdez/envdir/archive/${pkg_version}.tar.gz
-pkg_deps=(be/python)
+pkg_deps=(lilian/python)
 pkg_bin_dirs=(bin)
 
 source ../defaults.sh

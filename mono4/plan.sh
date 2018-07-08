@@ -8,22 +8,22 @@ pkg_filename="mono-${pkg_version}.tar.bz2"
 pkg_shasum="18cb38a670e51609c36c687ed90ad42cfedabeffd0a2dc5f7f0c46249eb8dbef"
 pkg_dirname="mono-$(echo $pkg_version | cut -d'.' -f 1-3)"
 pkg_deps=(
-  core/gcc-libs
+  lilian/gcc-libs
   core/glibc
-  core/tzdata
-  core/zlib
+  lilian/tzdata
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/cmake
-  core/diffutils
-  core/gcc
-  core/gettext
-  core/libtool
-  core/make
-  core/ncurses
-  core/perl
-  core/pkg-config
-  core/python
+  lilian/cmake
+  lilian/diffutils
+  lilian/gcc
+  lilian/gettext
+  lilian/libtool
+  lilian/make
+  lilian/ncurses
+  lilian/perl
+  lilian/pkg-config
+  lilian/python
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

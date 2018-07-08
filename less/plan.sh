@@ -12,15 +12,15 @@ pkg_source="http://www.greenwoodsoftware.com/$pkg_name/${pkg_name}-${pkg_version
 pkg_shasum="503f91ab0af4846f34f0444ab71c4b286123f0044a4964f1ae781486c617f2e2"
 pkg_deps=(
   core/glibc
-  be/ncurses
-  be/pcre
+  lilian/ncurses
+  lilian/pcre
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
 )
 pkg_bin_dirs=(bin)
 

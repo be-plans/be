@@ -13,8 +13,8 @@ pkg_upstream_url="https://www.busybox.net/"
 pkg_license=('gplv2')
 pkg_deps=()
 pkg_build_deps=(
-  be/linux-headers-musl
-  be/musl
+  lilian/linux-headers-musl
+  lilian/musl
   "${pkg_build_deps[@]}"
 )
 pkg_dirname=${_distname}-${pkg_version}

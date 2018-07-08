@@ -8,15 +8,15 @@ pkg_license=('GPL-2.0')
 pkg_source="http://ftp.hosteurope.de/mirror/archive.mariadb.org//${pkg_name}-${pkg_version}/source/${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum="b3df99ae5b1ec8cf6cede4cbc4ae3f54ce66464549cba6d56d9ff4d24e4d551e"
 pkg_deps=(
-  be/gcc-libs
-  be/ncurses
-  be/zlib
+  lilian/gcc-libs
+  lilian/ncurses
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/coreutils
-  be/cmake
+  lilian/gcc
+  lilian/make
+  lilian/coreutils
+  lilian/cmake
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -42,7 +42,7 @@ do_prepare() {
 
 do_build() {
     cmake . -DCMAKE_INSTALL_PREFIX="${pkg_prefix}" \
-            -DCMAKE_PREFIX_PATH="$(pkg_path_for be/ncurses)" \
+            -DCMAKE_PREFIX_PATH="$(pkg_path_for lilian/ncurses)" \
             -DCMAKE_CXX_FLAGS="$CXXFLAGS" \
             -DCMAKE_C_FLAGS="$CFLAGS" \
             -DCMAKE_BUILD_TYPE=Release \

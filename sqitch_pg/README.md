@@ -12,13 +12,13 @@ This is a hybrid binary + library package, designed to make it easy to install S
 
 Install this package by running:
 ```
-hab pkg install -b core/sqitch_pg
+hab pkg install -b lilian/sqitch_pg
 ```
 
 Run this package like so:
 ```
 cd your_schema_folder
-hab pkg exec core/sqitch_pg sqitch --engine pg deploy "db:pg://${USER}:${PASS}@${HOST}/$DB"
+hab pkg exec lilian/sqitch_pg sqitch --engine pg deploy "db:pg://${USER}:${PASS}@${HOST}/$DB"
 ```
 
 For a complete example, see [this db-migrations script](https://github.com/chef/chef-server/blob/master/src/bookshelf/habitat/config/database-migrations.sh)

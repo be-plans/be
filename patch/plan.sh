@@ -13,14 +13,14 @@ pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum="ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd"
 pkg_deps=(
   core/glibc
-  be/attr
+  lilian/attr
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/make
-  be/gcc
-  be/sed
+  lilian/coreutils
+  lilian/diffutils
+  lilian/make
+  lilian/gcc
+  lilian/sed
 )
 pkg_bin_dirs=(bin)
 

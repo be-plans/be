@@ -8,18 +8,18 @@ pkg_upstream_url="https://www.freedesktop.org/wiki/Software/cppunit/"
 pkg_source="http://dev-www.libreoffice.org/src/${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum="3d569869d27b48860210c758c4f313082103a5e58219a7669b52bfd29d674780"
 pkg_deps=(
-  be/bash
-  be/gcc-libs
+  lilian/bash
+  lilian/gcc-libs
 )
 
 pkg_build_deps=(
-  be/autoconf
-  be/automake
-  be/gcc
+  lilian/autoconf
+  lilian/automake
+  lilian/gcc
   lilian/glib
-  be/libtool
-  be/make
-  be/pkg-config
+  lilian/libtool
+  lilian/make
+  lilian/pkg-config
   lilian/which
 )
 
@@ -32,7 +32,7 @@ source ../defaults.sh
 
 do_prepare() {
   build_line "Fixing 'bin/env' interpreter for autogen.sh"
-  fix_interpreter "$HAB_CACHE_SRC_PATH/$pkg_dirname/autogen.sh" be/bash bin/sh
+  fix_interpreter "$HAB_CACHE_SRC_PATH/$pkg_dirname/autogen.sh" lilian/bash bin/sh
 }
 
 do_build() {

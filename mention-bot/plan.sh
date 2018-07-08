@@ -15,8 +15,8 @@ pkg_deps=(
 pkg_build_deps=(
   core/glibc
   lilian/node
-  be/patchelf
-  be/patch
+  lilian/patchelf
+  lilian/patch
 )
 pkg_exports=(
   [port]=port

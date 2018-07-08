@@ -11,16 +11,16 @@ pkg_shasum="eafdb3b912e9ec34bdd28b651d00226a6253ba65036cb9a41cad2d9e82e3eb70"
 
 pkg_deps=(
   core/glibc
-  core/openssl
-  core/readline
-  core/zlib
-  core/libossp-uuid
+  lilian/openssl
+  lilian/readline
+  lilian/zlib
+  lilian/libossp-uuid
 )
 
 pkg_build_deps=(
-  core/coreutils
-  core/gcc
-  core/make
+  lilian/coreutils
+  lilian/gcc
+  lilian/make
 )
 
 pkg_bin_dirs=(bin)

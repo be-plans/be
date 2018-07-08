@@ -8,12 +8,12 @@ pkg_license=("MIT")
 pkg_source="https://www.cairographics.org/releases/pixman-${pkg_version}.tar.gz"
 pkg_shasum=21b6b249b51c6800dc9553b65106e1e37d0e25df942c90531d4c3997aa20a88e
 pkg_deps=(
-  core/glibc be/gcc-libs lilian/libpng
-  be/zlib
+  core/glibc lilian/gcc-libs lilian/libpng
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/gcc be/make be/pkg-config
-  be/diffutils be/file
+  lilian/gcc lilian/make lilian/pkg-config
+  lilian/diffutils lilian/file
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

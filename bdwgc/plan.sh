@@ -10,14 +10,14 @@ pkg_dirname="gc-${pkg_version}"
 pkg_shasum=bd112005563d787675163b5afff02c364fc8deb13a99c03f4e80fdf6608ad41e
 pkg_deps=(
   core/glibc
-  be/libatomic_ops
+  lilian/libatomic_ops
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/cmake
-  be/diffutils
-  be/pkg-config
+  lilian/gcc
+  lilian/make
+  lilian/cmake
+  lilian/diffutils
+  lilian/pkg-config
 )
 
 pkg_include_dirs=(include)

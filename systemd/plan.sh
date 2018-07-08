@@ -14,24 +14,24 @@ pkg_include_dirs=(include)
 pkg_lib_dirs=(lib var/lib usr/lib)
 pkg_deps=(
   core/glibc
-  be/libcap
+  lilian/libcap
   lilian/lz4
-  be/util-linux
-  be/xz
+  lilian/util-linux
+  lilian/xz
 )
 pkg_svc_user=root
 pkg_svc_group=root
 pkg_build_deps=(
-  be/coreutils
-  be/dbus
-  be/gcc
-  be/gcc-libs
-  be/gettext
-  be/gperf
-  be/m4
-  be/meson
-  be/ninja
-  be/pkg-config
+  lilian/coreutils
+  lilian/dbus
+  lilian/gcc
+  lilian/gcc-libs
+  lilian/gettext
+  lilian/gperf
+  lilian/m4
+  lilian/meson
+  lilian/ninja
+  lilian/pkg-config
 )
 
 source ../defaults.sh
@@ -40,7 +40,7 @@ do_prepare() {
   do_default_prepare
 
   if [[ ! -f /usr/bin/env ]]; then
-    ln -s "$(pkg_path_for core/coreutils)/bin/env" /usr/bin/env
+    ln -s "$(pkg_path_for lilian/coreutils)/bin/env" /usr/bin/env
   fi
 
   export LANG=en_US.utf8

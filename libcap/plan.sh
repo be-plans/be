@@ -9,16 +9,16 @@ pkg_source="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/$
 pkg_shasum="693c8ac51e983ee678205571ef272439d83afe62dd8e424ea14ad9790bc35162"
 pkg_deps=(
   core/glibc
-  be/attr
+  lilian/attr
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/linux-headers
-  be/perl
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/linux-headers
+  lilian/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

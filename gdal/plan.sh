@@ -8,14 +8,14 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://download.osgeo.org/gdal/${pkg_version}/gdal-${pkg_version}.tar.gz
 pkg_shasum=61837706abfa3e493f3550236efc2c14bd6b24650232f9107db50a944abf8b2f
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/pkg-config
-  be/patchelf
+  lilian/gcc
+  lilian/make
+  lilian/pkg-config
+  lilian/patchelf
 )
 pkg_deps=(
   core/glibc
-  be/gcc-libs
+  lilian/gcc-libs
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

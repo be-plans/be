@@ -8,12 +8,12 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=("Apache-2.0")
 pkg_source="https://$go_pkg"
 pkg_upstream_url=$pkg_source
-pkg_scaffolding="core/scaffolding-go"
+pkg_scaffolding="lilian/scaffolding-go"
 pkg_bin_dirs=(bin)
 pkg_build_deps=(
-  core/which
-  core/coreutils
-  core/mercurial
+  lilian/which
+  lilian/coreutils
+  lilian/mercurial
 )
 scaffolding_go_build_deps=()
 # note: helm uses github.com/Masterminds/glide but `make bootstrap` we launch as

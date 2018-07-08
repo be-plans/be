@@ -8,16 +8,16 @@ pkg_license=('EPL-1.0' 'Eclipse Distribution License - v 1.0')
 pkg_source="http://mosquitto.org/files/source/mosquitto-${pkg_version}.tar.gz"
 pkg_shasum="7d3b3e245a3b4ec94b05678c8199c806359737949f4cfe0bf936184f6ca89a83"
 pkg_deps=(
-  be/bash
-  core/c-ares
-  be/gcc-libs
+  lilian/bash
+  lilian/c-ares
+  lilian/gcc-libs
   core/glibc
-  be/openssl
-  be/util-linux
+  lilian/openssl
+  lilian/util-linux
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
+  lilian/gcc
+  lilian/make
 )
 pkg_bin_dirs=(bin sbin)
 pkg_include_dirs=(include)

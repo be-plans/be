@@ -8,7 +8,7 @@ pkg_description="The Apache Tomcat software is an open source implementation of 
 pkg_upstream_url="http://tomcat.apache.org/"
 pkg_source=http://archive.apache.org/dist/tomcat/tomcat-8/v${pkg_version}/bin/apache-tomcat-${pkg_version}.tar.gz
 pkg_shasum=d72234baa373234aa9ed78e8331ac1ce47d2e07a262dafce35d17389825bc8b7
-pkg_deps=(be/coreutils)
+pkg_deps=(lilian/coreutils)
 pkg_exports=(
   [port]=server.port
 )

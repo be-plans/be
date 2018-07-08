@@ -78,19 +78,19 @@ EOF
 pkg_source="https://github.com/$pkg_name/$pkg_name/releases/download/gd-$pkg_version/$pkg_name-$pkg_version.tar.xz"
 pkg_shasum="137f13a7eb93ce72e32ccd7cebdab6874f8cf7ddf31d3a455a68e016ecd9e4e6"
 pkg_deps=(
-  core/fontconfig
-  core/freetype
-  core/libjpeg-turbo
-  core/libpng
-  core/libtiff
-  core/zlib
+  lilian/fontconfig
+  lilian/freetype
+  lilian/libjpeg-turbo
+  lilian/libpng
+  lilian/libtiff
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/diffutils
-  core/file
-  core/gcc
-  core/make
-  core/pkg-config
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/make
+  lilian/pkg-config
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
@@ -102,7 +102,7 @@ pkg_upstream_url="https://libgd.github.io"
 do_prepare() {
   if [ ! -e /usr/bin/file ]
   then
-    ln -sv "$(pkg_path_for core/file)/bin/file" /usr/bin/file
+    ln -sv "$(pkg_path_for lilian/file)/bin/file" /usr/bin/file
   fi
 }
 

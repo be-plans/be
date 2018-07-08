@@ -16,16 +16,16 @@ pkg_shasum="750d437185286f40a369e1e4f4764eda932b9459b5ec9a731628393dd3d32334"
 pkg_dirname="${_distname}-${_base_version}"
 pkg_deps=(
   core/glibc
-  be/ncurses
+  lilian/ncurses
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/bison
-  be/grep
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/bison
+  lilian/grep
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

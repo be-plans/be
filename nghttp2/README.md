@@ -18,7 +18,7 @@ The Habitat Maintainers humans@habitat.sh
 
 ## Usage
 
-To use this library in your application, add `core/nghttp2` to its `pkg_deps`,
+To use this library in your application, add `lilian/nghttp2` to its `pkg_deps`,
 and pass its location to your application's `./configure` call, for example:
 
 ```

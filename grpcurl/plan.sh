@@ -7,4 +7,4 @@ pkg_upstream_url="https://github.com/fullstorydev/grpcurl"
 pkg_version="0.1.0"
 pkg_license=('custom')
 pkg_bin_dirs=(bin)
-pkg_scaffolding=core/scaffolding-go
+pkg_scaffolding=lilian/scaffolding-go

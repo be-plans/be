@@ -15,8 +15,8 @@ The Habitat Maintainers humans@habitat.sh
 ## Usage
 
 ```
-$ hab pkg install core/curl
-$ hab pkg binlink core/curl
+$ hab pkg install lilian/curl
+$ hab pkg binlink lilian/curl
 $ curl --help
 
 Usage: curl [options...] <url>

@@ -5,7 +5,7 @@
 # 0.8.9 (12-08-2017)
 
 - Improve git detection with `git rev-parse --is-in-work-tree`, makes
-  core/git a direct build dependency
+  lilian/git a direct build dependency
 
 # 0.8.8 (11-27-2017)
 - move the bundle config swap out to do_default_prepare

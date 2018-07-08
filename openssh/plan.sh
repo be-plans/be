@@ -12,13 +12,13 @@ pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_deps=(
   core/glibc
-  be/openssl
-  be/zlib
+  lilian/openssl
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/coreutils
-  be/gcc
-  be/make
+  lilian/coreutils
+  lilian/gcc
+  lilian/make
 )
 
 pkg_svc_user="root"

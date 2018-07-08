@@ -9,12 +9,12 @@ pkg_source="https://netix.dl.sourceforge.net/project/libtirpc/libtirpc/${pkg_ver
 pkg_shasum="86c3a78fc1bddefa96111dd233124c703b22a78884203c55c3e06b3be6a0fd5e"
 pkg_deps=(
   core/glibc
-  core/krb5
+  lilian/krb5
 )
 pkg_build_deps=(
-  core/diffutils
-  core/gcc
-  core/make
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

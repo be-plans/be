@@ -8,20 +8,20 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="https://ftp.stack.nl/pub/users/dimitri/${pkg_name}-${pkg_version}.src.tar.gz"
 pkg_shasum=af667887bd7a87dc0dbf9ac8d86c96b552dfb8ca9c790ed1cbffaa6131573f6b
 pkg_deps=(
-  be/gcc-libs
+  lilian/gcc-libs
   core/glibc
-  be/libiconv
+  lilian/libiconv
 )
 pkg_build_deps=(
-  be/bison
-  be/cmake
-  be/diffutils
-  be/flex
-  be/gcc
+  lilian/bison
+  lilian/cmake
+  lilian/diffutils
+  lilian/flex
+  lilian/gcc
   lilian/libxml2
-  be/m4
-  be/make
-  be/python
+  lilian/m4
+  lilian/make
+  lilian/python
 )
 
 pkg_bin_dirs=(bin)
@@ -35,7 +35,7 @@ do_build() {
   export CXXFLAGS="-liconv $CXXFLAGS"
   build_line "CXXFLAGS are now: $CXXFLAGS"
   cmake -DCMAKE_INSTALL_PREFIX:PATH="$pkg_prefix" \
-    -DICONV_INCLUDE_DIR="$(hab pkg path be/libiconv)/include" \
+    -DICONV_INCLUDE_DIR="$(hab pkg path lilian/libiconv)/include" \
     -DCMAKE_BUILD_TYPE=Release \
     -G "Unix Makefiles" ../
   make -j $(nproc)

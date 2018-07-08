@@ -8,7 +8,7 @@ pkg_upstream_url=https://github.com/hashicorp/envconsul
 pkg_source="https://releases.hashicorp.com/${pkg_name}/${pkg_version}/${pkg_name}_${pkg_version}_linux_amd64.zip"
 pkg_shasum="67ed44cb254da24ca5156ada6d04e3cfeba248ca0c50a5ddd42282cbafde80bc"
 pkg_filename="${pkg_name}-${pkg_version}_linux_amd64.zip"
-pkg_build_deps=(core/unzip)
+pkg_build_deps=(lilian/unzip)
 pkg_bin_dirs=(bin)
 
 do_unpack() {

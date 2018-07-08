@@ -16,7 +16,7 @@ during build/runtime.
 
 do_build() {
   ./configure --prefix="${pkg_prefix}" \
-    --with-talloc-lib-dir="$(pkg_path_for core/talloc)" \
-    --with-talloc-include-dir="$(pkg_path_for core/talloc)"
+    --with-talloc-lib-dir="$(pkg_path_for lilian/talloc)" \
+    --with-talloc-include-dir="$(pkg_path_for lilian/talloc)"
   make
 }

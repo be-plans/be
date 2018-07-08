@@ -10,25 +10,25 @@ pkg_source="https://www.x.org/releases/individual/lib/${pkg_dirname}.tar.bz2"
 pkg_shasum="7c3fe7c657e83547f4822bfde30a90d84524efb56365448768409b77f05355ad"
 pkg_deps=(
   core/glibc
-  core/libxau
-  core/libxcb
-  core/libxdmcp
-  core/libxfixes
-  core/xlib
+  lilian/libxau
+  lilian/libxcb
+  lilian/libxdmcp
+  lilian/libxfixes
+  lilian/xlib
 )
 pkg_build_deps=(
-  core/damageproto
-  be/diffutils
-  be/file
-  core/fixesproto
-  be/gcc
-  core/kbproto
-  core/libpthread-stubs
-  be/make
-  be/pkg-config
-  core/util-macros
-  core/xextproto
-  core/xproto
+  lilian/damageproto
+  lilian/diffutils
+  lilian/file
+  lilian/fixesproto
+  lilian/gcc
+  lilian/kbproto
+  lilian/libpthread-stubs
+  lilian/make
+  lilian/pkg-config
+  lilian/util-macros
+  lilian/xextproto
+  lilian/xproto
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

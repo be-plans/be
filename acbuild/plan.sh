@@ -8,15 +8,15 @@ pkg_upstream_url="https://github.com/containers/build"
 pkg_source=https://github.com/containers/build/archive/v${pkg_version}.tar.gz
 pkg_shasum=88d99a002eb53212752d6f405d9e02555512b27c5b84e8ef5828607ee9774ed4
 pkg_dirname=build-${pkg_version}
-pkg_deps=(be/gnupg core/glibc)
-pkg_build_deps=(lilian/go be/patchelf)
+pkg_deps=(lilian/gnupg core/glibc)
+pkg_build_deps=(lilian/go lilian/patchelf)
 pkg_bin_dirs=(bin)
 
 do_prepare() {
   do_default_prepare
 
   build_line "Modifying 'build' file"
-  sed -e "s#\#\!/usr/bin/env#\#\!$(pkg_path_for be/coreutils)/bin/env#" -i build
+  sed -e "s#\#\!/usr/bin/env#\#\!$(pkg_path_for lilian/coreutils)/bin/env#" -i build
   sed -e "s#VERSION=\$(cd \"\${DIR}\" && git describe --dirty)#VERSION=${pkg_version}#" -i build
 }
 

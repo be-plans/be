@@ -6,7 +6,7 @@ pkg_license=("Apache-2.0")
 pkg_filename="${pkg_name}-${pkg_version}.tgz"
 pkg_source="https://github.com/lmenezes/cerebro/releases/download/v${pkg_version}/${pkg_filename}"
 pkg_shasum="4123019aa75d401b0b27ae1f6bd29c93a10dd52d80f398a18480969b20759dac"
-pkg_deps=(core/coreutils core/jre8)
+pkg_deps=(lilian/coreutils lilian/jre8)
 pkg_bin_dirs=(bin)
 pkg_exports=(
   [port]=port
@@ -24,5 +24,5 @@ do_build() {
 do_install() {
 	cp -r ./* "${pkg_prefix}/"
 	mkdir -p "${pkg_prefix}/logs"
-	fix_interpreter "${pkg_prefix}/bin/*" core/coreutils bin/env
+	fix_interpreter "${pkg_prefix}/bin/*" lilian/coreutils bin/env
 }

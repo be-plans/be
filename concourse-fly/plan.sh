@@ -7,11 +7,11 @@ pkg_license=('Apache-2.0')
 pkg_upstream_url="https://concourse.ci"
 
 pkg_source="https://github.com/concourse/concourse.git"
-pkg_build_deps=("core/cacerts" "core/gnupg" "core/go" "core/git")
+pkg_build_deps=("lilian/cacerts" "lilian/gnupg" "lilian/go" "lilian/git")
 pkg_bin_dirs=(bin)
 
 do_download() {
-  GIT_SSL_CAINFO="$(pkg_path_for core/cacerts)/ssl/certs/cacert.pem"
+  GIT_SSL_CAINFO="$(pkg_path_for lilian/cacerts)/ssl/certs/cacert.pem"
   export GIT_SSL_CAINFO
 
   REPO_PATH="$HAB_CACHE_SRC_PATH/$pkg_dirname"

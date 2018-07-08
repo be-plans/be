@@ -9,29 +9,29 @@ pkg_upstream_url=https://www.gnu.org/software/grub/
 pkg_license=('GPL-3.0')
 pkg_bin_dirs=(bin sbin)
 pkg_build_deps=(
-  be/autoconf
-  be/automake
-  be/binutils
-  be/bison
-  be/cacerts
-  be/diffutils
+  lilian/autoconf
+  lilian/automake
+  lilian/binutils
+  lilian/bison
+  lilian/cacerts
+  lilian/diffutils
   lilian/dosfstools
-  be/flex
+  lilian/flex
   lilian/freetype
-  be/gcc
-  be/gettext
+  lilian/gcc
+  lilian/gettext
   lilian/git
-  be/m4
-  be/make
-  be/python
+  lilian/m4
+  lilian/make
+  lilian/python
   lilian/qemu
   lilian/rsync
-  be/texinfo
+  lilian/texinfo
 )
 pkg_deps=(
-  core/glibc be/gcc-libs be/xz
-  be/gettext be/pcre lilian/devicemapper
-  lilian/elfutils be/bzip2 be/libcap
+  core/glibc lilian/gcc-libs lilian/xz
+  lilian/gettext lilian/pcre lilian/devicemapper
+  lilian/elfutils lilian/bzip2 lilian/libcap
 )
 
 pkg_disabled_features=(pic)

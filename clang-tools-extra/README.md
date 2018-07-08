@@ -15,5 +15,5 @@ Binary package
 
 ## Usage
 
-Include `core/clang-tools-extra` if you need any of the extra clang tools.  For additional
+Include `lilian/clang-tools-extra` if you need any of the extra clang tools.  For additional
 usage, refer to the [`pkg_upstream_url`](https://clang.llvm.org/docs/ClangTools.html#extra-clang-tools)

@@ -10,12 +10,12 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
 pkg_bin_dirs=(bin)
 pkg_build_deps=(
-  # core/which # let's just ignore those errors. works fine without.
+  # lilian/which # let's just ignore those errors. works fine without.
 )
 pkg_deps=(
-  core/postgresql # for psql in hooks/init
+  lilian/postgresql # for psql in hooks/init
 )
-pkg_scaffolding=core/scaffolding-go
+pkg_scaffolding=lilian/scaffolding-go
 scaffolding_go_build_deps=()
 # note: foulkon uses github.com/Masterminds/glide; but we're using the version
 # foulkon uses instead of master (what scaffolding_go_build_deps would give us)

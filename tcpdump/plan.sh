@@ -7,15 +7,15 @@ pkg_license=('BSD')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://www.tcpdump.org/release/tcpdump-${pkg_version}.tar.gz
 pkg_shasum=798b3536a29832ce0cbb07fafb1ce5097c95e308a6f592d14052e1ef1505fe79
-# be/coreutils isn't /really/ needed at runtime, but fix_interpreter
+# lilian/coreutils isn't /really/ needed at runtime, but fix_interpreter
 # only works if the dep is listed in pkg_deps
 pkg_deps=(
-  core/glibc lilian/libpcap be/openssl
-  be/coreutils
+  core/glibc lilian/libpcap lilian/openssl
+  lilian/coreutils
 )
 pkg_build_deps=(
-  be/gcc be/make be/perl
-  be/diffutils
+  lilian/gcc lilian/make lilian/perl
+  lilian/diffutils
 )
 pkg_bin_dirs=(sbin)
 
@@ -27,6 +27,6 @@ do_build() {
 }
 
 do_check() {
-  fix_interpreter "tests/TESTonce" be/coreutils bin/env
+  fix_interpreter "tests/TESTonce" lilian/coreutils bin/env
   make check
 }

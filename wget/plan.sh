@@ -12,24 +12,24 @@ pkg_license=('GPL-3.0+')
 pkg_source="https://ftp.gnu.org/gnu/${_distname}/${_distname}-${pkg_version}.tar.gz"
 pkg_shasum="93fb96b0f48a20ff5be0d9d9d3c4a986b469cb853131f9d5fe4cc9cecbc8b5b5"
 pkg_deps=(
-  be/cacerts
+  lilian/cacerts
   core/glibc
-  be/openssl
-  be/pcre
-  be/zlib
+  lilian/openssl
+  lilian/pcre
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/flex
-  be/gcc
-  be/gettext
-  be/grep
-  be/make
-  be/patch
-  be/perl
-  be/pkg-config
-  be/sed
+  lilian/coreutils
+  lilian/diffutils
+  lilian/flex
+  lilian/gcc
+  lilian/gettext
+  lilian/grep
+  lilian/make
+  lilian/patch
+  lilian/perl
+  lilian/pkg-config
+  lilian/sed
 )
 pkg_bin_dirs=(bin)
 
@@ -54,7 +54,7 @@ do_install() {
   cat <<EOF >> "$pkg_prefix/etc/wgetrc"
 
 # Default root CA certs location
-ca_certificate=$(pkg_path_for be/cacerts)/ssl/certs/cacert.pem
+ca_certificate=$(pkg_path_for lilian/cacerts)/ssl/certs/cacert.pem
 EOF
 }
 

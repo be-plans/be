@@ -10,12 +10,12 @@ pkg_source=http://www.erlang.org/download/otp_src_${pkg_version}.tar.gz
 pkg_filename=otp_src_${pkg_version}.tar.gz
 pkg_shasum=fe80e1e14a2772901be717694bb30ac4e9a07eee0cc7a28988724cbd21476811
 pkg_deps=(
-  core/glibc be/zlib be/ncurses
-  be/openssl  be/sed
+  core/glibc lilian/zlib lilian/ncurses
+  lilian/openssl  lilian/sed
 )
 pkg_build_deps=(
-  be/coreutils be/gcc be/make
-  be/openssl  be/perl be/m4
+  lilian/coreutils lilian/gcc lilian/make
+  lilian/openssl  lilian/perl lilian/m4
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

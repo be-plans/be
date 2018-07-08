@@ -11,15 +11,15 @@ pkg_shasum="ed2dbd6954792b2c054ccf8ec4b330a54b85904a80cef477a1c74643ddafa0ce"
 pkg_dirname="${_distname}-${pkg_version}"
 pkg_deps=(
   core/glibc
-  be/openssl
-  be/zlib
-  be/bzip2
-  be/xz
+  lilian/openssl
+  lilian/zlib
+  lilian/bzip2
+  lilian/xz
 )
 pkg_build_deps=(
-  be/gcc
-  be/coreutils
-  be/make
+  lilian/gcc
+  lilian/coreutils
+  lilian/make
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

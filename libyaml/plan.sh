@@ -8,7 +8,7 @@ pkg_source=http://pyyaml.org/download/${pkg_name}/yaml-${pkg_version}.tar.gz
 pkg_filename=yaml-${pkg_version}.tar.gz
 pkg_shasum=8088e457264a98ba451a90b8661fcb4f9d6f478f7265d48322a196cec2480729
 pkg_deps=(core/glibc)
-pkg_build_deps=(be/coreutils be/make be/gcc)
+pkg_build_deps=(lilian/coreutils lilian/make lilian/gcc)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 

@@ -7,8 +7,8 @@ pkg_source=https://github.com/${pkg_name}/${pkg_name}/archive/${pkg_version}.tar
 pkg_shasum=577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07
 pkg_description="rebar is an Erlang build tool that makes it easy to compile and test Erlang applications, port drivers and releases."
 pkg_upstream_url="https://github.com/rebar/rebar"
-pkg_deps=(core/erlang be/busybox-static)
-pkg_build_deps=(be/coreutils)
+pkg_deps=(lilian/erlang lilian/busybox-static)
+pkg_build_deps=(lilian/coreutils)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 
@@ -26,7 +26,7 @@ do_build() {
 
 do_install() {
   cp -a "rebar" "${pkg_prefix}/bin/rebar"
-  fix_interpreter "${pkg_prefix}/bin/"* be/busybox-static bin/env
+  fix_interpreter "${pkg_prefix}/bin/"* lilian/busybox-static bin/env
 }
 
 do_end() {

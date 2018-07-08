@@ -13,12 +13,12 @@ pkg_source="http://www.musl-libc.org/releases/${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum="db59a8578226b98373f5b27e61f0dd29ad2456f4aa9cec587ba8c24508e4c1d9"
 pkg_deps=()
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/gcc
-  be/make
-  be/patch
-  be/sed
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/patch
+  lilian/sed
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

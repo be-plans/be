@@ -14,20 +14,20 @@ pkg_source="http://ftp.gnu.org/gnu/$_distname/${_distname}-${pkg_version}.tar.xz
 pkg_shasum="92d0fa1c311cacefa89853bdb53c62f4110cdfda3820346b59cbd098f40f955e"
 pkg_deps=(
   core/glibc
-  be/acl
-  be/attr
-  be/gmp
-  be/libcap
+  lilian/acl
+  lilian/attr
+  lilian/gmp
+  lilian/libcap
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/m4
-  be/perl
-  be/inetutils
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/m4
+  lilian/perl
+  lilian/inetutils
 )
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/env)

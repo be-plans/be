@@ -11,21 +11,21 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/bc
-  be/bison
-  be/diffutils
+  lilian/bc
+  lilian/bison
+  lilian/diffutils
   lilian/elfutils
-  be/findutils
-  be/gcc
-  be/inetutils
-  be/make
-  be/perl
-  be/openssl
+  lilian/findutils
+  lilian/gcc
+  lilian/inetutils
+  lilian/make
+  lilian/perl
+  lilian/openssl
 )
 
 do_begin() {
   if [[ ! -e /bin/pwd ]]; then
-    hab pkg binlink be/coreutils pwd -d /bin
+    hab pkg binlink lilian/coreutils pwd -d /bin
     _pwd_binlink=true
   fi
 }

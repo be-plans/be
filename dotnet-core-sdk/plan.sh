@@ -11,20 +11,20 @@ pkg_source="https://download.microsoft.com/download/D/7/2/D725E47F-A4F1-4285-893
 pkg_shasum=6c4223094b1e3e93a466c6d91d3aa1053a3b2aef99b63bf45023bda3fca1aede
 pkg_filename="dotnet-dev-debian-x64.${pkg_version}.tar.gz"
 pkg_deps=(
-  be/coreutils
-  be/curl
-  be/gcc-libs
+  lilian/coreutils
+  lilian/curl
+  lilian/gcc-libs
   core/glibc
   lilian/icu52
-  core/krb5
+  lilian/krb5
   lilian/libunwind
   lilian/lttng-ust
-  be/openssl
-  be/util-linux
-  be/zlib
+  lilian/openssl
+  lilian/util-linux
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/patchelf
+  lilian/patchelf
 )
 pkg_bin_dirs=(bin)
 
@@ -41,7 +41,7 @@ do_prepare() {
     -exec patchelf --interpreter "$(pkg_path_for glibc)/lib/ld-linux-x86-64.so.2" --set-rpath "$LD_RUN_PATH" {} \;
   find . -type f -name '*.so*' \
     -exec patchelf --set-rpath "$LD_RUN_PATH" {} \;
-  fix_interpreter "$HAB_CACHE_SRC_PATH/$pkg_dirname/sdk/${pkg_version}/Roslyn/RunCsc.sh" be/coreutils bin/env
+  fix_interpreter "$HAB_CACHE_SRC_PATH/$pkg_dirname/sdk/${pkg_version}/Roslyn/RunCsc.sh" lilian/coreutils bin/env
 }
 
 do_build() {

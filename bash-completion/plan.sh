@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="https://github.com/scop/bash-completion/releases/download/${pkg_version}/bash-completion-${pkg_version}.tar.xz"
 pkg_shasum="41ba892d3f427d4a686de32673f35401bc947a7801f684127120cdb13641441e"
 pkg_deps=(
-  be/bash
+  lilian/bash
 )
-pkg_build_deps=(be/make be/gcc be/autoconf be/automake)
+pkg_build_deps=(lilian/make lilian/gcc lilian/autoconf lilian/automake)
 

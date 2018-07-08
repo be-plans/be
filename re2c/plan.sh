@@ -7,12 +7,12 @@ pkg_upstream_url=http://re2c.org/
 pkg_description="re2c is a lexer generator for C/C++."
 pkg_source=https://github.com/skvadrik/${pkg_name}/releases/download/${pkg_version}/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=cf56e0de3f335f6a22d3e8c06b8b450d858a4e7875ea1b01c9233e084b90cb52
-pkg_deps=(be/gcc-libs)
+pkg_deps=(lilian/gcc-libs)
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/gcc
-  be/make
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

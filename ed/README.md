@@ -15,8 +15,8 @@ The Habitat Maintainers humans@habitat.sh
 ## Usage
 
 ```
-$ hab pkg install core/ed
-$ hab pkg binlink core/ed
+$ hab pkg install lilian/ed
+$ hab pkg binlink lilian/ed
 $ ed --help
 GNU Ed - The GNU line editor.
 

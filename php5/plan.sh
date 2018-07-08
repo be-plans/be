@@ -11,21 +11,21 @@ pkg_filename=${pkg_distname}-${pkg_version}.tar.bz2
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_shasum=ee78a7e9ca21d8ea394d037c55effff477a49dbae31c7753c547036f5bd73b92
 pkg_deps=(
-  be/coreutils
-  be/curl
+  lilian/coreutils
+  lilian/curl
   core/glibc
   lilian/libxml2
   lilian/libjpeg-turbo
   lilian/libpng
-  be/openssl
-  be/readline
-  be/zlib
+  lilian/openssl
+  lilian/readline
+  lilian/zlib
 )
 pkg_build_deps=(
   lilian/bison2
-  be/gcc
-  be/make
-  be/re2c
+  lilian/gcc
+  lilian/make
+  lilian/re2c
 )
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib)

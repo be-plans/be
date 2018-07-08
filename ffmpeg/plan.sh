@@ -12,20 +12,20 @@ pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_build_deps=(
-  be/diffutils
-  be/gcc
-  be/make
-  be/pkg-config
-  core/yasm
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/pkg-config
+  lilian/yasm
 )
 pkg_deps=(
-  be/bzip2
+  lilian/bzip2
   core/glibc
-  be/gmp
-  core/libwebp
-  core/openjpeg
-  be/xz
-  be/zlib
+  lilian/gmp
+  lilian/libwebp
+  lilian/openjpeg
+  lilian/xz
+  lilian/zlib
 )
 
 do_build() {

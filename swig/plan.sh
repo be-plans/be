@@ -8,14 +8,14 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://prdownloads.sourceforge.net/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=2939aae39dec06095462f1b95ce1c958ac80d07b926e48871046d17c0094f44c
 pkg_build_deps=(
-  be/diffutils
-  be/gcc
-  be/make
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
 )
 pkg_deps=(
-  be/gcc-libs
+  lilian/gcc-libs
   core/glibc
-  be/pcre
+  lilian/pcre
 )
 pkg_bin_dirs=(bin)
 

@@ -14,14 +14,14 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/file
-  be/gcc
-  be/make
-  be/patch
-  be/pkg-config
-  be/sed
+  lilian/coreutils
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/make
+  lilian/patch
+  lilian/pkg-config
+  lilian/sed
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
@@ -31,7 +31,7 @@ source ../defaults.sh
 
 do_prepare() {
   if [[ ! -r /usr/bin/file ]]; then
-    ln -sv "$(pkg_path_for "core/file")/bin/file" /usr/bin/file
+    ln -sv "$(pkg_path_for "lilian/file")/bin/file" /usr/bin/file
     _clean_file=true
   fi
 }

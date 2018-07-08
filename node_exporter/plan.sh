@@ -11,7 +11,7 @@ pkg_shasum=312d7e1c07d6a7548f2f116b983da87f7b3a7630f9332eb41c306fd71b2e6ec1
 pkg_build_deps=(
   lilian/go
   lilian/git
-  be/make
+  lilian/make
 )
 
 pkg_exports=(

@@ -11,7 +11,7 @@ $pkg_license= @("GPL-2.0")
 $pkg_source = "https://github.com/git-for-windows/git/releases/download/v$pkg_version.windows.1/Git-$pkg_version-64-bit.tar.bz2"
 $pkg_shasum = "741da847e4d8ee7c21eebf4d9ac6bbe6766cf50d388a4ac269751ec1bb2e051d"
 $pkg_bin_dirs = @("bin")
-$pkg_build_deps = @("core/7zip")
+$pkg_build_deps = @("lilian/7zip")
 
 function Invoke-Unpack {
   Push-Location (Resolve-Path $HAB_CACHE_SRC_PATH).Path

@@ -5,7 +5,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('gplv2')
 pkg_source=https://www.kernel.org/pub/linux/docs/$pkg_name/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=48aacb75d522dd31978682c4fd8bc68e43c9a409bc4c7a126810e7610dff0dd3
-pkg_build_deps=(be/coreutils be/make)
+pkg_build_deps=(lilian/coreutils lilian/make)
 
 do_build() {
   return 0

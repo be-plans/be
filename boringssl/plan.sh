@@ -9,15 +9,15 @@ pkg_source="https://boringssl.googlesource.com/boringssl/+archive/${pkg_version}
 pkg_shasum="None"
 pkg_deps=(
   core/glibc
-  core/go
-  core/cmake
-  core/ninja
-  core/perl
-  core/gcc
+  lilian/go
+  lilian/cmake
+  lilian/ninja
+  lilian/perl
+  lilian/gcc
 )
 pkg_build_deps=(
   core/glibc
-  core/gcc-libs
+  lilian/gcc-libs
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

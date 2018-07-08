@@ -16,21 +16,21 @@ pkg_exports=(
 pkg_exposes=(port)
 
 pkg_deps=(
-  core/libcxx
-  core/libcxxabi
-  be/gcc-libs
+  lilian/libcxx
+  lilian/libcxxabi
+  lilian/gcc-libs
   core/glibc
   lilian/jemalloc
-  be/krb5
-  be/numactl
-  be/openssl
-  be/python2
-  be/util-linux
+  lilian/krb5
+  lilian/numactl
+  lilian/openssl
+  lilian/python2
+  lilian/util-linux
 )
 
 pkg_build_deps=(
   lilian/dpkg
-  be/patchelf
+  lilian/patchelf
 )
 
 pkg_bin_dirs=(bin)

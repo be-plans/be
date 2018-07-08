@@ -13,8 +13,8 @@ The Habitat Maintainers humans@habitat.sh
 ## Usage
 
 ```bash
-hab pkg install core/aws-cli
-hab pkg binlink core/aws-cli aws   # do not try to binlink all the python deps
+hab pkg install lilian/aws-cli
+hab pkg binlink lilian/aws-cli aws   # do not try to binlink all the python deps
 
 aws --version
 ```

@@ -17,8 +17,8 @@ The Habitat Maintainers humans@habitat.sh
 tree can be used in the habitat studio to help visualize the directory structures of your application and the habitat it lives in.
 
 ```
-$ hab pkg install core/tree
-$ hab pkg binlink core/tree
+$ hab pkg install lilian/tree
+$ hab pkg binlink lilian/tree
 $ tree --help
 
 usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]

@@ -5,8 +5,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="The Datadog Agent"
 pkg_license=("BSD-3-Clause")
 pkg_upstream_url="https://github.com/datadog/dd-agent"
-pkg_build_deps=(be/curl be/sed be/tar)
-pkg_deps=(core/python2 core/sysstat be/busybox-static)
+pkg_build_deps=(lilian/curl lilian/sed lilian/tar)
+pkg_deps=(lilian/python2 lilian/sysstat lilian/busybox-static)
 pkg_dirname="datadog-agent"
 pkg_bin_dirs=(dd-agent/bin)
 pkg_svc_run="agent"
@@ -24,8 +24,8 @@ do_build() {
 
 do_install() {
   mkdir -p "$DD_HOME"
-  env PATH="$(pkg_path_for be/tar)/bin:$PATH" sh -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/setup_agent.sh)"
-  fix_interpreter "$DD_HOME/bin/agent" be/busybox-static bin/env
+  env PATH="$(pkg_path_for lilian/tar)/bin:$PATH" sh -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/setup_agent.sh)"
+  fix_interpreter "$DD_HOME/bin/agent" lilian/busybox-static bin/env
   rm -fr "$DD_HOME/logs"
   ln -s "$pkg_svc_var_path" "$DD_HOME/logs"
   mkdir -p "$pkg_prefix/config"

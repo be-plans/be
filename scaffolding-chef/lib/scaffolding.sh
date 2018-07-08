@@ -13,12 +13,12 @@ fi
 
 scaffolding_load() {
   parent_deps="${pkg_deps[*]}"
-  pkg_deps=("chef/chef-client" "core/cacerts")
+  pkg_deps=("chef/chef-client" "lilian/cacerts")
   for i in $parent_deps; do
     pkg_deps+=($i)
   done
   parent_build_deps="${pkg_build_deps[*]}"
-  pkg_build_deps=("chef/chef-dk" "core/git")
+  pkg_build_deps=("chef/chef-dk" "lilian/git")
   for i in $parent_build_deps; do
     pkg_build_deps+=($i)
   done
@@ -47,7 +47,7 @@ do_default_build_service() {
   cat << EOF >> "$pkg_prefix/hooks/run"
 #!/bin/sh
 
-export SSL_CERT_FILE="{{pkgPathFor "core/cacerts"}}/ssl/cert.pem"
+export SSL_CERT_FILE="{{pkgPathFor "lilian/cacerts"}}/ssl/cert.pem"
 
 cd {{pkg.path}}
 
@@ -60,7 +60,7 @@ EOF
   cat << EOF >> "$pkg_prefix/hooks/init"
 #!/bin/sh
 
-export SSL_CERT_FILE="{{pkgPathFor "core/cacerts"}}/ssl/cert.pem"
+export SSL_CERT_FILE="{{pkgPathFor "lilian/cacerts"}}/ssl/cert.pem"
 
 cd {{pkg.path}}
 exec 2>&1

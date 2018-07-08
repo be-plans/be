@@ -41,6 +41,6 @@ if($(Get-Service 'MpsSvc').Status -eq "Running") {
         }
     }
 
-    Import-Module "{{pkgPathFor "core/dsc-core"}}/Modules/DscCore"
+    Import-Module "{{pkgPathFor "lilian/dsc-core"}}/Modules/DscCore"
     Start-DscCore (Join-Path {{pkg.svc_config_path}} firewall.ps1) NewFirewallRule
 }

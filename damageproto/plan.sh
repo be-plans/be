@@ -8,10 +8,10 @@ pkg_license=('MIT')
 pkg_source="https://www.x.org/releases/individual/proto/${pkg_name}-${pkg_version}.tar.bz2"
 pkg_shasum="5c7c112e9b9ea8a9d5b019e5f17d481ae20f766cb7a4648360e7c1b46fc9fc5b"
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/pkg-config
-  core/util-macros
+  lilian/gcc
+  lilian/make
+  lilian/pkg-config
+  lilian/util-macros
 )
 pkg_include_dirs=(include)
 pkg_pconfig_dirs=(lib/pkgconfig)

@@ -10,11 +10,11 @@ pkg_shasum="ecf4db8781dc50a21cbc4cb17b039f96aede53f9da13435a3201373abb49b96b"
 pkg_dirname="kernel-headers-${pkg_version}"
 pkg_deps=()
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/gcc
-  be/make
-  be/patch
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/patch
 )
 pkg_include_dirs=(include)
 

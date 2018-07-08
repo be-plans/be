@@ -8,7 +8,7 @@ pkg_shasum=3fbce5530d8d9a66f43034782b0f249df3d98e3e97ef849e7f740eab612b963f
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="Jetty webserver and Java container"
 pkg_license=('Apache-2.0')
-pkg_deps=(lilian/which be/coreutils be/bash core/jdk7)
+pkg_deps=(lilian/which lilian/coreutils lilian/bash lilian/jdk7)
 
 do_unpack() {
     local source_dir=$HAB_CACHE_SRC_PATH/${pkg_name}-${pkg_version}
@@ -35,5 +35,5 @@ do_install() {
     find "${pkg_prefix}/jetty" -type f -name '*.sh' -exec chmod -v 755 {} +
 
     # fix interpreter for jetty startup script
-    fix_interpreter "${pkg_prefix}/jetty/bin/jetty.sh" be/coreutils bin/env
+    fix_interpreter "${pkg_prefix}/jetty/bin/jetty.sh" lilian/coreutils bin/env
 }

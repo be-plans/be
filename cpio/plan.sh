@@ -7,7 +7,7 @@ pkg_source=http://ftp.gnu.org/gnu/cpio/cpio-${pkg_version}.tar.gz
 pkg_shasum=08a35e92deb3c85d269a0059a27d4140a9667a6369459299d08c17f713a92e73
 pkg_deps=()
 pkg_build_deps=(
-  be/make
-  be/gcc
+  lilian/make
+  lilian/gcc
 )
 pkg_bin_dirs=(bin)

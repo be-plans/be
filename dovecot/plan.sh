@@ -9,19 +9,19 @@ pkg_source="https://dovecot.org/releases/${pkg_version%.*}/${pkg_name}-${pkg_ver
 pkg_shasum="de60cb470d025e4dd0f8e8fbbb4b9316dfd4930eb949d307330669ffbeaf8581"
 pkg_dirname="${pkg_name}-ce-${pkg_version}"
 pkg_deps=(
-  core/bzip2
+  lilian/bzip2
   core/glibc
-  core/linux-pam
-  core/lz4
-  core/openssl
-  core/zlib
+  lilian/linux-pam
+  lilian/lz4
+  lilian/openssl
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/diffutils
-  core/file
-  core/gcc
-  core/make
-  core/pkg-config
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/make
+  lilian/pkg-config
 )
 pkg_bin_dirs=(
   bin

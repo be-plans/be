@@ -9,18 +9,18 @@ pkg_source="https://libssh2.org/download/${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum="39f34e2f6835f4b992cafe8625073a88e5a28ba78f83e8099610a7b3af4676d4"
 pkg_deps=(
   core/glibc
-  be/openssl
-  be/zlib
+  lilian/openssl
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/diffutils
-  be/file
-  be/gcc
-  be/inetutils
-  be/linux-headers
-  be/make
-  be/openssh
-  be/pkg-config
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/inetutils
+  lilian/linux-headers
+  lilian/make
+  lilian/openssh
+  lilian/pkg-config
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

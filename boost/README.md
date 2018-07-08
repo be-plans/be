@@ -16,6 +16,6 @@ This is a library usually used at build time, thus you should use it like so in 
 
 ```
 pkg_build_deps=(
-    core/boost
+    lilian/boost
 )
 ```

@@ -15,7 +15,7 @@ Binary package
 To use this plan, include it in your `pkg_build_deps`.
 
 ```
-pkg_build_deps=(core/ant)
+pkg_build_deps=(lilian/ant)
 ```
 
 You will also need to set the `JAVA_HOME` environment variable, for example:

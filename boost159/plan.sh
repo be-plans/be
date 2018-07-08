@@ -11,23 +11,23 @@ pkg_shasum="47f11c8844e579d02691a607fbd32540104a9ac7a2534a8ddaef50daf502baac"
 
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  lilian/gcc-libs
 )
 
 pkg_build_deps=(
   core/glibc
-  core/gcc-libs
-  core/coreutils
-  core/diffutils
-  core/patch
-  core/make
-  core/gcc
-  core/python2
-  core/libxml2
-  core/libxslt
-  core/openssl
-  core/which
-  core/zlib
+  lilian/gcc-libs
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/python2
+  lilian/libxml2
+  lilian/libxslt
+  lilian/openssl
+  lilian/which
+  lilian/zlib
 )
 
 pkg_lib_dirs=(lib)
@@ -40,8 +40,8 @@ do_build() {
 do_install() {
   export NO_BZIP2=1
   export ZLIB_LIBPATH
-  ZLIB_LIBPATH="$(pkg_path_for core/zlib)/lib"
+  ZLIB_LIBPATH="$(pkg_path_for lilian/zlib)/lib"
   export ZLIB_INCLUDE
-  ZLIB_INCLUDE="$(pkg_path_for core/zlib)/include"
+  ZLIB_INCLUDE="$(pkg_path_for lilian/zlib)/include"
   ./b2 install --prefix="$pkg_prefix" -q --debug-configuration -j"$(nproc)"
 }

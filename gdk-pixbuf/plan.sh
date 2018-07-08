@@ -8,26 +8,26 @@ pkg_license=('GPL-2.0')
 pkg_source="https://download.gnome.org/sources/${pkg_name}/${pkg_version%.*}/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum=ae62ab87250413156ed72ef756347b10208c00e76b222d82d9ed361ed9dde2f3
 pkg_deps=(
-  be/coreutils
-  core/glib
+  lilian/coreutils
+  lilian/glib
   core/glibc
-  core/jbigkit
-  be/libffi
-  be/libiconv
-  core/libjpeg-turbo
-  core/libpng
-  core/libtiff
-  be/pcre
-  core/shared-mime-info
-  be/util-linux
-  be/xz
-  be/zlib
+  lilian/jbigkit
+  lilian/libffi
+  lilian/libiconv
+  lilian/libjpeg-turbo
+  lilian/libpng
+  lilian/libtiff
+  lilian/pcre
+  lilian/shared-mime-info
+  lilian/util-linux
+  lilian/xz
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/perl
-  be/pkg-config
+  lilian/gcc
+  lilian/make
+  lilian/perl
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

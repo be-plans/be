@@ -14,11 +14,11 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/coreutils
-  be/patch
-  be/make
-  be/gcc
-  be/sed
+  lilian/coreutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/sed
 )
 pkg_bin_dirs=(bin)
 

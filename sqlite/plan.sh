@@ -11,12 +11,12 @@ pkg_dirname=${pkg_name}-autoconf-${pkg_version}
 pkg_shasum=d7dd516775005ad87a57f428b6f86afd206cb341722927f104d3f0cf65fbbbe3
 pkg_deps=(
   core/glibc
-  be/readline
+  lilian/readline
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/coreutils
+  lilian/gcc
+  lilian/make
+  lilian/coreutils
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

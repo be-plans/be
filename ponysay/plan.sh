@@ -6,8 +6,8 @@ pkg_license=('GPL-3.0')
 pkg_source="https://github.com/erkin/$pkg_name/archive/$pkg_version.tar.gz"
 pkg_shasum=69e98a7966353de2f232cbdaccd8ef7dbc5d0bcede9bf7280a676793e8625b0d
 pkg_deps=(
-  be/coreutils
-  be/python
+  lilian/coreutils
+  lilian/python
 )
 pkg_bin_dirs=(bin)
 pkg_description="A cowsay reimplemention for ponies"
@@ -18,7 +18,7 @@ do_build() {
 }
 
 do_install() {
-  fix_interpreter "./src/*.py" be/coreutils bin/env
+  fix_interpreter "./src/*.py" lilian/coreutils bin/env
 
   python3 setup.py \
     --freedom=partial \
@@ -29,7 +29,7 @@ do_install() {
     --without-shell-completion \
     install
 
-  fix_interpreter "$pkg_prefix/bin/ponysay" be/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/ponysay" lilian/coreutils bin/env
 }
 
 do_strip() {

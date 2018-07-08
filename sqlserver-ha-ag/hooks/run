@@ -9,7 +9,7 @@ if($primary -ne '{{member.sys.hostname}}') {
 }
 {{~/eachAlive}}
 
-Import-Module "{{pkgPathFor "core/dsc-core"}}/Modules/DscCore"
+Import-Module "{{pkgPathFor "lilian/dsc-core"}}/Modules/DscCore"
 
 # Open ports on firewall only if Windows Firewall service is running
 if($(Get-Service 'MpsSvc').Status -eq "Running") {

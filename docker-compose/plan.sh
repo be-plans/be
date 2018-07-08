@@ -8,7 +8,7 @@ pkg_upstream_url="https://docs.docker.com/compose/install/"
 pkg_build_deps=(
 )
 pkg_deps=(
-  core/python
+  lilian/python
 )
 pkg_bin_dirs=(bin)
 

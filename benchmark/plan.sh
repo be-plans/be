@@ -9,17 +9,17 @@ pkg_source="https://github.com/google/benchmark/archive/v${pkg_version}.tar.gz"
 pkg_filename="v${pkg_version}.tar.gz"
 pkg_shasum=616f252f37d61b15037e3c2ef956905baf9c9eecfeab400cb3ad25bae714e214
 pkg_deps=(
-  core/gcc-libs
+  lilian/gcc-libs
   core/glibc
 )
 pkg_build_deps=(
-  core/binutils
-  core/cmake
-  core/make
-  core/gcc
-  core/git
-  core/googletest
-  core/googlemock
+  lilian/binutils
+  lilian/cmake
+  lilian/make
+  lilian/gcc
+  lilian/git
+  lilian/googletest
+  lilian/googlemock
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
@@ -31,7 +31,7 @@ do_prepare() {
 }
 
 do_build() {
-  GTEST_DIR="$(pkg_path_for core/googletest)"
+  GTEST_DIR="$(pkg_path_for lilian/googletest)"
 
   cd "$BUILDDIR" || exit
   cmake \

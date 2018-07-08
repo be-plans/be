@@ -11,15 +11,15 @@ pkg_license=("GPL-2.0")
 pkg_source="http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum="f98f2d97b11851cbe7c2d4b4eaef498ae9d17a3c2ef1401609b7b4ca66655b8a"
 pkg_deps=(
-  be/perl
+  lilian/perl
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/autoconf
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/autoconf
 )
 pkg_bin_dirs=(bin)
 

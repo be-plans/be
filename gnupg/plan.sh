@@ -8,18 +8,18 @@ pkg_source=ftp://ftp.gnupg.org/gcrypt/${pkg_distname}/${pkg_distname}-${pkg_vers
 pkg_shasum=9594a24bec63a21568424242e3f198b9d9828dea5ff0c335e47b06f835f930b4
 pkg_deps=(
   core/glibc
-  be/zlib
-  be/bzip2
-  be/readline
+  lilian/zlib
+  lilian/bzip2
+  lilian/readline
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/sed
-  be/findutils
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/sed
+  lilian/findutils
 )
 pkg_bin_dirs=(bin)
 

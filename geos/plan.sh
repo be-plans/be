@@ -8,13 +8,13 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://download.osgeo.org/geos/geos-${pkg_version}.tar.bz2
 pkg_shasum=045a13df84d605a866602f6020fc6cbf8bf4c42fb50de237a08926e1d7d7652a
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/patchelf
+  lilian/gcc
+  lilian/make
+  lilian/patchelf
 )
 pkg_deps=(
   core/glibc
-  be/gcc-libs
+  lilian/gcc-libs
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

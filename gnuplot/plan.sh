@@ -6,44 +6,44 @@ pkg_license=('gnuplot')
 pkg_source="https://sourceforge.net/projects/$pkg_name/files/$pkg_name/$pkg_version/$pkg_name-$pkg_version.tar.gz"
 pkg_shasum="a416d22f02bdf3873ef82c5eb7f8e94146795811ef808e12b035ada88ef7b1a1"
 pkg_deps=(
-  core/bzip2
-  core/cairo
-  core/expat
-  core/fontconfig
-  core/freetype
-  core/gcc-libs
-  core/glib
+  lilian/bzip2
+  lilian/cairo
+  lilian/expat
+  lilian/fontconfig
+  lilian/freetype
+  lilian/gcc-libs
+  lilian/glib
   core/glibc
-  core/harfbuzz
-  core/jbigkit
-  core/libcerf
-  core/liberation-fonts-ttf
-  core/libffi
-  core/libice
-  core/libiconv
-  core/libgd
-  core/libjpeg-turbo
-  core/libpng
-  core/libsm
-  core/libtiff
-  core/libxau
-  core/libxcb
-  core/libxdmcp
-  core/libxext
-  core/ncurses
-  core/pango
-  core/pcre
-  core/pixman
-  core/readline
-  core/xlib
-  core/xz
-  core/zlib
+  lilian/harfbuzz
+  lilian/jbigkit
+  lilian/libcerf
+  lilian/liberation-fonts-ttf
+  lilian/libffi
+  lilian/libice
+  lilian/libiconv
+  lilian/libgd
+  lilian/libjpeg-turbo
+  lilian/libpng
+  lilian/libsm
+  lilian/libtiff
+  lilian/libxau
+  lilian/libxcb
+  lilian/libxdmcp
+  lilian/libxext
+  lilian/ncurses
+  lilian/pango
+  lilian/pcre
+  lilian/pixman
+  lilian/readline
+  lilian/xlib
+  lilian/xz
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/gcc
-  core/make
-  core/patch
-  core/pkg-config
+  lilian/gcc
+  lilian/make
+  lilian/patch
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_upstream_url="http://www.gnuplot.info"

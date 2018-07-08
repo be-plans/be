@@ -16,8 +16,8 @@ The Habitat Maintainers humans@habitat.sh
 ## Usage
 
 ```
-$ hab pkg install core/jo
-$ hab pkg binlink core/jo
+$ hab pkg install lilian/jo
+$ hab pkg binlink lilian/jo
 $ jo -h
 Usage: jo [-a] [-B] [-p] [-v] [-V] [word...]
         word is key=value or key@value

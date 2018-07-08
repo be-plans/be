@@ -5,10 +5,10 @@ The `runc` plan _only_ provides users access to the standalone [runc binary](htt
 To use the `runc` binary you can follow two different patterns. You can either binlink the package to the underlying system, or you can use the `hab` binary to execute the `img` binary
 
 ```
-$ hab pkg exec core/runc runc --help
+$ hab pkg exec lilian/runc runc --help
 ```
 Or
 ```
-$ hab pkg binlink core/runc runc
+$ hab pkg binlink lilian/runc runc
 $ runc --help
 ```

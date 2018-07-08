@@ -11,23 +11,23 @@ pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_source=https://www.python.org/ftp/python/${pkg_version}/${pkg_dirname}.tar.xz
 pkg_shasum=53a3e17d77cd15c5230192b6a8c1e031c07cd9f34a2f089a731c6f6bd343d5c6
 pkg_deps=(
-  be/bzip2
-  be/gcc-libs
-  be/gdbm
+  lilian/bzip2
+  lilian/gcc-libs
+  lilian/gdbm
   core/glibc
-  be/ncurses
-  be/openssl
-  be/readline
-  be/sqlite
-  be/zlib
+  lilian/ncurses
+  lilian/openssl
+  lilian/readline
+  lilian/sqlite
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/gcc
-  be/linux-headers
-  be/make
-  be/util-linux
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
+  lilian/linux-headers
+  lilian/make
+  lilian/util-linux
 )
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

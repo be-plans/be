@@ -9,28 +9,28 @@ pkg_source="https://github.com/anholt/${pkg_name}/releases/download/${pkg_versio
 pkg_shasum=0b808a06c9685a62fca34b680abb8bc7fb2fda074478e329b063c1f872b826f6
 pkg_deps=(
   core/glibc
-  core/libdrm # not linked to bins/libs
-  core/libxau # not linked to bins/libs
-  core/libxcb # not linked to bins/libs
-  core/libxdamage # not linked to bins/libs
-  core/libxdmcp # not linked to bins/libs
-  core/libxext # not linked to bins/libs
-  core/libxfixes # not linked to bins/libs
-  core/mesa # not linked to bins/libs
-  core/xlib # not linked to bins/libs
+  lilian/libdrm # not linked to bins/libs
+  lilian/libxau # not linked to bins/libs
+  lilian/libxcb # not linked to bins/libs
+  lilian/libxdamage # not linked to bins/libs
+  lilian/libxdmcp # not linked to bins/libs
+  lilian/libxext # not linked to bins/libs
+  lilian/libxfixes # not linked to bins/libs
+  lilian/mesa # not linked to bins/libs
+  lilian/xlib # not linked to bins/libs
 )
 pkg_build_deps=(
-  core/damageproto
-  core/fixesproto
-  core/gcc
-  core/kbproto
-  core/libpthread-stubs
-  core/meson
-  core/ninja
-  core/pkg-config
-  core/python
-  core/xextproto
-  core/xproto
+  lilian/damageproto
+  lilian/fixesproto
+  lilian/gcc
+  lilian/kbproto
+  lilian/libpthread-stubs
+  lilian/meson
+  lilian/ninja
+  lilian/pkg-config
+  lilian/python
+  lilian/xextproto
+  lilian/xproto
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

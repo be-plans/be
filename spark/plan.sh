@@ -10,9 +10,9 @@ pkg_shasum="3e31164281326fe47210f5d7f07190935815060063f451f41f78b91beb8ecd55"
 pkg_dirname="${pkg_name}-${pkg_version}-bin-hadoop2.7"
 pkg_build_deps=()
 pkg_deps=(
-  be/bash
-  core/jre8
-  be/procps-ng
+  lilian/bash
+  lilian/jre8
+  lilian/procps-ng
 )
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(jars)

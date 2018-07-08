@@ -18,27 +18,27 @@ Set the app_username and app_password at runtime to have that user created, it w
 EOF
 )
 pkg_deps=(
-  be/coreutils
-  be/gawk
-  be/gcc-libs
+  lilian/coreutils
+  lilian/gawk
+  lilian/gcc-libs
   core/glibc
-  be/grep
-  be/inetutils
-  be/ncurses
-  be/openssl
-  be/pcre
-  be/perl
-  be/procps-ng
-  be/sed
+  lilian/grep
+  lilian/inetutils
+  lilian/ncurses
+  lilian/openssl
+  lilian/pcre
+  lilian/perl
+  lilian/procps-ng
+  lilian/sed
 )
 pkg_build_deps=(
-  be/bison
+  lilian/bison
   lilian/boost/1.59.0
-  be/cmake
-  be/diffutils
-  be/gcc
-  be/make
-  be/patch
+  lilian/cmake
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/patch
 )
 pkg_svc_user="hab"
 pkg_bin_dirs=(bin)
@@ -85,8 +85,8 @@ do_install() {
   rm -rf "$pkg_prefix/docs" "$pkg_prefix/man" "$pkg_prefix/mysql-test" \
     "$pkg_prefix"/lib/*.a
 
-  fix_interpreter "$pkg_prefix/bin/mysqld_multi" be/perl bin/perl
-  fix_interpreter "$pkg_prefix/bin/mysqldumpslow" be/perl bin/perl
+  fix_interpreter "$pkg_prefix/bin/mysqld_multi" lilian/perl bin/perl
+  fix_interpreter "$pkg_prefix/bin/mysqldumpslow" lilian/perl bin/perl
 }
 
 do_check() {

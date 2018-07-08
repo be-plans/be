@@ -9,26 +9,26 @@ pkg_source="http://cdn.postfix.johnriley.me/mirrors/${pkg_name}-release/official
 pkg_shasum="ec55ebaa2aa464792af8d5ee103eb68b27a42dc2b36a02fee42dafbf9740c7f6"
 
 pkg_build_deps=(
-  core/make
-  core/gcc
-  core/sed
-  core/gawk
+  lilian/make
+  lilian/gcc
+  lilian/sed
+  lilian/gawk
 )
 
 pkg_deps=(
   # postfix deps
-  core/coreutils
-  core/cyrus-sasl
-  core/db
+  lilian/coreutils
+  lilian/cyrus-sasl
+  lilian/db
   core/glibc
-  core/libnsl
-  core/openssl
-  core/pcre
-  core/zlib
+  lilian/libnsl
+  lilian/openssl
+  lilian/pcre
+  lilian/zlib
 
   # plan/hook deps
-  core/shadow
-  core/iana-etc
+  lilian/shadow
+  lilian/iana-etc
 )
 
 pkg_bin_dirs=(bin sbin)
@@ -41,25 +41,25 @@ do_build() {
     -DHAS_DB
       -I$(pkg_path_for db)/include
     -DHAS_NIS
-      -I$(pkg_path_for core/libnsl)/include
+      -I$(pkg_path_for lilian/libnsl)/include
     -DUSE_TLS
-      -I$(pkg_path_for core/openssl)/include
+      -I$(pkg_path_for lilian/openssl)/include
     -DUSE_SASL_AUTH -DUSE_CYRUS_SASL
-      -I$(pkg_path_for core/cyrus-sasl)/include/sasl
+      -I$(pkg_path_for lilian/cyrus-sasl)/include/sasl
   )
   build_line "Setting POSTFIX_CCARGS=${POSTFIX_CCARGS[*]}"
 
   POSTFIX_AUXLIBS=(
     -ldb
-      -L$(pkg_path_for core/db)/lib
+      -L$(pkg_path_for lilian/db)/lib
     -lnsl
-      -L$(pkg_path_for core/libnsl)/lib
+      -L$(pkg_path_for lilian/libnsl)/lib
     -lresolv
       -L$(pkg_path_for core/glibc)/lib
     -lssl -lcrypto
-      -L$(pkg_path_for core/openssl)/lib
+      -L$(pkg_path_for lilian/openssl)/lib
     -lsasl2
-      -L$(pkg_path_for core/cyrus-sasl)/lib
+      -L$(pkg_path_for lilian/cyrus-sasl)/lib
   )
   build_line "Setting POSTFIX_AUXLIBS=${POSTFIX_AUXLIBS[*]}"
 
@@ -70,16 +70,16 @@ do_build() {
 do_install() {
 
   # because postfix-install ignores PATH
-  hab pkg binlink core/coreutils -d /bin uname
-  hab pkg binlink core/coreutils -d /bin rm
-  hab pkg binlink core/coreutils -d /bin touch
-  hab pkg binlink core/coreutils -d /bin mkdir
-  hab pkg binlink core/coreutils -d /bin chmod
-  hab pkg binlink core/coreutils -d /bin cp
-  hab pkg binlink core/coreutils -d /bin mv
-  hab pkg binlink core/coreutils -d /bin ln
-  hab pkg binlink core/sed -d /bin sed
-  hab pkg binlink core/gawk -d /bin awk
+  hab pkg binlink lilian/coreutils -d /bin uname
+  hab pkg binlink lilian/coreutils -d /bin rm
+  hab pkg binlink lilian/coreutils -d /bin touch
+  hab pkg binlink lilian/coreutils -d /bin mkdir
+  hab pkg binlink lilian/coreutils -d /bin chmod
+  hab pkg binlink lilian/coreutils -d /bin cp
+  hab pkg binlink lilian/coreutils -d /bin mv
+  hab pkg binlink lilian/coreutils -d /bin ln
+  hab pkg binlink lilian/sed -d /bin sed
+  hab pkg binlink lilian/gawk -d /bin awk
 
 
   make non-interactive-package \

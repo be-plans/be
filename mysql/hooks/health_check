@@ -1,4 +1,4 @@
-#!{{pkgPathFor "core/bash"}}/bin/bash -e
+#!{{pkgPathFor "lilian/bash"}}/bin/bash -e
 
 
 {{#if svc.me.follower ~}}

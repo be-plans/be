@@ -11,11 +11,11 @@ pkg_filename="${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum=3fb73364a5a30efe615046d07e6db9d09fd2b41c763c5f7d3bfb121cd5c5ac5a
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/busybox-static
-  be/cmake
+  lilian/busybox-static
+  lilian/cmake
   lilian/doxygen
-  be/gcc
-  be/make
+  lilian/gcc
+  lilian/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

@@ -6,11 +6,11 @@ pkg_license=('GPL-2.0')
 pkg_source=https://swupdate.openvpn.org/community/releases/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=df5c4f384b7df6b08a2f6fa8a84b9fd382baf59c2cef1836f82e2a7f62f1bff9
 pkg_deps=(
-  core/glibc be/openssl lilian/lzo
+  core/glibc lilian/openssl lilian/lzo
 )
 pkg_build_deps=(
-  be/gcc be/coreutils be/make
-  be/busybox-static
+  lilian/gcc lilian/coreutils lilian/make
+  lilian/busybox-static
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

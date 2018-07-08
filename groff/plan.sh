@@ -9,13 +9,13 @@ pkg_source=http://ftp.gnu.org/gnu/groff/groff-${pkg_version}.tar.gz
 pkg_shasum=3a48a9d6c97750bfbd535feeb5be0111db6406ddb7bb79fc680809cda6d828a5
 pkg_bin_dirs=(bin)
 pkg_build_deps=(
-  be/gcc
-  be/gcc-libs
-  be/make
-  be/perl
+  lilian/gcc
+  lilian/gcc-libs
+  lilian/make
+  lilian/perl
 )
 pkg_deps=(
-  be/gcc-libs
+  lilian/gcc-libs
 )
 
 source ../defaults.sh

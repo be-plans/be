@@ -8,9 +8,9 @@ pkg_license=("Apache-2.0")
 pkg_source=https://download.elastic.co/logstash/logstash/logstash-${pkg_version}.tar.gz
 pkg_shasum=957647af07e54c7d18c6e3b543030edae461d447d27412ebb7637cd7eb109f4f
 pkg_deps=(
-  be/coreutils
+  lilian/coreutils
   lilian/jre8
-  core/jruby1
+  lilian/jruby1
 )
 pkg_build_deps=()
 pkg_bin_dirs=(bin)

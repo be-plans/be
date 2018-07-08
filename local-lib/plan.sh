@@ -11,13 +11,13 @@ pkg_dirname=${pkg_name}-${pkg_version}
 pkg_shasum=2e9b917bd48a0615e42633b2a327494e04610d8f710765b9493d306cead98a05
 pkg_deps=(
   core/glibc
-  be/perl
+  lilian/perl
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/coreutils
-  be/perl
+  lilian/gcc
+  lilian/make
+  lilian/coreutils
+  lilian/perl
 )
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

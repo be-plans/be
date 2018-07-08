@@ -7,8 +7,8 @@ pkg_license=('MIT')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="https://github.com/genuinetools/img"
 pkg_bin_dirs=(bin)
-pkg_deps=(core/git core/pkg-config core/libseccomp)
-pkg_build_deps=(core/go core/git core/dep core/make core/gcc)
+pkg_deps=(lilian/git lilian/pkg-config lilian/libseccomp)
+pkg_build_deps=(lilian/go lilian/git lilian/dep lilian/make lilian/gcc)
 
 export GOPATH="${HAB_CACHE_SRC_PATH}/go"
 export workspace_src="${GOPATH}/src"

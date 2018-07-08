@@ -9,10 +9,10 @@ pkg_source="https://github.com/msgpack/${pkg_name}-c/releases/download/cpp-$pkg_
 pkg_shasum="6126375af9b204611b9d9f154929f4f747e4599e6ae8443b337915dcf2899d2b"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/cmake
-  core/doxygen
-  be/gcc
-  be/make
+  lilian/cmake
+  lilian/doxygen
+  lilian/gcc
+  lilian/make
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

@@ -8,22 +8,22 @@ pkg_upstream_url=http://man-db.nongnu.org/
 pkg_source="http://git.savannah.gnu.org/cgit/man-db.git/snapshot/man-db-${pkg_version}.tar.gz"
 pkg_shasum=dd913662e341fc01e6721878b6cbe1001886cc3bfa6632b095937bba3238c779
 pkg_deps=(
-  be/gdbm
+  lilian/gdbm
   core/glibc
   lilian/groff
-  be/gzip
-  be/libiconv
+  lilian/gzip
+  lilian/libiconv
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/flex
-  be/gcc
-  be/gettext
+  lilian/coreutils
+  lilian/diffutils
+  lilian/flex
+  lilian/gcc
+  lilian/gettext
   lilian/libpipeline
-  be/make
-  be/m4
-  be/pkg-config
+  lilian/make
+  lilian/m4
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin sbin)
 pkg_lib_dirs=(lib/man-db)

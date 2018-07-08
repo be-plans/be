@@ -10,17 +10,17 @@ pkg_source=https://www.freedesktop.org/software/fontconfig/release/${pkg_name}-$
 pkg_filename=${pkg_name}-${pkg_version}.tar.bz2
 pkg_shasum=7b165eee7aa22dcc1557db56f58d905b6a14b32f9701c79427452474375b4c89
 pkg_deps=(
-  be/bzip2
+  lilian/bzip2
   core/glibc
-  be/zlib
+  lilian/zlib
   lilian/freetype
   lilian/libpng
-  be/expat
-  be/gcc-libs
+  lilian/expat
+  lilian/gcc-libs
 )
-pkg_build_deps=(be/gcc be/make be/coreutils be/python
-                be/pkg-config be/diffutils be/libtool
-                be/m4 be/automake be/autoconf be/file be/patch)
+pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils lilian/python
+                lilian/pkg-config lilian/diffutils lilian/libtool
+                lilian/m4 lilian/automake lilian/autoconf lilian/file lilian/patch)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

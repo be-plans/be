@@ -4,7 +4,7 @@ $pkg_version="0.1.0"
 $pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 $pkg_license=@("SQL Server 2017 License")
 
-$pkg_deps=@("core/dsc-core")
+$pkg_deps=@("lilian/dsc-core")
 $pkg_exports=@{
   name="availability_group_name"
   ip="availability_group_ip"

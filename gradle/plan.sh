@@ -10,11 +10,11 @@ pkg_license=('Apache-2.0')
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_deps=(
-  core/glibc be/gcc-libs lilian/jre8
-  be/coreutils lilian/bash-static be/sed)
+  core/glibc lilian/gcc-libs lilian/jre8
+  lilian/coreutils lilian/bash-static lilian/sed)
 pkg_build_deps=(
-  be/make be/gcc
-  lilian/jdk8 be/patchelf
+  lilian/make lilian/gcc
+  lilian/jdk8 lilian/patchelf
 )
 
 source ../defaults.sh
@@ -28,7 +28,7 @@ do_build() {
   mv native-platform-linux-amd64-0.14.jar ../lib/
   popd
   rm -rf patching
-  fix_interpreter bin/gradle be/coreutils bin/env
+  fix_interpreter bin/gradle lilian/coreutils bin/env
 }
 
 do_install() {

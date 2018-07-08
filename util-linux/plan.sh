@@ -9,16 +9,16 @@ pkg_source="https://www.kernel.org/pub/linux/utils/${pkg_name}/v${pkg_version%.?
 pkg_shasum="1a51b16fa9cd51d26ef9ab52d2f1de12403b810fc8252bf7d478df91b3cddf11"
 pkg_deps=(
   core/glibc
-  be/zlib
-  be/ncurses
+  lilian/zlib
+  lilian/ncurses
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/sed
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/sed
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

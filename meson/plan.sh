@@ -8,17 +8,17 @@ pkg_license=('Apache-2.0')
 pkg_source="https://github.com/mesonbuild/${pkg_name}/archive/${pkg_version}.tar.gz"
 pkg_shasum=2d917692d2cc194e12295f00469fbdf3c045e85d0295e5e59ced69115920ffa0
 pkg_deps=(
-  be/python
-  be/ninja
+  lilian/python
+  lilian/ninja
 )
 pkg_build_deps=(
-  core/patch
+  lilian/patch
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 
 do_setup_environment() {
-  push_runtime_env PYTHONPATH "$(pkg_path_for be/python)/lib/python3.6/site-packages"
+  push_runtime_env PYTHONPATH "$(pkg_path_for lilian/python)/lib/python3.6/site-packages"
   push_runtime_env PYTHONPATH "${pkg_prefix}/lib/python3.6/site-packages"
 }
 

@@ -7,7 +7,7 @@ $pkg_license=@("Microsoft Software License")
 $pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 $pkg_source="http://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x64.exe"
 $pkg_shasum="e554425243e3e8ca1cd5fe550db41e6fa58a007c74fad400274b128452f38fb8"
-$pkg_build_deps=@("core/lessmsi", "core/wix")
+$pkg_build_deps=@("lilian/lessmsi", "lilian/wix")
 $pkg_bin_dirs=@("bin")
 
 function Invoke-Unpack {

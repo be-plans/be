@@ -9,8 +9,8 @@ pkg_source="http://apache.mediamirrors.org/storm/apache-storm-${pkg_version}/apa
 pkg_shasum="823dad47e2941e126caf1186047da1c6058076115589905033e87987db7bfa27"
 pkg_deps=(
   lilian/jre8
-  be/python
-  be/bash
+  lilian/python
+  lilian/bash
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

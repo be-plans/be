@@ -4,7 +4,7 @@
 #
 # A scaffolding in Habitat is a plan you reference in your plan with:
 #
-#     pkg_scaffolding="core/scaffolding-python"
+#     pkg_scaffolding="lilian/scaffolding-python"
 #
 # When doing this, you plan will now have properties and use callbacks to build
 # your plan that use features and established patterns of the platform for
@@ -19,7 +19,7 @@
 #
 # The base scaffolding does this, to use it add:
 #
-#     pkg_scaffolding="core/scaffolding-base"
+#     pkg_scaffolding="lilian/scaffolding-base"
 #
 # to your plan and make sure there is a lib/scaffolding.sh present. Building a
 # plan using this scaffolding will produce a scaffolding that can be used in

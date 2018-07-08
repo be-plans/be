@@ -14,13 +14,13 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/binutils
-  be/m4
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/binutils
+  lilian/m4
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

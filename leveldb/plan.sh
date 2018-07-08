@@ -8,10 +8,10 @@ pkg_license=('BSD-3-Clause')
 pkg_source="https://github.com/google/leveldb/archive/v${pkg_version}.tar.gz"
 pkg_shasum="f5abe8b5b209c2f36560b75f32ce61412f39a2922f7045ae764a2c23335b6664"
 pkg_deps=(
-  core/glibc be/snappy
+  core/glibc lilian/snappy
 )
 pkg_build_deps=(
-  be/make be/gcc
+  lilian/make lilian/gcc
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

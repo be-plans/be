@@ -9,25 +9,25 @@ pkg_source="https://nmap.org/dist/${pkg_name}-${pkg_version}.tar.bz2"
 pkg_shasum="847b068955f792f4cc247593aca6dc3dc4aae12976169873247488de147a6e18"
 pkg_deps=(
   core/glibc
-  be/gcc-libs
-  be/libpcap
-  be/libssh2
-  be/openssl
-  be/pcre
-  be/zlib
+  lilian/gcc-libs
+  lilian/libpcap
+  lilian/libssh2
+  lilian/openssl
+  lilian/pcre
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/bzip2
-  be/coreutils
-  be/diffutils
-  be/file
-  be/gcc
-  be/inetutils
-  be/lua
-  be/make
-  be/openssh
-  be/pkg-config
-  be/readline
+  lilian/bzip2
+  lilian/coreutils
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/inetutils
+  lilian/lua
+  lilian/make
+  lilian/openssh
+  lilian/pkg-config
+  lilian/readline
   lilian/which
 )
 pkg_bin_dirs=(bin)
@@ -50,10 +50,10 @@ do_build() {
     --without-zenmap \
     --with-libdnet=included \
     --with-liblinear=included \
-    --with-liblua="$(pkg_path_for "be/lua")" \
-    --with-libpcre="$(pkg_path_for "be/pcre")" \
-    --with-libssh2="$(pkg_path_for "be/libssh2")" \
-    --with-libz="$(pkg_path_for "be/zlib")"
+    --with-liblua="$(pkg_path_for "lilian/lua")" \
+    --with-libpcre="$(pkg_path_for "lilian/pcre")" \
+    --with-libssh2="$(pkg_path_for "lilian/libssh2")" \
+    --with-libz="$(pkg_path_for "lilian/zlib")"
   make -j "$(nproc)"
 }
 

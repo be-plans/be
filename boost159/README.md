@@ -2,7 +2,7 @@
 
 Boost provides free peer-reviewed portable C++ source libraries.
 
-> Note: this package is required by `core/mysql` and `core/mysql-client` packages, you should use `core/boost` in your packages instead.
+> Note: this package is required by `lilian/mysql` and `lilian/mysql-client` packages, you should use `lilian/boost` in your packages instead.
 
 ## Maintainers
 
@@ -18,6 +18,6 @@ This is a library usually used at build time, thus you should use it like so in 
 
 ```
 pkg_build_deps=(
-    core/boost159
+    lilian/boost159
 )
 ```

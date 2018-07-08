@@ -9,8 +9,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://cache.ruby-lang.org/pub/ruby/ruby-${pkg_version}.tar.gz
 pkg_upstream_url=https://www.ruby-lang.org/en/
 pkg_shasum=46e6f3630f1888eb653b15fa811d77b5b1df6fd7a3af436b343cfe4f4503f2ab
-pkg_deps=(core/glibc core/ncurses core/zlib core/openssl core/libyaml core/libffi core/readline)
-pkg_build_deps=(core/coreutils core/diffutils core/patch core/make core/gcc core/sed)
+pkg_deps=(core/glibc lilian/ncurses lilian/zlib lilian/openssl lilian/libyaml lilian/libffi lilian/readline)
+pkg_build_deps=(lilian/coreutils lilian/diffutils lilian/patch lilian/make lilian/gcc lilian/sed)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_bin_dirs=(bin)
@@ -27,8 +27,8 @@ do_build() {
     --prefix="$pkg_prefix" \
     --enable-shared \
     --disable-install-doc \
-    --with-openssl-dir="$(pkg_path_for core/openssl)" \
-    --with-libyaml-dir="$(pkg_path_for core/libyaml)"
+    --with-openssl-dir="$(pkg_path_for lilian/openssl)" \
+    --with-libyaml-dir="$(pkg_path_for lilian/libyaml)"
 
   patch -p0 < "${PLAN_CONTEXT}/mkmf-ignore-linker-warnings.patch"
 

@@ -13,15 +13,15 @@ pkg_source="http://www.mpfr.org/${pkg_name}-${pkg_version}/${pkg_name}-${pkg_ver
 pkg_shasum="67874a60826303ee2fb6affc6dc0ddd3e749e9bfcb4c8655e3953d0458a6e16e"
 pkg_deps=(
   core/glibc
-  be/gmp
+  lilian/gmp
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/binutils
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/binutils
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

@@ -8,13 +8,13 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://www.imagemagick.org/download/releases/ImageMagick-${pkg_version}.tar.xz
 pkg_shasum=0058fcde533986334458a5c99600b1b9633182dd9562cbad4ba618c5ccf2a28f
 pkg_deps=(
-    core/glibc be/gcc-libs
-    be/zlib lilian/libpng be/xz
+    core/glibc lilian/gcc-libs
+    lilian/zlib lilian/libpng lilian/xz
 )
 pkg_build_deps=(
-  be/zlib be/coreutils be/diffutils
-  be/patch be/make be/gcc
-  be/sed core/glibc be/pkg-config
+  lilian/zlib lilian/coreutils lilian/diffutils
+  lilian/patch lilian/make lilian/gcc
+  lilian/sed core/glibc lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include/ImageMagick-7)

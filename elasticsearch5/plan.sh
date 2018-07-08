@@ -9,9 +9,9 @@ pkg_source=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${
 pkg_shasum=1098fc776fae8c74e65f8e17cf2ea244c1d07c4e6711340c9bb9f6df56aa45b0
 pkg_dirname="elasticsearch-${pkg_version}"
 pkg_deps=(
-  be/busybox-static
+  lilian/busybox-static
   core/glibc
-  core/jre8
+  lilian/jre8
 )
 pkg_bin_dirs=(es/bin)
 pkg_binds_optional=(

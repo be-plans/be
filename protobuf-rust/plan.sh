@@ -9,10 +9,10 @@ pkg_upstream_url="https://github.com/stepancheg/rust-protobuf"
 pkg_description="Rust implementation of Google protocol buffers"
 pkg_deps=(
   core/glibc
-  be/gcc-libs
+  lilian/gcc-libs
 )
 pkg_build_deps=(
-  be/rust
+  lilian/rust
 )
 
 source ../defaults.sh

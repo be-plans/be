@@ -10,13 +10,13 @@ pkg_shasum=noshasum
 pkg_deps=(
 )
 pkg_build_deps=(
-  core/cacerts
-  core/cmake
-  core/gcc
-  core/git
+  lilian/cacerts
+  lilian/cmake
+  lilian/gcc
+  lilian/git
   core/glibc
-  core/make
-  core/zlib
+  lilian/make
+  lilian/zlib
 )
 
 pkg_include_dirs=(include)
@@ -25,7 +25,7 @@ pkg_lib_dirs=(lib64)
 BUILDDIR="_build"
 
 do_download() {
-  GIT_SSL_CAINFO="$(pkg_path_for core/cacerts)/ssl/certs/cacert.pem"
+  GIT_SSL_CAINFO="$(pkg_path_for lilian/cacerts)/ssl/certs/cacert.pem"
   export GIT_SSL_CAINFO
 
   REPO_PATH="$HAB_CACHE_SRC_PATH/$pkg_dirname"
@@ -58,7 +58,7 @@ do_prepare() {
 }
 
 do_build() {
-  ZLIB_DIR="$(pkg_path_for core/zlib)"
+  ZLIB_DIR="$(pkg_path_for lilian/zlib)"
 
   pushd "${BUILDDIR}"
   cmake \

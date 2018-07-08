@@ -9,13 +9,13 @@ pkg_source=http://downloads.sourceforge.net/sourceforge/lcms/${pkg_name}-${pkg_v
 pkg_shasum=66d02b229d2ea9474e62c2b6cd6720fde946155cd1d0d2bffdab829790a0fb22
 pkg_deps=(
   core/glibc
-  core/jbigkit
+  lilian/jbigkit
   lilian/libjpeg-turbo
-  core/libtiff
-  be/xz
-  be/zlib
+  lilian/libtiff
+  lilian/xz
+  lilian/zlib
 )
-pkg_build_deps=(be/gcc be/make)
+pkg_build_deps=(lilian/gcc lilian/make)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

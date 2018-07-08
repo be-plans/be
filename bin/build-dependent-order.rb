@@ -16,7 +16,7 @@ class Cli
       end
       opts.separator ''
       opts.separator 'Examples:'
-      opts.separator "    find . -name plan.sh | #{__FILE__} be/openssl "
+      opts.separator "    find . -name plan.sh | #{__FILE__} lilian/openssl "
     end
     parser.parse!(argv)
     if argv.size != 1

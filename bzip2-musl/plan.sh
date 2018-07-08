@@ -11,7 +11,7 @@ archiver.\
 pkg_upstream_url="http://www.bzip.org/"
 pkg_license=('bzip2')
 pkg_deps=(
-  be/musl
+  lilian/musl
 )
 
 pkg_disabled_features=(glibc)

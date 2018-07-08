@@ -9,15 +9,15 @@ pkg_source="https://ftp.gnu.org/gnu/libidn/libidn2-2.0.4.tar.gz"
 pkg_shasum=644b6b03b285fb0ace02d241d59483d98bc462729d8bb3608d5cad5532f3d2f0
 pkg_deps=(
   core/glibc
-  be/libiconv
-  be/libunistring
+  lilian/libiconv
+  lilian/libunistring
 )
 pkg_build_deps=(
-  be/diffutils
-  be/gcc
-  be/gettext
-  be/make
-  be/pkg-config
+  lilian/diffutils
+  lilian/gcc
+  lilian/gettext
+  lilian/make
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

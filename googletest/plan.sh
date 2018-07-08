@@ -13,13 +13,13 @@ pkg_upstream_url="https://github.com/google/googletest"
 pkg_dirname="${pkg_name}-release-${pkg_version}"
 
 pkg_deps=(
-  core/gcc-libs
+  lilian/gcc-libs
   core/glibc
 )
 pkg_build_deps=(
-  core/cmake
-  core/gcc
-  core/make
+  lilian/cmake
+  lilian/gcc
+  lilian/make
 )
 
 pkg_include_dirs=(include)

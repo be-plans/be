@@ -10,57 +10,57 @@ pkg_source="https://download.gnome.org/sources/${upstream_name}/${pkg_version%.*
 pkg_shasum=862dc22c5e93cd800753e5e90dfdb3af0fc760a47f6ebd918ae19136d527c6cd
 pkg_dirname="${upstream_name}-${pkg_version}"
 pkg_deps=(
-  core/at-spi2-core
-  core/at-spi2-atk
-  core/atk
-  core/bzip2
-  core/cairo
-  core/dbus
-  core/expat
-  core/fontconfig
-  core/freetype
-  core/gcc-libs
-  core/gdk-pixbuf
-  core/glib
+  lilian/at-spi2-core
+  lilian/at-spi2-atk
+  lilian/atk
+  lilian/bzip2
+  lilian/cairo
+  lilian/dbus
+  lilian/expat
+  lilian/fontconfig
+  lilian/freetype
+  lilian/gcc-libs
+  lilian/gdk-pixbuf
+  lilian/glib
   core/glibc
-  core/harfbuzz
-  core/libepoxy
-  core/libffi
-  core/libice
-  core/libiconv
-  core/libpng
-  core/libsm
-  core/libxau
-  core/libxcb
-  core/libxdmcp
-  core/libxext
-  core/libxfixes
-  core/libxi
-  core/pango
-  core/pcre
-  core/pixman
-  core/util-linux
-  core/xlib
-  core/zlib
+  lilian/harfbuzz
+  lilian/libepoxy
+  lilian/libffi
+  lilian/libice
+  lilian/libiconv
+  lilian/libpng
+  lilian/libsm
+  lilian/libxau
+  lilian/libxcb
+  lilian/libxdmcp
+  lilian/libxext
+  lilian/libxfixes
+  lilian/libxi
+  lilian/pango
+  lilian/pcre
+  lilian/pixman
+  lilian/util-linux
+  lilian/xlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/diffutils
-  core/file
-  core/fixesproto
-  core/gcc
-  core/gettext
-  core/inputproto
-  core/json-glib
-  core/kbproto
-  core/libpthread-stubs
-  core/libxslt
-  core/make
-  core/papi
-  core/perl
-  core/pkg-config
-  core/renderproto
-  core/xextproto
-  core/xproto
+  lilian/diffutils
+  lilian/file
+  lilian/fixesproto
+  lilian/gcc
+  lilian/gettext
+  lilian/inputproto
+  lilian/json-glib
+  lilian/kbproto
+  lilian/libpthread-stubs
+  lilian/libxslt
+  lilian/make
+  lilian/papi
+  lilian/perl
+  lilian/pkg-config
+  lilian/renderproto
+  lilian/xextproto
+  lilian/xproto
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

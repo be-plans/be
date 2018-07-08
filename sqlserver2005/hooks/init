@@ -1,6 +1,6 @@
 $ProgressPreference="SilentlyContinue"
 
-Import-Module "{{pkgPathFor "core/dsc-core"}}/Modules/DscCore"
+Import-Module "{{pkgPathFor "lilian/dsc-core"}}/Modules/DscCore"
 Start-DscCore (Join-Path {{pkg.svc_config_path}} dotnet2.ps1) DotNet
 
 $sqlMajorVersion = [Version]::new("{{pkg.version}}").Major

@@ -7,7 +7,7 @@ Non-interactive ssh password auth
 ## Usage
 
 ```
-hab pkg exec core/sshpass sshpass -h
+hab pkg exec lilian/sshpass sshpass -h
 
 Usage: sshpass [-f|-d|-p|-e] [-hV] command parameters
    -f filename   Take password to use from file

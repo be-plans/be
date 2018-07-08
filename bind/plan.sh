@@ -9,16 +9,16 @@ pkg_source="https://ftp.isc.org/isc/bind9/9.11.2/bind-${pkg_version}.tar.gz"
 pkg_shasum="7f46ad8620f7c3b0ac375d7a5211b15677708fda84ce25d7aeb7222fe2e3c77a"
 pkg_deps=(
   core/glibc
-  core/libxml2
-  core/openssl
-  core/zlib
+  lilian/libxml2
+  lilian/openssl
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/diffutils
-  core/file
-  core/gcc
-  core/make
-  core/perl
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/make
+  lilian/perl
 )
 pkg_bin_dirs=(
   bin
@@ -37,8 +37,8 @@ do_prepare() {
 
 do_build() {
   ./configure --prefix="${pkg_prefix}" \
-    --with-libxml2="$(pkg_path_for "core/libxml2")" \
-    --with-openssl="$(pkg_path_for "core/openssl")"
+    --with-libxml2="$(pkg_path_for "lilian/libxml2")" \
+    --with-openssl="$(pkg_path_for "lilian/openssl")"
   make
 }
 

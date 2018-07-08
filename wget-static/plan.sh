@@ -12,8 +12,8 @@ pkg_upstream_url="https://www.gnu.org/software/wget/"
 pkg_license=('GPL-3.0+')
 # Throw the run deps into build deps as this will be static
 pkg_build_deps=(
-  be/linux-headers-musl
-  be/musl
+  lilian/linux-headers-musl
+  lilian/musl
   "${pkg_build_deps[@]}"
   "${pkg_deps[@]}"
 )

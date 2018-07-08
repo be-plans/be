@@ -9,8 +9,8 @@ pkg_source="http://download.savannah.gnu.org/releases/${pkg_name}/${pkg_name}-${
 pkg_shasum="25772f653ac5b2e3ceeb89df50e4688891e21f723c460636548971652af0a859"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/gettext
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/gettext
 )
 
 pkg_bin_dirs=(bin)

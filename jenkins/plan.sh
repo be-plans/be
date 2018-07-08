@@ -7,7 +7,7 @@ pkg_license=('mit')
 pkg_upstream_url="https://jenkins.io/"
 pkg_source="http://mirrors.jenkins.io/war-stable/${pkg_version}/jenkins.war"
 pkg_shasum="cec74c80190ed1f6ce55d705d2f649ddb2eaf8aba3ae26796152921d46b31280"
-pkg_deps=(lilian/jre8 be/curl)
+pkg_deps=(lilian/jre8 lilian/curl)
 pkg_exports=(
   [port]=jenkins.http.port
 )

@@ -21,7 +21,7 @@ Vault can be deployed either in a `standalone` topology or in a multi-node
 and HA requirements driving the configuration.
 
 ```text
-hab start core/vault
+hab start lilian/vault
 ```
 
 ## Update Strategy

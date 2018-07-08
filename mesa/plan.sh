@@ -8,40 +8,40 @@ pkg_license=('MIT')
 pkg_source="https://mesa.freedesktop.org/archive/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum=7f7f914b7b9ea0b15f2d9d01a4375e311b0e90e55683b8e8a67ce8691eb1070f
 pkg_deps=(
-  core/elfutils
-  core/expat
-  core/gcc-libs
+  lilian/elfutils
+  lilian/expat
+  lilian/gcc-libs
   core/glibc
-  core/libdrm
-  core/libpciaccess
-  core/libxau
-  core/libxcb
-  core/libxdamage
-  core/libxdmcp
-  core/libxext
-  core/libxfixes
-  core/libxshmfence
-  core/xlib
-  core/zlib
+  lilian/libdrm
+  lilian/libpciaccess
+  lilian/libxau
+  lilian/libxcb
+  lilian/libxdamage
+  lilian/libxdmcp
+  lilian/libxext
+  lilian/libxfixes
+  lilian/libxshmfence
+  lilian/xlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/bison
-  core/damageproto
-  core/diffutils
-  core/dri2proto
-  core/file
-  core/fixesproto
-  core/flex
-  core/gcc
-  core/glproto
-  core/kbproto
-  core/libpthread-stubs
-  core/llvm
-  core/make
-  core/pkg-config
-  core/python2
-  core/xextproto
-  core/xproto
+  lilian/bison
+  lilian/damageproto
+  lilian/diffutils
+  lilian/dri2proto
+  lilian/file
+  lilian/fixesproto
+  lilian/flex
+  lilian/gcc
+  lilian/glproto
+  lilian/kbproto
+  lilian/libpthread-stubs
+  lilian/llvm
+  lilian/make
+  lilian/pkg-config
+  lilian/python2
+  lilian/xextproto
+  lilian/xproto
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(

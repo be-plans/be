@@ -7,8 +7,8 @@ pkg_description="GNU nano -- an enhanced clone of the Pico text editor."
 pkg_upstream_url="https://www.nano-editor.org"
 pkg_source="https://www.nano-editor.org/dist/v2.9/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum="c2deac31ba4d3fd27a42fafcc47ccf499296cc69a422bbecab63f2933ea85488"
-pkg_deps=(core/ncurses)
-pkg_build_deps=(core/make core/gcc)
+pkg_deps=(lilian/ncurses)
+pkg_build_deps=(lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 
 do_build() {

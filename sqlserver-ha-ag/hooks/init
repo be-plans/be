@@ -32,7 +32,7 @@ Invoke-Command -ComputerName localhost -EnableNetworkAccess {
     }
 }
 
-Import-Module "{{pkgPathFor "core/dsc-core"}}/Modules/DscCore"
+Import-Module "{{pkgPathFor "lilian/dsc-core"}}/Modules/DscCore"
 Start-DscCore (Join-Path {{pkg.svc_config_path}} cluster.ps1) EnableFailover
 
 # Adding a cluster here because DSC requires us to pass

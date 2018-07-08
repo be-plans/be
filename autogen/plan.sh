@@ -8,12 +8,12 @@ pkg_upstream_url=https://www.gnu.org/software/autogen/
 pkg_source="http://ftp.gnu.org/gnu/autogen/rel${pkg_version}/autogen-${pkg_version}.tar.xz"
 pkg_shasum=be3ba62e883185b6ee8475edae97d7197d701d6b9ad9c3d2df53697110c1bfd8
 pkg_deps=(
-  core/glibc be/gcc-libs be/guile
-  lilian/libxml2 be/zlib
+  core/glibc lilian/gcc-libs lilian/guile
+  lilian/libxml2 lilian/zlib
 )
 pkg_build_deps=(
-  be/gcc be/make be/pkg-config
-  be/diffutils lilian/which be/perl
+  lilian/gcc lilian/make lilian/pkg-config
+  lilian/diffutils lilian/which lilian/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

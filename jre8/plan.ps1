@@ -7,7 +7,7 @@ $pkg_upstream_version="8u172"
 $pkg_source="http://download.oracle.com/otn-pub/java/jdk/$pkg_upstream_version-b11/a58eab1ec242421181065cdc37240b08/jre-$pkg_upstream_version-windows-x64.exe"
 $pkg_filename="$pkg_name-$pkg_version.exe"
 $pkg_shasum="580bd9a6da5640661c4dc6ebdb3eac451dbc49f23635728116d90a4d164d3a0f"
-$pkg_build_deps=@("core/7zip")
+$pkg_build_deps=@("lilian/7zip")
 $pkg_bin_dirs=@("java/bin")
 
 function Invoke-Download() {

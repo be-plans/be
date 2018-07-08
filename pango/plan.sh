@@ -8,37 +8,37 @@ pkg_shasum="f84e98db1078772ff4935b40a1629ff82ef0dfdd08d2cbcc0130c8c437857196"
 pkg_upstream_url="http://www.pango.org"
 pkg_description="Pango is a library for laying out and rendering of text, with an emphasis on internationalization."
 pkg_deps=(
-  be/bzip2
+  lilian/bzip2
   lilian/cairo
-  be/expat
+  lilian/expat
   lilian/fontconfig
   lilian/freetype
-  be/gcc-libs
+  lilian/gcc-libs
   lilian/glib
   core/glibc
   lilian/harfbuzz
-  be/libffi
-  be/libice
-  be/libiconv
+  lilian/libffi
+  lilian/libice
+  lilian/libiconv
   lilian/libpng
-  be/libsm
+  lilian/libsm
   lilian/libxau
   lilian/libxcb
   lilian/libxdmcp
   lilian/libxext
-  be/pcre
+  lilian/pcre
   lilian/pixman
   lilian/xlib
-  be/zlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/file
-  be/gcc
-  be/make
-  be/perl
-  be/pkg-config
+  lilian/coreutils
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/make
+  lilian/perl
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -51,7 +51,7 @@ do_prepare() {
   do_default_prepare
   if [ ! -e /usr/bin/file ]
   then
-    ln -sv "$(pkg_path_for be/file)/bin/file" /usr/bin/file
+    ln -sv "$(pkg_path_for lilian/file)/bin/file" /usr/bin/file
   fi
 }
 

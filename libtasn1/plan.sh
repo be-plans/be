@@ -11,14 +11,14 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/bison
-  be/busybox-static
-  be/diffutils
-  be/file
-  be/gcc
-  be/make
-  be/pkg-config
-  be/util-linux
+  lilian/bison
+  lilian/busybox-static
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/make
+  lilian/pkg-config
+  lilian/util-linux
 )
 
 pkg_bin_dirs=(bin)

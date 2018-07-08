@@ -13,17 +13,17 @@ pkg_source="http://downloads.sourceforge.net/project/$pkg_name/Expect/${pkg_vers
 pkg_shasum="49a7da83b0bdd9f46d04a04deec19c7767bb9a323e40c4781f89caf760b92c34"
 pkg_dirname=${pkg_name}${pkg_version}
 pkg_deps=(
-  be/gcc-libs
+  lilian/gcc-libs
   core/glibc
-  be/tcl
-  be/zlib
+  lilian/tcl
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/gcc
-  be/make
-  be/patch
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/patch
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

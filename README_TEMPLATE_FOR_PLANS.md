@@ -10,9 +10,9 @@ Names of core plans maintainers (The Habitat Maintainers humans@habitat.sh is us
 
 This should state whether the package is a service package or a binary package.
 
-A service package is something that will be run by the Habitat supervisor (i.e. core/postgresql).  A service package must always have a run file or define pkg_svc_run in the plan.sh file.
+A service package is something that will be run by the Habitat supervisor (i.e. lilian/postgresql).  A service package must always have a run file or define pkg_svc_run in the plan.sh file.
 
-A binary package is something that packages up a standalone binary, something that does not need to run under the Habitat supervisor (i.e. core/dep). They are often used as dependencies of other packages. Binary packages do not have a run file and do not need to define pkg_svc_run in the plan.sh file.
+A binary package is something that packages up a standalone binary, something that does not need to run under the Habitat supervisor (i.e. lilian/dep). They are often used as dependencies of other packages. Binary packages do not have a run file and do not need to define pkg_svc_run in the plan.sh file.
 
 ## Usage
 
@@ -24,7 +24,7 @@ How would a user use this package?  i.e. can a user simply call the package as a
 
 How do other services that want to consume this service bind to it?
 
-Checkout [the core/postgresql](https://github.com/habitat-sh/core-plans/tree/master/postgresql) README for a good example of this.
+Checkout [the lilian/postgresql](https://github.com/habitat-sh/core-plans/tree/master/postgresql) README for a good example of this.
 
 ## Topologies
 
@@ -40,7 +40,7 @@ Check out [the Habitat docs on standalone](https://www.habitat.sh/docs/using-hab
 
 If this plan can be used with the standalone topology, how do you do it?
 
-Checkout [the core/postgresql](https://github.com/habitat-sh/core-plans/tree/master/postgresql) README for a good example of this.
+Checkout [the lilian/postgresql](https://github.com/habitat-sh/core-plans/tree/master/postgresql) README for a good example of this.
 
 ### Leader-Follower
 
@@ -50,7 +50,7 @@ If this plan can be used with the leader/follower topology, how do you do it?
 
 Check out [the Habitat docs on Leader-Follower](https://www.habitat.sh/docs/using-habitat/#leader-follower-topology) for more details on what the leader-follower topology is and what it does.
 
-Checkout [the core/postgresql](https://github.com/habitat-sh/core-plans/tree/master/postgresql) README for a good example of this (look under the Clustering heading)
+Checkout [the lilian/postgresql](https://github.com/habitat-sh/core-plans/tree/master/postgresql) README for a good example of this (look under the Clustering heading)
 
 ## Update Strategies
 

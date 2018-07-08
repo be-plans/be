@@ -15,4 +15,4 @@ Binary package
 Typically this is a runtime dependency that can be added to your
 plan.sh:
 
-    pkg_deps=(core/p11-kit)
+    pkg_deps=(lilian/p11-kit)

@@ -9,13 +9,13 @@ pkg_source="https://ftp.postgresql.org/pub/source/v${pkg_version}/${pkg_name}-${
 pkg_shasum="eafdb3b912e9ec34bdd28b651d00226a6253ba65036cb9a41cad2d9e82e3eb70"
 
 pkg_deps=(
-  be/bash
+  lilian/bash
   lilian/envdir
   core/glibc
-  be/openssl
-  be/perl
-  be/readline
-  be/zlib
+  lilian/openssl
+  lilian/perl
+  lilian/readline
+  lilian/zlib
   lilian/libossp-uuid
 
   # for postgis
@@ -26,13 +26,13 @@ pkg_deps=(
 )
 
 pkg_build_deps=(
-  be/coreutils
-  be/gcc
-  be/make
+  lilian/coreutils
+  lilian/gcc
+  lilian/make
 
   # for postgis
-  be/perl
-  be/diffutils
+  lilian/perl
+  lilian/diffutils
 )
 
 pkg_bin_dirs=(bin)

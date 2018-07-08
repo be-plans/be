@@ -10,18 +10,18 @@ pkg_shasum=8f37e546ac7c31c9c203a03b1c1d6cb2d2f623a300b86badfd367e5559fe148c
 pkg_deps=(
   lilian/glib
   core/glibc
-  be/ncurses
-  be/pcre
+  lilian/ncurses
+  lilian/pcre
 )
 pkg_build_deps=(
-  be/check
-  be/coreutils
-  be/diffutils
-  be/gcc
-  be/gettext
-  be/make
-  be/perl
-  be/pkg-config
+  lilian/check
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
+  lilian/gettext
+  lilian/make
+  lilian/perl
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 

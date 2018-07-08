@@ -14,4 +14,4 @@ awesome tests!
 
 ## Usage
 
-Just include `core/googlemock` preferably in `pkg_build_deps`.
+Just include `lilian/googlemock` preferably in `pkg_build_deps`.

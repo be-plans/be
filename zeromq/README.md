@@ -12,4 +12,4 @@ Binary package
 
 ## Usage
 
-Include `core/zeromq` in your `plan.sh` so that your apps can compile against the `libzmq`.
+Include `lilian/zeromq` in your `plan.sh` so that your apps can compile against the `libzmq`.

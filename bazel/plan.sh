@@ -8,20 +8,20 @@ pkg_upstream_url='https://www.bazel.build/'
 pkg_source="https://github.com/bazelbuild/bazel/releases/download/${pkg_version}/${pkg_name}-${pkg_version}-dist.zip"
 pkg_shasum='82e9035084660b9c683187618a29aa896f8b05b5f16ae4be42a80b5e5b6a7690'
 pkg_build_deps=(
-  core/python
-  core/protobuf-cpp
-  core/gcc
-  core/libarchive
-  core/which
-  core/patch
+  lilian/python
+  lilian/protobuf-cpp
+  lilian/gcc
+  lilian/libarchive
+  lilian/which
+  lilian/patch
 )
 pkg_deps=(
   core/glibc
-  core/jdk8
-  core/gcc-libs
-  core/zip
-  core/unzip
-  core/coreutils
+  lilian/jdk8
+  lilian/gcc-libs
+  lilian/zip
+  lilian/unzip
+  lilian/coreutils
 )
 pkg_bin_dirs=(bin)
 
@@ -30,7 +30,7 @@ do_prepare() {
   patch -p1 -i "${PLAN_CONTEXT}/do_not_clear_env.patch"
   popd >/dev/null
   if [[ ! -r /usr/bin/env ]]; then
-    ln -sv "$(pkg_path_for core/coreutils)/bin/env" /usr/bin/env
+    ln -sv "$(pkg_path_for lilian/coreutils)/bin/env" /usr/bin/env
     _clean_env=true
   fi
 }

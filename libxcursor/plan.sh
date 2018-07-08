@@ -11,24 +11,24 @@ pkg_source="https://www.x.org/releases/individual/lib/${pkg_distname}-${pkg_vers
 pkg_shasum="294e670dd37cd23995e69aae626629d4a2dfe5708851bbc13d032401b7a3df6b"
 pkg_deps=(
   core/glibc
-  core/libxau
-  core/libxcb
-  core/libxdmcp
-  core/libxfixes
-  core/libxrender
-  core/xlib
+  lilian/libxau
+  lilian/libxcb
+  lilian/libxdmcp
+  lilian/libxfixes
+  lilian/libxrender
+  lilian/xlib
 )
 pkg_build_deps=(
-  core/fixesproto
-  core/gcc
-  core/kbproto
-  core/libpthread-stubs
-  core/make
-  core/pkg-config
-  core/renderproto
-  core/util-macros
-  core/xextproto
-  core/xproto
+  lilian/fixesproto
+  lilian/gcc
+  lilian/kbproto
+  lilian/libpthread-stubs
+  lilian/make
+  lilian/pkg-config
+  lilian/renderproto
+  lilian/util-macros
+  lilian/xextproto
+  lilian/xproto
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

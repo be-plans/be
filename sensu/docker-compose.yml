@@ -8,14 +8,14 @@ services:
       - "5672:5672"
       - "15672:15672"
   redis:
-    image: core/redis
+    image: lilian/redis
     links:
       - rabbitmq
     environment:
       - HAB_REDIS=protected-mode='no'
     ports:
       - "6379:6379"
-    command: start core/redis --peer rabbitmq
+    command: start lilian/redis --peer rabbitmq
   sensu-server:
     image: $HAB_ORIGIN/sensu
     links:

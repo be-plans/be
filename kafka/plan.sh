@@ -11,7 +11,7 @@ pkg_license=('Apache-2.0')
 pkg_bin_dirs=(bin)
 pkg_deps=(
   lilian/bash-static
-  be/coreutils
+  lilian/coreutils
   lilian/jre8
 )
 pkg_binds=(

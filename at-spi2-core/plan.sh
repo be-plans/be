@@ -8,21 +8,21 @@ pkg_license=('LGPL-2.0')
 pkg_source="https://download.gnome.org/sources/${pkg_name}/${pkg_version%.*}/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum=c80e0cdf5e3d713400315b63c7deffa561032a6c37289211d8afcfaa267c2615
 pkg_deps=(
-  be/dbus
-  core/glib
+  lilian/dbus
+  lilian/glib
   core/glibc
-  be/libffi
-  be/libiconv
-  be/pcre
+  lilian/libffi
+  lilian/libiconv
+  lilian/pcre
 )
 pkg_build_deps=(
-  be/diffutils
-  be/file
-  be/gcc
-  be/gettext
-  be/make
-  be/perl
-  be/pkg-config
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/gettext
+  lilian/make
+  lilian/perl
+  lilian/pkg-config
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

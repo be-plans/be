@@ -9,14 +9,14 @@ pkg_source="https://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.g
 pkg_shasum="ae7a42df026550b85daca8389b6a60ba6313b0567f374392e54918588a411e94"
 pkg_deps=(
   core/glibc
-  be/gmp
+  lilian/gmp
 )
 pkg_build_deps=(
-  be/diffutils
-  be/gcc
-  be/m4
-  be/make
-  be/pkg-config
+  lilian/diffutils
+  lilian/gcc
+  lilian/m4
+  lilian/make
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
@@ -35,7 +35,7 @@ do_build() {
 
 do_check() {
   export LD_RUN_PATH
-  LD_RUN_PATH="${LD_RUN_PATH}:$(pkg_path_for "core/gcc")/lib"
+  LD_RUN_PATH="${LD_RUN_PATH}:$(pkg_path_for "lilian/gcc")/lib"
 
   make check
 }

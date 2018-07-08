@@ -3,9 +3,9 @@
 echo "Restarting shield-proxy"
 
 if hab sup status | grep shield-proxy; then
-  hab svc unload core/shield-proxy
+  hab svc unload lilian/shield-proxy
 fi
 
 mkdir -p /hab/svc/shield-proxy/
 cp {{pkg.svc_config_path}}/shield-proxy.toml /hab/svc/shield-proxy/user.toml
-hab svc load core/shield-proxy --group {{svc.group}} --force
+hab svc load lilian/shield-proxy --group {{svc.group}} --force

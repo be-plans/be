@@ -7,8 +7,8 @@ pkg_upstream_url=http://zeromq.org
 pkg_license=('LGPL')
 pkg_source=https://github.com/zeromq/libzmq/releases/download/v${pkg_version}/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=cc9090ba35713d59bb2f7d7965f877036c49c5558ea0c290b0dcc6f2a17e489f
-pkg_deps=(core/glibc be/gcc-libs be/libsodium)
-pkg_build_deps=(be/gcc be/diffutils be/coreutils be/make be/pkg-config be/patchelf be/busybox-static be/shadow)
+pkg_deps=(core/glibc lilian/gcc-libs lilian/libsodium)
+pkg_build_deps=(lilian/gcc lilian/diffutils lilian/coreutils lilian/make lilian/pkg-config lilian/patchelf lilian/busybox-static lilian/shadow)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 

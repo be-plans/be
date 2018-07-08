@@ -9,14 +9,14 @@ pkg_shasum=1a9697c3ad2f5545b5160d5e32d5f3c0f6f0a3371ceb9fa85961aec513acd7ac
 pkg_upstream_url=https://www.mongodb.com/
 pkg_filename=${pkg_name}-src-r${pkg_version}.tar.gz
 pkg_dirname=${pkg_name}-src-r${pkg_version}
-pkg_deps=(be/gcc-libs core/glibc be/openssl)
+pkg_deps=(lilian/gcc-libs core/glibc lilian/openssl)
 pkg_build_deps=(
-  be/coreutils
-  be/gcc
-  be/glibc
-  be/python2
-  core/scons/2.5.1
-  be/openssl
+  lilian/coreutils
+  lilian/gcc
+  core/glibc
+  lilian/python2
+  lilian/scons/2.5.1
+  lilian/openssl
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
@@ -35,8 +35,8 @@ source ../defaults.sh
 do_prepare() {
     do_default_prepare
 
-    CC="$(pkg_path_for be/gcc)/bin/gcc"
-    CXX="$(pkg_path_for be/gcc)/bin/g++"
+    CC="$(pkg_path_for lilian/gcc)/bin/gcc"
+    CXX="$(pkg_path_for lilian/gcc)/bin/g++"
     export CC
     export CXX
 

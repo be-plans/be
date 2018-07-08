@@ -7,4 +7,4 @@ This package provides the llvm libraries and binaries.
 Typically this is a build dependency that can be added to your
 plan.sh:
 
-    pkg_build_deps=(core/llvm)
+    pkg_build_deps=(lilian/llvm)

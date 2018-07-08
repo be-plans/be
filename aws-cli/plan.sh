@@ -8,12 +8,12 @@ pkg_description="The AWS Command Line Interface (CLI) is a unified tool to \
   through scripts."
 pkg_upstream_url=https://aws.amazon.com/cli/
 pkg_build_deps=(
-  be/gawk
-  be/sed
+  lilian/gawk
+  lilian/sed
 )
 pkg_deps=(
   lilian/groff
-  be/python
+  lilian/python
 )
 pkg_bin_dirs=(bin)
 

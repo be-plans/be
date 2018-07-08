@@ -7,8 +7,8 @@ $pkg_license=@("Apache-2.0", "MIT")
 $pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 $pkg_source="https://static.rust-lang.org/dist/rust-$pkg_version-x86_64-pc-windows-msvc.msi"
 $pkg_shasum="400219afb45c2a719b74c7680aaad2e60aee931734f9aa5163a5a73d0aa6fc49"
-$pkg_deps=@("core/visual-cpp-redist-2013", "core/visual-cpp-build-tools-2015")
-$pkg_build_deps=@("core/lessmsi")
+$pkg_deps=@("lilian/visual-cpp-redist-2013", "lilian/visual-cpp-build-tools-2015")
+$pkg_build_deps=@("lilian/lessmsi")
 $pkg_bin_dirs=@("bin")
 $pkg_lib_dirs=@("lib")
 

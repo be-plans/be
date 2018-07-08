@@ -12,13 +12,13 @@ pkg_dirname="kubernetes-${pkg_version}"
 pkg_bin_dirs=(bin)
 
 pkg_build_deps=(
-  core/git
-  be/make
-  be/gcc
-  core/go
-  be/diffutils
-  core/which
-  core/rsync
+  lilian/git
+  lilian/make
+  lilian/gcc
+  lilian/go
+  lilian/diffutils
+  lilian/which
+  lilian/rsync
 )
 
 pkg_deps=(

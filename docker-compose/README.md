@@ -13,8 +13,8 @@ The Habitat Maintainers humans@habitat.sh
 ## Usage
 
 ```bash
-hab pkg install core/docker-compose
-hab pkg binlink core/docker-compose docker-compose   # do not try to binlink all the python deps
+hab pkg install lilian/docker-compose
+hab pkg binlink lilian/docker-compose docker-compose   # do not try to binlink all the python deps
 
 docker-compose --version
 ```

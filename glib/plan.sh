@@ -14,32 +14,32 @@ pkg_maintainer='The Habitat Maintainers <humans@habitat.sh>'
 pkg_upstream_url="https://developer.gnome.org/glib/"
 pkg_shasum="82ee94bf4c01459b6b00cb9db0545c2237921e3060c0b74cff13fbc020cfd999"
 pkg_deps=(
-  be/coreutils
+  lilian/coreutils
   lilian/elfutils
   core/glibc
-  be/libffi
-  be/libiconv
-  be/pcre
-  be/python
-  be/util-linux
-  be/zlib
+  lilian/libffi
+  lilian/libiconv
+  lilian/pcre
+  lilian/python
+  lilian/util-linux
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/dbus
-  be/diffutils
-  be/file
-  be/gcc
-  be/gettext
+  lilian/dbus
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/gettext
   lilian/libxslt
-  be/make
-  be/perl
-  be/pkg-config
+  lilian/make
+  lilian/perl
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_pconfig_dirs=(lib/pkgconfig)
-pkg_interpreters=(be/coreutils)
+pkg_interpreters=(lilian/coreutils)
 
 do_prepare() {
   if [[ ! -r /usr/bin/file ]]; then
@@ -58,7 +58,7 @@ do_build() {
 }
 
 do_after() {
-  fix_interpreter "$pkg_prefix/bin/*" be/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/*" lilian/coreutils bin/env
 }
 
 do_end() {

@@ -10,12 +10,12 @@ pkg_shasum=234c9dc77d4c4594ad6216d7df4d49eae3019a3880e602f39721b35b97fbc408
 pkg_dirname="$pkg_name${pkg_version//./-}"
 pkg_deps=(
   core/glibc
-  be/ncurses
+  lilian/ncurses
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/patch
+  lilian/gcc
+  lilian/make
+  lilian/patch
 )
 pkg_bin_dirs=(bin)
 

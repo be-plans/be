@@ -9,13 +9,13 @@ pkg_source="https://github.com/ocaml/camlp4/archive/${pkg_version}+1.tar.gz"
 pkg_dirname="${pkg_name}-${pkg_version}-1"
 pkg_shasum="6044f24a44053684d1260f19387e59359f59b0605cdbf7295e1de42783e48ff1"
 pkg_deps=(
-  be/coreutils
+  lilian/coreutils
   core/glibc
   lilian/ocaml
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
+  lilian/gcc
+  lilian/make
   lilian/ocamlbuild
   lilian/which
 )

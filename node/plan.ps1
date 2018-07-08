@@ -7,7 +7,7 @@ $pkg_license=@("MIT")
 $pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 $pkg_source="https://nodejs.org/dist/v$pkg_version/node-v$pkg_version-x64.msi"
 $pkg_shasum="108dd9ccd131931e42b57dc1243dc28aacfebe207de48c420a576fe453d33ed7"
-$pkg_build_deps=@("core/lessmsi")
+$pkg_build_deps=@("lilian/lessmsi")
 $pkg_bin_dirs=@("bin")
 
 function Invoke-Unpack {

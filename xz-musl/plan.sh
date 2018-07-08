@@ -11,7 +11,7 @@ on some not-so-POSIX systems. XZ Utils are the successor to LZMA Utils.\
 pkg_upstream_url="http://tukaani.org/xz/"
 pkg_license=('gpl2+' 'lgpl2+')
 pkg_deps=(
-  be/musl
+  lilian/musl
 )
 
 pkg_disabled_features=(glibc)

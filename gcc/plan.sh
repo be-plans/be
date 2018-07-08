@@ -15,26 +15,26 @@ pkg_source="http://ftp.gnu.org/gnu/$_distname/${_distname}-${pkg_version}/${_dis
 pkg_shasum="832ca6ae04636adbb430e865a1451adf6979ab44ca1c8374f61fba65645ce15c"
 pkg_deps=(
   core/glibc
-  be/zlib
-  be/gmp
-  be/mpfr
-  be/libmpc
-  be/binutils
+  lilian/zlib
+  lilian/gmp
+  lilian/mpfr
+  lilian/libmpc
+  lilian/binutils
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/file
-  be/make
-  be/gcc
-  be/gawk
-  be/m4
-  be/texinfo
-  be/perl
-  be/inetutils
-  be/expect
-  be/dejagnu
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/file
+  lilian/make
+  lilian/gcc
+  lilian/gawk
+  lilian/m4
+  lilian/texinfo
+  lilian/perl
+  lilian/inetutils
+  lilian/expect
+  lilian/dejagnu
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

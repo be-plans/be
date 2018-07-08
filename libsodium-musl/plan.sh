@@ -12,7 +12,7 @@ API to improve usability even further.\
 pkg_upstream_url="https://github.com/jedisct1/libsodium"
 pkg_license=('libsodium')
 pkg_deps=(
-  be/musl
+  lilian/musl
 )
 
 pkg_disabled_features=(glibc)

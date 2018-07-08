@@ -10,12 +10,12 @@ pkg_shasum="1717edc841c9b98072e410f1b0bc8b84444b4b35ed3b4949ce2bec17c60103ee"
 pkg_deps=(
   core/glibc
   lilian/ocaml
-  be/coreutils
-  be/ncurses
+  lilian/coreutils
+  lilian/ncurses
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
+  lilian/gcc
+  lilian/make
 )
 pkg_bin_dirs=(bin)
 

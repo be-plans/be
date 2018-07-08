@@ -12,13 +12,13 @@ pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 pkg_pconfig_dirs=(lib/pkgconfig)
 
-pkg_deps=(core/python2 core/glibc)
+pkg_deps=(lilian/python2 core/glibc)
 
 pkg_build_deps=(
-core/gcc
-core/make
-core/coreutils
-core/pkg-config
+lilian/gcc
+lilian/make
+lilian/coreutils
+lilian/pkg-config
 )
 
 do_prepare() {

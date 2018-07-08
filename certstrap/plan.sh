@@ -9,7 +9,7 @@ pkg_source="https://github.com/square/certstrap"
 pkg_bin_dirs=(bin)
 pkg_svc_user="root"
 pkg_svc_group="root"
-pkg_scaffolding=core/scaffolding-go
+pkg_scaffolding=lilian/scaffolding-go
 scaffolding_go_base_path=github.com/square
 scaffolding_go_build_deps=()
 

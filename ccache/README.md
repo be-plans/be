@@ -15,13 +15,13 @@ Binary package
 To use this plan, include it in your `pkg_build_deps` or `pkg_deps`, for example:
 
 ```
-pkg_build_deps=(core/ccache)
+pkg_build_deps=(lilian/ccache)
 ```
 
 or use it directly:
 
 ```
-hab pkg install core/ccache --binlink
+hab pkg install lilian/ccache --binlink
 ccache --help
 ```
 

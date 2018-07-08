@@ -9,20 +9,20 @@ pkg_source="https://ftp.gnu.org/pub/gnu/guile/guile-${pkg_version}.tar.xz"
 pkg_shasum=8353a8849cd7aa77be66af04bd6bf7a6207440d2f8722e46672232bb9f0a4086
 pkg_deps=(
   core/glibc
-  be/gcc-libs
-  be/bdwgc
-  be/gmp
-  be/libatomic_ops
-  be/libffi
-  be/libtool
-  be/libunistring
-  be/readline
+  lilian/gcc-libs
+  lilian/bdwgc
+  lilian/gmp
+  lilian/libatomic_ops
+  lilian/libffi
+  lilian/libtool
+  lilian/libunistring
+  lilian/readline
 )
 pkg_build_deps=(
-  be/diffutils
-  be/gcc
-  be/make
-  be/pkg-config
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

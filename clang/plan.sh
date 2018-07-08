@@ -9,18 +9,18 @@ pkg_filename="${pkg_name}-${pkg_version}.src.tar.xz"
 pkg_source="http://llvm.org/releases/${pkg_version}/cfe-${pkg_version}.src.tar.xz"
 pkg_shasum="135f6c9b0cd2da1aff2250e065946258eb699777888df39ca5a5b4fe5e23d0ff"
 pkg_deps=(
-  core/gcc-libs
+  lilian/gcc-libs
   core/glibc
-  core/zlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  core/llvm
-  core/cmake
-  core/coreutils
-  core/diffutils
-  core/gcc
-  core/make
-  core/python2
+  lilian/llvm
+  lilian/cmake
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/python2
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

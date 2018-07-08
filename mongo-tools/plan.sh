@@ -10,7 +10,7 @@ pkg_shasum=c842c8e19fc04492817149403b04ad484241351b7b46d46d9f6355019c72c2de
 pkg_dirname=${pkg_name}-r${pkg_version}
 pkg_filename=${pkg_name}-${pkg_version}.tar.gz
 pkg_deps=(core/glibc)
-pkg_build_deps=(lilian/go be/coreutils be/gcc be/make)
+pkg_build_deps=(lilian/go lilian/coreutils lilian/gcc lilian/make)
 pkg_bin_dirs=(bin)
 
 source ../defaults.sh

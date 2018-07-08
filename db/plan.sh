@@ -12,14 +12,14 @@ pkg_source="http://download.oracle.com/berkeley-db/${pkg_name}-${pkg_version}.ta
 pkg_shasum="e0a992d740709892e81f9d93f06daf305cf73fb81b545afe72478043172c3628"
 pkg_deps=(
   core/glibc
-  be/gcc-libs
+  lilian/gcc-libs
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

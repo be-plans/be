@@ -10,24 +10,24 @@ pkg_source="https://www.x.org/releases/individual/lib/${pkg_dirname}.tar.bz2"
 pkg_shasum="ede250cd207d8bee4a338265c3007d7a68d5aca791b6ac41af18e9a2aeb34178"
 pkg_deps=(
   core/glibc
-  core/libxau
-  core/libxcb
-  core/libxdmcp
-  core/xlib
+  lilian/libxau
+  lilian/libxcb
+  lilian/libxdmcp
+  lilian/xlib
 )
 pkg_build_deps=(
-  core/compositeproto
-  core/diffutils
-  core/file
-  core/fixesproto
-  core/gcc
-  core/kbproto
-  core/libpthread-stubs
-  core/libxfixes
-  core/make
-  core/pkg-config
-  core/xextproto
-  core/xproto
+  lilian/compositeproto
+  lilian/diffutils
+  lilian/file
+  lilian/fixesproto
+  lilian/gcc
+  lilian/kbproto
+  lilian/libpthread-stubs
+  lilian/libxfixes
+  lilian/make
+  lilian/pkg-config
+  lilian/xextproto
+  lilian/xproto
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

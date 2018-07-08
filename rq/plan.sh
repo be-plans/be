@@ -12,10 +12,10 @@ pkg_source="https://github.com/dflemstr/rq/releases/download/v${pkg_version}/rec
 pkg_shasum="1b9abedd7acca1269ac1c4765d93bab73777feca9a04358ea4f9c9659bf51e62"
 pkg_deps=(
   core/glibc
-  core/gcc-libs
+  lilian/gcc-libs
 )
 pkg_build_deps=(
-  core/patchelf
+  lilian/patchelf
 )
 pkg_bin_dirs=(bin)
 

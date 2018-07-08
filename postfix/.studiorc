@@ -5,13 +5,13 @@
 echo
 echo "--> Launching syslogd in the background for postfix debugging..."
 
-echo "    Installing: core/busybox-static"
-hab pkg install core/busybox-static
+echo "    Installing: lilian/busybox-static"
+hab pkg install lilian/busybox-static
 
 [[ -S /dev/log ]] && echo "    Erasing: /dev/log" && rm /dev/log
 
 echo "    Running: syslogd -n"
-setsid hab pkg exec core/busybox-static syslogd -n &
+setsid hab pkg exec lilian/busybox-static syslogd -n &
 
 echo "    * Use 'tail -f /var/log/messages' to see what postfix and other processes are up to"
 echo "    * Use 'less /hab/svc/postfix/data/spool/root' to read root user's mailbox"
@@ -21,8 +21,8 @@ echo "    * Use 'less /hab/svc/postfix/data/spool/root' to read root user's mail
 echo
 echo "--> Setting up postfix development commands..."
 
-echo "    Installing: core/netcat"
-hab pkg install core/netcat
+echo "    Installing: lilian/netcat"
+hab pkg install lilian/netcat
 
 echo "    * Use 'postfix-configure myconfig.toml' to reconfigure the postfix service"
 postfix-configure() {
@@ -44,12 +44,12 @@ postfix-install() {
 echo "    * Use 'postfix-start' to start the postfix service"
 postfix-start() {
     postfix-install
-    hab svc start core/postfix
+    hab svc start lilian/postfix
 }
 
 echo "    * Use 'postfix-stop' to stop the postfix service"
 postfix-stop() {
-    hab svc stop core/postfix
+    hab svc stop lilian/postfix
 }
 
 echo "    * Use 'postfix-restart' to restart the postfix service"
@@ -60,14 +60,14 @@ postfix-restart() {
 
 echo "    * Use 'postfix-email' to open an SMTP session with postfix"
 postfix-email() {
-    hab pkg exec core/netcat nc localhost 25
+    hab pkg exec lilian/netcat nc localhost 25
 }
 
 echo "    * Use 'postfix-test' to send a test message to root"
 postfix-test() {
     echo "Sending email to root@localhost"
 
-    hab pkg exec core/netcat nc localhost 25 <<-EOM
+    hab pkg exec lilian/netcat nc localhost 25 <<-EOM
 	EHLO localhost.localdomain
 	MAIL FROM: <user@localhost>
 	RCPT TO: <root@localhost>

@@ -7,8 +7,8 @@ pkg_license=('GPL-2.0')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=https://www.mercurial-scm.org/release/mercurial-${pkg_version}.tar.gz
 pkg_shasum=625e4fc7e85ec2278c2828bdc547fce74091b3bbe4d9eeeba2d61af51195df74
-pkg_deps=(core/glibc lilian/python2 be/cacerts)
-pkg_build_deps=(be/gcc be/make lilian/python2 be/coreutils be/diffutils lilian/which)
+pkg_deps=(core/glibc lilian/python2 lilian/cacerts)
+pkg_build_deps=(lilian/gcc lilian/make lilian/python2 lilian/coreutils lilian/diffutils lilian/which)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 
@@ -37,7 +37,7 @@ EOF
 
 #
 # We can't use fix_interpreter here without including
-# be/coreutils as a runtime dependency.
+# lilian/coreutils as a runtime dependency.
 #
 # For a possible solution see:
 #   https://github.com/habitat-sh/habitat/issues/1041

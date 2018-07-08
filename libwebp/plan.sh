@@ -8,19 +8,19 @@ pkg_upstream_url=https://developers.google.com/speed/webp
 pkg_source=https://storage.googleapis.com/downloads.webmproject.org/releases/webp/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=6ad66c6fcd60a023de20b6856b03da8c7d347269d76b1fd9c3287e8b5e8813df
 pkg_deps=(
-  core/giflib
+  lilian/giflib
   core/glibc
   lilian/libjpeg-turbo
-  core/jbigkit
+  lilian/jbigkit
   lilian/libpng
-  core/libtiff
-  be/xz
-  be/zlib
+  lilian/libtiff
+  lilian/xz
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/gcc
-  be/file
-  be/make
+  lilian/gcc
+  lilian/file
+  lilian/make
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

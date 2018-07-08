@@ -9,11 +9,11 @@ pkg_source="https://c-ares.haxx.se/download/${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum=03f708f1b14a26ab26c38abd51137640cb444d3ec72380b21b20f1a8d2861da7
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/file
-  be/gcc
-  be/make
+  lilian/coreutils
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/make
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

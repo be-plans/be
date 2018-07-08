@@ -8,16 +8,16 @@ pkg_license=('AGPL-3.0')
 pkg_source="https://mmonit.com/monit/dist/monit-${pkg_version}.tar.gz"
 pkg_shasum="aa0ce6361d1155e43e30a86dcff00b2003d434f221c360981ced830275abc64a"
 pkg_deps=(
-  be/bash
+  lilian/bash
   core/glibc
-  be/openssl
-  be/zlib
+  lilian/openssl
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/gcc
-  be/make
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
 )
 pkg_bin_dirs=(bin)
 pkg_svc_user=root
@@ -32,6 +32,6 @@ do_build() {
     --prefix="${pkg_prefix}" \
     --enable-optimized \
     --without-pam \
-    --with-ssl-incl-dir="$(pkg_path_for be/openssl)/include"
+    --with-ssl-incl-dir="$(pkg_path_for lilian/openssl)/include"
   make -j "$(nproc)"
 }

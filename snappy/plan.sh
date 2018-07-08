@@ -9,10 +9,10 @@ pkg_shasum=3dfa02e873ff51a11ee02b9ca391807f0c8ea0529a4924afa645fbf97163f9d4
 pkg_dirname="${pkg_name}-${pkg_version}"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/gcc
-  be/ninja
-  be/cmake
-  be/pkg-config
+  lilian/gcc
+  lilian/ninja
+  lilian/cmake
+  lilian/pkg-config
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib lib64)

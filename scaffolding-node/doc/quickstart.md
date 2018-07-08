@@ -24,7 +24,7 @@ $EDITOR habitat/plan.sh
 pkg_name=MY_APP
 pkg_origin=MY_ORIGIN
 pkg_version=MY_VERSION
-pkg_scaffolding=core/scaffolding-node
+pkg_scaffolding=lilian/scaffolding-node
 ```
 
 You can replace the following:

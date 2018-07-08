@@ -84,7 +84,7 @@ Note that this plan does not currently support updateing a Sql Server database e
 To cluster multiple Sql Server instances, use the `sqlserver-ha-ag` plan. That provides a service that should be started on the same node as all Sql Servers in your service group.
 
 ```
-hab svc start core/sqlserver-ha-ag --bind database:sqlserver.default
+hab svc start lilian/sqlserver-ha-ag --bind database:sqlserver.default
 ```
 
 See the `sqlserver-ha-ag` plan for more details.

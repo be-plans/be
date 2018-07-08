@@ -14,7 +14,7 @@ Service
 
 ### Requirements:
 
-* You must be running the `core/sqlserver` Habitat service which must be running an Enterprise version of Sql Server in order to access the `AlwaysOn` feature.
+* You must be running the `lilian/sqlserver` Habitat service which must be running an Enterprise version of Sql Server in order to access the `AlwaysOn` feature.
 * Your SqlServer nodes should be joined to an Active Directory domain
 * The supervisor running this service must be running under a Domain Administrator account and should also have a `sysadmin` Sql Server login.
 
@@ -41,7 +41,7 @@ Running the sqlserver-ha-ag service will Configure Windows Failover Clustering a
 The service should bind to `sqlserver` and run on each supervisor where `sqlserver` runs in the same service group.
 
 ```
-hab svc start core/sqlserver-ha-ag --bind database:sqlserver.default
+hab svc start lilian/sqlserver-ha-ag --bind database:sqlserver.default
 ```
 
 ## Bindings

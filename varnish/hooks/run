@@ -1,10 +1,10 @@
-#!{{pkgPathFor "be/bash"}}/bin/bash
+#!{{pkgPathFor "lilian/bash"}}/bin/bash
 
 set -xe
 
 # GCC build chain hardcodes bash as /bin/bash, therefore we need to ensure that
 # we get real 'bash' for GCC toolchain, not 'busybox' bash compatibility mode...
-ln -fs {{pkgPathFor "be/bash"}}/bin/bash /bin/bash
+ln -fs {{pkgPathFor "lilian/bash"}}/bin/bash /bin/bash
 
 cat {{pkg.svc_config_path}}/{{cfg.files.vcl}}
 

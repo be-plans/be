@@ -13,8 +13,8 @@ The Habitat Maintainers humans@habitat.sh
 ## Usage
 
 ```bash
-hab pkg install core/packer
-hab pkg binlink core/packer
+hab pkg install lilian/packer
+hab pkg binlink lilian/packer
 
 packer --version
 ```

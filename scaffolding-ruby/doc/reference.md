@@ -41,8 +41,8 @@ Most non-trivial apps need more than their own codebase to run correctly. Many h
 
 The following Habitat package dependencies will be injected into your app's Plan:
 
-* [`be/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
-* `core/git`: Used to detect if your app exists within a git repository to better support installing your app while honoring the `.gitignore` file. Will be injected into your Plan's `pkg_build_deps` array.
+* [`lilian/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
+* `lilian/git`: Used to detect if your app exists within a git repository to better support installing your app while honoring the `.gitignore` file. Will be injected into your Plan's `pkg_build_deps` array.
 
 ### Detected Dependencies
 
@@ -74,8 +74,8 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-ruby
-pkg_deps=(lilian/imagemagick be/libsodium)
+pkg_scaffolding=lilian/scaffolding-ruby
+pkg_deps=(lilian/imagemagick lilian/libsodium)
 ```
 
 ###  Specifying Build Dependencies in Your Plan
@@ -89,8 +89,8 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-ruby
-pkg_build_deps=(be/rust)
+pkg_scaffolding=lilian/scaffolding-ruby
+pkg_build_deps=(lilian/rust)
 ```
 
 ## Ruby Version
@@ -129,7 +129,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-ruby
+pkg_scaffolding=lilian/scaffolding-ruby
 
 scaffolding_ruby_pkg=lilian/ruby/2.4.1
 ```
@@ -188,7 +188,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-ruby
+pkg_scaffolding=lilian/scaffolding-ruby
 
  # Declare the associative array (hash) in bash
 declare -A scaffolding_process_bins
@@ -230,7 +230,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-ruby
+pkg_scaffolding=lilian/scaffolding-ruby
 
  # Declare the associative array (hash) in bash
 declare -A scaffolding_env
@@ -297,7 +297,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-ruby
+pkg_scaffolding=lilian/scaffolding-ruby
 
  # We require both the HTTP and transport ports from this
  # service binding
@@ -499,7 +499,7 @@ If your database is not currently running in a Habitat ring under a Supervisor, 
 [12factor_processes]: https://12factor.net/processes
 [bindings]: https://www.habitat.sh/docs/run-packages-binding/
 [commit_lockfile]: http://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/
-[`be/busybox-static`]: https://app.habitat.sh/#/pkgs/be/busybox-static
+[`lilian/busybox-static`]: https://app.habitat.sh/#/pkgs/lilian/busybox-static
 [`lilian/ruby`]: https://app.habitat.sh/#/pkgs/lilian/ruby
 [Elasticsearch]: https://www.elastic.co/products/elasticsearch
 [`Gemfile`]: http://bundler.io/man/gemfile.5.html

@@ -9,7 +9,7 @@ pkg_source=http://downloads.sourceforge.net/project/strace/strace/${pkg_version}
 pkg_shasum=7c93ebc6c29280f47c24a0eb86873a99ccb2cac6512c60a60ba4ef99ab807281
 pkg_deps=(core/glibc lilian/libunwind)
 pkg_bin_dirs=(bin)
-pkg_build_deps=(be/coreutils be/make be/gcc)
+pkg_build_deps=(lilian/coreutils lilian/make lilian/gcc)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 

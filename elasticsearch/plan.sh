@@ -8,10 +8,10 @@ pkg_license=('Revised BSD')
 pkg_source=https://artifacts.elastic.co/downloads/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=b26e3546784b39ce3eacc10411e68ada427c5764bcda3064e9bb284eca907983
 pkg_deps=(
-  be/coreutils-static
+  lilian/coreutils-static
   core/glibc
   lilian/jre8
-  be/wget
+  lilian/wget
 )
 pkg_bin_dirs=(es/bin)
 pkg_binds_optional=(

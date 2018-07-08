@@ -41,8 +41,8 @@ Most non-trivial apps need more than their own codebase to run correctly. Many h
 
 The following Habitat package dependencies will be injected into your app's Plan:
 
-* [`be/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
-* `core/git`: Used to detect if your app exists within a git repository to better support installing your app while honoring the `.gitignore` file. Will be injected into your Plan's `pkg_build_deps` array.
+* [`lilian/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
+* `lilian/git`: Used to detect if your app exists within a git repository to better support installing your app while honoring the `.gitignore` file. Will be injected into your Plan's `pkg_build_deps` array.
 
 ### Detected Dependencies
 
@@ -69,7 +69,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-node
+pkg_scaffolding=lilian/scaffolding-node
 pkg_deps=(lilian/imagemagick)
 ```
 
@@ -84,8 +84,8 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-node
-pkg_build_deps=(core/makesmall)
+pkg_scaffolding=lilian/scaffolding-node
+pkg_build_deps=(lilian/makesmall)
 ```
 
 ## Node Version
@@ -144,7 +144,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-node
+pkg_scaffolding=lilian/scaffolding-node
 
 scaffolding_node_pkg=lilian/node/5.6.0
 ```
@@ -157,7 +157,7 @@ This scaffolding can detect and use either [npm][] or [Yarn][] to resolve, downl
 
 ### Detecting a Yarn-based Project
 
-If a `yarn.lock` file is found in your app's root directory, then [Yarn][] will be used to install dependencies. An additional Habitat package of [`core/yarn`][] will be injected into your Plan's `pkg_build_deps` array.
+If a `yarn.lock` file is found in your app's root directory, then [Yarn][] will be used to install dependencies. An additional Habitat package of [`lilian/yarn`][] will be injected into your Plan's `pkg_build_deps` array.
 
 ### Detecting an npm-based Project
 
@@ -172,7 +172,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-node
+pkg_scaffolding=lilian/scaffolding-node
 
 scaffolding_pkg_manager=yarn
 ```
@@ -247,7 +247,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-node
+pkg_scaffolding=lilian/scaffolding-node
 
  # Declare the associative array (hash) in bash
 declare -A scaffolding_process_bins
@@ -288,7 +288,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-node
+pkg_scaffolding=lilian/scaffolding-node
 
  # Declare the associative array (hash) in bash
 declare -A scaffolding_env
@@ -354,7 +354,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-node
+pkg_scaffolding=lilian/scaffolding-node
 
  # We require both the HTTP and transport ports from this
  # service binding
@@ -379,9 +379,9 @@ Other Scaffolding packages may offer framework-specific app type detection in or
 [12factor_port]: https://12factor.net/port-binding
 [12factor_processes]: https://12factor.net/processes
 [bindings]: https://www.habitat.sh/docs/run-packages-binding/
-[`be/busybox-static`]: https://app.habitat.sh/#/pkgs/be/busybox-static
+[`lilian/busybox-static`]: https://app.habitat.sh/#/pkgs/lilian/busybox-static
 [`lilian/node`]: https://app.habitat.sh/#/pkgs/lilian/node
-[`core/yarn`]: https://app.habitat.sh/#/pkgs/core/yarn
+[`lilian/yarn`]: https://app.habitat.sh/#/pkgs/lilian/yarn
 [Elasticsearch]: https://www.elastic.co/products/elasticsearch
 [habitat]: https://www.habitat.sh/
 [npm]: https://www.npmjs.com/

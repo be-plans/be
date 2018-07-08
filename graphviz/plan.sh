@@ -10,16 +10,16 @@ pkg_source="https://gitlab.com/graphviz/graphviz/-/archive/stable_release_${pkg_
 pkg_shasum="92f654c95b412920777ceddf90e6564ffa871a77e4f6155ab437a2d3a2129e2b"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-    be/autoconf
-    be/automake
-    be/bison
-    be/coreutils
-    be/diffutils
-    be/flex
-    be/gcc
-    be/libtool
-    be/make
-    be/pkg-config
+    lilian/autoconf
+    lilian/automake
+    lilian/bison
+    lilian/coreutils
+    lilian/diffutils
+    lilian/flex
+    lilian/gcc
+    lilian/libtool
+    lilian/make
+    lilian/pkg-config
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
@@ -28,7 +28,7 @@ source ../defaults.sh
 do_prepare() {
   do_default_prepare
   # TODO: if we don't copy this aclocal will fail. need to figure out how to fix this
-  cp "$(pkg_path_for core/pkg-config)/share/aclocal/pkg.m4" "$(pkg_path_for core/automake)/share/aclocal/"
+  cp "$(pkg_path_for lilian/pkg-config)/share/aclocal/pkg.m4" "$(pkg_path_for lilian/automake)/share/aclocal/"
 
   libtoolize
   ./autogen.sh

@@ -9,12 +9,12 @@ pkg_source="https://dbus.freedesktop.org/releases/dbus/${pkg_name}-${pkg_version
 pkg_shasum=272bb5091770b047c8188b926d5e6038fa4fe6745488b2add96b23e2d9a83d88
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/autoconf
-  be/automake
-  be/pkg-config
-  be/make
-  be/gcc
-  be/expat
+  lilian/autoconf
+  lilian/automake
+  lilian/pkg-config
+  lilian/make
+  lilian/gcc
+  lilian/expat
 )
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

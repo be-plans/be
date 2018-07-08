@@ -11,25 +11,25 @@ pkg_source="http://ftp.gnu.org/gnu/gdb/${pkg_filename}"
 pkg_shasum=834ff3c5948b30718343ea57b11cbc3235d7995c6a4f3a5cecec8c8114164f94
 pkg_deps=(
   core/glibc
-  core/readline
-  core/zlib
-  core/xz
-  core/ncurses
-  core/expat
-  core/guile
-  core/bdwgc
-  core/python
+  lilian/readline
+  lilian/zlib
+  lilian/xz
+  lilian/ncurses
+  lilian/expat
+  lilian/guile
+  lilian/bdwgc
+  lilian/python
 )
 pkg_build_deps=(
-  core/coreutils
-  core/pkg-config
-  core/diffutils
-  core/expect
-  core/dejagnu
-  core/patch
-  core/make
-  core/gcc
-  core/texinfo
+  lilian/coreutils
+  lilian/pkg-config
+  lilian/diffutils
+  lilian/expect
+  lilian/dejagnu
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/texinfo
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

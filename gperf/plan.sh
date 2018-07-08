@@ -9,10 +9,10 @@ pkg_source="http://mirrors.peers.community/mirrors/gnu/${pkg_name}/${pkg_name}-$
 pkg_shasum=588546b945bba4b70b6a3a616e80b4ab466e3f33024a352fc2198112cdbb3ae2
 pkg_deps=(
   core/glibc
-  be/gcc-libs
-  be/gcc
+  lilian/gcc-libs
+  lilian/gcc
 )
-pkg_build_deps=(be/make)
+pkg_build_deps=(lilian/make)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
 

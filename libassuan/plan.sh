@@ -7,12 +7,12 @@ pkg_source=ftp://ftp.gnupg.org/gcrypt/${pkg_name}/${pkg_name}-${pkg_version}.tar
 pkg_shasum=22843a3bdb256f59be49842abf24da76700354293a066d82ade8134bb5aa2b71
 pkg_deps=(core/glibc lilian/libgpg-error)
 pkg_build_deps=(
-  be/gcc be/coreutils be/sed
-  be/bison be/flex be/grep
-  be/bash be/gawk be/libtool
-  be/diffutils be/findutils be/xz
-  be/gettext be/gzip be/make
-  be/patch be/texinfo be/util-linux
+  lilian/gcc lilian/coreutils lilian/sed
+  lilian/bison lilian/flex lilian/grep
+  lilian/bash lilian/gawk lilian/libtool
+  lilian/diffutils lilian/findutils lilian/xz
+  lilian/gettext lilian/gzip lilian/make
+  lilian/patch lilian/texinfo lilian/util-linux
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

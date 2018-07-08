@@ -2,7 +2,7 @@ pkg_name="lsof"
 pkg_origin="core"
 pkg_version="4.89"
 pkg_license=('lsof')
-pkg_upstream_url="https://people.freebsd.org/~abe/"
+pkg_upstream_url="https://people.freebsd.org/~alilian/"
 pkg_source="https://www.mirrorservice.org/sites/lsof.itap.purdue.edu/pub/tools/unix/lsof/lsof_${pkg_version}.tar.bz2"
 pkg_shasum="81ac2fc5fdc944793baf41a14002b6deb5a29096b387744e28f8c30a360a3718"
 pkg_description="lsof - list open files"
@@ -10,8 +10,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_deps=(core/glibc)
 pkg_bin_dirs=(bin)
 pkg_build_deps=(
-  be/coreutils be/make be/gcc
-  be/busybox-static
+  lilian/coreutils lilian/make lilian/gcc
+  lilian/busybox-static
 )
 pkg_dirname="lsof_${pkg_version}"
 

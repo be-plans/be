@@ -7,7 +7,7 @@ pkg_description="Continuous Archiving for Postgres"
 pkg_upstream_url="https://github.com/wal-e/wal-e"
 pkg_source=https://github.com/wal-e/wal-e/archive/v${pkg_version}.tar.gz
 pkg_shasum=d3478e6eb4bfe00ac696af3e7ded4a91a0a2db6f9aa1a51ce780e43e4c12d6c7
-pkg_deps=(lilian/envdir lilian/lzop lilian/pv be/python)
+pkg_deps=(lilian/envdir lilian/lzop lilian/pv lilian/python)
 pkg_bin_dirs=(bin)
 
 source ../defaults.sh

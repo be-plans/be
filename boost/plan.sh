@@ -12,23 +12,23 @@ pkg_dirname=${_pkg_dirname}
 
 pkg_deps=(
   core/glibc
-  be/gcc-libs
+  lilian/gcc-libs
 )
 
 pkg_build_deps=(
   core/glibc
-  be/gcc-libs
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
+  lilian/gcc-libs
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
   lilian/python2
   lilian/libxml2
   lilian/libxslt
-  be/openssl
+  lilian/openssl
   lilian/which
-  be/zlib
+  lilian/zlib
 )
 
 pkg_lib_dirs=(lib)
@@ -43,8 +43,8 @@ do_build() {
 do_install() {
   export NO_BZIP2=1
   export ZLIB_LIBPATH
-  ZLIB_LIBPATH="$(pkg_path_for be/zlib)/lib"
+  ZLIB_LIBPATH="$(pkg_path_for lilian/zlib)/lib"
   export ZLIB_INCLUDE
-  ZLIB_INCLUDE="$(pkg_path_for be/zlib)/include"
+  ZLIB_INCLUDE="$(pkg_path_for lilian/zlib)/include"
   ./b2 install --prefix="$pkg_prefix" -q --debug-configuration
 }

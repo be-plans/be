@@ -43,7 +43,7 @@ Most non-trivial apps need more than their own codebase to run correctly. Many h
 
 The following Habitat package dependencies will be injected into your app's Plan:
 
-* [`be/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
+* [`lilian/busybox-static`][]: Used by process bins to have valid [shebangs][] and a consistent minimal command set. Will be injected into your Plan's `pkg_deps` array.
 
 ### Detected Dependencies
 
@@ -71,8 +71,8 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-gradle
-pkg_deps=(core/imagemagick)
+pkg_scaffolding=lilian/scaffolding-gradle
+pkg_deps=(lilian/imagemagick)
 ```
 
 ###  Specifying Build Dependencies in Your Plan
@@ -86,15 +86,15 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-gradle
-pkg_build_deps=(core/makesmall)
+pkg_scaffolding=lilian/scaffolding-gradle
+pkg_build_deps=(lilian/makesmall)
 ```
 
 ## Gradle Version
 
 ### Selecting a Version of Gradle
 
-By default the latest version of the [`core/gradle`][] package will be injected into your Plan's `pkg_build_deps` array. To specify a non-default version of Gradle, there is one location you can do this:
+By default the latest version of the [`lilian/gradle`][] package will be injected into your Plan's `pkg_build_deps` array. To specify a non-default version of Gradle, there is one location you can do this:
 
 1. Set the `scaffolding_gradle_pkg` variable in your Plan with a valid Habitat package identifier corresponding to a package with a `gradle` program
 
@@ -107,7 +107,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-gradle
+pkg_scaffolding=lilian/scaffolding-gradle
 
 scaffolding_gradle_pkg=myown/gradle
 ```
@@ -118,7 +118,7 @@ The value of this variable will be used to determine the Habitat package to sati
 
 ### Selecting a Version of the Java Compiler
 
-By default the latest version of the [`core/jdk8`][] package will be injected into your Plan's `pkg_build_deps` array. To specify a non-default version of the JDK, there is one location you can do this:
+By default the latest version of the [`lilian/jdk8`][] package will be injected into your Plan's `pkg_build_deps` array. To specify a non-default version of the JDK, there is one location you can do this:
 
 1. Set the `scaffolding_jdk_pkg` variable in your Plan with a valid Habitat package identifier corresponding to a package with a `javac` program
 
@@ -131,7 +131,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-gradle
+pkg_scaffolding=lilian/scaffolding-gradle
 
 scaffolding_jdk_pkg=myown/jdk
 ```
@@ -142,7 +142,7 @@ The value of this variable will be used to determine the Habitat package to sati
 
 ### Selecting a Version of the Java Runtime
 
-By default the latest version of the [`core/jre8`][] package will be injected into your Plan's `pkg_deps` array. To specify a non-default version of the JRE, there is one location you can do this:
+By default the latest version of the [`lilian/jre8`][] package will be injected into your Plan's `pkg_deps` array. To specify a non-default version of the JRE, there is one location you can do this:
 
 1. Set the `scaffolding_jre_pkg` variable in your Plan with a valid Habitat package identifier corresponding to a package with a `java` program
 
@@ -155,7 +155,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-gradle
+pkg_scaffolding=lilian/scaffolding-gradle
 
 scaffolding_jre_pkg=myown/jre
 ```
@@ -211,7 +211,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-gradle
+pkg_scaffolding=lilian/scaffolding-gradle
 
  # Declare the associative array (hash) in bash
 declare -A scaffolding_process_bins
@@ -254,7 +254,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-gradlee
+pkg_scaffolding=lilian/scaffolding-gradlee
 
  # Declare the associative array (hash) in bash
 declare -A scaffolding_env
@@ -322,7 +322,7 @@ pkg_name=my_app
 pkg_origin=acmecorp
 pkg_version=0.1.0
  # ...
-pkg_scaffolding=core/scaffolding-gradle
+pkg_scaffolding=lilian/scaffolding-gradle
 
  # We require both the HTTP and transport ports from this
  # service binding
@@ -368,9 +368,9 @@ This app type will be built using a variant of `gradle installDist -x test`.
 [12factor_processes]: https://12factor.net/processes
 [bindings]: https://www.habitat.sh/docs/run-packages-binding/
 [`build.gradle`]: https://docs.gradle.org/current/userguide/writing_build_scripts.html
-[`be/busybox-static`]: https://app.habitat.sh/#/pkgs/be/busybox-static
-[`core/node`]: https://app.habitat.sh/#/pkgs/core/node
-[`core/yarn`]: https://app.habitat.sh/#/pkgs/core/yarn
+[`lilian/busybox-static`]: https://app.habitat.sh/#/pkgs/lilian/busybox-static
+[`lilian/node`]: https://app.habitat.sh/#/pkgs/lilian/node
+[`lilian/yarn`]: https://app.habitat.sh/#/pkgs/lilian/yarn
 [Elasticsearch]: https://www.elastic.co/products/elasticsearch
 [habitat]: https://www.habitat.sh/
 [`Procfile`]: https://devcenter.heroku.com/articles/procfile

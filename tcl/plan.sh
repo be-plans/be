@@ -10,16 +10,16 @@ pkg_shasum="c43cb0c1518ce42b00e7c8f6eaddd5195c53a98f94adc717234a65cbcfd3f96a"
 pkg_dirname="${pkg_name}${pkg_version}"
 pkg_deps=(
   core/glibc
-  be/gcc-libs
-  be/zlib
+  lilian/gcc-libs
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/sed
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/sed
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

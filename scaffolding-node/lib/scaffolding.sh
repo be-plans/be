@@ -102,7 +102,7 @@ scaffolding_modules_install() {
   build_line "Installing dependencies using $_pkg_manager $("$_pkg_manager" --version)"
   # Many node dependencies require /usr/bin/env
   # This directory is not created with Habitat by design
-  # Instead, we use be/coreutils for this functionality
+  # Instead, we use lilian/coreutils for this functionality
   # This sets up a symlink to simulate a /usr/bin/env,
   # But still use coreutils
   ln -svf "$(pkg_path_for coreutils)/bin/env" /usr/bin/env
@@ -451,9 +451,9 @@ _update_svc_run() {
 
 _add_busybox() {
   build_line "Adding Busybox package to run dependencies"
-  # Need to specify be/busybox-static last
-  # So that it does not override the paths of be/coreutils
-  pkg_deps=(${pkg_deps[@]} be/busybox-static)
+  # Need to specify lilian/busybox-static last
+  # So that it does not override the paths of lilian/coreutils
+  pkg_deps=(${pkg_deps[@]} lilian/busybox-static)
   debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
 }
 
@@ -516,7 +516,7 @@ _detect_yarn() {
   # TODO fin: support custom version of Yarn package?
   if [[ "$_pkg_manager" == "yarn" ]]; then
     build_line "Adding Yarn package to build dependencies"
-    pkg_build_deps=(core/yarn ${pkg_build_deps[@]})
+    pkg_build_deps=(lilian/yarn ${pkg_build_deps[@]})
     debug "Updating pkg_build_deps=(${pkg_build_deps[*]}) from Scaffolding detection"
   fi
 }
@@ -685,7 +685,7 @@ _nearest_version_on_builder() {
   local full_version_number
   full_version_number=$(_full_version_digits "$bare_version")
 
-  "$(pkg_path_for be/curl)"/bin/curl https://bldr.habitat.sh/v1/depot/channels/core/stable/pkgs/node | $_jq . > data.json
+  "$(pkg_path_for lilian/curl)"/bin/curl https://bldr.habitat.sh/v1/depot/channels/lilian/stable/pkgs/node | $_jq . > data.json
   builder_versions_list=$(stable_versions_list data.json)
   rm -f data.json
 
@@ -697,7 +697,7 @@ _nearest_version_on_builder() {
     # in order to compare it to the full version number
     # with semver
     local parsed_i
-    parsed_i=$(echo "$i" | "$(pkg_path_for be/bc)"/bin/bc)
+    parsed_i=$(echo "$i" | "$(pkg_path_for lilian/bc)"/bin/bc)
     comparison_result=1
 
     if [[ $original_version_string =~ (^=?[0-9])  ]]; then

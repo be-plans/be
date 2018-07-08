@@ -13,7 +13,7 @@ If you receive this error when running a build with this scaffolding:
 ```bash
 The latest bundler is 1.15.4, but you are currently running 1.15.1.
 To update, run `gem install bundler`
-ERROR:  Could not find a valid gem '/hab/pkgs/core/bundler/1.15.1/20170621175238/cache/bundler-1.15.1
+ERROR:  Could not find a valid gem '/hab/pkgs/lilian/bundler/1.15.1/20170621175238/cache/bundler-1.15.1
 1.15.1.
 bundler`.gem' (>= 0) in any repository
    widget_world: Build time: 0m41s

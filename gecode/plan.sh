@@ -8,15 +8,15 @@ pkg_source="http://www.gecode.org/download/gecode-${pkg_version}.tar.gz"
 pkg_shasum=e7cc8bcc18b49195fef0544061bdd2e484a1240923e4e85fa39e8d6bb492854c
 pkg_dirname=${pkg_distname}-${pkg_version}
 pkg_deps=(
-  be/gcc
+  lilian/gcc
   core/glibc
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/gcc
-  be/make
-  be/perl
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/perl
 )
 pkg_description="Gecode is a toolkit for developing constraint-based systems and applications"
 pkg_upstream_url="http://www.gecode.org"

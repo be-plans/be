@@ -12,19 +12,19 @@ pkg_license=("Vim")
 pkg_source="http://github.com/${pkg_name}/${pkg_name}/archive/v${pkg_version}.tar.gz"
 pkg_shasum="d0818df5c6da23db725aa68067c90c80f0779c2e3446811bd1389b1ac2c2df86"
 pkg_deps=(
-  be/acl
-  be/attr
+  lilian/acl
+  lilian/attr
   core/glibc
-  be/ncurses
+  lilian/ncurses
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/sed
-  be/autoconf
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/sed
+  lilian/autoconf
 )
 pkg_bin_dirs=(bin)
 

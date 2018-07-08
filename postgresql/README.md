@@ -14,18 +14,18 @@ Service
 
 ## Usage
 
-You can use this passage by adding core/postgresql to your package dependencies in your plan file:
+You can use this passage by adding lilian/postgresql to your package dependencies in your plan file:
 
 ```
 pkg_deps=(
-  core/postgresql # for psql in hooks/init
+  lilian/postgresql # for psql in hooks/init
 )
 ```
 
 Or you can start the service with:
 
 ```
-$ hab start core/postgresql
+$ hab start lilian/postgresql
 ```
 
 And bind another Habitat service to it - see "Binding" below for more details.
@@ -93,7 +93,7 @@ You can run an example cluster via docker-compose after exporting a docker conta
 $ hab pkg export docker $(ls -1t results/*.hart | head -1)
 ```
 
-The docker post-process should create a docker image named `core/postgresql` and it should be available on your local machine
+The docker post-process should create a docker image named `lilian/postgresql` and it should be available on your local machine
 
 ```
 cat <<EOF > docker-compose.yml

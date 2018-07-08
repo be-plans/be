@@ -18,10 +18,10 @@ _url_base="http://ftp.gnu.org/gnu/$_distname"
 pkg_source="$_url_base/${_distname}-${_base_version}.tar.gz"
 pkg_shasum="d86b3392c1202e8ff5a423b302e6284db7f8f435ea9f39b5b1b20fd3ac36dfcb"
 pkg_dirname="${_distname}-$_base_version"
-pkg_deps=(core/glibc be/ncurses be/readline)
+pkg_deps=(core/glibc lilian/ncurses lilian/readline)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc
 )
 pkg_bin_dirs=(bin)
 pkg_interpreters=(bin/bash bin/sh)

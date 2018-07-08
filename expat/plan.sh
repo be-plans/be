@@ -12,14 +12,14 @@ pkg_source="https://downloads.sourceforge.net/project/${pkg_name}/${pkg_name}/${
 pkg_shasum="d9dc32efba7e74f788fcc4f212a43216fc37cf5f23f4c2339664d473353aedf6"
 pkg_deps=(
   core/glibc
-  be/gcc-libs
+  lilian/gcc-libs
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

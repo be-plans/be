@@ -8,9 +8,9 @@ pkg_source=nosuchfile.tar.gz
 pkg_upstream_url="https://github.com/be-plans/be"
 pkg_deps=(
   ${pkg_deps[@]}
-  core/go17
+  lilian/go17
   lilian/git
-  be/gcc
-  be/make
+  lilian/gcc
+  lilian/make
 )
-pkg_scaffolding=core/scaffolding-base
+pkg_scaffolding=lilian/scaffolding-base

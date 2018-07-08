@@ -7,7 +7,7 @@ pkg_license=("MPL-2.0")
 pkg_source=https://github.com/mitchellh/gox/archive/master.tar.gz # I'm killing a kitten.
 pkg_upstream_url=https://github.com/mitchellh/gox
 pkg_shasum=62d24ff55069bb3b6d75277585d723fdca6fef524602090c46b466098d49f1ba
-pkg_build_deps=(be/git be/go)
+pkg_build_deps=(lilian/git lilian/go)
 pkg_bin_dirs=(bin)
 
 do_prepare() {

@@ -8,9 +8,9 @@ pkg_license=('GPL-2.0')
 pkg_source=https://invisible-mirror.net/archives/${pkg_name}/${pkg_name}-${pkg_version}.tgz
 pkg_shasum=361ec1bb4968c1f1f3b91b77493cf11b31c73ff8516f95db30e4dc28de180c1e
 pkg_build_deps=(
-  be/diffutils
-  be/gcc
-  be/make
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
 )
 pkg_deps=(core/glibc)
 pkg_bin_dirs=(bin)

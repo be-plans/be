@@ -7,14 +7,14 @@ pkg_source="https://github.com/libuv/libuv/archive/v${pkg_version}.tar.gz"
 pkg_shasum="61f7937eef924da0dc386c038b8a4e1fc4f1803af966e1ecf640fb0e1cb5043b"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/autoconf
-  be/automake
-  be/diffutils
-  be/file
-  be/gcc
-  be/libtool
-  be/m4
-  be/make
+  lilian/autoconf
+  lilian/automake
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/libtool
+  lilian/m4
+  lilian/make
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

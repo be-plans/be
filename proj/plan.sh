@@ -8,8 +8,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source=http://download.osgeo.org/proj/proj-${pkg_version}.tar.gz
 pkg_shasum=6984542fea333488de5c82eea58d699e4aff4b359200a9971537cd7e047185f7
 pkg_build_deps=(
-  be/gcc
-  be/make
+  lilian/gcc
+  lilian/make
 )
 pkg_deps=(
   core/glibc

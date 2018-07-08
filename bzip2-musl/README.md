@@ -17,13 +17,13 @@ Binary package
 To use this plan, include it in your `pkg_build_deps` or `pkg_deps`, for example:
 
 ```
-pkg_build_deps=(core/bzip2-musl)
+pkg_build_deps=(lilian/bzip2-musl)
 ```
 
 or use it directly:
 
 ```
-hab pkg install core/bzip2-musl --binlink
+hab pkg install lilian/bzip2-musl --binlink
 bzip2
 ```
 

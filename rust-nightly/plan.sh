@@ -13,17 +13,17 @@ pkg_source="$_url_base/${_distname}-nightly-x86_64-unknown-linux-gnu.tar.gz"
 pkg_dirname="${_distname}-nightly-x86_64-unknown-linux-gnu"
 pkg_deps=(
   core/glibc
-  be/gcc-libs
-  be/zlib
-  be/gcc
-  be/cacerts
-  be/busybox-static
+  lilian/gcc-libs
+  lilian/zlib
+  lilian/gcc
+  lilian/cacerts
+  lilian/busybox-static
 )
 pkg_build_deps=(
-  be/patchelf
-  be/findutils
-  be/coreutils
-  be/sed
+  lilian/patchelf
+  lilian/findutils
+  lilian/coreutils
+  lilian/sed
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

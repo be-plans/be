@@ -11,10 +11,10 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/gcc
-  be/linux-headers
-  be/make
-  be/pkg-config
+  lilian/gcc
+  lilian/linux-headers
+  lilian/make
+  lilian/pkg-config
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

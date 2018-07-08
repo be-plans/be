@@ -12,14 +12,14 @@ pkg_source="http://downloads.sourceforge.net/psmisc/${pkg_name}-${pkg_version}.t
 pkg_shasum="2e84d474cf75dfbe3ecdacfb797bbfab71a35c7c2639d1b9f6d5f18b2149ba30"
 pkg_deps=(
   core/glibc
-  be/ncurses
+  lilian/ncurses
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
 )
 pkg_bin_dirs=(bin)
 

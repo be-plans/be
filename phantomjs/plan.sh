@@ -10,14 +10,14 @@ pkg_shasum=86dd9a4bf4aee45f1a84c9f61cf1947c1d6dce9b9e8d2a907105da7852460d2f
 # Ensure we depend on all the libraries that the prebuilt phantomjs
 # links against here:
 pkg_deps=(
-  core/glibc be/gcc-libs
+  core/glibc lilian/gcc-libs
   lilian/freetype lilian/fontconfig
-  be/zlib lilian/libpng be/expat
+  lilian/zlib lilian/libpng lilian/expat
 )
 
 # We need curl instead of wget because wget doesn't work for
 # downloading from bitbucket URLs. Sometimes.
-pkg_build_deps=(be/curl be/cacerts be/patchelf)
+pkg_build_deps=(lilian/curl lilian/cacerts lilian/patchelf)
 pkg_bin_dirs=(bin)
 
 source ../defaults.sh

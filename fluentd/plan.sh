@@ -3,13 +3,13 @@ pkg_origin=core
 pkg_version=1.0.2
 pkg_deps=(
   lilian/ruby
-  be/coreutils
+  lilian/coreutils
   lilian/bundler
 )
 pkg_build_deps=(
-  be/make
-  be/gcc
-  be/gcc-libs
+  lilian/make
+  lilian/gcc
+  lilian/gcc-libs
 )
 pkg_upstream_url=https://www.fluentd.org/
 pkg_description="Fluentd is an open source data collector, which lets \
@@ -56,5 +56,5 @@ GEMFILE
 
 do_install() {
   cp -R . "$pkg_prefix/"
-  fix_interpreter "$pkg_prefix/bin/*" be/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/*" lilian/coreutils bin/env
 }

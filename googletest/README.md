@@ -15,4 +15,4 @@ awesome tests!
 
 ## Usage
 
-Just include `core/googletest` preferably in `pkg_build_deps`.
+Just include `lilian/googletest` preferably in `pkg_build_deps`.

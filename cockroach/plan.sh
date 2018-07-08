@@ -9,19 +9,19 @@ pkg_source=https://binaries.cockroachdb.com/cockroach-v${pkg_version}.src.tgz
 pkg_shasum=4f929461ad50d3fd471886856aa399f41a405a664e886cf9ab71d2879162955e
 pkg_dirname="${pkg_name}-v${pkg_version}"
 pkg_deps=(
-  core/gcc-libs
+  lilian/gcc-libs
   core/glibc
-  core/ncurses
+  lilian/ncurses
 )
 pkg_build_deps=(
-  core/coreutils
-  core/libedit
-  core/make
-  core/which
-  core/go
-  core/gcc
-  core/cmake
-  core/autoconf
+  lilian/coreutils
+  lilian/libedit
+  lilian/make
+  lilian/which
+  lilian/go
+  lilian/gcc
+  lilian/cmake
+  lilian/autoconf
 )
 pkg_bin_dirs=(bin)
 

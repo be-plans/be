@@ -7,7 +7,7 @@ $pkg_license=@("Microsoft Software License")
 $pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 $pkg_source="https://download.microsoft.com/download/5/f/7/5f7acaeb-8363-451f-9425-68a90f98b238/visualcppbuildtools_full.exe"
 $pkg_shasum="1e1774869abd953d05d10372b7c08bfa0c76116f5c6df1f3d031418ccdcd8f7b"
-$pkg_build_deps=@("core/lessmsi")
+$pkg_build_deps=@("lilian/lessmsi")
 
 $pkg_bin_dirs=@(
   "Program Files\Microsoft Visual Studio 14.0\VC\bin\amd64",

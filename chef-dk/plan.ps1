@@ -7,7 +7,7 @@ $pkg_license=@("Apache-2.0")
 $pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 $pkg_source="https://packages.chef.io/files/stable/chefdk/${pkg_version}/windows/2016/chefdk-${pkg_version}-1-x64.msi"
 $pkg_shasum="86d8b8408e317298e04a8a96ac45be7b4885973780280239d6abdc31081adf09"
-$pkg_build_deps=@("core/lessmsi")
+$pkg_build_deps=@("lilian/lessmsi")
 $pkg_bin_dirs=@(
     "chefdk/bin",
     "chefdk/embedded/bin"

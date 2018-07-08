@@ -12,7 +12,7 @@ This plan provides base Fluentd package without any external plugin installed an
 #### Starting
 
 ```shell
-hab start be/fluentd
+hab start lilian/fluentd
 ```
 
 By default, this package will accept logs/events on below ports and stream them to stdout.
@@ -22,7 +22,7 @@ By default, this package will accept logs/events on below ports and stream them 
 #### Stopping
 
 ```shell
-hab sup stop be/fluentd
+hab sup stop lilian/fluentd
 ```
 
 #### Customizing
@@ -45,14 +45,14 @@ pkg_name=fluentd-example
 pkg_origin=example
 pkg_version=0.14.3
 pkg_deps=(
-  core/ruby
-  be/coreutils
-  core/bundler
+  lilian/ruby
+  lilian/coreutils
+  lilian/bundler
 )
 pkg_build_deps=(
-  be/make
-  be/gcc
-  be/gcc-libs
+  lilian/make
+  lilian/gcc
+  lilian/gcc-libs
 )
 pkg_upstream_url=https://www.fluentd.org/
 pkg_description="Fluentd is an open source data collector, which lets \
@@ -99,7 +99,7 @@ GEMFILE
 
 do_install() {
   cp -R . "$pkg_prefix/"
-  fix_interpreter "$pkg_prefix/bin/*" be/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/*" lilian/coreutils bin/env
 }
 
 ```

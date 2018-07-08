@@ -9,7 +9,7 @@ An example of a `plan.sh`:
 pkg_name=hello-go
 pkg_origin=afiune
 pkg_version="0.1.0"
-pkg_scaffolding=core/scaffolding-go17
+pkg_scaffolding=lilian/scaffolding-go17
 pkg_source="http://github.com/afiune/hello-go"
 ```
 
@@ -23,7 +23,7 @@ An example of a `plan.sh`:
 pkg_name=hello-go
 pkg_origin=afiune
 pkg_version="0.1.0"
-pkg_scaffolding=core/scaffolding-go17
+pkg_scaffolding=lilian/scaffolding-go17
 scaffolding_go_base_path=github.com/afiune
 ```
 

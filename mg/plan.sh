@@ -12,18 +12,18 @@ pkg_source="http://homepage.boetes.org/software/$pkg_name/${pkg_name}-${pkg_vers
 pkg_shasum="51519698f3f44acd984d7805e4e315ded50c15aba8222521f88756fd67745341"
 pkg_deps=(
   core/glibc
-  be/ncurses
-  be/libbsd
+  lilian/ncurses
+  lilian/libbsd
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/sed
-  be/pkg-config
-  be/clens
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/sed
+  lilian/pkg-config
+  lilian/clens
 )
 pkg_bin_dirs=(bin)
 

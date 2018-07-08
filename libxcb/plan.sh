@@ -9,19 +9,19 @@ pkg_source="https://www.x.org/releases/individual/xcb/${pkg_name}-${pkg_version}
 pkg_shasum="4adfb1b7c67e99bc9c2ccb110b2f175686576d2f792c8a71b9c8b19014057b5b"
 pkg_deps=(
   core/glibc
-  core/libxau
-  core/libxdmcp
+  lilian/libxau
+  lilian/libxdmcp
 )
 pkg_build_deps=(
-  be/diffutils
-  be/gcc
-  be/libpthread-stubs
-  be/make
-  be/pkg-config
-  be/python2
-  core/util-macros
-  core/xproto
-  core/xcb-proto
+  lilian/diffutils
+  lilian/gcc
+  lilian/libpthread-stubs
+  lilian/make
+  lilian/pkg-config
+  lilian/python2
+  lilian/util-macros
+  lilian/xproto
+  lilian/xcb-proto
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

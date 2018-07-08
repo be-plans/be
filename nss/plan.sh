@@ -10,14 +10,14 @@ pkg_source="https://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${
 pkg_shasum="f4127de09bede39f5fd0f789d33c3504c5d261e69ea03022d46b319b3e32f6fa"
 pkg_deps=(
   core/glibc
-  be/nspr
-  be/sqlite
-  be/zlib
+  lilian/nspr
+  lilian/sqlite
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/perl
+  lilian/gcc
+  lilian/make
+  lilian/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include/nss)

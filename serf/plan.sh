@@ -9,16 +9,16 @@ pkg_license=('Apache-2.0')
 pkg_source=https://archive.apache.org/dist/${pkg_distname}/${pkg_distname}-${pkg_version}.tar.bz2
 pkg_shasum=e0500be065dbbce490449837bb2ab624e46d64fc0b090474d9acaa87c82b2590
 pkg_deps=(
-  core/apr
+  lilian/apr
   lilian/apr-util
   core/glibc
-  be/openssl
-  be/zlib
+  lilian/openssl
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/patch
+  lilian/gcc
+  lilian/make
+  lilian/patch
   lilian/python2
   lilian/scons
 )

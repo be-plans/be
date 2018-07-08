@@ -13,4 +13,4 @@ Binary package
 Typically this is a runtime dependency that can be added to your
 plan.sh:
 
-    pkg_deps=(core/pango)
+    pkg_deps=(lilian/pango)

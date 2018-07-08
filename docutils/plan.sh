@@ -12,8 +12,8 @@ pkg_source=https://downloads.sourceforge.net/project/${pkg_name}/${pkg_name}/${p
 pkg_shasum=c7db717810ab6965f66c8cf0398a98c9d8df982da39b4cd7f162911eb89596fa
 pkg_deps=()
 pkg_build_deps=(
-  be/make
-  be/gcc
+  lilian/make
+  lilian/gcc
   lilian/python2
 )
 pkg_bin_dirs=(bin)

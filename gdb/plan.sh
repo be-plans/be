@@ -9,25 +9,25 @@ pkg_source="http://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=af61a0263858e69c5dce51eab26662ff3d2ad9aa68da9583e8143b5426be4b34
 pkg_deps=(
   core/glibc
-  be/readline
-  be/zlib
-  be/xz
-  be/ncurses
-  be/expat
-  be/guile
-  be/bdwgc
-  be/python
+  lilian/readline
+  lilian/zlib
+  lilian/xz
+  lilian/ncurses
+  lilian/expat
+  lilian/guile
+  lilian/bdwgc
+  lilian/python
 )
 pkg_build_deps=(
-  be/coreutils
-  be/pkg-config
-  be/diffutils
-  be/expect
-  be/dejagnu
-  be/patch
-  be/make
-  be/gcc
-  be/texinfo
+  lilian/coreutils
+  lilian/pkg-config
+  lilian/diffutils
+  lilian/expect
+  lilian/dejagnu
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/texinfo
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

@@ -13,8 +13,8 @@ Binary package
 ## Usage
 
 ```
-$ hab pkg install core/ttyrec
-$ hab pkg binlink core/ttyrec
+$ hab pkg install lilian/ttyrec
+$ hab pkg binlink lilian/ttyrec
 $ ttyrec -help
 usage: ttyrec [-u] [-e command] [-a] [file]
 ```

@@ -10,7 +10,7 @@ and PKZIP.\
 pkg_upstream_url="http://www.zlib.net/"
 pkg_license=('zlib')
 pkg_deps=(
-  be/musl
+  lilian/musl
 )
 
 pkg_disabled_features=(glibc)

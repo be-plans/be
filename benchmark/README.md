@@ -12,5 +12,5 @@ Binary package
 
 ## Usage
 
-Include `core/benchmark` to have the `includes` and `libraries`.  Refer to this
+Include `lilian/benchmark` to have the `includes` and `libraries`.  Refer to this
 [C++ project](https://github.com/google/benchmark#example-usage) as an example.

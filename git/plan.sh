@@ -11,19 +11,19 @@ pkg_source=https://www.kernel.org/pub/software/scm/git/${pkg_name}-${pkg_version
 pkg_filename=${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=0d10764e66b3d650dee0d99a1c77afa4aaae5e739c0973fcc1c5b9e6516e30f8
 pkg_deps=(
-  be/cacerts
-  be/curl
-  be/expat
-  be/gettext
-  be/gcc-libs
+  lilian/cacerts
+  lilian/curl
+  lilian/expat
+  lilian/gettext
+  lilian/gcc-libs
   core/glibc
-  be/openssh
-  be/perl
-  be/zlib
+  lilian/openssh
+  lilian/perl
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/make
-  be/gcc
+  lilian/make
+  lilian/gcc
 )
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)

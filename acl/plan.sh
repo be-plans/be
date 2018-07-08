@@ -7,10 +7,10 @@ pkg_upstream_url="https://savannah.nongnu.org/projects/acl"
 pkg_license=('lgpl')
 pkg_source="http://download.savannah.gnu.org/releases/$pkg_name/$pkg_name-${pkg_version}.src.tar.gz"
 pkg_shasum="179074bb0580c06c4b4137be4c5a92a701583277967acdb5546043c7874e0d23"
-pkg_deps=(core/glibc be/attr)
+pkg_deps=(core/glibc lilian/attr)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/gettext be/file
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/gettext lilian/file
 )
 
 pkg_bin_dirs=(bin)

@@ -14,16 +14,16 @@ pkg_shasum="6985c538143c1208dcb1ac42cedad6ff52e267b47e5f970183a3e75125b43c2e"
 pkg_dirname="${_distname}-${pkg_version}"
 pkg_deps=(
   core/glibc
-  be/gmp
-  be/mpfr
+  lilian/gmp
+  lilian/mpfr
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/binutils
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/binutils
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

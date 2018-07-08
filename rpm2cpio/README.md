@@ -8,10 +8,10 @@ Why does the world need another rpm2cpio?  Because the existing one won't build 
 
 Dumps the contents of an RPM to stdout as a GNU cpio archive
 
-`hab pkg exec core/rpm2cpio rpm2cpio RPM_FILE | cpio`
+`hab pkg exec lilian/rpm2cpio rpm2cpio RPM_FILE | cpio`
 
 or
 
-`hab pkg exec core/rpm2cpio rpm2cpio < RPMFILE | cpio`
+`hab pkg exec lilian/rpm2cpio rpm2cpio < RPMFILE | cpio`
 
-If required, there is a `core/cpio` package available via `hab pkg install`.
+If required, there is a `lilian/cpio` package available via `hab pkg install`.

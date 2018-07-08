@@ -10,26 +10,26 @@ pkg_source="https://github.com/rabbitmq/rabbitmq-server/releases/download/v${pkg
 pkg_shasum=acfa2960c45262e96747be2ade4f19e4f0280b1a760012583cad91b8393b7872
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_deps=(
-  be/coreutils
+  lilian/coreutils
   core/glibc
   lilian/erlang
 )
 pkg_build_deps=(
-  be/bash
-  be/diffutils
-  be/gawk
-  be/gcc
+  lilian/bash
+  lilian/diffutils
+  lilian/gawk
+  lilian/gcc
   lilian/git
-  be/grep
+  lilian/grep
   lilian/libxml2
   lilian/libxslt
-  be/make
-  be/perl
+  lilian/make
+  lilian/perl
   lilian/python2
   lilian/rsync
-  be/unzip
+  lilian/unzip
   lilian/zip
-  core/elixir
+  lilian/elixir
 )
 pkg_include_dirs=(include)
 pkg_bin_dirs=(sbin)

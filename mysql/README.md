@@ -6,7 +6,7 @@ This MySQL plan supports standalone and clustered modes
 
 To run a standalone MySQL instance simply run
 ```
-hab start core/mysql
+hab start lilian/mysql
 ```
 or
 ```
@@ -23,7 +23,7 @@ You can run an example cluster via docker-compose after exporting a docker conta
 $ hab pkg export docker $(ls -1t results/*.hart | head -1)
 ```
 
-The docker post-process should create a docker image named `core/mysql` and it should be available on your local machine
+The docker post-process should create a docker image named `lilian/mysql` and it should be available on your local machine
 
 example `docker-compose.yml` file:
 ```

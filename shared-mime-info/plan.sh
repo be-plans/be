@@ -8,26 +8,26 @@ pkg_license=('GPL-2.0')
 pkg_source="http://freedesktop.org/~hadess/${pkg_name}-${pkg_version}.tar.xz"
 pkg_shasum=5c0133ec4e228e41bdf52f726d271a2d821499c2ab97afd3aa3d6cf43efcdc83
 pkg_deps=(
-  core/glib
+  lilian/glib
   core/glibc
-  core/libxml2
-  be/pcre
-  be/zlib
+  lilian/libxml2
+  lilian/pcre
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/cpanminus
-  be/expat
-  be/gcc
-  be/gettext
-  be/intltool
-  be/make
-  be/perl
-  be/pkg-config
+  lilian/cpanminus
+  lilian/expat
+  lilian/gcc
+  lilian/gettext
+  lilian/intltool
+  lilian/make
+  lilian/perl
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 
 do_prepare() {
   do_default_prepare
 
-  cpanm XML::Parser --configure-args="EXPATLIBPATH=$(pkg_path_for be/expat)/lib export EXPATINCPATH=$(pkg_path_for be/expat)/include"
+  cpanm XML::Parser --configure-args="EXPATLIBPATH=$(pkg_path_for lilian/expat)/lib export EXPATINCPATH=$(pkg_path_for lilian/expat)/include"
 }

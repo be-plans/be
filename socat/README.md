@@ -16,8 +16,8 @@ The Habitat Maintainers humans@habitat.sh
 ## Usage
 
 ```
-$ hab pkg install core/socat
-$ hab pkg binlink core/socat
+$ hab pkg install lilian/socat
+$ hab pkg binlink lilian/socat
 $ socat -h
 socat by Gerhard Rieger and contributors - see www.dest-unreach.org
 Usage:

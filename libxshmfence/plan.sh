@@ -11,12 +11,12 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/diffutils
-  be/gcc
-  be/make
-  be/pkg-config
-  core/xproto
-  core/util-macros
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/pkg-config
+  lilian/xproto
+  lilian/util-macros
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

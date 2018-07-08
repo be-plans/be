@@ -8,7 +8,7 @@ configuration values from HashiCorp's Consul or Vault.
 ## Usage
 
 ```
-hab pkg exec core/envconsul envconsul -h
+hab pkg exec lilian/envconsul envconsul -h
 Usage:  [options] <command>
 
   Watches values from Consul's K/V store and Vault secrets to set environment

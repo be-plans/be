@@ -6,4 +6,4 @@ masterauth="abc123"
 
 And inject it like this:
 
-docker run -e HAB_REDIS="$(cat /tmp/redis.toml)" -it core/redis --topology leader
+docker run -e HAB_REDIS="$(cat /tmp/redis.toml)" -it lilian/redis --topology leader

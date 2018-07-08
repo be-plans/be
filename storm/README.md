@@ -15,7 +15,7 @@ Services
 Simply starts your zookeeper cluster with all the needed nodes:
 
 ```bash
-hab start core/zookeeper
+hab start lilian/zookeeper
 ```
 
 ### Nimbus

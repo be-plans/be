@@ -14,7 +14,7 @@ pkg_exports=(
 )
 pkg_deps=()
 pkg_bin_dirs=(bin)
-pkg_scaffolding=core/scaffolding-go
+pkg_scaffolding=lilian/scaffolding-go
 scaffolding_go_base_path=github.com/coreos
 scaffolding_go_build_deps=()
 

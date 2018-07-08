@@ -16,18 +16,18 @@ pkg_shasum="370babb75f278c39e0c50e8c4e7493bc0f18db6867478341a832a982fd15a8fe"
 pkg_dirname="${_distname}-${pkg_version}"
 pkg_deps=(
   core/glibc
-  be/zlib
-  be/cacerts
+  lilian/zlib
+  lilian/cacerts
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/sed
-  be/grep
-  be/perl
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/sed
+  lilian/grep
+  lilian/perl
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -62,7 +62,7 @@ do_prepare() {
 
 do_build() {
   # Set PERL var for scripts in `do_check` that use Perl
-  PERL=$(pkg_path_for be/perl)/bin/perl
+  PERL=$(pkg_path_for lilian/perl)/bin/perl
   export PERL
   # shellcheck disable=SC2086
   ./config \

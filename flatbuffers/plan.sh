@@ -15,9 +15,9 @@ pkg_upstream_url="http://google.github.io/flatbuffers/index.html"
 pkg_deps=(
 )
 pkg_build_deps=(
-  be/cmake
-  be/gcc
-  be/make
+  lilian/cmake
+  lilian/gcc
+  lilian/make
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib64)

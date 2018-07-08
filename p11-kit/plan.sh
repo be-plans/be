@@ -9,16 +9,16 @@ pkg_source=https://p11-glue.freedesktop.org/releases/${pkg_name}-${pkg_version}.
 pkg_shasum=ba726ea8303c97467a33fca50ee79b7b35212964be808ecf9b145e9042fdfaf0
 pkg_deps=(
   core/glibc
-  be/libtasn1
-  be/libffi
+  lilian/libtasn1
+  lilian/libffi
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
-  be/file
-  be/diffutils
-  be/coreutils
-  be/pkg-config
+  lilian/gcc
+  lilian/make
+  lilian/file
+  lilian/diffutils
+  lilian/coreutils
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin lib/p11-kit)
 pkg_include_dirs=(

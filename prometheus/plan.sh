@@ -14,8 +14,8 @@ prom_build_dir="${prom_pkg_dir}/src/${pkg_source}"
 pkg_build_deps=(
   lilian/go
   lilian/git
-  be/gcc
-  be/make
+  lilian/gcc
+  lilian/make
 )
 
 pkg_exports=(

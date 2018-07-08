@@ -13,19 +13,19 @@ pkg_license=("GPL-3.0")
 pkg_source="https://ftp.gnu.org/gnu/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum="62adfca89b0a1c0164c2cdca59ca210c1d44c3ffc46daf9931cf4942664cb02a"
 pkg_deps=(
-  be/flex
+  lilian/flex
   core/glibc
-  be/ncurses
-  be/readline
+  lilian/ncurses
+  lilian/readline
 )
 pkg_build_deps=(
-  be/bison
-  be/coreutils
-  be/diffutils
-  be/gcc
-  be/make
-  be/patch
-  be/texinfo
+  lilian/bison
+  lilian/coreutils
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/patch
+  lilian/texinfo
 )
 pkg_bin_dirs=(bin)
 

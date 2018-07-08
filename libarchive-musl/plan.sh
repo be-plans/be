@@ -7,11 +7,11 @@ pkg_description="Multi-format archive and compression library"
 pkg_upstream_url="https://www.libarchive.org"
 pkg_license=('BSD')
 pkg_deps=(
-  be/musl
-  be/openssl-musl
-  be/zlib-musl
-  be/bzip2-musl
-  be/xz-musl
+  lilian/musl
+  lilian/openssl-musl
+  lilian/zlib-musl
+  lilian/bzip2-musl
+  lilian/xz-musl
 )
 
 pkg_disabled_features=(glibc)

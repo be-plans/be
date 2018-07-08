@@ -8,27 +8,27 @@ pkg_description="dpkg is a package manager for Debian-based systems"
 pkg_source=http://http.debian.net/debian/pool/main/d/${pkg_name}/${pkg_name}_${pkg_version}.tar.xz
 pkg_shasum=d853081d3e06bfd46a227056e591f094e42e78fa8a5793b0093bad30b710d7b4
 pkg_deps=(
-  be/bzip2
+  lilian/bzip2
   core/glibc
-  be/tar
-  be/zlib
-  be/xz
+  lilian/tar
+  lilian/zlib
+  lilian/xz
 )
 pkg_build_deps=(
-  be/autoconf
-  be/automake
-  be/bzip2
-  be/gcc
-  be/gettext
-  be/libtool
-  be/patch
-  be/make
-  be/ncurses
-  be/perl
-  be/pkg-config
-  be/patch
-  be/xz
-  be/zlib
+  lilian/autoconf
+  lilian/automake
+  lilian/bzip2
+  lilian/gcc
+  lilian/gettext
+  lilian/libtool
+  lilian/patch
+  lilian/make
+  lilian/ncurses
+  lilian/perl
+  lilian/pkg-config
+  lilian/patch
+  lilian/xz
+  lilian/zlib
 )
 pkg_bin_dirs=(bin sbin)
 pkg_include_dirs=(include)

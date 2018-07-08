@@ -7,15 +7,15 @@ pkg_source="https://github.com/${pkg_name}/${pkg_name}/archive/v${pkg_version}.t
 pkg_filename="${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum="0bcb583f2abaa580c337462a81903ff3f925d10c367da466c2c0354479432683"
 pkg_deps=(
-  core/libffi
-  core/python2
-  core/sshpass
+  lilian/libffi
+  lilian/python2
+  lilian/sshpass
 )
 pkg_build_deps=(
-  core/gcc
-  core/libyaml
-  core/make
-  core/openssl
+  lilian/gcc
+  lilian/libyaml
+  lilian/make
+  lilian/openssl
 )
 pkg_bin_dirs=(bin)
 pkg_description="Ansible is a radically simple IT automation platform that makes your applications \

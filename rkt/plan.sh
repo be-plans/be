@@ -8,8 +8,8 @@ pkg_source=https://github.com/rkt/rkt/releases/download/v${pkg_version}/rkt-v${p
 pkg_upstream_url=https://github.com/rkt/rkt/releases
 pkg_shasum=4fdd3d46aa58a9e7a7d1c36a7cb390ea96fd297b694295eb79b8c185dbc73e7e
 pkg_dirname=rkt-v${pkg_version}
-pkg_deps=(be/gnupg core/glibc)
-pkg_build_deps=(be/patchelf)
+pkg_deps=(lilian/gnupg core/glibc)
+pkg_build_deps=(lilian/patchelf)
 pkg_bin_dirs=(bin)
 
 do_build() {

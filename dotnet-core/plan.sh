@@ -11,19 +11,19 @@ pkg_source="https://download.microsoft.com/download/8/D/A/8DA04DA7-565B-4372-BBC
 pkg_shasum=0eeb894d6e17ac0fc036997ba11ddf6665da5161e2e898788220e1945fa9bf11
 pkg_filename="dotnet-debian-x64.${pkg_version}.tar.gz"
 pkg_deps=(
-  be/curl
-  be/gcc-libs
+  lilian/curl
+  lilian/gcc-libs
   core/glibc
   lilian/icu52
-  core/krb5
+  lilian/krb5
   lilian/libunwind
   lilian/lttng-ust
-  be/openssl
-  be/util-linux
-  be/zlib
+  lilian/openssl
+  lilian/util-linux
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/patchelf
+  lilian/patchelf
 )
 pkg_bin_dirs=(bin)
 

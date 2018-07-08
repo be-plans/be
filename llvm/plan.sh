@@ -9,17 +9,17 @@ pkg_filename="${pkg_name}-${pkg_version}.src.tar.xz"
 pkg_source="http://llvm.org/releases/${pkg_version}/${pkg_name}-${pkg_version}.src.tar.xz"
 pkg_shasum="5fa7489fc0225b11821cab0362f5813a05f2bcf2533e8a4ea9c9c860168807b0"
 pkg_deps=(
-  be/coreutils
-  be/gcc-libs
+  lilian/coreutils
+  lilian/gcc-libs
   core/glibc
-  be/python2
-  be/zlib
+  lilian/python2
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/cmake
-  be/diffutils
-  be/gcc
-  be/make
+  lilian/cmake
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
@@ -68,9 +68,9 @@ do_install() {
   make install
 
   # fix the interpreters in the `src`
-  _fix_interpreter_in_path "$pkg_prefix/src" '*.py' core/python2 bin/python
-  _fix_interpreter_in_path "$pkg_prefix/src" '*.py' core/coreutils bin/env
-  _fix_interpreter_in_path "$pkg_prefix/src" '*.sh' core/coreutils bin/env
+  _fix_interpreter_in_path "$pkg_prefix/src" '*.py' lilian/python2 bin/python
+  _fix_interpreter_in_path "$pkg_prefix/src" '*.py' lilian/coreutils bin/env
+  _fix_interpreter_in_path "$pkg_prefix/src" '*.sh' lilian/coreutils bin/env
 }
 
 do_strip() {

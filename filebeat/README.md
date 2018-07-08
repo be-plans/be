@@ -13,7 +13,7 @@ Service package.
 ## Usage
 
 ```
-hab svc load core/filebeat
+hab svc load lilian/filebeat
 ```
 
 Filebeat will run with the default configuration, which checks for and forwards logs from `/var/log/*.log`. This most likely doesn't match your needs for filebeat. Customize your configuration by following the instructions under configuration plans, below.
@@ -43,7 +43,7 @@ A configuration plan that uses this could look like:
 pkg_name=myfilebeat
 pkg_origin=work
 pkg_version="6.3.1"
-pkg_deps=(core/filebeat)
+pkg_deps=(lilian/filebeat)
 ```
 
 Then simply write your own configuration for `filebeat.yml` as required.

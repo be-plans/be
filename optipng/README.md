@@ -18,13 +18,13 @@ As a dependency, place the following in your `plan.sh`:
 
 ```
 pkg_deps=(
-  core/optipng
+  lilian/optipng
 )
 ```
 
 Or to just use the binary:
 
 ```
-hab pkg install --binlink core/optipng
+hab pkg install --binlink lilian/optipng
 optipng myfile.png
 ```

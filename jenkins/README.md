@@ -1,4 +1,4 @@
-# Habitat Package: core/jenkins
+# Habitat Package: lilian/jenkins
 
 ## Description
 
@@ -16,7 +16,7 @@
 ### Starting
 
 ```
-hab sup start core/jenkins
+hab sup start lilian/jenkins
 ```
 
 ### Initial Password

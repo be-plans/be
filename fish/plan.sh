@@ -6,19 +6,19 @@ pkg_license=('GPL-2.0' 'LGPL-2.0' 'ISC' 'BSD-2-Clause-NetBSD' 'BSD-3-Clause')
 pkg_source="https://github.com/fish-shell/fish-shell/releases/download/${pkg_version}/${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum="f8c0edadca2de379ccf305aeace660a9255fa2180c72e85e97705a24c256b2a5"
 pkg_deps=(
-  be/bc
-  be/coreutils
-  be/gawk
-  be/gcc-libs
+  lilian/bc
+  lilian/coreutils
+  lilian/gawk
+  lilian/gcc-libs
   core/glibc
-  be/grep
+  lilian/grep
   lilian/man-db
-  be/ncurses
+  lilian/ncurses
   lilian/net-tools
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
+  lilian/gcc
+  lilian/make
 )
 pkg_bin_dirs=(bin)
 pkg_pconfig_dirs=(share/pkgconfig)

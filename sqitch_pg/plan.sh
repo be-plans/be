@@ -5,16 +5,16 @@ pkg_maintainer="The Habitat Maintainers humans@habitat.sh"
 pkg_license=('Artistic-1.0-Perl' 'GPL-2.0')
 pkg_deps=(
   core/glibc
-  core/perl
-  core/postgresql-client
-  core/zlib
-  core/sqitch
+  lilian/perl
+  lilian/postgresql-client
+  lilian/zlib
+  lilian/sqitch
 )
 pkg_build_deps=(
-  core/cpanminus
-  core/local-lib
-  core/gcc
-  core/make
+  lilian/cpanminus
+  lilian/local-lib
+  lilian/gcc
+  lilian/make
 )
 pkg_description="Sqitch the database management application, bundled with the DBD::Pg Perl module for PostgreSQL"
 pkg_upstream_url="http://sqitch.org/" # Note: also http://search.cpan.org/dist/DBD-Pg/
@@ -29,8 +29,8 @@ do_build() {
 }
 
 do_install() {
-  source <(perl -I"$(pkg_path_for core/local-lib)/lib/perl5" -Mlocal::lib="$(pkg_path_for core/local-lib)")
-  source <(perl -I"$(pkg_path_for core/cpanminus)/lib/perl5" -Mlocal::lib="$(pkg_path_for core/cpanminus)")
+  source <(perl -I"$(pkg_path_for lilian/local-lib)/lib/perl5" -Mlocal::lib="$(pkg_path_for lilian/local-lib)")
+  source <(perl -I"$(pkg_path_for lilian/cpanminus)/lib/perl5" -Mlocal::lib="$(pkg_path_for lilian/cpanminus)")
   source <(perl -Mlocal::lib="$pkg_prefix")
   cpanm "DBD::Pg@$pkg_version" --local-lib "$pkg_prefix"
 }

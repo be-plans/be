@@ -13,7 +13,7 @@ Service package.
 ## Usage
 
 ```
-hab svc load core/cerebro
+hab svc load lilian/cerebro
 ```
 
 Browse to the node on port `9000` (default port).

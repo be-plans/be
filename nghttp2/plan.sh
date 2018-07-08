@@ -9,8 +9,8 @@ pkg_source=https://github.com/${pkg_name}/${pkg_name}/releases/download/v${pkg_v
 pkg_shasum=6a2d02c441cf8d4279aea3c98d22763f8464808c3955db5c308291fe59d17cab
 pkg_dirname=${pkg_name}-${pkg_version}
 pkg_build_deps=(
-  be/make
-  be/gcc
+  lilian/make
+  lilian/gcc
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

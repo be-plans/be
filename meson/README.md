@@ -7,4 +7,4 @@ This package provides the meson build system binaries
 Typically this is a build dependency that can be added to your
 plan.sh:
 
-    pkg_build_deps=(core/meson be/python)
+    pkg_build_deps=(lilian/meson lilian/python)

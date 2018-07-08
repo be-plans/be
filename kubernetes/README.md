@@ -2,7 +2,7 @@
 
 The Kubernetes plan provides the Kubernetes binaries for controller and worker
 nodes. It can be used as a base for custom plans and serves as a base package
-for the `core/kubernetes-*` subpackages, i.e.
+for the `lilian/kubernetes-*` subpackages, i.e.
 
 * kubernetes-apiserver
 * kubernetes-controller-manager

@@ -8,7 +8,7 @@ pkg_version="1.04"
 pkg_source="https://www.lzop.org/download/lzop-${pkg_version}.tar.gz"
 pkg_shasum="7e72b62a8a60aff5200a047eea0773a8fb205caf7acbe1774d95147f305a2f41"
 pkg_deps=(core/glibc lilian/lzo)
-pkg_build_deps=(be/make be/gcc)
+pkg_build_deps=(lilian/make lilian/gcc)
 pkg_bin_dirs=(bin)
 
 #TODO: Doesn't build with GCC 7.1...

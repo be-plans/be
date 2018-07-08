@@ -7,7 +7,7 @@ pkg_license=('Apache 2.0')
 pkg_source="http://archive.apache.org/dist/tomcat/tomcat-connectors/native/$pkg_version/source/$pkg_name-$pkg_version-src.tar.gz"
 pkg_shasum=408ece0b027c8967b3aa85533c5fca642827e235b1857d28df918a4eab861d30
 pkg_deps=(lilian/apr)
-pkg_build_deps=(be/gcc be/make be/openssl  lilian/jdk8)
+pkg_build_deps=(lilian/gcc lilian/make lilian/openssl  lilian/jdk8)
 pkg_lib_dirs=(lib)
 
 pkg_upstream_url=http://tomcat.apache.org/native-doc/
@@ -16,7 +16,7 @@ do_build() {
   pushd "$HAB_CACHE_SRC_PATH/$pkg_name-$pkg_version-src/native"
   ./configure --with-apr="$(pkg_path_for lilian/apr)" \
               --with-java-home="$(pkg_path_for lilian/jdk8)" \
-              --with-ssl="$(pkg_path_for be/openssl )" \
+              --with-ssl="$(pkg_path_for lilian/openssl )" \
               --prefix="${pkg_prefix}"
   make
   popd

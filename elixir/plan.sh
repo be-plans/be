@@ -7,13 +7,13 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
 pkg_source="https://github.com/elixir-lang/elixir/archive/v${pkg_version}.tar.gz"
 pkg_shasum=defe2bed953ee729addf1121db3fa42a618ef1d6c57a1f489da03b0e7a626e89
-pkg_deps=(lilian/busybox be/cacerts be/coreutils be/openssl lilian/erlang)
+pkg_deps=(lilian/busybox lilian/cacerts lilian/coreutils lilian/openssl lilian/erlang)
 pkg_build_deps=(
   lilian/busybox
-  be/cacerts
-  be/coreutils
-  be/make
-  be/openssl
+  lilian/cacerts
+  lilian/coreutils
+  lilian/make
+  lilian/openssl
   lilian/erlang
 )
 pkg_bin_dirs=(bin)
@@ -27,8 +27,8 @@ do_prepare() {
 }
 
 do_build() {
-    fix_interpreter "rebar" be/coreutils bin/env
-    fix_interpreter "rebar3" be/coreutils bin/env
-    fix_interpreter "bin/*" be/coreutils bin/env
+    fix_interpreter "rebar" lilian/coreutils bin/env
+    fix_interpreter "rebar3" lilian/coreutils bin/env
+    fix_interpreter "bin/*" lilian/coreutils bin/env
     make -j "$(nproc)"
 }

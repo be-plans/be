@@ -10,11 +10,11 @@ pkg_shasum="dda015b2042e71c6d0df56de553846df1252eac486514000c76b741cde6d4492"
 pkg_dirname="linux-$pkg_version"
 pkg_deps=()
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
 )
 pkg_include_dirs=(include)
 

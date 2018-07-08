@@ -11,16 +11,16 @@ pkg_shasum=7e87878658f2c9951a14fc64114d4958c0e65ac47530b8ac3078b2ce41b66a09
 pkg_description="Cairo is a 2D graphics library with support for multiple output devices."
 pkg_upstream_url="https://www.cairographics.org"
 pkg_deps=(
-  be/bzip2
-  be/expat
+  lilian/bzip2
+  lilian/expat
   lilian/fontconfig
   lilian/freetype
-  be/gcc-libs
+  lilian/gcc-libs
   lilian/glib
   core/glibc
-  be/libffi
+  lilian/libffi
   lilian/libice
-  be/libiconv
+  lilian/libiconv
   lilian/libpng
   lilian/libsm
   lilian/libxau
@@ -28,17 +28,17 @@ pkg_deps=(
   lilian/libxdmcp
   lilian/libxext
   lilian/lzo
-  be/pcre
+  lilian/pcre
   lilian/pixman
   lilian/xlib
-  be/zlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/diffutils
-  be/file
-  be/gcc
-  be/make
-  be/pkg-config
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/make
+  lilian/pkg-config
   lilian/xextproto
   lilian/xproto
 )

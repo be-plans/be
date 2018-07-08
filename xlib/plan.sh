@@ -11,24 +11,24 @@ pkg_shasum="4d3890db2ba225ba8c55ca63c6409c1ebb078a2806de59fb16342768ae63435d"
 pkg_dirname="${pkg_distname}-${pkg_version}"
 pkg_deps=(
   core/glibc
-  core/libxau
-  core/libxcb
-  core/libxdmcp
+  lilian/libxau
+  lilian/libxcb
+  lilian/libxdmcp
 )
 pkg_build_deps=(
-  be/diffutils
-  be/file
-  be/gcc
-  core/inputproto
-  core/kbproto
-  core/libpthread-stubs
-  be/make
-  be/perl
-  be/pkg-config
-  core/util-macros
-  core/xextproto
-  core/xproto
-  core/xtrans
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/inputproto
+  lilian/kbproto
+  lilian/libpthread-stubs
+  lilian/make
+  lilian/perl
+  lilian/pkg-config
+  lilian/util-macros
+  lilian/xextproto
+  lilian/xproto
+  lilian/xtrans
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

@@ -13,11 +13,11 @@ Binary package
 ## Usage
 
 ```
-hab pkg exec core/ansible ansible --help
+hab pkg exec lilian/ansible ansible --help
 ```
 
 You can add this as a build dependency to your plan with:
 
 ```
-pkg_build_deps=(core/ansible)
+pkg_build_deps=(lilian/ansible)
 ```

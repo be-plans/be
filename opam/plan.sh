@@ -11,14 +11,14 @@ pkg_dirname="opam-full-${pkg_version}"
 pkg_deps=(
   lilian/aspcud
   lilian/camlp4
-  be/diffutils
-  be/gcc
+  lilian/diffutils
+  lilian/gcc
   lilian/git
   core/glibc
-  be/m4
-  be/make
-  be/patch
-  be/pkg-config
+  lilian/m4
+  lilian/make
+  lilian/patch
+  lilian/pkg-config
   lilian/rsync
   lilian/ocaml
   lilian/ocamlbuild

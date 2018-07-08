@@ -13,7 +13,7 @@ pkg_origin=eeyun
 pkg_version="0.1.0"
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
-pkg_deps=(core/concourse core/postgresql)
+pkg_deps=(lilian/concourse lilian/postgresql)
 pkg_exports=(
    [web_port]=ports.web
 )

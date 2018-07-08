@@ -11,9 +11,9 @@ pkg_filename="${pkg_name}_${pkg_version}.orig.tar.gz"
 pkg_dirname="${pkg_name}-${pkg_version}.orig"
 
 pkg_build_deps=(
-  core/make
-  core/gcc
-  core/patch
+  lilian/make
+  lilian/gcc
+  lilian/patch
 )
 
 pkg_deps=(

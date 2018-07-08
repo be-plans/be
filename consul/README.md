@@ -9,7 +9,7 @@ This plan provides the static binary for execution.
 ## Usage
 
 ```
-hab svc load core/consul
+hab svc load lilian/consul
 ```
 
 ## Topology

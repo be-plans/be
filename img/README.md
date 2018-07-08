@@ -5,10 +5,10 @@ The `img` plan _only_ provides users access to the standalone [img binary](https
 To use the `img` binary you can follow two different patterns. You can either binlink the package to the underlying system, or you can use the `hab` binary to execute the `img` binary
 
 ```
-$ hab pkg exec core/img img --help
+$ hab pkg exec lilian/img img --help
 ```
 Or
 ```
-$ hab pkg binlink core/img img
+$ hab pkg binlink lilian/img img
 $ img --help
 ```

@@ -10,12 +10,12 @@ pkg_shasum="2e1ea9cc943da838efe7b60e24efe3586ae711c4a3cc1d8e01cec2468bcea993"
 pkg_dirname="sumocollector"
 pkg_filename="SumoCollector_unix_${pkg_version/./_}.tar.gz"
 pkg_deps=(
-  be/gcc-libs
+  lilian/gcc-libs
   core/glibc
-  core/jre8
+  lilian/jre8
 )
 pkg_build_deps=(
-  be/patchelf
+  lilian/patchelf
 )
 pkg_lib_dirs=("${pkg_name}/${pkg_version}/lib" "${pkg_name}/${pkg_version}/bin/native/lib")
 pkg_bin_dirs=("${pkg_name}/${pkg_version}/bin")

@@ -7,10 +7,10 @@ pkg_description="Build and test software of any size, quickly and reliably"
 pkg_upstream_url='https://www.envoyproxy.io/'
 pkg_source="https://github.com/envoyproxy/envoy/archive/v${pkg_version}.tar.gz"
 pkg_build_deps=(
-  core/curl
-  core/jq-static
-  core/patchelf
-  core/coreutils
+  lilian/curl
+  lilian/jq-static
+  lilian/patchelf
+  lilian/coreutils
 )
 pkg_deps=(core/glibc)
 pkg_bin_dirs=(bin)

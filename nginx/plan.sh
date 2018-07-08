@@ -8,11 +8,11 @@ pkg_source=https://nginx.org/download/nginx-${pkg_version}.tar.gz
 pkg_upstream_url=https://nginx.org/
 pkg_shasum=336182104d90be3c40c874f7f06f87dbb357da1dc74ea573ad081a0f29a94885
 pkg_deps=(
-  core/glibc lilian/libedit be/ncurses
-  be/zlib be/bzip2 be/openssl
-  be/pcre
+  core/glibc lilian/libedit lilian/ncurses
+  lilian/zlib lilian/bzip2 lilian/openssl
+  lilian/pcre
 )
-pkg_build_deps=(be/gcc be/make be/coreutils)
+pkg_build_deps=(lilian/gcc lilian/make lilian/coreutils)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(sbin)
 pkg_include_dirs=(include)

@@ -11,11 +11,11 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/autoconf
-  be/automake
-  be/gcc
-  be/libtool
-  be/make
+  lilian/autoconf
+  lilian/automake
+  lilian/gcc
+  lilian/libtool
+  lilian/make
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

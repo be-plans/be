@@ -11,11 +11,11 @@ pkg_upstream_url="https://www.gnu.org/software/binutils/"
 pkg_license=('GPL-2.0')
 pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.bz2"
 pkg_shasum="efeade848067e9a03f1918b1da0d37aaffa0b0127a06b5e9236229851d9d0c09"
-pkg_deps=(core/glibc be/zlib)
+pkg_deps=(core/glibc lilian/zlib)
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/texinfo
-  be/expect be/dejagnu
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/texinfo
+  lilian/expect lilian/dejagnu
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -71,7 +71,7 @@ do_prepare() {
 
   # # Make binutils output deterministic by default.
   #
-  # Thanks to: https://github.com/NixOS/nixpkgs/blob/0889bbe/pkgs/development/tools/misc/binutils/deterministic.patch
+  # Thanks to: https://github.com/NixOS/nixpkgs/blob/0889blilian/pkgs/development/tools/misc/binutils/deterministic.patch
   patch -p1 < "$PLAN_CONTEXT/more-deterministic-output.patch"
 
   # shellcheck disable=SC2002

@@ -8,7 +8,7 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=("JFrog Artifactory EULA")
 pkg_source=https://dl.bintray.com/jfrog/${pkg_name}/org/artifactory/pro/jfrog-${pkg_name}/${pkg_version}/jfrog-${pkg_name}-${pkg_version}.zip
 pkg_shasum=4c5fa3a86e3b1d07979ff011af3b58481e519faa6ee27eb23622a6fe00d89935
-pkg_deps=(be/bash lilian/jre8)
+pkg_deps=(lilian/bash lilian/jre8)
 pkg_exports=(
   [port]=port
 )
@@ -19,7 +19,7 @@ pkg_svc_user=root
 source ../defaults.sh
 
 do_build() {
-  fix_interpreter "bin/artifactory.sh" be/bash bin/bash
+  fix_interpreter "bin/artifactory.sh" lilian/bash bin/bash
 }
 
 do_install() {

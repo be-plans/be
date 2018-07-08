@@ -12,4 +12,4 @@ Binary package
 
 ## Usage
 
-`hab pkg exec core/bazel bazel build`
+`hab pkg exec lilian/bazel bazel build`

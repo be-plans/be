@@ -18,13 +18,13 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/autoconf
-  be/automake
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/sed
+  lilian/autoconf
+  lilian/automake
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/sed
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

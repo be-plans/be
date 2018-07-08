@@ -12,14 +12,14 @@ pkg_source="ftp://ftp.astron.com/pub/$pkg_name/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum="8639dc4d1b21e232285cd483604afc4a6ee810710e00e579dbe9591681722b50"
 pkg_deps=(
   core/glibc
-  be/zlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

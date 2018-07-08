@@ -9,15 +9,15 @@ pkg_source="https://github.com/potassco/${pkg_name}/archive/v${pkg_version}.tar.
 pkg_shasum="3645f08b079e1cc80e24cd2d7ae5172a52476d84e3ec5e6a6c0034492a6ea885"
 pkg_deps=(
   lilian/clingo
-  be/gcc-libs
+  lilian/gcc-libs
   core/glibc
 )
 pkg_build_deps=(
   lilian/boost
-  be/cmake
-  be/make
-  be/gcc
-  be/re2c
+  lilian/cmake
+  lilian/make
+  lilian/gcc
+  lilian/re2c
 )
 pkg_bin_dirs=(bin)
 

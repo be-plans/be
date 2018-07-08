@@ -10,16 +10,16 @@ pkg_source="https://cmake.org/files/v${_base_version}/cmake-${pkg_version}.tar.g
 pkg_shasum=80d0faad4ab56de07aa21a7fc692c88c4ce6156d42b0579c6962004a70a3218b
 pkg_deps=(
   core/glibc
-  be/gcc-libs
+  lilian/gcc-libs
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/make
-  be/gcc
-  be/curl
-  be/zlib
-  be/bzip2
+  lilian/coreutils
+  lilian/diffutils
+  lilian/make
+  lilian/gcc
+  lilian/curl
+  lilian/zlib
+  lilian/bzip2
 )
 
 pkg_lib_dirs=(lib)

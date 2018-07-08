@@ -7,10 +7,10 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_license=('Apache-2.0')
 pkg_source=nosuchfile.tgz
 pkg_deps=(
-  core/python2
+  lilian/python2
 )
 pkg_build_deps=(
-  core/virtualenv
+  lilian/virtualenv
 )
 pkg_bin_dirs=(bin)
 

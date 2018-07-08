@@ -15,4 +15,4 @@ Binary package
 Typically this is a runtime dependency that can be added to your
 plan.sh:
 
-    pkg_deps=(core/libtasn1)
+    pkg_deps=(lilian/libtasn1)

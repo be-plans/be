@@ -10,13 +10,13 @@ pkg_source=https://cache.ruby-lang.org/pub/${pkg_name}/${pkg_name}-${pkg_version
 pkg_upstream_url=https://www.ruby-lang.org/en/
 pkg_shasum=dac81822325b79c3ba9532b048c2123357d3310b2b40024202f360251d9829b1
 pkg_deps=(
-  core/glibc be/ncurses be/zlib
-  be/openssl lilian/libyaml be/libffi
-  be/readline
+  core/glibc lilian/ncurses lilian/zlib
+  lilian/openssl lilian/libyaml lilian/libffi
+  lilian/readline
 )
 pkg_build_deps=(
-  be/coreutils be/diffutils be/patch
-  be/make be/gcc be/sed
+  lilian/coreutils lilian/diffutils lilian/patch
+  lilian/make lilian/gcc lilian/sed
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
@@ -37,7 +37,7 @@ do_build() {
     --prefix="$pkg_prefix" \
     --enable-shared \
     --disable-install-doc \
-    --with-openssl-dir="$(pkg_path_for be/openssl )" \
+    --with-openssl-dir="$(pkg_path_for lilian/openssl )" \
     --with-libyaml-dir="$(pkg_path_for lilian/libyaml)"
 
   patch -p0 < "${PLAN_CONTEXT}/mkmf-ignore-linker-warnings.patch"

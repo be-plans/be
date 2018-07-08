@@ -8,16 +8,16 @@ pkg_license=('LGPL-2.0')
 pkg_source="https://download.gnome.org/sources/${pkg_name}/${pkg_version%.*}/${pkg_name}-${pkg_version}.tar.bz2"
 pkg_shasum=a59948b20ce2f14136c013f155abb8c8d51db2ea167c063ff33461e453fec10a
 pkg_deps=(
-  core/glib
+  lilian/glib
 )
 pkg_build_deps=(
-  be/diffutils
-  be/gcc
-  be/make
-  be/patch
-  be/pcre
-  be/pkg-config
-  core/python2
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/patch
+  lilian/pcre
+  lilian/pkg-config
+  lilian/python2
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

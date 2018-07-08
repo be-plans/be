@@ -10,7 +10,7 @@ elif path={{pkgPathFor "lilian/jdk7"}}; then
   export JAVA_HOME=$path
 fi
 if [ -z ${JAVA_HOME+x} ]; then
-  echo "Cannot start Tomcat without lilian/jdk8 or core/jdk7"
+  echo "Cannot start Tomcat without lilian/jdk8 or lilian/jdk7"
   exit 1
 fi
 

@@ -5,8 +5,8 @@ pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_description="A monitoring framework that aims to be simple, malleable, and scalable."
 pkg_license=('MIT')
 pkg_upstream_url=https://sensuapp.org
-pkg_build_deps=(be/make be/gcc be/gcc-libs)
-pkg_deps=(lilian/ruby lilian/bundler be/coreutils)
+pkg_build_deps=(lilian/make lilian/gcc lilian/gcc-libs)
+pkg_deps=(lilian/ruby lilian/bundler lilian/coreutils)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_svc_user=root
@@ -33,7 +33,7 @@ do_unpack() {
 
 do_install() {
   cp -R . "$pkg_prefix/"
-  fix_interpreter "$pkg_prefix/bin/*" be/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/*" lilian/coreutils bin/env
 }
 
 

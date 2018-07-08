@@ -10,11 +10,11 @@ pkg_shasum=3f9b9179bae432e45411f7b207578d8232ca2d6fc184a5780b6d696d6037b55a
 pkg_filename=${pkg_name}-${pkg_version}.tar.gz
 pkg_deps=(lilian/node)
 pkg_build_deps=(
-  be/cacerts
-  be/coreutils
-  be/gcc
+  lilian/cacerts
+  lilian/coreutils
+  lilian/gcc
   lilian/git
-  be/make
+  lilian/make
   lilian/node
   lilian/python2
 )

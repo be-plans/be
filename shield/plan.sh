@@ -8,8 +8,8 @@ pkg_upstream_url="https://github.com/starkandwayne/shield"
 pkg_source="https://github.com/starkandwayne/shield/archive/v${pkg_version}.tar.gz"
 pkg_shasum="1d9f5c80f86d6e1d8e0971959068154dd7f5299f307e06b38c33f63f81ee413a"
 
-pkg_deps=(be/bash core/glibc core/postgresql core/shield-proxy/${pkg_version})
-pkg_build_deps=(core/go core/git be/gcc be/make core/gox)
+pkg_deps=(lilian/bash core/glibc lilian/postgresql lilian/shield-proxy/${pkg_version})
+pkg_build_deps=(lilian/go lilian/git lilian/gcc lilian/make lilian/gox)
 
 pkg_bin_dirs=(bin)
 

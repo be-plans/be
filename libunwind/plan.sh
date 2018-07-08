@@ -7,10 +7,10 @@ pkg_license=('MIT')
 pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 pkg_source="http://download.savannah.gnu.org/releases/libunwind/libunwind-${pkg_version}.tar.gz"
 pkg_shasum=3f3ecb90e28cbe53fba7a4a27ccce7aad188d3210bb1964a923a731a27a75acb
-pkg_deps=(core/glibc be/gcc-libs)
+pkg_deps=(core/glibc lilian/gcc-libs)
 pkg_build_deps=(
-  be/gcc  be/make be/diffutils
-  be/file be/coreutils
+  lilian/gcc  lilian/make lilian/diffutils
+  lilian/file lilian/coreutils
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

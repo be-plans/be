@@ -12,22 +12,22 @@ pkg_source="http://www.cpan.org/src/5.0/${pkg_name}-${pkg_version}.tar.bz2"
 pkg_shasum="2812a01dd4d4cd7650cb70abfe259ee572bf6a0f1ee95763422ba7e54c68d12d"
 pkg_deps=(
   core/glibc
-  be/zlib
-  be/bzip2
-  be/gdbm
-  be/db
-  be/coreutils
-  be/less
+  lilian/zlib
+  lilian/bzip2
+  lilian/gdbm
+  lilian/db
+  lilian/coreutils
+  lilian/less
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/procps-ng
-  be/inetutils
-  be/iana-etc
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/procps-ng
+  lilian/inetutils
+  lilian/iana-etc
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

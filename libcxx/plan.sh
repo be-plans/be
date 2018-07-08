@@ -9,16 +9,16 @@ pkg_filename=${pkg_name}-${pkg_version}.src.tar.xz
 pkg_source=http://llvm.org/releases/${pkg_version}/${pkg_name}-${pkg_version}.src.tar.xz
 pkg_shasum=fa8f99dd2bde109daa3276d529851a3bce5718d46ce1c5d0806f46caa3e57c00
 pkg_build_deps=(
-  core/clang
-  be/cmake
-  be/gcc
-  core/llvm
-  be/make
+  lilian/clang
+  lilian/cmake
+  lilian/gcc
+  lilian/llvm
+  lilian/make
 )
 pkg_deps=(
-  be/gcc-libs
+  lilian/gcc-libs
   core/glibc
-  core/libcxxabi
+  lilian/libcxxabi
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
@@ -39,7 +39,7 @@ do_prepare() {
 }
 
 do_build() {
-  LLVM_PATH="$(pkg_path_for core/llvm)"
+  LLVM_PATH="$(pkg_path_for lilian/llvm)"
 
   pushd "${BUILDDIR}"
   cmake \

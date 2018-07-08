@@ -17,8 +17,8 @@ The Habitat Maintainers humans@habitat.sh
 LGPO.exe can be used to apply local group policies to a machine using habitat
 
 ```
-$ hab pkg install core/lgpo
-$ hab pkg exec core/lgpo LGPO.exe
+$ hab pkg install lilian/lgpo
+$ hab pkg exec lilian/lgpo LGPO.exe
 
 LGPO.exe v2.2 - Local Group Policy Object utility
 

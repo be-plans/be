@@ -9,14 +9,14 @@ pkg_filename=${pkg_name}-${pkg_version}.src.tar.xz
 pkg_source=http://llvm.org/releases/${pkg_version}/${pkg_name}-${pkg_version}.src.tar.xz
 pkg_shasum=5a25152cb7f21e3c223ad36a1022faeb8a5ac27c9e75936a5ae2d3ac48f6e854
 pkg_build_deps=(
-  core/clang
-  core/cmake
-  core/gcc
-  core/llvm
-  core/make
+  lilian/clang
+  lilian/cmake
+  lilian/gcc
+  lilian/llvm
+  lilian/make
 )
 pkg_deps=(
-  core/gcc-libs
+  lilian/gcc-libs
   core/glibc
 )
 pkg_lib_dirs=(lib)

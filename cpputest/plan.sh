@@ -13,17 +13,17 @@ pkg_source="https://github.com/cpputest/${pkg_name}/archive/v${pkg_version}.tar.
 pkg_shasum="2b95bb4a568f680cdcca678345a2c41c028275471c2ed7bf0b6f6f1f689c3b76"
 pkg_upstream_url="http://cpputest.github.io"
 pkg_deps=(
-  be/gcc-libs
+  lilian/gcc-libs
   core/glibc
-  be/libtool
+  lilian/libtool
 )
 pkg_build_deps=(
-  be/cmake
-  be/gcc
-  be/m4
-  be/make
-  be/pkg-config
-  core/valgrind
+  lilian/cmake
+  lilian/gcc
+  lilian/m4
+  lilian/make
+  lilian/pkg-config
+  lilian/valgrind
 )
 pkg_bin_dirs=(sbin)
 

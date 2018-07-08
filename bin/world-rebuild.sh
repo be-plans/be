@@ -12,7 +12,7 @@ __build_base_plans() {
   sudo hab studio run 'hab pkg binlink --dest /usr/bin lilian/coreutils/8.27/20170624233515'
   sudo hab studio run 'hab pkg binlink --dest /usr/bin lilian/file/5.31/20170625112308'
   sudo hab studio run 'ln -s /src /be'
-  sudo hab studio run 'cd / && /be/bin/build-plans.sh be/base-plans.txt'
+  sudo hab studio run 'cd / && /lilian/bin/build-plans.sh lilian/base-plans.txt'
 }
 
 main() {

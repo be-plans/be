@@ -9,6 +9,6 @@ pkg_upstream_url=http://rpm5.org
 pkg_source=ftp://anduin.linuxfromscratch.org/BLFS/${pkg_name}/${pkg_name}-${pkg_version}.tar.gz
 pkg_shasum=e728ed296fe9f069a0e005003c3d6b2dde3d9cad453422a10d6558616d304cc8
 pkg_deps=(core/glibc)
-pkg_build_deps=(be/gcc be/make)
+pkg_build_deps=(lilian/gcc lilian/make)
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)

@@ -25,7 +25,7 @@ Unless you have a license for Artifactory Pro HA (Enterprise License(https://jfr
 recommended you run this using the standalone topology.
 
 ```text
-hab start core/artifactory-pro
+hab start lilian/artifactory-pro
 ```
 
 ## Update Strategies

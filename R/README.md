@@ -13,7 +13,7 @@ Binary package
 ## Usage
 
 ```
-[0][default:/src:0]# hab pkg install -b core/R
+[0][default:/src:0]# hab pkg install -b lilian/R
 [1][default:/src:0]# R --help
 Usage: R [options] [< infile] [> outfile]
    or: R CMD command [arguments]

@@ -9,18 +9,18 @@ pkg_license=('curl')
 pkg_source=https://curl.haxx.se/download/${pkg_name}-${pkg_version}.tar.xz
 pkg_shasum=f5f6fd3c72b7b8389969f4fb671ed8532fa9b5bb7a5cae7ca89bc1cea45c7878
 pkg_deps=(
-  be/cacerts
+  lilian/cacerts
   core/glibc
-  be/openssl
-  be/zlib
-  be/nghttp2
+  lilian/openssl
+  lilian/zlib
+  lilian/nghttp2
 )
 pkg_build_deps=(
-  be/coreutils
-  be/gcc
-  be/make
-  be/perl
-  be/pkg-config
+  lilian/coreutils
+  lilian/gcc
+  lilian/make
+  lilian/perl
+  lilian/pkg-config
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

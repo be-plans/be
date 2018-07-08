@@ -7,7 +7,7 @@
 ## Usage
 
 ```
-hab svc load core/rethinkdb
+hab svc load lilian/rethinkdb
 ```
 
 ## Bindings

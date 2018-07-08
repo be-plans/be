@@ -74,7 +74,7 @@ mkdir c:\sxs
 Copy-Item d:\sources\sxs\microsoft-windows-netfx3-ondemand-package.cab c:\sxs
 ```
 
-Next you will need to make sure the local directory with the source is mounted to the container and that the `core/sqlserver2005` `netfx3_source` configuration setting points to the mounted directory.
+Next you will need to make sure the local directory with the source is mounted to the container and that the `lilian/sqlserver2005` `netfx3_source` configuration setting points to the mounted directory.
 
 ### Mounting netfx3 in Containerized Studio
 
@@ -89,26 +89,26 @@ Now we need to pass the `netfx3_source` configuration to the supervisor.
 
 ```
 'netfx3_source="c:/sxs"' | hab config apply sqlserver2005.default 1
-hab svc load core/sqlserver2005
+hab svc load lilian/sqlserver2005
 ```
 
 This will add the mounted source to the `DSC` `WindowsFeature` resource so that it can install the .net 3.5 runtime in the `init` hook.
 
 ### Mounting netfx3 to an exported Docker image
 
-If you have exported the `core/sqlserver2005` package to a docker image, you will need to make sure it gets the right mount and Supervisor configuration in order to install .Net 3.5. Use the following example in your `docker run` command:
+If you have exported the `lilian/sqlserver2005` package to a docker image, you will need to make sure it gets the right mount and Supervisor configuration in order to install .Net 3.5. Use the following example in your `docker run` command:
 
 ```
-docker run --memory 2gb -e "HAB_SQLSERVER2005=netfx3_source='c:/sxs'" --volume c:/sxs:c:/sxs -it core/sqlserver2005
+docker run --memory 2gb -e "HAB_SQLSERVER2005=netfx3_source='c:/sxs'" --volume c:/sxs:c:/sxs -it lilian/sqlserver2005
 ```
 
 ### Running an exported Sql Server container "quickly"
 
-The `core/sqlserver2005` `init` hook takes several minutes to run the first time. Given the immutable nature of a container, running an exported image will perform a clean `init` run on every `docker run` making for a very suboptimal experience. To create a `sqlserver2005` image that already has .Net 3.5 and Aql Server 2005 installed and ready to run, perform the following:
+The `lilian/sqlserver2005` `init` hook takes several minutes to run the first time. Given the immutable nature of a container, running an exported image will perform a clean `init` run on every `docker run` making for a very suboptimal experience. To create a `sqlserver2005` image that already has .Net 3.5 and Aql Server 2005 installed and ready to run, perform the following:
 
 ```
 # Start a fresh container that will perform the install
-docker run --memory 2gb -e "HAB_SQLSERVER2005=netfx3_source='c:/sxs'" --volume c:/sxs:c:/sxs -it core/sqlserver2005
+docker run --memory 2gb -e "HAB_SQLSERVER2005=netfx3_source='c:/sxs'" --volume c:/sxs:c:/sxs -it lilian/sqlserver2005
 # Stop (ctrl-C) the container after it completes the `post-run` hook.
 # Commit this container to a new image
 docker commit <CONTAINER_ID> sqlserver2005

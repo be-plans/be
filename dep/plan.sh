@@ -6,7 +6,7 @@ pkg_description="Go dependency management tool"
 pkg_license="BSD-3-Clause"
 pkg_source="https://github.com/golang/dep/cmd/dep"
 pkg_upstream_url="https://github.com/golang/dep"
-pkg_scaffolding="core/scaffolding-go"
+pkg_scaffolding="lilian/scaffolding-go"
 pkg_bin_dirs=(bin)
 
 do_download() {

@@ -9,8 +9,8 @@ This plan provides the static binary for execution within other plans.
 ## Usage
 
 ```
-hab pkg install core/delmo
-hab pkg binlink core/delmo delmo
+hab pkg install lilian/delmo
+hab pkg binlink lilian/delmo delmo
 
 delmo --help
 ```

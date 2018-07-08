@@ -8,26 +8,26 @@ pkg_shasum=fa205079c27a39c24f3485e7498dd0906a6e0b379b4f99ebc0ec38a9ec5b09b7
 pkg_upstream_url=https://www.mysql.com/
 pkg_description="MySQL Client Tools"
 pkg_deps=(
-  be/coreutils
-  be/gawk
-  be/gcc-libs
+  lilian/coreutils
+  lilian/gawk
+  lilian/gcc-libs
   core/glibc
-  be/grep
-  be/inetutils
-  be/ncurses
-  be/openssl
-  be/pcre
-  be/perl
-  be/procps-ng
-  be/sed
+  lilian/grep
+  lilian/inetutils
+  lilian/ncurses
+  lilian/openssl
+  lilian/pcre
+  lilian/perl
+  lilian/procps-ng
+  lilian/sed
 )
 pkg_build_deps=(
   lilian/boost/1.59.0
-  be/cmake
-  be/diffutils
-  be/gcc
-  be/make
-  be/patch
+  lilian/cmake
+  lilian/diffutils
+  lilian/gcc
+  lilian/make
+  lilian/patch
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -62,7 +62,7 @@ do_install() {
   # Remove things we don't need
   rm "$pkg_prefix/lib/"*.a "$pkg_prefix/bin/mysqld_"*
 
-  fix_interpreter "$pkg_prefix/bin/mysqldumpslow" be/perl bin/perl
+  fix_interpreter "$pkg_prefix/bin/mysqldumpslow" lilian/perl bin/perl
 }
 
 do_check() {

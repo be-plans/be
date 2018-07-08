@@ -8,23 +8,23 @@ pkg_shasum="fd1725535e21797d3d9fea8963d99be0ba4c3aecadcf081b43e261458b416870"
 pkg_upstream_url="https://www.r-project.org"
 pkg_description="R is a free software environment for statistical computing and graphics."
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/file
-  be/gcc
-  be/make
-  be/perl
-  be/pkg-config
-  be/texinfo
+  lilian/coreutils
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/make
+  lilian/perl
+  lilian/pkg-config
+  lilian/texinfo
 )
 pkg_deps=(
-  be/bzip2
+  lilian/bzip2
   lilian/cairo
-  be/curl
-  be/gcc
+  lilian/curl
+  lilian/gcc
   lilian/harfbuzz
   lilian/icu
-  be/expat
+  lilian/expat
   lilian/fontconfig
   lilian/freetype
   lilian/glib
@@ -33,11 +33,11 @@ pkg_deps=(
   lilian/libpng
   lilian/libtiff
   lilian/pango
-  be/pcre
+  lilian/pcre
   lilian/pixman
-  be/readline
-  be/xz
-  be/zlib
+  lilian/readline
+  lilian/xz
+  lilian/zlib
 )
 pkg_bin_dirs=(lib64/R/bin)
 pkg_include_dirs=(lib64/R/include)

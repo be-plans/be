@@ -11,14 +11,14 @@ pkg_shasum=8ab7e41126dfc3bc1a23ff76efc20e5131320530dc1277e5c2ed8c9618041b95
 pkg_bin_dirs=(bin)
 
 pkg_build_deps=(
-  be/git
-  be/make
-  be/gcc
-  be/go
-  be/diffutils
-  be/patch
-  be/which
-  be/rsync
+  lilian/git
+  lilian/make
+  lilian/gcc
+  lilian/go
+  lilian/diffutils
+  lilian/patch
+  lilian/which
+  lilian/rsync
 )
 
 pkg_deps=(

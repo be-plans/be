@@ -9,15 +9,15 @@ pkg_source="https://github.com/shadow-maint/${pkg_name}/releases/download/${pkg_
 pkg_shasum="fc8c858381ad577a5c25ff5beb6ee60a34f8719c73e4e7c61e74188b4e54b741"
 pkg_deps=(
   core/glibc
-  be/attr
-  be/acl
+  lilian/attr
+  lilian/acl
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
 )
 pkg_bin_dirs=(bin)
 

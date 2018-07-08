@@ -10,10 +10,10 @@ workflow.
 You need to export three environment variables in order to use `repo`:
 
 ```bash
-GIT_SSL_CAINFO="$(pkg_path_for be/cacerts)/ssl/certs/cacert.pem"
+GIT_SSL_CAINFO="$(pkg_path_for lilian/cacerts)/ssl/certs/cacert.pem"
 export GIT_SSL_CAINFO
 
-SSL_CERT_FILE="$(pkg_path_for be/cacerts)/ssl/certs/cacert.pem"
+SSL_CERT_FILE="$(pkg_path_for lilian/cacerts)/ssl/certs/cacert.pem"
 export SSL_CERT_FILE
 
 PYTHONPATH="$(pkg_path_for lilian/python2)"
@@ -24,7 +24,7 @@ An example of how it can be used is shown below:
 
 ```bash
 do_download() {
-  GIT_SSL_CAINFO="$(pkg_path_for be/cacerts)/ssl/certs/cacert.pem"
+  GIT_SSL_CAINFO="$(pkg_path_for lilian/cacerts)/ssl/certs/cacert.pem"
   export GIT_SSL_CAINFO
   build_line "Setting GIT_SSL_CAINFO=$GIT_SSL_CAINFO"
 

@@ -12,9 +12,9 @@ library.\
 pkg_upstream_url="https://www.openssl.org"
 pkg_license=('OpenSSL')
 pkg_deps=(
-  be/musl
-  be/zlib-musl
-  be/cacerts
+  lilian/musl
+  lilian/zlib-musl
+  lilian/cacerts
 )
 
 pkg_disabled_features=(glibc)

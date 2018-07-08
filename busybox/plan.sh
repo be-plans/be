@@ -17,25 +17,25 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  be/bash
-  be/bison
-  be/coreutils
-  be/diffutils
-  be/findutils
-  be/flex
-  be/gawk
-  be/gcc
-  be/gettext
-  be/grep
-  be/gzip
-  be/libtool
-  be/make
-  be/patch
-  be/sed
-  be/texinfo
-  be/util-linux
-  be/wget
-  be/xz
+  lilian/bash
+  lilian/bison
+  lilian/coreutils
+  lilian/diffutils
+  lilian/findutils
+  lilian/flex
+  lilian/gawk
+  lilian/gcc
+  lilian/gettext
+  lilian/grep
+  lilian/gzip
+  lilian/libtool
+  lilian/make
+  lilian/patch
+  lilian/sed
+  lilian/texinfo
+  lilian/util-linux
+  lilian/wget
+  lilian/xz
 )
 
 pkg_bin_dirs=(bin)

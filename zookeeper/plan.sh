@@ -10,7 +10,7 @@ pkg_shasum="c686f9319050565b58e642149cb9e4c9cc8c7207aacc2cb70c5c0672849594b9"
 pkg_build_deps=()
 pkg_deps=(
   lilian/bash-static
-  be/coreutils
+  lilian/coreutils
   lilian/jre8
 )
 pkg_bin_dirs=(bin)
@@ -24,7 +24,7 @@ do_build() {
 }
 
 do_install() {
-  fix_interpreter "bin/*" be/coreutils bin/env
+  fix_interpreter "bin/*" lilian/coreutils bin/env
 
   cp -r bin lib "dist-maven/$pkg_dirname.jar" "$pkg_prefix"
 }

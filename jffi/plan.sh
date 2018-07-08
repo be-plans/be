@@ -7,21 +7,21 @@ pkg_source="https://github.com/jnr/jffi/archive/${pkg_name}-${pkg_version}.tar.g
 pkg_dirname="${pkg_name}-${pkg_name}-${pkg_version}"
 pkg_shasum="a116c53f26d13d738aaf6e21fe52231be5f0df6e1007673846fd18a4be875121"
 pkg_upstream_url="https://github.com/jnr/jffi"
-pkg_deps=(core/glibc be/libffi be/gcc-libs core/jre8)
+pkg_deps=(core/glibc lilian/libffi lilian/gcc-libs lilian/jre8)
 pkg_build_deps=(
-  core/jdk8
-  core/ant
-  be/pkg-config
-  be/make
-  be/gcc
-  be/file
-  be/diffutils
-  core/maven
+  lilian/jdk8
+  lilian/ant
+  lilian/pkg-config
+  lilian/make
+  lilian/gcc
+  lilian/file
+  lilian/diffutils
+  lilian/maven
 )
 
 do_prepare() {
-  build_line "replacing /usr/bin/file with $(pkg_path_for be/file)/bin/file"
-  sed -i "s,/usr/bin/file,$(pkg_path_for be/file)/bin/file,g" "jni/libffi/configure"
+  build_line "replacing /usr/bin/file with $(pkg_path_for lilian/file)/bin/file"
+  sed -i "s,/usr/bin/file,$(pkg_path_for lilian/file)/bin/file,g" "jni/libffi/configure"
 
   export USE_SYSTEM_LIBFFI=1
   export JAVA_HOME

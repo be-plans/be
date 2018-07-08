@@ -15,7 +15,7 @@ Service package (Intended for wrapping with a configuration plan, see usage note
 When using monit, you'll want to add your own rules, this cannot be done with this package. You'll need to create your own which would depend on this one. The configuration is provided as a model for you to speed up your package development.
 
 ```
-hab svc load core/monit
+hab svc load lilian/monit
 ```
 
 ## Bindings

@@ -7,8 +7,8 @@ pkg_license=('BSD-2-Clause')
 pkg_source=https://openresty.org/download/${pkg_name}-${pkg_version}.tar.gz
 pkg_upstream_url=http://openresty.org/
 pkg_shasum=7f9ca62cfa1e4aedf29df9169aed0395fd1b90de254139996e554367db4d5a01
-pkg_deps=(core/glibc be/gcc-libs lilian/libxml2 lilian/libxslt be/zlib be/bzip2 be/openssl  be/pcre be/coreutils be/perl lilian/which)
-pkg_build_deps=(be/gcc be/make)
+pkg_deps=(core/glibc lilian/gcc-libs lilian/libxml2 lilian/libxslt lilian/zlib lilian/bzip2 lilian/openssl  lilian/pcre lilian/coreutils lilian/perl lilian/which)
+pkg_build_deps=(lilian/gcc lilian/make)
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin nginx/sbin luajit/bin)
 pkg_include_dirs=(include)
@@ -68,7 +68,7 @@ do_build() {
 
 do_install() {
   make install
-  fix_interpreter "$pkg_prefix/bin/*" be/coreutils bin/env
+  fix_interpreter "$pkg_prefix/bin/*" lilian/coreutils bin/env
 }
 
 do_end() {

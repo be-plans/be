@@ -7,10 +7,10 @@ pkg_source="http://www.leonerd.org.uk/code/$pkg_name/$pkg_name-${pkg_version}.ta
 pkg_shasum="abea46d1b0b831dec2af5d582319635cece63d260f8298d9ccce7c1c2e62a6e8"
 pkg_deps=(core/glibc)
 pkg_build_deps=(
-  be/gcc
-  be/libtool
-  be/make
-  be/perl
+  lilian/gcc
+  lilian/libtool
+  lilian/make
+  lilian/perl
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)

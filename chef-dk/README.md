@@ -16,7 +16,7 @@ A Binary package
 Include this plan in your build or runtime dependencies:
 
 ```
-$pkg_deps=@("core/chef-dk")
+$pkg_deps=@("lilian/chef-dk")
 ```
 
 Then use any of the `chef-dk` utilities in your plan or hooks:

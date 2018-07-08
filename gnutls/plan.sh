@@ -9,28 +9,28 @@ pkg_source="ftp://ftp.gnutls.org/gcrypt/gnutls/v3.5/${pkg_name}-${pkg_version}.t
 pkg_shasum="ae2248d9e78747cf9c469dde81ff8f90b56838b707a0637f3f7d4eee90e80234"
 pkg_deps=(
   core/glibc
-  be/gmp
-  be/guile
-  be/libiconv
-  be/libidn2
-  be/libseccomp
-  be/libtasn1
-  be/libunistring
-  be/nettle
-  be/p11-kit
-  be/zlib
+  lilian/gmp
+  lilian/guile
+  lilian/libiconv
+  lilian/libidn2
+  lilian/libseccomp
+  lilian/libtasn1
+  lilian/libunistring
+  lilian/nettle
+  lilian/p11-kit
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/autogen
-  be/bison
-  be/diffutils
-  be/file
-  be/gettext
-  be/gcc
-  be/iproute2
-  be/make
-  be/pkg-config
-  be/which
+  lilian/autogen
+  lilian/bison
+  lilian/diffutils
+  lilian/file
+  lilian/gettext
+  lilian/gcc
+  lilian/iproute2
+  lilian/make
+  lilian/pkg-config
+  lilian/which
 )
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
@@ -48,9 +48,9 @@ do_prepare() {
 
 do_build() {
   ./configure --prefix="${pkg_prefix}" \
-    --with-libseccomp-prefix="$(pkg_path_for "core/libseccomp")" \
-    --with-libiconv-prefix="$(pkg_path_for "core/libiconv")" \
-    --with-libunistring-prefix="$(pkg_path_for "core/libunistring")" \
+    --with-libseccomp-prefix="$(pkg_path_for "lilian/libseccomp")" \
+    --with-libiconv-prefix="$(pkg_path_for "lilian/libiconv")" \
+    --with-libunistring-prefix="$(pkg_path_for "lilian/libunistring")" \
     --disable-valgrind-tests
   make -j"$(nproc)"
 }

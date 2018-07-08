@@ -9,18 +9,18 @@ pkg_source="http://ftp.gnu.org/gnu/$pkg_name/${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum="3da4f6bd79685648ecf46dab51d66fcdddc156f41ed07e580a696a38ac61d48f"
 pkg_deps=(
   core/glibc
-  be/gcc-libs
-  be/acl
-  be/xz
+  lilian/gcc-libs
+  lilian/acl
+  lilian/xz
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/patch
-  be/make
-  be/gcc
-  be/sed
-  be/findutils
+  lilian/coreutils
+  lilian/diffutils
+  lilian/patch
+  lilian/make
+  lilian/gcc
+  lilian/sed
+  lilian/findutils
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

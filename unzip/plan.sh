@@ -12,12 +12,12 @@ pkg_source="https://downloads.sourceforge.net/infozip/unzip60.tar.gz"
 pkg_shasum="036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37"
 pkg_dirname=unzip60
 pkg_deps=(
-  be/bzip2
+  lilian/bzip2
   core/glibc
 )
 pkg_build_deps=(
-  be/gcc
-  be/make
+  lilian/gcc
+  lilian/make
 )
 pkg_bin_dirs=(bin)
 

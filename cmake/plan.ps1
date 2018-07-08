@@ -8,7 +8,7 @@ $pkg_license=@("BSD-3-Clause")
 $pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 $pkg_source="http://cmake.org/files/v$base_version/cmake-$pkg_version-win64-x64.msi"
 $pkg_shasum="23fe84a5cec997e1b8a7725713cf8b0934071f5b25b53c51acf51490dff4e468"
-$pkg_build_deps=@("core/lessmsi")
+$pkg_build_deps=@("lilian/lessmsi")
 $pkg_bin_dirs=@("bin")
 
 function Invoke-Unpack {

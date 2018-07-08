@@ -11,21 +11,21 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  core/autoconf
-  core/automake
-  core/diffutils
-  core/gcc
-  core/gettext
-  core/libtool
-  core/make
-  core/pkg-config
+  lilian/autoconf
+  lilian/automake
+  lilian/diffutils
+  lilian/gcc
+  lilian/gettext
+  lilian/libtool
+  lilian/make
+  lilian/pkg-config
 )
 pkg_include_dirs=(include)
 pkg_lib_dirs=(lib)
 pkg_pconfig_dirs=(lib/pkgconfig)
 
 do_prepare() {
-  ACLOCAL_PATH="${ACLOCAL_PATH}:$(pkg_path_for core/gettext)/share/aclocal:$(pkg_path_for core/pkg-config)/share/aclocal"
+  ACLOCAL_PATH="${ACLOCAL_PATH}:$(pkg_path_for lilian/gettext)/share/aclocal:$(pkg_path_for lilian/pkg-config)/share/aclocal"
   export ACLOCAL_PATH
 
   ./autogen.sh

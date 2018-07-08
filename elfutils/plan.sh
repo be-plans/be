@@ -11,14 +11,14 @@ pkg_source=https://sourceware.org/${pkg_name}/ftp/${pkg_version}/$pkg_name-$pkg_
 pkg_shasum=1f844775576b79bdc9f9c717a50058d08620323c1e935458223a12f249c9e066
 pkg_deps=(
   core/glibc
-  be/zlib
+  lilian/zlib
 )
 pkg_build_deps=(
-  be/gcc
+  lilian/gcc
   core/glibc
-  be/m4
-  be/make
-  be/zlib
+  lilian/m4
+  lilian/make
+  lilian/zlib
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)

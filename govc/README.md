@@ -7,7 +7,7 @@ This plan provides the govc CLI package. `govc` is a tool, written in Go, used t
 ## Usage
 
 ```
-hab pkg exec core/govc govc -h
+hab pkg exec lilian/govc govc -h
 
 govc -h
 Usage of govc:

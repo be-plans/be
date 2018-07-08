@@ -14,7 +14,7 @@ Library package. Include this plan as a runtime or build dependency for plans th
 
 ```
 pkg_deps=(
-  core/libimagequant
+  lilian/libimagequant
 )
 ```
 
@@ -22,6 +22,6 @@ or
 
 ```
 pkg_build_deps=(
-  core/libimagequant
+  lilian/libimagequant
 )
 ```

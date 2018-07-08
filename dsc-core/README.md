@@ -62,6 +62,6 @@ The `PSModulePath` in a local Windows studio (one started with `hab studio enter
 You can work around this by explicitly importing the module before using the command:
 
 ```
-Import-Module "{{pkgPathFor "core/dsc-core"}}/Modules/DscCore"
+Import-Module "{{pkgPathFor "lilian/dsc-core"}}/Modules/DscCore"
 Start-DscCore (Join-Path {{pkg.svc_config_path}} firewall.ps1) NewFirewallRule
 ```

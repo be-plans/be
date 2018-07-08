@@ -8,8 +8,8 @@ pkg_upstream_url="https://www.rabbitmq.com"
 pkg_source=https://raw.githubusercontent.com/rabbitmq/rabbitmq-management/rabbitmq_v${pkg_version//\./_}/bin/rabbitmqadmin
 pkg_shasum=c078627474c80b26c027fc34b833d8f1744ffd0dc779982909a7382d67a344b5
 pkg_deps=(
-  core/python2
-  be/coreutils
+  lilian/python2
+  lilian/coreutils
 )
 pkg_bin_dirs=(bin)
 
@@ -21,7 +21,7 @@ do_unpack() {
 }
 
 do_build() {
-  fix_interpreter "rabbitmqadmin" be/coreutils bin/env
+  fix_interpreter "rabbitmqadmin" lilian/coreutils bin/env
 }
 
 do_install() {

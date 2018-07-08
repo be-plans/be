@@ -9,9 +9,9 @@ pkg_filename="${pkg_name}-${pkg_version}-standalone.zip"
 pkg_source="https://github.com/technomancy/${pkg_name}/releases/download/${pkg_version}/${pkg_filename}"
 pkg_shasum="fc49bbc7ff25ef42ad9c0a8b5f3d0641702abc9a9a8e847bc845bca4c09a7c58"
 pkg_deps=(
-  core/bash
-  core/coreutils
-  core/jdk8
+  lilian/bash
+  lilian/coreutils
+  lilian/jdk8
 )
 pkg_bin_dirs=(bin)
 
@@ -30,7 +30,7 @@ do_unpack() {
 }
 
 do_build() {
-  fix_interpreter "${HAB_CACHE_SRC_PATH}/lein" core/bash bin/bash
+  fix_interpreter "${HAB_CACHE_SRC_PATH}/lein" lilian/bash bin/bash
 }
 
 do_install() {

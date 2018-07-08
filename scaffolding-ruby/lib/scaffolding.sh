@@ -642,13 +642,13 @@ _update_svc_run() {
 
 _add_busybox() {
   build_line "Adding Busybox package to run dependencies"
-  pkg_deps=(be/busybox-static ${pkg_deps[@]})
+  pkg_deps=(lilian/busybox-static ${pkg_deps[@]})
   debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
 }
 
 _add_git() {
   build_line "Adding git to build dependencies"
-  pkg_build_deps=(core/git ${pkg_build_deps[@]})
+  pkg_build_deps=(lilian/git ${pkg_build_deps[@]})
   debug "Updating pkg_build_deps=(${pkg_build_deps[*]}) from Scaffolding detection"
 }
 
@@ -810,7 +810,7 @@ _detect_ruby() {
 _detect_sqlite3() {
   if _has_gem sqlite3; then
     build_line "Detected 'sqlite3' gem in Gemfile.lock, adding sqlite packages"
-    pkg_deps=(be/sqlite ${pkg_deps[@]})
+    pkg_deps=(lilian/sqlite ${pkg_deps[@]})
     debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
   fi
 }
@@ -818,7 +818,7 @@ _detect_sqlite3() {
 _detect_webpacker() {
   if _has_gem webpacker; then
     build_line "Detected 'webpacker' gem in Gemfile.lock, adding yarn packages"
-    pkg_deps=(core/yarn ${pkg_deps[@]})
+    pkg_deps=(lilian/yarn ${pkg_deps[@]})
     debug "Updating pkg_deps=(${pkg_deps[*]}) from Scaffolding detection"
   fi
 }

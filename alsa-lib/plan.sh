@@ -11,11 +11,11 @@ pkg_deps=(
   core/glibc
 )
 pkg_build_deps=(
-  core/diffutils
-  core/file
-  core/gcc
-  core/m4
-  core/make
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/m4
+  lilian/make
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)

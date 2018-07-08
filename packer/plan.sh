@@ -7,7 +7,7 @@ pkg_source=https://releases.hashicorp.com/${pkg_name}/${pkg_version}/${pkg_name}
 pkg_shasum=258d1baa23498932baede9b40f2eca4ac363b86b32487b36f48f5102630e9fbb
 pkg_description="Packer is a tool for creating machine and container images for multiple platforms from a single source configuration."
 pkg_upstream_url=packer.io
-pkg_build_deps=(core/unzip)
+pkg_build_deps=(lilian/unzip)
 pkg_bin_dirs=(bin)
 
 do_unpack() {

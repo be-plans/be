@@ -13,16 +13,16 @@ pkg_license=('LGPL-2.1-or-later')
 pkg_source="https://github.com/libcheck/check/releases/download/${pkg_version}/check-${pkg_version}.tar.gz"
 pkg_shasum="464201098bee00e90f5c4bdfa94a5d3ead8d641f9025b560a27755a83b824234"
 pkg_deps=(
-  be/gawk
+  lilian/gawk
   core/glibc
 )
 pkg_build_deps=(
-  be/coreutils
-  be/diffutils
-  be/file
-  be/gcc
-  be/make
-  be/sed
+  lilian/coreutils
+  lilian/diffutils
+  lilian/file
+  lilian/gcc
+  lilian/make
+  lilian/sed
 )
 pkg_bin_dirs=(bin)
 pkg_include_dirs=(include)
@@ -39,7 +39,7 @@ do_prepare() {
 
 do_check() {
   # Fix interpreters for test scripts
-  _interpreter="$(pkg_path_for "core/coreutils")/bin/env"
+  _interpreter="$(pkg_path_for "lilian/coreutils")/bin/env"
   sed -e "s#\#\!/usr/bin/env#\#\!${_interpreter}#" \
     -i "checkmk/test/check_checkmk"
   for f in tests/test_*; do
